@@ -162,9 +162,14 @@ for (const { style, label, path } of showcaseSpecs) {
   rmSync(freshPdf, { force: true });
   // The CLI's own `build --pdf` writes the PDF beside its own (non-embedded-fonts) HTML; that
   // HTML is then overwritten below with the embedFonts version this page actually serves.
-  execFileSync(process.execPath, [cliPath, "build", path, "-o", outHtml, "--pdf", "--json"], {
-    encoding: "utf8",
-  });
+  try {
+    execFileSync(process.execPath, [cliPath, "build", path, "-o", outHtml, "--pdf", "--json"], {
+      encoding: "utf8",
+    });
+  } catch (e) {
+    // Exit 3 is W_NO_BROWSER or W_PDF_FAILED: the HTML and sidecar are written, only the PDF is not.
+    if (e.status !== 3) throw e;
+  }
   writeFileSync(outHtml, built.html, "utf8");
   // A build machine without Chrome, Edge or Chromium (Cloudflare Pages' image, for one) cannot make
   // the PDF, so it ships the committed copy in showcase/pdf/. Refresh those copies with
