@@ -1,0 +1,20 @@
+[
+  {
+    "id": "claude",
+    "label": "Claude Code",
+    "description": "Add the marketplace, then install the skill.",
+    "commands": ["/plugin marketplace add vandermerwed/switchback", "/plugin install switchback@switchback"]
+  },
+  {
+    "id": "agents",
+    "label": "Other agents (skills.sh)",
+    "description": "Add the skill to an agent that uses skills.sh.",
+    "commands": ["npx skills add vandermerwed/switchback"]
+  },
+  {
+    "id": "cli",
+    "label": "CLI",
+    "description": "Optional. The skill fetches the CLI itself when it needs it.",
+    "commands": ["npm install -g @vandermerwed/switchback"]
+  }
+]

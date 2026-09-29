@@ -167,12 +167,7 @@ a:focus-visible {
   stroke: var(--sb-trail);
   stroke-width: 18;
 }
-/* The prompt-to-page leg needs the gutter beside the headline, which is wide enough from 1440px. */
-@media (max-width: 1439px) {
-  .return-route .route-out {
-    display: none;
-  }
-}
+.mobile-route { display: none; }
 .hero-scene {
   position: absolute;
   inset: 0;
@@ -434,7 +429,7 @@ a:focus-visible {
   display: grid;
   grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
   gap: clamp(2rem, 7vw, 8rem);
-  background: #e9eee8;
+  background: color-mix(in srgb, var(--sb-paper) 93%, var(--sb-forest) 7%);
   padding: clamp(5rem, 8vw, 8rem) max(clamp(24px, 4vw, 70px), calc((100vw - 1460px) / 2));
 }
 .install-heading h2 {
@@ -445,26 +440,19 @@ a:focus-visible {
   color: var(--sb-ink);
   font-size: 0.9rem;
 }
-.install-groups {
-  display: grid;
-  gap: 0;
-  align-content: start;
-}
-.install-group {
-  border-top: 1px solid #b9c6ba;
-  padding: 1.25rem 0 1.5rem;
-}
-.install-group:last-child {
-  border-bottom: 1px solid #b9c6ba;
-}
-.install-group h3 {
-  margin: 0 0 0.7rem;
-  color: var(--sb-ink-soft);
-  font-size: 0.72rem;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  font-weight: 600;
-}
+.install-block { min-width: 0; border-top: 1px solid var(--sb-rule); border-bottom: 1px solid var(--sb-rule); }
+.install-tabs { display: none; }
+.install-block.is-enhanced .install-tabs { display: flex; gap: 1.5rem; overflow-x: auto; border-bottom: 1px solid var(--sb-rule); }
+.install-tabs button { flex: none; border: 0; border-bottom: 3px solid transparent; padding: 1rem .25rem; color: var(--sb-ink-soft); background: transparent; font: 600 .9rem var(--sb-font-body); cursor: pointer; }
+.install-tabs button[aria-selected="true"] { color: var(--sb-ink); border-bottom-color: var(--sb-forest); }
+.install-tabs button:focus-visible, .copy-button:focus-visible { outline: 3px solid var(--sb-trail); outline-offset: 2px; }
+.install-panel { padding: 1.5rem 0 2rem; border-bottom: 1px solid var(--sb-rule); }
+.install-panel:last-child { border-bottom: 0; }
+.install-panel[hidden] { display: none; }
+.install-panel h3 { margin: 0 0 .5rem; font: 500 1.6rem var(--sb-font-heading); }
+.install-panel > p { margin: 0 0 1.5rem; color: var(--sb-ink-soft); line-height: 1.55; }
+.step-label { margin: 1rem 0 .55rem; color: var(--sb-ink); font-size: .88rem; font-weight: 600; }
+.command-step + .command-step { margin-top: 1.25rem; }
 .install-command {
   display: flex;
   align-items: stretch;
@@ -480,7 +468,7 @@ a:focus-visible {
   overflow-x: auto;
   margin: 0;
   padding: 0.85rem 1rem;
-  background: var(--sb-forest-deep);
+  background: #0f2826;
   color: #f7f9f6;
   border-radius: 2px;
   font-family: var(--sb-font-mono);
@@ -496,8 +484,8 @@ a:focus-visible {
   padding: 0 0.9rem;
   border: 1px solid #b9c6ba;
   border-radius: 2px;
-  background: #fff;
-  color: var(--sb-forest-deep);
+  background: var(--sb-paper);
+  color: var(--sb-ink);
   font-size: 0.75rem;
   font-weight: 600;
   cursor: pointer;
@@ -692,11 +680,32 @@ a:focus-visible {
   }
   .install-command pre {
     font-size: 0.72rem;
+    padding: .85rem .7rem;
   }
+  .install-command { gap: .5rem; min-width: 0; }
+  .install-command code { overflow-wrap: anywhere; white-space: pre-wrap; }
+  .copy-button { padding: 0 .65rem; }
   .site-footer {
     flex-direction: column;
     padding: 2rem 20px;
   }
+}
+@media (max-width: 950px) {
+  .hero { min-height: 0; padding-bottom: 4rem; }
+  .hero-copy { width: min(100%, 720px); padding: 4rem clamp(20px, 5vw, 58px) 0; }
+  .hero-scene { position: relative; inset: auto; display: flex; flex-direction: column; align-items: stretch; gap: 1.75rem; padding: 3rem clamp(20px, 5vw, 58px) 0; }
+  .hero-scene::before { display: none; }
+  .hero-scene > :not(.mobile-route) { position: relative; z-index: 1; }
+  .agent-prompt, .hero-paper, .agent-readback { position: relative; inset: auto; }
+  .agent-prompt { width: min(70%, 240px); margin-left: 0; align-self: flex-start; }
+  .hero-paper { width: min(68vw, 500px); max-width: 100%; margin: 0 auto; }
+  .agent-readback { width: min(70%, 280px); align-self: flex-end; }
+  .return-route { display: none; }
+  .mobile-route { display: block; position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  .mobile-route path { fill: none; stroke: var(--sb-trail); stroke-width: 2; stroke-dasharray: 3 2; vector-effect: non-scaling-stroke; }
+}
+@media (max-width: 640px) {
+  .hero-paper { width: min(100%, 470px); }
 }
 
 @media (prefers-reduced-motion: reduce) {

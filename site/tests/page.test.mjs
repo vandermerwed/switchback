@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import { test } from "node:test";
 
 const html = readFileSync(new URL("../dist/index.html", import.meta.url), "utf8");
+const installOptions = JSON.parse(readFileSync(new URL("../src/data/install.json", import.meta.url), "utf8"));
 const visibleText = html
   .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ")
   .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ")
@@ -27,20 +28,19 @@ test("the worked round trip stays readable as HTML and names every ink role", ()
   assert.doesNotMatch(visibleText, /paperclip|agent profile/i);
 });
 
-test("the install section has three groups, each with the verified commands and the requirements", () => {
+test("the install section has three readable routes with commands from one data file", () => {
   assert.equal((html.match(/id="install"/g) ?? []).length, 1);
-  const commands = [
-    "/plugin marketplace add vandermerwed/switchback",
-    "/plugin install switchback@switchback",
-    "npx skills add vandermerwed/switchback",
-    "npm install -g @vandermerwed/switchback",
-  ];
-  for (const command of commands) {
-    assert.ok(html.includes(`<code>${command}</code>`), `${command} is a selectable code block`);
+  assert.equal(installOptions.length, 3);
+  for (const option of installOptions) {
+    assert.ok(html.includes(`id="panel-${option.id}"`), `${option.id} panel exists`);
+    assert.ok(html.includes(option.label), `${option.id} has a visible heading`);
+    for (const command of option.commands) {
+      assert.ok(html.includes(`<code>${command}</code>`), `${command} is selectable`);
+    }
   }
-  assert.match(visibleText, /Claude Code: run both, in order/);
-  assert.match(visibleText, /Codex, opencode, Cursor and other agents/);
-  assert.match(visibleText, /Optional: install the CLI once, instead of fetching it with npx each time/);
+  assert.doesNotMatch(html, /class="install-panel"[^>]*hidden/);
+  assert.match(visibleText, /Then install it/);
+  assert.match(visibleText, /The skill fetches the CLI itself/);
   assert.match(visibleText, /Node\.js 20\.12 or later, a printer, a pen, a phone camera/);
   for (const href of ["/docs/", "/showcase/", "/privacy/", "https://github.com/vandermerwed/switchback"]) {
     assert.ok(html.includes(`href="${href}"`), `navigation links to ${href}`);
@@ -48,13 +48,7 @@ test("the install section has three groups, each with the verified commands and 
 });
 
 test("every install command has a copy button", () => {
-  const commands = [
-    "/plugin marketplace add vandermerwed/switchback",
-    "/plugin install switchback@switchback",
-    "npx skills add vandermerwed/switchback",
-    "npm install -g @vandermerwed/switchback",
-  ];
-  for (const command of commands) {
-    assert.ok(html.includes(`aria-label="Copy: ${command}"`), `${command} has a copy button labelled for it`);
+  for (const option of installOptions) for (const command of option.commands) {
+    assert.ok(html.includes(`aria-label="Copy ${command}"`), `${command} has a copy button labelled for it`);
   }
 });
