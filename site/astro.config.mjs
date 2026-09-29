@@ -17,7 +17,7 @@ export default defineConfig({
       // Head.astro is the only place that references Feedback.tsx (and, through it,
       // `agentation`). Wiring it in only when `feedback` is true keeps a production build from
       // ever discovering that component, rather than relying on a runtime check inside it.
-      ...(feedback ? { components: { Head: "./src/components/Head.astro" } } : {}),
+      components: { Header: "./src/components/DocsHeader.astro", ...(feedback ? { Head: "./src/components/Head.astro" } : {}) },
       sidebar: [
         { label: "Start here", items: ["docs", "docs/loop"] },
         {

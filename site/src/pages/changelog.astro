@@ -1,5 +1,6 @@
 ---
-import "../styles/tokens.css";
+import "../styles/global.css";
+import SiteNav from "../components/SiteNav.astro";
 import { Content } from "../../../CHANGELOG.md";
 ---
 
@@ -11,12 +12,7 @@ import { Content } from "../../../CHANGELOG.md";
     <meta name="description" content="Release notes for Switchback." />
   </head>
   <body>
-    <nav class="site-nav">
-      <a href="/">Switchback</a>
-      <a href="/docs/">Docs</a>
-      <a href="/showcase/">Showcase</a>
-      <a href="https://github.com/vandermerwed/switchback">GitHub</a>
-    </nav>
+    <SiteNav />
     <main class="changelog">
       <Content />
     </main>

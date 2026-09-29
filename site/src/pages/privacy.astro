@@ -1,5 +1,6 @@
 ---
-import "../styles/tokens.css";
+import "../styles/global.css";
+import SiteNav from "../components/SiteNav.astro";
 ---
 
 <html lang="en">
@@ -10,12 +11,7 @@ import "../styles/tokens.css";
     <meta name="description" content="What stays on your machine, what your agent's model provider sees, and what Switchback collects (nothing)." />
   </head>
   <body>
-    <nav class="site-nav">
-      <a href="/">Switchback</a>
-      <a href="/docs/">Docs</a>
-      <a href="/showcase/">Showcase</a>
-      <a href="https://github.com/vandermerwed/switchback">GitHub</a>
-    </nav>
+    <SiteNav />
     <main class="privacy">
       <h1>Privacy</h1>
 

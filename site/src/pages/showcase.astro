@@ -1,5 +1,6 @@
 ---
-import "../styles/tokens.css";
+import "../styles/global.css";
+import SiteNav from "../components/SiteNav.astro";
 import workbooks from "../generated/showcase.json";
 
 const STYLE_INTENT = {
@@ -22,12 +23,7 @@ const STYLE_INTENT = {
     />
   </head>
   <body>
-    <nav class="site-nav">
-      <a href="/">Switchback</a>
-      <a href="/docs/">Docs</a>
-      <a href="/showcase/">Showcase</a>
-      <a href="https://github.com/vandermerwed/switchback">GitHub</a>
-    </nav>
+    <SiteNav />
     <main class="showcase">
       <h1>Showcase</h1>
       <p class="lede">

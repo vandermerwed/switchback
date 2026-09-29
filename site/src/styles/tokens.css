@@ -15,3 +15,9 @@
   --sb-font-heading: "Fraunces", Georgia, serif;
   --sb-font-mono: ui-monospace, "SFMono-Regular", Consolas, monospace;
 }
+:root[data-theme="dark"] {
+  --sb-paper: #142723;
+  --sb-ink: #f4f5ef;
+  --sb-ink-soft: #c3d0c7;
+  --sb-rule: #3c5550;
+}
