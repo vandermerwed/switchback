@@ -1,0 +1,56 @@
+/* Theme the Starlight docs with the site's shared tokens, so /docs/ reads as one site with
+   the home page. This file only maps tokens onto Starlight's own --sl-* variables; the
+   tokens themselves live in tokens.css and are not duplicated here. */
+@import "./tokens.css";
+
+:root {
+  /* Dark mode is Starlight's default root palette. */
+  --sl-color-bg: var(--sb-forest-deep);
+  --sl-color-bg-nav: var(--sb-forest);
+  --sl-color-bg-sidebar: var(--sb-forest);
+  --sl-color-bg-inline-code: color-mix(in srgb, var(--sb-forest) 60%, black 40%);
+  --sl-color-bg-accent: var(--sb-trail);
+  --sl-color-text: var(--sb-paper);
+  --sl-color-text-accent: var(--sb-trail);
+  --sl-color-text-invert: var(--sb-forest-deep);
+  --sl-color-white: var(--sb-paper);
+  --sl-color-black: var(--sb-forest-deep);
+  --sl-color-accent: var(--sb-trail);
+  --sl-color-accent-high: var(--sb-trail);
+  --sl-color-accent-low: color-mix(in srgb, var(--sb-trail) 30%, var(--sb-forest-deep) 70%);
+  --sl-color-hairline: color-mix(in srgb, var(--sb-paper) 20%, transparent);
+  --sl-color-hairline-light: color-mix(in srgb, var(--sb-paper) 30%, transparent);
+  --sl-color-hairline-shade: var(--sb-forest-deep);
+
+  --sl-font: var(--sb-font-body);
+  --sl-font-mono: var(--sb-font-mono);
+}
+
+:root[data-theme="light"] {
+  --sl-color-bg: var(--sb-paper);
+  --sl-color-bg-nav: var(--sb-paper);
+  --sl-color-bg-sidebar: var(--sb-paper);
+  --sl-color-bg-inline-code: color-mix(in srgb, var(--sb-paper) 85%, var(--sb-ink) 15%);
+  --sl-color-bg-accent: var(--sb-forest);
+  --sl-color-text: var(--sb-ink);
+  --sl-color-text-accent: var(--sb-forest);
+  --sl-color-text-invert: var(--sb-paper);
+  --sl-color-white: var(--sb-ink);
+  --sl-color-black: var(--sb-paper);
+  --sl-color-accent: var(--sb-forest);
+  --sl-color-accent-high: var(--sb-forest-deep);
+  --sl-color-accent-low: color-mix(in srgb, var(--sb-forest) 15%, var(--sb-paper) 85%);
+  --sl-color-hairline: var(--sb-rule);
+  --sl-color-hairline-light: var(--sb-rule);
+  --sl-color-hairline-shade: var(--sb-rule);
+}
+
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3,
+.sl-markdown-content h4,
+.sl-markdown-content h5,
+.sl-markdown-content h6,
+.site-title {
+  font-family: var(--sb-font-heading);
+}

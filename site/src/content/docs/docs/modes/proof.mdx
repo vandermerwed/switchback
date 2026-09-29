@@ -1,0 +1,40 @@
+---
+title: Proof mode
+description: Print a document as numbered paragraphs with wide margins, and mark it up by hand.
+---
+
+Proof mode is for a document, not code: a draft, a spec, an essay, a plan, or even the agent's
+own last long answer. A pull request or a diff gets redirected to your usual code-review tools
+instead — the agent will not fetch or print a diff as a proof.
+
+## What you say
+
+Point at what you want marked up: "print this draft so I can mark it up," a file path, or "proof
+what you just wrote." If the source is not already plain text (a PDF, a Word document, an HTML
+page), the agent extracts the text first and tells you it did, in one line.
+
+## What you get
+
+Numbered paragraphs on wide-margin pages, with a table showing what each colour of mark means and
+which pen or circled letter is yours for each one. A long document is split into parts of at most
+ten pages each, every page saying which part it is; every part gets built and handed to you
+together, never one at a time. You get a PDF (or HTML with print steps, if no PDF renderer is
+available) in a `switchback/<date>-<slug>/` folder.
+
+## What you do with the paper
+
+Give every paragraph a mark — even a tick counts as "read, nothing to add." An unmarked paragraph
+reads as one that was skimmed. Number your Ask-pen questions in the margin (Q1, Q2, …) so the
+answers can be matched back to them later, and keep your phone in another room while you read.
+
+When you are done, photograph every page flat with the page ID visible and send them all
+together.
+
+## What the agent does with your marks
+
+The read-back works through your marks in a fixed order: your numbered questions are answered
+first, then the rest — a red mark gets challenged (fact-checked, or the other side steelmanned), a
+green mark is gone deeper on, a highlighted crux re-centres the piece around it, and so on. A
+cross-out is treated as cut, a circle as locked in place, and the agent asks before it starts any
+of the research-heavy actions rather than running them all at once. The [ink page](/docs/ink/)
+has the full table of marks and what each one asks for.
