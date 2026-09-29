@@ -21,3 +21,11 @@ test("the showcase names all five styles and links a PDF for each", () => {
     assert.ok(existsSync(new URL(path, dist)), `dist/${path}`);
   }
 });
+
+test("every showcase style has a committed PDF for builds without a browser", () => {
+  for (const style of ["sitting", "series", "incubation", "ritual", "proof"]) {
+    const pdf = new URL(`../showcase/pdf/${style}.pdf`, import.meta.url);
+    assert.ok(existsSync(pdf), `site/showcase/pdf/${style}.pdf`);
+    assert.equal(readFileSync(pdf).subarray(0, 5).toString("latin1"), "%PDF-", `${style}.pdf is a PDF`);
+  }
+});

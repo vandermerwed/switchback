@@ -3,7 +3,7 @@
 // (from Task 5) the showcase workbooks. Run by `pnpm --filter @switchback/site build` (via the
 // package's own `prebuild` script) and `pnpm --filter @switchback/site dev`.
 import { execFileSync } from "node:child_process";
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildDocument, loadCatalogue, renderComponent } from "@vandermerwed/switchback";
@@ -133,6 +133,7 @@ const showcaseSpecs = [
 ];
 
 const showcaseErrors = [];
+const committedPdfsUsed = [];
 const showcaseEntries = [];
 for (const { style, label, path } of showcaseSpecs) {
   const spec = JSON.parse(readFileSync(path, "utf8"));
@@ -156,12 +157,32 @@ for (const { style, label, path } of showcaseSpecs) {
   }
 
   const outHtml = join(showcaseDir, `${style}.html`);
+  const freshPdf = join(showcaseDir, `${style}.pdf`);
+  const committedPdf = join(showcaseSrcDir, "pdf", `${style}.pdf`);
+  rmSync(freshPdf, { force: true });
   // The CLI's own `build --pdf` writes the PDF beside its own (non-embedded-fonts) HTML; that
   // HTML is then overwritten below with the embedFonts version this page actually serves.
   execFileSync(process.execPath, [cliPath, "build", path, "-o", outHtml, "--pdf", "--json"], {
     encoding: "utf8",
   });
   writeFileSync(outHtml, built.html, "utf8");
+  // A build machine without Chrome, Edge or Chromium (Cloudflare Pages' image, for one) cannot make
+  // the PDF, so it ships the committed copy in showcase/pdf/. Refresh those copies with
+  // SWITCHBACK_UPDATE_SHOWCASE_PDFS=1 on a machine that has a browser, then commit them.
+  if (existsSync(freshPdf)) {
+    if (process.env.SWITCHBACK_UPDATE_SHOWCASE_PDFS === "1") {
+      mkdirSync(join(showcaseSrcDir, "pdf"), { recursive: true });
+      copyFileSync(freshPdf, committedPdf);
+    }
+  } else if (existsSync(committedPdf)) {
+    copyFileSync(committedPdf, freshPdf);
+    committedPdfsUsed.push(style);
+  } else {
+    showcaseErrors.push(
+      `${style}: no browser to make its PDF, and no committed copy at showcase/pdf/${style}.pdf`,
+    );
+    continue;
+  }
 
   showcaseEntries.push({
     style,
@@ -179,4 +200,8 @@ if (showcaseErrors.length) {
 
 writeJson(join(generatedDir, "showcase.json"), showcaseEntries);
 
+if (committedPdfsUsed.length)
+  console.warn(
+    `generate.mjs: no browser found; used the committed PDFs for ${committedPdfsUsed.join(", ")}.`,
+  );
 console.log(`generate.mjs: wrote ${showcaseEntries.length} showcase workbooks (HTML + PDF).`);
