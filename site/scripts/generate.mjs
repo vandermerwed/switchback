@@ -3,10 +3,10 @@
 // (from Task 5) the showcase workbooks. Run by `pnpm --filter @switchback/site build` (via the
 // package's own `prebuild` script) and `pnpm --filter @switchback/site dev`.
 import { execFileSync } from "node:child_process";
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { loadCatalogue, renderComponent } from "@vandermerwed/switchback";
+import { buildDocument, loadCatalogue, renderComponent } from "@vandermerwed/switchback";
 
 const siteRoot = fileURLToPath(new URL("..", import.meta.url));
 const repoRoot = join(siteRoot, "..");
@@ -14,9 +14,14 @@ const cliPath = join(repoRoot, "packages", "switchback", "dist", "cli.js");
 
 const previewsDir = join(siteRoot, "public", "generated", "previews");
 const generatedDir = join(siteRoot, "src", "generated");
+const showcaseDir = join(siteRoot, "public", "generated", "showcase");
+const showcaseSrcDir = join(siteRoot, "showcase");
+const showcaseTmpDir = join(generatedDir, "showcase");
 
 mkdirSync(previewsDir, { recursive: true });
 mkdirSync(generatedDir, { recursive: true });
+mkdirSync(showcaseDir, { recursive: true });
+mkdirSync(showcaseTmpDir, { recursive: true });
 
 function writeJson(path, value) {
   writeFileSync(path, `${JSON.stringify(value, null, 2)}\n`, "utf8");
@@ -92,3 +97,86 @@ writeJson(join(generatedDir, "cli.json"), cliEntries);
 console.log(
   `generate.mjs: wrote ${catalogueEntries.length} previews, catalogue.json and cli.json (${cliEntries.length} commands).`,
 );
+
+// --- The showcase: one real workbook per style, built and PDF'd by the CLI itself -------
+// `switchback proof` turns showcase/proof.md into a real spec first, exactly as a user's agent
+// would; the other four styles are hand-authored specs already in the style's own shape.
+const proofSpecPath = join(showcaseTmpDir, "proof.json");
+const proofResult = JSON.parse(
+  execFileSync(
+    process.execPath,
+    [
+      cliPath,
+      "proof",
+      join(showcaseSrcDir, "proof.md"),
+      "-o",
+      proofSpecPath,
+      "--title",
+      "Should the team meet daily?",
+      "--json",
+    ],
+    { encoding: "utf8" },
+  ),
+);
+if (!proofResult.ok || proofResult.specs.length !== 1) {
+  throw new Error(
+    `generate.mjs: expected showcase/proof.md to build to exactly one proof spec, got ${proofResult.specs?.length ?? 0}`,
+  );
+}
+
+const showcaseSpecs = [
+  { style: "sitting", label: "Sitting", path: join(showcaseSrcDir, "sitting.json") },
+  { style: "series", label: "Series", path: join(showcaseSrcDir, "series.json") },
+  { style: "incubation", label: "Incubation", path: join(showcaseSrcDir, "incubation.json") },
+  { style: "ritual", label: "Ritual", path: join(showcaseSrcDir, "ritual.json") },
+  { style: "proof", label: "Proof", path: proofResult.specs[0] },
+];
+
+const showcaseErrors = [];
+const showcaseEntries = [];
+for (const { style, label, path } of showcaseSpecs) {
+  const spec = JSON.parse(readFileSync(path, "utf8"));
+
+  // Validate the way a user's agent would before building, so a broken example fails loudly here
+  // rather than shipping a silently-invalid workbook.
+  const validation = JSON.parse(
+    execFileSync(process.execPath, [cliPath, "validate", path, "--json"], { encoding: "utf8" }),
+  );
+  const validationErrors = (validation.diagnostics ?? []).filter((d) => d.level === "error");
+  if (validationErrors.length) {
+    showcaseErrors.push(`${style}: ${JSON.stringify(validationErrors)}`);
+    continue;
+  }
+
+  const built = buildDocument(spec, { embedFonts: true });
+  const buildErrors = built.diagnostics.filter((d) => d.level === "error");
+  if (buildErrors.length || !built.html) {
+    showcaseErrors.push(`${style}: ${JSON.stringify(buildErrors.length ? buildErrors : built.diagnostics)}`);
+    continue;
+  }
+
+  const outHtml = join(showcaseDir, `${style}.html`);
+  // The CLI's own `build --pdf` writes the PDF beside its own (non-embedded-fonts) HTML; that
+  // HTML is then overwritten below with the embedFonts version this page actually serves.
+  execFileSync(process.execPath, [cliPath, "build", path, "-o", outHtml, "--pdf", "--json"], {
+    encoding: "utf8",
+  });
+  writeFileSync(outHtml, built.html, "utf8");
+
+  showcaseEntries.push({
+    style,
+    label,
+    title: spec.title,
+    subtitle: spec.subtitle ?? null,
+    pageCount: built.sidecar?.pages.length ?? spec.pages.length,
+    html: `/generated/showcase/${style}.html`,
+    pdf: `/generated/showcase/${style}.pdf`,
+  });
+}
+if (showcaseErrors.length) {
+  throw new Error(`generate.mjs: could not build every showcase workbook:\n${showcaseErrors.join("\n")}`);
+}
+
+writeJson(join(generatedDir, "showcase.json"), showcaseEntries);
+
+console.log(`generate.mjs: wrote ${showcaseEntries.length} showcase workbooks (HTML + PDF).`);

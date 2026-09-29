@@ -1,0 +1,61 @@
+{
+  "switchback": 1,
+  "style": "sitting",
+  "title": "Should we rewrite the sync feature?",
+  "subtitle": "One question: is sync worth what it costs to keep?",
+  "paper": "A4",
+  "round": 1,
+  "timebox": "45 min",
+  "pages": [
+    {
+      "id": "W1-P1",
+      "component": "cover",
+      "data": {
+        "question": "Is sync worth what it costs to keep?",
+        "timebox": "45 min",
+        "howto": [
+          "Phone in another room.",
+          "Work in ink, in the colours on this page.",
+          "When the time is up, stop mid-sentence.",
+          "Photograph every page and send them back."
+        ]
+      }
+    },
+    {
+      "id": "W1-P2",
+      "component": "brain-dump",
+      "title": "Empty the tank",
+      "prompt": "Everything you currently think about sync, before you sort any of it.",
+      "data": { "minutes": 8 }
+    },
+    {
+      "id": "W1-P3",
+      "component": "options-criteria",
+      "title": "Weigh the paths",
+      "prompt": "Score each path against what actually matters here, then a gut score in a second pen.",
+      "data": {
+        "options": ["Rewrite from scratch", "Patch the worst parts", "Leave it alone"],
+        "criteria": ["Reliability", "Time to ship", "Team morale"]
+      }
+    },
+    {
+      "id": "W1-P4",
+      "component": "pre-mortem",
+      "title": "It is six months from now and it failed",
+      "prompt": "Imagine the rewrite shipped and made things worse. Write the post-mortem.",
+      "data": { "subject": "the sync rewrite", "horizon": "6 months" }
+    },
+    {
+      "id": "W1-P5",
+      "component": "commit"
+    },
+    {
+      "id": "W1-P6",
+      "component": "question-queue"
+    },
+    {
+      "id": "W1-P7",
+      "component": "return-checklist"
+    }
+  ]
+}

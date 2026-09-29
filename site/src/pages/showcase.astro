@@ -1,0 +1,237 @@
+---
+import { existsSync, readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import "../styles/tokens.css";
+import workbooks from "../generated/showcase.json";
+
+const STYLE_INTENT = {
+  sitting: "One session: decide, diagnose or plan, and leave having committed to a first move.",
+  series: "Three spaced rounds for remembering something over weeks, each opening with recall.",
+  incubation: "A generating half, a real break, then a judging half — for naming or inventing.",
+  ritual: "One identical page, every time, so change becomes visible by flipping back.",
+  proof: "A document printed as numbered paragraphs with wide margins, built to mark up by hand.",
+};
+
+// The home page's illustrative marked example (Ask/Stop/Crux over a real printed page, with its
+// read-back) is authored by the home-page task, in another worktree at the time this page was
+// built. This section renders only once those files exist, so it activates on its own once the
+// two pieces of work are merged — nothing here needs to change for that to happen.
+const readbackPath = fileURLToPath(new URL("../../example/readback.json", import.meta.url));
+const examplePagePath = fileURLToPath(new URL("../../public/example/generated-page.png", import.meta.url));
+const illustrative =
+  existsSync(readbackPath) && existsSync(examplePagePath)
+    ? JSON.parse(readFileSync(readbackPath, "utf8"))
+    : null;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Showcase — Switchback</title>
+    <meta
+      name="description"
+      content="A real printed workbook for each style, built by the CLI itself, with the PDF to download."
+    />
+  </head>
+  <body>
+    <nav class="site-nav">
+      <a href="/">Switchback</a>
+      <a href="/docs/">Docs</a>
+      <a href="/showcase/">Showcase</a>
+      <a href="https://github.com/vandermerwed/switchback">GitHub</a>
+    </nav>
+    <main class="showcase">
+      <h1>Showcase</h1>
+      <p class="lede">
+        One real workbook per style, printed by <code>@vandermerwed/switchback</code> at build
+        time — the preview beside each one is the renderer's own HTML, not a mockup, and the PDF
+        beside it is the same file a printer would receive.
+      </p>
+
+      {
+        workbooks.map((workbook) => (
+          <section class="workbook" id={workbook.style}>
+            <h2>{workbook.label}</h2>
+            <p class="intent">{STYLE_INTENT[workbook.style]}</p>
+            <p class="title">
+              <strong>{workbook.title}</strong>
+              {workbook.subtitle && ` — ${workbook.subtitle}`}
+            </p>
+            <div
+              class="preview-frame"
+              data-preview
+              data-pages="2"
+              style={`aspect-ratio: 210 / ${297 * Math.min(2, workbook.pageCount)}`}
+            >
+              <iframe loading="lazy" title={`Preview of ${workbook.title}`} src={workbook.html} />
+            </div>
+            <p class="page-count">
+              {workbook.pageCount} page{workbook.pageCount === 1 ? "" : "s"} in this round.
+            </p>
+            <a class="download" href={workbook.pdf}>
+              Download the PDF
+            </a>
+          </section>
+        ))
+      }
+
+      {
+        illustrative && (
+          <section class="workbook illustrative">
+            <h2>A marked page, read back</h2>
+            <p class="illustrative-label">Illustrative example</p>
+            <p>
+              Not one of the workbooks above — a demonstration of what comes back after a real
+              sitting: a printed page in a reader's own ink, and the read-back the agent produces
+              from it.
+            </p>
+            <img
+              src="/example/generated-page.png"
+              alt={`Page ${illustrative.pageId}, marked up: ${illustrative.printedPrompt}`}
+              class="illustrative-page"
+            />
+            <ul class="marks">
+              {illustrative.marks?.map((mark) => (
+                <li>
+                  <strong>{mark.label}</strong> ({mark.role}): {mark.text}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+    </main>
+    <footer class="site-footer">
+      <a href="/changelog/">Changelog</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="https://www.npmjs.com/package/@vandermerwed/switchback">npm</a>
+    </footer>
+  </body>
+</html>
+
+<script>
+  function fitPreview(frame: HTMLElement) {
+    const iframe = frame.querySelector("iframe");
+    if (!iframe) return;
+    const wantedPages = Number(frame.dataset.pages ?? "1");
+    const scale = () => {
+      const doc = iframe.contentDocument;
+      const pages = doc ? Array.from(doc.querySelectorAll<HTMLElement>(".sb-page")) : [];
+      if (!pages.length) return;
+      const shown = pages.slice(0, Math.min(wantedPages, pages.length));
+      const first = shown[0]!.getBoundingClientRect();
+      const last = shown[shown.length - 1]!.getBoundingClientRect();
+      const width = first.width;
+      const height = last.bottom - first.top;
+      if (!width || !height) return;
+      const factor = frame.clientWidth / width;
+      iframe.style.width = `${width}px`;
+      iframe.style.height = `${height}px`;
+      iframe.style.transform = `scale(${factor})`;
+      frame.style.height = `${height * factor}px`;
+    };
+    iframe.addEventListener("load", scale);
+    window.addEventListener("resize", scale);
+  }
+  document.querySelectorAll<HTMLElement>("[data-preview]").forEach(fitPreview);
+</script>
+
+<style>
+  body {
+    background: var(--sb-paper);
+    color: var(--sb-ink);
+    font-family: var(--sb-font-body);
+    margin: 0;
+    padding: 0 1.5rem 3rem;
+  }
+  .site-nav,
+  .site-footer {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 1.5rem 0;
+  }
+  .site-nav a,
+  .site-footer a {
+    color: var(--sb-forest);
+    text-decoration: none;
+  }
+  .site-nav a:hover,
+  .site-footer a:hover {
+    text-decoration: underline;
+  }
+  .showcase {
+    max-width: 45rem;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .showcase h1,
+  .showcase h2 {
+    font-family: var(--sb-font-heading);
+    color: var(--sb-forest-deep);
+  }
+  .lede {
+    color: var(--sb-ink-soft);
+  }
+  .workbook {
+    border-top: 1px solid var(--sb-rule);
+    padding: 2rem 0;
+  }
+  .intent {
+    color: var(--sb-ink-soft);
+  }
+  .preview-frame {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid var(--sb-rule);
+    border-radius: 0.4rem;
+    background: #fff;
+    margin: 1rem 0;
+  }
+  .preview-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    transform-origin: top left;
+    max-width: none;
+  }
+  .page-count {
+    font-size: 0.9rem;
+    color: var(--sb-ink-soft);
+  }
+  .download {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--sb-forest);
+  }
+  .illustrative-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--sb-trail);
+    border: 1px solid var(--sb-trail);
+    border-radius: 999px;
+    padding: 0.15rem 0.6rem;
+  }
+  .illustrative-page {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--sb-rule);
+  }
+  .marks {
+    list-style: none;
+    padding: 0;
+  }
+  .marks li {
+    padding: 0.35rem 0;
+    border-top: 1px solid var(--sb-rule);
+  }
+  .site-footer {
+    border-top: 1px solid var(--sb-rule);
+    color: var(--sb-ink-soft);
+  }
+</style>

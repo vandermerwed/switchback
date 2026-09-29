@@ -1,0 +1,61 @@
+{
+  "switchback": 1,
+  "style": "series",
+  "title": "Distributed systems, for the interview",
+  "subtitle": "Round 1 of 3: what do I already remember, before I open a single note?",
+  "paper": "A4",
+  "round": 1,
+  "timebox": "30 min",
+  "pages": [
+    {
+      "id": "W1-P1",
+      "component": "cover",
+      "data": {
+        "question": "What do I actually remember about distributed systems?",
+        "timebox": "30 min",
+        "howto": [
+          "Phone in another room.",
+          "Work in ink, in the colours on this page.",
+          "When the time is up, stop mid-sentence.",
+          "Photograph every page and send them back."
+        ]
+      }
+    },
+    {
+      "id": "W1-P2",
+      "component": "free-recall",
+      "variant": "cued",
+      "title": "What I remember, unprompted",
+      "prompt": "Write everything you can recall about consensus, replication and failure before you check a single note.",
+      "data": {
+        "topic": "Distributed systems",
+        "prompts": ["Consensus", "Replication", "Partition tolerance", "Consistency models"]
+      }
+    },
+    {
+      "id": "W1-P3",
+      "component": "node-map",
+      "title": "The shape of the subject",
+      "prompt": "Put the topic in the centre and grow the map from what W1-P2 surfaced.",
+      "data": {
+        "center": "Distributed systems",
+        "hint": "Start from the terms you recalled, not the ones you wish you had."
+      }
+    },
+    {
+      "id": "W1-P4",
+      "component": "feynman",
+      "title": "Explain it simply",
+      "prompt": "Explain replication to someone who has never heard of it, in plain words.",
+      "data": { "subject": "replication" }
+    },
+    {
+      "id": "W1-P5",
+      "component": "question-queue"
+    },
+    {
+      "id": "W1-P6",
+      "component": "return-checklist"
+    }
+  ]
+}
