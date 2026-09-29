@@ -72,5 +72,5 @@ Components that need scissors or tape fall back to variants that don't.
 
 ## Licence
 
-MIT, except the Business Model Canvas and Lean Canvas presets, which are CC BY-SA 3.0 (see
-`LICENSE`). Fonts: Fraunces, Inter, and JetBrains Mono under the SIL Open Font License (see `assets/fonts`).
+Apache License 2.0, except the Business Model Canvas and Lean Canvas presets, which are CC BY-SA
+3.0 (see `LICENSE` and `NOTICE`). Fonts: Fraunces, Inter, and JetBrains Mono under the SIL Open Font License (see `assets/fonts`).
