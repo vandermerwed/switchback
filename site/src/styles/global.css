@@ -131,7 +131,7 @@ a:focus-visible {
 .hero-copy h1 {
   font-family: var(--sb-font-heading);
   font-weight: 600;
-  font-size: clamp(3.3rem, 4.7vw, 5.8rem);
+  font-size: clamp(3.3rem, 4.7vw, 4.4rem);
   line-height: 1.01;
   letter-spacing: -0.035em;
   text-wrap: balance;
@@ -177,15 +177,27 @@ a:focus-visible {
 }
 .return-route path {
   fill: none;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+.return-route .route {
   stroke: var(--sb-trail);
   stroke-width: 4;
   stroke-dasharray: 11 10;
-  stroke-linecap: round;
 }
-.return-route circle {
-  fill: var(--sb-trail);
+.return-route .route-ring {
   stroke: var(--sb-paper);
-  stroke-width: 4;
+  stroke-width: 26;
+}
+.return-route .route-dot {
+  stroke: var(--sb-trail);
+  stroke-width: 18;
+}
+/* The prompt-to-page leg needs the gutter beside the headline, which is wide enough from 1440px. */
+@media (max-width: 1439px) {
+  .return-route .route-out {
+    display: none;
+  }
 }
 .hero-scene {
   position: absolute;
@@ -524,6 +536,15 @@ a:focus-visible {
   color: white;
 }
 
+/* Between the tablet layout and 1280px the scene is tight: move the prompt left and narrow the page. */
+@media (min-width: 951px) and (max-width: 1279px) {
+  .agent-prompt {
+    left: 29%;
+  }
+  .hero-paper {
+    width: 31vw;
+  }
+}
 @media (max-width: 950px) {
   .hero {
     min-height: 1100px;
@@ -550,7 +571,7 @@ a:focus-visible {
     width: 195px;
   }
   .return-route {
-    opacity: 0.58;
+    display: none;
   }
   .worked-example {
     grid-template-columns: 1fr;
