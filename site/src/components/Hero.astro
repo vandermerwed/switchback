@@ -1,6 +1,5 @@
 ---
 import readback from "../../example/readback.json";
-import ContourField from "./ContourField.astro";
 import SiteNav from "./SiteNav.astro";
 
 const ask = readback.marks.find((mark) => mark.role === "ask");
@@ -9,7 +8,6 @@ const crux = readback.marks.find((mark) => mark.role === "crux");
 ---
 
 <section class="hero" aria-labelledby="home-title">
-  <ContourField />
   <div class="hero-glow" aria-hidden="true"></div>
   <SiteNav />
   <svg class="return-route" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">

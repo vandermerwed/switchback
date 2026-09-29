@@ -7,10 +7,7 @@
   "style": "sitting",
   "round": 1,
   "paper": "A4",
-  "kit_source": [
-    "minimum",
-    "profile"
-  ],
+  "kit_source": ["minimum", "profile"],
   "pens": {
     "ask": {
       "pen": "blue"

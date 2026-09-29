@@ -1,8 +1,8 @@
 ---
 import "../styles/global.css";
-import workbooks from "../generated/showcase.json";
 import SiteNav from "../components/SiteNav.astro";
 import WorkedExample from "../components/WorkedExample.astro";
+import workbooks from "../generated/showcase.json";
 
 const STYLE_INTENT = {
   sitting: "One session to make a first move.",
@@ -62,21 +62,23 @@ const STYLE_INTENT = {
 
 <style>
   .gallery { max-width: 1600px; margin: auto; }
-  .gallery-intro { padding: clamp(4rem, 7vw, 7rem) clamp(24px, 4vw, 70px) 4rem; border-bottom: 1px solid var(--sb-rule); }
-  .gallery-intro h1, .marked-intro h2 { font: 500 clamp(3.5rem, 7vw, 7rem)/1.04 var(--sb-font-heading); letter-spacing: -.035em; margin: 0 0 1.5rem; }
+  .gallery-intro { padding: clamp(3rem, 5vw, 5rem) clamp(24px, 4vw, 70px) 2.5rem; border-bottom: 1px solid var(--sb-rule); }
+  .gallery-intro h1, .marked-intro h2 { font: 500 clamp(3.5rem, 6.5vw, 6rem)/1.04 var(--sb-font-heading); letter-spacing: -.04em; margin: 0 0 1.5rem; }
   .gallery-intro p, .marked-intro p { max-width: 65ch; line-height: 1.7; color: var(--sb-ink-soft); font-size: 1.05rem; }
   .gallery-grid { display: grid; grid-template-columns: minmax(180px, .27fr) minmax(0, 1fr); gap: clamp(2rem, 4vw, 5rem); padding: 0 clamp(24px, 4vw, 70px); }
+  .gallery-examples, .workbook, .page-strip { min-width: 0; max-width: 100%; }
   .gallery-index { position: sticky; top: 1rem; align-self: start; padding-top: 3rem; display: grid; }
   .gallery-index a { display: grid; gap: .2rem; padding: 1rem 0; border-top: 1px solid var(--sb-rule); text-decoration: none; }
   .gallery-index a:hover span { text-decoration: underline; }
   .gallery-index span { font-family: var(--sb-font-heading); font-size: 1.3rem; }
   .gallery-index small { color: var(--sb-ink-soft); line-height: 1.45; }
   .workbook { padding: 5rem 0 7rem; border-bottom: 1px solid var(--sb-rule); scroll-margin-top: 1rem; }
+  .workbook:first-child { padding-top: 2.75rem; }
   .workbook-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
   .workbook-heading h2 { font: 500 clamp(3rem, 5vw, 5rem)/1.1 var(--sb-font-heading); letter-spacing: -.03em; margin: 0 0 2rem; }
   .workbook-heading p, .request-label { font-size: .8rem; color: var(--sb-ink-soft); }
   .request-label { text-transform: uppercase; letter-spacing: .12em; margin-bottom: .5rem; }
-  blockquote { max-width: 29ch; font: 500 clamp(1.5rem, 2.6vw, 2.5rem)/1.3 var(--sb-font-heading); margin: 0 0 1.5rem; }
+  blockquote { max-width: 29ch; font: 500 clamp(1.5rem, 2.3vw, 2.2rem)/1.3 var(--sb-font-heading); letter-spacing: -.02em; margin: 0 0 1.5rem; }
   .style-reason { max-width: 60ch; color: var(--sb-ink-soft); line-height: 1.65; margin: 0 0 2.5rem; }
   .style-reason strong { color: var(--sb-ink); }
   .page-strip { display: flex; gap: .8rem; overflow-x: auto; padding: 0 0 1rem; margin-bottom: 2.5rem; scrollbar-color: var(--sb-forest) var(--sb-rule); }
@@ -92,6 +94,6 @@ const STYLE_INTENT = {
   .feature-caption a { color: var(--sb-ink); font-weight: 600; text-underline-offset: .25em; }
   .marked-intro { padding: 6rem clamp(24px, 4vw, 70px) 0; }
   .gallery :global(.worked-example) { padding-top: 2rem; }
-  @media (max-width: 900px) { .gallery-grid { grid-template-columns: 1fr; } .gallery-index { position: static; display: flex; overflow-x: auto; gap: 1.5rem; padding: 1.5rem 0 0; } .gallery-index a { flex: 0 0 140px; } .workbook { padding-top: 3rem; } }
+  @media (max-width: 900px) { .gallery-grid { grid-template-columns: minmax(0, 1fr); } .gallery-index { position: static; display: flex; overflow-x: auto; gap: 1.5rem; padding: 1.5rem 0 0; min-width: 0; max-width: 100%; } .gallery-index a { flex: 0 0 140px; } .workbook { padding-top: 3rem; } }
   @media (max-width: 640px) { .gallery-intro, .marked-intro { padding-inline: 20px; } .gallery-grid { padding-inline: 20px; } .gallery-intro h1, .marked-intro h2 { font-size: 3.4rem; } .feature-layout { display: block; } .feature-paper { width: 100%; } .feature-paper iframe { transform: scale(.44); } .feature-caption { padding-top: 1rem; } .workbook-heading { display: block; } .workbook-heading h2 { margin-bottom: .2rem; } .workbook-heading p { margin-bottom: 2rem; } }
 </style>

@@ -37,17 +37,11 @@ a:focus-visible {
   min-height: 820px;
   overflow: hidden;
   color: #f7f9f6;
-  background: var(--sb-forest);
+  background:
+    var(--sb-forest)
+    image-set(url("/images/terrain-sani-1440.webp") 1x, url("/images/terrain-sani-2880.webp") 2x) center
+    center / cover no-repeat;
   isolation: isolate;
-}
-.contour-field {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  color: #8fada7;
-  opacity: 0.23;
-  z-index: -2;
 }
 .hero-glow {
   position: absolute;
@@ -167,7 +161,9 @@ a:focus-visible {
   stroke: var(--sb-trail);
   stroke-width: 18;
 }
-.mobile-route { display: none; }
+.mobile-route {
+  display: none;
+}
 .hero-scene {
   position: absolute;
   inset: 0;
@@ -243,9 +239,9 @@ a:focus-visible {
 .paper-mark small {
   align-self: center;
   color: #2e342e;
-  background: rgba(255,255,255,.92);
-  padding: .2em .3em;
-  font: 600 .55em/1.2 var(--sb-font-body);
+  background: rgba(255, 255, 255, 0.92);
+  padding: 0.2em 0.3em;
+  font: 600 0.55em / 1.2 var(--sb-font-body);
   font-style: normal;
 }
 .paper-ask {
@@ -413,7 +409,7 @@ a:focus-visible {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 600;
-  color: var(--sb-forest);
+  color: var(--sb-ink-soft);
 }
 .example-readback dd {
   margin: 0.5rem 0 0;
@@ -440,19 +436,67 @@ a:focus-visible {
   color: var(--sb-ink);
   font-size: 0.9rem;
 }
-.install-block { min-width: 0; border-top: 1px solid var(--sb-rule); border-bottom: 1px solid var(--sb-rule); }
-.install-tabs { display: none; }
-.install-block.is-enhanced .install-tabs { display: flex; gap: 1.5rem; overflow-x: auto; border-bottom: 1px solid var(--sb-rule); }
-.install-tabs button { flex: none; border: 0; border-bottom: 3px solid transparent; padding: 1rem .25rem; color: var(--sb-ink-soft); background: transparent; font: 600 .9rem var(--sb-font-body); cursor: pointer; }
-.install-tabs button[aria-selected="true"] { color: var(--sb-ink); border-bottom-color: var(--sb-forest); }
-.install-tabs button:focus-visible, .copy-button:focus-visible { outline: 3px solid var(--sb-trail); outline-offset: 2px; }
-.install-panel { padding: 1.5rem 0 2rem; border-bottom: 1px solid var(--sb-rule); }
-.install-panel:last-child { border-bottom: 0; }
-.install-panel[hidden] { display: none; }
-.install-panel h3 { margin: 0 0 .5rem; font: 500 1.6rem var(--sb-font-heading); }
-.install-panel > p { margin: 0 0 1.5rem; color: var(--sb-ink-soft); line-height: 1.55; }
-.step-label { margin: 1rem 0 .55rem; color: var(--sb-ink); font-size: .88rem; font-weight: 600; }
-.command-step + .command-step { margin-top: 1.25rem; }
+.install-block {
+  min-width: 0;
+  border-top: 1px solid var(--sb-rule);
+  border-bottom: 1px solid var(--sb-rule);
+}
+.install-tabs {
+  display: none;
+}
+.install-block.is-enhanced .install-tabs {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--sb-rule);
+}
+.install-tabs button {
+  flex: none;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  padding: 1rem 0.25rem;
+  color: var(--sb-ink-soft);
+  background: transparent;
+  font: 600 0.9rem var(--sb-font-body);
+  cursor: pointer;
+}
+.install-tabs button[aria-selected="true"] {
+  color: var(--sb-ink);
+  border-bottom-color: var(--sb-forest);
+}
+.install-tabs button:focus-visible,
+.copy-button:focus-visible {
+  outline: 3px solid var(--sb-trail);
+  outline-offset: 2px;
+}
+.install-panel {
+  padding: 1.5rem 0 2rem;
+  border-bottom: 1px solid var(--sb-rule);
+}
+.install-panel:last-child {
+  border-bottom: 0;
+}
+.install-panel[hidden] {
+  display: none;
+}
+.install-panel h3 {
+  margin: 0 0 0.5rem;
+  font: 500 1.6rem var(--sb-font-heading);
+}
+.install-panel > p {
+  margin: 0 0 1.5rem;
+  color: var(--sb-ink-soft);
+  line-height: 1.55;
+}
+.step-label {
+  margin: 1rem 0 0.55rem;
+  color: var(--sb-ink);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.command-step + .command-step {
+  margin-top: 1.25rem;
+}
 .install-command {
   display: flex;
   align-items: stretch;
@@ -481,6 +525,7 @@ a:focus-visible {
 }
 .copy-button {
   flex: none;
+  display: none;
   padding: 0 0.9rem;
   border: 1px solid #b9c6ba;
   border-radius: 2px;
@@ -489,6 +534,9 @@ a:focus-visible {
   font-size: 0.75rem;
   font-weight: 600;
   cursor: pointer;
+}
+.install-block.is-enhanced .copy-button {
+  display: block;
 }
 .copy-button:hover {
   background: var(--sb-paper);
@@ -680,32 +728,98 @@ a:focus-visible {
   }
   .install-command pre {
     font-size: 0.72rem;
-    padding: .85rem .7rem;
+    padding: 0.85rem 0.7rem;
   }
-  .install-command { gap: .5rem; min-width: 0; }
-  .install-command code { overflow-wrap: anywhere; white-space: pre-wrap; }
-  .copy-button { padding: 0 .65rem; }
+  .install-command {
+    gap: 0.5rem;
+    min-width: 0;
+  }
+  .install-command code {
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+  }
+  .copy-button {
+    padding: 0 0.65rem;
+  }
   .site-footer {
     flex-direction: column;
     padding: 2rem 20px;
   }
 }
 @media (max-width: 950px) {
-  .hero { min-height: 0; padding-bottom: 4rem; }
-  .hero-copy { width: min(100%, 720px); padding: 4rem clamp(20px, 5vw, 58px) 0; }
-  .hero-scene { position: relative; inset: auto; display: flex; flex-direction: column; align-items: stretch; gap: 1.75rem; padding: 3rem clamp(20px, 5vw, 58px) 0; }
-  .hero-scene::before { display: none; }
-  .hero-scene > :not(.mobile-route) { position: relative; z-index: 1; }
-  .agent-prompt, .hero-paper, .agent-readback { position: relative; inset: auto; }
-  .agent-prompt { width: min(70%, 240px); margin-left: 0; align-self: flex-start; }
-  .hero-paper { width: min(68vw, 500px); max-width: 100%; margin: 0 auto; }
-  .agent-readback { width: min(70%, 280px); align-self: flex-end; }
-  .return-route { display: none; }
-  .mobile-route { display: block; position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-  .mobile-route path { fill: none; stroke: var(--sb-trail); stroke-width: 2; stroke-dasharray: 3 2; vector-effect: non-scaling-stroke; }
+  .hero {
+    min-height: 0;
+    padding-bottom: 4rem;
+  }
+  .hero-copy {
+    width: min(100%, 720px);
+    padding: 4rem clamp(20px, 5vw, 58px) 0;
+  }
+  .hero-scene {
+    position: relative;
+    inset: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.75rem;
+    padding: 3rem clamp(20px, 5vw, 58px) 0;
+  }
+  .hero-scene::before {
+    display: none;
+  }
+  .hero-scene > :not(.mobile-route) {
+    position: relative;
+    z-index: 1;
+  }
+  .agent-prompt,
+  .hero-paper,
+  .agent-readback {
+    position: relative;
+    inset: auto;
+  }
+  .agent-prompt {
+    width: min(70%, 240px);
+    margin-left: 0;
+    align-self: flex-start;
+  }
+  .hero-paper {
+    width: min(68vw, 500px);
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .agent-readback {
+    width: min(70%, 280px);
+    align-self: flex-end;
+  }
+  .return-route {
+    display: none;
+  }
+  .mobile-route {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  .mobile-route path {
+    fill: none;
+    stroke: var(--sb-trail);
+    stroke-width: 2;
+    stroke-dasharray: 3 2;
+    vector-effect: non-scaling-stroke;
+  }
 }
 @media (max-width: 640px) {
-  .hero-paper { width: min(100%, 470px); }
+  .hero-paper {
+    width: min(100%, 470px);
+  }
+}
+@media (max-width: 600px) {
+  .hero {
+    background-image: url("/images/terrain-sani-mobile-780.webp");
+    background-position: center top;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

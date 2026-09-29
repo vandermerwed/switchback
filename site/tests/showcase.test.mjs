@@ -32,7 +32,9 @@ test("every showcase style has a committed PDF for builds without a browser", ()
 
 test("the gallery presents the request and every renderer page without JavaScript", () => {
   const html = readFileSync(new URL("showcase/index.html", dist), "utf8");
-  const entries = JSON.parse(readFileSync(new URL("../src/generated/showcase.json", import.meta.url), "utf8"));
+  const entries = JSON.parse(
+    readFileSync(new URL("../src/generated/showcase.json", import.meta.url), "utf8"),
+  );
   assert.equal(entries.length, 5);
   for (const entry of entries) {
     assert.ok(html.includes(entry.request), `${entry.style} request is visible`);

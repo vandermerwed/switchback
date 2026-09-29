@@ -16,7 +16,7 @@ import installOptions from "../data/install.json";
       <h3 id={`heading-${option.id}`}>{option.label}</h3>
       <p>{option.description}</p>
       {option.commands.map((command, index) => <div class="command-step">
-        {option.id === "claude" && <p class="step-label">{index === 0 ? "First add the marketplace" : "Then install it"}</p>}
+        {option.id === "claude" && <p class="step-label">{index === 0 ? "First add the marketplace" : "Then install it:"}</p>}
         <div class="install-command"><pre tabindex="0"><code>{command}</code></pre><button type="button" class="copy-button" data-copy={command} aria-label={`Copy ${command}`}>Copy</button></div>
       </div>)}
     </section>)}
@@ -26,6 +26,7 @@ import installOptions from "../data/install.json";
   <span>Switchback · paper back to the agent</span>
   <a href="/docs/">Read the docs</a>
   <a href="/privacy/">Privacy</a>
+  <small>Terrain: Sani Pass, Drakensberg. Elevation data courtesy of the U.S. Geological Survey.</small>
 </footer>
 
 <script>

@@ -48,7 +48,11 @@ test("the install section has three readable routes with commands from one data 
 });
 
 test("every install command has a copy button", () => {
-  for (const option of installOptions) for (const command of option.commands) {
-    assert.ok(html.includes(`aria-label="Copy ${command}"`), `${command} has a copy button labelled for it`);
-  }
+  for (const option of installOptions)
+    for (const command of option.commands) {
+      assert.ok(
+        html.includes(`aria-label="Copy ${command}"`),
+        `${command} has a copy button labelled for it`,
+      );
+    }
 });

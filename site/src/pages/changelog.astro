@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
-import SiteNav from "../components/SiteNav.astro";
 import { Content } from "../../../CHANGELOG.md";
+import SiteNav from "../components/SiteNav.astro";
 ---
 
 <html lang="en">
@@ -41,7 +41,7 @@ import { Content } from "../../../CHANGELOG.md";
   }
   .site-nav a,
   .site-footer a {
-    color: var(--sb-forest);
+    color: #dce8df;
     text-decoration: none;
   }
   .site-nav a:hover,
@@ -56,13 +56,13 @@ import { Content } from "../../../CHANGELOG.md";
   .changelog :global(h1),
   .changelog :global(h2) {
     font-family: var(--sb-font-heading);
-    color: var(--sb-forest-deep);
+    color: var(--sb-ink);
   }
   .changelog :global(a) {
-    color: var(--sb-forest);
+    color: var(--sb-ink);
   }
   .site-footer {
     border-top: 1px solid var(--sb-rule);
-    color: var(--sb-ink-soft);
+    color: #dce8df;
   }
 </style>
