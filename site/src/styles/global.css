@@ -216,7 +216,7 @@ a:focus-visible {
   position: relative;
   aspect-ratio: 210 / 297;
   background: white;
-  color: var(--sb-ink);
+  color: #111411;
 }
 .marked-paper > img {
   display: block;
@@ -230,7 +230,7 @@ a:focus-visible {
   right: 8%;
   display: flex;
   align-items: baseline;
-  gap: 4%;
+  gap: 3%;
   font-family: var(--sb-font-heading);
   font-style: italic;
   font-size: clamp(0.77rem, 1.25vw, 1.17rem);
@@ -239,12 +239,19 @@ a:focus-visible {
 }
 .paper-mark b {
   flex: none;
-  width: 19%;
+  width: 14%;
   font-weight: 600;
-  text-transform: uppercase;
 }
 .paper-mark span {
   max-width: 70%;
+}
+.paper-mark small {
+  align-self: center;
+  color: #2e342e;
+  background: rgba(255,255,255,.92);
+  padding: .2em .3em;
+  font: 600 .55em/1.2 var(--sb-font-body);
+  font-style: normal;
 }
 .paper-ask {
   top: 25%;
@@ -253,24 +260,25 @@ a:focus-visible {
 .paper-ask b {
   border: 2px solid currentColor;
   border-radius: 50%;
-  padding: 0.2em 0.05em;
+  padding: 0.22em 0.04em;
   text-align: center;
 }
 .paper-stop {
   top: 41%;
   color: var(--sb-stop);
 }
-.paper-stop b {
+.paper-stop span {
   text-decoration: underline;
   text-decoration-thickness: 2px;
+  text-decoration-color: currentColor;
 }
 .paper-crux {
   top: 57%;
   color: #18231b;
 }
-.paper-crux b {
+.paper-crux span {
   background: var(--sb-crux);
-  padding: 0.15em 0.1em;
+  padding: 0.15em 0.25em;
   transform: rotate(-3deg);
 }
 .hero-paper figcaption {

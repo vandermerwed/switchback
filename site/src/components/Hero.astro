@@ -35,9 +35,9 @@ const crux = readback.marks.find((mark) => mark.role === "crux");
     <figure class="hero-paper">
       <div class="marked-paper">
         <img src="/example/generated-page.png" width="1588" height="2246" alt="Unmarked Switchback page W1-P2, Before the next handoff, printed with the prompt What is the decision we are avoiding?" />
-        <div class="paper-mark paper-ask"><b>{ask?.label}</b><span>{ask?.text}</span></div>
-        <div class="paper-mark paper-stop"><b>{stop?.label}</b><span>{stop?.text}</span></div>
-        <div class="paper-mark paper-crux"><b>{crux?.label}</b><span>{crux?.text}</span></div>
+        <div class="paper-mark paper-ask"><b>{ask?.mark}</b><span>{ask?.text}</span><small>{ask?.label}</small></div>
+        <div class="paper-mark paper-stop"><span>{stop?.text}</span><small>{stop?.label}</small></div>
+        <div class="paper-mark paper-crux"><span>{crux?.text}</span><small>{crux?.label}</small></div>
       </div>
       <figcaption>Illustrative example · W1-P2 · marks authored for this demonstration</figcaption>
     </figure>

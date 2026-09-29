@@ -1,13 +1,16 @@
 {
   "switchback": 1,
   "cli": "0.1.0",
-  "built_at": "2026-09-29T06:51:11.731Z",
+  "built_at": "2026-09-29T11:30:28.984Z",
   "spec": "site/example/workbook.json",
   "title": "Before the next handoff",
   "style": "sitting",
   "round": 1,
   "paper": "A4",
-  "kit_source": ["minimum", "profile"],
+  "kit_source": [
+    "minimum",
+    "profile"
+  ],
   "pens": {
     "ask": {
       "pen": "blue"
@@ -80,9 +83,7 @@
       "title": "Choose the next move",
       "prompt": "What will we try, and what remains undecided?",
       "readback": "A hold is a legitimate outcome — do not push for a decision that isn't there. A commit with no 5-minute action is a wish; say so.",
-      "data": {
-        "decision": "A smaller, more deliberate v1"
-      },
+      "data": {},
       "returns": true
     },
     {
@@ -93,9 +94,7 @@
       "title": "Questions for the agent",
       "prompt": "Write what you want answered when the pages return.",
       "readback": "Answer in number order, first, before anything unasked. Blanks are not omissions.",
-      "data": {
-        "questions": ["What are we really optimizing for?"]
-      },
+      "data": {},
       "returns": true
     },
     {
@@ -106,9 +105,7 @@
       "title": "Return the pages",
       "prompt": "Photograph each page flat and send them back together.",
       "readback": "If a page is missing or the ID unreadable, ask for a re-shoot rather than guessing.",
-      "data": {
-        "shots": ["W1-P1", "W1-P2", "W1-P3", "W1-P4"]
-      },
+      "data": {},
       "returns": false
     }
   ],

@@ -2,7 +2,7 @@
   "pageId": "W1-P2",
   "printedPrompt": "What is the decision we are avoiding?",
   "marks": [
-    { "role": "ask", "label": "Ask (Q1)", "text": "What are we really optimizing for?" },
+    { "role": "ask", "label": "Ask", "mark": "Q1", "text": "What are we really optimizing for?" },
     { "role": "stop", "label": "Stop", "text": "We have not decided what to say no to" },
     { "role": "crux", "label": "Crux", "text": "Trade breadth for depth in v1" }
   ],
