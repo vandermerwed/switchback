@@ -12,8 +12,34 @@
   --sb-stop: #c0332b;
   --sb-crux: #f2d13a;
   --sb-font-body: "Inter", system-ui, sans-serif;
-  --sb-font-heading: "Fraunces", Georgia, serif;
+  --sb-font-heading: "Besley", Georgia, serif;
   --sb-font-mono: ui-monospace, "SFMono-Regular", Consolas, monospace;
+}
+@font-face {
+  font-family: Besley;
+  src: url("/fonts/besley-latin-wght-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: Besley;
+  src: url("/fonts/besley-latin-wght-italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: Inter;
+  src: url("/fonts/inter-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: Inter;
+  src: url("/fonts/inter-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
 }
 :root[data-theme="dark"] {
   --sb-paper: #142723;

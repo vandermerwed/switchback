@@ -1,31 +1,5 @@
 @import "./tokens.css";
 
-@font-face {
-  font-family: Fraunces;
-  src: url("/fonts/fraunces-latin-600-normal.woff2") format("woff2");
-  font-weight: 600;
-  font-display: swap;
-}
-@font-face {
-  font-family: Fraunces;
-  src: url("/fonts/fraunces-latin-400-italic.woff2") format("woff2");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: Inter;
-  src: url("/fonts/inter-latin-400-normal.woff2") format("woff2");
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: Inter;
-  src: url("/fonts/inter-latin-600-normal.woff2") format("woff2");
-  font-weight: 600;
-  font-display: swap;
-}
-
 *,
 *::before,
 *::after {
@@ -130,7 +104,7 @@ a:focus-visible {
 }
 .hero-copy h1 {
   font-family: var(--sb-font-heading);
-  font-weight: 600;
+  font-weight: 500;
   font-size: clamp(3.3rem, 4.7vw, 4.4rem);
   line-height: 1.01;
   letter-spacing: -0.035em;
@@ -344,7 +318,7 @@ a:focus-visible {
   max-width: 10ch;
   margin: 0 0 1.4rem;
   font-family: var(--sb-font-heading);
-  font-weight: 600;
+  font-weight: 500;
   font-size: clamp(3.4rem, 5.4vw, 5.8rem);
   line-height: 1.04;
   letter-spacing: -0.034em;
@@ -364,7 +338,7 @@ a:focus-visible {
 }
 .useful-pause h3 {
   font-family: var(--sb-font-heading);
-  font-weight: 600;
+  font-weight: 500;
   font-size: clamp(1.8rem, 2.7vw, 2.6rem);
   margin: 0 0 0.8rem;
 }
@@ -416,7 +390,7 @@ a:focus-visible {
   font-family: var(--sb-font-heading);
   font-size: clamp(1.8rem, 2.5vw, 2.8rem);
   line-height: 1.1;
-  font-weight: 600;
+  font-weight: 500;
   margin: 0 0 1rem;
 }
 .example-readback > p {
