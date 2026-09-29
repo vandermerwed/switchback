@@ -3,5 +3,5 @@
   "version": "0.1.0",
   "description": "Programmable stationery: AI-made pages you work by hand, then photograph back.",
   "author": { "name": "vandermerwed" },
-  "license": "(MIT AND CC-BY-SA-3.0)"
+  "license": "(Apache-2.0 AND CC-BY-SA-3.0)"
 }

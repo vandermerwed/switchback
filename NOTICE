@@ -1,0 +1,24 @@
+Switchback
+Copyright 2026 vandermerwed
+
+Switchback is licensed under the Apache License, Version 2.0 (see LICENSE), with the
+exception below.
+
+The Business Model Canvas and Lean Canvas presets (their zone labels, layout and attribution
+text, held in packages/switchback/presets/business-model-canvas.json and
+packages/switchback/presets/lean-canvas.json) are adaptations of works licensed under the
+Creative Commons Attribution-ShareAlike 3.0 Unported licence
+(https://creativecommons.org/licenses/by-sa/3.0/):
+
+- The Business Model Canvas by Strategyzer AG (strategyzer.com). Adapted; not endorsed by
+  Strategyzer.
+- Lean Canvas by Ash Maurya (LeanStack, leanstack.com), adapted from The Business Model Canvas
+  by Strategyzer AG. Adapted; not endorsed by LeanStack.
+
+That content, wherever it is distributed (including bundled into the CLI package's built
+output), and any page rendered from it, is licensed under CC BY-SA 3.0, not under the Apache
+License. The share-alike terms do not extend to the rest of Switchback or to anything a person
+writes on a printed page.
+
+The bundled fonts (Fraunces, Inter and JetBrains Mono) are licensed under the SIL Open Font
+License, Version 1.1. Their licence files are in packages/switchback/assets/fonts/.

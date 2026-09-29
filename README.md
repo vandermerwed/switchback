@@ -129,5 +129,5 @@ Bug reports and ideas are welcome as [issues](https://github.com/vandermerwed/sw
 
 ## Licence
 
-MIT, except the Business Model Canvas and Lean Canvas presets, which are CC BY-SA 3.0. See
-[`LICENSE`](LICENSE).
+Apache License 2.0, except the Business Model Canvas and Lean Canvas presets, which are CC BY-SA
+3.0. See [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE).

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Programmable stationery for AI agents: print-ready workbooks and proofs, adapted to the pens on your desk, read back from photos.",
   "type": "module",
-  "license": "(MIT AND CC-BY-SA-3.0)",
+  "license": "(Apache-2.0 AND CC-BY-SA-3.0)",
   "author": "vandermerwed",
   "repository": {
     "type": "git",
@@ -25,7 +25,8 @@
     "docs",
     "examples",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "NOTICE"
   ],
   "engines": {
     "node": ">=20.12"
