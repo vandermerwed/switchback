@@ -104,7 +104,7 @@ def loop():
         ("PHOTOGRAPH", 742, 347, 31, paper, 1.1),
         ("AGENT READS", 63, 551, 31, paper, 1.1),
         ("THE MARKS", 63, 586, 31, paper, 1.1),
-        ("ASK Q", 449, 230, 18, "#1f4fbf", 0),
+        ("ASK Q1", 449, 230, 18, "#1f4fbf", 0),
         ("STOP R", 449, 296, 18, "#c0332b", 0),
         ("CRUX", 449, 363, 18, ink, 0),
     ]:
@@ -151,7 +151,7 @@ def loop_mobile():
         ("PHOTOGRAPH", 209, 491, 21, paper, 0.3),
         ("AGENT READS", 20, 596, 22, paper, 0.5),
         ("THE MARKS", 20, 623, 22, paper, 0.5),
-        ("ASK Q", 149, 307, 15, "#1f4fbf", 0),
+        ("ASK Q1", 149, 307, 15, "#1f4fbf", 0),
         ("STOP R", 149, 353, 15, "#c0332b", 0),
         ("CRUX", 149, 400, 15, "#173b39", 0),
     ]:

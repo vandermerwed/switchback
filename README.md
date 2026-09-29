@@ -24,9 +24,9 @@ marks on a proof into an action queue.
 > skills should work too. Expect rough edges, and please report them in
 > [issues](https://github.com/vandermerwed/switchback/issues).
 
-<p align="center"><img src=".github/assets/sitting-page.png" width="390" alt="Unmarked Sitting workbook page W1-P2, Empty the tank, with a prompt and two columns of writing lines"></p>
+<p align="center"><img src=".github/assets/sitting-page.png" width="390" alt="Unmarked Sitting workbook cover W1-P1, with the sync question, colour-language table and instructions"></p>
 
-<p align="center"><em>Sitting workbook, page W1-P2, built by the Switchback CLI and ready to print.</em></p>
+<p align="center"><em>Sitting workbook cover W1-P1, built by the Switchback CLI and ready to print.</em></p>
 
 ## The loop
 
