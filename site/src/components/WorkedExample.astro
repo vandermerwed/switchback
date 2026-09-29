@@ -1,0 +1,42 @@
+---
+import readback from "../../example/readback.json";
+
+const ask = readback.marks.find((mark) => mark.role === "ask");
+const stop = readback.marks.find((mark) => mark.role === "stop");
+const crux = readback.marks.find((mark) => mark.role === "crux");
+---
+
+<section class="worked-example" id="how-it-works" aria-labelledby="example-title">
+  <div class="example-intro">
+    <h2 id="example-title">Same terrain. A clearer next step.</h2>
+    <p>The agent prints one focused question. You take the page away from the screen, work it in ink, and photograph it for the return.</p>
+    <div class="useful-pause">
+      <h3>A useful pause</h3>
+      <p>The paper gives you room to keep the question in view before the next handoff. Switchback carries your marks back to the agent as questions, concerns, and a possible direction.</p>
+    </div>
+    <p class="example-note"><strong>Illustrative example.</strong> These marks and this readback were authored together to show the ink language. The printed page itself comes from the current Switchback renderer.</p>
+  </div>
+
+  <div class="example-evidence">
+    <figure class="example-paper">
+      <div class="marked-paper">
+        <img src="/example/generated-page.png" width="1588" height="2246" loading="lazy" alt="Renderer-generated Switchback page W1-P2 with the prompt What is the decision we are avoiding? The Ask, Stop, and Crux notes are readable as text alongside it." />
+        <div class="paper-mark paper-ask"><b>{ask?.label}</b><span>{ask?.text}</span></div>
+        <div class="paper-mark paper-stop"><b>{stop?.label}</b><span>{stop?.text}</span></div>
+        <div class="paper-mark paper-crux"><b>{crux?.label}</b><span>{crux?.text}</span></div>
+      </div>
+      <figcaption>W1-P2 · printed prompt: “{readback.printedPrompt}” · marks are illustrative</figcaption>
+    </figure>
+
+    <div class="example-readback">
+      <h3>Back to the agent</h3>
+      <p>After you photograph the marked page, the readback starts with the numbered Ask and keeps the Stop in view.</p>
+      <dl>
+        <div><dt>Ask (Q1) · answer first</dt><dd>{readback.answerFirst}</dd></div>
+        <div><dt>Stop · unresolved</dt><dd>{readback.unresolved}</dd></div>
+        <div><dt>Crux · central trade-off</dt><dd>{readback.crux}</dd></div>
+      </dl>
+      <p class="readback-next">A possible next move is a smaller v1 built for depth. What to leave out still needs a decision.</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+---
+const routes = [
+  { label: "Claude Code marketplace", command: "/plugin marketplace add vandermerwed/switchback" },
+  { label: "Claude Code plugin", command: "/plugin install switchback@switchback" },
+  { label: "Agent skill", command: "npx skills add vandermerwed/switchback" },
+  { label: "Command line", command: "npm install -g @vandermerwed/switchback" },
+];
+---
+
+<section class="install-section" id="install" aria-labelledby="install-title">
+  <div class="install-heading">
+    <h2 id="install-title">Begin with a page.</h2>
+    <p>Install Switchback through the route that fits your agent setup. Then ask for a focused paper session on the decision in front of you.</p>
+    <p class="requirements">Requirements: Node.js 20.12 or later, a printer, a pen, a phone camera.</p>
+  </div>
+  <div class="install-routes">
+    {routes.map((route) => (
+      <div class="install-route">
+        <h3>{route.label}</h3>
+        <pre><code>{route.command}</code></pre>
+      </div>
+    ))}
+  </div>
+</section>
+<footer class="site-footer">
+  <span>Switchback · paper back to the agent</span>
+  <a href="/docs/">Read the docs</a>
+</footer>

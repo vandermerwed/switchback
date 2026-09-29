@@ -7,10 +7,7 @@
   "style": "sitting",
   "round": 1,
   "paper": "A4",
-  "kit_source": [
-    "minimum",
-    "profile"
-  ],
+  "kit_source": ["minimum", "profile"],
   "pens": {
     "ask": {
       "pen": "blue"
@@ -97,9 +94,7 @@
       "prompt": "Write what you want answered when the pages return.",
       "readback": "Answer in number order, first, before anything unasked. Blanks are not omissions.",
       "data": {
-        "questions": [
-          "What are we really optimizing for?"
-        ]
+        "questions": ["What are we really optimizing for?"]
       },
       "returns": true
     },
@@ -112,12 +107,7 @@
       "prompt": "Photograph each page flat and send them back together.",
       "readback": "If a page is missing or the ID unreadable, ask for a re-shoot rather than guessing.",
       "data": {
-        "shots": [
-          "W1-P1",
-          "W1-P2",
-          "W1-P3",
-          "W1-P4"
-        ]
+        "shots": ["W1-P1", "W1-P2", "W1-P3", "W1-P4"]
       },
       "returns": false
     }
