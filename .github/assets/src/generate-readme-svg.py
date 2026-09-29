@@ -8,6 +8,7 @@ Requires fontTools and brotli. The generated SVGs have no font dependency.
 
 from pathlib import Path
 import re
+import xml.etree.ElementTree as ET
 
 from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.transformPen import TransformPen
@@ -21,6 +22,19 @@ GLYPHS = FONT.getGlyphSet()
 CMAP = FONT.getBestCmap()
 ADVANCES = FONT["hmtx"].metrics
 EM = FONT["head"].unitsPerEm
+MARK = ROOT / "site/src/assets/switchback-mark.svg"
+SVG_NS = {"svg": "http://www.w3.org/2000/svg"}
+
+
+def mark_parts():
+    """Read the mark's size, cut-out route and corner radius from the site's SVG."""
+    root = ET.parse(MARK).getroot()
+    size = root.get("viewBox").split()[2]
+    route = root.find(".//svg:mask/svg:path", SVG_NS)
+    body = root.find("svg:rect", SVG_NS)
+    if route is None or body is None:
+        raise SystemExit(f"{MARK}: expected a <mask> with a route <path> and a masked <rect>")
+    return size, route.attrib, body.get("rx", "0")
 
 
 def clean_path(path):
@@ -48,19 +62,21 @@ def svg_file(name, width, height, title, body):
         + "\n".join(f"  {line}" for line in body)
         + "\n</svg>\n"
     )
-    (ASSETS / name).write_text(svg, encoding="utf-8")
+    (ASSETS / name).write_text(svg, encoding="utf-8", newline="\n")
     print(f"{name}: {len(svg.encode('utf-8'))} bytes")
 
 
 def lockup(name, color):
-    # The site's 256-unit mark, including its cut-out route, is scaled intact.
+    # The site's mark, including its cut-out route, is read from its SVG and scaled intact.
+    size, route, rx = mark_parts()
     body = [
-        '<defs><mask id="route" maskUnits="userSpaceOnUse" x="0" y="0" width="256" height="256">'
-        '<rect width="256" height="256" fill="#fff"/>'
-        '<path d="M151-20V34C151 45 145 48 135 53L58 88C42 95 43 109 63 112L191 131C216 135 219 150 196 163L80 220C69 225 76 241 76 276" '
-        'fill="none" stroke="#000" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>'
+        f'<defs><mask id="route" maskUnits="userSpaceOnUse" x="0" y="0" width="{size}" height="{size}">'
+        f'<rect width="{size}" height="{size}" fill="#fff"/>'
+        f'<path d="{" ".join(route["d"].split())}" '
+        f'fill="none" stroke="#000" stroke-width="{route["stroke-width"]}" '
+        f'stroke-linecap="{route["stroke-linecap"]}" stroke-linejoin="{route["stroke-linejoin"]}"/>'
         '</mask></defs>',
-        f'<g transform="translate(6 9) scale(.19)"><rect width="256" height="256" rx="22" fill="{color}" mask="url(#route)"/></g>',
+        f'<g transform="translate(6 9) scale(.19)"><rect width="{size}" height="{size}" rx="{rx}" fill="{color}" mask="url(#route)"/></g>',
     ]
     # Inter 600, 0.27em tracking. At this size the 49px mark is about 1.4 cap heights.
     word, end = lettering("SWITCHBACK", 91, 47, 43, color, tracking=11.61)
