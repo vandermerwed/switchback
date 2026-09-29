@@ -1,0 +1,67 @@
+---
+title: Getting started
+description: Install Switchback and run your first sitting.
+---
+
+Switchback is one agent skill, `/switchback`, and the `switchback` CLI behind it. Your agent
+makes a few pages for the problem in front of you, you print them and work them in ink away from
+the screen, then you photograph the pages and send them back so the agent can read your marks.
+
+## Install
+
+Pick the line that matches your setup. You need Node.js 20.12 or later, a printer, a pen and a
+phone camera.
+
+**Claude Code**
+
+```
+/plugin marketplace add vandermerwed/switchback
+/plugin install switchback@switchback
+```
+
+**Codex, opencode, Cursor and other agents that read skills**
+
+```
+npx skills add vandermerwed/switchback
+```
+
+The skill drives the `switchback` CLI and fetches it with `npx` the first time it runs. To
+install the CLI once instead of fetching it each time:
+
+```
+npm install -g @vandermerwed/switchback
+```
+
+PDFs come from Chrome, Edge or Chromium. Without one of those installed, the CLI still writes the
+HTML page, and you print that from any browser: Print, margins None, background graphics on,
+scale 100%.
+
+## Your first sitting
+
+Ask your agent the way you normally would: "I can't decide whether to kill the sync feature,
+let's work it through on paper," or "print this draft so I can mark it up." `/switchback` reads
+the request and picks a mode for you: **workbook** to make pages, **proof** to print a document,
+or **desk** to save the pens and paper you have. For a workbook you get one confirmation message
+before anything is built, so you can correct the style, the pages or the pens before printing. A
+proof is built straight away, since it prints your document as it is.
+
+Once you say yes, the agent builds a PDF (or an HTML page with print steps, if no PDF renderer is
+available) in a `switchback/` folder inside your working directory. Print it, take the phone
+somewhere else, and work through it in the ink the cover describes. Cross-outs stay on the page;
+nothing gets tidied up before you send it back.
+
+## Sending photos back
+
+When you are done, photograph every page flat, with the page's header visible, and send all the
+photos together. That is read mode: the agent answers the questions you wrote in your Ask pen
+first, then works through the rest of what you marked, in the order the pages were printed. A
+page that does not come back in the photos is not automatically a problem — a Sitting, Series or
+Incubation workbook closes with a return checklist that lists exactly what to photograph; a
+Ritual is a single page, and a proof has no closing pages at all, so you just send everything
+back.
+
+Read the [full loop](/docs/loop/) for why the steps are in this order, or jump straight to a
+[mode](/docs/modes/workbook/) to see what you say and what you get.
+
+See the [privacy page](/privacy/) for what stays on your machine, and what your agent's model
+provider sees when you send back a photo.

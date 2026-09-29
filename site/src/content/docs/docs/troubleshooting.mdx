@@ -1,0 +1,64 @@
+---
+title: Troubleshooting
+description: No PDF, photos that will not read, and wrong colours in a read-back.
+---
+
+Every problem the CLI reports carries a plain-language message and a `fix` line. This page covers
+the ones people actually hit; `switchback --help` and each command's own `--help` cover the rest.
+
+## No PDF came out
+
+`switchback build --pdf` (and proof and workbook building generally) needs Chrome, Edge or
+Chromium installed to render a PDF. When none is found, the build still writes the HTML page —
+nothing fails silently — and warns that you should print the HTML directly from any browser
+instead: Print, margins None, background graphics on, scale 100%. The same happens if a browser is
+found but rendering fails for some other reason: the HTML is kept, and no half-written PDF is left
+behind to be printed by mistake.
+
+If your browser is installed somewhere unusual and the CLI cannot find it, set the
+`SWITCHBACK_CHROME` environment variable to its path.
+
+## A photo will not read
+
+- **WebP images are refused outright.** Re-export or re-take the photo as a JPEG.
+- **A JPEG, PNG or HEIC that will not decode** usually means the file is damaged. Re-export it,
+  or re-take the photo. For HEIC specifically (the default format on many iPhones), converting to
+  JPEG first — on an iPhone, Settings → Camera → Formats → "Most Compatible" — avoids the problem
+  going forward.
+- **The file could not be read or is empty.** Check the path you gave the agent, or re-export the
+  photo.
+
+`switchback media` is what normalises your photos before anything reads them, and it is the step
+that surfaces all three of the above.
+
+## The colours read back wrong
+
+A few things commonly throw off a read:
+
+- **No cover, or the cover wasn't photographed.** The cover's ink swatches are the ground truth
+  for which colour means which role on that particular print. Without it, the agent falls back to
+  each page's own instructions and the suggested colours from `switchback legend`, and it says so
+  in the photo test rather than presenting the reading as certain.
+- **Warm or uneven lighting.** Blue and purple, or red and orange, can merge under bad light. If a
+  mark is ambiguous and it actually matters, expect the agent to ask for one re-shoot of that page
+  rather than guess.
+- **A stroke lighter than the rest of the page.** This is usually read as pencil — Draft,
+  provisional — rather than whatever role that colour would otherwise carry.
+
+## A spec or profile is rejected
+
+`switchback validate` and `switchback build` report every problem as
+`{ level, code, page, path, message, fix }`. The `fix` line is written to be acted on directly —
+for a spec error that names an unknown component, for instance, it points at `switchback list`
+rather than leaving you to guess. Two categories worth knowing about:
+
+- **Style errors** (an Incubation with two `step-away` pages, a Ritual page the style doesn't
+  allow, more pages than the style's budget) always name the specific rule, and most name the
+  research claim behind it too. A missing opening or closing page is only a warning, not one of
+  these refusals — the build still goes ahead.
+- **Profile import errors** happen when the JSON given to `switchback profile --import` does not
+  match the expected shape exactly — no extra keys, and every colour is a bare word with no brand
+  or width. A failed import changes nothing; your existing profile is left in place.
+
+The complete list of diagnostic codes lives in the CLI package's `docs/errors.md`, if you want to
+look one up ahead of time.

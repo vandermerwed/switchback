@@ -1,0 +1,48 @@
+---
+title: Read mode
+description: How the agent reads your photographed pages back, without over-reading them.
+---
+
+Read mode is the return half of the loop. Most of the time you do not ask for it directly — you
+send the photos of your marked-up pages, and the agent takes it from there — though you can also
+ask for it directly with `/switchback read`.
+
+## What you say
+
+Just the photos: paths, or pasted images. Nothing else is required, though if more than one
+workbook could match ("which sitting are these from?") the agent asks rather than guessing.
+
+## What you get
+
+One report, in a fixed order:
+
+1. **The photo test** — what came through clearly, what did not, and where the agent was
+   tempted to guess and chose not to.
+2. **Your blue (Ask) questions, in number order** — answered before anything else.
+3. **Page feedback** — anything you noted about the page itself, rather than about your problem,
+   kept in its own table so it never gets mistaken for content.
+4. **The content** — your decisions, your ideas, the reds still open, the crossed-out items kept
+   visible, quoting your own words wherever they carry the weight.
+5. **The next step** — another round, a hold, or, for a proof, the action queue built from your
+   marks.
+
+Two files get written for you: `W<n>.readback.md` holds the report, and `carry.md` tracks what
+should follow you into the next sitting — open objections, answered questions, anything crossed
+out but worth remembering.
+
+## What the agent does with your marks
+
+The cover's ink swatches (the boxes you coloured with your own pens) are read first, as the
+ground truth for which colour means which role on that particular print. A stroke lighter than
+the rest of the page is read as pencil — provisional, not yet trusted. Struck-out words stay
+struck out; the agent does not try to recover what you meant to erase, and an illegible word is
+quoted as illegible and asked about rather than guessed.
+
+If one of your questions needs an outside source rather than recall, it may be handed to a
+research step that runs in the background while the rest of your report comes back immediately.
+
+## Common ways this goes wrong
+
+Photos taken at an angle, in poor light, or with a colour that could be mistaken for another
+(blue and purple, red and orange) can make a mark ambiguous. When that happens on something that
+matters, the agent asks for one re-shoot of that page rather than guessing which role you meant.

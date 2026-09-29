@@ -1,0 +1,64 @@
+---
+title: The ink language
+description: The colour language — roles, structural marks, confidence marks, and the one-pen fallback.
+---
+
+The printer prints black on white; every meaningful mark after that is your own ink. Colour is
+never the only carrier of meaning here — every role also has a letter, so the language still
+works in black and white, on a photocopy, or for anyone who cannot distinguish the colours.
+
+Run `switchback legend` any time to print your own mapping. What follows is the mapping itself.
+
+## Roles
+
+Roles are assigned to the pens you actually have, in priority order. A role with no matching pen
+prints as a circled letter instead, so a black pen and a highlighter is already a complete kit.
+
+| Role | Letter | Meaning | Suggested pen | On a proof, the agent… |
+| --- | --- | --- | --- | --- |
+| Ask | Q | a numbered question for the AI | blue | answers it |
+| Stop | R | blocker, risk, broken, or not understood | red | challenges it |
+| Keep | G | evidence, confident, something that worked | green | goes deeper |
+| Crux | X | the one thing that matters most | highlighter | re-centres around it |
+| Maybe | O | an idea, a possibility, a what-if | orange | explores it |
+| Sense | P | gut feeling, intuition, felt reaction | purple | justifies it |
+| Draft | D | provisional; do not trust yet | grey, or pencil | applies the edit |
+| Reason | B | what you think; the main content | black | — |
+
+Ask always claims blue whenever a blue pen exists, ahead of every other role. The rest are matched
+by colour in the priority order above; you can also pin a specific pen to a specific role in
+[desk mode](/docs/modes/desk/) instead of accepting the default.
+
+## Structural marks
+
+These carry meaning in any ink, on any page:
+
+| Mark | Meaning |
+| --- | --- |
+| ○ round an item | commit to it — on a proof, this locks the paragraph |
+| ✕ through an item | rejected, but kept visible in the read-back |
+| → | leads to, or causes |
+| ▭ | this is a decision point |
+| ? in the margin | revisit |
+| ! in the margin | important |
+| ✓ a tick | read, nothing to add |
+
+## Confidence marks
+
+Drawn beside a claim, in any ink:
+
+| Mark | Level | Meaning |
+| --- | --- | --- |
+| ● + | high | "I'd bet on this" |
+| ◐ ~ | medium | "probably, but soft" |
+| ○ ! | low | "guessing, unsure" |
+
+Numbers written instead of dots ("50%", "80%") are read exactly as written and reported as such —
+they are never converted into dots on your behalf.
+
+## The one-pen fallback
+
+Every role that has no matching pen becomes its circled letter, drawn in whatever ink you have.
+That means the whole language still works with a single black pen: circle a Q instead of writing
+in blue, a circled R instead of red, and so on. Nothing about read mode changes based on which
+path you used to mark the page.

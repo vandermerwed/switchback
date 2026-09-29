@@ -1,0 +1,50 @@
+---
+import readback from "../../example/readback.json";
+import ContourField from "./ContourField.astro";
+import SiteNav from "./SiteNav.astro";
+
+const ask = readback.marks.find((mark) => mark.role === "ask");
+const stop = readback.marks.find((mark) => mark.role === "stop");
+const crux = readback.marks.find((mark) => mark.role === "crux");
+---
+
+<section class="hero" aria-labelledby="home-title">
+  <ContourField />
+  <div class="hero-glow" aria-hidden="true"></div>
+  <SiteNav />
+  <svg class="return-route" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <path class="route route-out" d="M43.5 21 C47 24.5 47.2 28.5 44 31.5 C41.8 33.7 43 38 46.3 40.5 C48.6 42.3 47.6 46.5 44.8 49 C43 50.6 44 55.5 49.5 58" />
+    <path class="route" d="M72 31 C76 30.5 79 30 80.5 29.5 C83 27 85.5 21 88.5 22.5 C91.5 24 90 30 92.5 33 C94.5 35.5 95.5 39 95 43.2" />
+    <path class="route-ring route-out" d="M43.5 21 h0" />
+    <path class="route-dot route-out" d="M43.5 21 h0" />
+    <path class="route-ring" d="M95 43.2 h0" />
+    <path class="route-dot" d="M95 43.2 h0" />
+  </svg>
+
+  <div class="hero-copy">
+    <h1 id="home-title">Step away from the agents. Come back with a clearer thought.</h1>
+    <p>A deliberate paper session between AI handoffs: your agent prepares a page, you think in ink, and the marked page comes back for readback.</p>
+    <a class="primary-action" href="#install">Install Switchback <span aria-hidden="true">→</span></a>
+  </div>
+
+  <div class="hero-scene" aria-label="Illustrative example of a Switchback round trip">
+    <div class="agent-prompt">
+      <span class="scene-label">Agent prompt</span>
+      <p>“What is the decision we are avoiding?”</p>
+    </div>
+    <figure class="hero-paper">
+      <div class="marked-paper">
+        <img src="/example/generated-page.png" width="1588" height="2246" alt="Unmarked Switchback page W1-P2, Before the next handoff, printed with the prompt What is the decision we are avoiding?" />
+        <div class="paper-mark paper-ask"><b>{ask?.label}</b><span>{ask?.text}</span></div>
+        <div class="paper-mark paper-stop"><b>{stop?.label}</b><span>{stop?.text}</span></div>
+        <div class="paper-mark paper-crux"><b>{crux?.label}</b><span>{crux?.text}</span></div>
+      </div>
+      <figcaption>Illustrative example · W1-P2 · marks authored for this demonstration</figcaption>
+    </figure>
+    <div class="agent-readback">
+      <span class="scene-label">Agent readback</span>
+      <p><strong>Ask Q1:</strong> We are choosing depth for a smaller v1.</p>
+      <p><strong>Stop:</strong> What to say no to remains unresolved.</p>
+    </div>
+  </div>
+</section>

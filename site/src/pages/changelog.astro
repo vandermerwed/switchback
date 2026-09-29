@@ -1,0 +1,72 @@
+---
+import "../styles/tokens.css";
+import { Content } from "../../../CHANGELOG.md";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Changelog — Switchback</title>
+    <meta name="description" content="Release notes for Switchback." />
+  </head>
+  <body>
+    <nav class="site-nav">
+      <a href="/">Switchback</a>
+      <a href="/docs/">Docs</a>
+      <a href="/showcase/">Showcase</a>
+      <a href="https://github.com/vandermerwed/switchback">GitHub</a>
+    </nav>
+    <main class="changelog">
+      <Content />
+    </main>
+    <footer class="site-footer">
+      <a href="/changelog/">Changelog</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="https://www.npmjs.com/package/@vandermerwed/switchback">npm</a>
+    </footer>
+  </body>
+</html>
+
+<style>
+  body {
+    background: var(--sb-paper);
+    color: var(--sb-ink);
+    font-family: var(--sb-font-body);
+    margin: 0;
+    padding: 0 1.5rem 3rem;
+  }
+  .site-nav,
+  .site-footer {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 1.5rem 0;
+  }
+  .site-nav a,
+  .site-footer a {
+    color: var(--sb-forest);
+    text-decoration: none;
+  }
+  .site-nav a:hover,
+  .site-footer a:hover {
+    text-decoration: underline;
+  }
+  .changelog {
+    max-width: 45rem;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .changelog :global(h1),
+  .changelog :global(h2) {
+    font-family: var(--sb-font-heading);
+    color: var(--sb-forest-deep);
+  }
+  .changelog :global(a) {
+    color: var(--sb-forest);
+  }
+  .site-footer {
+    border-top: 1px solid var(--sb-rule);
+    color: var(--sb-ink-soft);
+  }
+</style>

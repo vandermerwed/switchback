@@ -1,0 +1,126 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import catalogue from "../../../generated/catalogue.json";
+
+const TAGS = [
+  { id: "create", label: "Create" },
+  { id: "decide", label: "Decide" },
+  { id: "learn", label: "Learn" },
+  { id: "plan", label: "Plan" },
+  { id: "diagnose", label: "Diagnose" },
+  { id: "review", label: "Review" },
+  { id: "reflect", label: "Reflect" },
+  { id: "focus", label: "Focus" },
+];
+
+const components = catalogue.filter((item) => item.kind !== "preset");
+const presets = catalogue
+  .filter((item) => item.kind === "preset")
+  .sort((a, b) => a.title.localeCompare(b.title));
+
+function displayedGrade(grounding) {
+  const claims = (grounding?.claims ?? []).filter((c) => c.load_bearing);
+  if (!claims.length) return null;
+  const order = ["A", "B", "C", "D", "unrated"];
+  return claims.reduce((worst, c) => {
+    const rank = order.indexOf(c.grade);
+    return rank > order.indexOf(worst) ? c.grade : worst;
+  }, "A");
+}
+---
+
+<StarlightPage
+  frontmatter={{
+    title: "Components",
+    description: "Every component and preset in the catalogue, rendered by the CLI itself.",
+  }}
+>
+  <p>
+    Every page and piece Switchback can print, generated straight from
+    <code>@vandermerwed/switchback</code>. Each carries a grade for the evidence behind it, from A
+    (robust) to D (an established practice with no direct study behind this exact use); see the
+    <a href="/docs/evidence/">evidence page</a> for what the grades mean. Open any one of them for
+    a preview of the renderer's own output, not a mockup.
+  </p>
+
+  {
+    TAGS.map(({ id, label }) => {
+      const items = components
+        .filter((item) => item.tags.includes(id))
+        .sort((a, b) => a.title.localeCompare(b.title));
+      if (!items.length) return null;
+      return (
+        <section>
+          <h2 id={id}>{label}</h2>
+          <ul class="component-list">
+            {items.map((item) => (
+              <li>
+                <a href={`/docs/components/${item.id}/`}>{item.title}</a>
+                <span class="component-kind">{item.kind}</span>
+                {displayedGrade(item.grounding) && (
+                  <span class="component-grade">grade {displayedGrade(item.grounding)}</span>
+                )}
+                <p>{item.intent}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      );
+    })
+  }
+
+  <section>
+    <h2 id="presets">Presets</h2>
+    <p>
+      A preset is a named starting configuration of a component — a SWOT is a preset of the
+      two-by-two, for instance. Each inherits its base component's shape and evidence, plus its
+      own attribution.
+    </p>
+    <ul class="component-list">
+      {
+        presets.map((item) => (
+          <li>
+            <a href={`/docs/components/${item.id}/`}>{item.title}</a>
+            <span class="component-kind">preset of {item.extends}</span>
+            {displayedGrade(item.grounding) && (
+              <span class="component-grade">grade {displayedGrade(item.grounding)}</span>
+            )}
+            <p>{item.attribution}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</StarlightPage>
+
+<style>
+  .component-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  }
+  .component-list li {
+    border: 1px solid var(--sl-color-hairline);
+    border-radius: 0.4rem;
+    padding: 0.75rem 1rem;
+  }
+  .component-list a {
+    font-weight: 600;
+  }
+  .component-kind,
+  .component-grade {
+    display: inline-block;
+    font-size: var(--sl-text-2xs);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--sl-color-text-accent);
+    margin-inline-start: 0.5rem;
+  }
+  .component-list p {
+    margin: 0.4rem 0 0;
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-text);
+  }
+</style>

@@ -1,0 +1,99 @@
+---
+import "../styles/tokens.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy — Switchback</title>
+    <meta name="description" content="What stays on your machine, what your agent's model provider sees, and what Switchback collects (nothing)." />
+  </head>
+  <body>
+    <nav class="site-nav">
+      <a href="/">Switchback</a>
+      <a href="/docs/">Docs</a>
+      <a href="/showcase/">Showcase</a>
+      <a href="https://github.com/vandermerwed/switchback">GitHub</a>
+    </nav>
+    <main class="privacy">
+      <h1>Privacy</h1>
+
+      <p>
+        Everything Switchback makes for you stays in a <code>switchback/</code> folder inside your
+        own working directory: the specs it builds from, the HTML and PDF it prints, the photos
+        you send back, and the read-backs written from them. None of it is uploaded anywhere by
+        the CLI or the skill.
+      </p>
+
+      <p>
+        Your saved desk (paper size, printer, pens) lives in your own user config directory —
+        <code>switchback profile --path</code> shows exactly where — and stays there until you
+        change it yourself.
+      </p>
+
+      <p>
+        To read your handwriting back from a photo, the agent sends that photo to the AI model it
+        runs on, the same way it would handle any image you shared with it directly in
+        conversation. That transfer is between you and your agent's model provider; Switchback
+        itself has no server in the loop and never sees the photo.
+      </p>
+
+      <p>
+        The site you are reading now, and the CLI behind it, collect nothing: no analytics, no
+        cookies, no trackers, and no third-party scripts of any kind in the production build. There
+        is no account to create and no mailing list to join.
+      </p>
+    </main>
+    <footer class="site-footer">
+      <a href="/changelog/">Changelog</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="https://www.npmjs.com/package/@vandermerwed/switchback">npm</a>
+    </footer>
+  </body>
+</html>
+
+<style>
+  body {
+    background: var(--sb-paper);
+    color: var(--sb-ink);
+    font-family: var(--sb-font-body);
+    margin: 0;
+    padding: 0 1.5rem 3rem;
+  }
+  .site-nav,
+  .site-footer {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 1.5rem 0;
+  }
+  .site-nav a,
+  .site-footer a {
+    color: var(--sb-forest);
+    text-decoration: none;
+  }
+  .site-nav a:hover,
+  .site-footer a:hover {
+    text-decoration: underline;
+  }
+  .privacy {
+    max-width: 40rem;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .privacy h1 {
+    font-family: var(--sb-font-heading);
+    color: var(--sb-forest-deep);
+  }
+  .privacy code {
+    font-family: var(--sb-font-mono);
+    background: var(--sb-rule);
+    padding: 0.1em 0.35em;
+    border-radius: 0.25em;
+  }
+  .site-footer {
+    border-top: 1px solid var(--sb-rule);
+    color: var(--sb-ink-soft);
+  }
+</style>

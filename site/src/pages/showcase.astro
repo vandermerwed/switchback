@@ -1,0 +1,191 @@
+---
+import "../styles/tokens.css";
+import workbooks from "../generated/showcase.json";
+
+const STYLE_INTENT = {
+  sitting: "One session: decide, diagnose or plan, and leave having committed to a first move.",
+  series: "Three spaced rounds for remembering something over weeks, each opening with recall.",
+  incubation: "A generating half, a real break, then a judging half — for naming or inventing.",
+  ritual: "One identical page, every time, so change becomes visible by flipping back.",
+  proof: "A document printed as numbered paragraphs with wide margins, built to mark up by hand.",
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Showcase — Switchback</title>
+    <meta
+      name="description"
+      content="A real printed workbook for each style, built by the CLI itself, with the PDF to download."
+    />
+  </head>
+  <body>
+    <nav class="site-nav">
+      <a href="/">Switchback</a>
+      <a href="/docs/">Docs</a>
+      <a href="/showcase/">Showcase</a>
+      <a href="https://github.com/vandermerwed/switchback">GitHub</a>
+    </nav>
+    <main class="showcase">
+      <h1>Showcase</h1>
+      <p class="lede">
+        One real workbook per style, printed by <code>@vandermerwed/switchback</code> at build
+        time — the preview beside each one is the renderer's own HTML, not a mockup, and the PDF
+        beside it is the same file a printer would receive.
+      </p>
+
+      {
+        workbooks.map((workbook) => (
+          <section class="workbook" id={workbook.style}>
+            <h2>{workbook.label}</h2>
+            <p class="intent">{STYLE_INTENT[workbook.style]}</p>
+            <p class="title">
+              <strong>{workbook.title}</strong>
+              {workbook.subtitle && ` — ${workbook.subtitle}`}
+            </p>
+            <div
+              class="preview-frame"
+              data-preview
+              data-pages="2"
+              style={`aspect-ratio: 210 / ${297 * Math.min(2, workbook.pageCount)}`}
+            >
+              <iframe loading="lazy" title={`Preview of ${workbook.title}`} src={workbook.html} />
+            </div>
+            <p class="page-count">
+              {workbook.pageCount} page{workbook.pageCount === 1 ? "" : "s"} in this round.
+            </p>
+            <p class="workbook-links">
+              <a class="download" href={workbook.pdf}>
+                Download the PDF
+              </a>
+              <a class="open-full" href={workbook.html}>
+                Open full size
+              </a>
+            </p>
+          </section>
+        ))
+      }
+    </main>
+    <footer class="site-footer">
+      <a href="/changelog/">Changelog</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="https://www.npmjs.com/package/@vandermerwed/switchback">npm</a>
+    </footer>
+  </body>
+</html>
+
+<script>
+  function fitPreview(frame: HTMLElement) {
+    const iframe = frame.querySelector("iframe");
+    if (!iframe) return;
+    const wantedPages = Number(frame.dataset.pages ?? "1");
+    const scale = () => {
+      const doc = iframe.contentDocument;
+      const pages = doc ? Array.from(doc.querySelectorAll<HTMLElement>(".sb-page")) : [];
+      if (!pages.length) return;
+      const shown = pages.slice(0, Math.min(wantedPages, pages.length));
+      const first = shown[0]!.getBoundingClientRect();
+      const last = shown[shown.length - 1]!.getBoundingClientRect();
+      const width = first.width;
+      const height = last.bottom - first.top;
+      if (!width || !height) return;
+      const factor = frame.clientWidth / width;
+      // The first shown page sits inside the printed document with its own top/left margin
+      // (getBoundingClientRect reports the box after that margin). Size the iframe to cover the
+      // margin too, then translate it back by that offset so the first page's own top-left
+      // corner — not the document's — lands at the frame's origin; otherwise a grey band shows
+      // above the pages and the last one's foot strip is cut off below.
+      iframe.style.width = `${first.left + width}px`;
+      iframe.style.height = `${first.top + height}px`;
+      iframe.style.transform = `scale(${factor}) translate(${-first.left}px, ${-first.top}px)`;
+      frame.style.height = `${height * factor}px`;
+    };
+    iframe.addEventListener("load", scale);
+    window.addEventListener("resize", scale);
+  }
+  document.querySelectorAll<HTMLElement>("[data-preview]").forEach(fitPreview);
+</script>
+
+<style>
+  body {
+    background: var(--sb-paper);
+    color: var(--sb-ink);
+    font-family: var(--sb-font-body);
+    margin: 0;
+    padding: 0 1.5rem 3rem;
+  }
+  .site-nav,
+  .site-footer {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 1.5rem 0;
+  }
+  .site-nav a,
+  .site-footer a {
+    color: var(--sb-forest);
+    text-decoration: none;
+  }
+  .site-nav a:hover,
+  .site-footer a:hover {
+    text-decoration: underline;
+  }
+  .showcase {
+    max-width: 45rem;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .showcase h1,
+  .showcase h2 {
+    font-family: var(--sb-font-heading);
+    color: var(--sb-forest-deep);
+  }
+  .lede {
+    color: var(--sb-ink-soft);
+  }
+  .workbook {
+    border-top: 1px solid var(--sb-rule);
+    padding: 2rem 0;
+  }
+  .intent {
+    color: var(--sb-ink-soft);
+  }
+  .preview-frame {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid var(--sb-rule);
+    border-radius: 0.4rem;
+    background: #fff;
+    margin: 1rem 0;
+  }
+  .preview-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    transform-origin: top left;
+    max-width: none;
+  }
+  .page-count {
+    font-size: 0.9rem;
+    color: var(--sb-ink-soft);
+  }
+  .workbook-links {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+  .download,
+  .open-full {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--sb-forest);
+  }
+  .site-footer {
+    border-top: 1px solid var(--sb-rule);
+    color: var(--sb-ink-soft);
+  }
+</style>

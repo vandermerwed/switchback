@@ -1,0 +1,52 @@
+---
+title: Evidence and grades
+description: What the A to D grades mean, and how the claims behind each page were sourced and checked.
+---
+
+Every component and style carries a claim about why it might help, and that claim is graded, not
+asserted. `switchback show <id>` prints a component's grounding: the claim itself, its grade, its
+sources, and the conditions under which it helps or backfires.
+
+## The grades
+
+| Grade | Meaning |
+| --- | --- |
+| **A** | Robust — meta-analytic or replicated experimental evidence, directly on point |
+| **B** | Supported — good evidence, though with some heterogeneity or a smaller effect than the headline number suggests |
+| **C** | Suggestive — mixed, small, or indirect evidence |
+| **D** | Practice — an established technique people use, with no direct study behind this exact use, or evidence that has not yet been read in full |
+
+A component's displayed grade is the weakest grade among the claims it actually depends on, not
+the strongest one it could quote. Only one item in the whole catalogue currently reaches A: the
+commit page, which rests on implementation intentions — one of the most replicated findings in
+this literature.
+
+## Where D is not a warning sign
+
+A D grade means one of a few different things, and they are not the same:
+
+- **Craft, not failure.** Timeboxing, the proofreading-mark convention, and a handful of other
+  moves are established professional practice with no controlled study behind this specific
+  use. They are kept and labelled, not removed, because "untested" is not the same as "shown not
+  to work."
+- **Theory only.** A mechanism that is well understood in principle (why placing items on a
+  two-axis grid helps comparison, say) but has not been isolated in a study of its own.
+- **Unread.** A small number of claims are graded D only because their source could not be read
+  in full during grading, not because the source disagrees. Component pages and `switchback show`
+  print these as a plain D, like any other; the "(unread)" note that marks them lives in the CLI
+  package's `research/grading-report.md`. They can move if someone reads the source properly —
+  they are not evidence the page fails.
+
+Nothing graded D is hidden or dressed up as stronger than it is. If a claim's grade moved down
+during an adversarial review pass, the page's own text was reworded to match, rather than left
+overstating what is now known.
+
+## How the grading was done
+
+Each claim traces to a specific construct in the research literature (for example, "epistemic
+action" behind moving pieces during a card sort), with its sources cited by DOI, ISBN or URL,
+verified against the source itself rather than taken on trust from a summary. Claims went through
+an adversarial review pass afterward, specifically looking for reasons a grade should be *lower*
+than first assessed — several were downgraded as a result, and the reasoning for each is on
+record. The full accounting, including every claim examined, is in the CLI package's
+`research/grading-report.md`, alongside the sourcing files for each research area.

@@ -1,0 +1,11 @@
+---
+import Default from "@astrojs/starlight/components/Head.astro";
+import Feedback from "./Feedback";
+
+// Agentation (a development feedback toolbar) renders only in `astro dev` or a preview build
+// made with PUBLIC_FEEDBACK=1; a production build never imports or mounts it (see Feedback.tsx).
+const showFeedback = import.meta.env.DEV || import.meta.env.PUBLIC_FEEDBACK === "1";
+---
+
+<Default><slot /></Default>
+{showFeedback && <Feedback client:only="react" />}

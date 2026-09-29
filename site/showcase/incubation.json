@@ -1,0 +1,87 @@
+{
+  "switchback": 1,
+  "style": "incubation",
+  "title": "Naming the new project",
+  "subtitle": "A generating half, a real break, then a judging half.",
+  "paper": "A4",
+  "round": 1,
+  "timebox": "2 x 30 min",
+  "pages": [
+    {
+      "id": "W1-P1",
+      "component": "cover",
+      "data": {
+        "question": "What should we call the new project?",
+        "timebox": "2 x 30 min",
+        "howto": [
+          "Phone in another room.",
+          "Work in ink, in the colours on this page.",
+          "When the time is up, stop mid-sentence.",
+          "Photograph every page and send them back."
+        ]
+      }
+    },
+    {
+      "id": "W1-P2",
+      "component": "brain-dump",
+      "title": "Every name so far",
+      "prompt": "Every name you can think of for this project, good or bad, before you sort any of it.",
+      "data": { "minutes": 8 }
+    },
+    {
+      "id": "W1-P3",
+      "component": "ten-bad-ideas",
+      "title": "Ten names that are obviously wrong",
+      "prompt": "Getting the bad names out on the page clears room for the better ones.",
+      "data": {}
+    },
+    {
+      "id": "W1-P4",
+      "component": "forced-connections",
+      "title": "Smash it into something else",
+      "prompt": "Force a collision between the project and each word below. See what falls out.",
+      "data": {
+        "subject": "the project",
+        "words": ["Lighthouse", "Compass", "Anchor", "Kettle"]
+      }
+    },
+    {
+      "id": "W1-P5",
+      "component": "step-away",
+      "data": { "suggestion": "a walk, or overnight" }
+    },
+    {
+      "id": "W1-P6",
+      "component": "card-sort",
+      "variant": "write-in",
+      "title": "Sort the candidates",
+      "prompt": "Put each candidate name in the pile it belongs in, not the one you wish it did.",
+      "data": {
+        "source": "the names from W1-P2 through W1-P4",
+        "columns": ["Strong", "Maybe", "No"]
+      }
+    },
+    {
+      "id": "W1-P7",
+      "component": "options-criteria",
+      "title": "Score the survivors",
+      "prompt": "Score the strongest names against what the name actually has to do.",
+      "data": {
+        "options": ["Survivor 1", "Survivor 2", "Survivor 3"],
+        "criteria": ["Easy to say", "Available", "Fits the pitch"]
+      }
+    },
+    {
+      "id": "W1-P8",
+      "component": "commit"
+    },
+    {
+      "id": "W1-P9",
+      "component": "question-queue"
+    },
+    {
+      "id": "W1-P10",
+      "component": "return-checklist"
+    }
+  ]
+}

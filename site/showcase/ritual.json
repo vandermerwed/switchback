@@ -1,0 +1,20 @@
+{
+  "switchback": 1,
+  "style": "ritual",
+  "title": "Weekly check-in",
+  "subtitle": "The same page every week, so change is visible by flipping back.",
+  "paper": "A4",
+  "round": 1,
+  "timebox": "10 min",
+  "pages": [
+    {
+      "id": "W1-P1",
+      "component": "check-in",
+      "prompt": "Rate this week, note what changed, then write for a few minutes.",
+      "data": {
+        "rows": ["Energy", "Focus", "Progress on the project", "Mood"],
+        "scale": 5
+      }
+    }
+  ]
+}

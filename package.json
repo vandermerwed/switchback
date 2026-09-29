@@ -8,14 +8,17 @@
     "node": ">=20.12"
   },
   "scripts": {
-    "build": "pnpm -r build",
-    "test": "pnpm -r test && node --test scripts/check-skills.test.mjs",
+    "build": "pnpm -r --filter \"./packages/**\" build",
+    "test": "pnpm -r --filter \"./packages/**\" test && node --test scripts/check-skills.test.mjs",
     "lint": "biome check . && node scripts/check-skills.mjs",
     "format": "biome format --write .",
     "validate": "pnpm --filter @vandermerwed/switchback run validate:strict",
     "apply-grounding": "pnpm --filter @vandermerwed/switchback run apply-grounding",
     "contact-sheet": "pnpm --filter @vandermerwed/switchback run contact-sheet",
-    "check-skills": "node scripts/check-skills.mjs"
+    "check-skills": "node scripts/check-skills.mjs",
+    "site:dev": "pnpm --filter @switchback/site dev",
+    "site:build": "pnpm --filter @switchback/site build",
+    "site:test": "pnpm --filter @switchback/site test"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.14"

@@ -1,0 +1,55 @@
+---
+title: The loop
+description: How the round trip between agent and paper works, and why the friction is deliberate.
+---
+
+```
+ /switchback ──▶ printer ──▶ your pen ──▶ phone camera ──▶ /switchback
+ the agent        you print    you think in     you photograph     the agent reads
+ makes the pages               ink, away from   the pages          the marks back
+                               the screen
+```
+
+Working with agents can turn much of the day into a stream of hand-offs: ask, wait, check, ask
+again. There is little room left to sit with one hard problem for long enough to think it
+through. Switchback puts a small amount of deliberate friction back only where the thinking
+happens: the sitting, the pen, the walk away from the screen, and the photo you have to take to
+get an answer.
+
+That is the motivation for building it. It is not a measured claim that Switchback makes anyone
+more productive, and the site does not make that claim either.
+
+## Why paper, specifically
+
+The agent could just print a document and ask you to read it, but a document you read is not the
+same as a page you fill in by hand. Each printed page asks for your thinking; it never prefills
+the answer, recommends an option, or states a conclusion. One page holds one thinking move, so
+working through a workbook means making several small decisions in ink instead of one long scroll
+of text.
+
+The printer prints black on white. Every mark on top of that print is your own ink, in a small
+colour language described on the [ink page](/docs/ink/) — including your Reason ink, the plain
+black pen for the main content, which is why colour is a convenience here and never the only
+carrier of meaning.
+
+## Why the read-back is ordered
+
+When the photos come back, the agent does not summarise the whole page. It works in a fixed
+order: first the photo test — what survived the photos and what did not — then the questions you
+wrote in your Ask pen, answered in the number order you wrote them, then any notes about the
+pages themselves, then the content, then the next step. That order exists so that the thing you
+actually asked for is never buried under everything else the agent noticed.
+
+Marks about the page itself — "these columns are too small," "this was not a good question" —
+are kept separate from marks about your problem. The former is feedback on the workbook; the
+latter is the content the next step is built from. Conflating the two would mean product feedback
+quietly reshaping your decision, which the agent is built not to do.
+
+## What carries forward
+
+Objections you raised and never resolved, decisions you locked in with a circle, and anything you
+crossed out but kept visible are all carried into `carry.md` in the workbook's folder. A Series
+reads that file back at the start of its next round, so an unresolved concern does not quietly
+vanish between sittings — it either gets answered, or it comes back the next time you sit down
+with the pages. A Ritual instead repeats the identical page every time; there, change becomes
+visible by flipping back through past rounds rather than by reading anything back.

@@ -1,0 +1,31 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import cli from "../../generated/cli.json";
+---
+
+<StarlightPage
+  frontmatter={{
+    title: "CLI reference",
+    description: "Every switchback command, generated from its own --help text.",
+  }}
+>
+  <p>
+    Generated straight from <code>switchback --help</code> and each command's own
+    <code>--help</code>, so this page can never say something the CLI itself does not. Run most
+    commands with <code>--json</code> for machine-readable output (<code>init</code> is the
+    exception), or <code>-h</code> in place of <code>--help</code>.
+  </p>
+
+  {
+    cli.map(({ command, help }) => (
+      <section>
+        <h2 id={command}>
+          <code>switchback {command}</code>
+        </h2>
+        <pre>
+          <code>{help}</code>
+        </pre>
+      </section>
+    ))
+  }
+</StarlightPage>

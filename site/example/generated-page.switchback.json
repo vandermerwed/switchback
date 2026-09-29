@@ -1,0 +1,117 @@
+{
+  "switchback": 1,
+  "cli": "0.1.0",
+  "built_at": "2026-09-29T06:51:11.731Z",
+  "spec": "site/example/workbook.json",
+  "title": "Before the next handoff",
+  "style": "sitting",
+  "round": 1,
+  "paper": "A4",
+  "kit_source": ["minimum", "profile"],
+  "pens": {
+    "ask": {
+      "pen": "blue"
+    },
+    "stop": {
+      "pen": "red"
+    },
+    "crux": {
+      "pen": "highlighter"
+    },
+    "keep": {
+      "letter": "G"
+    },
+    "maybe": {
+      "letter": "O"
+    },
+    "sense": {
+      "letter": "P"
+    },
+    "draft": {
+      "letter": "D"
+    },
+    "reason": {
+      "pen": "black"
+    }
+  },
+  "pages": [
+    {
+      "id": "W1-P1",
+      "component": "cover",
+      "preset": null,
+      "variant": "default",
+      "title": "Begin here",
+      "prompt": "",
+      "readback": "The question is the contract for what a successful return should answer.",
+      "data": {
+        "question": "What is the decision we are avoiding?",
+        "timebox": "30 min",
+        "howto": [
+          "Work through one question at a time, in ink.",
+          "Use Ask for a question, Stop for an unresolved concern, and Crux for the central trade-off.",
+          "Photograph the pages and return them to the agent."
+        ]
+      },
+      "returns": true
+    },
+    {
+      "id": "W1-P2",
+      "component": "sheet",
+      "preset": null,
+      "variant": "default",
+      "title": "Before the next handoff",
+      "prompt": "What is the decision we are avoiding?",
+      "readback": "Depends on the content; the legend strip still tells you what the human's ink means.",
+      "data": {
+        "blocks": [
+          {
+            "type": "lines",
+            "count": 18
+          }
+        ]
+      },
+      "returns": true
+    },
+    {
+      "id": "W1-P3",
+      "component": "commit",
+      "preset": null,
+      "variant": "default",
+      "title": "Choose the next move",
+      "prompt": "What will we try, and what remains undecided?",
+      "readback": "A hold is a legitimate outcome — do not push for a decision that isn't there. A commit with no 5-minute action is a wish; say so.",
+      "data": {
+        "decision": "A smaller, more deliberate v1"
+      },
+      "returns": true
+    },
+    {
+      "id": "W1-P4",
+      "component": "question-queue",
+      "preset": null,
+      "variant": "default",
+      "title": "Questions for the agent",
+      "prompt": "Write what you want answered when the pages return.",
+      "readback": "Answer in number order, first, before anything unasked. Blanks are not omissions.",
+      "data": {
+        "questions": ["What are we really optimizing for?"]
+      },
+      "returns": true
+    },
+    {
+      "id": "W1-P5",
+      "component": "return-checklist",
+      "preset": null,
+      "variant": "default",
+      "title": "Return the pages",
+      "prompt": "Photograph each page flat and send them back together.",
+      "readback": "If a page is missing or the ID unreadable, ask for a re-shoot rather than guessing.",
+      "data": {
+        "shots": ["W1-P1", "W1-P2", "W1-P3", "W1-P4"]
+      },
+      "returns": false
+    }
+  ],
+  "substitutions": [],
+  "warnings": []
+}
