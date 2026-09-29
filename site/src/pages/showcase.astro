@@ -1,14 +1,15 @@
 ---
 import "../styles/global.css";
-import SiteNav from "../components/SiteNav.astro";
 import workbooks from "../generated/showcase.json";
+import SiteNav from "../components/SiteNav.astro";
+import WorkedExample from "../components/WorkedExample.astro";
 
 const STYLE_INTENT = {
-  sitting: "One session: decide, diagnose or plan, and leave having committed to a first move.",
-  series: "Three spaced rounds for remembering something over weeks, each opening with recall.",
-  incubation: "A generating half, a real break, then a judging half — for naming or inventing.",
-  ritual: "One identical page, every time, so change becomes visible by flipping back.",
-  proof: "A document printed as numbered paragraphs with wide margins, built to mark up by hand.",
+  sitting: "One session to make a first move.",
+  series: "Several rounds around one subject.",
+  incubation: "Generate, step away, then judge.",
+  ritual: "The same short page each time.",
+  proof: "A document made ready for margin notes.",
 };
 ---
 
@@ -17,171 +18,80 @@ const STYLE_INTENT = {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Showcase — Switchback</title>
-    <meta
-      name="description"
-      content="A real printed workbook for each style, built by the CLI itself, with the PDF to download."
-    />
+    <meta name="description" content="Five real Switchback print examples with every page and a PDF for each." />
   </head>
   <body>
     <SiteNav />
-    <main class="showcase">
-      <h1>Showcase</h1>
-      <p class="lede">
-        One real workbook per style, printed by <code>@vandermerwed/switchback</code> at build
-        time — the preview beside each one is the renderer's own HTML, not a mockup, and the PDF
-        beside it is the same file a printer would receive.
-      </p>
-
-      {
-        workbooks.map((workbook) => (
-          <section class="workbook" id={workbook.style}>
-            <h2>{workbook.label}</h2>
-            <p class="intent">{STYLE_INTENT[workbook.style]}</p>
-            <p class="title">
-              <strong>{workbook.title}</strong>
-              {workbook.subtitle && ` — ${workbook.subtitle}`}
-            </p>
-            <div
-              class="preview-frame"
-              data-preview
-              data-pages="2"
-              style={`aspect-ratio: 210 / ${297 * Math.min(2, workbook.pageCount)}`}
-            >
-              <iframe loading="lazy" title={`Preview of ${workbook.title}`} src={workbook.html} />
-            </div>
-            <p class="page-count">
-              {workbook.pageCount} page{workbook.pageCount === 1 ? "" : "s"} in this round.
-            </p>
-            <p class="workbook-links">
-              <a class="download" href={workbook.pdf}>
-                Download the PDF
-              </a>
-              <a class="open-full" href={workbook.html}>
-                Open full size
-              </a>
-            </p>
-          </section>
-        ))
-      }
+    <main class="gallery">
+      <header class="gallery-intro">
+        <h1>Pages to work on.</h1>
+        <p>Five examples printed by the current Switchback renderer. Each page below is the renderer's own output, shown at A4 proportions. Open a page at full size to inspect the print.</p>
+      </header>
+      <div class="gallery-grid">
+        <nav class="gallery-index" aria-label="Showcase examples">
+          {workbooks.map((workbook) => <a href={`#${workbook.style}`}><span>{workbook.label}</span><small>{STYLE_INTENT[workbook.style]}</small></a>)}
+        </nav>
+        <div class="gallery-examples">
+          {workbooks.map((workbook) => {
+            const feature = workbook.pagePreviews[Math.min(1, workbook.pagePreviews.length - 1)];
+            return <section class="workbook" id={workbook.style} aria-labelledby={`${workbook.style}-title`}>
+              <div class="workbook-heading"><h2 id={`${workbook.style}-title`}>{workbook.label}</h2><p>{workbook.pageCount} {workbook.pageCount === 1 ? "page" : "pages"} · {workbook.timebox}</p></div>
+              <p class="request-label">Request</p>
+              <blockquote>“{workbook.request}”</blockquote>
+              <p class="style-reason"><strong>Why {workbook.label}</strong> {workbook.why}</p>
+              <div class="page-strip" aria-label={`All ${workbook.pageCount} ${workbook.label} pages`}>
+                {workbook.pagePreviews.map((page, index) => <a class="page-thumb" href={page.html} aria-label={`Open ${workbook.label} page ${index + 1} at full size`}>
+                  <span class="thumb-paper"><iframe src={page.html} title={`${workbook.label} ${page.id} thumbnail`} loading="lazy" tabindex="-1"></iframe></span>
+                  <span>{page.id}</span>
+                </a>)}
+              </div>
+              <div class="feature-layout">
+                <div class="feature-paper"><iframe src={feature.html} title={`${workbook.label} ${feature.id} printed page`} loading="lazy"></iframe></div>
+                <div class="feature-caption"><p>One page from the {workbook.label.toLowerCase()} example, shown as printed.</p><a href={feature.html}>Open this page full size</a><a href={workbook.pdf} download>Download the PDF</a></div>
+              </div>
+            </section>;
+          })}
+        </div>
+      </div>
+      <div class="marked-intro"><h2>When the page returns.</h2><p>This illustrative marked sheet and its readback are one matched example. The marks are authored; the unmarked sheet is renderer output.</p></div>
+      <WorkedExample />
     </main>
-    <footer class="site-footer">
-      <a href="/changelog/">Changelog</a>
-      <a href="/privacy/">Privacy</a>
-      <a href="https://www.npmjs.com/package/@vandermerwed/switchback">npm</a>
-    </footer>
+    <footer class="site-footer"><span>Switchback · paper back to the agent</span><a href="/changelog/">Changelog</a><a href="/privacy/">Privacy</a></footer>
   </body>
 </html>
 
-<script>
-  function fitPreview(frame: HTMLElement) {
-    const iframe = frame.querySelector("iframe");
-    if (!iframe) return;
-    const wantedPages = Number(frame.dataset.pages ?? "1");
-    const scale = () => {
-      const doc = iframe.contentDocument;
-      const pages = doc ? Array.from(doc.querySelectorAll<HTMLElement>(".sb-page")) : [];
-      if (!pages.length) return;
-      const shown = pages.slice(0, Math.min(wantedPages, pages.length));
-      const first = shown[0]!.getBoundingClientRect();
-      const last = shown[shown.length - 1]!.getBoundingClientRect();
-      const width = first.width;
-      const height = last.bottom - first.top;
-      if (!width || !height) return;
-      const factor = frame.clientWidth / width;
-      // The first shown page sits inside the printed document with its own top/left margin
-      // (getBoundingClientRect reports the box after that margin). Size the iframe to cover the
-      // margin too, then translate it back by that offset so the first page's own top-left
-      // corner — not the document's — lands at the frame's origin; otherwise a grey band shows
-      // above the pages and the last one's foot strip is cut off below.
-      iframe.style.width = `${first.left + width}px`;
-      iframe.style.height = `${first.top + height}px`;
-      iframe.style.transform = `scale(${factor}) translate(${-first.left}px, ${-first.top}px)`;
-      frame.style.height = `${height * factor}px`;
-    };
-    iframe.addEventListener("load", scale);
-    window.addEventListener("resize", scale);
-  }
-  document.querySelectorAll<HTMLElement>("[data-preview]").forEach(fitPreview);
-</script>
-
 <style>
-  body {
-    background: var(--sb-paper);
-    color: var(--sb-ink);
-    font-family: var(--sb-font-body);
-    margin: 0;
-    padding: 0 1.5rem 3rem;
-  }
-  .site-nav,
-  .site-footer {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    padding: 1.5rem 0;
-  }
-  .site-nav a,
-  .site-footer a {
-    color: var(--sb-forest);
-    text-decoration: none;
-  }
-  .site-nav a:hover,
-  .site-footer a:hover {
-    text-decoration: underline;
-  }
-  .showcase {
-    max-width: 45rem;
-    margin: 0 auto;
-    line-height: 1.6;
-  }
-  .showcase h1,
-  .showcase h2 {
-    font-family: var(--sb-font-heading);
-    color: var(--sb-forest-deep);
-  }
-  .lede {
-    color: var(--sb-ink-soft);
-  }
-  .workbook {
-    border-top: 1px solid var(--sb-rule);
-    padding: 2rem 0;
-  }
-  .intent {
-    color: var(--sb-ink-soft);
-  }
-  .preview-frame {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    border: 1px solid var(--sb-rule);
-    border-radius: 0.4rem;
-    background: #fff;
-    margin: 1rem 0;
-  }
-  .preview-frame iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: none;
-    transform-origin: top left;
-    max-width: none;
-  }
-  .page-count {
-    font-size: 0.9rem;
-    color: var(--sb-ink-soft);
-  }
-  .workbook-links {
-    display: flex;
-    gap: 1.25rem;
-    flex-wrap: wrap;
-  }
-  .download,
-  .open-full {
-    display: inline-block;
-    font-weight: 600;
-    color: var(--sb-forest);
-  }
-  .site-footer {
-    border-top: 1px solid var(--sb-rule);
-    color: var(--sb-ink-soft);
-  }
+  .gallery { max-width: 1600px; margin: auto; }
+  .gallery-intro { padding: clamp(4rem, 7vw, 7rem) clamp(24px, 4vw, 70px) 4rem; border-bottom: 1px solid var(--sb-rule); }
+  .gallery-intro h1, .marked-intro h2 { font: 500 clamp(3.5rem, 7vw, 7rem)/1.04 var(--sb-font-heading); letter-spacing: -.035em; margin: 0 0 1.5rem; }
+  .gallery-intro p, .marked-intro p { max-width: 65ch; line-height: 1.7; color: var(--sb-ink-soft); font-size: 1.05rem; }
+  .gallery-grid { display: grid; grid-template-columns: minmax(180px, .27fr) minmax(0, 1fr); gap: clamp(2rem, 4vw, 5rem); padding: 0 clamp(24px, 4vw, 70px); }
+  .gallery-index { position: sticky; top: 1rem; align-self: start; padding-top: 3rem; display: grid; }
+  .gallery-index a { display: grid; gap: .2rem; padding: 1rem 0; border-top: 1px solid var(--sb-rule); text-decoration: none; }
+  .gallery-index a:hover span { text-decoration: underline; }
+  .gallery-index span { font-family: var(--sb-font-heading); font-size: 1.3rem; }
+  .gallery-index small { color: var(--sb-ink-soft); line-height: 1.45; }
+  .workbook { padding: 5rem 0 7rem; border-bottom: 1px solid var(--sb-rule); scroll-margin-top: 1rem; }
+  .workbook-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+  .workbook-heading h2 { font: 500 clamp(3rem, 5vw, 5rem)/1.1 var(--sb-font-heading); letter-spacing: -.03em; margin: 0 0 2rem; }
+  .workbook-heading p, .request-label { font-size: .8rem; color: var(--sb-ink-soft); }
+  .request-label { text-transform: uppercase; letter-spacing: .12em; margin-bottom: .5rem; }
+  blockquote { max-width: 29ch; font: 500 clamp(1.5rem, 2.6vw, 2.5rem)/1.3 var(--sb-font-heading); margin: 0 0 1.5rem; }
+  .style-reason { max-width: 60ch; color: var(--sb-ink-soft); line-height: 1.65; margin: 0 0 2.5rem; }
+  .style-reason strong { color: var(--sb-ink); }
+  .page-strip { display: flex; gap: .8rem; overflow-x: auto; padding: 0 0 1rem; margin-bottom: 2.5rem; scrollbar-color: var(--sb-forest) var(--sb-rule); }
+  .page-thumb { flex: 0 0 106px; text-decoration: none; font-size: .75rem; color: var(--sb-ink-soft); }
+  .page-thumb:hover { color: var(--sb-ink); }
+  .thumb-paper { display: block; width: 106px; height: 150px; overflow: hidden; background: white; border: 1px solid var(--sb-rule); margin-bottom: .5rem; }
+  .thumb-paper iframe { width: 794px; height: 1123px; border: 0; pointer-events: none; transform: scale(.133); transform-origin: 0 0; }
+  .feature-layout { display: grid; grid-template-columns: minmax(0, 560px) minmax(150px, 1fr); align-items: end; gap: 2rem; }
+  .feature-paper { width: 560px; max-width: 100%; aspect-ratio: 210 / 297; overflow: hidden; background: white; box-shadow: 8px 14px 30px rgba(0,0,0,.14); }
+  .feature-paper iframe { width: 794px; height: 1123px; border: 0; transform: scale(.705); transform-origin: 0 0; }
+  .feature-caption { display: grid; gap: .8rem; align-content: end; padding-bottom: 1rem; }
+  .feature-caption p { color: var(--sb-ink-soft); line-height: 1.5; }
+  .feature-caption a { color: var(--sb-ink); font-weight: 600; text-underline-offset: .25em; }
+  .marked-intro { padding: 6rem clamp(24px, 4vw, 70px) 0; }
+  .gallery :global(.worked-example) { padding-top: 2rem; }
+  @media (max-width: 900px) { .gallery-grid { grid-template-columns: 1fr; } .gallery-index { position: static; display: flex; overflow-x: auto; gap: 1.5rem; padding: 1.5rem 0 0; } .gallery-index a { flex: 0 0 140px; } .workbook { padding-top: 3rem; } }
+  @media (max-width: 640px) { .gallery-intro, .marked-intro { padding-inline: 20px; } .gallery-grid { padding-inline: 20px; } .gallery-intro h1, .marked-intro h2 { font-size: 3.4rem; } .feature-layout { display: block; } .feature-paper { width: 100%; } .feature-paper iframe { transform: scale(.44); } .feature-caption { padding-top: 1rem; } .workbook-heading { display: block; } .workbook-heading h2 { margin-bottom: .2rem; } .workbook-heading p { margin-bottom: 2rem; } }
 </style>
