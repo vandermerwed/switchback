@@ -1,0 +1,4 @@
+dist/
+.astro/
+public/generated/
+src/generated/

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title desc">
+  <title id="title">Switchback</title>
+  <desc id="desc">A continuous switchback route cut through a rounded square.</desc>
+  <mask id="switchback-route" maskUnits="userSpaceOnUse" x="0" y="0" width="256" height="256">
+    <rect width="256" height="256" fill="#fff"/>
+    <path
+      d="M151-20V34C151 45 145 48 135 53L58 88C42 95 43 109 63 112L191 131C216 135 219 150 196 163L80 220C69 225 76 241 76 276"
+      fill="none"
+      stroke="#000"
+      stroke-width="32"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </mask>
+  <rect width="256" height="256" rx="22" fill="currentColor" mask="url(#switchback-route)"/>
+</svg>

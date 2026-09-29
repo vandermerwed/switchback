@@ -16,7 +16,11 @@
       "!packages/switchback/research/.doi-cache.json",
       "!packages/switchback/research/grading",
       "!packages/switchback/research/sourcing",
-      "!packages/switchback/research/grounding.json"
+      "!packages/switchback/research/grounding.json",
+      "!site/dist",
+      "!site/.astro",
+      "!site/public/generated",
+      "!site/src/generated"
     ]
   },
   "formatter": {
