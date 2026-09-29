@@ -1,0 +1,17 @@
+/* Switchback site tokens: the one source for colour and type across the home page and the docs.
+   Starting values from the approved Contour Return comp; the home-page task may refine them. */
+:root {
+  --sb-forest: #173b39;
+  --sb-forest-deep: #0f2826;
+  --sb-paper: #f7f9f6;
+  --sb-trail: #d1a34b;
+  --sb-ink: #111411;
+  --sb-ink-soft: #4a524d;
+  --sb-rule: #d9ded8;
+  --sb-ask: #1f4fbf;
+  --sb-stop: #c0332b;
+  --sb-crux: #f2d13a;
+  --sb-font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --sb-font-heading: Georgia, "Times New Roman", serif;
+  --sb-font-mono: ui-monospace, "SFMono-Regular", Consolas, monospace;
+}
