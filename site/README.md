@@ -28,24 +28,29 @@ and to see it in an otherwise production-shaped static build:
 PUBLIC_FEEDBACK=1 pnpm site:build && pnpm --filter @switchback/site preview
 ```
 
-## One-time deploy setup (the project owner does this once)
+## Deploying
 
-The `site` GitHub Actions workflow (`.github/workflows/site.yml`) builds the site and deploys
-`site/dist` to Cloudflare Pages on every push to `main` that touches `site/`,
-`packages/switchback/`, `skills/` or the changelog. Before the first deploy:
+Cloudflare Pages builds the site straight from this repository, on every push to `main`, with
+its Git integration. The project's build settings:
 
-1. **Create the Cloudflare Pages project.** In the Cloudflare dashboard, create a Pages project
-   named `switchback` using **direct upload** (not a Git integration — the GitHub Action pushes
-   the built `site/dist` itself via `wrangler pages deploy`).
-2. **Add the custom domain.** On that Pages project, add `switchback.page` as a custom domain and
-   follow Cloudflare's DNS verification steps.
-3. **Create an API token.** In the Cloudflare dashboard under My Profile → API Tokens, create a
-   token with **Cloudflare Pages — Edit** permission (scoped to the account that owns the
-   project).
-4. **Add repository secrets.** In the GitHub repository's Settings → Secrets and variables →
-   Actions, add:
-   - `CLOUDFLARE_API_TOKEN` — the token from step 3.
-   - `CLOUDFLARE_ACCOUNT_ID` — the Cloudflare account ID shown on the dashboard's right sidebar.
+| Setting | Value |
+| --- | --- |
+| Root directory | `site` |
+| Build command | `npm run build` |
+| Build output directory | `dist` |
+| Node.js | 22.12 or later (Cloudflare's default image is fine) |
 
-After that, every push to `main` touching the paths above deploys automatically; `workflow_dispatch`
-lets the owner trigger a deploy manually from the Actions tab.
+`npm run build` builds the workspace's CLI package first (`prebuild`), then generates the
+catalogue and showcase from it, then runs Astro. Pull requests get Cloudflare preview deployments;
+the `site` job in `.github/workflows/ci.yml` builds and tests the site on every pull request too.
+
+### Showcase PDFs
+
+Cloudflare's build image has no Chrome, Edge or Chromium, so it cannot print the showcase PDFs.
+The build then uses the committed copies in `showcase/pdf/`, and fails if one is missing. When a
+showcase spec or the renderer changes, refresh them on a machine with a browser and commit them:
+
+```
+SWITCHBACK_UPDATE_SHOWCASE_PDFS=1 pnpm site:build
+git add site/showcase/pdf
+```
