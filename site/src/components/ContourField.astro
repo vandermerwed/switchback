@@ -1,0 +1,25 @@
+---
+const contour = (cx, cy, radius, count, step) =>
+  Array.from({ length: count }, (_, ring) => {
+    const r = radius + ring * step;
+    const points = Array.from({ length: 109 }, (_, i) => {
+      const angle = (i / 108) * Math.PI * 2;
+      const warp = 1 + 0.082 * Math.sin(angle * 5 + ring * 0.23) + 0.047 * Math.cos(angle * 9 - ring * 0.16);
+      const x = cx + r * warp * Math.cos(angle) * 1.28;
+      const y = cy + r * warp * Math.sin(angle) * 0.78;
+      return `${i ? "L" : "M"}${x.toFixed(1)} ${y.toFixed(1)}`;
+    });
+    return `${points.join(" ")} Z`;
+  });
+const paths = [
+  ...contour(1180, 210, 55, 34, 24),
+  ...contour(560, 750, 105, 25, 29),
+  ...contour(1470, 710, 42, 20, 22),
+];
+---
+
+<svg class="contour-field" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+  <g fill="none" stroke="currentColor" stroke-width="1">
+    {paths.map((path) => <path d={path} />)}
+  </g>
+</svg>
