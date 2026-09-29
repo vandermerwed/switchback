@@ -137,9 +137,13 @@ const claims = item.grounding?.claims ?? [];
       const rect = page.getBoundingClientRect();
       if (!rect.width || !rect.height) return;
       const factor = frame.clientWidth / rect.width;
-      iframe.style.width = `${rect.width}px`;
-      iframe.style.height = `${rect.height}px`;
-      iframe.style.transform = `scale(${factor})`;
+      // The page sits inside the printed document with its own top/left margin (getBoundingClientRect
+      // reports the box after that margin). Size the iframe to cover the margin too, then translate
+      // it back by that offset so the page's own top-left corner — not the document's — lands at the
+      // frame's origin; otherwise a grey band shows above the page and its foot strip is cut off below.
+      iframe.style.width = `${rect.left + rect.width}px`;
+      iframe.style.height = `${rect.top + rect.height}px`;
+      iframe.style.transform = `scale(${factor}) translate(${-rect.left}px, ${-rect.top}px)`;
       frame.style.height = `${rect.height * factor}px`;
     };
     iframe.addEventListener("load", scale);

@@ -27,18 +27,34 @@ test("the worked round trip stays readable as HTML and names every ink role", ()
   assert.doesNotMatch(visibleText, /paperclip|agent profile/i);
 });
 
-test("the install section has only the four verified routes and the requirements", () => {
+test("the install section has three groups, each with the verified commands and the requirements", () => {
   assert.equal((html.match(/id="install"/g) ?? []).length, 1);
-  for (const command of [
+  const commands = [
     "/plugin marketplace add vandermerwed/switchback",
     "/plugin install switchback@switchback",
     "npx skills add vandermerwed/switchback",
     "npm install -g @vandermerwed/switchback",
-  ]) {
+  ];
+  for (const command of commands) {
     assert.ok(html.includes(`<code>${command}</code>`), `${command} is a selectable code block`);
   }
+  assert.match(visibleText, /Claude Code: run both, in order/);
+  assert.match(visibleText, /Codex, opencode, Cursor and other agents/);
+  assert.match(visibleText, /Optional: install the CLI once, instead of fetching it with npx each time/);
   assert.match(visibleText, /Node\.js 20\.12 or later, a printer, a pen, a phone camera/);
-  for (const href of ["/docs/", "/showcase/", "https://github.com/vandermerwed/switchback"]) {
+  for (const href of ["/docs/", "/showcase/", "/privacy/", "https://github.com/vandermerwed/switchback"]) {
     assert.ok(html.includes(`href="${href}"`), `navigation links to ${href}`);
+  }
+});
+
+test("every install command has a copy button", () => {
+  const commands = [
+    "/plugin marketplace add vandermerwed/switchback",
+    "/plugin install switchback@switchback",
+    "npx skills add vandermerwed/switchback",
+    "npm install -g @vandermerwed/switchback",
+  ];
+  for (const command of commands) {
+    assert.ok(html.includes(`aria-label="Copy: ${command}"`), `${command} has a copy button labelled for it`);
   }
 });

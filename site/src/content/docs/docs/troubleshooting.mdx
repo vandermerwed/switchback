@@ -11,8 +11,12 @@ the ones people actually hit; `switchback --help` and each command's own `--help
 `switchback build --pdf` (and proof and workbook building generally) needs Chrome, Edge or
 Chromium installed to render a PDF. When none is found, the build still writes the HTML page —
 nothing fails silently — and warns that you should print the HTML directly from any browser
-instead. The same happens if a browser is found but rendering fails for some other reason: the
-HTML is kept, and no half-written PDF is left behind to be printed by mistake.
+instead: Print, margins None, background graphics on, scale 100%. The same happens if a browser is
+found but rendering fails for some other reason: the HTML is kept, and no half-written PDF is left
+behind to be printed by mistake.
+
+If your browser is installed somewhere unusual and the CLI cannot find it, set the
+`SWITCHBACK_CHROME` environment variable to its path.
 
 ## A photo will not read
 
@@ -49,8 +53,9 @@ for a spec error that names an unknown component, for instance, it points at `sw
 rather than leaving you to guess. Two categories worth knowing about:
 
 - **Style errors** (an Incubation with two `step-away` pages, a Ritual page the style doesn't
-  allow, more pages than the style's budget) always name the specific rule and the research claim
-  behind it.
+  allow, more pages than the style's budget) always name the specific rule, and most name the
+  research claim behind it too. A missing opening or closing page is only a warning, not one of
+  these refusals — the build still goes ahead.
 - **Profile import errors** happen when the JSON given to `switchback profile --import` does not
   match the expected shape exactly — no extra keys, and every colour is a bare word with no brand
   or width. A failed import changes nothing; your existing profile is left in place.

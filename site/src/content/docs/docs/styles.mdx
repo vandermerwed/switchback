@@ -3,9 +3,11 @@ title: Styles
 description: Sitting, Series, Incubation, Ritual and Proof — shape, cadence, and when each one is used.
 ---
 
-A workbook style is the shape a sitting takes over time. The CLI enforces each style's opening,
-closing and page budget directly: a spec that breaks a style's rules is refused with a message
-naming what is wrong and why.
+A workbook style is the shape a sitting takes over time. A spec missing the style's opening or
+closing pages only gets a warning — the build still succeeds. What actually refuses the build is
+the page budget, the split into halves, and the phase rules (a page in the wrong half, or one the
+style forbids outright); each refusal names what is wrong and why, and most name the research
+claim behind the rule too.
 
 ## Sitting — decide, diagnose, plan
 

@@ -451,19 +451,19 @@ a:focus-visible {
   color: var(--sb-ink);
   font-size: 0.9rem;
 }
-.install-routes {
+.install-groups {
   display: grid;
   gap: 0;
   align-content: start;
 }
-.install-route {
+.install-group {
   border-top: 1px solid #b9c6ba;
   padding: 1.25rem 0 1.5rem;
 }
-.install-route:last-child {
+.install-group:last-child {
   border-bottom: 1px solid #b9c6ba;
 }
-.install-route h3 {
+.install-group h3 {
   margin: 0 0 0.7rem;
   color: var(--sb-ink-soft);
   font-size: 0.72rem;
@@ -471,7 +471,17 @@ a:focus-visible {
   text-transform: uppercase;
   font-weight: 600;
 }
-.install-route pre {
+.install-command {
+  display: flex;
+  align-items: stretch;
+  gap: 0.6rem;
+}
+.install-command + .install-command {
+  margin-top: 0.6rem;
+}
+.install-command pre {
+  flex: 1;
+  min-width: 0;
   max-width: 100%;
   overflow-x: auto;
   margin: 0;
@@ -484,8 +494,22 @@ a:focus-visible {
   line-height: 1.6;
   scrollbar-color: var(--sb-trail) var(--sb-forest-deep);
 }
-.install-route code {
+.install-command code {
   user-select: text;
+}
+.copy-button {
+  flex: none;
+  padding: 0 0.9rem;
+  border: 1px solid #b9c6ba;
+  border-radius: 2px;
+  background: #fff;
+  color: var(--sb-forest-deep);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.copy-button:hover {
+  background: var(--sb-paper);
 }
 .site-footer {
   display: flex;
@@ -626,7 +650,8 @@ a:focus-visible {
     font-size: clamp(0.68rem, 3vw, 1rem);
   }
   .hero-paper figcaption {
-    font-size: 0.65rem;
+    margin-left: 2rem;
+    font-size: 0.75rem;
   }
   .agent-readback {
     align-self: flex-end;
@@ -662,7 +687,7 @@ a:focus-visible {
   .install-section {
     padding: 5rem 20px;
   }
-  .install-route pre {
+  .install-command pre {
     font-size: 0.72rem;
   }
   .site-footer {

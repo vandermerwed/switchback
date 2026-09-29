@@ -1,6 +1,4 @@
 ---
-import { existsSync, readFileSync } from "node:fs";
-import { fileURLToPath } from "node:url";
 import "../styles/tokens.css";
 import workbooks from "../generated/showcase.json";
 
@@ -11,17 +9,6 @@ const STYLE_INTENT = {
   ritual: "One identical page, every time, so change becomes visible by flipping back.",
   proof: "A document printed as numbered paragraphs with wide margins, built to mark up by hand.",
 };
-
-// The home page's illustrative marked example (Ask/Stop/Crux over a real printed page, with its
-// read-back) is authored by the home-page task, in another worktree at the time this page was
-// built. This section renders only once those files exist, so it activates on its own once the
-// two pieces of work are merged — nothing here needs to change for that to happen.
-const readbackPath = fileURLToPath(new URL("../../example/readback.json", import.meta.url));
-const examplePagePath = fileURLToPath(new URL("../../public/example/generated-page.png", import.meta.url));
-const illustrative =
-  existsSync(readbackPath) && existsSync(examplePagePath)
-    ? JSON.parse(readFileSync(readbackPath, "utf8"))
-    : null;
 ---
 
 <html lang="en">
@@ -69,37 +56,16 @@ const illustrative =
             <p class="page-count">
               {workbook.pageCount} page{workbook.pageCount === 1 ? "" : "s"} in this round.
             </p>
-            <a class="download" href={workbook.pdf}>
-              Download the PDF
-            </a>
+            <p class="workbook-links">
+              <a class="download" href={workbook.pdf}>
+                Download the PDF
+              </a>
+              <a class="open-full" href={workbook.html}>
+                Open full size
+              </a>
+            </p>
           </section>
         ))
-      }
-
-      {
-        illustrative && (
-          <section class="workbook illustrative">
-            <h2>A marked page, read back</h2>
-            <p class="illustrative-label">Illustrative example</p>
-            <p>
-              Not one of the workbooks above — a demonstration of what comes back after a real
-              sitting: a printed page in a reader's own ink, and the read-back the agent produces
-              from it.
-            </p>
-            <img
-              src="/example/generated-page.png"
-              alt={`Page ${illustrative.pageId}, marked up: ${illustrative.printedPrompt}`}
-              class="illustrative-page"
-            />
-            <ul class="marks">
-              {illustrative.marks?.map((mark) => (
-                <li>
-                  <strong>{mark.label}</strong> ({mark.role}): {mark.text}
-                </li>
-              ))}
-            </ul>
-          </section>
-        )
       }
     </main>
     <footer class="site-footer">
@@ -126,9 +92,14 @@ const illustrative =
       const height = last.bottom - first.top;
       if (!width || !height) return;
       const factor = frame.clientWidth / width;
-      iframe.style.width = `${width}px`;
-      iframe.style.height = `${height}px`;
-      iframe.style.transform = `scale(${factor})`;
+      // The first shown page sits inside the printed document with its own top/left margin
+      // (getBoundingClientRect reports the box after that margin). Size the iframe to cover the
+      // margin too, then translate it back by that offset so the first page's own top-left
+      // corner — not the document's — lands at the frame's origin; otherwise a grey band shows
+      // above the pages and the last one's foot strip is cut off below.
+      iframe.style.width = `${first.left + width}px`;
+      iframe.style.height = `${first.top + height}px`;
+      iframe.style.transform = `scale(${factor}) translate(${-first.left}px, ${-first.top}px)`;
       frame.style.height = `${height * factor}px`;
     };
     iframe.addEventListener("load", scale);
@@ -202,33 +173,16 @@ const illustrative =
     font-size: 0.9rem;
     color: var(--sb-ink-soft);
   }
-  .download {
+  .workbook-links {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+  .download,
+  .open-full {
     display: inline-block;
     font-weight: 600;
     color: var(--sb-forest);
-  }
-  .illustrative-label {
-    display: inline-block;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--sb-trail);
-    border: 1px solid var(--sb-trail);
-    border-radius: 999px;
-    padding: 0.15rem 0.6rem;
-  }
-  .illustrative-page {
-    max-width: 100%;
-    height: auto;
-    border: 1px solid var(--sb-rule);
-  }
-  .marks {
-    list-style: none;
-    padding: 0;
-  }
-  .marks li {
-    padding: 0.35rem 0;
-    border-top: 1px solid var(--sb-rule);
   }
   .site-footer {
     border-top: 1px solid var(--sb-rule);
