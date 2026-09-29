@@ -1,7 +1,18 @@
 ---
-// Placeholder: the home-page task replaces this file.
+import Hero from "../components/Hero.astro";
+import "../styles/global.css";
 ---
+
+<!doctype html>
 <html lang="en">
-  <head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Switchback</title></head>
-  <body><h1>Switchback</h1><p><a href="/docs/">Docs</a></p></body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#173b39" />
+    <meta name="description" content="Switchback is a paper-to-agent loop: print a focused page, think in ink, then return it for readback." />
+    <title>Switchback — paper for the next handoff</title>
+  </head>
+  <body>
+    <Hero />
+  </body>
 </html>
