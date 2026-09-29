@@ -10,6 +10,8 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      HAS_CLOUDFLARE: ${{ secrets.CLOUDFLARE_API_TOKEN != '' && secrets.CLOUDFLARE_ACCOUNT_ID != '' }}
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -19,7 +21,10 @@ jobs:
       - run: pnpm build
       - run: pnpm site:build
       - run: pnpm site:test
-      - run: pnpm dlx wrangler@4 pages deploy site/dist --project-name switchback --branch main
+      - if: env.HAS_CLOUDFLARE != 'true'
+        run: echo "::notice title=site::Built and tested; not deployed, because the CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID secrets are not set (see site/README.md)."
+      - if: env.HAS_CLOUDFLARE == 'true'
+        run: pnpm dlx wrangler@4 pages deploy site/dist --project-name switchback --branch main
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
