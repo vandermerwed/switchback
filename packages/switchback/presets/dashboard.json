@@ -1,0 +1,105 @@
+{
+  "id": "dashboard",
+  "kind": "preset",
+  "extends": "zones",
+  "name": "Dashboard",
+  "tags": ["focus", "plan"],
+  "data": {
+    "zones": ["Current decision", "Open questions", "Resources left", "Time left", "Next action"],
+    "columns": 2
+  },
+  "attribution": "Switchback original (a session HUD)",
+  "licence": "original; no restriction",
+  "grounding": {
+    "claims": [
+      {
+        "id": "externalisation-embodiment/common-region",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Items placed inside the same bounded region are perceived as belonging together, even against other grouping cues, so labelled zones make category membership readable at a glance.",
+        "construct": "the Gestalt principle of common region (perceptual grouping)",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Wagemans et al. (2012)",
+            "doi": "10.1037/a0029333",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/externalisation-embodiment.md#common-region"
+      },
+      {
+        "id": "attention-load/cognitive-offload",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Keeping task-relevant information in a stable, visible external store, rather than in working memory, improves performance on the concurrent task, at the cost of weaker memory for the offloaded content.",
+        "construct": "cognitive offloading (working-memory offload)",
+        "grade": "B",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Gilbert (2015)",
+            "doi": "10.1080/17470218.2014.972963",
+            "type": "experiment"
+          },
+          {
+            "cite": "Storm & Stone (2015)",
+            "doi": "10.1177/0956797614559285",
+            "type": "experiment"
+          },
+          {
+            "cite": "Sparrow, Liu & Wegner (2011)",
+            "doi": "10.1126/science.1207745",
+            "type": "experiment"
+          },
+          {
+            "cite": "Risko & Gilbert (2016)",
+            "doi": "10.1016/j.tics.2016.07.002",
+            "type": "review"
+          },
+          {
+            "cite": "Meyerhoff, Grinschgl, Papenmeier & Gilbert (2021)",
+            "doi": "10.1186/s41235-021-00298-x",
+            "type": "experiment"
+          },
+          {
+            "cite": "Hesselmann (2020)",
+            "doi": "10.7717/peerj.10325",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/attention-load.md#cognitive-offload"
+      },
+      {
+        "id": "attention-load/resumption-cues",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Leaving a visible cue of where you were and what comes next at the point of interruption reduces the time and errors involved in resuming a task.",
+        "construct": "memory for goals; resumption lag",
+        "grade": "B",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Hodgetts & Jones (2006)",
+            "doi": "10.1037/0278-7393.32.5.1120",
+            "type": "experiment"
+          },
+          {
+            "cite": "Monk, Trafton & Boehm-Davis (2008)",
+            "doi": "10.1037/a0014402",
+            "type": "experiment"
+          },
+          {
+            "cite": "Altmann & Trafton (2002)",
+            "doi": "10.1207/s15516709cog2601_2",
+            "type": "theory"
+          }
+        ],
+        "rationale": "research/attention-load.md#resumption-cues"
+      }
+    ],
+    "helps": "when a session has several pieces of state to hold at once (the current decision, open questions, time left); keeping them in view frees working memory in reminder and saving studies, and items in one box tend to be read as a group",
+    "backfires": "when the boxes are not kept current, since offloading helps only while the store can be trusted, or when something offloaded is needed later without the page, because people remember less of what they expect to be able to look up"
+  }
+}

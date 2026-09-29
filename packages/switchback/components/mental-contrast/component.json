@@ -1,0 +1,88 @@
+{
+  "id": "mental-contrast",
+  "kind": "page",
+  "name": "Mental contrast",
+  "intent": "Set a wish against the obstacle inside you, then plan for that obstacle.",
+  "when": "a goal you want but keep not starting; after a decision, before the plan",
+  "tags": ["plan", "reflect"],
+  "phase": "converge",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write"],
+    "surface": "desk",
+    "timebox": "10 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "wish": {
+        "type": "string",
+        "maxLength": 120
+      }
+    }
+  },
+  "prompt": "Wish, Outcome, Obstacle, Plan. Picture each one before you write it.",
+  "readback": "The obstacle must be inside the person (a habit, a feeling, a belief), not the world. If the obstacle outweighs the wish, dropping it is a result, not a failure.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "planning-self-regulation/mental-contrasting",
+        "load_bearing": true,
+        "transfer": "direct",
+        "claim": "Contrasting a desired future with the inner obstacle that stands in its way, then planning how to meet that obstacle (MCII / WOOP), increases goal attainment compared with positive fantasising, dwelling on obstacles, or planning alone.",
+        "construct": "mental contrasting with implementation intentions",
+        "grade": "B",
+        "effect": "small",
+        "sources": [
+          {
+            "cite": "Wang, Wang & Gai (2021)",
+            "doi": "10.3389/fpsyg.2021.565202",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Oettingen, Pak & Schnetter (2001)",
+            "doi": "10.1037/0022-3514.80.5.736",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/planning-self-regulation.md#mental-contrasting"
+      },
+      {
+        "id": "planning-self-regulation/implementation-intentions",
+        "load_bearing": false,
+        "transfer": "direct",
+        "claim": "Forming written if-then plans (\"When situation X arises, I will do Y\") increases goal attainment compared with forming a goal intention alone.",
+        "construct": "implementation intentions",
+        "grade": "A",
+        "effect": "moderate",
+        "sources": [
+          {
+            "cite": "Gollwitzer & Sheeran (2006)",
+            "doi": "10.1016/S0065-2601(06)38002-1",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Milkman et al. (2011)",
+            "doi": "10.1073/pnas.1103170108",
+            "type": "experiment"
+          },
+          {
+            "cite": "Gollwitzer (1999)",
+            "doi": "10.1037/0003-066X.54.7.493",
+            "type": "theory"
+          }
+        ],
+        "rationale": "research/planning-self-regulation.md#implementation-intentions"
+      }
+    ],
+    "helps": "when a wish is one you can realistically reach: setting the outcome against the inner obstacle, then writing an if-then plan for that obstacle, gives a small but consistent lift to follow-through, a little smaller on paper than with a guide",
+    "backfires": "when the Obstacle box is skipped and the page becomes pure positive fantasy, which lowers effort, and when success is unlikely, where contrasting is meant to lead you to let the wish go, so ending in disengagement is the page working, not failing"
+  }
+}

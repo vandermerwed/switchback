@@ -1,0 +1,432 @@
+{
+  "family": "creativity-fixation",
+  "claims": {
+    "creativity-fixation/random-stimuli": {
+      "rationale": "research/creativity-fixation.md#random-stimuli",
+      "suggested_rewording": "Exposure to other ideas or examples during idea generation can raise idea output, but it can also fix attention on the example; which happens depends on the stimulus. (C, adjacent)",
+      "claim": "Exposure to randomly selected stimuli (words or prompts unrelated to the problem) during idea generation increases the number and originality of ideas, compared with generating without stimuli.",
+      "construct": "random entry / external stimulation in idea generation",
+      "grade": "C",
+      "transfer": "analogical",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Dugosh et al. (2000)",
+          "doi": "10.1037/0022-3514.79.5.722",
+          "type": "experiment"
+        },
+        {
+          "cite": "Vasconcelos & Crilly (2016)",
+          "doi": "10.1016/j.destud.2015.11.001",
+          "type": "review"
+        },
+        {
+          "cite": "Leahy et al. (2020)",
+          "doi": "10.1115/1.4046446",
+          "type": "experiment"
+        },
+        {
+          "cite": "Jansson & Smith (1991)",
+          "doi": "10.1016/0142-694x(91)90003-f",
+          "type": "experiment"
+        }
+      ]
+    },
+    "creativity-fixation/heuristic-prompts": {
+      "rationale": "research/creativity-fixation.md#heuristic-prompts",
+      "suggested_rewording": null,
+      "claim": "Prompting idea generation with generic transformation heuristics (\"reverse it\", \"make it 10×\", \"borrow from another field\") increases the variety and creativity of generated concepts, compared with unprompted generation.",
+      "construct": "design heuristics / transformation operators; analogical transfer",
+      "grade": "C",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Yilmaz et al. (2016)",
+          "doi": "10.1016/j.destud.2016.05.001",
+          "type": "review"
+        },
+        {
+          "cite": "Leahy et al. (2020)",
+          "doi": "10.1115/1.4046446",
+          "type": "experiment"
+        }
+      ]
+    },
+    "creativity-fixation/conceptual-combination": {
+      "rationale": "research/creativity-fixation.md#conceptual-combination",
+      "suggested_rewording": null,
+      "claim": "Deliberately combining two distant concepts produces more original ideas than working from a single concept, with originality driven by attributes that emerge from the combination.",
+      "construct": "conceptual combination (bisociation)",
+      "grade": "D",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Koestler (1964), The Act of Creation",
+          "isbn": "9780140191912",
+          "type": "theory"
+        }
+      ]
+    },
+    "creativity-fixation/deferred-judgement": {
+      "rationale": "research/creativity-fixation.md#deferred-judgement",
+      "suggested_rewording": null,
+      "claim": "Separating idea generation from evaluation, with judgement deferred until generation is done, increases the number of ideas without reducing, and sometimes increasing, the number of good ones.",
+      "construct": "deferral of judgement; diverge/converge separation",
+      "grade": "D",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Osborn (1953), Applied Imagination",
+          "isbn": "0684413930",
+          "type": "practice"
+        }
+      ]
+    },
+    "creativity-fixation/bad-ideas-criterion": {
+      "rationale": "research/creativity-fixation.md#bad-ideas-criterion",
+      "suggested_rewording": null,
+      "claim": "Instructing people to generate deliberately bad ideas lowers self-censorship and yields more ideas, including some usable ones, than instructing them to generate good ideas.",
+      "construct": "lowered quality criterion; instruction effects in divergent thinking",
+      "grade": "D",
+      "transfer": "analogical",
+      "effect": "n/a",
+      "tie_break": "6",
+      "sources": [
+        {
+          "cite": "Harrington (1975)",
+          "doi": "10.1111/j.1467-6494.1975.tb00715.x",
+          "type": "experiment"
+        }
+      ]
+    },
+    "creativity-fixation/serial-order-effect": {
+      "rationale": "research/creativity-fixation.md#serial-order-effect",
+      "suggested_rewording": null,
+      "claim": "In a single idea-generation run, later ideas tend to be more original than earlier ones.",
+      "construct": "the serial order effect in divergent thinking",
+      "grade": "B",
+      "transfer": "adjacent",
+      "effect": "small",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Beaty & Silvia (2012)",
+          "doi": "10.1037/a0029171",
+          "type": "experiment"
+        },
+        {
+          "cite": "Gilhooly et al. (2007)",
+          "doi": "10.1111/j.2044-8295.2007.tb00467.x",
+          "type": "experiment"
+        }
+      ]
+    },
+    "creativity-fixation/constraint-relaxation": {
+      "rationale": "research/creativity-fixation.md#constraint-relaxation",
+      "suggested_rewording": "In insight problems, impasses tend to break when the solver drops an implicit, self-imposed assumption about the solution. (B; five consistent experiments from one group)",
+      "claim": "Impasses in problem solving are overcome when the solver relaxes a self-imposed constraint on the solution, so deliberately removing a constraint makes new solution paths available.",
+      "construct": "constraint relaxation (representational change); fixation / Einstellung",
+      "grade": "C",
+      "transfer": "analogical",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Knoblich et al. (1999)",
+          "doi": "10.1037/0278-7393.25.6.1534",
+          "type": "experiment"
+        },
+        {
+          "cite": "Knoblich, Ohlsson & Raney (2001)",
+          "doi": "10.3758/bf03195762",
+          "type": "experiment"
+        },
+        {
+          "cite": "Moreau & Dahl (2005)",
+          "doi": "10.1086/429597",
+          "type": "experiment"
+        },
+        {
+          "cite": "Acar, Tarakci & van Knippenberg (2019)",
+          "doi": "10.1177/0149206318805832",
+          "type": "review"
+        }
+      ]
+    },
+    "creativity-fixation/incubation-effect": {
+      "rationale": "research/creativity-fixation.md#incubation-effect",
+      "suggested_rewording": null,
+      "claim": "Setting a creative problem aside for a break, then returning to it, increases solutions or ideas compared with working on it continuously for the same total time.",
+      "construct": "the incubation effect",
+      "grade": "B",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Sio & Ormerod (2009)",
+          "doi": "10.1037/a0014212",
+          "type": "meta-analysis"
+        },
+        {
+          "cite": "Baird et al. (2012)",
+          "doi": "10.1177/0956797612446024",
+          "type": "experiment"
+        },
+        {
+          "cite": "Cai et al. (2009)",
+          "doi": "10.1073/pnas.0900271106",
+          "type": "experiment"
+        },
+        {
+          "cite": "Nieuwenstein et al. (2015)",
+          "doi": "10.1017/s1930297500003144",
+          "type": "rrr"
+        }
+      ]
+    },
+    "creativity-fixation/incubation-conditions": {
+      "rationale": "research/creativity-fixation.md#incubation-conditions",
+      "suggested_rewording": "Incubation benefits are larger after a longer preparation period, and when the break is filled with an undemanding activity rather than a demanding one; in some studies an undemanding activity also beat rest. (B, adjacent)",
+      "claim": "Incubation benefits are larger (a) after a longer preparation period, (b) with longer breaks up to a point, and (c) when the break is filled with a low-demand activity rather than rest or a demanding task.",
+      "construct": "incubation moderators",
+      "grade": "C",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Sio & Ormerod (2009)",
+          "doi": "10.1037/a0014212",
+          "type": "meta-analysis"
+        },
+        {
+          "cite": "Baird et al. (2012)",
+          "doi": "10.1177/0956797612446024",
+          "type": "experiment"
+        },
+        {
+          "cite": "Ellwood et al. (2009)",
+          "doi": "10.1080/10400410802633368",
+          "type": "experiment"
+        }
+      ]
+    },
+    "creativity-fixation/sleep-insight": {
+      "rationale": "research/creativity-fixation.md#sleep-insight",
+      "suggested_rewording": "Sleeping on a difficult problem, after first working on it, can raise the chance of finding a hidden solution at retest compared with the same time awake; the benefit is confined to hard problems and depends on sleep stage. (C, borderline B)",
+      "claim": "Sleeping between first exposure to a problem and a later retest increases the likelihood of discovering a hidden solution or rule, compared with an equal period awake.",
+      "construct": "sleep and insight (offline consolidation)",
+      "grade": "C",
+      "transfer": "adjacent",
+      "effect": "large",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Wagner et al. (2004)",
+          "doi": "10.1038/nature02223",
+          "type": "experiment"
+        },
+        {
+          "cite": "Cai et al. (2009)",
+          "doi": "10.1073/pnas.0900271106",
+          "type": "experiment"
+        },
+        {
+          "cite": "Sio, Monaghan & Ormerod (2013)",
+          "doi": "10.3758/s13421-012-0256-7",
+          "type": "experiment"
+        },
+        {
+          "cite": "Lacaux et al. (2021)",
+          "doi": "10.1126/sciadv.abj5866",
+          "type": "experiment"
+        }
+      ]
+    },
+    "creativity-fixation/walking-divergent": {
+      "rationale": "research/creativity-fixation.md#walking-divergent",
+      "suggested_rewording": null,
+      "claim": "Walking, compared with sitting, increases divergent-thinking output during the walk and shortly after it.",
+      "construct": "walking / acute physical activity and divergent thinking",
+      "grade": "C",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Oppezzo & Schwartz (2014)",
+          "doi": "10.1037/a0036577",
+          "type": "experiment"
+        },
+        {
+          "cite": "Frith et al. (2019)",
+          "doi": "10.5964/ejop.v15i4.1773",
+          "type": "review"
+        }
+      ]
+    },
+    "creativity-fixation/time-pressure-divergent": {
+      "rationale": "research/creativity-fixation.md#time-pressure-divergent",
+      "suggested_rewording": "High time pressure during idea generation tends to lower creative output; low to moderate pressure need not, and may help some people. (C, adjacent)",
+      "claim": "Time pressure during idea generation reduces creative, divergent output.",
+      "construct": "time pressure and creativity (challenge vs hindrance stressors)",
+      "grade": "C",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Byron, Khazanchi & Nazarian (2010)",
+          "doi": "10.1037/a0017868",
+          "type": "meta-analysis"
+        },
+        {
+          "cite": "Baer & Oldham (2006)",
+          "doi": "10.1037/0021-9010.91.4.963",
+          "type": "experiment"
+        },
+        {
+          "cite": "Moreau & Dahl (2005)",
+          "doi": "10.1086/429597",
+          "type": "experiment"
+        }
+      ]
+    }
+  },
+  "items": {
+    "ten-bad-ideas": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "creativity-fixation/deferred-judgement",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "creativity-fixation/bad-ideas-criterion",
+          "load_bearing": true,
+          "transfer": "analogical"
+        },
+        {
+          "id": "creativity-fixation/serial-order-effect",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when wanting a good idea is what stops the first one being written; later ideas in a run tend to be a little more original, a small tendency that is unreliable for any one person, and asking for bad ideas is untested craft, so treat the ten as a warm-up and read the later boxes first",
+      "backfires": "when \"bad\" turns into jokes rather than range, or when ten is too few to get past the obvious answers: the studies of later ideas being more original used timed runs of several minutes"
+    },
+    "forced-connections": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "creativity-fixation/random-stimuli",
+          "load_bearing": true,
+          "transfer": "analogical"
+        },
+        {
+          "id": "creativity-fixation/conceptual-combination",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when ideas have gone stale and familiar; outside stimuli can lift idea output, but random words themselves are untested, so treat each connection as a prompt to test, not a finding",
+      "backfires": "when a stimulus fixes attention on itself instead of widening it, as provided examples do in design studies, and during convergence, where unrelated input is noise"
+    },
+    "constraint-removal": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "creativity-fixation/constraint-relaxation",
+          "load_bearing": true,
+          "transfer": "analogical"
+        },
+        {
+          "id": "creativity-fixation/deferred-judgement",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when an unexamined assumption is blocking every option; dropping a self-imposed constraint breaks impasses in puzzle studies, but removing a real constraint on purpose has not been tested",
+      "backfires": "when the constraint was doing useful work: constraints can raise creativity as well as lower it, and an idea designed without the constraint may not survive its return"
+    },
+    "stimulus-die": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "creativity-fixation/random-stimuli",
+          "load_bearing": true,
+          "transfer": "analogical"
+        },
+        {
+          "id": "creativity-fixation/heuristic-prompts",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "creativity-fixation/constraint-relaxation",
+          "load_bearing": false,
+          "transfer": "analogical"
+        }
+      ],
+      "helps": "when the same few ideas keep recurring during a divergent phase; heuristic prompts reduced fixation in one design study, and rolling operators at random is otherwise untested",
+      "backfires": "when the face rolled does not fit the problem, when the prompt itself becomes the fixation, and during convergence or evaluation, where random input is noise"
+    },
+    "incubation": {
+      "kind": "style",
+      "claims": [
+        {
+          "id": "creativity-fixation/incubation-effect",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "creativity-fixation/sleep-insight",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "creativity-fixation/walking-divergent",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "creativity-fixation/deferred-judgement",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "creativity-fixation/time-pressure-divergent",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "creativity-fixation/incubation-conditions",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when an open-ended problem has been worked properly before the break and the break is spent on something easy and different; across studies a break helps on average, more for divergent tasks than for insight puzzles",
+      "backfires": "when preparation was too short, when the break is filled with demanding work, or when the problem is easy or well-structured: sleep helped mainly on hard problems, and walking lifted divergent but not convergent thinking"
+    },
+    "step-away": {
+      "kind": "component",
+      "claims": [
+        { "id": "creativity-fixation/incubation-effect", "load_bearing": true, "transfer": "adjacent" },
+        { "id": "creativity-fixation/incubation-conditions", "load_bearing": false, "transfer": "adjacent" },
+        { "id": "creativity-fixation/walking-divergent", "load_bearing": false, "transfer": "adjacent" },
+        { "id": "creativity-fixation/sleep-insight", "load_bearing": false, "transfer": "adjacent" }
+      ],
+      "helps": "when an open-ended problem has had a proper first pass: setting it aside for a real break, filled with something easy and different, helps on average, more for generating ideas than for insight puzzles",
+      "backfires": "when the break is a few minutes of scrolling or other demanding work, when the first pass was too short to have anything to incubate, or when the problem is easy or well-structured"
+    }
+  }
+}

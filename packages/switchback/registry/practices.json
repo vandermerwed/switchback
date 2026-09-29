@@ -1,0 +1,102 @@
+{
+  "practices": [
+    {
+      "id": "page-frame",
+      "name": "Page frame",
+      "intent": "Give every page a fixed physical extent so it prints as a real page, not a scrolling document.",
+      "guidance": "Real paper dimensions (A4/Letter) with page breaks. On screen: a page card. In print: @page size with zero margin and a fitted page box. Overflow is clipped — content must be sized to the page by the author.",
+      "requires": ["printer"]
+    },
+    {
+      "id": "registration-marks",
+      "name": "Registration marks",
+      "intent": "Let a phone photo of a single page be cropped and deskewed before an AI reads it.",
+      "guidance": "Short corner rules (L marks) inset from each page edge, light enough not to compete with writing. The capture skill crops to them and straightens the page.",
+      "requires": ["printer"]
+    },
+    {
+      "id": "legend-strip",
+      "name": "Legend strip",
+      "intent": "Make any single photographed page self-describing by carrying the colour key and the page ID.",
+      "guidance": "A faint 8 mm strip along the bottom edge: condensed legend (letter codes + role words) and the page ID. Letter-first so it survives mono printing and bad light.",
+      "requires": ["printer"]
+    },
+    {
+      "id": "shared-cut-lines",
+      "name": "Shared cut lines",
+      "intent": "Turn cutting a deck out of a fiddly per-card job into a few straight passes of the scissors.",
+      "guidance": "Pieces abut with zero gap. Each cell draws its top and left rule; the container closes the right and bottom. Every internal line is single and serves two pieces. Never draw a border around each piece independently.",
+      "requires": ["scissors"]
+    },
+    {
+      "id": "fold-guide",
+      "name": "Fold guide",
+      "intent": "Make a page become a physical thing — a booklet, a card, a stand.",
+      "guidance": "A dashed fold line with a small scissors/scored-edge hint. Keep folds off the binding edge and away from registration marks.",
+      "requires": ["printer"]
+    },
+    {
+      "id": "paste-zone",
+      "name": "Paste zone",
+      "intent": "Give loose pieces, cards, or notes a home on the page once they've been placed.",
+      "guidance": "A faintly labelled rectangle sized to the piece (sticky note, index card, cut-out) so the human can commit a placement without drawing it. Mark the zone's expected size on the page.",
+      "requires": ["tape | glue"]
+    },
+    {
+      "id": "index-cards",
+      "name": "Index cards",
+      "intent": "Give each idea a movable, ordered body that can be shuffled, stacked, and rewritten.",
+      "guidance": "When cards are available, never print cut-outs for blank pieces — the human writes straight onto the cards. Use cards for one idea per piece; print only the destination columns on the page.",
+      "requires": ["index_cards"]
+    },
+    {
+      "id": "sticky-notes",
+      "name": "Sticky notes",
+      "intent": "Make thinking provisional and rearrangable — every note can move until it's right.",
+      "guidance": "Print a paste zone sized to the note. Colour of the note itself can be ignored or assigned a role; prefer the colour language on the note's ink so it stays machine-readable.",
+      "requires": ["sticky_notes"]
+    },
+    {
+      "id": "whiteboard",
+      "name": "Whiteboard",
+      "intent": "Make thinking large, shared, and erasable — a surface for more than one person.",
+      "guidance": "The skill becomes an instruction, not a page: give a drawing recipe (what to put in the centre, what around it, which arrows to label) and ask for a photo or short video when done. Reserve one marker colour for questions to the AI.",
+      "requires": ["whiteboard", "whiteboard_marker"]
+    },
+    {
+      "id": "string-and-tokens",
+      "name": "String and tokens",
+      "intent": "Externalise relationships with physical tension and length, not lines on paper.",
+      "guidance": "Use tokens for nodes and string for edges. Length and tautness can encode strength or distance — state the encoding on the sheet. Best photographed from directly above.",
+      "requires": ["string", "tokens"]
+    },
+    {
+      "id": "flat-photo",
+      "name": "Flat photo",
+      "intent": "Return a page as a legible, straight, well-lit image an AI can read.",
+      "guidance": "One page per shot, filled to the frame, no shadow across the ink, corner registration marks visible. Crop and deskew to the marks before reading. If colour is ambiguous, ask for one re-shoot rather than guessing.",
+      "requires": ["camera"]
+    },
+    {
+      "id": "scan",
+      "name": "Scan",
+      "intent": "Get a clean, flat, high-fidelity image when accuracy matters more than speed.",
+      "guidance": "Scan at a resolution that keeps pencil legible. Prefer colour scan when the colour language is in use, since greyscale flattens the ink roles.",
+      "requires": ["scanner"]
+    },
+    {
+      "id": "overhead-video",
+      "name": "Overhead video",
+      "intent": "Capture a spatial arrangement or a walk-through that a still photo can't hold.",
+      "guidance": "Ask for a slow pass over the artifact with the human narrating what they point at. Audio carries the meaning the frame misses; tell them to speak as they move.",
+      "requires": ["camera"]
+    },
+    {
+      "id": "spoken-playback",
+      "name": "Spoken playback",
+      "intent": "Return the thinking as the human's own words for what they couldn't or wouldn't write.",
+      "guidance": "Give a few spoken prompts and a timebox; the human talks. Transcribe and read it as prose, listening for the purple (intuition) the page never captured.",
+      "requires": ["voice_recorder"]
+    }
+  ]
+}

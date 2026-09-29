@@ -1,0 +1,65 @@
+{
+  "id": "timeline",
+  "kind": "page",
+  "name": "Timeline",
+  "intent": "Force sequence and expose what must happen before what.",
+  "when": "planning, or when the human is secretly trying to do everything at once",
+  "tags": ["plan"],
+  "phase": "converge",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write"],
+    "surface": "desk",
+    "timebox": "10 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "horizon": {
+        "type": "string",
+        "maxLength": 40
+      },
+      "marks": {
+        "type": "array",
+        "minItems": 0,
+        "maxItems": 6,
+        "items": {
+          "type": "string",
+          "maxLength": 24
+        }
+      }
+    }
+  },
+  "prompt": "Put things in order. What must be true before what?",
+  "readback": "Find any two items with no ordering relation — that is the ambiguity to resolve.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "planning-self-regulation/task-unpacking",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Breaking a task into its ordered component steps before predicting when it will be done reduces optimistic bias in completion-time predictions.",
+        "construct": "unpacking; the planning fallacy",
+        "grade": "D",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Buehler, Griffin & Ross (1994)",
+            "doi": "10.1037/0022-3514.67.3.366",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/planning-self-regulation.md#task-unpacking"
+      }
+    ],
+    "helps": "when a task has many parts and you are tempted to guess its end date whole: writing the steps out in order makes the work visible before you commit to a time, though no study tests ordering steps as this page does",
+    "backfires": "when the steps turn into a story of how everything will go right, since plan-focused scenarios are what make time predictions too optimistic, and when the finish date is set without comparing it with how long similar work took before"
+  }
+}

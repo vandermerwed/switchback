@@ -1,0 +1,17 @@
+{
+  "kit": { "scissors": true },
+  "data": {
+    "items": [
+      "Offline mode",
+      "Conflict resolution",
+      "Sync status UI",
+      "Selective sync",
+      "Web sync",
+      "Retry queue",
+      "Audit log",
+      "Bandwidth cap",
+      "Sync on metered"
+    ],
+    "columns": ["now", "later", "cut"]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "perspective-emotion/perspective-taking": {
+    "result": "confirmed", "from": "B", "to": "B",
+    "reason": "Several independent read experiments; no failed large replication found (searched). A p-curve analysis calls the stereotype results 'mixed' but found 'some evidential value' despite 'low statistical power', which fits B and rules out A.",
+    "sources": [{ "cite": "Huang, Peng & Simmons (2021), Group Processes & Intergroup Relations", "doi": "10.1177/1368430220957081" }],
+    "helps_overclaim": null
+  },
+  "perspective-emotion/perspective-getting": {
+    "result": "confirmed", "from": "C", "to": "C",
+    "reason": "The 'Asking them does' half rests on one final experiment, with no independent replication.",
+    "sources": [{ "cite": "Eyal, Steffel & Epley (2018)", "doi": "10.1037/pspa0000115" }],
+    "helps_overclaim": null
+  },
+  "perspective-emotion/self-distancing": {
+    "result": "confirmed", "from": "B", "to": "B",
+    "reason": "The pre-registered meta-analysis (g = 0.19) flags risk-of-bias uncertainty; no failed large replication found (searched). Tie-break 7 keeps the grade with effect small.",
+    "sources": [{ "cite": "Murdoch, Chapman, Crane & Gucciardi (2023)", "doi": "10.1002/smi.3199" }],
+    "helps_overclaim": null
+  },
+  "perspective-emotion/expressive-writing": {
+    "result": "downgraded", "from": "A", "to": "B",
+    "reason": "Tie-break 3: the meta-analyses materially disagree. Mogk et al. 2006 (30 RCTs): 'Neither regarding somatic nor psychological health variables significant effect sizes were found'. Reinhold, Bürkner & Holling 2018 (39 RCTs): 'Expressive writing did not yield significant long-term effects on depressive symptoms'. Both stand against Frattaroli's r = .075. The most recent read synthesis, Guo 2023 (31 RCTs), finds a 'small but significant effect (Hedges' g = -0.12)', which leaves the conflict open, so at most B. No bias-corrected estimate near zero was found, so not C. Effect stays small. The claim is supporting, so no displayed grade changes.",
+    "sources": [
+      { "cite": "Mogk, Otte, Reinhold-Hurley & Kröner-Herwig (2006), GMS Psycho-Social-Medicine (no DOI; Europe PMC PMC2736499)", "doi": "" },
+      { "cite": "Reinhold, Bürkner & Holling (2018), Clinical Psychology: Science and Practice", "doi": "10.1111/cpsp.12224" },
+      { "cite": "Guo (2023), British Journal of Clinical Psychology", "doi": "10.1111/bjc.12408" }
+    ],
+    "helps_overclaim": null
+  },
+  "perspective-emotion/ritual-cadence": {
+    "result": "confirmed", "from": "D", "to": "D",
+    "reason": "No read source tests any monitoring cadence, and Burke et al. 2011 says the required dose is unknown.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "perspective-emotion/ritual-duration": {
+    "result": "confirmed", "from": "C", "to": "C",
+    "reason": "One small read experiment (Burton & King 2008). Reinhold et al. 2018 reports larger effects 'when the number of sessions was higher'; that concerns session count, not session length, and does not change the grade.",
+    "sources": [{ "cite": "Burton & King (2008)", "doi": "10.1348/135910707x250910" }],
+    "helps_overclaim": null
+  },
+  "perspective-emotion/decatastrophizing": {
+    "result": "confirmed", "from": "C", "to": "C",
+    "reason": "The forecasting half is supported; the intervention half has only one indirect test, from overlapping authors.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "perspective-emotion/gratitude": {
+    "result": "confirmed", "from": "C", "to": "C",
+    "reason": "The only read source is Emmons & McCullough 2003; nothing read addresses the weekly-versus-daily half.",
+    "sources": [{ "cite": "Emmons & McCullough (2003)", "doi": "10.1037/0022-3514.84.2.377" }],
+    "helps_overclaim": null
+  },
+  "perspective-emotion/intrapersonal-goal-conflict": {
+    "result": "confirmed", "from": "D", "to": "D",
+    "reason": "The resolution half, which is what the two-sides page does, is untested; the nearest read evidence (Miller & Rose) warns against a neutral two-sided exercise.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "perspective-emotion/domain-satisfaction": {
+    "result": "confirmed", "from": "C", "to": "C",
+    "reason": "Reliability rests on one peer-reviewed multi-study paper plus an instrument manual (practice); the 'shows which domain drives a change' half is untested.",
+    "sources": [{ "cite": "Schimmack & Oishi (2005)", "doi": "10.1037/0022-3514.89.3.395" }],
+    "helps_overclaim": null
+  }
+}

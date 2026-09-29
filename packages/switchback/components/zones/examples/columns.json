@@ -1,0 +1,6 @@
+{
+  "data": {
+    "zones": ["Current decision", "Open questions", "Resources left", "Time left", "Next action"],
+    "columns": 2
+  }
+}

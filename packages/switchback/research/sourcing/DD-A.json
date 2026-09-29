@@ -1,0 +1,532 @@
+[
+  {
+    "claim_id": "decision-diagnosis/decomposed-judgement",
+    "sources": [
+      {
+        "cite": "Grove, Zald, Lebow, Snitz & Nelson (2000)",
+        "doi": "10.1037/1040-3590.12.1.19",
+        "year": 2000,
+        "type": "meta-analysis",
+        "design": "meta-analysis of clinical vs. mechanical prediction studies",
+        "n": 136,
+        "effect": "~10% accuracy advantage for mechanical prediction; substantially outperformed clinical in 33-47% of studies",
+        "finding_quote": "On average, mechanical-prediction techniques were about 10% more accurate than clinical predictions. Depending on the specific analysis, mechanical prediction substantially outperformed clinical prediction in 33%-47% of studies examined. Although clinical predictions were often as accurate as mechanical predictions, in only a few studies (6%-16%) were they substantially more accurate. Superiority for mechanical-prediction techniques was consistent, regardless of the judgment task, type of judges, judges' amounts of experience, or the types of data being combined.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/10752360/"
+      },
+      {
+        "cite": "Ægisdóttir, White, Spengler et al. (2006)",
+        "doi": "10.1177/0011000005285875",
+        "year": 2006,
+        "type": "meta-analysis",
+        "design": "56-year cumulative meta-analysis, clinical vs. statistical prediction",
+        "n": 67,
+        "effect": "statistical prediction ~13% more accurate in most stringent sample (per secondary description; not independently confirmed by fetched text)",
+        "finding_quote": "",
+        "url": "https://journals.sagepub.com/doi/10.1177/0011000005285875"
+      },
+      {
+        "cite": "Dawes (1979)",
+        "doi": "10.1037/0003-066X.34.7.571",
+        "year": 1979,
+        "type": "theory",
+        "design": "theoretical argument for improper linear models over clinical intuition",
+        "n": 0,
+        "effect": "n/a",
+        "finding_quote": "",
+        "url": "https://doi.org/10.1037/0003-066X.34.7.571"
+      },
+      {
+        "cite": "Wilson & Schooler (1991)",
+        "doi": "10.1037/0022-3514.60.2.181",
+        "year": 1991,
+        "type": "experiment",
+        "design": "2 studies, jam and course preferences vs. expert ratings",
+        "n": 0,
+        "effect": "analysis-of-reasons reduced agreement with expert judgement",
+        "finding_quote": "Students who analyzed why they felt the way they did agreed less with the experts than students who did not. In Study 2... Both kinds of introspection caused people to make choices that, compared with control subjects', corresponded less with expert opinion. Analyzing reasons can focus people's attention on nonoptimal criteria, causing them to base their subsequent choices on these criteria.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/2016668/"
+      },
+      {
+        "cite": "Uhlmann & Cohen (2005)",
+        "doi": "10.1111/j.0956-7976.2005.01559.x",
+        "year": 2005,
+        "type": "experiment",
+        "design": "Constructed Criteria, Psychological Science",
+        "n": 0,
+        "effect": "criteria for merit constructed post hoc to favor a preferred candidate (per secondary description; not independently confirmed by fetched text)",
+        "finding_quote": "",
+        "url": "https://doi.org/10.1111/j.0956-7976.2005.01559.x"
+      },
+      {
+        "cite": "Nieuwenstein, Wierenga, Morey, Wicherts, Blom, Wagenmakers & van Rijn (2015)",
+        "doi": "10.1017/s1930297500003144",
+        "year": 2015,
+        "type": "meta-analysis",
+        "design": "meta-analysis + N=399 pre-registered large-scale replication of the unconscious thought advantage",
+        "n": 399,
+        "effect": "no evidence for the effect at adequate power",
+        "finding_quote": "Consistent with the reliability account, the large-scale replication study yielded no evidence for the UTA, and the meta-analysis showed that previous reports of the UTA were confined to underpowered studies that used relatively small sample sizes... we conclude that there exists no reliable support for the claim that a momentary diversion of thought leads to better decision making than a period of deliberation.",
+        "url": "https://doi.org/10.1017/s1930297500003144"
+      }
+    ],
+    "replication": [
+      {
+        "cite": "Nieuwenstein et al. (2015)",
+        "doi": "10.1017/s1930297500003144",
+        "result": "failed"
+      }
+    ],
+    "backfire": [
+      {
+        "cite": "Wilson & Schooler (1991)",
+        "doi": "10.1037/0022-3514.60.2.181",
+        "condition": "Analyzing/verbalizing reasons for a preference shifts choice toward reasons that are easy to articulate but not the true determinants of quality, reducing agreement with experts."
+      },
+      {
+        "cite": "Uhlmann & Cohen (2005)",
+        "doi": "10.1111/j.0956-7976.2005.01559.x",
+        "condition": "Criteria for merit can be constructed after the fact to justify a preferred option, undermining decomposition's consistency benefit if criteria are chosen after an initial holistic reaction."
+      }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "decision-diagnosis/anchoring",
+    "sources": [
+      {
+        "cite": "Tversky & Kahneman (1974)",
+        "doi": "10.1126/science.185.4157.1124",
+        "year": 1974,
+        "type": "review",
+        "design": "seminal identification of the anchoring-and-adjustment heuristic",
+        "n": 0,
+        "effect": "n/a",
+        "finding_quote": "This article described three heuristics that are employed in making judgments under uncertainty: (i) representativeness... (ii) availability... and (iii) adjustment from an anchor, which is usually employed in numerical prediction when a relevant value is available.",
+        "url": "https://doi.org/10.1126/science.185.4157.1124"
+      },
+      {
+        "cite": "Jacowitz & Kahneman (1995)",
+        "doi": "10.1177/01461672952111004",
+        "year": 1995,
+        "type": "experiment",
+        "design": "15-topic estimation tasks, anchors set at 15th/85th percentile of a calibration sample",
+        "n": 0,
+        "effect": "original ES ~= 0.93 (per Klein et al. 2014's replication report)",
+        "finding_quote": "Jacowitz and Kahneman (1995) presented a number of scenarios in which participants estimated size or distance after first receiving a number that was clearly too large or too small... The original number served as an anchor, biasing estimates to be closer to it.",
+        "url": "https://doi.org/10.1177/01461672952111004"
+      },
+      {
+        "cite": "Epley & Gilovich (2001)",
+        "doi": "10.1111/1467-9280.00372",
+        "year": 2001,
+        "type": "experiment",
+        "design": "3 studies, self-generated vs. experimenter-provided anchors",
+        "n": 0,
+        "effect": "insufficient adjustment specific to self-generated anchors",
+        "finding_quote": "We present evidence that insufficient adjustment produces anchoring effects when the anchors are self-generated... These results suggest it is time to reintroduce anchoring and adjustment as an explanation for some judgments under uncertainty.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11554672/"
+      },
+      {
+        "cite": "Klein et al., \"Many Labs 1\" (2014)",
+        "doi": "10.1027/1864-9335/a000178",
+        "year": 2014,
+        "type": "rrr",
+        "design": "36 independent samples, N=6,344, 13 classic effects including 4 anchoring items",
+        "n": 6344,
+        "effect": "anchoring replicated with larger effect sizes than originals (weighted d = 1.17-2.42 vs original d = 0.93)",
+        "finding_quote": "Although replication is a central tenet of science, direct replications are rare in psychology. This research tested variation in the replicability of 13 classic and contemporary effects across 36 independent samples totaling 6,344 participants. In the aggregate, 10 effects replicated consistently.",
+        "url": "https://doi.org/10.1027/1864-9335/a000178"
+      }
+    ],
+    "replication": [
+      {
+        "cite": "Klein et al. (2014), Many Labs 1",
+        "doi": "10.1027/1864-9335/a000178",
+        "result": "replicated"
+      }
+    ],
+    "backfire": [
+      {
+        "cite": "Epley & Gilovich (2001)",
+        "doi": "10.1111/1467-9280.00372",
+        "condition": "Insufficient-adjustment mechanism is specific to self-generated anchors (relevant to whether writing the gut score first neutralises or reproduces anchoring); no direct test of the page's reorder-to-neutralise logic was found."
+      }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "decision-diagnosis/assumption-surfacing",
+    "sources": [
+      {
+        "cite": "Mason & Mitroff, Challenging Strategic Planning Assumptions",
+        "doi": "",
+        "year": 1981,
+        "type": "practice",
+        "design": "book, consulting methodology (Strategic Assumption Surfacing and Testing)",
+        "n": 0,
+        "effect": "n/a",
+        "finding_quote": "",
+        "url": "https://openlibrary.org/isbn/9780471082194"
+      },
+      {
+        "cite": "Dewar, Assumption-Based Planning: A Tool for Reducing Avoidable Surprises",
+        "doi": "",
+        "year": 2002,
+        "type": "practice",
+        "design": "RAND-originated monograph, method description",
+        "n": 0,
+        "effect": "n/a",
+        "finding_quote": "",
+        "url": "https://openlibrary.org/isbn/9780521001267"
+      },
+      {
+        "cite": "McGrath & MacMillan, \"Discovery-Driven Planning\" (1995)",
+        "doi": "",
+        "year": 1995,
+        "type": "practice",
+        "design": "Harvard Business Review article",
+        "n": 0,
+        "effect": "n/a",
+        "finding_quote": "Business lore is full of stories about smart companies that incur huge losses when they enter unknown territory—new alliances, new markets, new products, new technologies.",
+        "url": "https://hbr.org/1995/07/discovery-driven-planning"
+      },
+      {
+        "cite": "Coulthart (2017)",
+        "doi": "10.1080/08850607.2016.1230706",
+        "year": 2017,
+        "type": "review",
+        "design": "evidence-based evaluation of 12 core structured analytic techniques",
+        "n": 0,
+        "effect": "n/a (abstract not independently confirmed)",
+        "finding_quote": "",
+        "url": "https://doi.org/10.1080/08850607.2016.1230706"
+      }
+    ],
+    "replication": [],
+    "backfire": [],
+    "unverified": []
+  },
+  {
+    "claim_id": "decision-diagnosis/consider-the-opposite",
+    "sources": [
+      {
+        "cite": "Koriat, Lichtenstein & Fischhoff (1980)",
+        "doi": "10.1037/0278-7393.6.2.107",
+        "year": 1980,
+        "type": "experiment",
+        "design": "2 experiments; Exp.2 manipulated listing supporting vs. contradicting vs. both reasons",
+        "n": 0,
+        "effect": "only contradicting-reason listing improved calibration",
+        "finding_quote": "Experiment 2 simplified the manipulation by asking subjects first to choose an answer and then to list (a) one reason supporting that choice, (b) one reason contradicting it, or (c) one reason supporting and one reason contradicting. Only the listing of contradicting reasons improved the appropriateness of confidence.",
+        "url": "https://doi.org/10.1037/0278-7393.6.2.107"
+      },
+      {
+        "cite": "Lord, Lepper & Preston (1984)",
+        "doi": "10.1037/0022-3514.47.6.1231",
+        "year": 1984,
+        "type": "experiment",
+        "design": "2 experiments; explicit consider-the-opposite instructions vs. be-fair instructions",
+        "n": 0,
+        "effect": "consider-the-opposite reduced biased assimilation more than be-unbiased instructions",
+        "finding_quote": "In both experiments the induction of a consider-the-opposite strategy had greater corrective effect than more demand-laden alternative instructions to be as fair and unbiased as possible.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/6527215/"
+      },
+      {
+        "cite": "Larrick (2004), \"Debiasing\"",
+        "doi": "10.1002/9780470752937.ch16",
+        "year": 2004,
+        "type": "review",
+        "design": "narrative review chapter, Blackwell Handbook of Judgment and Decision Making",
+        "n": 0,
+        "effect": "consider-the-opposite reduces overconfidence, hindsight bias, and anchoring",
+        "finding_quote": "the simple but general strategy of 'consider the opposite' [is] impressive, because it has been effective at reducing overconfidence, hindsight biases, and anchoring effects... The strategy consists of nothing more than asking oneself, 'What are some reasons that my initial judgment might be wrong?'... [it] directly counteracts the basic problem of association-based processes—an overly narrow sample of evidence—by expanding the sample and making it more representative.",
+        "url": "https://web.stanford.edu/~knutson/jdm/larrick04.pdf"
+      },
+      {
+        "cite": "Sanna, Schwarz & Stocker (2002)",
+        "doi": "10.1037/0278-7393.28.3.497",
+        "year": 2002,
+        "type": "experiment",
+        "design": "2 studies; listing 2 vs. 10 counterfactual thoughts",
+        "n": 0,
+        "effect": "listing many (10) counterfactuals increased hindsight bias via ease-of-retrieval",
+        "finding_quote": "Listing many counterfactual thoughts was experienced as difficult and consistently increased the hindsight bias, presumably because the experienced difficulty suggested that there were not many ways in which the event might have turned out otherwise. No significant hindsight effects were obtained when participants listed only a few counterfactual thoughts.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/12018501/"
+      }
+    ],
+    "replication": [],
+    "backfire": [
+      {
+        "cite": "Sanna, Schwarz & Stocker (2002)",
+        "doi": "10.1037/0278-7393.28.3.497",
+        "condition": "Quantity-dependent reversal: a short list of contrary reasons helps, but a long list (e.g. ten) is experienced as effortful, and that felt difficulty is misread as evidence the original judgement was right, worsening the bias."
+      }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "decision-diagnosis/confidence-resolution",
+    "sources": [
+      {
+        "cite": "Koriat, Lichtenstein & Fischhoff (1980)",
+        "doi": "10.1037/0278-7393.6.2.107",
+        "year": 1980,
+        "type": "experiment",
+        "design": "2 experiments on confidence and evidence retrieval",
+        "n": 0,
+        "effect": "confidence tracks amount/strength of retrieved supporting evidence",
+        "finding_quote": "People are often overconfident in evaluating the correctness of their knowledge... Correlational analyses of the data of Experiment 1 strongly suggested that the confidence depends on the amount and strength of the evidence supporting the answer chosen.",
+        "url": "https://doi.org/10.1037/0278-7393.6.2.107"
+      },
+      {
+        "cite": "Fleming & Lau (2014)",
+        "doi": "10.3389/fnhum.2014.00443",
+        "year": 2014,
+        "type": "review",
+        "design": "measurement review distinguishing metacognitive bias, sensitivity, and efficiency",
+        "n": 0,
+        "effect": "n/a",
+        "finding_quote": "the degree of association between accuracy and confidence can be taken as a quantitative measure of metacognition... we distinguish between the related concepts of metacognitive bias (a difference in subjective confidence despite basic task performance remaining constant), metacognitive sensitivity (how good one is at distinguishing between one's own correct and incorrect judgments) and metacognitive efficiency.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25076880/"
+      },
+      {
+        "cite": "Moore & Healy (2008)",
+        "doi": "10.1037/0033-295X.115.2.502",
+        "year": 2008,
+        "type": "theory",
+        "design": "reconciliation of overestimation, overplacement, overprecision",
+        "n": 0,
+        "effect": "overprecision more persistent than the other two overconfidence types",
+        "finding_quote": "On difficult tasks, people overestimate their actual performances but also mistakenly believe that they are worse than others; on easy tasks, people underestimate their actual performances but mistakenly believe they are better than others... Overprecision appears to be more persistent than either of the other 2 types of overconfidence.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18426301/"
+      }
+    ],
+    "replication": [],
+    "backfire": [
+      {
+        "cite": "Moore & Healy (2008)",
+        "doi": "10.1037/0033-295X.115.2.502",
+        "condition": "Overprecision (excess certainty) persists even where the direction of over/underestimation reverses between easy and hard tasks, so 'high confidence' ratings can remain overprecise even when resolution holds in aggregate."
+      }
+    ],
+    "unverified": [
+      {
+        "cite": "Double & Birney (2019) meta-analysis on reactivity of metacognitive judgements",
+        "reason": "Named as a lead in the sourcing brief; could not be located via PubMed search under that description within this session's tool budget. Not used."
+      }
+    ]
+  },
+  {
+    "claim_id": "decision-diagnosis/calibration-feedback",
+    "sources": [
+      {
+        "cite": "Lichtenstein & Fischhoff (1980), \"Training for calibration\"",
+        "doi": "10.1016/0030-5073(80)90052-5",
+        "year": 1980,
+        "type": "experiment",
+        "design": "seminal calibration-training study",
+        "n": 0,
+        "effect": "n/a (abstract not independently confirmed)",
+        "finding_quote": "",
+        "url": "https://doi.org/10.1016/0030-5073(80)90052-5"
+      },
+      {
+        "cite": "Mellers, Ungar, Baron, Ramos, Gurcay, Fincher, Scott, Moore, Atanasov, Swift, Murray, Stone & Tetlock (2014)",
+        "doi": "10.1177/0956797614524255",
+        "year": 2014,
+        "type": "experiment",
+        "design": "2-year IARPA geopolitical forecasting tournament, 5 competing research teams",
+        "n": 0,
+        "effect": "probability training, teaming, and tracking each improved calibration and resolution",
+        "finding_quote": "Our group tested and found support for three psychological drivers of accuracy: training, teaming, and tracking. Probability training corrected cognitive biases, encouraged forecasters to use reference classes, and provided forecasters with heuristics, such as averaging when multiple estimates were available... Results showed that probability training, team collaboration, and tracking improved both calibration and resolution.",
+        "url": "https://escholarship.org/content/qt4rg4n9vr/qt4rg4n9vr.pdf"
+      },
+      {
+        "cite": "Baron & Hershey (1988), \"Outcome bias in decision evaluation\"",
+        "doi": "10.1037/0022-3514.54.4.569",
+        "year": 1988,
+        "type": "experiment",
+        "design": "original within-participants outcome-bias study",
+        "n": 20,
+        "effect": "decisions judged more favourably when outcome was good, holding process constant",
+        "finding_quote": "",
+        "url": "https://doi.org/10.1037/0022-3514.54.4.569"
+      },
+      {
+        "cite": "Aiyer, Kam, Ng, Young, Shi & Feldman (2023)",
+        "doi": "10.5334/irsp.751",
+        "year": 2023,
+        "type": "rrr",
+        "design": "pre-registered, online, between-participants replication + extension of Baron & Hershey (1988) Exp.1",
+        "n": 692,
+        "effect": "outcome bias replicated with larger effect than original (d=0.77-1.1 vs original d=0.21-0.53)",
+        "finding_quote": "We successfully replicated signal and direction of the outcome bias (original: dpaired = 0.21 - 0.53; replication: dindependent = 0.77 [0.62, 0.93] to 1.1 [0.94, 1.26]), and even for participants who stated that outcomes should not be taken into consideration when evaluating decisions (d = 0.64 [0.21, 1.08]).",
+        "url": "https://doi.org/10.5334/irsp.751"
+      }
+    ],
+    "replication": [
+      {
+        "cite": "Aiyer et al. (2023)",
+        "doi": "10.5334/irsp.751",
+        "result": "replicated"
+      }
+    ],
+    "backfire": [
+      {
+        "cite": "Aiyer et al. (2023) / Baron & Hershey (1988)",
+        "doi": "10.5334/irsp.751",
+        "condition": "Outcome bias is robust and affects even people who explicitly disavow it, so scored forecasts risk being judged by whether the outcome happened rather than by calibration at the time."
+      }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "decision-diagnosis/hindsight-record",
+    "sources": [
+      {
+        "cite": "Fischhoff (1975), \"Hindsight is not equal to foresight\"",
+        "doi": "10.1037/0096-1523.1.3.288",
+        "year": 1975,
+        "type": "experiment",
+        "design": "3 experiments on effect of outcome knowledge on judgement",
+        "n": 0,
+        "effect": "outcome knowledge increased postdicted likelihood; judges unaware of and overestimated prior knowledge",
+        "finding_quote": "Receipt of such outcome knowledge was found to increase the postdicted likelihood of reported events... Judges were, however, largely unaware of the effect that outcome knowledge had on their perceptions. As a result, they overestimated what they would have known without outcome knowledge... as well as what others actually did know without outcome knowledge.",
+        "url": "https://doi.org/10.1037/0096-1523.1.3.288"
+      },
+      {
+        "cite": "Fischhoff & Beyth (1975), \"I knew it would happen\"",
+        "doi": "10.1016/0030-5073(75)90002-1",
+        "year": 1975,
+        "type": "experiment",
+        "design": "remembered probabilities of once-future events, before vs. after outcome known",
+        "n": 0,
+        "effect": "n/a (abstract not independently confirmed)",
+        "finding_quote": "",
+        "url": "https://doi.org/10.1016/0030-5073(75)90002-1"
+      },
+      {
+        "cite": "Christensen-Szalanski & Willham (1991)",
+        "doi": "10.1016/0749-5978(91)90010-q",
+        "year": 1991,
+        "type": "meta-analysis",
+        "design": "meta-analysis of hindsight-bias studies",
+        "n": 0,
+        "effect": "n/a (abstract not independently confirmed)",
+        "finding_quote": "",
+        "url": "https://doi.org/10.1016/0749-5978(91)90010-q"
+      },
+      {
+        "cite": "Guilbault, Bryant, Brockway & Posavac (2004)",
+        "doi": "10.1080/01973533.2004.9646399",
+        "year": 2004,
+        "type": "meta-analysis",
+        "design": "meta-analysis of hindsight-bias studies",
+        "n": 0,
+        "effect": "n/a (abstract not independently confirmed)",
+        "finding_quote": "",
+        "url": "https://doi.org/10.1080/01973533.2004.9646399"
+      },
+      {
+        "cite": "Sanna, Schwarz & Stocker (2002)",
+        "doi": "10.1037/0278-7393.28.3.497",
+        "year": 2002,
+        "type": "experiment",
+        "design": "(see consider-the-opposite)",
+        "n": 0,
+        "effect": "debiasing attempts can increase hindsight bias depending on quantity of counterfactuals generated",
+        "finding_quote": "Listing many counterfactual thoughts was experienced as difficult and consistently increased the hindsight bias.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/12018501/"
+      }
+    ],
+    "replication": [],
+    "backfire": [
+      {
+        "cite": "Sanna, Schwarz & Stocker (2002)",
+        "doi": "10.1037/0278-7393.28.3.497",
+        "condition": "Debiasing hindsight by generating counterfactual reasons can itself increase hindsight bias if too many reasons are requested; a dated record alone (without a re-argue step) is the well-evidenced part of the mechanism."
+      }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "decision-diagnosis/reference-class",
+    "sources": [
+      {
+        "cite": "Kahneman & Tversky, \"Intuitive prediction: Biases and corrective procedures\"",
+        "doi": "10.1017/cbo9780511809477.031",
+        "year": 1982,
+        "type": "theory",
+        "design": "seminal argument for the outside view / reference-class approach to prediction",
+        "n": 0,
+        "effect": "n/a",
+        "finding_quote": "",
+        "url": "https://doi.org/10.1017/cbo9780511809477.031"
+      },
+      {
+        "cite": "Buehler, Griffin & Ross (1994), \"Exploring the 'planning fallacy'\"",
+        "doi": "10.1037/0022-3514.67.3.366",
+        "year": 1994,
+        "type": "experiment",
+        "design": "task-completion time estimation studies",
+        "n": 0,
+        "effect": "n/a (abstract not independently confirmed)",
+        "finding_quote": "",
+        "url": "https://doi.org/10.1037/0022-3514.67.3.366"
+      },
+      {
+        "cite": "Mellers et al. (2014)",
+        "doi": "10.1177/0956797614524255",
+        "year": 2014,
+        "type": "experiment",
+        "design": "(see calibration-feedback)",
+        "n": 0,
+        "effect": "reference-class use was one named ingredient of training that improved calibration/resolution in a real tournament",
+        "finding_quote": "Probability training corrected cognitive biases, encouraged forecasters to use reference classes, and provided forecasters with heuristics, such as averaging when multiple estimates were available.",
+        "url": "https://escholarship.org/content/qt4rg4n9vr/qt4rg4n9vr.pdf"
+      },
+      {
+        "cite": "Flyvbjerg, B. (2013). Quality Control and Due Diligence in Project Management: Getting Decisions Right by Taking the Outside View. International Journal of Project Management.",
+        "doi": "10.1016/j.ijproman.2012.10.007",
+        "year": 2013,
+        "type": "review",
+        "design": "applies Kahneman & Tversky's outside-view theory to project management; reports Lovallo & Kahneman (2003)'s controlled experiment on college students as direct evidence the outside view corrects rather than merely anchors",
+        "n": "",
+        "effect": "a simple diversion into outside-view information reduced overconfident forecasts by 20%, moving them toward accuracy",
+        "finding_quote": "Verbatim, fetched from the full-text PDF, read in full this session. 'The research shows that when people are asked simple questions requiring them to take an outside view, their forecasts become significantly more accurate. For example, a group of students enrolling at a college were asked to rate their future academic performance relative to their peers in their major. On average, these students expected to perform better than 84 percent of their peers, which is logically impossible... Another group of incoming students from the same major were asked about their entrance scores and their peers scores before being asked about their expected performance. This simple diversion into relevant outside-view information, which both groups of subjects were aware of, reduced the second groups average expected performance ratings by 20 percent. That is still overconfident, but it is significantly more realistic than the forecast made by the first group (Lovallo and Kahneman 2003:61).' Boundary condition, same source: the outside view helps 'when forecasters are honestly trying to gauge the future' (optimism-bias case) but has low potential 'where strategic misrepresentation is the main cause of inaccuracy.'",
+        "url": "https://doi.org/10.1016/j.ijproman.2012.10.007"
+      },
+      {
+        "cite": "Buehler, R., Griffin, D. & MacDonald, H. (1997). The Role of Motivated Reasoning in Optimistic Time Predictions. Personality and Social Psychology Bulletin, 23(3), 238-247.",
+        "doi": "10.1177/0146167297233003",
+        "year": 1997,
+        "type": "experiment",
+        "design": "task-completion-time predictions; a recall condition prompted participants to recall similar past experiences before predicting; a further manipulation forced participants to actively connect the recalled experience to their current prediction",
+        "n": "",
+        "effect": "merely recalling past experience did not reduce optimistic bias; only forcing the past to be treated as relevant did",
+        "finding_quote": "Not independently fetched verbatim this session (JSTOR/SAGE closed; Semantic Scholar/Unpaywall carry no abstract). DOI verified via CrossRef (title/authors/year match). Reported via a WebSearch synthesis, not a primary quote: 'Only 12% of participants reported thinking about past experiences when making their current plans in the Recall condition (compared to 2% in the Control condition)... attention to and awareness of the past is not enough to make the past relevant to the future... forcing the past to become relevant eliminates the optimistic prediction bias for completion times.' This is the direct evidence for the opposite failure mode from anchoring: a written/recalled reference point that gets ignored rather than over-weighted.",
+        "url": "https://doi.org/10.1177/0146167297233003"
+      }
+    ],
+    "replication": [
+      {
+        "cite": "Flyvbjerg (2013), citing Buehler, Griffin & Ross (1994) and Gilovich, Griffin & Kahneman (2002)",
+        "doi": "10.1016/j.ijproman.2012.10.007",
+        "result": "replicated"
+      }
+    ],
+    "backfire": [
+      {
+        "cite": "Buehler, Griffin & MacDonald (1997)",
+        "doi": "10.1177/0146167297233003",
+        "condition": "Merely writing/recalling a reference-class figure does not guarantee it is used -- people often discount it as inapplicable to their specific case unless forced to actively connect it to the estimate at hand. This is a more likely failure mode for `forecast` than the base rate acting as a sticky anchor."
+      },
+      {
+        "cite": "Flyvbjerg (2013)",
+        "doi": "10.1016/j.ijproman.2012.10.007",
+        "condition": "The outside view corrects accuracy only when forecasters are honestly trying to be accurate; it has little effect when inaccuracy is strategic/motivated (e.g. competitive bids) -- a genuine boundary condition not previously sourced."
+      }
+    ],
+    "unverified": []
+  }
+]

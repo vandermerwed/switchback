@@ -1,0 +1,233 @@
+{
+  "protocols": [
+    {
+      "id": "colour-language",
+      "name": "Colour language",
+      "intent": "Make the human's own ink a machine-readable semantic layer, so meaning is tagged with one stroke and recovered by a camera.",
+      "guidance": "Fixed and universal across every artifact. Letter-first so it survives mono printing. Blue is reserved for questions to the AI. The human is the colour; the printer never prints meaning-bearing colour.",
+      "grounding": {
+        "claims": [
+          {
+            "id": "externalisation-embodiment/colour-coding-search",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Colour-coding items by category speeds finding the items of a target category and improves accuracy, compared with uncoded material, when the reader knows the code. The benefit falls as the number of colours grows.",
+            "construct": "colour coding in visual search",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Christ (1975)",
+                "doi": "10.1177/001872087501700602",
+                "type": "review"
+              },
+              {
+                "cite": "Dunlosky et al. (2013)",
+                "doi": "10.1177/1529100612453266",
+                "type": "review"
+              }
+            ],
+            "rationale": "research/externalisation-embodiment.md#colour-coding-search"
+          },
+          {
+            "id": "externalisation-embodiment/redundant-coding",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Coding a category in two channels at once, colour plus letter or glyph, keeps it identifiable when one channel fails (colour-vision deficiency, poor light, a mono print or photo) and improves identification over colour alone.",
+            "construct": "redundant coding (redundancy gain); accessibility of colour use",
+            "grade": "D",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "W3C, WCAG 2.1 Success Criterion 1.4.1 \"Use of Color\" (2018)",
+                "url": "https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html",
+                "type": "practice"
+              },
+              {
+                "cite": "Birch (2012)",
+                "doi": "10.1364/josaa.29.000313",
+                "type": "review"
+              }
+            ],
+            "rationale": "research/externalisation-embodiment.md#redundant-coding"
+          },
+          {
+            "id": "reading-review/consistent-mapping",
+            "load_bearing": false,
+            "transfer": "analogical",
+            "claim": "Keeping each mark's or colour's meaning constant across contexts leads to faster, more accurate use than mappings that change with context, which provoke mode errors.",
+            "construct": "consistent vs varied mapping (automaticity); mode errors",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Sarter & Woods (1995)",
+                "doi": "10.1518/001872095779049516",
+                "type": "review"
+              },
+              {
+                "cite": "Norman (1981)",
+                "doi": "10.1037/0033-295x.88.1.1",
+                "type": "theory"
+              }
+            ],
+            "rationale": "research/reading-review.md#consistent-mapping"
+          }
+        ],
+        "helps": "when the ink colours carry a small, fixed set of meanings the reader already knows, and each role also carries its letter, so the meaning survives a mono print, colour-blindness or a bad photo",
+        "backfires": "when there are more colours than a reader can reliably tell apart, when the letter is skipped once coloured pens are to hand, or when marking in colour is mistaken for learning rather than a way to find things again: colour coding helps search under some conditions and hurts under others"
+      }
+    },
+    {
+      "id": "confidence-dots",
+      "name": "Confidence dots",
+      "intent": "Rate certainty almost effortlessly, in a form that survives colour-blindness and bad photos.",
+      "guidance": "A dot plus a glyph: high = filled dot + plus, medium = half dot + tilde, low = hollow dot + exclamation. Never encode high-stakes confidence in red-vs-green alone.",
+      "grounding": {
+        "claims": [
+          {
+            "id": "decision-diagnosis/confidence-resolution",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Coarse, three-level confidence ratings discriminate correct from incorrect judgements above chance (resolution), even though people are typically overconfident in absolute terms. Items marked low-confidence are therefore a useful flag for risk.",
+            "construct": "metacognitive resolution and calibration; overconfidence",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Fleming & Lau (2014)",
+                "doi": "10.3389/fnhum.2014.00443",
+                "type": "review"
+              },
+              {
+                "cite": "Moore & Healy (2008)",
+                "doi": "10.1037/0033-295X.115.2.502",
+                "type": "review"
+              },
+              {
+                "cite": "Koriat, Lichtenstein & Fischhoff (1980)",
+                "doi": "10.1037/0278-7393.6.2.107",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/decision-diagnosis.md#confidence-resolution"
+          },
+          {
+            "id": "externalisation-embodiment/redundant-coding",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Coding a category in two channels at once, colour plus letter or glyph, keeps it identifiable when one channel fails (colour-vision deficiency, poor light, a mono print or photo) and improves identification over colour alone.",
+            "construct": "redundant coding (redundancy gain); accessibility of colour use",
+            "grade": "D",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "W3C, WCAG 2.1 Success Criterion 1.4.1 \"Use of Color\" (2018)",
+                "url": "https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html",
+                "type": "practice"
+              },
+              {
+                "cite": "Birch (2012)",
+                "doi": "10.1364/josaa.29.000313",
+                "type": "review"
+              }
+            ],
+            "rationale": "research/externalisation-embodiment.md#redundant-coding"
+          },
+          {
+            "id": "memory-retrieval/hypercorrection",
+            "load_bearing": false,
+            "transfer": "adjacent",
+            "claim": "Errors a person made with high confidence are more likely to be corrected on a later test, once feedback is seen, than errors made with low confidence.",
+            "construct": "the hypercorrection effect",
+            "grade": "B",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Metcalfe & Finn (2011)",
+                "doi": "10.1037/a0021962",
+                "type": "experiment"
+              },
+              {
+                "cite": "Butler, Fazio & Marsh (2011)",
+                "doi": "10.3758/s13423-011-0173-y",
+                "type": "experiment"
+              },
+              {
+                "cite": "Metcalfe (2017)",
+                "doi": "10.1146/annurev-psych-010416-044022",
+                "type": "review"
+              }
+            ],
+            "rationale": "research/memory-retrieval.md#hypercorrection"
+          }
+        ],
+        "helps": "when many items need a quick certainty mark so the agent can see where doubt lies; confidence tracks accuracy above chance in general, but a three-level dot scale is untested, so read the dots as relative flags, not probabilities",
+        "backfires": "when a high dot is taken as settled, since excess certainty persists even where other overconfidence fades, or when the mark relies on colour alone and is lost to colour-blindness or a poor photo"
+      }
+    },
+    {
+      "id": "structural-marks",
+      "name": "Structural marks",
+      "intent": "Carry relations and intent that words on a page can't express in the flow of thinking.",
+      "guidance": "Circle = commit. Cross = rejected but kept visible (dead ends are evidence). Arrow = leads to / causes. Box = this is a decision. Margin question mark = revisit. Margin exclamation = important."
+    },
+    {
+      "id": "page-ids",
+      "name": "Page IDs",
+      "intent": "Give every page a stable name so a photo can be mapped to its reading rules before it is interpreted.",
+      "guidance": "A short id like W1-P3 in a large monospace face in the page header and on the return checklist. The AI reads the id first and applies that archetype's read-back rules."
+    },
+    {
+      "id": "proof-actions",
+      "name": "Proof actions",
+      "intent": "On a Proof, each colour role triggers an action when the page comes back.",
+      "guidance": "Ask → answer · Stop → challenge the claim · Keep → go deeper · Crux → re-centre around it · Maybe → explore alternatives · Sense → justify the reasoning · Draft → apply the edit as written · ✕ → cut · ○ → lock. Research-cost actions wait for confirmation.",
+      "grounding": {
+        "claims": [
+          {
+            "id": "reading-review/proofreading-marks",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "A fixed, shared set of marks, each mapped to one editing action, is used reliably by writers and editors to communicate corrections on paper.",
+            "construct": "proofreaders' marks as a mark → action convention",
+            "grade": "D",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Christiansen (2009), AMA Manual of Style",
+                "doi": "10.1093/jama/9780195176339.021.316",
+                "type": "practice"
+              }
+            ],
+            "rationale": "research/reading-review.md#proofreading-marks"
+          },
+          {
+            "id": "reading-review/consistent-mapping",
+            "load_bearing": true,
+            "transfer": "analogical",
+            "claim": "Keeping each mark's or colour's meaning constant across contexts leads to faster, more accurate use than mappings that change with context, which provoke mode errors.",
+            "construct": "consistent vs varied mapping (automaticity); mode errors",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Sarter & Woods (1995)",
+                "doi": "10.1518/001872095779049516",
+                "type": "review"
+              },
+              {
+                "cite": "Norman (1981)",
+                "doi": "10.1037/0033-295x.88.1.1",
+                "type": "theory"
+              }
+            ],
+            "rationale": "research/reading-review.md#consistent-mapping"
+          }
+        ],
+        "helps": "when every mark keeps one meaning on every page, following the long practice of proofreaders' marks; whether fixed marks are used reliably has not been tested",
+        "backfires": "when a mark's or colour's meaning shifts between pages or contexts, which invites mode errors even in trained users"
+      }
+    }
+  ]
+}

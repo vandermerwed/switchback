@@ -1,0 +1,88 @@
+{
+  "id": "constraint-removal",
+  "kind": "page",
+  "name": "Constraint removal",
+  "intent": "Break fixation by removing the thing the human is protecting.",
+  "when": "stuck, over-optimising, or when we can't because dominates",
+  "tags": ["create"],
+  "phase": "diverge",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write"],
+    "surface": "desk",
+    "timebox": "10 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "constraint": {
+        "type": "string",
+        "maxLength": 80
+      }
+    }
+  },
+  "prompt": "It is impossible to {constraint}. Design anyway.",
+  "readback": "The surviving idea is usually the real one; the removed-constraint thinking is often the innovation.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "creativity-fixation/constraint-relaxation",
+        "load_bearing": true,
+        "transfer": "analogical",
+        "claim": "Impasses in problem solving are overcome when the solver relaxes a self-imposed constraint on the solution, so deliberately removing a constraint makes new solution paths available.",
+        "construct": "constraint relaxation (representational change); fixation / Einstellung",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Knoblich et al. (1999)",
+            "doi": "10.1037/0278-7393.25.6.1534",
+            "type": "experiment"
+          },
+          {
+            "cite": "Knoblich, Ohlsson & Raney (2001)",
+            "doi": "10.3758/bf03195762",
+            "type": "experiment"
+          },
+          {
+            "cite": "Moreau & Dahl (2005)",
+            "doi": "10.1086/429597",
+            "type": "experiment"
+          },
+          {
+            "cite": "Acar, Tarakci & van Knippenberg (2019)",
+            "doi": "10.1177/0149206318805832",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/creativity-fixation.md#constraint-relaxation"
+      },
+      {
+        "id": "creativity-fixation/deferred-judgement",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Separating idea generation from evaluation, with judgement deferred until generation is done, increases the number of ideas without reducing, and sometimes increasing, the number of good ones.",
+        "construct": "deferral of judgement; diverge/converge separation",
+        "grade": "D",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Osborn (1953), Applied Imagination",
+            "isbn": "0684413930",
+            "type": "practice"
+          }
+        ],
+        "rationale": "research/creativity-fixation.md#deferred-judgement"
+      }
+    ],
+    "helps": "when an unexamined assumption is blocking every option; dropping a self-imposed constraint breaks impasses in puzzle studies, but removing a real constraint on purpose has not been tested",
+    "backfires": "when the constraint was doing useful work: constraints can raise creativity as well as lower it, and an idea designed without the constraint may not survive its return"
+  }
+}

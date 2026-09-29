@@ -1,0 +1,105 @@
+{
+  "roles": [
+    {
+      "id": "ask",
+      "code": "Q",
+      "name": "Ask",
+      "meaning": "a numbered question for the AI",
+      "short": "ask",
+      "suggested": ["blue"],
+      "priority": 1,
+      "proof_action": "answer",
+      "proof_label": "ask"
+    },
+    {
+      "id": "stop",
+      "code": "R",
+      "name": "Stop",
+      "meaning": "blocker, risk, broken, or not understood",
+      "short": "stop",
+      "suggested": ["red"],
+      "priority": 2,
+      "proof_action": "challenge",
+      "proof_label": "challenge"
+    },
+    {
+      "id": "keep",
+      "code": "G",
+      "name": "Keep",
+      "meaning": "evidence, confident, something that worked",
+      "short": "keep",
+      "suggested": ["green"],
+      "priority": 3,
+      "proof_action": "go-deeper",
+      "proof_label": "go deeper"
+    },
+    {
+      "id": "crux",
+      "code": "X",
+      "name": "Crux",
+      "meaning": "the one thing that matters most",
+      "short": "crux",
+      "suggested": ["yellow"],
+      "priority": 4,
+      "proof_action": "re-centre",
+      "proof_label": "re-centre"
+    },
+    {
+      "id": "maybe",
+      "code": "O",
+      "name": "Maybe",
+      "meaning": "an idea, a possibility, a what-if",
+      "short": "maybe",
+      "suggested": ["orange"],
+      "priority": 5,
+      "proof_action": "explore",
+      "proof_label": "explore"
+    },
+    {
+      "id": "sense",
+      "code": "P",
+      "name": "Sense",
+      "meaning": "gut feeling, intuition, felt reaction",
+      "short": "sense",
+      "suggested": ["purple", "violet"],
+      "priority": 6,
+      "proof_action": "justify",
+      "proof_label": "justify"
+    },
+    {
+      "id": "draft",
+      "code": "D",
+      "name": "Draft",
+      "meaning": "provisional; do not trust yet",
+      "short": "draft",
+      "suggested": ["grey", "gray"],
+      "priority": 7,
+      "proof_action": "apply-edit",
+      "proof_label": "edit"
+    },
+    {
+      "id": "reason",
+      "code": "B",
+      "name": "Reason",
+      "meaning": "what you think; the main content",
+      "short": "reason",
+      "suggested": ["black"],
+      "priority": null,
+      "proof_action": null,
+      "proof_label": null
+    }
+  ],
+  "marks": [
+    { "glyph": "○", "meaning": "commit / choose this", "proof_action": "lock", "proof_label": "lock" },
+    { "glyph": "✕", "meaning": "rejected; keep it visible", "proof_action": "cut", "proof_label": "cut" },
+    { "glyph": "→", "meaning": "leads to / causes" },
+    { "glyph": "▭", "meaning": "this is a decision" },
+    { "glyph": "?", "meaning": "revisit" },
+    { "glyph": "!", "meaning": "important" }
+  ],
+  "confidence": [
+    { "mark": "● +", "level": "high", "meaning": "I'd bet on this" },
+    { "mark": "◐ ~", "level": "medium", "meaning": "probably, but soft" },
+    { "mark": "○ !", "level": "low", "meaning": "guessing / unsure" }
+  ]
+}

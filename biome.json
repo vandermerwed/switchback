@@ -1,0 +1,36 @@
+{
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "includes": [
+      "**",
+      "!**/node_modules",
+      "!**/dist",
+      "!**/out",
+      "!.superpowers",
+      "!docs",
+      "!packages/switchback/src/generated",
+      "!packages/switchback/research/.doi-cache.json",
+      "!packages/switchback/research/grading",
+      "!packages/switchback/research/sourcing",
+      "!packages/switchback/research/grounding.json"
+    ]
+  },
+  "formatter": {
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 110
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "style": {
+        "noNonNullAssertion": "off"
+      }
+    }
+  }
+}

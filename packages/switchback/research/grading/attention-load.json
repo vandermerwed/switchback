@@ -1,0 +1,282 @@
+{
+  "family": "attention-load",
+  "claims": {
+    "attention-load/cognitive-offload": {
+      "claim": "Keeping task-relevant information in a stable, visible external store, rather than in working memory, improves performance on the concurrent task, at the cost of weaker memory for the offloaded content.",
+      "construct": "cognitive offloading (working-memory offload)",
+      "grade": "B",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Gilbert (2015)",
+          "doi": "10.1080/17470218.2014.972963",
+          "type": "experiment"
+        },
+        {
+          "cite": "Storm & Stone (2015)",
+          "doi": "10.1177/0956797614559285",
+          "type": "experiment"
+        },
+        {
+          "cite": "Sparrow, Liu & Wegner (2011)",
+          "doi": "10.1126/science.1207745",
+          "type": "experiment"
+        },
+        {
+          "cite": "Risko & Gilbert (2016)",
+          "doi": "10.1016/j.tics.2016.07.002",
+          "type": "review"
+        },
+        {
+          "cite": "Meyerhoff, Grinschgl, Papenmeier & Gilbert (2021)",
+          "doi": "10.1186/s41235-021-00298-x",
+          "type": "experiment"
+        },
+        {
+          "cite": "Hesselmann (2020)",
+          "doi": "10.7717/peerj.10325",
+          "type": "experiment"
+        }
+      ],
+      "rationale": "research/attention-load.md#cognitive-offload",
+      "suggested_rewording": null
+    },
+    "attention-load/job-aid": {
+      "claim": "A checklist or reference card kept at hand reduces omissions in multi-step or rule-governed tasks compared with relying on memory.",
+      "construct": "job aids / checklists; omission errors",
+      "grade": "C",
+      "transfer": "analogical",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Haynes et al. (2009)",
+          "doi": "10.1056/nejmsa0810119",
+          "type": "experiment"
+        },
+        {
+          "cite": "Urbach, Govindarajan, Saskin, Wilton & Baxter (2014)",
+          "doi": "10.1056/nejmsa1308261",
+          "type": "experiment"
+        },
+        {
+          "cite": "Reason (2002)",
+          "doi": "10.1136/qhc.11.1.40",
+          "type": "experiment"
+        },
+        {
+          "cite": "Hales & Pronovost (2006)",
+          "doi": "10.1016/j.jcrc.2006.06.002",
+          "type": "review"
+        }
+      ],
+      "rationale": "research/attention-load.md#job-aid",
+      "suggested_rewording": null
+    },
+    "attention-load/goal-orientation": {
+      "claim": "Stating at the outset the specific question a session must answer improves the relevance and focus of the work, compared with starting without a stated goal.",
+      "construct": "goal specificity; advance organisers; learning objectives",
+      "grade": "C",
+      "transfer": "analogical",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Luiten, Ames & Ackerson (1980)",
+          "doi": "10.3102/00028312017002211",
+          "type": "meta-analysis"
+        },
+        {
+          "cite": "Locke & Latham (2002)",
+          "doi": "10.1037/0003-066x.57.9.705",
+          "type": "review"
+        }
+      ],
+      "rationale": "research/attention-load.md#goal-orientation",
+      "suggested_rewording": "Advance organisers given before learning improve learning and retention. (B, one meta-analysis read at abstract level, direction only)"
+    },
+    "attention-load/phone-presence": {
+      "claim": "Having one's smartphone within reach, even silent and face down, reduces available cognitive capacity, and moving it to another room restores that capacity.",
+      "construct": "the \"brain drain\" / mere-presence effect of smartphones",
+      "grade": "C",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "1",
+      "sources": [
+        {
+          "cite": "Ruiz Pardo & Minda (2022)",
+          "doi": "10.1016/j.actpsy.2022.103717",
+          "type": "rrr"
+        },
+        {
+          "cite": "Hartmann, Martarelli, Reber & Rothen (2020)",
+          "doi": "10.1016/j.concog.2020.103033",
+          "type": "experiment"
+        },
+        {
+          "cite": "Thornton, Faires, Robbins & Rollins (2014)",
+          "doi": "10.1027/1864-9335/a000216",
+          "type": "experiment"
+        },
+        {
+          "cite": "Böttger, Poschik & Zierer (2023)",
+          "doi": "10.3390/bs13090751",
+          "type": "meta-analysis"
+        },
+        {
+          "cite": "Hartanto & Yang (2016)",
+          "doi": "10.1016/j.chb.2016.07.002",
+          "type": "experiment"
+        },
+        {
+          "cite": "Stothart, Mitchum & Yehnert (2015)",
+          "doi": "10.1037/xhp0000100",
+          "type": "experiment"
+        }
+      ],
+      "rationale": "research/attention-load.md#phone-presence",
+      "suggested_rewording": "Phone notifications disrupt performance on an attention-demanding task even when the person does not pick up the phone. (C, one experiment read)"
+    },
+    "attention-load/stop-mid-task": {
+      "claim": "Ending a work session in the middle of a unit of work, such as mid-sentence, rather than at a natural break, increases the likelihood and ease of resuming the work at the next session.",
+      "construct": "the resumption tendency after interruption (Ovsiankina effect); the Zeigarnik effect",
+      "grade": "C",
+      "transfer": "analogical",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Ghibellini & Meier (2025)",
+          "doi": "10.1057/s41599-025-05000-w",
+          "type": "meta-analysis"
+        },
+        {
+          "cite": "Masicampo & Baumeister (2011)",
+          "doi": "10.1037/a0024192",
+          "type": "experiment"
+        }
+      ],
+      "rationale": "research/attention-load.md#stop-mid-task",
+      "suggested_rewording": "People tend to resume tasks that were interrupted before completion; unfinished tasks are not better remembered. (B, one meta-analysis, abstract only, no pooled effect given)"
+    },
+    "attention-load/resumption-cues": {
+      "claim": "Leaving a visible cue of where you were and what comes next at the point of interruption reduces the time and errors involved in resuming a task.",
+      "construct": "memory for goals; resumption lag",
+      "grade": "B",
+      "transfer": "analogical",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Hodgetts & Jones (2006)",
+          "doi": "10.1037/0278-7393.32.5.1120",
+          "type": "experiment"
+        },
+        {
+          "cite": "Monk, Trafton & Boehm-Davis (2008)",
+          "doi": "10.1037/a0014402",
+          "type": "experiment"
+        },
+        {
+          "cite": "Altmann & Trafton (2002)",
+          "doi": "10.1207/s15516709cog2601_2",
+          "type": "theory"
+        }
+      ],
+      "rationale": "research/attention-load.md#resumption-cues",
+      "suggested_rewording": null
+    },
+    "attention-load/task-switching": {
+      "claim": "Switching between tasks carries a measurable time and accuracy cost compared with staying on one task. Doing one kind of thinking at a time avoids that cost.",
+      "construct": "task-switching costs; multitasking",
+      "grade": "B",
+      "transfer": "analogical",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Rogers & Monsell (1995)",
+          "doi": "10.1037/0096-3445.124.2.207",
+          "type": "experiment"
+        },
+        {
+          "cite": "Wiradhany & Nieuwenstein (2017)",
+          "doi": "10.3758/s13414-017-1408-4",
+          "type": "meta-analysis"
+        }
+      ],
+      "rationale": "research/attention-load.md#task-switching",
+      "suggested_rewording": null
+    }
+  },
+  "items": {
+    "dashboard": {
+      "kind": "preset",
+      "claims": [
+        {
+          "id": "externalisation-embodiment/common-region",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "attention-load/cognitive-offload",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "attention-load/resumption-cues",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when a session has several pieces of state to hold at once (the current decision, open questions, time left); keeping them in view frees working memory in reminder and saving studies, and items in one box tend to be read as a group",
+      "backfires": "when the boxes are not kept current, since offloading helps only while the store can be trusted, or when something offloaded is needed later without the page, because people remember less of what they expect to be able to look up"
+    },
+    "player-aid": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "attention-load/cognitive-offload",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "attention-load/job-aid",
+          "load_bearing": true,
+          "transfer": "analogical"
+        }
+      ],
+      "helps": "when a session uses conventions worth keeping in view but not worth memorising; external stores free working memory in lab tasks, and reference aids are used to cut omissions in procedural work, though the evidence is mixed and large checklist studies in surgery disagree",
+      "backfires": "when the aid replaces judgement, or stands in for conventions the person never learns, since people remember less of what they expect to be able to look up"
+    },
+    "cover": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "attention-load/goal-orientation",
+          "load_bearing": true,
+          "transfer": "analogical"
+        },
+        {
+          "id": "attention-load/phone-presence",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "attention-load/stop-mid-task",
+          "load_bearing": false,
+          "transfer": "analogical"
+        },
+        {
+          "id": "attention-load/resumption-cues",
+          "load_bearing": false,
+          "transfer": "analogical"
+        }
+      ],
+      "helps": "when the sitting needs one question to aim at; stating the goal first is supported only by related work on advance organisers, so treat the question as the contract to check the return against, not a guarantee of focus",
+      "backfires": "when an early, narrow question locks in the wrong problem, when moving the phone away causes more anxiety than its presence did (the phone-presence effect failed a direct replication), or when stopping mid-sentence is not paired with a written note of the next step"
+    }
+  }
+}

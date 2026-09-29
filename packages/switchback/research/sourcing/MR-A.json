@@ -1,0 +1,563 @@
+[
+  {
+    "claim_id": "memory-retrieval/testing-effect",
+    "sources": [
+      {
+        "cite": "Roediger, H. L. & Karpicke, J. D. (2006). Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention. Psychological Science, 17, 249-255.",
+        "doi": "10.1111/j.1467-9280.2006.01693.x",
+        "year": 2006,
+        "type": "experiment",
+        "design": "2 experiments; prose passages; repeated free-recall test(s) without feedback vs. repeated restudy; immediate (5 min) and delayed final tests",
+        "n": "",
+        "effect": "restudy > testing at 5-min test; testing > restudy at delayed test",
+        "finding_quote": "When the final test was given after 5 min, repeated studying improved recall relative to repeated testing. However, on the delayed tests, prior testing produced substantially greater retention than studying. (search synthesis reproducing the published abstract; primary page captcha/403-blocked this session)",
+        "url": "https://doi.org/10.1111/j.1467-9280.2006.01693.x"
+      },
+      {
+        "cite": "Rowland, C. A. (2014). The Effect of Testing Versus Restudy on Retention: A Meta-Analytic Review of the Testing Effect. Psychological Bulletin, 140, 1432-1463.",
+        "doi": "10.1037/a0037559",
+        "year": 2014,
+        "type": "meta-analysis",
+        "design": "random-effects meta-analysis, 159 effect sizes from 61 studies (1975-2013), test vs. restudy",
+        "n": "159 effect sizes",
+        "effect": "g = 0.50, 95% CI [0.42, 0.58]",
+        "finding_quote": "The mean weighted effect size from the random-effects model, g = 0.50 (CI [0.42, 0.58]), was greater than 0 ... indicating a reliable testing effect ... There was a high degree of heterogeneity among the samples included in the analysis (tau^2 = 0.21, Q = 1,009.42, p < .001), with a substantial majority of the overall between studies resulting from heterogeneity (I^2 = 84.35).",
+        "url": "https://doi.org/10.1037/a0037559"
+      },
+      {
+        "cite": "Adesope, O. O., Trevisan, D. A. & Sundararajan, N. (2017). Rethinking the Use of Tests: A Meta-Analysis of Practice Testing. Review of Educational Research, 87(3), 659-701.",
+        "doi": "10.3102/0034654316689306",
+        "year": 2017,
+        "type": "meta-analysis",
+        "design": "meta-analysis of practice-testing studies (secondary sources describe ~217 studies)",
+        "n": "",
+        "effect": "g ~ 0.51 (vs restudy); g ~ 0.93 (vs filler/no re-presentation)",
+        "finding_quote": "Students who take practice tests often outperform students in non-testing learning conditions such as restudying, practice, filler activities, or no re-presentation of the material. (search synthesis of a secondary summary page; primary abstract not independently fetched this session)",
+        "url": "https://doi.org/10.3102/0034654316689306"
+      },
+      {
+        "cite": "Pan, S. C. & Rickard, T. C. (2018). Transfer of Test-Enhanced Learning: Meta-Analytic Review and Synthesis. Psychological Bulletin, 144(7), 710-756.",
+        "doi": "10.1037/bul0000151",
+        "year": 2018,
+        "type": "meta-analysis",
+        "design": "random-effects meta-analysis; 192 transfer effect sizes, 122 experiments, 67 articles",
+        "n": "N = 10382",
+        "effect": "d = 0.40, 95% CI [0.31, 0.50] (transfer, vs nontesting reexposure control)",
+        "finding_quote": "A random-effects model revealed that testing can yield transferrable learning as measured relative to a nontesting reexposure control condition (d = 0.40, 95% CI [0.31, 0.50]). That transfer of learning is greatest across test formats, to application and inference questions, to problems involving medical diagnoses, and to mediator and related word cues; it is weakest to rearranged stimulus-response items, to untested materials seen during initial study, and to problems involving worked examples ... the intercept predictions were substantially reduced, often indicating no positive transfer when none of the aforementioned moderators are present.",
+        "url": "https://doi.org/10.1037/bul0000151"
+      }
+    ],
+    "replication": [],
+    "backfire": [
+      {
+        "cite": "Roediger & Karpicke (2006)",
+        "doi": "10.1111/j.1467-9280.2006.01693.x",
+        "condition": "At an immediate (5-min) final test, restudy beat testing; the testing advantage appeared only at the delayed test."
+      },
+      {
+        "cite": "Pan & Rickard (2018)",
+        "doi": "10.1037/bul0000151",
+        "condition": "Transfer of testing is weakest for untested material seen during initial study and for worked-example problems; publication-bias-corrected intercepts often show no positive transfer absent specific moderators."
+      }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "memory-retrieval/retrieval-feedback",
+    "sources": [
+      {
+        "cite": "Pashler, H., Cepeda, N. J., Wixted, J. T. & Rohrer, D. (2005). When Does Feedback Facilitate Learning of Words? JEP: Learning, Memory, and Cognition, 31, 3-8.",
+        "doi": "10.1037/0278-7393.31.1.3",
+        "year": 2005,
+        "type": "experiment",
+        "design": "Luganda-English word pairs; feedback presence/type varied between subjects; final test 1 week later",
+        "n": "N = 258",
+        "effect": "correct-answer feedback after an error increased final retention by 494%; feedback after correct responses had little effect",
+        "finding_quote": "Supplying the correct answer after an incorrect response not only improved performance during the initial learning session—it also increased final retention by 494%. On the other hand, feedback after correct responses made little difference either immediately or at a delay, regardless of whether the subject was confident in the response.",
+        "url": "https://doi.org/10.1037/0278-7393.31.1.3"
+      },
+      {
+        "cite": "Butler, A. C. & Roediger, H. L. (2008). Feedback Enhances the Positive Effects and Reduces the Negative Effects of Multiple-Choice Testing. Memory & Cognition, 36(3), 604-616.",
+        "doi": "10.3758/MC.36.3.604",
+        "year": 2008,
+        "type": "experiment",
+        "design": "multiple-choice test with immediate feedback, delayed feedback, or no feedback; delayed cued-recall final test",
+        "n": "",
+        "effect": "feedback increased correct responses and reduced intrusions from lure items vs no feedback",
+        "finding_quote": "In comparison with the no-feedback condition, both immediate and delayed feedback increased the proportion of correct responses and reduced the proportion of intrusions (i.e., lure responses from the initial multiple-choice test) on a delayed cued recall test. Educators should provide feedback when using multiple-choice tests.",
+        "url": "https://doi.org/10.3758/MC.36.3.604"
+      },
+      {
+        "cite": "Butler, A. C., Karpicke, J. D. & Roediger, H. L. (2008). Correcting a Metacognitive Error: Feedback Increases Retention of Low-Confidence Correct Responses. JEP: Learning, Memory, and Cognition, 34, 918-928.",
+        "doi": "10.1037/0278-7393.34.4.918",
+        "year": 2008,
+        "type": "experiment",
+        "design": "2 experiments; general-knowledge multiple-choice with confidence judgments, then feedback",
+        "n": "",
+        "effect": "feedback selectively boosted retention of low-confidence correct responses",
+        "finding_quote": "When correct responses are made with low confidence, feedback serves to correct this initial metacognitive error, enhancing retention of low-confidence correct responses. (search synthesis; primary abstract not independently fetched this session)",
+        "url": "https://doi.org/10.1037/0278-7393.34.4.918"
+      },
+      {
+        "cite": "Dunlosky, J., Hartwig, M., Rawson, K. A. & Lipko, A. R. (2011). Improving College Students' Evaluation of Text Learning Using Idea-Unit Standards. QJEP, 64(3), 467-484.",
+        "doi": "10.1080/17470218.2010.502239",
+        "year": 2011,
+        "type": "experiment",
+        "design": "2 experiments; recall of key-term definitions, self-judged whole-definition vs idea-unit standards",
+        "n": "",
+        "effect": "global self-scoring is overconfident; idea-unit-level scoring reduces overconfidence",
+        "finding_quote": "College students are often overconfident in the quality of their responses when self-scoring recall against a standard; even with commission errors, they often judge that their response is entirely or partially correct. Idea-unit judgements reduce this overconfidence. (search synthesis; primary abstract paywalled, not independently fetched this session)",
+        "url": "https://doi.org/10.1080/17470218.2010.502239"
+      }
+    ],
+    "replication": [],
+    "backfire": [
+      {
+        "cite": "Dunlosky, Hartwig, Rawson & Lipko (2011)",
+        "doi": "10.1080/17470218.2010.502239",
+        "condition": "Self-scoring recall against a global standard is overconfident; only idea-unit-level judgment corrects this, relevant to how free-recall's self-administered check pass should be structured."
+      },
+      {
+        "cite": "Pashler, Cepeda, Wixted & Rohrer (2005)",
+        "doi": "10.1037/0278-7393.31.1.3",
+        "condition": "Feedback's benefit is concentrated on correcting errors; it adds little to already-correct recall, so the check pass functions mainly as error-correction rather than a general retention booster."
+      }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "memory-retrieval/hypercorrection",
+    "sources": [
+      {
+        "cite": "Butterfield, B. & Metcalfe, J. (2001). Errors Committed With High Confidence Are Hypercorrected. JEP: Learning, Memory, and Cognition, 27(6), 1491-1494.",
+        "doi": "10.1037/0278-7393.27.6.1491",
+        "year": 2001,
+        "type": "experiment",
+        "design": "general-knowledge questions, confidence ratings, correct-answer feedback, later retest",
+        "n": "",
+        "effect": "high-confidence errors corrected more than low-confidence errors",
+        "finding_quote": "Not independently re-quoted from its own abstract this session (PubMed captcha-blocked); described via Metcalfe & Finn (2011), which cites it as the paradigm's origin: 'people were more likely to respond correctly to the questions that had produced high- rather than low-confidence errors.'",
+        "url": "https://doi.org/10.1037/0278-7393.27.6.1491"
+      },
+      {
+        "cite": "Metcalfe, J. & Finn, B. (2011). People's Hypercorrection of High-Confidence Errors: Did They Know It All Along? JEP: Learning, Memory, and Cognition, 37(2), 437-448.",
+        "doi": "10.1037/a0021962",
+        "year": 2011,
+        "type": "experiment",
+        "design": "3 experiments replicating and extending Butterfield & Metcalfe 2001's paradigm",
+        "n": "",
+        "effect": "high-confidence errors both more likely corrected, and more likely implicitly known beforehand",
+        "finding_quote": "In the standard paradigm ... participants were asked to generate the answers to general information questions and to rate their confidence in the correctness of each answer they produced. They were then given the correct answer. At later test, it was found that people were more likely to respond correctly to the questions that had produced high- rather than low-confidence errors ... when people said that they knew it all along, they were right.",
+        "url": "https://doi.org/10.1037/a0021962"
+      },
+      {
+        "cite": "Metcalfe, J. (2017). Learning From Errors. Annual Review of Psychology, 68, 6.1-6.25.",
+        "doi": "10.1146/annurev-psych-010416-044022",
+        "year": 2017,
+        "type": "review",
+        "design": "Annual Review synthesis of errorful-learning and hypercorrection literature",
+        "n": "",
+        "effect": "corrective feedback after errorful learning benefits retention, especially for high-confidence errors",
+        "finding_quote": "Experimental investigations indicate that errorful learning followed by corrective feedback is beneficial to learning. Interestingly, the beneficial effects are particularly salient when individuals strongly believe that their error is correct: Errors committed with high confidence are corrected more readily than low-confidence errors. Corrective feedback, including analysis of the reasoning leading up to the mistake, is crucial.",
+        "url": "https://doi.org/10.1146/annurev-psych-010416-044022"
+      },
+      {
+        "cite": "Butler, A. C., Fazio, L. K. & Marsh, E. J. (2011). The Hypercorrection Effect Persists Over a Week, But High-Confidence Errors Return. Psychonomic Bulletin & Review, 18(6), 1238-1244.",
+        "doi": "10.3758/s13423-011-0173-y",
+        "year": 2011,
+        "type": "experiment",
+        "design": "general-knowledge questions, confidence ratings, feedback; retest immediately or after a 1-week delay",
+        "n": "",
+        "effect": "hypercorrection occurs at both delays but weakens; previously-corrected high-confidence errors reappear more than low-confidence ones",
+        "finding_quote": "The hypercorrection effect occurred on both the immediate and delayed final tests, but error correction decreased on the delayed test. When subjects failed to correct an error on the delayed test, they sometimes reproduced the same error from the initial test. Interestingly, high-confidence errors were more likely than low-confidence errors to be reproduced on the delayed test.",
+        "url": "https://doi.org/10.3758/s13423-011-0173-y"
+      }
+    ],
+    "replication": [
+      {
+        "cite": "Butler, Fazio & Marsh (2011)",
+        "doi": "10.3758/s13423-011-0173-y",
+        "result": "replicated"
+      }
+    ],
+    "backfire": [
+      {
+        "cite": "Butler, Fazio & Marsh (2011)",
+        "doi": "10.3758/s13423-011-0173-y",
+        "condition": "If the correction itself is forgotten by the delayed test, high-confidence errors are more likely than low-confidence errors to reappear — the benefit is not permanent."
+      }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "memory-retrieval/pretesting",
+    "sources": [
+      {
+        "cite": "Richland, L. E., Kornell, N. & Kao, L. S. (2009). The Pretesting Effect: Do Unsuccessful Retrieval Attempts Enhance Learning? JEP: Applied, 15, 243-257.",
+        "doi": "10.1037/a0016496",
+        "year": 2009,
+        "type": "experiment",
+        "design": "5 experiments; essay/prose passages; pretest condition vs extended-study condition; only pretest-unsuccessful items analyzed",
+        "n": "",
+        "effect": "posttest performance better after pretesting than after extended study, in all 5 experiments",
+        "finding_quote": "Posttest performance was better in the test condition than in the extended study condition in all experiments—a pretesting effect—even though only items that were not successfully retrieved on the pretest were analyzed. (search synthesis; primary abstract not independently fetched this session)",
+        "url": "https://doi.org/10.1037/a0016496"
+      },
+      {
+        "cite": "Kornell, N., Hays, M. J. & Bjork, R. A. (2009). Unsuccessful Retrieval Attempts Enhance Subsequent Learning. JEP: Learning, Memory, and Cognition, 35, 989-998.",
+        "doi": "10.1037/a0015729",
+        "year": 2009,
+        "type": "experiment",
+        "design": "6 experiments; general-knowledge questions and weak cue-associate pairs engineered so retrieval attempts fail; test condition vs read-only condition",
+        "n": "",
+        "effect": "unsuccessful retrieval attempts enhanced later learning with both materials",
+        "finding_quote": "Unsuccessful retrieval attempts enhanced learning with both types of materials. These results demonstrate that retrieval attempts enhance future learning; they also suggest that challenging tests—instead of avoiding errors—may be key to effective learning.",
+        "url": "https://doi.org/10.1037/a0015729"
+      },
+      {
+        "cite": "Pan, S. C. & Carpenter, S. K. (2023). Prequestioning and Pretesting Effects: A Review of Empirical Research, Theoretical Perspectives, and Implications for Educational Practice. Educational Psychology Review, 35, 40.",
+        "doi": "10.1007/s10648-023-09814-5",
+        "year": 2023,
+        "type": "review",
+        "design": "narrative + quantitative-leaning review of the prequestioning/pretesting literature",
+        "n": "",
+        "effect": "reliably helps; magnitude varies by procedure/assessment",
+        "finding_quote": "This prequestioning effect or pretesting effect has been successfully demonstrated with a variety of learning materials, despite many erroneous responses being generated on initial tests, and in conjunction with text materials, videos, lectures, and/or correct answer feedback ... The evidence to date indicates that prequestioning and pretesting can often enhance learning, but the extent of that enhancement may vary due to differences in procedure or how learning is assessed.",
+        "url": "https://doi.org/10.1007/s10648-023-09814-5"
+      },
+      {
+        "cite": "Carpenter, S. K. & Toftness, A. R. (2017). The Effect of Prequestions on Learning From Video Presentations. JARMAC, 6(1), 104-109.",
+        "doi": "10.1016/j.jarmac.2016.07.014",
+        "year": 2017,
+        "type": "experiment",
+        "design": "85 students watched a 3-segment video (Easter Island history); half attempted 2 prequestions before each ~2-min segment; later test covered both prequestioned and non-prequestioned content",
+        "n": 85,
+        "effect": "gap-fill correction (2026-09-25): prequestions helped recall of BOTH prequestioned and non-prequestioned video content -- no selective-processing cost found, reversing the original row's reading",
+        "finding_quote": "Per a WebSearch synthesis of the abstract (still not independently fetched verbatim this session -- ScienceDirect and Unpaywall remained blocked): studies demonstrating the prequestion effect in reading tasks have shown that such prequestions may not enhance, and could even impair, learning of information that was not prequestioned. The current study explored the effects of prequestions on learning from videos, where such a selective processing strategy would be less likely to occur, and found a significant advantage for the Prequestion Group over the Control Group, and this pertained to both prequestioned and non-prequestioned information. Treat as a strong lead, not a confirmed quote, until re-checked against the primary text.",
+        "url": "https://doi.org/10.1016/j.jarmac.2016.07.014"
+      }
+    ],
+    "replication": [],
+    "backfire": [
+      {
+        "cite": "Carpenter & Toftness (2017)",
+        "doi": "10.1016/j.jarmac.2016.07.014",
+        "condition": "Gap-fill correction (2026-09-25): the study's own video experiment found no selective-processing cost to non-prequestioned material -- the cost is attributed in the paper to prior reading-based studies, not demonstrated for video. The backfire case for pretesting-in-video is weaker than the original row stated."
+      }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "memory-retrieval/retrieval-before-review",
+    "sources": [
+      {
+        "cite": "Izawa, C. (1970). Optimal Potentiating Effects and Forgetting-Prevention Effects of Tests in Paired-Associate Learning. Journal of Experimental Psychology, 83(2, Pt.1), 340-344.",
+        "doi": "10.1037/h0028541",
+        "year": 1970,
+        "type": "experiment",
+        "design": "paired-associate learning; test-trial vs study-trial sequencing",
+        "n": "",
+        "effect": "origin of the 'test-potentiated learning' construct",
+        "finding_quote": "still unread (gap-fill 2026-09-25): Crossref confirms title, sole author (Chizuko Izawa), journal (Journal of Experimental Psychology, vol. 83, pp.340-344), and February 1970 publication date exactly; its Crossref record links to APA's own PDF (http://psycnet.apa.org/journals/xge/83/2p1/340.pdf), not fetched this session (time budget). No abstract field exists on the Crossref record, consistent with 1970-era APA journal practice (no structured abstracts). WebSearch found only citation-list mentions, never a quotable summary of its own findings. Genuinely unread, not access-blocked.",
+        "url": "https://doi.org/10.1037/h0028541"
+      },
+      {
+        "cite": "Arnold, K. M. & McDermott, K. B. (2013). Test-Potentiated Learning: Distinguishing Between Direct and Indirect Effects of Tests. JEP: Learning, Memory, and Cognition, 39(3), 940-945.",
+        "doi": "10.1037/a0029199",
+        "year": 2013,
+        "type": "experiment",
+        "design": "uses conditional probability to isolate the indirect (potentiating) effect of a prior test on subsequent restudy from the direct effect of the test itself",
+        "n": "",
+        "effect": "unsuccessful retrieval attempts enhanced the effectiveness of subsequent restudy",
+        "finding_quote": "The results indicate that unsuccessful retrieval attempts enhance the effectiveness of subsequent restudy, demonstrating that tests do potentiate subsequent learning.",
+        "url": "https://doi.org/10.1037/a0029199"
+      },
+      {
+        "cite": "Chan, J. C. K., Meissner, C. A. & Davis, S. D. (2018). Retrieval Potentiates New Learning: A Theoretical and Meta-Analytic Review. Psychological Bulletin, 144(11), 1111-1146.",
+        "doi": "10.1037/bul0000166",
+        "year": 2018,
+        "type": "meta-analysis",
+        "design": "theoretical review + meta-analysis of the test-potentiated-new-learning literature",
+        "n": "",
+        "effect": "testing reliably potentiates later learning of new material, moderated by several factors",
+        "finding_quote": "Our quantitative review of the literature showed that testing reliably potentiates the future learning of new materials by increasing correct recall or by reducing erroneous intrusions, and several factors have a powerful impact on whether testing potentiates or impairs new learning ... Results of a metaregression analysis provide considerable support for the integration account.",
+        "url": "https://doi.org/10.1037/bul0000166"
+      }
+    ],
+    "replication": [],
+    "backfire": [
+      {
+        "cite": "Chan, Meissner & Davis (2018)",
+        "doi": "10.1037/bul0000166",
+        "condition": "Abstract flags that several factors determine whether testing potentiates or impairs new learning; the specific moderator list was not extracted from the full text this session."
+      }
+    ],
+    "unverified": [
+      {
+        "cite": "claims.md brief's lead 'Chan, Manley, Davis & Szpunar 2018'",
+        "reason": "Lead correction: the verified meta-analysis (10.1037/bul0000166) is authored by Chan, Meissner & Davis (2018), not Chan, Manley, Davis & Szpunar. A distinct paper with Szpunar as a co-author exists (Journal of Memory and Language, 2018) but is not this meta-analysis."
+      }
+    ]
+  },
+  {
+    "claim_id": "memory-retrieval/distributed-practice",
+    "sources": [
+      {
+        "cite": "Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T. & Rohrer, D. (2006). Distributed Practice in Verbal Recall Tasks: A Review and Quantitative Synthesis. Psychological Bulletin, 132, 354-380.",
+        "doi": "10.1037/0033-2909.132.3.354",
+        "year": 2006,
+        "type": "meta-analysis",
+        "design": "review/meta-analysis of verbal-recall spacing studies",
+        "n": "839 effect sizes / 317 experiments / 184 articles",
+        "effect": "positive distributed-practice effect, robust across a wide range of lags",
+        "finding_quote": "The authors performed a meta-analysis of the distributed practice effect ... finding 839 assessments of distributed practice in 317 experiments located in 184 articles. (search synthesis; the eScholarship PDF served only a cover/landing page this session, not the abstract text)",
+        "url": "https://doi.org/10.1037/0033-2909.132.3.354"
+      },
+      {
+        "cite": "Donovan, J. J. & Radosevich, D. J. (1999). A Meta-Analytic Review of the Distribution of Practice Effect: Now You See It, Now You Don't. Journal of Applied Psychology, 84(5), 795-805.",
+        "doi": "10.1037/0021-9010.84.5.795",
+        "year": 1999,
+        "type": "meta-analysis",
+        "design": "63 studies, 112 effect sizes, spaced vs massed practice",
+        "n": "112 effect sizes / 63 studies",
+        "effect": "overall weighted effect size 0.46 favoring spaced practice",
+        "finding_quote": "A meta-analysis of 63 studies with 112 effect sizes yielded an overall mean weighted effect size of 0.46, indicating that individuals in spaced practice conditions performed significantly higher than those in massed practice conditions. Subsequent analyses, however, suggested that the nature of the task being practiced, the intertrial time interval, and the interaction between these two variables significantly moderated the relationship between practice conditions and performance. In addition, significantly higher effect sizes were found in studies with low methodological rigor as compared with those studies higher in rigor.",
+        "url": "https://doi.org/10.1037/0021-9010.84.5.795"
+      },
+      {
+        "cite": "Kornell, N. (2009). Optimising Learning Using Flashcards: Spacing Is More Effective Than Cramming. Applied Cognitive Psychology, 23, 1297-1317.",
+        "doi": "10.1002/acp.1537",
+        "year": 2009,
+        "type": "experiment",
+        "design": "flashcard-based vocabulary learning; spaced vs massed study schedules",
+        "n": "",
+        "effect": "spacing outperformed massed cramming",
+        "finding_quote": "Title states the finding directly; primary abstract not independently fetched this session (publisher paywalled).",
+        "url": "https://doi.org/10.1002/acp.1537"
+      },
+      {
+        "cite": "Kornell, N. & Bjork, R. A. (2008). Optimising Self-Regulated Study: The Benefits—and Costs—of Dropping Flashcards. Memory, 16(2), 125-136.",
+        "doi": "10.1080/09658210701763899",
+        "year": 2008,
+        "type": "experiment",
+        "design": "self-paced flashcard study; examines learners' choices to drop mastered items",
+        "n": "",
+        "effect": "self-regulation choices interact with and can undercut spacing benefits",
+        "finding_quote": "Title/topic confirmed via Crossref; primary abstract not independently fetched this session.",
+        "url": "https://doi.org/10.1080/09658210701763899"
+      }
+    ],
+    "replication": [],
+    "backfire": [
+      {
+        "cite": "Kornell (2009); Kornell & Bjork (2008, dropping flashcards)",
+        "doi": "10.1002/acp.1537",
+        "condition": "Learners' own judgments of learning tend to favor massed study even when spaced study produces superior test performance — a metacognitive-illusion risk for voluntary adherence to a spaced schedule."
+      },
+      {
+        "cite": "Donovan & Radosevich (1999)",
+        "doi": "10.1037/0021-9010.84.5.795",
+        "condition": "The spacing advantage is moderated by task type and intertrial interval, and effect sizes were inflated in lower-methodological-rigor studies."
+      }
+    ],
+    "unverified": [
+      {
+        "cite": "Disambiguation note",
+        "reason": "Two distinct 'Kornell & Bjork 2008' papers exist: the flashcard-dropping paper used here (10.1080/09658210701763899) and the painting-style induction paper (10.1111/j.1467-9280.2008.02127.x) used under interleaving-confusable. Not an error, but flagged so the two are not conflated."
+      }
+    ]
+  },
+  {
+    "claim_id": "memory-retrieval/spacing-gap-ratio",
+    "sources": [
+      {
+        "cite": "Cepeda, N. J., Vul, E., Rohrer, D., Wixted, J. T. & Pashler, H. (2008). Spacing Effects in Learning: A Temporal Ridgeline of Optimal Retention. Psychological Science, 19(11), 1095-1102.",
+        "doi": "10.1111/j.1467-9280.2008.02209.x",
+        "year": 2008,
+        "type": "experiment",
+        "design": "fact-learning; initial study, a gap of up to 3.5 months, a review, then a final test at a further delay of up to 1 year",
+        "n": "N > 1350",
+        "effect": "optimal gap is a fraction of retention interval that shrinks as the interval grows",
+        "finding_quote": "At any given test delay, an increase in the interstudy gap at first increased, and then gradually reduced, final test performance. The optimal gap increased as test delay increased. However, when measured as a proportion of test delay, the optimal gap declined from about 20 to 40% of a 1-week test delay to about 5 to 10% of a 1-year test delay. The interaction of gap and test delay implies that many educational practices are highly inefficient.",
+        "url": "https://doi.org/10.1111/j.1467-9280.2008.02209.x"
+      },
+      {
+        "cite": "Cepeda, Pashler, Vul, Wixted & Rohrer (2006) — see distributed-practice",
+        "doi": "10.1037/0033-2909.132.3.354",
+        "year": 2006,
+        "type": "meta-analysis",
+        "design": "corroborating synthesis",
+        "n": "",
+        "effect": "corroborates the general spacing-gap interaction at scale",
+        "finding_quote": "Cross-referenced as supporting synthesis; not independently re-quoted in this claim's entry.",
+        "url": "https://doi.org/10.1037/0033-2909.132.3.354"
+      }
+    ],
+    "replication": [],
+    "backfire": [
+      {
+        "cite": "Cepeda, Vul, Rohrer, Wixted & Pashler (2008)",
+        "doi": "10.1111/j.1467-9280.2008.02209.x",
+        "condition": "The gap-retention relationship is a ridgeline (inverted-U): gaps too short and gaps too long both reduce performance relative to the optimum; the reported asymmetry between the two costs was not extracted this session."
+      }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "memory-retrieval/expanding-vs-uniform",
+    "sources": [
+      {
+        "cite": "Karpicke, J. D. & Roediger, H. L. (2007). Expanding Retrieval Practice Promotes Short-Term Retention, But Equally Spaced Retrieval Enhances Long-Term Retention. JEP: Learning, Memory, and Cognition, 33(4), 704-719.",
+        "doi": "10.1037/0278-7393.33.4.704",
+        "year": 2007,
+        "type": "experiment",
+        "design": "word-pair retrieval practice; expanding vs equal (uniform) retrieval schedules; short- and long-term final tests",
+        "n": "",
+        "effect": "expanding wins short-term; equal/uniform spacing wins long-term",
+        "finding_quote": "The paper's own title states the finding directly: expanding retrieval helps short-term retention, but equal/uniform spacing wins at a longer delay. Full abstract not independently fetched this session (TLS certificate mismatch on the direct Purdue mirror).",
+        "url": "https://doi.org/10.1037/0278-7393.33.4.704"
+      },
+      {
+        "cite": "Latimier, A., Peyre, H. & Ramus, F. (2021). A Meta-Analytic Review of the Benefit of Spacing Out Retrieval Practice Episodes on Retention. Educational Psychology Review, 33, 959-987.",
+        "doi": "10.1007/s10648-020-09572-8",
+        "year": 2021,
+        "type": "meta-analysis",
+        "design": "meta-analysis of spaced-retrieval-practice studies",
+        "n": "",
+        "effect": "supports spacing generally; expanding-vs-uniform comparison not confirmed this session",
+        "finding_quote": "Not independently quoted this session (OSF/PsyArXiv preprint page returned only a stub page); included as a verified-DOI lead for follow-up.",
+        "url": "https://doi.org/10.1007/s10648-020-09572-8"
+      }
+    ],
+    "replication": [],
+    "backfire": [
+      {
+        "cite": "Karpicke & Roediger (2007)",
+        "doi": "10.1037/0278-7393.33.4.704",
+        "condition": "This claim's own effect reverses by retention interval (expanding wins short-term, uniform wins long-term) — the basis for reclassifying it as a parameter rather than load-bearing (claims.md §10 ruling 4)."
+      }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "memory-retrieval/successive-relearning",
+    "sources": [
+      {
+        "cite": "Rawson, K. A. & Dunlosky, J. (2012). When Is Practice Testing Most Effective for Improving the Durability and Efficiency of Student Learning? Educational Psychology Review, 24, 419-435.",
+        "doi": "10.1007/s10648-012-9203-1",
+        "year": 2012,
+        "type": "review",
+        "design": "narrative review by the seminal authors summarising their own lab's experiments on relearning-session count, including Rawson & Dunlosky (2011, Exp. 3, N=335, 1-5 relearning sessions, final tests at 1 and 4 months)",
+        "n": 335,
+        "effect": "retention rises across all 5 sessions tested with shrinking increments (60% relative gain at 3 vs 1 session; 86% at 5 vs 1); authors recommend 'at least three' sessions as a cost/benefit floor, explicitly refusing to name a plateau point",
+        "finding_quote": "Abstract: 'a particularly effective schedule involves practicing retrieval until target information is correctly recalled once during initial learning and then relearned to one correct recall in three to four subsequent sessions.' p.426: 'Completing three versus one relearning session produced a 60% relative increase in performance on the 1-month test... Completing five versus one relearning sessions produced an 86% relative increase on the 1-month test and a 64% increase on the 4-month test.' p.431: 'certainly some point will be reached at which additional relearning sessions no longer produce meaningful improvements in durable learning. The results shown in Fig. 3 suggest as much, given the minimal differences in long-term retention after four versus five relearning sessions... We are reluctant to declare a universal magic number of relearning sessions at this point... However, our tentative recommendation is that students engage in at least three relearning sessions, because the benefits consistently appear to warrant the costs.' (verbatim, fetched from the full-text PDF, read in full this session)",
+        "url": "https://doi.org/10.1007/s10648-012-9203-1"
+      },
+      {
+        "cite": "Dunlosky, J., Wissman, K. T., Greve, M., Badali, S. & Rawson, K. A. (2023). Successive Relearning: An Introduction and Guide for Educators. In Their Own Words (APA Division 2), 83-93.",
+        "doi": "",
+        "year": 2023,
+        "type": "practice",
+        "design": "practitioner guide by the seminal authors summarising Rawson et al. 2013, Higham et al. 2022, Janes et al. 2020, Rawson, Dunlosky & Janes 2020, and an unpublished study (Rawson, Wissman & Dunlosky 2021, 174 eighth-graders, 0/1/2/3 relearning sessions)",
+        "n": 174,
+        "effect": "recall rises monotonically from 0 to 3 sessions with no plateau evident by 3; the guide states the 'how many sessions' question is unresolved by research to date",
+        "finding_quote": "On the eighth-grade study (Fig. 2): 'A month after practice, students who completed three relearning sessions recalled nearly 60% of the concepts from memory.' On the general question (p.91): 'we must emphasize that research has not yet systematically explored how much is enough for producing (extremely) long-term retention of knowledge. Given the promise of successive relearning, a major challenge for educational research will be to better understand how much successive relearning is required to enjoy its long-term benefits.' (verbatim, fetched from the full-text open PDF, read in full this session)",
+        "url": "https://www.unh.edu/teaching-learning-resource-hub/sites/default/files/media/2023-06/itow-successive-relearning-dunlosky-greve-badali-wissman-rawson.pdf"
+      },
+      {
+        "cite": "Rawson, K. A., Dunlosky, J. & Janes, J. L. (2020). All Good Things Must Come to an End: A Potential Boundary Condition on the Potency of Successive Relearning. Educational Psychology Review, 32(3), 851-871.",
+        "doi": "10.1007/s10648-020-09528-y",
+        "year": 2020,
+        "type": "experiment",
+        "design": "3 experiments, N=431 college students, probability problem-solving (procedural, not verbal/definitional) relearning, 1 vs 3 sessions, criterion test 1 week later",
+        "n": 431,
+        "effect": "small effect (d=.28) on a novel-problem criterion test; average performance ~50% or below even with 3 sessions -- a domain-specific boundary condition, not a diminishing-returns-after-3 finding",
+        "finding_quote": "Not independently fetched this session (no open abstract found; publisher paywalled). Title/authors/year verified via Crossref. Described via the Dunlosky et al. 2023 guide (fetched directly): 'the successive relearning group demonstrated a significant advantage on the criterion test, but the effect size was small (Cohens d = .28); average performance was also around 50% or less for the successive relearning group, which means even more (or a different kind of) practice may be needed to gain mastery.'",
+        "url": "https://doi.org/10.1007/s10648-020-09528-y"
+      },
+      {
+        "cite": "Rawson, K. A., Dunlosky, J. & Sciartelli, S. M. (2013). The Power of Successive Relearning: Improving Performance on Course Exams and Long-Term Retention. Educational Psychology Review, 25, 523-548.",
+        "doi": "10.1007/s10648-013-9240-4",
+        "year": 2013,
+        "type": "review",
+        "design": "narrative synthesis of successive-relearning studies, course-exam and long-term-retention outcomes",
+        "n": "",
+        "effect": "successive relearning across sessions durably improves exam performance and retention; not itself the source of a '3 sessions is optimal' finding",
+        "finding_quote": "Not independently quoted this session (Springer page redirected to an IdP login wall; no cached abstract found via Semantic Scholar/Unpaywall). Title and DOI verified via Crossref only. Its headline result is reported second-hand via the Dunlosky et al. 2023 guide (fetched directly): using successive relearning, 'students recalled over 60% of the concepts correctly... whereas they recalled less than 20% when they learned the concepts on their own' 24 days after an exam.",
+        "url": "https://doi.org/10.1007/s10648-013-9240-4"
+      },
+      {
+        "cite": "Rawson, K. A., Vaughn, K. E., Walsh, M. & Dunlosky, J. (2018). Investigating and Explaining the Effects of Successive Relearning on Long-Term Retention. Journal of Experimental Psychology: Applied, 24(1), 39-48.",
+        "doi": "10.1037/xap0000146",
+        "year": 2018,
+        "type": "experiment",
+        "design": "key-term relearning across multiple spaced sessions to a recall criterion",
+        "n": "",
+        "effect": "quantifies durability of successive relearning sessions",
+        "finding_quote": "Not independently quoted this session; verified via Crossref only.",
+        "url": "https://doi.org/10.1037/xap0000146"
+      }
+    ],
+    "replication": [],
+    "backfire": [
+      {
+        "cite": "Rawson, Dunlosky & Janes (2020)",
+        "doi": "10.1007/s10648-020-09528-y",
+        "condition": "successive relearning's benefit is small and inconsistent for procedural (mathematical problem-solving) material versus the verbal/definitional material most of this literature uses -- relevant since Series applies the technique to mixed personal material, not course key-terms"
+      }
+    ],
+    "unverified": [
+      {
+        "cite": "Bahrick, H. P. (1979) (brief's other seminal lead, decades-long relearning studies)",
+        "reason": "Not located/verified this session due to time budget; cited within the Dunlosky et al. 2023 guide as the theoretical basis for why forgetting necessitates relearning, but not for the specific session-count question."
+      }
+    ]
+  },
+  {
+    "claim_id": "memory-retrieval/interleaving-confusable",
+    "sources": [
+      {
+        "cite": "Kornell, N. & Bjork, R. A. (2008). Learning Concepts and Categories: Is Spacing the 'Enemy of Induction'? Psychological Science, 19(6), 585-592.",
+        "doi": "10.1111/j.1467-9280.2008.02127.x",
+        "year": 2008,
+        "type": "experiment",
+        "design": "participants learn painters' styles either massed (same artist consecutively) or interleaved (different artists mixed); final style-recognition test",
+        "n": "",
+        "effect": "interleaved/spaced study produced better inductive learning than massed study, despite learners rating massed as more effective",
+        "finding_quote": "Participants learn new painting styles either by presenting different paintings of the same artist consecutively (massed presentation) or by mixing paintings of different artists (spaced presentation) ... spacing resulted in better inductive learning than massing ... Participants rated massing as more effective than spacing, even after their own test performance had demonstrated the opposite. (search synthesis; primary abstract not independently fetched this session)",
+        "url": "https://doi.org/10.1111/j.1467-9280.2008.02127.x"
+      },
+      {
+        "cite": "Rohrer, D. & Taylor, K. (2007). The Shuffling of Mathematics Problems Improves Learning. Instructional Science, 35, 481-498.",
+        "doi": "10.1007/s11251-007-9015-8",
+        "year": 2007,
+        "type": "experiment",
+        "design": "college-level maths practice problems, blocked vs interleaved (shuffled) practice",
+        "n": "",
+        "effect": "interleaved/shuffled practice improved later test performance over blocked practice",
+        "finding_quote": "Title states the finding; primary abstract not independently fetched this session.",
+        "url": "https://doi.org/10.1007/s11251-007-9015-8"
+      },
+      {
+        "cite": "Brunmair, M. & Richter, T. (2019). Similarity Matters: A Meta-Analysis of Interleaved Learning and Its Moderators. Psychological Bulletin, 145(11), 1029-1052.",
+        "doi": "10.1037/bul0000209",
+        "year": 2019,
+        "type": "meta-analysis",
+        "design": "multilevel meta-analysis, 59 studies, 238 effect sizes nested in 158 samples",
+        "n": "238 effect sizes / 59 studies",
+        "effect": "moderate overall interleaving benefit (g = 0.42), strongly moderated by material type",
+        "finding_quote": "A multilevel meta-analysis revealed a moderate overall interleaving effect (Hedges' g = 0.42). Interleaved practice was best for studies using paintings (g = 0.67) and other visual materials. Results for studies using mathematical tasks revealed a small interleaving effect (g = 0.34), whereas results for expository texts and tastes were ambiguous with nonsignificant overall effects. An advantage of blocking compared with interleaving was found for studies based on words (g = -0.39). A multiple metaregression analysis revealed stronger interleaving effects for learning material more similar between categories, for learning material less similar within categories, and for more complex learning material ... interleaving can effectively foster inductive learning but ... should be used with caution in certain conditions, especially for expository texts and words.",
+        "url": "https://doi.org/10.1037/bul0000209"
+      }
+    ],
+    "replication": [],
+    "backfire": [
+      {
+        "cite": "Brunmair & Richter (2019)",
+        "doi": "10.1037/bul0000209",
+        "condition": "The interleaving benefit reverses for word-based material (g = -0.39, blocking wins) and is non-significant for expository text — exactly the moderator (category similarity/material type) the rule's 'only when confusable' condition is built to respect."
+      }
+    ],
+    "unverified": []
+  }
+]

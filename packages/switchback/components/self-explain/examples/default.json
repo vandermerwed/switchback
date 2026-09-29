@@ -1,0 +1,10 @@
+{
+  "data": {
+    "steps": [
+      "Revenue rose 20% while the number of customers stayed flat over the same quarter, so average revenue per customer must have risen by roughly that same 20%.",
+      "Most of that rise came from the enterprise tier specifically, which was the one segment of the whole product that got repriced back in March this year.",
+      "Churn in the enterprise tier did not change at all after the repricing took effect, so demand in that tier is evidently not very price-sensitive.",
+      "Therefore a similar, carefully staged repricing of the team tier is worth testing on a small customer segment first before rolling it out further."
+    ]
+  }
+}

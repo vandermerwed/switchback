@@ -1,0 +1,16 @@
+{
+  "data": {
+    "zones": ["A", "B", "C", "D", "E", "F", "G", "H", "I"],
+    "layout": [
+      { "col": 1, "row": 1, "colSpan": 2, "rowSpan": 2 },
+      { "col": 3, "row": 1, "colSpan": 2 },
+      { "col": 3, "row": 2, "colSpan": 2 },
+      { "col": 5, "row": 1, "colSpan": 2, "rowSpan": 2 },
+      { "col": 7, "row": 1, "colSpan": 2 },
+      { "col": 7, "row": 2, "colSpan": 2 },
+      { "col": 9, "row": 1, "colSpan": 2, "rowSpan": 2 },
+      { "col": 1, "row": 3, "colSpan": 5 },
+      { "col": 6, "row": 3, "colSpan": 5 }
+    ]
+  }
+}

@@ -1,0 +1,387 @@
+[
+  {
+    "claim_id": "decision-diagnosis/prospective-hindsight",
+    "sources": [
+      {
+        "cite": "Mitchell, Russo & Pennington (1989)",
+        "doi": "10.1002/bdm.3960020103",
+        "year": 1989,
+        "type": "experiment",
+        "design": "Lab experiments manipulating temporal perspective (future vs. past framing) and outcome certainty on explanation generation",
+        "n": null,
+        "effect": "+30% ability to correctly identify reasons (as reported secondhand by Klein 2007)",
+        "finding_quote": "prospective hindsight — imagining that an event has already occurred — increases the ability to correctly identify reasons for future outcomes by 30%.",
+        "url": ""
+      },
+      {
+        "cite": "Klein (2007), \"Performing a Project Premortem,\" HBR",
+        "doi": "",
+        "year": 2007,
+        "type": "practice",
+        "design": "n/a (magazine article)",
+        "n": null,
+        "effect": "n/a",
+        "finding_quote": "A premortem is the hypothetical opposite of a postmortem... Unlike a typical critiquing session, in which project team members are asked what might go wrong, the premortem operates on the assumption that the \"patient\" has died, and so asks what did go wrong.",
+        "url": "https://hbr.org/2007/09/performing-a-project-premortem"
+      }
+    ],
+    "replication": [],
+    "backfire": [
+      {
+        "cite": "Koehler (1991), \"Explanation, imagination, and confidence in judgment,\" Psychological Bulletin 110(3):499-519",
+        "doi": "10.1037/0033-2909.110.3.499",
+        "condition": "Review argues generating an explanation for a hypothesis increases its judged likelihood (explanation bias); relevant to whether pre-mortem's 'imagine it failed' framing inflates perceived likelihood of failure beyond calibrating risk. DOI verified; content not confirmed by a verbatim quote this session."
+      }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "decision-diagnosis/premortem-overconfidence",
+    "sources": [
+      {
+        "cite": "Peabody, \"Improving Planning: Quantitative Evaluation of the Premortem Technique in Field and Laboratory Settings\" (PhD dissertation, Michigan Tech)",
+        "doi": "10.37099/mtu.dc.etdr/374",
+        "year": 0,
+        "type": "experiment",
+        "design": "3 studies: Exp.1 field (Army cadets, team planning), Exp.2 lab (university participants), Exp.3 lab (face-to-face groups)",
+        "n": 206,
+        "effect": "Exp.1: premortem teams had fewer fouls/less fixation vs standard evaluation, no time cost. Exp.2: no significant difference vs worst-case-scenario method. Exp.3: premortem generated more reasons than worst-case-scenario; groups outperformed individuals",
+        "finding_quote": "This thesis compares different plan evaluation techniques in a series of experiments.",
+        "url": "https://digitalcommons.mtu.edu/etdr/374/"
+      },
+      {
+        "cite": "Gallop, Willy & Bischoff (2016), \"How to catch a black swan: Measuring the benefits of the premortem technique for risk identification,\" J. Enterprise Transformation 6(2):87-106",
+        "doi": "10.1080/19488289.2016.1240118",
+        "year": 2016,
+        "type": "experiment",
+        "design": "101 program managers/engineers in teams of 4-6, randomly assigned to premortem or brainstorming, identical technology-insertion scenario, 45 minutes",
+        "n": 101,
+        "effect": "Premortem teams identified significantly more quality risks (creative and plausible) than brainstorming teams",
+        "finding_quote": "read via search summary, not independently fetched verbatim this session",
+        "url": ""
+      }
+    ],
+    "replication": [
+      {
+        "cite": "Veinott, Klein & Wiggins (2010), ISCRAM conference paper",
+        "doi": "",
+        "result": "replicated (unverified source: no DOI found; primary PDF returned HTTP 503/bot-challenge this session; finding read via a secondary summary at scienceblog.com: premortem confidence dropped ~25 points more than baseline, reliably more than standard critique)"
+      }
+    ],
+    "backfire": [
+      {
+        "cite": "Sanna, Schwarz & Stocker (2002)",
+        "doi": "10.1037/0278-7393.28.3.497",
+        "condition": "Gap-fill (2026-09-25): closed by reusing a verbatim quote independently fetched in batch DD-A (same agent, same session). 'Listing many counterfactual thoughts was experienced as difficult and consistently increased the hindsight bias, presumably because the experienced difficulty suggested that there were not many ways in which the event might have turned out otherwise. No significant hindsight effects were obtained when participants listed only a few counterfactual thoughts.'"
+      },
+      {
+        "cite": "Schwarz, Bless, Strack, Klumpp, Rittenauer-Schatka & Simons (1991), \"Ease of retrieval as information,\" JPSP 61(2):195-202",
+        "doi": "10.1037/0022-3514.61.2.195",
+        "condition": "Mechanistic basis for the above: subjective ease of recall, not just recalled content, is used as a judgment cue."
+      }
+    ],
+    "unverified": [
+      {
+        "cite": "Veinott, Klein & Wiggins (2010), \"Evaluating the Effectiveness of the PreMortem Technique on Plan Confidence\"",
+        "reason": "No DOI found for this ISCRAM 2010 conference proceedings paper; primary PDF (idl.iscram.org) returned HTTP 503 / bot-challenge in this session. Finding described only via a secondary blog summary, not the primary text."
+      }
+    ]
+  },
+  {
+    "claim_id": "decision-diagnosis/two-axis-mapping",
+    "sources": [
+      {
+        "cite": "Larkin & Simon (1987), \"Why a Diagram is (Sometimes) Worth Ten Thousand Words,\" Cognitive Science 11(1):65-100",
+        "doi": "10.1111/j.1551-6708.1987.tb00863.x",
+        "year": 1987,
+        "type": "theory",
+        "design": "Computational/informational analysis of diagrammatic vs. sentential representations",
+        "n": null,
+        "effect": "n/a",
+        "finding_quote": "Gap-fill (2026-09-25): closed. Fetched the full-text PDF directly (mechanism.ucsd.edu course-reading mirror) and read the abstract in full this session. Verbatim: 'We distinguish diagrammatic from sentential paper-and-pencil representations of information... Sentential representations are sequential, like the propositions in a text. Diagrammatic representations are indexed by location in a plane... In the representations we call diagrammatic, information is organized by location, and often much of the information needed to make an inference is present and explicit at a single location. In addition, cues to the next logical step in the problem may be present at an adjacent location. Therefore problem solving can proceed through a smooth traversal of the diagram, and may require very little search or computation of elements that had been implicit.'",
+        "url": ""
+      },
+      {
+        "cite": "Cleveland & McGill (1984), \"Graphical Perception,\" JASA 79(387):531-554",
+        "doi": "10.1080/01621459.1984.10478080",
+        "year": 1984,
+        "type": "experiment",
+        "design": "Lab experiments ranking elementary perceptual tasks (position, length, angle, area) by decoding accuracy from graphs",
+        "n": null,
+        "effect": "Position along a common scale judged most accurately; angle/area least accurately",
+        "finding_quote": "read via search summary; primary not independently fetched this session",
+        "url": ""
+      },
+      {
+        "cite": "Kim, Vaughn, Wanzek & Wei (2004), \"Graphic Organizers and Their Effects on the Reading Comprehension of Students with LD,\" J. Learning Disabilities 37(2):105-118",
+        "doi": "10.1177/00222194040370020201",
+        "year": 2004,
+        "type": "review",
+        "design": "Narrative synthesis of 21 group-design intervention studies (1963-2001)",
+        "n": 21,
+        "effect": "d = 0.81-1.69 depending on organizer type",
+        "finding_quote": "Initial gains demonstrated when using graphic organizers were not revealed during later comprehension tasks or on new comprehension tasks.",
+        "url": ""
+      },
+      {
+        "cite": "Dexter & Hughes (2011), \"Graphic Organizers and Students with Learning Disabilities: A Meta-Analysis,\" Learning Disability Quarterly 34(1)",
+        "doi": "10.1177/073194871103400104",
+        "year": 2011,
+        "type": "meta-analysis",
+        "design": "55 standardized mean effect sizes from 16 studies, grades 4-12, core-content classes",
+        "n": 808,
+        "effect": "Moderate to large effects on vocabulary, comprehension, inferential knowledge, varying by type/subject",
+        "finding_quote": "read via search summary; primary not independently fetched this session",
+        "url": ""
+      },
+      {
+        "cite": "Hill & Westbrook (1997), \"SWOT Analysis: It's Time for a Product Recall,\" Long Range Planning 30(1):46-52",
+        "doi": "10.1016/S0024-6301(96)00095-7",
+        "year": 1997,
+        "type": "review",
+        "design": "Field review of SWOT use by consultants across 50+ companies, 14 consulting firms, UK DTI scheme",
+        "n": null,
+        "effect": "n/a",
+        "finding_quote": "still unread (gap-fill 2026-09-25): attempted a fresh fetch this session; ScienceDirect remained paywalled with no cached abstract found via Semantic Scholar/Unpaywall. Long lists (over 40 factors on average), general (often meaningless) descriptions, a failure to prioritize and no attempt to verify any points... no one subsequently used the outputs within the later stages of the strategy process.",
+        "url": ""
+      }
+    ],
+    "replication": [],
+    "backfire": [
+      {
+        "cite": "Hill & Westbrook (1997)",
+        "doi": "10.1016/S0024-6301(96)00095-7",
+        "condition": "Preset-level (swot): long, unprioritized, unused lists in practice."
+      }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "decision-diagnosis/mere-urgency",
+    "sources": [
+      {
+        "cite": "Zhu, Yang & Hsee (2018), \"The Mere Urgency Effect,\" J. Consumer Research 45(3):673-690",
+        "doi": "10.1093/jcr/ucy008",
+        "year": 2018,
+        "type": "experiment",
+        "design": "5 experiments; Exp.1 lab (N=124, Hershey's Kisses payoffs); Exp.2A/2B MTurk (N=203/204, cents payoffs, attentional-focus mediation); Exp.3 MTurk (outcome-salience moderator, not read this session); Exp.4 MTurk (perceived-busyness moderator, not read this session)",
+        "n": "Exp.1 N=124; Exp.2A N=203; Exp.2B N=204",
+        "effect": "Categorical dominance violation, replicated across Exp.1/2A/2B with chi-square tests; mediated by attentional focus (more thoughts of expiration time, fewer of payoffs, under urgency)",
+        "finding_quote": "Gap-fill (2026-09-25): downloaded the primary PDF directly and read Experiments 1, 2A and 2B in full this session (Experiment 3's outcome-salience test was not reached -- see unverified below). Abstract (verbatim, as before): 'The current research identifies a mere urgency effect...' Experiment 1 (verbatim): '13.3% of students chose to work on the low-payoff task in the control condition, whereas 31.3% of students chose to work on it in the urgency condition, chi-square(1)=5.69, p=.017, phi=.21.' Experiment 2A (verbatim): '13.9% of workers chose to work on the low-payoff task in the control condition, whereas 35.3% of workers chose to work on the low-payoff task in the urgency condition, chi-square(1)=11.43, p<.001, phi=.24.' Mediation (verbatim): urgency-condition participants were more likely to mention expiration time (41.2% vs 1.0%, p<.001) and less likely to mention payoffs (69.6% vs 82.2%, p=.036) than control; relative attentional focus mediated the urgency-to-choice effect (beta=1.42, SE=.46, 95% CI [.87, 2.21]).",
+        "url": ""
+      },
+      {
+        "cite": "Mills, Cubitt & Starmer (2026), \"Brief Commentary: An Independent Replication Study of the Mere Urgency Effect,\" J. Consumer Research",
+        "doi": "10.1093/jcr/ucag026",
+        "year": 2026,
+        "type": "rrr",
+        "design": "Independent large-scale replication: base design following Zhu et al. 2018, plus confound-controlled variants, plus a new 'fresh eyes' design, plus meta-analytic synthesis across replications",
+        "n": 2374,
+        "effect": "MUE attenuated once confounds are controlled, but remains significant in every variant tested",
+        "finding_quote": "An extensive, independent replication study (n = 2,374) of the Mere Urgency Effect (MUE) (Zhu et al. 2018) is reported... Although the MUE is attenuated by adding controls to the base design, a significant MUE is found in all tests designed to control for confounds, including the new setup. Hence, the existence of an MUE that is robust to variations in experimental design and to controls for the mechanisms conjectured as potential confounds is confirmed.",
+        "url": ""
+      }
+    ],
+    "replication": [
+      {
+        "cite": "Mills, Cubitt & Starmer (2026)",
+        "doi": "10.1093/jcr/ucag026",
+        "result": "replicated"
+      }
+    ],
+    "backfire": [
+      {
+        "cite": "Mills, Cubitt & Starmer (2026)",
+        "doi": "10.1093/jcr/ucag026",
+        "condition": "Effect size shrinks once experimenter-demand and other confounds are controlled for in the base design, though it does not vanish."
+      }
+    ],
+    "unverified": [
+      {
+        "cite": "Claim that outcome salience moderates the MUE (33.7% vs 9.8% choice rates) -- Zhu et al. 2018, Experiment 3",
+        "reason": "Gap-fill (2026-09-25): the primary PDF fetched this session cuts off at Experiment 2B (p.680 of the 673-690 article) and does not reach Experiment 3. A WebSearch synthesis (not independently confirmed against primary tables) instead reports a significant Time Frame x Outcome Salience interaction from a logistic regression (B=-1.16, SE=.54, Wald(1)=4.54, p=.033) alongside a main effect of time frame (B=1.54, SE=.40, Wald(1)=15.18, p<.001), consistent with outcome salience moderating (shrinking) the effect -- but the specific per-condition percentages remain unconfirmed. Still unread; do not use the 33.7%/9.8% figure for grading."
+      }
+    ]
+  },
+  {
+    "claim_id": "decision-diagnosis/root-cause-why-chain",
+    "sources": [
+      {
+        "cite": "Ohno, T., Toyota Production System: Beyond Large-Scale Production",
+        "doi": "",
+        "year": 1988,
+        "type": "practice",
+        "design": "n/a (book)",
+        "n": null,
+        "effect": "n/a",
+        "finding_quote": "not independently re-read this session; recorded per its well-known provenance as the origin of the '5 whys' practice",
+        "url": ""
+      },
+      {
+        "cite": "Serrat (2017), \"The Five Whys Technique,\" in Knowledge Solutions",
+        "doi": "10.1007/978-981-10-0983-9_32",
+        "year": 2017,
+        "type": "practice",
+        "design": "n/a (practitioner guide chapter)",
+        "n": null,
+        "effect": "n/a",
+        "finding_quote": "not independently fetched this session; DOI verified (title/author/year match)",
+        "url": ""
+      },
+      {
+        "cite": "Card (2016/2017), \"The problem with '5 whys',\" BMJ Quality & Safety 26(8):671-677",
+        "doi": "10.1136/bmjqs-2016-005849",
+        "year": 2016,
+        "type": "review",
+        "design": "Critique/commentary, no formal empirical study",
+        "n": null,
+        "effect": "n/a",
+        "finding_quote": "highlights its value as a teaching tool but notes that its use for root cause analysis in health care may be misguided as it tends to simplify complex problems and limit understanding of how processes fail",
+        "url": "https://psnet.ahrq.gov/issue/problem-5-whys"
+      },
+      {
+        "cite": "Peerally, Carr, Waring & Dixon-Woods (2016), \"The problem with root cause analysis,\" BMJ Quality & Safety 26(5):417-422",
+        "doi": "10.1136/bmjqs-2016-005511",
+        "year": 2016,
+        "type": "review",
+        "design": "Critique/commentary",
+        "n": null,
+        "effect": "n/a",
+        "finding_quote": "The first problem with RCA is its name. By implying — even inadvertently — that a single root cause (or a small number of causes) can be found, the term 'root cause analysis' promotes a flawed reductionist view.",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5530340/"
+      },
+      {
+        "cite": "Kellogg, Hettinger, Shah, Wears, Sellers, Squires & Fairbanks (2016), \"Our current approach to root cause analysis: is it contributing to our failure to improve patient safety?,\" BMJ Quality & Safety 26(5):381-387",
+        "doi": "10.1136/bmjqs-2016-005991",
+        "year": 2016,
+        "type": "experiment",
+        "design": "Retrospective study of all state-reportable adverse events over 8 years at one academic medical centre; RCAs analysed, solutions categorised",
+        "n": 302,
+        "effect": "Most proposed solutions were weaker action types (training 20%, process change 19.6%, policy reinforcement 15.2%); multiple event types recurred despite repeated RCAs",
+        "finding_quote": "This study found that the most commonly proposed solutions were weaker actions, which were less likely to decrease event recurrence... We found that multiple event types were repeated in the study period, despite repeated RCAs.",
+        "url": ""
+      }
+    ],
+    "replication": [],
+    "backfire": [
+      {
+        "cite": "Peerally et al. (2016)",
+        "doi": "10.1136/bmjqs-2016-005511",
+        "condition": "Single-root-cause reductionism: implies one cause when several latent/active factors usually contribute."
+      },
+      {
+        "cite": "Kellogg et al. (2016)",
+        "doi": "10.1136/bmjqs-2016-005991",
+        "condition": "302 RCAs over 8 years mostly produced weak corrective actions; multiple event types recurred despite repeated analyses."
+      },
+      {
+        "cite": "Card (2016)",
+        "doi": "10.1136/bmjqs-2016-005849",
+        "condition": "Oversimplifies complex sociotechnical failure; limits understanding of how processes actually fail."
+      }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "decision-diagnosis/tangible-allocation",
+    "sources": [
+      {
+        "cite": "Dudek & Baker (1956), \"The Constant-Sum Method Applied to Scaling Subjective Dimensions,\" American Journal of Psychology 69(4):616-624",
+        "doi": "10.2307/1419084",
+        "year": 1956,
+        "type": "experiment",
+        "design": "Foundational psychophysical scaling study establishing the constant-sum allocation method",
+        "n": null,
+        "effect": "n/a",
+        "finding_quote": "read via search summary; primary not independently fetched this session",
+        "url": ""
+      },
+      {
+        "cite": "Alwin & Krosnick (1985), \"The Measurement of Values in Surveys: A Comparison of Ratings and Rankings,\" Public Opinion Quarterly 49(4):535-552",
+        "doi": "10.1086/268949",
+        "year": 1985,
+        "type": "experiment",
+        "design": "Survey-methods comparison, 1980 General Social Survey data",
+        "n": null,
+        "effect": "Ratings show substantial non-differentiation (many items rated identically); rankings force differentiation",
+        "finding_quote": "read via search summary; primary not independently fetched this session",
+        "url": ""
+      },
+      {
+        "cite": "Krosnick & Alwin (1988), \"A Test of the Form-Resistant Correlation Hypothesis,\" Public Opinion Quarterly 52(4):526-538",
+        "doi": "10.1086/269128",
+        "year": 1988,
+        "type": "experiment",
+        "design": "Companion/follow-up to Alwin & Krosnick 1985, same dataset",
+        "n": null,
+        "effect": "Aggregate ordering similar across methods; latent variable structure differs",
+        "finding_quote": "read via search summary; primary not independently fetched this session",
+        "url": ""
+      },
+      {
+        "cite": "Frederick, Novemsky, Wang, Dhar & Nowlis (2009), \"Opportunity Cost Neglect,\" J. Consumer Research 36(4):553-561",
+        "doi": "10.1086/599764",
+        "year": 2009,
+        "type": "experiment",
+        "design": "Multiple purchase-decision experiments with cues prompting consideration of opportunity costs",
+        "n": null,
+        "effect": "Explicit opportunity-cost cues reduced purchase rates and increased choice share of cheaper options",
+        "finding_quote": "To properly consider the opportunity costs of a purchase, consumers must actively generate the alternatives that it would displace. The current research suggests that consumers often fail to do so. Even under conditions promoting cognitive effort, various cues to consider opportunity costs reduce purchase rates and increase the choice share of more affordable options.",
+        "url": ""
+      },
+      {
+        "cite": "Maguire, Persson & Tinghög (2023), \"Opportunity cost neglect: a meta-analysis,\" J. Economic Science Association 9(2)",
+        "doi": "10.1007/s40881-023-00134-6",
+        "year": 2023,
+        "type": "meta-analysis",
+        "design": "Meta-analysis of 39 experimental studies",
+        "n": 14005,
+        "effect": "Cohen's d = 0.22, p < 0.001; considerably smaller than Frederick et al. (2009)'s original estimate",
+        "finding_quote": "Gap-fill (2026-09-25): closed. Verbatim, fetched via the Semantic Scholar API's full (open-access, CC-BY) abstract field: 'In a seminal paper, Frederick et al. (J Consum Res 36:553-561, 2009) showed that people's willingness to purchase a consumer good declined dramatically when opportunity costs were made more salient (Cohen's d = 0.45-0.85)... In total, 39 experimental studies were included in the meta-analysis (N = 14,005). The analysis shows a robust significant effect (Cohen's d = 0.22; p < 0.001) of opportunity cost neglect across different domains, albeit the effect is considerably smaller than what was originally estimated by Frederick et al. (2009). Our findings highlight the importance of meta-analyses and replications of initial findings.'",
+        "url": ""
+      },
+      {
+        "cite": "Read, Olivola & Hardisty (2017), \"The Value of Nothing: Asymmetric Attention to Opportunity Costs Drives Intertemporal Decision Making,\" Management Science",
+        "doi": "10.1287/mnsc.2016.2547",
+        "year": 2017,
+        "type": "experiment",
+        "design": "Intertemporal choice experiments (sooner-smaller vs. later-larger rewards), manipulating salience of each option's opportunity cost",
+        "n": null,
+        "effect": "Asymmetric: highlighting the sooner option's opportunity cost reduced its choice share; highlighting the later option's had no effect",
+        "finding_quote": "read via search summary; primary not independently fetched this session. Domain mismatch: intertemporal choice, not multi-option budget allocation.",
+        "url": ""
+      },
+      {
+        "cite": "Gray, Brown & Macanufo, Gamestorming: A Playbook for Innovators, Rulebreakers, and Changemakers",
+        "doi": "",
+        "year": 2010,
+        "type": "practice",
+        "design": "n/a (practitioner playbook; dot voting is one of its games)",
+        "n": null,
+        "effect": "n/a",
+        "finding_quote": "not independently re-read this session",
+        "url": ""
+      }
+    ],
+    "replication": [
+      {
+        "cite": "Maguire, Persson & Tinghög (2023)",
+        "doi": "10.1007/s40881-023-00134-6",
+        "result": "mixed (replicated but attenuated: d=0.22 vs. a larger original effect in Frederick et al. 2009)"
+      }
+    ],
+    "backfire": [
+      {
+        "cite": "Maguire, Persson & Tinghög (2023)",
+        "doi": "10.1007/s40881-023-00134-6",
+        "condition": "Opportunity-cost neglect meta-analytic effect is small (d=0.22), materially smaller than the seminal paper's implied effect."
+      }
+    ],
+    "unverified": [
+      {
+        "cite": "Hauser & Shugan (1980), 'constant sum' (claims.md lead)",
+        "reason": "Wrong lead: Hauser & Shugan's paper is 'Defensive Marketing Strategies' (Marketing Science, 1983), about competitive marketing response, with no connection to the constant-sum allocation method. Not used."
+      }
+    ]
+  }
+]

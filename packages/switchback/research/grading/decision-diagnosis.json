@@ -1,0 +1,781 @@
+{
+  "family": "decision-diagnosis",
+  "claims": {
+    "decision-diagnosis/decomposed-judgement": {
+      "claim": "Scoring options on explicit criteria and combining the scores mechanically gives more consistent and more accurate judgements than an unaided holistic judgement.",
+      "construct": "linear models and decomposition vs holistic (clinical) judgement",
+      "grade": "A",
+      "transfer": "analogical",
+      "effect": "small",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Grove, Zald, Lebow, Snitz & Nelson (2000)",
+          "doi": "10.1037/1040-3590.12.1.19",
+          "type": "meta-analysis"
+        },
+        {
+          "cite": "Ægisdóttir et al. (2006)",
+          "doi": "10.1177/0011000005285875",
+          "type": "meta-analysis"
+        },
+        {
+          "cite": "Dawes (1979)",
+          "doi": "10.1037/0003-066X.34.7.571",
+          "type": "theory"
+        },
+        {
+          "cite": "Wilson & Schooler (1991)",
+          "doi": "10.1037/0022-3514.60.2.181",
+          "type": "experiment"
+        },
+        {
+          "cite": "Uhlmann & Cohen (2005)",
+          "doi": "10.1111/j.0956-7976.2005.01559.x",
+          "type": "experiment"
+        }
+      ],
+      "rationale": "research/decision-diagnosis.md#decomposed-judgement",
+      "suggested_rewording": null
+    },
+    "decision-diagnosis/anchoring": {
+      "claim": "A number written or seen earlier pulls later numeric judgements towards it, so a gut score written *before* criteria scoring cannot be anchored by the total.",
+      "construct": "the anchoring effect (including self-generated anchors)",
+      "grade": "A",
+      "transfer": "adjacent",
+      "effect": "large",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Klein et al. (2014)",
+          "doi": "10.1027/1864-9335/a000178",
+          "type": "rrr"
+        },
+        {
+          "cite": "Jacowitz & Kahneman (1995)",
+          "doi": "10.1177/01461672952111004",
+          "type": "experiment"
+        },
+        {
+          "cite": "Epley & Gilovich (2001)",
+          "doi": "10.1111/1467-9280.00372",
+          "type": "experiment"
+        },
+        {
+          "cite": "Tversky & Kahneman (1974)",
+          "doi": "10.1126/science.185.4157.1124",
+          "type": "theory"
+        }
+      ],
+      "rationale": "research/decision-diagnosis.md#anchoring",
+      "suggested_rewording": null
+    },
+    "decision-diagnosis/prospective-hindsight": {
+      "claim": "Imagining that an outcome has already happened (\"it failed\") leads people to generate more, and more specific, reasons for it than imagining that it might happen.",
+      "construct": "prospective hindsight",
+      "grade": "C",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Peabody (2017)",
+          "doi": "10.37099/mtu.dc.etdr/374",
+          "type": "experiment"
+        },
+        {
+          "cite": "Koehler (1991)",
+          "doi": "10.1037/0033-2909.110.3.499",
+          "type": "review"
+        }
+      ],
+      "rationale": "research/decision-diagnosis.md#prospective-hindsight",
+      "suggested_rewording": "Explaining an outcome treated as certain produces longer explanations, with more episodic reasons, than explaining one treated as uncertain; the past-tense framing itself adds little. (C, one paper, two experiments, abstract only)"
+    },
+    "decision-diagnosis/premortem-overconfidence": {
+      "claim": "Running a pre-mortem on a plan reduces overconfidence in it and surfaces more risks than a standard critique or pros-and-cons review.",
+      "construct": "the pre-mortem as a debiasing technique",
+      "grade": "C",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Gallop, Willy & Bischoff (2016)",
+          "doi": "10.1080/19488289.2016.1240118",
+          "type": "experiment"
+        },
+        {
+          "cite": "Peabody (2017)",
+          "doi": "10.37099/mtu.dc.etdr/374",
+          "type": "experiment"
+        },
+        {
+          "cite": "Sanna, Schwarz & Stocker (2002)",
+          "doi": "10.1037/0278-7393.28.3.497",
+          "type": "experiment"
+        },
+        {
+          "cite": "Koehler (1991)",
+          "doi": "10.1037/0033-2909.110.3.499",
+          "type": "review"
+        }
+      ],
+      "rationale": "research/decision-diagnosis.md#premortem-overconfidence",
+      "suggested_rewording": "Running a pre-mortem surfaces more, and better-quality, risks than an unstructured brainstorm or a standard plan review. (B, at the lower edge: two research groups, mostly teams, one a thesis, one null contrast)"
+    },
+    "decision-diagnosis/assumption-surfacing": {
+      "claim": "Explicitly listing the assumptions a plan depends on, and naming a test for each, identifies more of the plan's vulnerabilities than reviewing the plan without such a list.",
+      "construct": "a key-assumptions check / assumption-based planning",
+      "grade": "D",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "6",
+      "sources": [
+        {
+          "cite": "Mason & Mitroff (1981)",
+          "isbn": "9780471082194",
+          "type": "practice"
+        },
+        {
+          "cite": "Dewar (2002)",
+          "isbn": "9780521001267",
+          "type": "practice"
+        },
+        {
+          "cite": "McGrath & MacMillan (1995)",
+          "url": "https://hbr.org/1995/07/discovery-driven-planning",
+          "type": "practice"
+        }
+      ],
+      "rationale": "research/decision-diagnosis.md#assumption-surfacing",
+      "suggested_rewording": null
+    },
+    "decision-diagnosis/consider-the-opposite": {
+      "claim": "Asking people to consider reasons their judgement could be wrong reduces overconfidence and biased assimilation, compared with no instruction or an instruction to be unbiased.",
+      "construct": "the consider-the-opposite debiasing strategy",
+      "grade": "B",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Koriat, Lichtenstein & Fischhoff (1980)",
+          "doi": "10.1037/0278-7393.6.2.107",
+          "type": "experiment"
+        },
+        {
+          "cite": "Lord, Lepper & Preston (1984)",
+          "doi": "10.1037/0022-3514.47.6.1231",
+          "type": "experiment"
+        },
+        {
+          "cite": "Larrick (2004)",
+          "doi": "10.1002/9780470752937.ch16",
+          "type": "review"
+        },
+        {
+          "cite": "Sanna, Schwarz & Stocker (2002)",
+          "doi": "10.1037/0278-7393.28.3.497",
+          "type": "experiment"
+        }
+      ],
+      "rationale": "research/decision-diagnosis.md#consider-the-opposite",
+      "suggested_rewording": null
+    },
+    "decision-diagnosis/confidence-resolution": {
+      "claim": "Coarse, three-level confidence ratings discriminate correct from incorrect judgements above chance (resolution), even though people are typically overconfident in absolute terms. Items marked low-confidence are therefore a useful flag for risk.",
+      "construct": "metacognitive resolution and calibration; overconfidence",
+      "grade": "C",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Fleming & Lau (2014)",
+          "doi": "10.3389/fnhum.2014.00443",
+          "type": "review"
+        },
+        {
+          "cite": "Moore & Healy (2008)",
+          "doi": "10.1037/0033-295X.115.2.502",
+          "type": "review"
+        },
+        {
+          "cite": "Koriat, Lichtenstein & Fischhoff (1980)",
+          "doi": "10.1037/0278-7393.6.2.107",
+          "type": "experiment"
+        }
+      ],
+      "rationale": "research/decision-diagnosis.md#confidence-resolution",
+      "suggested_rewording": "People's confidence ratings discriminate their correct from their incorrect answers above chance, although people are overconfident in absolute terms. (B, on review-level evidence)"
+    },
+    "decision-diagnosis/two-axis-mapping": {
+      "claim": "Placing items on a spatial layout defined by two explicit dimensions makes their relative standing on both dimensions easier to judge and compare than a list or table does.",
+      "construct": "diagrammatic representation; graphic organisers",
+      "grade": "D",
+      "transfer": "analogical",
+      "effect": "n/a",
+      "tie_break": "5",
+      "sources": [
+        {
+          "cite": "Larkin & Simon (1987)",
+          "doi": "10.1111/j.1551-6708.1987.tb00863.x",
+          "type": "theory"
+        }
+      ],
+      "rationale": "research/decision-diagnosis.md#two-axis-mapping",
+      "suggested_rewording": null
+    },
+    "decision-diagnosis/mere-urgency": {
+      "claim": "People prefer tasks framed as urgent (short completion windows) over important tasks with objectively larger payoffs. Separating urgency from importance should therefore counter that bias.",
+      "construct": "the mere urgency effect",
+      "grade": "B",
+      "transfer": "adjacent",
+      "effect": "small",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Zhu, Yang & Hsee (2018)",
+          "doi": "10.1093/jcr/ucy008",
+          "type": "experiment"
+        },
+        {
+          "cite": "Mills, Cubitt & Starmer (2026)",
+          "doi": "10.1093/jcr/ucag026",
+          "type": "rrr"
+        }
+      ],
+      "rationale": "research/decision-diagnosis.md#mere-urgency",
+      "suggested_rewording": "People prefer tasks framed as urgent over important tasks with objectively larger payoffs, even when the urgency is spurious; whether an urgency/importance grid counters this is untested. (B)"
+    },
+    "decision-diagnosis/root-cause-why-chain": {
+      "claim": "Iteratively asking \"why?\" from a symptom reaches a cause which, when addressed, prevents recurrence more reliably than unstructured problem discussion.",
+      "construct": "five whys / root-cause analysis",
+      "grade": "D",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "6",
+      "sources": [
+        {
+          "cite": "Ohno (1988)",
+          "isbn": "0-915299-14-3",
+          "type": "practice"
+        },
+        {
+          "cite": "Serrat (2017)",
+          "doi": "10.1007/978-981-10-0983-9_32",
+          "type": "practice"
+        },
+        {
+          "cite": "Peerally, Carr, Waring & Dixon-Woods (2016)",
+          "doi": "10.1136/bmjqs-2016-005511",
+          "type": "review"
+        },
+        {
+          "cite": "Kellogg et al. (2016)",
+          "doi": "10.1136/bmjqs-2016-005991",
+          "type": "experiment"
+        }
+      ],
+      "rationale": "research/decision-diagnosis.md#root-cause-why-chain",
+      "suggested_rewording": null
+    },
+    "decision-diagnosis/tangible-allocation": {
+      "claim": "Distributing a fixed budget of tokens across options makes trade-offs and opportunity costs explicit, and yields more differentiated priorities than rating each option independently.",
+      "construct": "constant-sum allocation vs. independent ratings; opportunity-cost neglect",
+      "grade": "C",
+      "transfer": "analogical",
+      "effect": "small",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Krosnick & Alwin (1988)",
+          "doi": "10.1086/269128",
+          "type": "experiment"
+        },
+        {
+          "cite": "Alwin & Krosnick (1985)",
+          "doi": "10.1086/268949",
+          "type": "experiment"
+        },
+        {
+          "cite": "Frederick, Novemsky, Wang, Dhar & Nowlis (2009)",
+          "doi": "10.1086/599764",
+          "type": "experiment"
+        },
+        {
+          "cite": "Maguire, Persson & Tinghög (2023)",
+          "doi": "10.1007/s40881-023-00134-6",
+          "type": "meta-analysis"
+        },
+        {
+          "cite": "Read, Olivola & Hardisty (2017)",
+          "doi": "10.1287/mnsc.2016.2547",
+          "type": "experiment"
+        }
+      ],
+      "rationale": "research/decision-diagnosis.md#tangible-allocation",
+      "suggested_rewording": "Cues that make explicit what a choice displaces reduce opportunity-cost neglect; the effect is robust but small (d ≈ 0.2). (B, A if the meta-analysis's estimate proves bias-corrected, which its abstract does not say)"
+    },
+    "decision-diagnosis/calibration-feedback": {
+      "claim": "Making explicit probability forecasts and then receiving outcome feedback or scores improves calibration over successive rounds.",
+      "construct": "calibration training; forecasting with scoring rules",
+      "grade": "C",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Mellers et al. (2014)",
+          "doi": "10.1177/0956797614524255",
+          "type": "experiment"
+        },
+        {
+          "cite": "Aiyer et al. (2023)",
+          "doi": "10.5334/irsp.751",
+          "type": "rrr"
+        }
+      ],
+      "rationale": "research/decision-diagnosis.md#calibration-feedback",
+      "suggested_rewording": null
+    },
+    "decision-diagnosis/hindsight-record": {
+      "claim": "After an outcome is known, people misremember their earlier probability estimates as closer to the outcome than they were. A dated, written prediction removes that memory distortion when the forecast is scored.",
+      "construct": "hindsight bias (the memory-design \"I knew it\" effect)",
+      "grade": "A",
+      "transfer": "direct",
+      "effect": "moderate",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Guilbault, Bryant, Brockway & Posavac (2004)",
+          "doi": "10.1080/01973533.2004.9646399",
+          "type": "meta-analysis"
+        },
+        {
+          "cite": "Fischhoff (1975)",
+          "doi": "10.1037/0096-1523.1.3.288",
+          "type": "experiment"
+        },
+        {
+          "cite": "Sanna, Schwarz & Stocker (2002)",
+          "doi": "10.1037/0278-7393.28.3.497",
+          "type": "experiment"
+        }
+      ],
+      "rationale": "research/decision-diagnosis.md#hindsight-record",
+      "suggested_rewording": null
+    },
+    "decision-diagnosis/reference-class": {
+      "claim": "Starting a prediction from the base rate for its reference class (\"how often does this kind of thing happen?\") improves forecast accuracy compared with starting from the specifics of the case.",
+      "construct": "the outside view / reference-class forecasting; base-rate neglect",
+      "grade": "C",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Buehler, Griffin & Ross (1994)",
+          "doi": "10.1037/0022-3514.67.3.366",
+          "type": "experiment"
+        },
+        {
+          "cite": "Mellers et al. (2014)",
+          "doi": "10.1177/0956797614524255",
+          "type": "experiment"
+        },
+        {
+          "cite": "Flyvbjerg (2013)",
+          "doi": "10.1016/j.ijproman.2012.10.007",
+          "type": "review"
+        },
+        {
+          "cite": "Kahneman & Tversky (1982)",
+          "doi": "10.1017/cbo9780511809477.031",
+          "type": "theory"
+        }
+      ],
+      "rationale": "research/decision-diagnosis.md#reference-class",
+      "suggested_rewording": null
+    },
+    "decision-diagnosis/chain-analysis": {
+      "claim": "Reconstructing one concrete recent instance of a problem behaviour link by link, and locating the specific point where a different response was possible, identifies a better intervention point than an abstract account of the problem.",
+      "construct": "behavioural chain analysis; functional analysis of a single episode",
+      "grade": "D",
+      "transfer": "analogical",
+      "effect": "n/a",
+      "tie_break": "6",
+      "sources": [
+        {
+          "cite": "Linehan (1993)",
+          "isbn": "978-0-89862-183-9",
+          "type": "practice"
+        },
+        {
+          "cite": "Kliem, Kröger & Kosfelder (2010)",
+          "doi": "10.1037/a0021015",
+          "type": "meta-analysis"
+        },
+        {
+          "cite": "Watkins, Baeyens & Read (2009)",
+          "doi": "10.1037/a0013642",
+          "type": "experiment"
+        },
+        {
+          "cite": "Watkins (2008)",
+          "doi": "10.1037/0033-2909.134.2.163",
+          "type": "review"
+        },
+        {
+          "cite": "Williams et al. (2007)",
+          "doi": "10.1037/0033-2909.133.1.122",
+          "type": "review"
+        }
+      ],
+      "rationale": "research/decision-diagnosis.md#chain-analysis",
+      "suggested_rewording": "Processing a problem episode concretely rather than abstractly is linked to less rumination, and training concreteness reduced dysphoric symptoms in one pilot trial. (C, one pilot RCT and two reviews, in dysphoric samples)"
+    },
+    "decision-diagnosis/duration-feedback": {
+      "claim": "Writing down a duration estimate before a task and comparing it with the actual duration afterwards reduces later underestimation, because people otherwise misremember how long past tasks took.",
+      "construct": "the planning fallacy; memory bias for past durations; feedback on estimates",
+      "grade": "B",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Buehler, Griffin & Ross (1994)",
+          "doi": "10.1037/0022-3514.67.3.366",
+          "type": "experiment"
+        },
+        {
+          "cite": "Roy, Christenfeld & McKenzie (2005)",
+          "doi": "10.1037/0033-2909.131.5.738",
+          "type": "review"
+        },
+        {
+          "cite": "Roy, Mitten & Christenfeld (2008)",
+          "doi": "10.1037/1076-898x.14.3.266",
+          "type": "experiment"
+        }
+      ],
+      "rationale": "research/decision-diagnosis.md#duration-feedback",
+      "suggested_rewording": null
+    }
+  },
+  "items": {
+    "options-criteria": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "decision-diagnosis/decomposed-judgement",
+          "load_bearing": true,
+          "transfer": "analogical"
+        },
+        {
+          "id": "decision-diagnosis/anchoring",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when options are already on the table and a gut feel may be steering; mechanical totals beat unaided judgement in prediction studies by a small margin, and writing the gut score first keeps the total from pulling it, but on a personal decision the value is the gap between the two, which has not been tested",
+      "backfires": "when the criteria are chosen or reweighted after a favourite has formed, so the total is built to agree with the gut, when analysing reasons pushes the choice towards whatever is easy to put into words, or when the gut score written first pulls the criteria scores towards it"
+    },
+    "pre-mortem": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "decision-diagnosis/prospective-hindsight",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "decision-diagnosis/premortem-overconfidence",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when a plan is about to be locked in; imagining it has already failed surfaced more and better risks than brainstorming in a few team studies, though whether it lowers overconfidence on a solo page is untested",
+      "backfires": "when the page pushes for many failure reasons, since struggling to list them can make failure feel less likely, or when explaining one imagined failure in detail makes it seem more probable than the alternatives"
+    },
+    "pre-mortem/iterate": {
+      "kind": "variant",
+      "claims": [
+        {
+          "id": "decision-diagnosis/prospective-hindsight",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "decision-diagnosis/premortem-overconfidence",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when one round of failure reasons still leaves you unsure; each round inherits the pre-mortem's evidence, but the surprise gate that decides whether to run another is a design choice, and no study says a round lowers the odds by any amount",
+      "backfires": "when each extra round forces out more reasons, since listing many is hard and that difficulty can make failure feel less likely, or when explaining imagined failures in detail inflates how probable they seem"
+    },
+    "assumption-audit": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "decision-diagnosis/assumption-surfacing",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "decision-diagnosis/confidence-resolution",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "decision-diagnosis/consider-the-opposite",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when a plan rests on beliefs nobody has written down; listing assumptions is practitioner craft with no direct test, and the evidence that asking for a reason each could be wrong reduces overconfidence is mixed, so treat the low-confidence dots as a guide to which to test first, not a correction",
+      "backfires": "when the falsifier column asks for many reasons against each assumption, since listing many is hard and can strengthen the original belief, or when a high-confidence dot is read as proof, because certainty runs ahead of accuracy"
+    },
+    "matrix-2x2": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "decision-diagnosis/two-axis-mapping",
+          "load_bearing": true,
+          "transfer": "analogical"
+        },
+        {
+          "id": "externalisation-embodiment/common-region",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when items need comparing on two values at once; laying them on two axes is diagram craft with no direct test, so treat the quadrants as a prompt to argue with, not a measurement",
+      "backfires": "when an axis does not discriminate and everything crowds one quadrant, or when \"nothing on a line\" forces a false either-or; neither risk has been studied, and in classroom studies the gains from graphic organisers did not carry over to later tasks"
+    },
+    "eisenhower": {
+      "kind": "preset",
+      "claims": [
+        {
+          "id": "decision-diagnosis/two-axis-mapping",
+          "load_bearing": true,
+          "transfer": "analogical"
+        },
+        {
+          "id": "decision-diagnosis/mere-urgency",
+          "load_bearing": true,
+          "transfer": "analogical"
+        },
+        {
+          "id": "externalisation-embodiment/common-region",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when urgent-looking tasks keep crowding out important ones; people pick spuriously urgent tasks over better-paying ones, a small but replicated effect, though the grid as a fix and its four actions are untested craft",
+      "backfires": "when urgency is rated from how pressing a task feels rather than from its real deadline, since spurious urgency is exactly what pulls choices, or when an axis does not discriminate and everything crowds one quadrant"
+    },
+    "swot": {
+      "kind": "preset",
+      "claims": [
+        {
+          "id": "decision-diagnosis/two-axis-mapping",
+          "load_bearing": true,
+          "transfer": "analogical"
+        },
+        {
+          "id": "externalisation-embodiment/common-region",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when a situation's internal and external factors need sorting into four boxes; it inherits the two-by-two's untested diagram craft and adds no evidence of its own",
+      "backfires": "when the boxes fill with long, general lists that are never prioritised, or when a factor that is both a strength and a weakness is forced into one box"
+    },
+    "impact-effort": {
+      "kind": "preset",
+      "claims": [
+        {
+          "id": "decision-diagnosis/two-axis-mapping",
+          "load_bearing": true,
+          "transfer": "analogical"
+        },
+        {
+          "id": "externalisation-embodiment/common-region",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "planning-self-regulation/task-unpacking",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when choosing what to do first among many options; it inherits the two-by-two's untested diagram craft, so treat each placement as an estimate to question",
+      "backfires": "when effort is placed from optimistic guesses, since people routinely underestimate how long their own tasks take, so supposed quick wins crowd the low-effort side"
+    },
+    "power-interest": {
+      "kind": "preset",
+      "claims": [
+        {
+          "id": "decision-diagnosis/two-axis-mapping",
+          "load_bearing": true,
+          "transfer": "analogical"
+        },
+        {
+          "id": "externalisation-embodiment/common-region",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when mapping who can affect a plan and how much they care; it inherits the two-by-two's untested diagram craft and adds no evidence of its own",
+      "backfires": "when people's power or interest is guessed rather than checked, or when an axis does not discriminate and everyone crowds one quadrant"
+    },
+    "five-whys": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "decision-diagnosis/root-cause-why-chain",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when the stated problem is probably a symptom; descending by \"why\" is manufacturing craft with no controlled test, so treat the bottom rung as a hypothesis to test this week",
+      "backfires": "when the chain stops at an arbitrary depth, settles on one cause for a problem with several, or ends by blaming a person; in hospital root-cause work, repeated analyses mostly produced weak fixes and the same events recurred"
+    },
+    "tokens": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "decision-diagnosis/tangible-allocation",
+          "load_bearing": true,
+          "transfer": "analogical"
+        },
+        {
+          "id": "externalisation-embodiment/epistemic-action",
+          "load_bearing": false,
+          "transfer": "analogical"
+        }
+      ],
+      "helps": "when a trade-off is abstract and every option could be rated highly; a fixed budget forces the differences that ratings let people skip, and cues to consider what a choice displaces shift decisions, though that effect is small and physical tokens themselves are untested",
+      "backfires": "when there are too many quantities to tokenise, or when a token count is read as a measurement rather than a rough allocation; neither has been studied"
+    },
+    "tokens/countdown": {
+      "kind": "variant",
+      "claims": [
+        {
+          "id": "decision-diagnosis/tangible-allocation",
+          "load_bearing": true,
+          "transfer": "analogical"
+        },
+        {
+          "id": "planning-self-regulation/goal-gradient",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "externalisation-embodiment/epistemic-action",
+          "load_bearing": false,
+          "transfer": "analogical"
+        }
+      ],
+      "helps": "when a Series or Ritual arc has a fixed number of sessions left and nearer milestones sit beside the count; effort tends to rise as a goal gets close, which the shrinking pile makes visible, though this has not been tested without an external reward",
+      "backfires": "when many sessions remain, since motivation tends to dip in the middle of the distance, or when a nearly empty pile invites coasting before the arc is done"
+    },
+    "forecast": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "decision-diagnosis/calibration-feedback",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "decision-diagnosis/hindsight-record",
+          "load_bearing": true,
+          "transfer": "direct"
+        },
+        {
+          "id": "decision-diagnosis/reference-class",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "decision-diagnosis/anchoring",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when a prediction will resolve before the next return; a dated written probability stops hindsight rewriting what you believed, a moderate and well-replicated bias, but learning calibration from a handful of scored forecasts is untested",
+      "backfires": "when forecasts are judged by how they turned out rather than by the probability given, a robust bias that affects even people who say outcomes should not count, when too few forecasts are scored to learn from, or when the base-rate line is written and then ignored as not applying to this case"
+    },
+    "forecast/duration": {
+      "kind": "variant",
+      "claims": [
+        {
+          "id": "decision-diagnosis/duration-feedback",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "decision-diagnosis/hindsight-record",
+          "load_bearing": true,
+          "transfer": "direct"
+        },
+        {
+          "id": "decision-diagnosis/calibration-feedback",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "planning-self-regulation/task-unpacking",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when a day's tasks can be estimated before starting and timed as they finish; people underestimate durations partly because they misremember how long past tasks took, but the evidence that seeing actual durations improves later estimates is mixed, and it seems to help most when the next task is like the last",
+      "backfires": "when the actual times go unrecorded, so the next estimate leans on a memory that runs short, or when past overruns are explained away as one-offs, which is how people keep discounting their own track record"
+    },
+    "confidence-dots": {
+      "kind": "protocol",
+      "claims": [
+        {
+          "id": "decision-diagnosis/confidence-resolution",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "externalisation-embodiment/redundant-coding",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "memory-retrieval/hypercorrection",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when many items need a quick certainty mark so the agent can see where doubt lies; confidence tracks accuracy above chance in general, but a three-level dot scale is untested, so read the dots as relative flags, not probabilities",
+      "backfires": "when a high dot is taken as settled, since excess certainty persists even where other overconfidence fades, or when the mark relies on colour alone and is lost to colour-blindness or a poor photo"
+    },
+    "frame-by-frame": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "decision-diagnosis/chain-analysis",
+          "load_bearing": true,
+          "transfer": "analogical"
+        },
+        {
+          "id": "planning-self-regulation/implementation-intentions",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when the same everyday slip keeps recurring and one recent instance can be recalled in detail; chain analysis is clinical craft never tested on its own, though thinking concretely about an episode is linked to less rumination than thinking about it abstractly",
+      "backfires": "when the reconstruction drifts from what happened into why this always happens to you, the abstract kind of dwelling linked to rumination and low mood"
+    }
+  }
+}

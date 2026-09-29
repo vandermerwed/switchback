@@ -1,0 +1,118 @@
+{
+  "id": "question-queue",
+  "kind": "page",
+  "name": "Question queue",
+  "intent": "Batch everything the human wants from the AI into numbered blue questions.",
+  "when": "the sitting is ending and there is more to ask; effectively mandatory",
+  "tags": ["learn", "review"],
+  "phase": "either",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write"],
+    "surface": "desk",
+    "timebox": "5 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "questions": {
+        "type": "array",
+        "minItems": 0,
+        "maxItems": 8,
+        "items": {
+          "type": "string",
+          "maxLength": 160
+        }
+      }
+    }
+  },
+  "prompt": "Write your questions for the AI with your Ask pen (or a circled Q), numbered. These come back with the photos.",
+  "readback": "Answer in number order, first, before anything unasked. Blanks are not omissions.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "memory-retrieval/generate-before-told",
+        "load_bearing": true,
+        "transfer": "analogical",
+        "claim": "Attempting an answer yourself before being given one improves later understanding and retention, compared with receiving the answer first.",
+        "construct": "the generation effect; productive failure (problem solving before instruction)",
+        "grade": "B",
+        "effect": "moderate",
+        "sources": [
+          {
+            "cite": "Sinha & Kapur (2021)",
+            "doi": "10.3102/00346543211019105",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Slamecka & Graf (1978)",
+            "doi": "10.1037/0278-7393.4.6.592",
+            "type": "experiment"
+          },
+          {
+            "cite": "Kapur (2008)",
+            "doi": "10.1080/07370000802212669",
+            "type": "experiment"
+          },
+          {
+            "cite": "Kirschner, Sweller & Clark (2006)",
+            "doi": "10.1207/s15326985ep4102_1",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/memory-retrieval.md#generate-before-told"
+      },
+      {
+        "id": "attention-load/cognitive-offload",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Keeping task-relevant information in a stable, visible external store, rather than in working memory, improves performance on the concurrent task, at the cost of weaker memory for the offloaded content.",
+        "construct": "cognitive offloading (working-memory offload)",
+        "grade": "B",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Gilbert (2015)",
+            "doi": "10.1080/17470218.2014.972963",
+            "type": "experiment"
+          },
+          {
+            "cite": "Storm & Stone (2015)",
+            "doi": "10.1177/0956797614559285",
+            "type": "experiment"
+          },
+          {
+            "cite": "Sparrow, Liu & Wegner (2011)",
+            "doi": "10.1126/science.1207745",
+            "type": "experiment"
+          },
+          {
+            "cite": "Risko & Gilbert (2016)",
+            "doi": "10.1016/j.tics.2016.07.002",
+            "type": "review"
+          },
+          {
+            "cite": "Meyerhoff, Grinschgl, Papenmeier & Gilbert (2021)",
+            "doi": "10.1186/s41235-021-00298-x",
+            "type": "experiment"
+          },
+          {
+            "cite": "Hesselmann (2020)",
+            "doi": "10.7717/peerj.10325",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/attention-load.md#cognitive-offload"
+      }
+    ],
+    "helps": "when a question can wait until the page has been worked: trying an answer yourself before being told improves later understanding on average, though deferring an AI's answer has not itself been tested",
+    "backfires": "when the parked question blocks the work on the page, or when the material is new and complex enough that working without guidance costs more than it teaches, as it did for young learners and for domain-general skills"
+  }
+}

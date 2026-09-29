@@ -1,0 +1,186 @@
+{
+  "memory-retrieval/testing-effect": {
+    "result": "confirmed",
+    "from": "A",
+    "to": "A",
+    "reason": "confirmed: the bias check the grader lacked clears tie-break 2. Yang et al. 2021 (222 classroom studies) find PEESE g = 0.475, 3PSM g = 0.461 and trim-and-fill 0 missing, against a raw g = 0.499 (10.1037/bul0000309). Rowland's retention-interval moderator matches the claim's \"days or more\" (at least 1 day: g = 0.69 [0.56, 0.81], k = 56). The grader's recall-vs-recognition exemption misreads Rowland's Table 1, though. Initial free-recall tests gave g = 0.29 [0.07, 0.52] (k = 36), no larger than recognition, and Yang's free-recall quizzes gave g = 0.238. Free-recall's own format therefore sits at the small end of \"moderate\".",
+    "sources": [
+      {
+        "cite": "Yang, Luo, Vadillo, Yu & Shanks (2021)",
+        "doi": "10.1037/bul0000309"
+      },
+      {
+        "cite": "Rowland (2014), full text Table 1",
+        "doi": "10.1037/a0037559"
+      }
+    ],
+    "helps_overclaim": "free-recall (and its variants): the effect label is moderate, but meta-analytic subgroups for initial free-recall tests are smaller (Rowland g = 0.29 [0.07, 0.52]; Yang g = 0.238). The helps text states no size, so it does not overclaim; the lead may want effect small-to-moderate for free-recall specifically."
+  },
+  "memory-retrieval/retrieval-feedback": {
+    "result": "confirmed",
+    "from": "B",
+    "to": "B",
+    "reason": "confirmed: three consistent read experiments support B, and Rowland's full-text feedback moderator (g = 0.73 with feedback vs 0.39 without; 10.1037/a0037559) agrees with the claim's direction; nothing found meets a tie-break.",
+    "sources": [
+      {
+        "cite": "Rowland (2014), full text Table 1",
+        "doi": "10.1037/a0037559"
+      }
+    ],
+    "helps_overclaim": null
+  },
+  "memory-retrieval/hypercorrection": {
+    "result": "confirmed",
+    "from": "B",
+    "to": "B",
+    "reason": "confirmed: several consistent experiments from at least two labs, with no meta-analysis and no failed replication found, meet B; this is a supporting claim.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "memory-retrieval/pretesting": {
+    "result": "confirmed",
+    "from": "B",
+    "to": "B",
+    "reason": "confirmed: four consistent sources meet B. A search found no failed large replication. Newer syntheses bound the effect to prequestioned material, which matches the claim as written. This is a supporting claim.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "memory-retrieval/retrieval-before-review": {
+    "result": "confirmed",
+    "from": "B",
+    "to": "B",
+    "reason": "confirmed: Arnold & McDermott's isolated potentiation effect is backed by Rowland's feedback moderator (retrieval followed by re-presentation g = 0.73; 10.1037/a0037559), which is Series' retrieve-then-review pattern. The claim meets B, and it cannot reach A while Chan et al.'s moderators remain unread.",
+    "sources": [
+      {
+        "cite": "Rowland (2014), full text Table 1",
+        "doi": "10.1037/a0037559"
+      }
+    ],
+    "helps_overclaim": null
+  },
+  "memory-retrieval/distributed-practice": {
+    "result": "confirmed",
+    "from": "A",
+    "to": "A",
+    "reason": "confirmed: a third meta-analysis tests Series' exact manipulation, spaced vs massed retrieval (Latimier, Peyre & Ramus 2021; 10.1007/s10648-020-09572-8). It finds g = 1.01 with moderate heterogeneity (I² = 49%), and g = 0.74 [0.55, 0.91] after trim-and-fill, so no tie-break applies.",
+    "sources": [
+      {
+        "cite": "Latimier, Peyre & Ramus (2021)",
+        "doi": "10.1007/s10648-020-09572-8"
+      }
+    ],
+    "helps_overclaim": null
+  },
+  "memory-retrieval/spacing-gap-ratio": {
+    "result": "downgraded",
+    "from": "B",
+    "to": "C",
+    "reason": "downgraded B→C: Cepeda et al. 2008's own 35-day condition replaces the grader's 3–6-day interpolation (10.1111/j.1467-9280.2008.02209.x). For retention intervals of 7, 35, 70 and 350 days, \"the optimal gaps ... were 1, 11, 21, and 21 days\" for recall, and 7 days for recognition at 35 days. For a one-month target, the 1-day and 3-day gaps therefore fall well short of the optimum, on the costly short side. The claim's second sentence rests on one study, and that study partly contradicts it.",
+    "sources": [
+      {
+        "cite": "Cepeda, Vul, Rohrer, Wixted & Pashler (2008)",
+        "doi": "10.1111/j.1467-9280.2008.02209.x"
+      }
+    ],
+    "helps_overclaim": null
+  },
+  "memory-retrieval/expanding-vs-uniform": {
+    "result": "confirmed",
+    "from": "C",
+    "to": "C",
+    "reason": "confirmed: Latimier et al. 2021, now read, finds \"no significant difference between expanding and uniform spacing schedules of retrieval practice (g = 0.034)\" (10.1007/s10648-020-09572-8), which leaves the claim as written unsupported at C.",
+    "sources": [
+      {
+        "cite": "Latimier, Peyre & Ramus (2021)",
+        "doi": "10.1007/s10648-020-09572-8"
+      }
+    ],
+    "helps_overclaim": null
+  },
+  "memory-retrieval/successive-relearning": {
+    "result": "confirmed",
+    "from": "C",
+    "to": "C",
+    "reason": "confirmed: C stands. The notes rest on one group's programme, whose data contradict the three-session plateau (C claim, no search run).",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "memory-retrieval/interleaving-confusable": {
+    "result": "downgraded",
+    "from": "A",
+    "to": "B",
+    "reason": "downgraded A→B: tie-break 4 applies (10.1037/bul0000209). Brunmair & Richter's full text reports I² = 77.3% overall and I² = 76.9% for mathematical tasks, the claim's \"problem types\". The authors say the variation within every material type suggests \"other moderating variables\". The similarity moderator is a metaregression slope with no subgroup estimate to grade on. Trim-and-fill also cut the overall effect to g = 0.29, with 23 studies missing.",
+    "sources": [
+      {
+        "cite": "Brunmair & Richter (2019)",
+        "doi": "10.1037/bul0000209"
+      }
+    ],
+    "helps_overclaim": null
+  },
+  "memory-retrieval/self-explanation": {
+    "result": "confirmed",
+    "from": "B",
+    "to": "B",
+    "reason": "confirmed: a meta-analysis supports learning, but the transfer half of the claim is unshown on the read evidence, so B fits the claim as written.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "memory-retrieval/worked-example-fading": {
+    "result": "confirmed",
+    "from": "C",
+    "to": "C",
+    "reason": "confirmed: one read paper, against a different control, meets only C, and the meta-analysis remains unread (C claim, no search run).",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "memory-retrieval/elaborative-interrogation": {
+    "result": "confirmed",
+    "from": "C",
+    "to": "C",
+    "reason": "confirmed: only the Dunlosky et al. (2013) review counts, and it rates the evidence \"limited\", so C holds (C claim, no search run).",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "memory-retrieval/explanatory-depth": {
+    "result": "confirmed",
+    "from": "B",
+    "to": "B",
+    "reason": "confirmed: the core rating drop reproduced under pre-registration (Crawford & Ruscio 2021), and the only failure found concerns the downstream moderation effect, not this one. With no meta-analysis, the grade is B.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "memory-retrieval/explaining-to-learn": {
+    "result": "confirmed",
+    "from": "B",
+    "to": "B",
+    "reason": "confirmed: Kobayashi's meta-analysis supports the claim, while the written, non-interactive condition is mixed, which fits B for a supporting claim.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "memory-retrieval/generate-before-told": {
+    "result": "confirmed",
+    "from": "B",
+    "to": "B",
+    "reason": "confirmed: Sinha & Kapur's bias-corrected estimate rises rather than falling. Their own reversals for young learners and domain-general skills, together with the Kirschner et al. dispute, keep the claim from counting as consistent enough for A.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "memory-retrieval/practice-specificity": {
+    "result": "confirmed",
+    "from": "B",
+    "to": "B",
+    "reason": "confirmed: Smith & Vela's quote now matches its abstract (Europe PMC; 10.3758/BF03196157). Yang et al. 2021 name \"test format consistency\" and \"material matching\" as moderators and support transfer-appropriate processing (10.1037/bul0000309). The convergent meta-analytic support, with Brady's caveat, meets B.",
+    "sources": [
+      {
+        "cite": "Smith & Vela (2001)",
+        "doi": "10.3758/BF03196157"
+      },
+      {
+        "cite": "Yang, Luo, Vadillo, Yu & Shanks (2021)",
+        "doi": "10.1037/bul0000309"
+      }
+    ],
+    "helps_overclaim": null
+  }
+}

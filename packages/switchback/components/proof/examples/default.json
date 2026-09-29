@@ -1,0 +1,20 @@
+{
+  "data": {
+    "source": "draft-v2.md",
+    "blocks": [
+      { "kind": "h", "text": "Why we should ship offline mode first" },
+      {
+        "kind": "p",
+        "n": 1,
+        "text": "Offline-first users are the ones who churn when the network drops, so they feel the cost of every outage directly."
+      },
+      {
+        "kind": "p",
+        "n": 2,
+        "text": "Building sync on top of an offline store is cheaper than retrofitting offline support onto a sync-first design."
+      },
+      { "kind": "li", "n": 3, "text": "Cache the last good state on the device." },
+      { "kind": "li", "n": 4, "text": "Queue writes, and replay them in order when the connection returns." }
+    ]
+  }
+}

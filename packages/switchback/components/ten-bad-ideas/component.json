@@ -1,0 +1,95 @@
+{
+  "id": "ten-bad-ideas",
+  "kind": "page",
+  "name": "Ten bad ideas",
+  "intent": "Outrun the inner critic by demanding badness first.",
+  "when": "creating, or when the human is blocked by wanting to be good",
+  "tags": ["create"],
+  "phase": "diverge",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write"],
+    "surface": "desk",
+    "timebox": "8 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "prompt": {
+        "type": "string",
+        "maxLength": 160
+      }
+    }
+  },
+  "prompt": "{prompt|Ten ideas. Deliberately bad. Speed over quality.}",
+  "readback": "Read box 10 first. The point is not the ideas but what the human couldn't help writing.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "creativity-fixation/deferred-judgement",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Separating idea generation from evaluation, with judgement deferred until generation is done, increases the number of ideas without reducing, and sometimes increasing, the number of good ones.",
+        "construct": "deferral of judgement; diverge/converge separation",
+        "grade": "D",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Osborn (1953), Applied Imagination",
+            "isbn": "0684413930",
+            "type": "practice"
+          }
+        ],
+        "rationale": "research/creativity-fixation.md#deferred-judgement"
+      },
+      {
+        "id": "creativity-fixation/bad-ideas-criterion",
+        "load_bearing": true,
+        "transfer": "analogical",
+        "claim": "Instructing people to generate deliberately bad ideas lowers self-censorship and yields more ideas, including some usable ones, than instructing them to generate good ideas.",
+        "construct": "lowered quality criterion; instruction effects in divergent thinking",
+        "grade": "D",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Harrington (1975)",
+            "doi": "10.1111/j.1467-6494.1975.tb00715.x",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/creativity-fixation.md#bad-ideas-criterion"
+      },
+      {
+        "id": "creativity-fixation/serial-order-effect",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "In a single idea-generation run, later ideas tend to be more original than earlier ones.",
+        "construct": "the serial order effect in divergent thinking",
+        "grade": "B",
+        "effect": "small",
+        "sources": [
+          {
+            "cite": "Beaty & Silvia (2012)",
+            "doi": "10.1037/a0029171",
+            "type": "experiment"
+          },
+          {
+            "cite": "Gilhooly et al. (2007)",
+            "doi": "10.1111/j.2044-8295.2007.tb00467.x",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/creativity-fixation.md#serial-order-effect"
+      }
+    ],
+    "helps": "when wanting a good idea is what stops the first one being written; later ideas in a run tend to be a little more original, a small tendency that is unreliable for any one person, and asking for bad ideas is untested craft, so treat the ten as a warm-up and read the later boxes first",
+    "backfires": "when \"bad\" turns into jokes rather than range, or when ten is too few to get past the obvious answers: the studies of later ideas being more original used timed runs of several minutes"
+  }
+}

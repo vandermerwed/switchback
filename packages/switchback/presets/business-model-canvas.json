@@ -1,0 +1,96 @@
+{
+  "id": "business-model-canvas",
+  "kind": "preset",
+  "extends": "zones",
+  "name": "Business Model Canvas",
+  "tags": ["plan", "create"],
+  "data": {
+    "zones": [
+      "Key Partners",
+      "Key Activities",
+      "Key Resources",
+      "Value Propositions",
+      "Customer Relationships",
+      "Channels",
+      "Customer Segments",
+      "Cost Structure",
+      "Revenue Streams"
+    ],
+    "layout": [
+      {
+        "col": 1,
+        "row": 1,
+        "colSpan": 2,
+        "rowSpan": 2
+      },
+      {
+        "col": 3,
+        "row": 1,
+        "colSpan": 2
+      },
+      {
+        "col": 3,
+        "row": 2,
+        "colSpan": 2
+      },
+      {
+        "col": 5,
+        "row": 1,
+        "colSpan": 2,
+        "rowSpan": 2
+      },
+      {
+        "col": 7,
+        "row": 1,
+        "colSpan": 2
+      },
+      {
+        "col": 7,
+        "row": 2,
+        "colSpan": 2
+      },
+      {
+        "col": 9,
+        "row": 1,
+        "colSpan": 2,
+        "rowSpan": 2
+      },
+      {
+        "col": 1,
+        "row": 3,
+        "colSpan": 5
+      },
+      {
+        "col": 6,
+        "row": 3,
+        "colSpan": 5
+      }
+    ]
+  },
+  "attribution": "The Business Model Canvas by Strategyzer AG (strategyzer.com). Adapted.",
+  "licence": "CC BY-SA 3.0 Unported (this file is excluded from the repository's MIT licence)",
+  "footer": "The Business Model Canvas by Strategyzer AG (strategyzer.com). CC BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/. Adapted; not endorsed by Strategyzer.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "externalisation-embodiment/common-region",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Items placed inside the same bounded region are perceived as belonging together, even against other grouping cues, so labelled zones make category membership readable at a glance.",
+        "construct": "the Gestalt principle of common region (perceptual grouping)",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Wagemans et al. (2012)",
+            "doi": "10.1037/a0029333",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/externalisation-embodiment.md#common-region"
+      }
+    ],
+    "helps": "when a business idea needs its parts laid out side by side so that gaps and contradictions show; the preset adds no claim beyond the zones",
+    "backfires": "when filling every box feels like validation: a complete canvas is a set of guesses, not tested evidence"
+  }
+}

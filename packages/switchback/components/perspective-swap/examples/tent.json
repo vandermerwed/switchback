@@ -1,0 +1,5 @@
+{
+  "variant": "tent",
+  "kit": { "scissors": true },
+  "data": { "roles": ["The customer", "Our support lead", "Me in a year"] }
+}

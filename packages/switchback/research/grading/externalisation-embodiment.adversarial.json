@@ -1,0 +1,112 @@
+{
+  "externalisation-embodiment/unfulfilled-goal-offload": {
+    "result": "confirmed",
+    "from": "C",
+    "to": "C",
+    "reason": "C stands; all three quotes match the cache. The Ramirez & Beilock replication question was not searched under the C/D rule and cannot lower the grade.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "externalisation-embodiment/free-listing-salience": {
+    "result": "confirmed",
+    "from": "C",
+    "to": "C",
+    "reason": "One direct but qualified test plus methods guidance; C.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "externalisation-embodiment/epistemic-action": {
+    "result": "confirmed",
+    "from": "C",
+    "to": "C",
+    "reason": "C stands; quotes match the cache.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "externalisation-embodiment/sorting-elicitation": {
+    "result": "confirmed",
+    "from": "C",
+    "to": "C",
+    "reason": "C for the tested half; the tacit-category clause is untested.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "externalisation-embodiment/common-region": {
+    "result": "confirmed",
+    "from": "C",
+    "to": "C",
+    "reason": "Thinnest C in the family: one review abstract naming the principle, no primary finding read. Not lowered, because the review treats it as an empirically established grouping principle, but the 'even against other grouping cues' clause is unsupported.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "externalisation-embodiment/spatial-externalisation": {
+    "result": "confirmed",
+    "from": "C",
+    "to": "C",
+    "reason": "C for space as external memory; the comparative clause is untested.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "externalisation-embodiment/concept-mapping": {
+    "result": "confirmed",
+    "from": "B",
+    "to": "B",
+    "reason": "Three meta-analyses are positive (Nesbit & Adesope 2006; Schroeder et al. 2018, abstract not cached; Anastasiou et al. 2024, full text read). Anastasiou et al.: I² = 89.1%, Begg p = .035, Egger p = .007, trim-and-fill adjusted g = 0.403 (95% CI 0.198-0.608). Tie-break 4 caps at B, with no moderator matching adults structuring their own problem. Effect could be recorded as moderate (bias-adjusted g about 0.40) rather than n/a.",
+    "sources": [
+      {
+        "cite": "Anastasiou, Wirngo & Bagos (2024)",
+        "doi": "10.1007/s10648-024-09877-y"
+      },
+      {
+        "cite": "Nesbit & Adesope (2006)",
+        "doi": "10.3102/00346543076003413"
+      }
+    ],
+    "helps_overclaim": null
+  },
+  "externalisation-embodiment/causal-diagramming": {
+    "result": "confirmed",
+    "from": "D",
+    "to": "D",
+    "reason": "Theory only in the cache; D.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "externalisation-embodiment/colour-coding-search": {
+    "result": "confirmed",
+    "from": "C",
+    "to": "C",
+    "reason": "Mixed review; C.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "externalisation-embodiment/redundant-coding": {
+    "result": "confirmed",
+    "from": "D",
+    "to": "D",
+    "reason": "Practice-only; D.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "externalisation-embodiment/handwriting-vs-typing": {
+    "result": "confirmed",
+    "from": "C",
+    "to": "C",
+    "reason": "Pre-registration confirmed from the article PDF (header 'Preregistered Direct Replication'; methods: 'We preregistered this study on March 7, 2017'; intro: 'a preregistered direct replication of Study 1 ... (2014; N = 65)', current N = 142). Tie-break 1 is the first match and caps at C; grade unchanged. Flanigan et al. (2024) has no cached abstract and could not be checked (publisher elides the abstract); it now only informs effect 'small'.",
+    "sources": [
+      {
+        "cite": "Urry et al. (2021)",
+        "doi": "10.1177/0956797620965541"
+      }
+    ],
+    "helps_overclaim": null
+  },
+  "externalisation-embodiment/embodied-perspective": {
+    "result": "confirmed",
+    "from": "C",
+    "to": "C",
+    "reason": "C stands; uncached quotes verified against Europe PMC / PubMed.",
+    "sources": [],
+    "helps_overclaim": null
+  }
+}

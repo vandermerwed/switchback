@@ -1,0 +1,92 @@
+{
+  "switchback": 1,
+  "style": "sitting",
+  "title": "Should we kill the sync feature?",
+  "subtitle": "Is the sync feature worth what it costs to keep?",
+  "paper": "A4",
+  "round": 1,
+  "timebox": "40 min",
+  "pages": [
+    {
+      "id": "W1-P1",
+      "component": "cover",
+      "title": "Cover",
+      "data": {
+        "question": "Is the sync feature worth what it costs to keep?",
+        "timebox": "40 min",
+        "howto": [
+          "Put your phone in another room.",
+          "Work in ink. Use the colour language on the cover.",
+          "Score your gut on each option before you look at the criteria.",
+          "When the 40 minutes are up, stop, and write one line on where to pick up.",
+          "Photograph every page and send them back."
+        ]
+      }
+    },
+    {
+      "id": "W1-P2",
+      "component": "brain-dump",
+      "title": "Empty the tank",
+      "prompt": "Everything you currently think about the sync feature, before you organise any of it.",
+      "data": { "minutes": 8, "seed": "What sync actually does for people, in my honest view:" }
+    },
+    {
+      "id": "W1-P3",
+      "component": "options-criteria",
+      "title": "Options vs what they cost",
+      "prompt": "Gut score first, with your Sense pen. Then score each path against what it really takes to keep. Reasons in the margin.",
+      "data": {
+        "options": ["Keep as-is", "Rewrite it", "Kill it", "Freeze it (no new work)"],
+        "criteria": ["Engineering effort", "User value", "Bug surface", "My attention"],
+        "scale": "0–3"
+      }
+    },
+    {
+      "id": "W1-P4",
+      "component": "assumption-audit",
+      "title": "What it rests on",
+      "prompt": "What has to be true for keeping sync to be right? Mark how sure you are.",
+      "data": {
+        "assumptions": [
+          "Users actually use it",
+          "It will get cheaper to maintain later",
+          "Removing it would be irreversible",
+          "The bugs are fixable in a bounded time"
+        ]
+      }
+    },
+    {
+      "id": "W1-P5",
+      "component": "pre-mortem",
+      "title": "It is six months later",
+      "prompt": "We kept sync and it went badly. Write the post-mortem. Don't be kind.",
+      "data": { "subject": "keeping the sync feature", "horizon": "six months" }
+    },
+    {
+      "id": "W1-P6",
+      "component": "commit",
+      "title": "Commit",
+      "prompt": "Decide. A hold is a real answer. But commit with an action, or it is a wish.",
+      "data": { "decision": "Keep / rewrite / kill / freeze the sync feature" }
+    },
+    {
+      "id": "W1-P7",
+      "component": "question-queue",
+      "title": "Ask the AI",
+      "prompt": "Write anything you want answered when this comes back. Ask pen, numbered.",
+      "data": {
+        "questions": [
+          "What is the cheapest way to test whether users actually use it?",
+          "If we froze it, what would we tell users?",
+          "What would you need from me to sanity-check the effort estimate?"
+        ]
+      }
+    },
+    {
+      "id": "W1-P8",
+      "component": "return-checklist",
+      "title": "Send it back",
+      "data": { "shots": ["W1-P1", "W1-P2", "W1-P3", "W1-P4", "W1-P5", "W1-P6", "W1-P7"] }
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "id": "perspective-swap",
+  "kind": "page",
+  "name": "Perspective swap",
+  "intent": "See a situation through another person's eyes.",
+  "when": "stuck on a person, a negotiation, a user, or a collaborator",
+  "tags": ["reflect", "decide"],
+  "phase": "either",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write", "cut", "fold"],
+    "surface": "desk",
+    "timebox": "10 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    },
+    {
+      "id": "tent",
+      "requires": ["scissors"],
+      "label": "Cut and fold a standing figure for each perspective",
+      "prompt": "Cut out each figure, fold it on the dotted line and stand it up. Move a coin to whichever one you are speaking as, and write what it says in its column.",
+      "readback": "The figure that never gets picked up is often the perspective doing the most avoiding; notice which one goes last, or not at all."
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "roles": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 3,
+        "items": {
+          "type": "string",
+          "maxLength": 32
+        }
+      }
+    }
+  },
+  "prompt": "Fill a column for each perspective. Be unfair to yourself in their column.",
+  "readback": "The fear columns are usually the real content. Look for a fear the human hasn't named to themselves.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "perspective-emotion/perspective-taking",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Deliberately writing out a situation from another party's point of view reduces egocentric bias, and brings out considerations the writer would otherwise miss, compared with considering it only from one's own view.",
+        "construct": "perspective-taking",
+        "grade": "B",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Galinsky & Moskowitz (2000)",
+            "doi": "10.1037/0022-3514.78.4.708",
+            "type": "experiment"
+          },
+          {
+            "cite": "Galinsky, Maddux, Gilin & White (2008)",
+            "doi": "10.1111/j.1467-9280.2008.02096.x",
+            "type": "experiment"
+          },
+          {
+            "cite": "Epley, Caruso & Bazerman (2006)",
+            "doi": "10.1037/0022-3514.91.5.872",
+            "type": "experiment"
+          },
+          {
+            "cite": "Todd & Galinsky (2014)",
+            "doi": "10.1111/spc3.12116",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/perspective-emotion.md#perspective-taking"
+      },
+      {
+        "id": "perspective-emotion/perspective-getting",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Imagining another person's perspective does not reliably make you more accurate about what they think. Asking them does.",
+        "construct": "perspective mistaking vs perspective getting",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Eyal, Steffel & Epley (2018)",
+            "doi": "10.1037/pspa0000115",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/perspective-emotion.md#perspective-getting"
+      },
+      {
+        "id": "perspective-emotion/self-distancing",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Reflecting on one's own situation from a distanced perspective (third person, or \"me in a year\") reduces emotional reactivity and supports wiser reasoning, compared with a first-person immersed view.",
+        "construct": "self-distancing (spatial, temporal and linguistic)",
+        "grade": "B",
+        "effect": "small",
+        "sources": [
+          {
+            "cite": "Murdoch, Chapman, Crane & Gucciardi (2023)",
+            "doi": "10.1002/smi.3199",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Kross et al. (2014)",
+            "doi": "10.1037/a0035173",
+            "type": "experiment"
+          },
+          {
+            "cite": "Grossmann & Kross (2014)",
+            "doi": "10.1177/0956797614535400",
+            "type": "experiment"
+          },
+          {
+            "cite": "Bruehlman-Senecal & Ayduk (2015)",
+            "doi": "10.1037/a0038324",
+            "type": "experiment"
+          },
+          {
+            "cite": "Powers & LaBar (2019)",
+            "doi": "10.1016/j.neubiorev.2018.04.023",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/perspective-emotion.md#self-distancing"
+      },
+      {
+        "id": "externalisation-embodiment/embodied-perspective",
+        "load_bearing": false,
+        "transfer": "analogical",
+        "claim": "Physically placing a figure at, or standing in, another party's position increases adoption of that party's perspective, compared with imagining it.",
+        "construct": "embodied (spatial) perspective-taking; chair work",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Tversky & Hard (2009)",
+            "doi": "10.1016/j.cognition.2008.10.008",
+            "type": "experiment"
+          },
+          {
+            "cite": "Kessler & Thomson (2010)",
+            "doi": "10.1016/j.cognition.2009.08.015",
+            "type": "experiment"
+          },
+          {
+            "cite": "Paivio & Greenberg (1995)",
+            "doi": "10.1037/0022-006x.63.3.419",
+            "type": "experiment"
+          },
+          {
+            "cite": "Wagenmakers et al. (2016)",
+            "doi": "10.1177/1745691616674458",
+            "type": "rrr"
+          }
+        ],
+        "rationale": "research/externalisation-embodiment.md#embodied-perspective"
+      }
+    ],
+    "helps": "when you are stuck in your own view of a situation that involves other people: writing it from their side reduces self-centred judgement and, in negotiation studies, surfaced deals people had missed, but it does not make you more accurate about what they think, so close by writing what you would ask them; the self-distanced role gives only a small lift",
+    "backfires": "when the other side is a competitor, since considering their view can make people act more selfishly, when you slip into a stereotype of the role, or when the imagined view is read back as their actual view, which can raise confidence without raising accuracy"
+  }
+}

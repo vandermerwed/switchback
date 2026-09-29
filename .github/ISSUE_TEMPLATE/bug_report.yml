@@ -1,0 +1,48 @@
+name: Bug report
+description: A workbook, proof, read-back or CLI command did something it should not have.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for trying Switchback. Your pages hold your own thinking, so crop or blur anything private before you attach a photo, or describe the marks instead.
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Mode
+      options:
+        - workbook
+        - proof
+        - read
+        - desk
+        - the CLI on its own
+        - not sure
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you asked for, and what you got instead.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The output of `switchback --version`, or the plugin version.
+  - type: input
+    id: agent
+    attributes:
+      label: Agent and operating system
+      placeholder: Claude Code on macOS 15
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics
+      description: Any error message, or the output of the command with `--json`.
+      render: text

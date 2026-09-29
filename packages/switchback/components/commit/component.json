@@ -1,0 +1,165 @@
+{
+  "id": "commit",
+  "kind": "page",
+  "name": "Commit",
+  "intent": "End the sitting with a decision and a physical first action.",
+  "when": "always; it is the page the workbook exists to reach",
+  "tags": ["decide", "plan"],
+  "phase": "converge",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write", "circle"],
+    "surface": "desk",
+    "timebox": "5 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    },
+    {
+      "id": "policy",
+      "requires": [],
+      "label": "Decide the rule before the instance",
+      "prompt": "Write the rule you will follow every time this comes up, and name the exceptions. Then check whether this time fits the rule, and plan the first move as if-then.",
+      "readback": "A rule with no named exceptions usually has some anyway — ask what would make you break it. Check that this time actually fits the rule before applying it, rather than bending the rule to fit this time.",
+      "grounding": {
+        "claims": [
+          {
+            "id": "planning-self-regulation/implementation-intentions",
+            "load_bearing": true,
+            "transfer": "direct",
+            "claim": "Forming written if-then plans (\"When situation X arises, I will do Y\") increases goal attainment compared with forming a goal intention alone.",
+            "construct": "implementation intentions",
+            "grade": "A",
+            "effect": "moderate",
+            "sources": [
+              {
+                "cite": "Gollwitzer & Sheeran (2006)",
+                "doi": "10.1016/S0065-2601(06)38002-1",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Milkman et al. (2011)",
+                "doi": "10.1073/pnas.1103170108",
+                "type": "experiment"
+              },
+              {
+                "cite": "Gollwitzer (1999)",
+                "doi": "10.1037/0003-066X.54.7.493",
+                "type": "theory"
+              }
+            ],
+            "rationale": "research/planning-self-regulation.md#implementation-intentions"
+          },
+          {
+            "id": "planning-self-regulation/choice-bracketing",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Deciding a class of repeated choices together, as a rule or policy, produces more consistent and more farsighted choices than deciding each instance separately.",
+            "construct": "broad vs narrow choice bracketing; bundling of choices; personal rules",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Hofmeyr, Ainslie, Charlton & Ross (2011)",
+                "doi": "10.1111/j.1360-0443.2010.03166.x",
+                "type": "experiment"
+              },
+              {
+                "cite": "Read & Loewenstein (1995)",
+                "doi": "10.1037/1076-898x.1.1.34",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/planning-self-regulation.md#choice-bracketing"
+          },
+          {
+            "id": "planning-self-regulation/intention-announcement",
+            "load_bearing": false,
+            "transfer": "adjacent",
+            "claim": "Telling others about an identity-relevant intention can substitute for acting on it, reducing the effort invested compared with keeping it private.",
+            "construct": "symbolic self-completion; public commitment",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Gollwitzer, Sheeran, Michalski & Seifert (2009)",
+                "doi": "10.1111/j.1467-9280.2009.02336.x",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/planning-self-regulation.md#intention-announcement"
+          }
+        ],
+        "helps": "when the same choice keeps coming back: deciding the rule and its named exceptions once, before the next instance, may tilt the choices towards the long-term option, though the one experiment behind this found the shift only in people who usually take the short-term one",
+        "backfires": "when the rule bundles choices better made fresh each time (people choosing many at once pick more variety than they later want), and when a rigid rule, once broken, is dropped altogether, a risk that is theory rather than tested"
+      }
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "decision": {
+        "type": "string",
+        "maxLength": 160
+      },
+      "tell": {
+        "type": "boolean"
+      }
+    }
+  },
+  "prompt": "Circle one: commit / hold / drop. Then plan the first move as if-then.",
+  "readback": "A hold is a legitimate outcome — do not push for a decision that isn't there. A commit with no 5-minute action is a wish; say so.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "planning-self-regulation/implementation-intentions",
+        "load_bearing": true,
+        "transfer": "direct",
+        "claim": "Forming written if-then plans (\"When situation X arises, I will do Y\") increases goal attainment compared with forming a goal intention alone.",
+        "construct": "implementation intentions",
+        "grade": "A",
+        "effect": "moderate",
+        "sources": [
+          {
+            "cite": "Gollwitzer & Sheeran (2006)",
+            "doi": "10.1016/S0065-2601(06)38002-1",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Milkman et al. (2011)",
+            "doi": "10.1073/pnas.1103170108",
+            "type": "experiment"
+          },
+          {
+            "cite": "Gollwitzer (1999)",
+            "doi": "10.1037/0003-066X.54.7.493",
+            "type": "theory"
+          }
+        ],
+        "rationale": "research/planning-self-regulation.md#implementation-intentions"
+      },
+      {
+        "id": "planning-self-regulation/intention-announcement",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Telling others about an identity-relevant intention can substitute for acting on it, reducing the effort invested compared with keeping it private.",
+        "construct": "symbolic self-completion; public commitment",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Gollwitzer, Sheeran, Michalski & Seifert (2009)",
+            "doi": "10.1111/j.1467-9280.2009.02336.x",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/planning-self-regulation.md#intention-announcement"
+      }
+    ],
+    "helps": "when the goal is already decided and the gap is acting on it: one written if-then plan, tied to a cue you will actually meet and as specific as a day and time, raises follow-through for a single goal",
+    "backfires": "when one page carries plans for many goals at once, which draws attention to how hard they all are and weakens commitment, and when an identity goal is announced to people who will merely notice it, which can feel like progress already made, so the \"Who I will tell\" line stays off by default"
+  }
+}

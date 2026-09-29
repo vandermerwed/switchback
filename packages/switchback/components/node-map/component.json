@@ -1,0 +1,82 @@
+{
+  "id": "node-map",
+  "kind": "page",
+  "name": "Node map",
+  "intent": "Externalise structure and relationships.",
+  "when": "many parts, causes, or players, and the shape is unclear",
+  "tags": ["plan", "diagnose", "learn"],
+  "phase": "diverge",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["draw"],
+    "surface": "desk",
+    "timebox": "10 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "center": {
+        "type": "string",
+        "maxLength": 40
+      },
+      "hint": {
+        "type": "string",
+        "maxLength": 160
+      }
+    }
+  },
+  "prompt": "{hint|Every arrow must be labelled with a verb: causes / blocks / needs / decides.}",
+  "readback": "Reconstruct the graph; report hubs, orphans, and any edge labelled with a vague verb like relates to.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "externalisation-embodiment/concept-mapping",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Building a concept map, made of nodes joined by labelled links, improves understanding and retention compared with reading, listing or outlining the same material.",
+        "construct": "concept mapping",
+        "grade": "B",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Nesbit & Adesope (2006)",
+            "doi": "10.3102/00346543076003413",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Karpicke & Blunt (2011)",
+            "doi": "10.1126/science.1199327",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/externalisation-embodiment.md#concept-mapping"
+      },
+      {
+        "id": "externalisation-embodiment/causal-diagramming",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Drawing a diagram of the causal relations in a problem improves causal reasoning about it compared with reasoning from text alone.",
+        "construct": "learner-generated diagrams and drawing; causal mapping",
+        "grade": "D",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Ainsworth, Prain & Tytler (2011)",
+            "doi": "10.1126/science.1204153",
+            "type": "theory"
+          }
+        ],
+        "rationale": "research/externalisation-embodiment.md#causal-diagramming"
+      }
+    ],
+    "helps": "when many parts, causes or players relate and the shape is unclear, and every arrow carries a specific verb such as causes, blocks or needs; building concept maps aids retention of studied material, but it is not a substitute for recalling it",
+    "backfires": "when vague links like \"relates to\" stand in for real relations, when a finished map feels like understanding without being checked, when it grows too dense to read back from a photo, or when it replaces retrieval practice, which beat concept mapping as a study method"
+  }
+}

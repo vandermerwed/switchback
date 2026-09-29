@@ -1,0 +1,7 @@
+{
+  "variant": "faded",
+  "data": {
+    "steps": ["3x + 5 = 17", "Subtract 5 from both sides: 3x = 12", "Divide both sides by 3", "x = 4"],
+    "fade_from": 3
+  }
+}

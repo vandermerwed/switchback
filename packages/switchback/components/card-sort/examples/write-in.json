@@ -1,0 +1,4 @@
+{
+  "variant": "write-in",
+  "data": { "items": ["Offline mode", "Retry queue"], "columns": ["now", "later", "cut"] }
+}

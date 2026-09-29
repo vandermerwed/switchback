@@ -1,0 +1,11 @@
+.superpowers/
+.worktrees/
+
+node_modules/
+dist/
+out/
+coverage/
+
+# impeccable working files: mocks, question logs and a local Chrome profile stay out of git
+.impeccable/*
+!.impeccable/config.json

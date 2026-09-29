@@ -1,0 +1,68 @@
+{
+  "name": "@vandermerwed/switchback",
+  "version": "0.1.0",
+  "description": "Programmable stationery for AI agents: print-ready workbooks and proofs, adapted to the pens on your desk, read back from photos.",
+  "type": "module",
+  "license": "(MIT AND CC-BY-SA-3.0)",
+  "author": "vandermerwed",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vandermerwed/switchback.git",
+    "directory": "packages/switchback"
+  },
+  "bin": {
+    "switchback": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "assets",
+    "docs",
+    "examples",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "prepublishOnly": "pnpm build",
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "gen": "tsx scripts/gen-components.ts",
+    "fonts": "tsx scripts/copy-fonts.ts",
+    "validate:registry": "tsx src/cli/main.ts validate",
+    "validate:strict": "tsx src/cli/main.ts validate --strict",
+    "contact-sheet": "tsx scripts/contact-sheet.ts",
+    "check-dois": "tsx scripts/check-dois.ts",
+    "apply-grounding": "tsx scripts/apply-grounding.ts"
+  },
+  "dependencies": {
+    "@clack/prompts": "^1.8.1",
+    "ajv": "^8.20.0",
+    "env-paths": "^4.0.0",
+    "heic-decode": "^2.1.0",
+    "jpeg-js": "^0.4.4",
+    "pngjs": "^7.0.0",
+    "puppeteer-core": "^24.43.1"
+  },
+  "devDependencies": {
+    "@fontsource/fraunces": "^5.3.0",
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@types/heic-decode": "^2.0.0",
+    "@types/node": "^26.6.2",
+    "@types/pngjs": "^6.0.5",
+    "playwright": "^1.63.0",
+    "tsup": "^8.5.1",
+    "tsx": "^4.23.15",
+    "typescript": "~5.9.3",
+    "vitest": "^4.1.11"
+  }
+}

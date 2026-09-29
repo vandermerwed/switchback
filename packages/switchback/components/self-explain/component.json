@@ -1,0 +1,247 @@
+{
+  "id": "self-explain",
+  "kind": "page",
+  "name": "Self-explain",
+  "intent": "Explain to yourself why each step of given material follows.",
+  "when": "working through a worked example, a proof, a procedure or a set of facts",
+  "tags": ["learn"],
+  "phase": "converge",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write"],
+    "surface": "desk",
+    "timebox": "15 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    },
+    {
+      "id": "faded",
+      "requires": [],
+      "label": "Complete the later steps yourself (for beginners)",
+      "prompt": "Explain why each of the first steps follows. Then complete the later steps yourself, and explain those too.",
+      "grounding": {
+        "claims": [
+          {
+            "id": "memory-retrieval/self-explanation",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Prompting learners to explain to themselves why each step of given material follows improves understanding and transfer, compared with studying the same material without such prompts.",
+            "construct": "the self-explanation effect",
+            "grade": "B",
+            "effect": "moderate",
+            "sources": [
+              {
+                "cite": "Bisra et al. (2018)",
+                "doi": "10.1007/s10648-018-9434-x",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Schworm & Renkl (2006)",
+                "doi": "10.1016/j.compedu.2004.08.011",
+                "type": "experiment"
+              },
+              {
+                "cite": "Chi et al. (1989)",
+                "doi": "10.1207/s15516709cog1302_1",
+                "type": "experiment"
+              },
+              {
+                "cite": "Dunlosky et al. (2013)",
+                "doi": "10.1177/1529100612453266",
+                "type": "review"
+              }
+            ],
+            "rationale": "research/memory-retrieval.md#self-explanation"
+          },
+          {
+            "id": "memory-retrieval/worked-example-fading",
+            "load_bearing": false,
+            "transfer": "adjacent",
+            "claim": "For novices, studying worked examples whose final steps are progressively removed (completion problems) improves learning compared with unaided problem solving. The advantage shrinks or reverses as expertise grows.",
+            "construct": "the worked-example effect with fading, and the expertise-reversal effect",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Renkl et al. (2002)",
+                "doi": "10.1080/00220970209599510",
+                "type": "experiment"
+              },
+              {
+                "cite": "Kalyuga et al. (2003)",
+                "doi": "10.1207/s15326985ep3801_4",
+                "type": "review"
+              }
+            ],
+            "rationale": "research/memory-retrieval.md#worked-example-fading"
+          }
+        ],
+        "helps": "when the procedure is new to you: removing worked steps from the end helped near transfer more than pairing examples with problems, in a few studies",
+        "backfires": "when you already know the procedure: techniques that help novices can lose their benefit, or hurt, for more experienced learners (expertise reversal)"
+      }
+    },
+    {
+      "id": "why",
+      "requires": [],
+      "label": "Ask why each fact is true",
+      "prompt": "For each fact, explain why it is true, using what you already know.",
+      "grounding": {
+        "claims": [
+          {
+            "id": "memory-retrieval/self-explanation",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Prompting learners to explain to themselves why each step of given material follows improves understanding and transfer, compared with studying the same material without such prompts.",
+            "construct": "the self-explanation effect",
+            "grade": "B",
+            "effect": "moderate",
+            "sources": [
+              {
+                "cite": "Bisra et al. (2018)",
+                "doi": "10.1007/s10648-018-9434-x",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Schworm & Renkl (2006)",
+                "doi": "10.1016/j.compedu.2004.08.011",
+                "type": "experiment"
+              },
+              {
+                "cite": "Chi et al. (1989)",
+                "doi": "10.1207/s15516709cog1302_1",
+                "type": "experiment"
+              },
+              {
+                "cite": "Dunlosky et al. (2013)",
+                "doi": "10.1177/1529100612453266",
+                "type": "review"
+              }
+            ],
+            "rationale": "research/memory-retrieval.md#self-explanation"
+          },
+          {
+            "id": "memory-retrieval/elaborative-interrogation",
+            "load_bearing": false,
+            "transfer": "adjacent",
+            "claim": "Prompting learners to answer \"why is this true?\" for stated facts improves recall of those facts compared with reading them.",
+            "construct": "elaborative interrogation",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Dunlosky et al. (2013)",
+                "doi": "10.1177/1529100612453266",
+                "type": "review"
+              }
+            ],
+            "rationale": "research/memory-retrieval.md#elaborative-interrogation"
+          }
+        ],
+        "helps": "when you already know something about the topic: answering \"why is this true?\" for facts is rated a moderately useful technique, on limited evidence",
+        "backfires": "when the topic is new to you, so the \"why\" answers have little to draw on"
+      }
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "steps": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 6,
+        "items": {
+          "type": "string",
+          "maxLength": 160
+        }
+      },
+      "fade_from": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 6
+      }
+    }
+  },
+  "prompt": "For each step, write why it follows. Don't restate it; justify it.",
+  "readback": "Check each explanation for correctness; a fluent wrong explanation is the thing to catch. Restatements ('because it says so') mean the step is not understood yet.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "memory-retrieval/self-explanation",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Prompting learners to explain to themselves why each step of given material follows improves understanding and transfer, compared with studying the same material without such prompts.",
+        "construct": "the self-explanation effect",
+        "grade": "B",
+        "effect": "moderate",
+        "sources": [
+          {
+            "cite": "Bisra et al. (2018)",
+            "doi": "10.1007/s10648-018-9434-x",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Schworm & Renkl (2006)",
+            "doi": "10.1016/j.compedu.2004.08.011",
+            "type": "experiment"
+          },
+          {
+            "cite": "Chi et al. (1989)",
+            "doi": "10.1207/s15516709cog1302_1",
+            "type": "experiment"
+          },
+          {
+            "cite": "Dunlosky et al. (2013)",
+            "doi": "10.1177/1529100612453266",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/memory-retrieval.md#self-explanation"
+      },
+      {
+        "id": "memory-retrieval/worked-example-fading",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "For novices, studying worked examples whose final steps are progressively removed (completion problems) improves learning compared with unaided problem solving. The advantage shrinks or reverses as expertise grows.",
+        "construct": "the worked-example effect with fading, and the expertise-reversal effect",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Renkl et al. (2002)",
+            "doi": "10.1080/00220970209599510",
+            "type": "experiment"
+          },
+          {
+            "cite": "Kalyuga et al. (2003)",
+            "doi": "10.1207/s15326985ep3801_4",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/memory-retrieval.md#worked-example-fading"
+      },
+      {
+        "id": "memory-retrieval/elaborative-interrogation",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Prompting learners to answer \"why is this true?\" for stated facts improves recall of those facts compared with reading them.",
+        "construct": "elaborative interrogation",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Dunlosky et al. (2013)",
+            "doi": "10.1177/1529100612453266",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/memory-retrieval.md#elaborative-interrogation"
+      }
+    ],
+    "helps": "when working through stepwise material you are learning: prompts to explain why each step follows improve learning across a range of conditions, though evidence for transfer, for classroom use and for retention after a delay is thinner",
+    "backfires": "when the material already comes fully explained: given explanations crowded out learners' own and lowered learning, while making them feel they had learned more"
+  }
+}

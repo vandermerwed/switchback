@@ -1,0 +1,54 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [20, 24]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm --filter @vandermerwed/switchback run typecheck
+      - run: pnpm --filter @vandermerwed/switchback run gen --check
+      - run: pnpm test
+        env:
+          CI: "true"
+      # strict since 2026-09-26 (research spec §9.3): every item must carry graded grounding
+      - run: pnpm validate
+      - run: pnpm build
+      - run: node packages/switchback/dist/cli.js --version
+
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @vandermerwed/switchback exec playwright install --with-deps chromium
+      - run: pnpm --filter @vandermerwed/switchback exec vitest run test/e2e test/engine/pdf.test.ts
+        env:
+          SWITCHBACK_E2E: "1"
+      - run: pnpm contact-sheet --png
+      - uses: actions/upload-artifact@v4
+        with:
+          name: contact-sheet
+          path: packages/switchback/out/contact-sheet.*

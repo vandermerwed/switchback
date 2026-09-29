@@ -1,0 +1,14 @@
+{
+  "variant": "cued",
+  "data": {
+    "topic": "how to study for a big test when you feel behind and do not know where to start",
+    "prompts": [
+      "Name your own core idea now, then go back over your work and mark down good and bad answers you gave",
+      "Name a key word you now saw, then go back over your work and mark down good and bad answers you gave",
+      "Show a good example you saw, then go back over your work and mark down good and bad answers you gave",
+      "Name how two parts now work, then go back over your work and mark down good and bad answers you gave",
+      "Name a hardest area for now, then go back over your work and mark down good and bad answers you gave",
+      "Show how you now use a plan, then go back over your work and mark down good and bad answers you gave"
+    ]
+  }
+}

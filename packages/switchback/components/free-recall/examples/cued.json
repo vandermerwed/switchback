@@ -1,0 +1,14 @@
+{
+  "variant": "cued",
+  "data": {
+    "topic": "the spacing effect",
+    "prompts": [
+      "The three stages of the model, in order, with one sentence on what happens to memory at each stage",
+      "Why a longer gap between review sessions can help retention, even though it feels harder at the time",
+      "What happens to the best gap between reviews as the test date gets further away in the schedule",
+      "One study or experiment you remember about this topic, and what its result was, in your own words",
+      "Where the model breaks down, or a case it does not explain well, and why that case is different",
+      "How you would change your own study schedule after this, and what part you would keep the same"
+    ]
+  }
+}

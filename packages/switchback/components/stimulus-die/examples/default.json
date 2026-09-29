@@ -1,0 +1,16 @@
+{
+  "kit": {
+    "scissors": true,
+    "tape": true
+  },
+  "data": {
+    "faces": [
+      "who else is affected?",
+      "reverse it",
+      "remove the constraint",
+      "make it 10x",
+      "make it 0.1x",
+      "steal from another field"
+    ]
+  }
+}

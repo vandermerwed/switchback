@@ -1,0 +1,926 @@
+{
+  "styles": [
+    {
+      "id": "sitting",
+      "name": "Sitting",
+      "tags": ["decide", "diagnose", "plan"],
+      "budget": 10,
+      "opening": ["cover"],
+      "closing": ["commit", "question-queue", "return-checklist"],
+      "phase_rules": [],
+      "grounding": {
+        "claims": [
+          {
+            "id": "planning-self-regulation/implementation-intentions",
+            "load_bearing": true,
+            "transfer": "direct",
+            "claim": "Forming written if-then plans (\"When situation X arises, I will do Y\") increases goal attainment compared with forming a goal intention alone.",
+            "construct": "implementation intentions",
+            "grade": "A",
+            "effect": "moderate",
+            "sources": [
+              {
+                "cite": "Gollwitzer & Sheeran (2006)",
+                "doi": "10.1016/S0065-2601(06)38002-1",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Milkman et al. (2011)",
+                "doi": "10.1073/pnas.1103170108",
+                "type": "experiment"
+              },
+              {
+                "cite": "Gollwitzer (1999)",
+                "doi": "10.1037/0003-066X.54.7.493",
+                "type": "theory"
+              }
+            ],
+            "rationale": "research/planning-self-regulation.md#implementation-intentions"
+          },
+          {
+            "id": "planning-self-regulation/timeboxing",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Setting a fixed time limit for a phase of work ends deliberation sooner, with no loss of decision quality for convergent tasks.",
+            "construct": "timeboxing; deadlines as goals (Parkinson's law)",
+            "grade": "D",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Parkinson (1955), The Economist essay",
+                "url": "https://web.archive.org/web/20180705215319/https://www.economist.com/news/1955/11/19/parkinsons-law",
+                "type": "practice"
+              },
+              {
+                "cite": "Hyndman & Bisin (2026)",
+                "doi": "10.1177/09567976261460772",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/planning-self-regulation.md#timeboxing"
+          },
+          {
+            "id": "attention-load/phone-presence",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Having one's smartphone within reach, even silent and face down, reduces available cognitive capacity, and moving it to another room restores that capacity.",
+            "construct": "the \"brain drain\" / mere-presence effect of smartphones",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Ruiz Pardo & Minda (2022)",
+                "doi": "10.1016/j.actpsy.2022.103717",
+                "type": "rrr"
+              },
+              {
+                "cite": "Hartmann, Martarelli, Reber & Rothen (2020)",
+                "doi": "10.1016/j.concog.2020.103033",
+                "type": "experiment"
+              },
+              {
+                "cite": "Thornton, Faires, Robbins & Rollins (2014)",
+                "doi": "10.1027/1864-9335/a000216",
+                "type": "experiment"
+              },
+              {
+                "cite": "Böttger, Poschik & Zierer (2023)",
+                "doi": "10.3390/bs13090751",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Hartanto & Yang (2016)",
+                "doi": "10.1016/j.chb.2016.07.002",
+                "type": "experiment"
+              },
+              {
+                "cite": "Stothart, Mitchum & Yehnert (2015)",
+                "doi": "10.1037/xhp0000100",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/attention-load.md#phone-presence"
+          },
+          {
+            "id": "attention-load/stop-mid-task",
+            "load_bearing": true,
+            "transfer": "analogical",
+            "claim": "Ending a work session in the middle of a unit of work, such as mid-sentence, rather than at a natural break, increases the likelihood and ease of resuming the work at the next session.",
+            "construct": "the resumption tendency after interruption (Ovsiankina effect); the Zeigarnik effect",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Ghibellini & Meier (2025)",
+                "doi": "10.1057/s41599-025-05000-w",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Masicampo & Baumeister (2011)",
+                "doi": "10.1037/a0024192",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/attention-load.md#stop-mid-task"
+          },
+          {
+            "id": "attention-load/resumption-cues",
+            "load_bearing": false,
+            "transfer": "analogical",
+            "claim": "Leaving a visible cue of where you were and what comes next at the point of interruption reduces the time and errors involved in resuming a task.",
+            "construct": "memory for goals; resumption lag",
+            "grade": "B",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Hodgetts & Jones (2006)",
+                "doi": "10.1037/0278-7393.32.5.1120",
+                "type": "experiment"
+              },
+              {
+                "cite": "Monk, Trafton & Boehm-Davis (2008)",
+                "doi": "10.1037/a0014402",
+                "type": "experiment"
+              },
+              {
+                "cite": "Altmann & Trafton (2002)",
+                "doi": "10.1207/s15516709cog2601_2",
+                "type": "theory"
+              }
+            ],
+            "rationale": "research/attention-load.md#resumption-cues"
+          },
+          {
+            "id": "attention-load/task-switching",
+            "load_bearing": false,
+            "transfer": "analogical",
+            "claim": "Switching between tasks carries a measurable time and accuracy cost compared with staying on one task. Doing one kind of thinking at a time avoids that cost.",
+            "construct": "task-switching costs; multitasking",
+            "grade": "B",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Rogers & Monsell (1995)",
+                "doi": "10.1037/0096-3445.124.2.207",
+                "type": "experiment"
+              },
+              {
+                "cite": "Wiradhany & Nieuwenstein (2017)",
+                "doi": "10.3758/s13414-017-1408-4",
+                "type": "meta-analysis"
+              }
+            ],
+            "rationale": "research/attention-load.md#task-switching"
+          },
+          {
+            "id": "planning-self-regulation/sitting-duration",
+            "load_bearing": false,
+            "transfer": "analogical",
+            "claim": "A single focused working session of about 40 minutes can be sustained without a marked decline in attention or quality for self-directed thinking work.",
+            "construct": "sustained attention over a session; vigilance decrement; mental fatigue",
+            "grade": "D",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Wilson & Korn (2007)",
+                "doi": "10.1080/00986280701291291",
+                "type": "review"
+              },
+              {
+                "cite": "Bradbury (2016)",
+                "doi": "10.1152/advan.00109.2016",
+                "type": "review"
+              },
+              {
+                "cite": "Warm, Parasuraman & Matthews (2008)",
+                "doi": "10.1518/001872008x312152",
+                "type": "review"
+              }
+            ],
+            "rationale": "research/planning-self-regulation.md#sitting-duration"
+          }
+        ],
+        "helps": "when one block of thinking work needs a set start and end: a written if-then plan for when you will sit has good evidence behind it, while the timebox, the 40-minute length and the ten-page limit are design choices",
+        "backfires": "when the timebox is enforced on work that is still generating ideas, when too many moves are squeezed into one block, and when moving the phone away is treated as proven: the best-known brain-drain result failed a pre-registered replication"
+      }
+    },
+    {
+      "id": "series",
+      "name": "Series",
+      "tags": ["learn"],
+      "budget": 6,
+      "opening": ["cover", ["free-recall", "feynman", "self-explain"]],
+      "closing": ["question-queue", "return-checklist"],
+      "phase_rules": [],
+      "why": {
+        "opening": {
+          "text": "recalling before you reread helps you learn from the rereading",
+          "claim": "memory-retrieval/retrieval-before-review"
+        }
+      },
+      "grounding": {
+        "claims": [
+          {
+            "id": "memory-retrieval/testing-effect",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Retrieving studied material from memory (for example, writing down everything you can recall with the book closed) improves retention at a delay of days or more, compared with spending the same time restudying it.",
+            "construct": "retrieval practice (testing effect)",
+            "grade": "A",
+            "effect": "moderate",
+            "sources": [
+              {
+                "cite": "Rowland (2014)",
+                "doi": "10.1037/a0037559",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Adesope et al. (2017)",
+                "doi": "10.3102/0034654316689306",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Pan & Rickard (2018)",
+                "doi": "10.1037/bul0000151",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Roediger & Karpicke (2006)",
+                "doi": "10.1111/j.1467-9280.2006.01693.x",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/memory-retrieval.md#testing-effect"
+          },
+          {
+            "id": "memory-retrieval/distributed-practice",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Spreading the same amount of study or retrieval across sessions separated by days produces better long-term retention than massing it into one session.",
+            "construct": "the spacing effect (distributed practice)",
+            "grade": "A",
+            "effect": "moderate",
+            "sources": [
+              {
+                "cite": "Cepeda et al. (2006)",
+                "doi": "10.1037/0033-2909.132.3.354",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Donovan & Radosevich (1999)",
+                "doi": "10.1037/0021-9010.84.5.795",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Kornell (2009)",
+                "doi": "10.1002/acp.1537",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/memory-retrieval.md#distributed-practice"
+          },
+          {
+            "id": "memory-retrieval/retrieval-before-review",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Opening a study session by retrieving earlier material before restudying it improves learning from the restudy that follows, compared with restudying first.",
+            "construct": "test-potentiated learning (retrieval-enhanced new learning)",
+            "grade": "B",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Arnold & McDermott (2013)",
+                "doi": "10.1037/a0029199",
+                "type": "experiment"
+              },
+              {
+                "cite": "Chan, Meissner & Davis (2018)",
+                "doi": "10.1037/bul0000166",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Kornell, Hays & Bjork (2009)",
+                "doi": "10.1037/a0015729",
+                "type": "experiment"
+              },
+              {
+                "cite": "Richland, Kornell & Kao (2009)",
+                "doi": "10.1037/a0016496",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/memory-retrieval.md#retrieval-before-review"
+          },
+          {
+            "id": "memory-retrieval/pretesting",
+            "load_bearing": false,
+            "transfer": "adjacent",
+            "claim": "Trying to answer questions about material before studying it, even when most answers are wrong, improves later retention of that material compared with studying it without a pretest.",
+            "construct": "the pretesting / prequestion effect (errorful generation)",
+            "grade": "B",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Richland, Kornell & Kao (2009)",
+                "doi": "10.1037/a0016496",
+                "type": "experiment"
+              },
+              {
+                "cite": "Kornell, Hays & Bjork (2009)",
+                "doi": "10.1037/a0015729",
+                "type": "experiment"
+              },
+              {
+                "cite": "Pan & Carpenter (2023)",
+                "doi": "10.1007/s10648-023-09814-5",
+                "type": "review"
+              },
+              {
+                "cite": "Carpenter & Toftness (2017)",
+                "doi": "10.1016/j.jarmac.2016.07.014",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/memory-retrieval.md#pretesting"
+          },
+          {
+            "id": "memory-retrieval/spacing-gap-ratio",
+            "load_bearing": false,
+            "transfer": "adjacent",
+            "claim": "For a fixed retention interval, the gap between sessions that maximises retention is a fraction of that interval, and that fraction shrinks as the interval grows. For a target of about one month, gaps of about 1, 3 and 7 days fall in or near the high-retention region.",
+            "construct": "the spacing lag × retention interval interaction (the \"temporal ridgeline\")",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Cepeda et al. (2008)",
+                "doi": "10.1111/j.1467-9280.2008.02209.x",
+                "type": "experiment"
+              },
+              {
+                "cite": "Cepeda et al. (2006)",
+                "doi": "10.1037/0033-2909.132.3.354",
+                "type": "meta-analysis"
+              }
+            ],
+            "rationale": "research/memory-retrieval.md#spacing-gap-ratio"
+          },
+          {
+            "id": "memory-retrieval/expanding-vs-uniform",
+            "load_bearing": false,
+            "transfer": "adjacent",
+            "claim": "An expanding schedule of retrieval gaps (for example 1d → 3d → 7d) produces better long-term retention than a uniform schedule with the same total spacing.",
+            "construct": "expanding vs equal-interval retrieval practice",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Karpicke & Roediger (2007)",
+                "doi": "10.1037/0278-7393.33.4.704",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/memory-retrieval.md#expanding-vs-uniform"
+          },
+          {
+            "id": "memory-retrieval/successive-relearning",
+            "load_bearing": false,
+            "transfer": "adjacent",
+            "claim": "Retrieving items to a criterion across several spaced sessions, and dropping or targeting items according to the previous session's failures, gives durable retention. Returns diminish after about three relearning sessions.",
+            "construct": "successive relearning",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Rawson & Dunlosky (2012)",
+                "doi": "10.1007/s10648-012-9203-1",
+                "type": "review"
+              },
+              {
+                "cite": "Kornell & Bjork (2008)",
+                "doi": "10.1080/09658210701763899",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/memory-retrieval.md#successive-relearning"
+          },
+          {
+            "id": "memory-retrieval/interleaving-confusable",
+            "load_bearing": false,
+            "transfer": "adjacent",
+            "claim": "Interleaving practice across confusable categories or problem types improves later discrimination and problem solving compared with blocked practice. The benefit shrinks, or reverses, for dissimilar categories and for verbal or expository material.",
+            "construct": "interleaving (discriminative contrast)",
+            "grade": "B",
+            "effect": "moderate",
+            "sources": [
+              {
+                "cite": "Brunmair & Richter (2019)",
+                "doi": "10.1037/bul0000209",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Kornell & Bjork (2008)",
+                "doi": "10.1111/j.1467-9280.2008.02127.x",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/memory-retrieval.md#interleaving-confusable"
+          }
+        ],
+        "helps": "when material has to be remembered for weeks: recalling it across sessions days apart, and recalling before rereading, beats massing the same study into one sitting",
+        "backfires": "when sessions bunch together or the first recall comes too soon after study, when word lists or notes from unrelated categories are mixed in one round, or when the schedule is dropped for cramming because massed study feels more effective"
+      }
+    },
+    {
+      "id": "incubation",
+      "name": "Incubation",
+      "tags": ["create"],
+      "budget": 10,
+      "opening": ["cover"],
+      "closing": ["commit", "question-queue", "return-checklist"],
+      "split_on": "step-away",
+      "phase_rules": [
+        {
+          "section": 0,
+          "phases": ["diverge", "either"],
+          "why": "the first half is for generating; judging waits until after the break",
+          "claim": "creativity-fixation/deferred-judgement",
+          "forbid": [
+            {
+              "id": "timer",
+              "why": "time pressure while generating ideas reduces creative output",
+              "claim": "creativity-fixation/time-pressure-divergent"
+            }
+          ]
+        },
+        {
+          "section": 1,
+          "phases": ["converge", "either"],
+          "why": "the second half is for judging what the first half produced",
+          "claim": "creativity-fixation/deferred-judgement"
+        }
+      ],
+      "why": {
+        "split": {
+          "text": "a real break between generating and judging helps open-ended problems",
+          "claim": "creativity-fixation/incubation-effect"
+        }
+      },
+      "grounding": {
+        "claims": [
+          {
+            "id": "creativity-fixation/incubation-effect",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Setting a creative problem aside for a break, then returning to it, increases solutions or ideas compared with working on it continuously for the same total time.",
+            "construct": "the incubation effect",
+            "grade": "B",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Sio & Ormerod (2009)",
+                "doi": "10.1037/a0014212",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Baird et al. (2012)",
+                "doi": "10.1177/0956797612446024",
+                "type": "experiment"
+              },
+              {
+                "cite": "Cai et al. (2009)",
+                "doi": "10.1073/pnas.0900271106",
+                "type": "experiment"
+              },
+              {
+                "cite": "Nieuwenstein et al. (2015)",
+                "doi": "10.1017/s1930297500003144",
+                "type": "rrr"
+              }
+            ],
+            "rationale": "research/creativity-fixation.md#incubation-effect"
+          },
+          {
+            "id": "creativity-fixation/sleep-insight",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Sleeping between first exposure to a problem and a later retest increases the likelihood of discovering a hidden solution or rule, compared with an equal period awake.",
+            "construct": "sleep and insight (offline consolidation)",
+            "grade": "C",
+            "effect": "large",
+            "sources": [
+              {
+                "cite": "Wagner et al. (2004)",
+                "doi": "10.1038/nature02223",
+                "type": "experiment"
+              },
+              {
+                "cite": "Cai et al. (2009)",
+                "doi": "10.1073/pnas.0900271106",
+                "type": "experiment"
+              },
+              {
+                "cite": "Sio, Monaghan & Ormerod (2013)",
+                "doi": "10.3758/s13421-012-0256-7",
+                "type": "experiment"
+              },
+              {
+                "cite": "Lacaux et al. (2021)",
+                "doi": "10.1126/sciadv.abj5866",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/creativity-fixation.md#sleep-insight"
+          },
+          {
+            "id": "creativity-fixation/walking-divergent",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Walking, compared with sitting, increases divergent-thinking output during the walk and shortly after it.",
+            "construct": "walking / acute physical activity and divergent thinking",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Oppezzo & Schwartz (2014)",
+                "doi": "10.1037/a0036577",
+                "type": "experiment"
+              },
+              {
+                "cite": "Frith et al. (2019)",
+                "doi": "10.5964/ejop.v15i4.1773",
+                "type": "review"
+              }
+            ],
+            "rationale": "research/creativity-fixation.md#walking-divergent"
+          },
+          {
+            "id": "creativity-fixation/deferred-judgement",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Separating idea generation from evaluation, with judgement deferred until generation is done, increases the number of ideas without reducing, and sometimes increasing, the number of good ones.",
+            "construct": "deferral of judgement; diverge/converge separation",
+            "grade": "D",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Osborn (1953), Applied Imagination",
+                "isbn": "0684413930",
+                "type": "practice"
+              }
+            ],
+            "rationale": "research/creativity-fixation.md#deferred-judgement"
+          },
+          {
+            "id": "creativity-fixation/time-pressure-divergent",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Time pressure during idea generation reduces creative, divergent output.",
+            "construct": "time pressure and creativity (challenge vs hindrance stressors)",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Byron, Khazanchi & Nazarian (2010)",
+                "doi": "10.1037/a0017868",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Baer & Oldham (2006)",
+                "doi": "10.1037/0021-9010.91.4.963",
+                "type": "experiment"
+              },
+              {
+                "cite": "Moreau & Dahl (2005)",
+                "doi": "10.1086/429597",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/creativity-fixation.md#time-pressure-divergent"
+          },
+          {
+            "id": "creativity-fixation/incubation-conditions",
+            "load_bearing": false,
+            "transfer": "adjacent",
+            "claim": "Incubation benefits are larger (a) after a longer preparation period, (b) with longer breaks up to a point, and (c) when the break is filled with a low-demand activity rather than rest or a demanding task.",
+            "construct": "incubation moderators",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Sio & Ormerod (2009)",
+                "doi": "10.1037/a0014212",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Baird et al. (2012)",
+                "doi": "10.1177/0956797612446024",
+                "type": "experiment"
+              },
+              {
+                "cite": "Ellwood et al. (2009)",
+                "doi": "10.1080/10400410802633368",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/creativity-fixation.md#incubation-conditions"
+          }
+        ],
+        "helps": "when an open-ended problem has been worked properly before the break and the break is spent on something easy and different; across studies a break helps on average, more for divergent tasks than for insight puzzles",
+        "backfires": "when preparation was too short, when the break is filled with demanding work, or when the problem is easy or well-structured: sleep helped mainly on hard problems, and walking lifted divergent but not convergent thinking"
+      }
+    },
+    {
+      "id": "ritual",
+      "name": "Ritual",
+      "tags": ["reflect", "focus"],
+      "budget": 1,
+      "closing": [],
+      "phase_rules": [],
+      "allow": ["check-in", "scoresheet"],
+      "why": {
+        "allow": {
+          "text": "a Ritual is one identical page, so change shows up across returns",
+          "claim": "planning-self-regulation/progress-monitoring"
+        }
+      },
+      "grounding": {
+        "claims": [
+          {
+            "id": "planning-self-regulation/progress-monitoring",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Monitoring progress towards a goal increases goal attainment, and more so when the progress is physically recorded.",
+            "construct": "progress monitoring / self-monitoring",
+            "grade": "B",
+            "effect": "small",
+            "sources": [
+              {
+                "cite": "Harkin et al. (2016)",
+                "doi": "10.1037/bul0000025",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Michie et al. (2009)",
+                "doi": "10.1037/a0016136",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Burke, Wang & Sevick (2011)",
+                "doi": "10.1016/j.jada.2010.10.008",
+                "type": "review"
+              }
+            ],
+            "rationale": "research/planning-self-regulation.md#progress-monitoring"
+          },
+          {
+            "id": "planning-self-regulation/prior-state-recall",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "People recall their earlier attitudes, feelings or confidence as closer to their present state than they were, or as fitting their theory of how they must have changed. A written baseline is therefore needed to see real change.",
+            "construct": "consistency and change biases in autobiographical memory (implicit theories of stability and change)",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Wolfe & Williams (2018)",
+                "doi": "10.1080/17470218.2017.1363792",
+                "type": "experiment"
+              },
+              {
+                "cite": "Ross (1989)",
+                "doi": "10.1037/0033-295X.96.2.341",
+                "type": "theory"
+              }
+            ],
+            "rationale": "research/planning-self-regulation.md#prior-state-recall"
+          },
+          {
+            "id": "perspective-emotion/expressive-writing",
+            "load_bearing": false,
+            "transfer": "analogical",
+            "claim": "Writing about emotional experiences produces small improvements in wellbeing and health outcomes compared with neutral writing.",
+            "construct": "expressive writing",
+            "grade": "B",
+            "effect": "small",
+            "sources": [
+              {
+                "cite": "Frattaroli (2006)",
+                "doi": "10.1037/0033-2909.132.6.823",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Smyth (1998)",
+                "doi": "10.1037/0022-006x.66.1.174",
+                "type": "meta-analysis"
+              }
+            ],
+            "rationale": "research/perspective-emotion.md#expressive-writing"
+          },
+          {
+            "id": "attention-load/resumption-cues",
+            "load_bearing": false,
+            "transfer": "analogical",
+            "claim": "Leaving a visible cue of where you were and what comes next at the point of interruption reduces the time and errors involved in resuming a task.",
+            "construct": "memory for goals; resumption lag",
+            "grade": "B",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Hodgetts & Jones (2006)",
+                "doi": "10.1037/0278-7393.32.5.1120",
+                "type": "experiment"
+              },
+              {
+                "cite": "Monk, Trafton & Boehm-Davis (2008)",
+                "doi": "10.1037/a0014402",
+                "type": "experiment"
+              },
+              {
+                "cite": "Altmann & Trafton (2002)",
+                "doi": "10.1207/s15516709cog2601_2",
+                "type": "theory"
+              }
+            ],
+            "rationale": "research/attention-load.md#resumption-cues"
+          },
+          {
+            "id": "perspective-emotion/ritual-cadence",
+            "load_bearing": false,
+            "transfer": "adjacent",
+            "claim": "Monitoring and reflecting once a week is frequent enough to obtain most of the benefit of progress monitoring, without the adherence drop-off of daily monitoring.",
+            "construct": "monitoring frequency; adherence to self-monitoring",
+            "grade": "D",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Harkin et al. (2016)",
+                "doi": "10.1037/bul0000025",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Burke, Wang & Sevick (2011)",
+                "doi": "10.1016/j.jada.2010.10.008",
+                "type": "review"
+              }
+            ],
+            "rationale": "research/perspective-emotion.md#ritual-cadence"
+          },
+          {
+            "id": "perspective-emotion/ritual-duration",
+            "load_bearing": false,
+            "transfer": "adjacent",
+            "claim": "A reflective writing session of ten minutes or less is enough to obtain the benefits of monitoring and reflective writing.",
+            "construct": "dose in expressive writing and reflection",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Burton & King (2008)",
+                "doi": "10.1348/135910707x250910",
+                "type": "experiment"
+              },
+              {
+                "cite": "Frattaroli (2006)",
+                "doi": "10.1037/0033-2909.132.6.823",
+                "type": "meta-analysis"
+              }
+            ],
+            "rationale": "research/perspective-emotion.md#ritual-duration"
+          }
+        ],
+        "helps": "when the same question is worth coming back to: an identical page at each return is progress monitoring on paper, a small but real help, and keeps a written baseline memory cannot quietly revise, while the weekly cadence and the ten-minute length are design choices, not tested doses",
+        "backfires": "when the return becomes a chore and is abandoned, when the rows turn into targets, or when the Saving State line is vague, since a cue that no longer matches where you were can slow resumption more than no cue"
+      }
+    },
+    {
+      "id": "proof",
+      "name": "Proof",
+      "tags": ["review"],
+      "budget": 10,
+      "closing": [],
+      "phase_rules": [],
+      "allow": ["proof", "question-queue"],
+      "why": {
+        "allow": {
+          "text": "a Proof is the document itself, one numbered page after another",
+          "claim": "reading-review/automation-bias"
+        }
+      },
+      "grounding": {
+        "claims": [
+          {
+            "id": "reading-review/automation-bias",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "People reviewing automated or AI output accept its errors at elevated rates, both acting on wrong outputs (commission) and missing unflagged problems (omission). Interventions that force active evaluation reduce this overreliance.",
+            "construct": "automation bias and complacency; cognitive forcing",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Parasuraman & Manzey (2010)",
+                "doi": "10.1177/0018720810376055",
+                "type": "review"
+              },
+              {
+                "cite": "Lyell & Coiera (2016)",
+                "doi": "10.1093/jamia/ocw105",
+                "type": "review"
+              },
+              {
+                "cite": "Goddard, Roudsari & Wyatt (2012)",
+                "doi": "10.1136/amiajnl-2011-000089",
+                "type": "review"
+              },
+              {
+                "cite": "Buçinca, Malaya & Gajos (2021)",
+                "doi": "10.1145/3449287",
+                "type": "experiment"
+              },
+              {
+                "cite": "Mosier et al. (1998)",
+                "doi": "10.1207/s15327108ijap0801_3",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/reading-review.md#automation-bias"
+          },
+          {
+            "id": "reading-review/paper-vs-screen",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Reading on paper yields better comprehension than reading the same text on a screen, especially for expository text read under time limits.",
+            "construct": "the screen inferiority effect",
+            "grade": "B",
+            "effect": "small",
+            "sources": [
+              {
+                "cite": "Clinton (2019)",
+                "doi": "10.1111/1467-9817.12269",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Delgado et al. (2018)",
+                "doi": "10.1016/j.edurev.2018.09.003",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Ackerman & Goldsmith (2011)",
+                "doi": "10.1037/a0022086",
+                "type": "experiment"
+              },
+              {
+                "cite": "Calvo-Ferrer (2022)",
+                "doi": "10.7203/qf.0.24620",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/reading-review.md#paper-vs-screen"
+          },
+          {
+            "id": "reading-review/proofreading-marks",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "A fixed, shared set of marks, each mapped to one editing action, is used reliably by writers and editors to communicate corrections on paper.",
+            "construct": "proofreaders' marks as a mark → action convention",
+            "grade": "D",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Christiansen (2009), AMA Manual of Style",
+                "doi": "10.1093/jama/9780195176339.021.316",
+                "type": "practice"
+              }
+            ],
+            "rationale": "research/reading-review.md#proofreading-marks"
+          },
+          {
+            "id": "reading-review/consistent-mapping",
+            "load_bearing": false,
+            "transfer": "analogical",
+            "claim": "Keeping each mark's or colour's meaning constant across contexts leads to faster, more accurate use than mappings that change with context, which provoke mode errors.",
+            "construct": "consistent vs varied mapping (automaticity); mode errors",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Sarter & Woods (1995)",
+                "doi": "10.1518/001872095779049516",
+                "type": "review"
+              },
+              {
+                "cite": "Norman (1981)",
+                "doi": "10.1037/0033-295x.88.1.1",
+                "type": "theory"
+              }
+            ],
+            "rationale": "research/reading-review.md#consistent-mapping"
+          }
+        ],
+        "helps": "when an AI draft needs checking point by point: marking every paragraph forces an active judgement on each, which reduced overreliance on AI in one experiment, and paper gives slightly better comprehension of expository text; the mark conventions themselves are untested craft",
+        "backfires": "when marking turns into rubber-stamping, when the forcing step feels onerous enough to skip (users rated the most effective forcing designs least favourably), or when the job is catching surface errors, which one study found easier on screen"
+      }
+    }
+  ]
+}

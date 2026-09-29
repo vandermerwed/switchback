@@ -1,0 +1,5 @@
+{
+  "variant": "index-cards",
+  "kit": { "index_cards": true },
+  "data": { "items": ["Offline mode", "Retry queue"], "columns": ["now", "later", "cut"] }
+}

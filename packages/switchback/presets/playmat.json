@@ -1,0 +1,89 @@
+{
+  "id": "playmat",
+  "kind": "preset",
+  "extends": "zones",
+  "name": "Playmat",
+  "tags": ["plan", "decide"],
+  "data": {
+    "zones": ["Inbox", "Doing", "Done", "Parked"]
+  },
+  "attribution": "Switchback original (board-game playmat metaphor)",
+  "licence": "original; no restriction",
+  "grounding": {
+    "claims": [
+      {
+        "id": "externalisation-embodiment/common-region",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Items placed inside the same bounded region are perceived as belonging together, even against other grouping cues, so labelled zones make category membership readable at a glance.",
+        "construct": "the Gestalt principle of common region (perceptual grouping)",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Wagemans et al. (2012)",
+            "doi": "10.1037/a0029333",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/externalisation-embodiment.md#common-region"
+      },
+      {
+        "id": "externalisation-embodiment/spatial-externalisation",
+        "load_bearing": true,
+        "transfer": "analogical",
+        "claim": "Assigning categories to fixed places on a surface lets people keep track of and retrieve which items belong where with less effort than holding the categories in mind or in a list.",
+        "construct": "spatial externalisation; memory for location",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Malone (1983)",
+            "doi": "10.1145/357423.357430",
+            "type": "experiment"
+          },
+          {
+            "cite": "Andrews, Endert & North (2010)",
+            "doi": "10.1145/1753326.1753336",
+            "type": "experiment"
+          },
+          {
+            "cite": "Twomey & Kroneisen (2021)",
+            "doi": "10.1177/1747021821993457",
+            "type": "meta-analysis"
+          }
+        ],
+        "rationale": "research/externalisation-embodiment.md#spatial-externalisation"
+      },
+      {
+        "id": "externalisation-embodiment/epistemic-action",
+        "load_bearing": false,
+        "transfer": "analogical",
+        "claim": "Physically rearranging external objects to think, rather than to reach a physical goal, reduces the cognitive cost of a problem and improves or speeds its solution compared with manipulating the same elements mentally.",
+        "construct": "epistemic action; interactivity in problem solving",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Kirsh & Maglio (1994)",
+            "doi": "10.1207/s15516709cog1804_1",
+            "type": "experiment"
+          },
+          {
+            "cite": "Vallée-Tourangeau et al. (2016)",
+            "doi": "10.1016/j.actpsy.2016.08.006",
+            "type": "experiment"
+          },
+          {
+            "cite": "Guthrie, Harris & Vallée-Tourangeau (2015)",
+            "doi": "10.1515/slgr-2015-0019",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/externalisation-embodiment.md#epistemic-action"
+      }
+    ],
+    "helps": "when several live threads need a fixed place on the table (inbox, doing, done, parked) and moving a piece records a change of state; space works as an external memory, but its advantage over a list is untested",
+    "backfires": "when the four stages do not fit the work, so the mat freezes a false taxonomy, or when moving a piece stands in for deciding what to do with it"
+  }
+}

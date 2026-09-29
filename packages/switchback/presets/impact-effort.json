@@ -1,0 +1,71 @@
+{
+  "id": "impact-effort",
+  "kind": "preset",
+  "extends": "matrix-2x2",
+  "name": "Impact / effort",
+  "tags": ["decide", "plan"],
+  "data": {
+    "x_axis": ["low effort", "high effort"],
+    "y_axis": ["low impact", "high impact"],
+    "quadrants": ["Quick wins", "Major projects", "Fill-ins", "Thankless tasks"]
+  },
+  "attribution": "Traditional",
+  "licence": "idea; no restriction",
+  "grounding": {
+    "claims": [
+      {
+        "id": "decision-diagnosis/two-axis-mapping",
+        "load_bearing": true,
+        "transfer": "analogical",
+        "claim": "Placing items on a spatial layout defined by two explicit dimensions makes their relative standing on both dimensions easier to judge and compare than a list or table does.",
+        "construct": "diagrammatic representation; graphic organisers",
+        "grade": "D",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Larkin & Simon (1987)",
+            "doi": "10.1111/j.1551-6708.1987.tb00863.x",
+            "type": "theory"
+          }
+        ],
+        "rationale": "research/decision-diagnosis.md#two-axis-mapping"
+      },
+      {
+        "id": "externalisation-embodiment/common-region",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Items placed inside the same bounded region are perceived as belonging together, even against other grouping cues, so labelled zones make category membership readable at a glance.",
+        "construct": "the Gestalt principle of common region (perceptual grouping)",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Wagemans et al. (2012)",
+            "doi": "10.1037/a0029333",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/externalisation-embodiment.md#common-region"
+      },
+      {
+        "id": "planning-self-regulation/task-unpacking",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Breaking a task into its ordered component steps before predicting when it will be done reduces optimistic bias in completion-time predictions.",
+        "construct": "unpacking; the planning fallacy",
+        "grade": "D",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Buehler, Griffin & Ross (1994)",
+            "doi": "10.1037/0022-3514.67.3.366",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/planning-self-regulation.md#task-unpacking"
+      }
+    ],
+    "helps": "when choosing what to do first among many options; it inherits the two-by-two's untested diagram craft, so treat each placement as an estimate to question",
+    "backfires": "when effort is placed from optimistic guesses, since people routinely underestimate how long their own tasks take, so supposed quick wins crowd the low-effort side"
+  }
+}

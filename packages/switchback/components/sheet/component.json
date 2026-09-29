@@ -1,0 +1,170 @@
+{
+  "id": "sheet",
+  "kind": "page",
+  "name": "Annotatable sheet",
+  "intent": "Any content on one annotatable page — the generic escape hatch.",
+  "when": "marking up a spec, essay, diagram, or checklist that isn't a workbook page",
+  "tags": ["review"],
+  "phase": "either",
+  "listed": false,
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write", "mark up"],
+    "surface": "desk",
+    "timebox": "10 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "blocks": {
+        "type": "array",
+        "maxItems": 40,
+        "items": {
+          "type": "object",
+          "required": ["type"],
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "enum": ["heading", "para", "lines", "box", "checklist", "callout", "table"]
+            },
+            "text": {
+              "type": "string",
+              "maxLength": 2000
+            },
+            "count": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 30
+            },
+            "label": {
+              "type": "string",
+              "maxLength": 40
+            },
+            "height": {
+              "type": "number",
+              "minimum": 10,
+              "maximum": 250
+            },
+            "items": {
+              "type": "array",
+              "minItems": 0,
+              "maxItems": 20,
+              "items": {
+                "type": "string",
+                "maxLength": 200
+              }
+            },
+            "tone": {
+              "enum": ["info", "warn", "ask"]
+            },
+            "headings": {
+              "type": "array",
+              "minItems": 0,
+              "maxItems": 8,
+              "items": {
+                "type": "string",
+                "maxLength": 40
+              }
+            },
+            "rows": {
+              "type": "array",
+              "maxItems": 30,
+              "items": {
+                "type": "array",
+                "minItems": 0,
+                "maxItems": 8,
+                "items": {
+                  "type": "string",
+                  "maxLength": 200
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "readback": "Depends on the content; the legend strip still tells you what the human's ink means.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "reading-review/paper-vs-screen",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Reading on paper yields better comprehension than reading the same text on a screen, especially for expository text read under time limits.",
+        "construct": "the screen inferiority effect",
+        "grade": "B",
+        "effect": "small",
+        "sources": [
+          {
+            "cite": "Clinton (2019)",
+            "doi": "10.1111/1467-9817.12269",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Delgado et al. (2018)",
+            "doi": "10.1016/j.edurev.2018.09.003",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Ackerman & Goldsmith (2011)",
+            "doi": "10.1037/a0022086",
+            "type": "experiment"
+          },
+          {
+            "cite": "Calvo-Ferrer (2022)",
+            "doi": "10.7203/qf.0.24620",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/reading-review.md#paper-vs-screen"
+      },
+      {
+        "id": "reading-review/automation-bias",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "People reviewing automated or AI output accept its errors at elevated rates, both acting on wrong outputs (commission) and missing unflagged problems (omission). Interventions that force active evaluation reduce this overreliance.",
+        "construct": "automation bias and complacency; cognitive forcing",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Parasuraman & Manzey (2010)",
+            "doi": "10.1177/0018720810376055",
+            "type": "review"
+          },
+          {
+            "cite": "Lyell & Coiera (2016)",
+            "doi": "10.1093/jamia/ocw105",
+            "type": "review"
+          },
+          {
+            "cite": "Goddard, Roudsari & Wyatt (2012)",
+            "doi": "10.1136/amiajnl-2011-000089",
+            "type": "review"
+          },
+          {
+            "cite": "Buçinca, Malaya & Gajos (2021)",
+            "doi": "10.1145/3449287",
+            "type": "experiment"
+          },
+          {
+            "cite": "Mosier et al. (1998)",
+            "doi": "10.1207/s15327108ijap0801_3",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/reading-review.md#automation-bias"
+      }
+    ],
+    "helps": "when an expository text has to be understood, not skimmed: reading on paper gives slightly better comprehension than reading on screen, a small effect, largest for informational text",
+    "backfires": "when the job is hunting for typos and slips, which the one error-detection study found easier on screen, or when the page is read without actively checking each point, which lets an AI draft's errors through"
+  }
+}

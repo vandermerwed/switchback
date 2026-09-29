@@ -1,0 +1,235 @@
+{
+  "id": "tokens",
+  "kind": "piece",
+  "name": "Tokens",
+  "intent": "Give abstract quantities — votes, effort, risk, budget — a physical body that can be spent and moved.",
+  "when": "the session allocates or spends finite resources",
+  "tags": ["decide"],
+  "phase": "converge",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["cut", "place", "move"],
+    "surface": "table",
+    "timebox": "2 min"
+  },
+  "variants": [
+    {
+      "id": "cut-out",
+      "requires": ["scissors"],
+      "label": "Cut out paper tokens"
+    },
+    {
+      "id": "coins",
+      "requires": ["coins"],
+      "label": "Use coins as tokens",
+      "prompt": "Use coins as tokens; label a sticky note or a box for each thing you are spending them on, and place a coin as you spend."
+    },
+    {
+      "id": "tally",
+      "requires": [],
+      "label": "Spend pen tallies",
+      "prompt": "No tokens: spend your pen tallies across the boxes instead, and cross one out each time you move it.",
+      "readback": "The crossed-out tallies are the record: photograph the page, then compare the box totals against each other."
+    },
+    {
+      "id": "countdown",
+      "requires": [],
+      "label": "Cross off one per remaining session",
+      "prompt": "Cross off one mark per session left in this arc, and write what the next two sessions should reach.",
+      "readback": "A milestone that goes several returns without being crossed off or updated means the arc has stalled; ask what's blocking the next mark, not just how many are left.",
+      "grounding": {
+        "claims": [
+          {
+            "id": "decision-diagnosis/tangible-allocation",
+            "load_bearing": true,
+            "transfer": "analogical",
+            "claim": "Distributing a fixed budget of tokens across options makes trade-offs and opportunity costs explicit, and yields more differentiated priorities than rating each option independently.",
+            "construct": "constant-sum allocation vs. independent ratings; opportunity-cost neglect",
+            "grade": "C",
+            "effect": "small",
+            "sources": [
+              {
+                "cite": "Krosnick & Alwin (1988)",
+                "doi": "10.1086/269128",
+                "type": "experiment"
+              },
+              {
+                "cite": "Alwin & Krosnick (1985)",
+                "doi": "10.1086/268949",
+                "type": "experiment"
+              },
+              {
+                "cite": "Frederick, Novemsky, Wang, Dhar & Nowlis (2009)",
+                "doi": "10.1086/599764",
+                "type": "experiment"
+              },
+              {
+                "cite": "Maguire, Persson & Tinghög (2023)",
+                "doi": "10.1007/s40881-023-00134-6",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Read, Olivola & Hardisty (2017)",
+                "doi": "10.1287/mnsc.2016.2547",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/decision-diagnosis.md#tangible-allocation"
+          },
+          {
+            "id": "planning-self-regulation/goal-gradient",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Effort towards a goal increases as the remaining distance to it shrinks, and making the remaining distance visible strengthens the effect.",
+            "construct": "the goal-gradient effect; perceived goal distance",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Kivetz, Urminsky & Zheng (2006)",
+                "doi": "10.1509/jmkr.43.1.39",
+                "type": "experiment"
+              },
+              {
+                "cite": "Bonezzi, Brendl & De Angelis (2011)",
+                "doi": "10.1177/0956797611404899",
+                "type": "experiment"
+              },
+              {
+                "cite": "Fishbach & Dhar (2005)",
+                "doi": "10.1086/497548",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/planning-self-regulation.md#goal-gradient"
+          },
+          {
+            "id": "externalisation-embodiment/epistemic-action",
+            "load_bearing": false,
+            "transfer": "analogical",
+            "claim": "Physically rearranging external objects to think, rather than to reach a physical goal, reduces the cognitive cost of a problem and improves or speeds its solution compared with manipulating the same elements mentally.",
+            "construct": "epistemic action; interactivity in problem solving",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Kirsh & Maglio (1994)",
+                "doi": "10.1207/s15516709cog1804_1",
+                "type": "experiment"
+              },
+              {
+                "cite": "Vallée-Tourangeau et al. (2016)",
+                "doi": "10.1016/j.actpsy.2016.08.006",
+                "type": "experiment"
+              },
+              {
+                "cite": "Guthrie, Harris & Vallée-Tourangeau (2015)",
+                "doi": "10.1515/slgr-2015-0019",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/externalisation-embodiment.md#epistemic-action"
+          }
+        ],
+        "helps": "when a Series or Ritual arc has a fixed number of sessions left and nearer milestones sit beside the count; effort tends to rise as a goal gets close, which the shrinking pile makes visible, though this has not been tested without an external reward",
+        "backfires": "when many sessions remain, since motivation tends to dip in the middle of the distance, or when a nearly empty pile invites coasting before the arc is done"
+      }
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "labels": {
+        "type": "array",
+        "minItems": 0,
+        "maxItems": 24,
+        "items": {
+          "type": "string",
+          "maxLength": 24
+        }
+      },
+      "count": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 24
+      },
+      "milestone": {
+        "type": "string",
+        "maxLength": 60
+      }
+    }
+  },
+  "prompt": "Cut out the tokens; use them to mark effort, votes, or risk as you go.",
+  "readback": "Token positions encode allocation — photograph the whole board, not just the page.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "decision-diagnosis/tangible-allocation",
+        "load_bearing": true,
+        "transfer": "analogical",
+        "claim": "Distributing a fixed budget of tokens across options makes trade-offs and opportunity costs explicit, and yields more differentiated priorities than rating each option independently.",
+        "construct": "constant-sum allocation vs. independent ratings; opportunity-cost neglect",
+        "grade": "C",
+        "effect": "small",
+        "sources": [
+          {
+            "cite": "Krosnick & Alwin (1988)",
+            "doi": "10.1086/269128",
+            "type": "experiment"
+          },
+          {
+            "cite": "Alwin & Krosnick (1985)",
+            "doi": "10.1086/268949",
+            "type": "experiment"
+          },
+          {
+            "cite": "Frederick, Novemsky, Wang, Dhar & Nowlis (2009)",
+            "doi": "10.1086/599764",
+            "type": "experiment"
+          },
+          {
+            "cite": "Maguire, Persson & Tinghög (2023)",
+            "doi": "10.1007/s40881-023-00134-6",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Read, Olivola & Hardisty (2017)",
+            "doi": "10.1287/mnsc.2016.2547",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/decision-diagnosis.md#tangible-allocation"
+      },
+      {
+        "id": "externalisation-embodiment/epistemic-action",
+        "load_bearing": false,
+        "transfer": "analogical",
+        "claim": "Physically rearranging external objects to think, rather than to reach a physical goal, reduces the cognitive cost of a problem and improves or speeds its solution compared with manipulating the same elements mentally.",
+        "construct": "epistemic action; interactivity in problem solving",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Kirsh & Maglio (1994)",
+            "doi": "10.1207/s15516709cog1804_1",
+            "type": "experiment"
+          },
+          {
+            "cite": "Vallée-Tourangeau et al. (2016)",
+            "doi": "10.1016/j.actpsy.2016.08.006",
+            "type": "experiment"
+          },
+          {
+            "cite": "Guthrie, Harris & Vallée-Tourangeau (2015)",
+            "doi": "10.1515/slgr-2015-0019",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/externalisation-embodiment.md#epistemic-action"
+      }
+    ],
+    "helps": "when a trade-off is abstract and every option could be rated highly; a fixed budget forces the differences that ratings let people skip, and cues to consider what a choice displaces shift decisions, though that effect is small and physical tokens themselves are untested",
+    "backfires": "when there are too many quantities to tokenise, or when a token count is read as a measurement rather than a rough allocation; neither has been studied"
+  }
+}

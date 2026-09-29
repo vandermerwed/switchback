@@ -1,0 +1,45 @@
+{
+  "grounding": {
+    "claims": [
+      {
+        "id": "externalisation-embodiment/handwriting-vs-typing",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Writing by hand rather than typing improves conceptual understanding and recall of the material written.",
+        "construct": "longhand vs laptop note-taking; the encoding effects of handwriting",
+        "grade": "C",
+        "effect": "small",
+        "sources": [
+          {
+            "cite": "Mueller & Oppenheimer (2014)",
+            "doi": "10.1177/0956797614524581",
+            "type": "experiment"
+          },
+          {
+            "cite": "Urry et al. (2021)",
+            "doi": "10.1177/0956797620965541",
+            "type": "experiment"
+          },
+          {
+            "cite": "Flanigan et al. (2024)",
+            "doi": "10.1007/s10648-024-09914-w",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Van der Weel & van der Meer (2024)",
+            "doi": "10.3389/fpsyg.2023.1219945",
+            "type": "experiment"
+          },
+          {
+            "cite": "Mangen et al. (2015)",
+            "doi": "10.17239/jowr-2015.07.02.1",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/externalisation-embodiment.md#handwriting-vs-typing"
+      }
+    ],
+    "helps": "when the page is worked by hand and the aim is to think it through in your own words; any advantage of handwriting over typing is small and contested, so no page rests on it",
+    "backfires": "when writing by hand slows you so much that you get less down: in note-taking studies writing more went with better scores, and the direct replication of the best-known handwriting study found no advantage"
+  }
+}

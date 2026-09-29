@@ -1,0 +1,66 @@
+{
+  "id": "small-experiment",
+  "kind": "page",
+  "name": "Small experiment",
+  "intent": "Test a feared prediction with a small, safe action in the real world, then compare what happened with what you expected.",
+  "when": "something you avoid but plausibly want; only in styles with a return, because the digest happens after the action",
+  "tags": ["plan", "reflect"],
+  "phase": "converge",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write", "circle"],
+    "surface": "desk",
+    "timebox": "10 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "aversion": {
+        "type": "string",
+        "maxLength": 120
+      }
+    }
+  },
+  "prompt": "Predict, shrink it until it's safe, accept either outcome, do it, then compare.",
+  "readback": "Compare the prediction with what happened, not with how it felt. The next experiment's size follows from the digest: bigger, the same again, or stop. Stop is a legitimate result.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "planning-self-regulation/graduated-self-experiment",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Deliberately testing a feared prediction with a small, planned real-world action, and then comparing what happened with what was expected, reduces avoidance and revises the expectation. The comparison step is doing work, not just the exposure.",
+        "construct": "behavioural experiments; expectancy violation (inhibitory learning); mastery experiences (self-efficacy)",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Norton & Price (2007)",
+            "doi": "10.1097/01.nmd.0000253843.70149.9a",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Haug, Nordgreen, Öst & Havik (2012)",
+            "doi": "10.1016/j.cpr.2012.04.002",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Craske et al. (2014)",
+            "doi": "10.1016/j.brat.2014.04.006",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/planning-self-regulation.md#graduated-self-experiment"
+      }
+    ],
+    "helps": "when an aversion rests on a prediction you can test cheaply: writing the prediction down, running one small safe probe and comparing the result at the return follows how exposure work is structured, which helps when self-guided but less than with a guide; the comparison step's own contribution is untested",
+    "backfires": "when it is used on a diagnosed anxiety problem, which it does not treat, when the probe is too big to feel safe, or when the result is never set against the prediction; whether an unguided probe can make the fear worse is untested"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "data": {
+    "blocks": [
+      { "kind": "p", "n": 1, "text": "The first paragraph." },
+      { "kind": "h", "text": "A heading" },
+      { "kind": "p", "n": 2, "text": "A second paragraph." },
+      { "kind": "p", "n": 3, "text": "The start of a long paragraph." },
+      { "kind": "p", "n": 3, "cont": true, "text": "The rest of that long paragraph, continued." },
+      { "kind": "code", "n": 4, "text": "const cache = new Map(); cache.set(key, value);" }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "reading-review/paper-vs-screen": {
+    "result": "downgraded",
+    "from": "A",
+    "to": "B",
+    "reason": "downgraded A→B: tie-break 4 applies. Delgado et al. 2018 report I² = 72.24 for between-participant studies and I² = 89.88 for within-participant studies, which had no moderator analysis (10.1016/j.edurev.2018.09.003). Their prediction intervals span zero (−.56 to .14, and −.90 to .47), and they note \"clearly unexplained variance\". The newest meta-analysis, by the same group, finds g = −0.11 for handheld devices, with I² = 94.39 (Salmerón et al. 2024; 10.1037/edu0000830). It also reports that tablet studies varying the time frame \"resulted in null effects\", so the \"under time limits\" clause is unsettled too.",
+    "sources": [
+      {
+        "cite": "Delgado, Vargas, Ackerman & Salmerón (2018)",
+        "doi": "10.1016/j.edurev.2018.09.003"
+      },
+      {
+        "cite": "Salmerón, Altamura, Delgado, Karagiorgi & Vargas (2024)",
+        "doi": "10.1037/edu0000830"
+      }
+    ],
+    "helps_overclaim": "sheet: the displayed grade falls from A to B. Its helps text (\"slightly better comprehension ... a small effect\") remains accurate, and for handheld devices the effect is below g = 0.2 (Salmerón et al. 2024), so tie-break 7 would apply there."
+  },
+  "reading-review/automation-bias": {
+    "result": "downgraded",
+    "from": "B",
+    "to": "C",
+    "reason": "downgraded B→C: the B fits only the claim's first sentence. The second sentence, that forcing interventions reduce overreliance, rests on one experiment (Buçinca et al. 2021, N = 199; 10.1145/3449287). Against it, automation bias \"cannot be prevented by training or instructions\" (Parasuraman & Manzey 2010; 10.1177/0018720810376055), and Mosier et al.'s accountability manipulation had no effect. That is few studies with mixed results.",
+    "sources": [
+      {
+        "cite": "Buçinca, Malaya & Gajos (2021)",
+        "doi": "10.1145/3449287"
+      },
+      {
+        "cite": "Parasuraman & Manzey (2010)",
+        "doi": "10.1177/0018720810376055"
+      }
+    ],
+    "helps_overclaim": null
+  },
+  "reading-review/proofreading-marks": {
+    "result": "confirmed",
+    "from": "D",
+    "to": "D",
+    "reason": "confirmed: the notes contain no empirical test of whether the marks are used reliably, so tie-break 6 fixes the grade at D, with the AMA chapter as its one verified practice source.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "reading-review/consistent-mapping": {
+    "result": "confirmed",
+    "from": "C",
+    "to": "C",
+    "reason": "confirmed: C stands. Only Norman (theory) and Sarter & Woods count, and the review's empirical cockpit studies support just the mode-error half, on few studies (C claim, no search run).",
+    "sources": [],
+    "helps_overclaim": null
+  }
+}

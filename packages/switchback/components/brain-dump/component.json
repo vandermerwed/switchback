@@ -1,0 +1,135 @@
+{
+  "id": "brain-dump",
+  "kind": "page",
+  "name": "Brain dump",
+  "intent": "Get everything out of the head and onto the page before organising it.",
+  "when": "the problem is foggy, or there are too many threads",
+  "tags": ["create", "diagnose", "reflect"],
+  "phase": "diverge",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write"],
+    "surface": "desk",
+    "timebox": "8 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "seed": {
+        "type": "string",
+        "maxLength": 160
+      },
+      "minutes": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 60
+      }
+    }
+  },
+  "prompt": "{seed|Everything currently in my head about this:}",
+  "readback": "Read for themes and repetition, not correctness. Recurrence is salience.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "externalisation-embodiment/unfulfilled-goal-offload",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Writing down unfinished tasks and concerns, with at least a next step for each, reduces their intrusion into attention during later work. Listing them without any plan does not.",
+        "construct": "the cognitive effects of unfulfilled goals; offload by plan-making",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Masicampo & Baumeister (2011)",
+            "doi": "10.1037/a0024192",
+            "type": "experiment"
+          },
+          {
+            "cite": "Ramirez & Beilock (2011)",
+            "doi": "10.1126/science.1199427",
+            "type": "experiment"
+          },
+          {
+            "cite": "Scullin et al. (2018)",
+            "doi": "10.1037/xge0000374",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/externalisation-embodiment.md#unfulfilled-goal-offload"
+      },
+      {
+        "id": "externalisation-embodiment/free-listing-salience",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "When people freely list what they know or think about a domain, the items they list earlier and more often are the ones most salient to them.",
+        "construct": "free-listing salience (output order and frequency)",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Sousa et al. (2016)",
+            "doi": "10.1371/journal.pone.0165838",
+            "type": "experiment"
+          },
+          {
+            "cite": "Quinlan (2005)",
+            "doi": "10.1177/1525822x05277460",
+            "type": "practice"
+          }
+        ],
+        "rationale": "research/externalisation-embodiment.md#free-listing-salience"
+      },
+      {
+        "id": "attention-load/cognitive-offload",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Keeping task-relevant information in a stable, visible external store, rather than in working memory, improves performance on the concurrent task, at the cost of weaker memory for the offloaded content.",
+        "construct": "cognitive offloading (working-memory offload)",
+        "grade": "B",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Gilbert (2015)",
+            "doi": "10.1080/17470218.2014.972963",
+            "type": "experiment"
+          },
+          {
+            "cite": "Storm & Stone (2015)",
+            "doi": "10.1177/0956797614559285",
+            "type": "experiment"
+          },
+          {
+            "cite": "Sparrow, Liu & Wegner (2011)",
+            "doi": "10.1126/science.1207745",
+            "type": "experiment"
+          },
+          {
+            "cite": "Risko & Gilbert (2016)",
+            "doi": "10.1016/j.tics.2016.07.002",
+            "type": "review"
+          },
+          {
+            "cite": "Meyerhoff, Grinschgl, Papenmeier & Gilbert (2021)",
+            "doi": "10.1186/s41235-021-00298-x",
+            "type": "experiment"
+          },
+          {
+            "cite": "Hesselmann (2020)",
+            "doi": "10.7717/peerj.10325",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/attention-load.md#cognitive-offload"
+      }
+    ],
+    "helps": "when unfinished tasks keep intruding on the work, and each item gets a specific next step written beside it; in the lab, making a specific plan, not just a list, is what quietened unfinished goals (one research group)",
+    "backfires": "when items are listed with no next step, which left the goals active in the one study that tested it, and when the read-back takes what was recent for what matters most: free lists favour recently used items"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "kit": {
+    "scissors": true
+  },
+  "data": {
+    "labels": ["effort", "risk", "yes"],
+    "count": 12
+  }
+}

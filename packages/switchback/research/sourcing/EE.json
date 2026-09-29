@@ -1,0 +1,174 @@
+[
+  {
+    "claim_id": "externalisation-embodiment/unfulfilled-goal-offload",
+    "sources": [
+      { "cite": "Masicampo & Baumeister (2011)", "doi": "10.1037/a0024192", "year": 2011, "type": "experiment", "design": "5+ within-study experiments (intrusive-thought, lexical-accessibility, anagram-performance tasks)", "n": null, "effect": "not reported as standardized effect size in abstract", "finding_quote": "Unfulfilled goals persist in the mind... Unfinished goals caused intrusive thoughts during an unrelated reading task (Studies 1 and 5B), high mental accessibility of goal-related words (Studies 2 and 3), and poor performance on an unrelated anagram task (Study 4). Allowing participants to formulate specific plans for their unfulfilled goals eliminated the various activation and interference effects. Reduction of the effects was mediated by the earnestness of participants' plans.", "url": "https://users.wfu.edu/masicaej/MasicampoBaumeister2011JPSP.pdf" },
+      { "cite": "Ramirez & Beilock (2011)", "doi": "10.1126/science.1199427", "year": 2011, "type": "experiment", "design": "2 lab + 2 randomized field experiments; study 1 n=20", "n": 20, "effect": "not given as standardized d/g in abstract", "finding_quote": "The intervention, a brief expressive writing assignment that occurred immediately before taking an important test, significantly improved students' exam scores, especially for students habitually anxious about test taking. Simply writing about one's worries before a high-stakes exam can boost test scores.", "url": "https://uploads-ssl.webflow.com/59faaf5b01b9500001e95457/5bc56677a8a9d82b40ce3085_RamirezBeilock2011.pdf" },
+      { "cite": "Scullin, Krueger, Ballard, Pruett & Bliwise (2018)", "doi": "10.1037/xge0000374", "year": 2018, "type": "experiment", "design": "polysomnographic RCT, n=57", "n": 57, "effect": "not independently confirmed (press summary only)", "finding_quote": "Writing a 'to-do' list at bedtime may aid in falling asleep... Research compared sleep patterns of participants who took five minutes to write down upcoming duties versus participants who chronicled completed activities.", "url": "https://www.sciencedaily.com/releases/2018/01/180111224021.htm" }
+    ],
+    "replication": [],
+    "backfire": [
+      { "cite": "Scullin, Krueger, Ballard, Pruett & Bliwise (2018)", "doi": "10.1037/xge0000374", "condition": "A bare to-do list (no explicit plan) still produced a measurable benefit (faster sleep onset), and more specific lists predicted faster onset; this is a different outcome (sleep onset latency) than Masicampo & Baumeister's intrusive-thought/interference measures, so it nuances rather than contradicts the claim's 'listing alone does not help' clause." }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "externalisation-embodiment/free-listing-salience",
+    "sources": [
+      { "cite": "Bousfield & Barclay (1950)", "doi": "10.1037/h0059019", "year": 1950, "type": "experiment", "design": "associative-response listing task", "n": null, "effect": "n/a", "finding_quote": "read via secondary description only, not the original text", "url": "" },
+      { "cite": "Romney & D'Andrade (1964)", "doi": "10.1525/aa.1964.66.3.02a00870", "year": 1964, "type": "theory", "design": "componential analysis / kin-term elicitation", "n": null, "effect": "n/a", "finding_quote": "read via secondary description only, not the original text", "url": "" },
+      { "cite": "Smith (1993)", "doi": "10.1177/1525822x9300500301", "year": 1993, "type": "practice", "design": "methodological note defining the weighted free-list salience index", "n": null, "effect": "n/a", "finding_quote": "read via secondary description only, not the original text", "url": "" },
+      { "cite": "Quinlan (2005)", "doi": "10.1177/1525822x05277460", "year": 2005, "type": "practice", "design": "fieldwork methodology guidance (ethnobotany freelisting)", "n": null, "effect": "n/a", "finding_quote": "read via secondary description only, not the original text", "url": "" }
+    ],
+    "replication": [],
+    "backfire": [
+      { "cite": "Sousa, Soldati, Monteiro, Araújo & Albuquerque (2016)", "doi": "10.1371/journal.pone.0165838", "condition": "Individuals have a tendency to recall information about medicinal plants used during the preceding year, and the recalled plants were also the most important plants during this period — i.e. free-list recall is biased toward recency, which confounds accessibility with importance in the salience index." }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "externalisation-embodiment/epistemic-action",
+    "sources": [
+      { "cite": "Kirsh & Maglio (1994)", "doi": "10.1207/s15516709cog1804_1", "year": 1994, "type": "theory", "design": "theoretical analysis + Tetris play data", "n": null, "effect": "n/a", "finding_quote": "Certain cognitive and perceptual problems are more quickly, easily, and reliably solved by performing actions in the world rather than by performing computational actions in the head alone.", "url": "" },
+      { "cite": "Vallée-Tourangeau, Steffensen, Vallée-Tourangeau & Sirota (2016)", "doi": "10.1016/j.actpsy.2016.08.006", "year": 2016, "type": "experiment", "design": "between-subjects, physical pipe-cleaner manipulation vs. tablet/stylus sketching, n=50", "n": 50, "effect": "41% vs 0% solved (proportion solving the problem)", "finding_quote": "41% of the participants in the pipe cleaners condition found a full or partial solution to the problem, while none of the participants in the tablet condition solved the problem.", "url": "" },
+      { "cite": "Guthrie, Harris & Vallée-Tourangeau (2015)", "doi": "10.1515/slgr-2015-0019", "year": 2015, "type": "experiment", "design": "mental-arithmetic task, low- vs. high-interactivity (movable tokens) conditions", "n": null, "effect": "accuracy and efficiency greater in high-interactivity condition", "finding_quote": "Accuracy and efficiency was greater in the high compared to the low interactivity condition... maths anxiety, objective numeracy, [and] working memory were stronger predictors of performance in the low- than in the high-interactivity conditions.", "url": "" },
+      { "cite": "Clark & Chalmers (1998)", "doi": "10.1093/analys/58.1.7", "year": 1998, "type": "theory", "design": "philosophical argument (active externalism / extended mind)", "n": null, "effect": "n/a", "finding_quote": "theoretical grounding only; not an empirical test", "url": "" }
+    ],
+    "replication": [],
+    "backfire": [],
+    "unverified": []
+  },
+  {
+    "claim_id": "externalisation-embodiment/sorting-elicitation",
+    "sources": [
+      { "cite": "Chi, Feltovich & Glaser (1981)", "doi": "10.1207/s15516709cog0502_2", "year": 1981, "type": "experiment", "design": "4 experiments; sorting tasks + verbal protocols", "n": null, "effect": "n/a", "finding_quote": "Experts and novices begin their problem representations with specifiably different problem categories... unlike experts who categorize problems based on the physical principles involved in solving them, introductory students categorized problems involving inclined planes in one category and pulleys in a separate category.", "url": "" },
+      { "cite": "Rugg & McGeorge (2005)", "doi": "10.1111/j.1468-0394.2005.00300.x", "year": 2005, "type": "practice", "design": "tutorial description of repeated single-criterion card sorting", "n": null, "effect": "n/a", "finding_quote": "read via secondary description only, not the original text", "url": "" }
+    ],
+    "replication": [],
+    "backfire": [],
+    "unverified": [
+      { "cite": "Coxon (1999), Sorting Data: Collection and Analysis, ISBN 0-8039-7237-7", "reason": "book, no DOI; recorded with ISBN per instructions, not used for DOI-based grading" }
+    ]
+  },
+  {
+    "claim_id": "externalisation-embodiment/common-region",
+    "sources": [
+      { "cite": "Palmer (1992)", "doi": "10.1016/0010-0285(92)90014-s", "year": 1992, "type": "experiment", "design": "grouping-judgment experiments with simple shapes", "n": null, "effect": "n/a", "finding_quote": "Common region produces clear powerful grouping effects, yet cannot be reduced to any other known grouping factor.", "url": "" },
+      { "cite": "Wagemans, Elder, Kubovy, Palmer, Peterson, Singh & von der Heydt (2012)", "doi": "10.1037/a0029333", "year": 2012, "type": "review", "design": "centennial synthesis of the Gestalt grouping / figure-ground literature", "n": null, "effect": "n/a", "finding_quote": "read via secondary description only, not the original text", "url": "" }
+    ],
+    "replication": [],
+    "backfire": [],
+    "unverified": [
+      { "cite": "Nielsen Norman Group, \"The Principle of Common Region: Containers Create Groupings\"", "reason": "practitioner web article, no DOI; recorded with URL as an applied-practice source, not used for DOI-based grading" }
+    ]
+  },
+  {
+    "claim_id": "externalisation-embodiment/spatial-externalisation",
+    "sources": [
+      { "cite": "Malone (1983)", "doi": "10.1145/357423.357430", "year": 1983, "type": "experiment", "design": "field interviews of office workers", "n": null, "effect": "n/a", "finding_quote": "A very important function of desk organization is to remind the user of things to do, not just to help the user find desired information... The cognitive difficulty of categorizing information is an important factor in explaining how people organize their desks.", "url": "" },
+      { "cite": "Andrews, Endert & North (2010)", "doi": "10.1145/1753326.1753336", "year": 2010, "type": "experiment", "design": "observational study of analysts using a large high-resolution display prototype", "n": null, "effect": "n/a", "finding_quote": "Space supports human cognitive abilities in multiple ways... notes attached to monitors, papers spread out on desks, diagrams on whiteboards, and objects used to recall, reveal relationships, and think.", "url": "" },
+      { "cite": "Twomey & Kroneisen (2021)", "doi": "10.1177/1747021821993457", "year": 2021, "type": "meta-analysis", "design": "13 RCTs of the method of loci", "n": null, "effect": "g = 0.65, 95% CI [0.45, 0.85], I² = 45.5%", "finding_quote": "The meta-analysis... demonstrated the effectiveness of the loci method as a mnemonic device, with a medium effect size... The effect size remained at similar levels in further analyses adjusting for publication bias.", "url": "" },
+      { "cite": "Rothkopf (1971)", "doi": "10.1016/s0022-5371(71)80066-x", "year": 1971, "type": "experiment", "design": "incidental recall of location after reading a 3000-word passage", "n": null, "effect": "above-chance accuracy, no standardized effect size given", "finding_quote": "Incidental memory for locations within any page and within the text sequence was more accurate than chance, and accuracy of substance and within-page location recall were correlated.", "url": "" }
+    ],
+    "replication": [],
+    "backfire": [],
+    "unverified": []
+  },
+  {
+    "claim_id": "externalisation-embodiment/concept-mapping",
+    "sources": [
+      { "cite": "Nesbit & Adesope (2006)", "doi": "10.3102/00346543076003413", "year": 2006, "type": "meta-analysis", "design": "67 effect sizes from 55 studies, n=5,818", "n": 5818, "effect": "small to large depending on use and comparison condition", "finding_quote": "The use of concept maps was associated with increased knowledge retention, with mean effect sizes varying from small to large depending on how concept maps were used and on the type of comparison treatment.", "url": "" },
+      { "cite": "Schroeder, Nesbit, Anguiano & Adesope (2018)", "doi": "10.1007/s10648-017-9403-9", "year": 2018, "type": "meta-analysis", "design": "142 effect sizes, n=11,814", "n": 11814, "effect": "g = 0.58 overall; g = 0.72 (constructing) vs g = 0.43 (studying)", "finding_quote": "A random-effects model meta-analysis revealed that learning with concept and knowledge maps produced a moderate, statistically significant effect (g = 0.58, p < 0.001). Creating concept maps (g = 0.72, p < 0.001) was associated with greater benefit... than studying concept maps (g = 0.43, p < 0.001).", "url": "" },
+      { "cite": "Karpicke & Blunt (2011)", "doi": "10.1126/science.1199327", "year": 2011, "type": "experiment", "design": "retrieval practice vs. elaborative concept mapping", "n": null, "effect": "retrieval practice > concept mapping (contrast evidence)", "finding_quote": "Practicing retrieval produces greater gains in meaningful learning than elaborative studying with concept mapping... the advantage of retrieval practice occurred even when the criterial test involved creating concept maps.", "url": "" },
+      { "cite": "Lechuga, Ortega-Tudela & Gómez-Ariza (2015)", "doi": "10.1016/j.learninstruc.2015.08.002", "year": 2015, "type": "experiment", "design": "conceptual replication: free recall vs. concept mapping as retrieval formats", "n": null, "effect": "repeated retrieval > concept mapping (replication)", "finding_quote": "Repeated retrieval leads to better conceptual learning than concept mapping, and... a short training in concept mapping does not change this pattern.", "url": "" }
+    ],
+    "replication": [
+      { "cite": "Lechuga, Ortega-Tudela & Gómez-Ariza (2015)", "doi": "10.1016/j.learninstruc.2015.08.002", "result": "replicated" }
+    ],
+    "backfire": [
+      { "cite": "Karpicke & Blunt (2011)", "doi": "10.1126/science.1199327", "condition": "Concept mapping is reliably outperformed by retrieval practice specifically, even though meta-analyses show it beats passive study; the comparison condition matters." }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "externalisation-embodiment/causal-diagramming",
+    "sources": [
+      { "cite": "Fiorella & Zhang (2018)", "doi": "10.1007/s10648-018-9444-8", "year": 2018, "type": "meta-analysis", "design": "drawing as a generative learning strategy", "n": null, "effect": "not stated in summary read", "finding_quote": "Self-generated drawings are an effective and valuable learning strategy... more effective than just reading or summarising [scientific text], but self-generated drawings do not always have a positive impact on learning outcomes.", "url": "" },
+      { "cite": "Van Meter & Garner (2005)", "doi": "10.1007/s10648-005-8136-3", "year": 2005, "type": "review", "design": "literature review and synthesis of learner-generated drawing", "n": null, "effect": "n/a", "finding_quote": "read via secondary description only, not the original text", "url": "" },
+      { "cite": "Ainsworth, Prain & Tytler (2011)", "doi": "10.1126/science.1204153", "year": 2011, "type": "theory", "design": "perspective piece arguing for drawing as a core science-learning practice", "n": null, "effect": "n/a", "finding_quote": "read via secondary description only, not the original text", "url": "" }
+    ],
+    "replication": [],
+    "backfire": [
+      { "cite": "Easterday, Aleven & Scheines (2007)", "doi": "", "condition": "On an immediate transfer test, students given a correct pre-made diagram outperformed both text-only and self-construction groups; only when tested later with all aids removed did students who had constructed their own diagrams outperform those who had only received one — constructing helps durable/transferable reasoning, not immediate in-hand performance." }
+    ],
+    "unverified": [
+      { "cite": "Easterday, Aleven & Scheines (2007), \"'Tis Better to Construct than to Receive?\", AIED 2007 proceedings", "reason": "conference proceedings paper; no DOI located via Crossref bibliographic search or web search this session. URL: https://oli.cmu.edu/wp-content/uploads/2012/05/Easterday_2007_Effects_of_Diagram_Tools.pdf" }
+    ]
+  },
+  {
+    "claim_id": "externalisation-embodiment/colour-coding-search",
+    "sources": [
+      { "cite": "Christ (1975)", "doi": "10.1177/001872087501700602", "year": 1975, "type": "review", "design": "synthesis of prior colour-coding experiments", "n": null, "effect": "n/a", "finding_quote": "read via secondary description only, not the original text", "url": "" },
+      { "cite": "Green & Anderson (1956)", "doi": "10.1037/h0047484", "year": 1956, "type": "experiment", "design": "visual search task, coded vs uncoded displays", "n": null, "effect": "n/a", "finding_quote": "read via secondary description only, not the original text", "url": "" },
+      { "cite": "Ponce, Mayer & Méndez (2022)", "doi": "10.1007/s10648-021-09654-1", "year": 2022, "type": "meta-analysis", "design": "learner-generated vs instructor-provided highlighting", "n": null, "effect": "not stated in summary read", "finding_quote": "read via secondary description only, not the original text", "url": "" },
+      { "cite": "Dunlosky, Rawson, Marsh, Nathan & Willingham (2013)", "doi": "10.1177/1529100612453266", "year": 2013, "type": "review", "design": "evaluation of 10 learning techniques including highlighting", "n": null, "effect": "highlighting rated low utility as a learning strategy", "finding_quote": "read via secondary description only, not the original text", "url": "" }
+    ],
+    "replication": [],
+    "backfire": [
+      { "cite": "Dunlosky, Rawson, Marsh, Nathan & Willingham (2013)", "doi": "10.1177/1529100612453266", "condition": "Colour coding / highlighting does little for durable learning even where it may still speed visual search — a different outcome than the present claim, but a relevant boundary if the protocol is oversold as a comprehension aid." }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "externalisation-embodiment/redundant-coding",
+    "sources": [
+      { "cite": "WCAG 2.1 SC 1.4.1 \"Use of Color\"", "doi": "", "year": 2018, "type": "practice", "design": "accessibility standard", "n": null, "effect": "n/a", "finding_quote": "Color must not be the only visual means of conveying information; a second channel is required.", "url": "https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html" },
+      { "cite": "Garner (1974/2014 reissue)", "doi": "10.4324/9781315802862", "year": 2014, "type": "theory", "design": "monograph on redundancy gain in information processing", "n": null, "effect": "n/a", "finding_quote": "read via secondary description only, not the original text; DOI resolves to the 2014 Routledge reissue of the 1974 original, so year is recorded as the reissue's to keep the citation and Crossref record matched", "url": "" },
+      { "cite": "Birch (2012)", "doi": "10.1364/josaa.29.000313", "year": 2012, "type": "review", "design": "prevalence synthesis of red-green colour-vision deficiency", "n": null, "effect": "n/a", "finding_quote": "read via secondary description only, not the original text", "url": "" }
+    ],
+    "replication": [],
+    "backfire": [],
+    "unverified": []
+  },
+  {
+    "claim_id": "externalisation-embodiment/handwriting-vs-typing",
+    "sources": [
+      { "cite": "Mueller & Oppenheimer (2014)", "doi": "10.1177/0956797614524581", "year": 2014, "type": "experiment", "design": "3 studies, laptop vs longhand lecture note-taking", "n": null, "effect": "not given as standardized d/g in abstract", "finding_quote": "Taking notes on laptops rather than in longhand is increasingly common... The present research suggests that even when laptops are used solely to take notes, they may still be impairing learning because their use results in shallower processing. In three studies, we found that students who took notes on laptops performed worse on conceptual questions than students who took notes longhand... laptop note takers' tendency to transcribe lectures verbatim rather than processing information and reframing it in their own words is detrimental to learning. (quoted verbatim, fetched directly via Europe PMC/PubMed PMID 24760141, gap-fill 2026-09-25)", "url": "https://pubmed.ncbi.nlm.nih.gov/24760141" },
+      { "cite": "Corrigendum to Mueller & Oppenheimer (2014)", "doi": "10.1177/0956797618781773", "year": 2018, "type": "experiment", "design": "correction notice", "n": null, "effect": "n/a", "finding_quote": "still unread (gap-fill 2026-09-25): citation verified via Crossref; no OA copy located; substance of the correction not read", "url": "" },
+      { "cite": "Morehead, Dunlosky & Rawson (2019)", "doi": "10.1007/s10648-019-09468-2", "year": 2019, "type": "experiment", "design": "direct replication and extension of Mueller & Oppenheimer (2014)", "n": null, "effect": "small, nonsignificant effect favouring longhand (per an unconfirmed paraphrase)", "finding_quote": "still unread (gap-fill 2026-09-25): paywalled, confirmed no OA location via Unpaywall. Only a WebSearch-derived paraphrase is available (not independently re-fetched, not used as a graded quote): 'performance did not consistently differ between any groups... A meta-analysis (combining direct replications) of test performance revealed small (nonsignificant) effects favoring longhand.'", "url": "" },
+      { "cite": "Urry, Crittle, Floerke et al. (2021)", "doi": "10.1177/0956797620965541", "year": 2021, "type": "experiment", "design": "direct pre-registered-style replication of Mueller & Oppenheimer's Study 1 (n=74 laptop, n=68 longhand) plus mini meta-analyses of 8 similar studies", "n": 142, "effect": "null on the quiz outcome", "finding_quote": "In this direct replication of Mueller and Oppenheimer's (2014) Study 1... laptop participants did not perform better than longhand participants on the quiz. Exploratory meta-analyses of eight similar studies echoed this pattern... higher verbatim overlap was associated with worse quiz performance, but the latter finding was not robust in our replication. Overall, results do not support the idea that longhand note taking improves immediate learning via better encoding of information. (quoted verbatim, fetched directly via Semantic Scholar API, gap-fill 2026-09-25)", "url": "" },
+      { "cite": "Voyer, Ronis & Byers (2022)", "doi": "10.1016/j.cedpsych.2021.102025", "year": 2022, "type": "meta-analysis", "design": "77 effect sizes from 39 samples / 36 articles, multilevel meta-analysis with robust variance estimation", "n": null, "effect": "null, per an unconfirmed paraphrase", "finding_quote": "still unread (gap-fill 2026-09-25): paywalled, confirmed no OA location via Unpaywall. Only a WebSearch-derived paraphrase is available (not independently re-fetched, not used as a graded quote): 'Results showed no effect of method on performance under controlled conditions.'", "url": "" },
+      { "cite": "Flanigan, Wheeler, Colliot, Lu & Kiewra (2024)", "doi": "10.1007/s10648-024-09914-w", "year": 2024, "type": "meta-analysis", "design": "24 studies across 21 articles, college students", "n": null, "effect": "g = 0.248, p<.001 favouring handwriting on achievement; g = 0.919, p<.001 favouring typing on note volume", "finding_quote": "Results from 24 separate studies across 21 articles revealed that taking and reviewing handwritten notes leads to higher achievement (Hedges' g = 0.248; p < 0.001), even though typing notes benefits note-taking volume (Hedges' g = 0.919; p < 0.001)... We conclude that handwritten notes are more useful for studying and committing to memory than typed notes, ultimately contributing to higher achievement for college students. (quoted verbatim, fetched directly via Georgia Southern University scholars profile page, gap-fill 2026-09-25)", "url": "https://scholars.georgiasouthern.edu/en/publications/typed-versus-handwritten-lecture-notes-and-college-student-achiev/" },
+      { "cite": "Longcamp, Zerbato-Poudou & Velay (2005)", "doi": "10.1016/j.actpsy.2004.10.019", "year": 2005, "type": "experiment", "design": "preschool children, handwriting vs typing practice, letter recognition", "n": null, "effect": "not independently confirmed this session", "finding_quote": "still unread (gap-fill 2026-09-25): paywalled, no OA location found; deprioritised as adjacent evidence", "url": "" },
+      { "cite": "Mangen, Anda, Oxborough & Brønnick (2015)", "doi": "10.17239/jowr-2015.07.02.1", "year": 2015, "type": "experiment", "design": "handwriting vs keyboard word-recall task", "n": null, "effect": "not independently confirmed this session", "finding_quote": "still unread (gap-fill 2026-09-25): not fetched this session; deprioritised as adjacent evidence", "url": "" },
+      { "cite": "Van der Weel & van der Meer (2024)", "doi": "10.3389/fpsyg.2023.1219945", "year": 2024, "type": "experiment", "design": "high-density 256-channel EEG, n=36 university students, handwriting vs typewriting brain connectivity", "n": 36, "effect": "connectivity difference only; no behavioural learning outcome measured", "finding_quote": "Brain electrical activity was recorded in 36 university students as they were handwriting visually presented words using a digital pen and typewriting the words on a keyboard... When writing by hand, brain connectivity patterns were far more elaborate than when typewriting on a keyboard, as shown by widespread theta/alpha connectivity coherence patterns between network hubs and nodes in parietal and central brain regions. (quoted verbatim, fetched directly via Semantic Scholar API, gap-fill 2026-09-25). Year confirmed as 2024 (Crossref/Semantic Scholar), not 2023, per the brief's instruction to check it. Reports EEG connectivity only, no recall/comprehension outcome. NOTE: sourcing brief cited author order as 'van der Meer & van der Weel'; Crossref author list is Van der Weel first, Van der Meer second — brief's order is reversed.", "url": "" }
+    ],
+    "replication": [
+      { "cite": "Urry, Crittle, Floerke et al. (2021)", "doi": "10.1177/0956797620965541", "result": "failed" },
+      { "cite": "Morehead, Dunlosky & Rawson (2019)", "doi": "10.1007/s10648-019-09468-2", "result": "mixed (unconfirmed paraphrase: small, nonsignificant)" },
+      { "cite": "Voyer, Ronis & Byers (2022)", "doi": "10.1016/j.cedpsych.2021.102025", "result": "mixed (unconfirmed paraphrase: null)" }
+    ],
+    "backfire": [
+      { "cite": "Urry, Crittle, Floerke et al. (2021)", "doi": "10.1177/0956797620965541", "condition": "The word-count mediator (typing lets you write more) held up in the replication, but the verbatim-transcription-is-bad mediator that Mueller & Oppenheimer's theory depends on was not robust in the replication." },
+      { "cite": "Van der Weel & van der Meer (2024)", "doi": "10.3389/fpsyg.2023.1219945", "condition": "Measures EEG connectivity only, not recall or comprehension; using it as direct support for the behavioural claim is a construct-fit error." }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "externalisation-embodiment/embodied-perspective",
+    "sources": [
+      { "cite": "Tversky & Hard (2009)", "doi": "10.1016/j.cognition.2008.10.008", "year": 2009, "type": "experiment", "design": "2 studies; respondents describe spatial relations in photographed scenes with/without a person present", "n": null, "effect": "not given as standardized d/g in abstract", "finding_quote": "The mere presence of another person in a position to act on the objects induced a good proportion of respondents to describe the spatial relations from that person's point of view (Experiment 1). When the query about the spatial relations was phrased in terms of action, more respondents took the other's perspective than their own (Experiment 2). (quoted verbatim, fetched directly via Europe PMC, gap-fill 2026-09-25)", "url": "" },
+      { "cite": "Kessler & Thomson (2010)", "doi": "10.1016/j.cognition.2009.08.015", "year": 2010, "type": "experiment", "design": "4 experiments contrasting embodied-transformation vs sensorimotor-interference accounts", "n": null, "effect": "not given as standardized d/g in abstract", "finding_quote": "In a series of four experiments we found substantial evidence that the transformations during SPT comprise large parts of the body schema, which we did not observe for object rotation... Overall our results are much more in agreement with an 'embodied' transformation account than with the notion of sensorimotor interference. (quoted verbatim, fetched directly via Europe PMC, gap-fill 2026-09-25)", "url": "" },
+      { "cite": "Barsalou (2008)", "doi": "10.1146/annurev.psych.59.103006.093639", "year": 2008, "type": "theory", "design": "review of grounded/embodied cognition", "n": null, "effect": "n/a", "finding_quote": "theoretical umbrella; not itself a test of chair-work or perspective-swap", "url": "" },
+      { "cite": "Paivio & Greenberg (1995)", "doi": "10.1037/0022-006x.63.3.419", "year": 1995, "type": "experiment", "design": "clinical RCT, n=34, empty-chair dialogue vs attention-placebo psychoeducation", "n": 34, "effect": "significantly greater improvement vs control on all outcome measures, maintained at follow-up", "finding_quote": "34 clients with unresolved feelings related to a significant other were randomly assigned to either experiential therapy using a Gestalt empty-chair dialogue intervention or an attention-placebo condition... experiential therapy achieved clinically meaningful gains for most clients and significantly greater improvement than the psychoeducational group on all outcome measures. Treatment gains for the experiential therapy group were maintained at follow-up. (quoted verbatim, fetched directly via PubMed efetch PMID 7608354, gap-fill 2026-09-25)", "url": "" },
+      { "cite": "Ranehill, Dreber, Johannesson, Leiberg, Sul & Weber (2015)", "doi": "10.1177/0956797614553946", "year": 2015, "type": "experiment", "design": "large replication attempt of power-posing effects (brief report)", "n": null, "effect": "null (per title: 'no effect on hormones and risk tolerance in a large sample of men and women')", "finding_quote": "still unread (gap-fill 2026-09-25): confirmed via Europe PMC and PubMed efetch (PMID 25810452) that this paper carries no indexed abstract at all, not merely a paywall; the title itself states the null finding. Included as prior-setting adjacent evidence, not a direct test of this claim.", "url": "" },
+      { "cite": "Wagenmakers et al. (2016)", "doi": "10.1177/1745691616674458", "year": 2016, "type": "rrr", "design": "17-lab pre-registered Registered Replication Report of the facial-feedback hypothesis (Strack, Martin & Stepper 1988)", "n": null, "effect": "original 0.82 (10-pt Likert) vs replication 0.03, 95% CI [-0.11, 0.16]", "finding_quote": "This Registered Replication Report describes the results of 17 independent direct replications of Study 1 from Strack et al. (1988)... The original Strack et al. (1988) study reported a rating difference of 0.82 units on a 10-point Likert scale. Our meta-analysis revealed a rating difference of 0.03 units with a 95% confidence interval ranging from -0.11 to 0.16. (quoted verbatim, fetched directly via Semantic Scholar API, gap-fill 2026-09-25)", "url": "" }
+    ],
+    "replication": [
+      { "cite": "Ranehill, Dreber, Johannesson, Leiberg, Sul & Weber (2015)", "doi": "10.1177/0956797614553946", "result": "failed" },
+      { "cite": "Wagenmakers et al. (2016)", "doi": "10.1177/1745691616674458", "result": "failed" }
+    ],
+    "backfire": [],
+    "unverified": []
+  }
+]

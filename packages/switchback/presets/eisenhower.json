@@ -1,0 +1,76 @@
+{
+  "id": "eisenhower",
+  "kind": "preset",
+  "extends": "matrix-2x2",
+  "name": "Eisenhower matrix",
+  "tags": ["decide", "focus"],
+  "data": {
+    "x_axis": ["urgent", "not urgent"],
+    "y_axis": ["not important", "important"],
+    "quadrants": ["do now", "schedule", "delegate", "drop"]
+  },
+  "attribution": "Popularised by Stephen Covey (1989), after a remark attributed to Dwight D. Eisenhower",
+  "licence": "idea; no restriction",
+  "grounding": {
+    "claims": [
+      {
+        "id": "decision-diagnosis/two-axis-mapping",
+        "load_bearing": true,
+        "transfer": "analogical",
+        "claim": "Placing items on a spatial layout defined by two explicit dimensions makes their relative standing on both dimensions easier to judge and compare than a list or table does.",
+        "construct": "diagrammatic representation; graphic organisers",
+        "grade": "D",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Larkin & Simon (1987)",
+            "doi": "10.1111/j.1551-6708.1987.tb00863.x",
+            "type": "theory"
+          }
+        ],
+        "rationale": "research/decision-diagnosis.md#two-axis-mapping"
+      },
+      {
+        "id": "decision-diagnosis/mere-urgency",
+        "load_bearing": true,
+        "transfer": "analogical",
+        "claim": "People prefer tasks framed as urgent (short completion windows) over important tasks with objectively larger payoffs. Separating urgency from importance should therefore counter that bias.",
+        "construct": "the mere urgency effect",
+        "grade": "B",
+        "effect": "small",
+        "sources": [
+          {
+            "cite": "Zhu, Yang & Hsee (2018)",
+            "doi": "10.1093/jcr/ucy008",
+            "type": "experiment"
+          },
+          {
+            "cite": "Mills, Cubitt & Starmer (2026)",
+            "doi": "10.1093/jcr/ucag026",
+            "type": "rrr"
+          }
+        ],
+        "rationale": "research/decision-diagnosis.md#mere-urgency"
+      },
+      {
+        "id": "externalisation-embodiment/common-region",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Items placed inside the same bounded region are perceived as belonging together, even against other grouping cues, so labelled zones make category membership readable at a glance.",
+        "construct": "the Gestalt principle of common region (perceptual grouping)",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Wagemans et al. (2012)",
+            "doi": "10.1037/a0029333",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/externalisation-embodiment.md#common-region"
+      }
+    ],
+    "helps": "when urgent-looking tasks keep crowding out important ones; people pick spuriously urgent tasks over better-paying ones, a small but replicated effect, though the grid as a fix and its four actions are untested craft",
+    "backfires": "when urgency is rated from how pressing a task feels rather than from its real deadline, since spurious urgency is exactly what pulls choices, or when an axis does not discriminate and everything crowds one quadrant"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "id": "player-aid",
+  "kind": "piece",
+  "name": "Player aid",
+  "intent": "Keep the rules of the session in view without spending a thinking page on them.",
+  "when": "whenever the session uses the colour language or structural marks",
+  "tags": ["focus"],
+  "phase": "either",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["read", "mark"],
+    "surface": "desk",
+    "timebox": "1 min",
+    "returns": false
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "prompt": "Colour the boxes with your own pens, then keep this beside you.",
+  "readback": "A reference, not a record — ignore it when reading the workbook's work.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "attention-load/cognitive-offload",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Keeping task-relevant information in a stable, visible external store, rather than in working memory, improves performance on the concurrent task, at the cost of weaker memory for the offloaded content.",
+        "construct": "cognitive offloading (working-memory offload)",
+        "grade": "B",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Gilbert (2015)",
+            "doi": "10.1080/17470218.2014.972963",
+            "type": "experiment"
+          },
+          {
+            "cite": "Storm & Stone (2015)",
+            "doi": "10.1177/0956797614559285",
+            "type": "experiment"
+          },
+          {
+            "cite": "Sparrow, Liu & Wegner (2011)",
+            "doi": "10.1126/science.1207745",
+            "type": "experiment"
+          },
+          {
+            "cite": "Risko & Gilbert (2016)",
+            "doi": "10.1016/j.tics.2016.07.002",
+            "type": "review"
+          },
+          {
+            "cite": "Meyerhoff, Grinschgl, Papenmeier & Gilbert (2021)",
+            "doi": "10.1186/s41235-021-00298-x",
+            "type": "experiment"
+          },
+          {
+            "cite": "Hesselmann (2020)",
+            "doi": "10.7717/peerj.10325",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/attention-load.md#cognitive-offload"
+      },
+      {
+        "id": "attention-load/job-aid",
+        "load_bearing": true,
+        "transfer": "analogical",
+        "claim": "A checklist or reference card kept at hand reduces omissions in multi-step or rule-governed tasks compared with relying on memory.",
+        "construct": "job aids / checklists; omission errors",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Haynes et al. (2009)",
+            "doi": "10.1056/nejmsa0810119",
+            "type": "experiment"
+          },
+          {
+            "cite": "Urbach, Govindarajan, Saskin, Wilton & Baxter (2014)",
+            "doi": "10.1056/nejmsa1308261",
+            "type": "experiment"
+          },
+          {
+            "cite": "Reason (2002)",
+            "doi": "10.1136/qhc.11.1.40",
+            "type": "experiment"
+          },
+          {
+            "cite": "Hales & Pronovost (2006)",
+            "doi": "10.1016/j.jcrc.2006.06.002",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/attention-load.md#job-aid"
+      }
+    ],
+    "helps": "when a session uses conventions worth keeping in view but not worth memorising; external stores free working memory in lab tasks, and reference aids are used to cut omissions in procedural work, though the evidence is mixed and large checklist studies in surgery disagree",
+    "backfires": "when the aid replaces judgement, or stands in for conventions the person never learns, since people remember less of what they expect to be able to look up"
+  }
+}

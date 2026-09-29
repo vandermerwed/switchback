@@ -1,0 +1,88 @@
+{
+  "id": "worst-case",
+  "kind": "page",
+  "name": "Worst case",
+  "intent": "Write a dreaded outcome out concretely, so it stops weighing more than it would.",
+  "when": "a fear too large to think about clearly, not tied to one plan (for a plan's failure, use pre-mortem)",
+  "tags": ["reflect", "decide"],
+  "phase": "either",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write", "rate"],
+    "surface": "desk",
+    "timebox": "10 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "fear": {
+        "type": "string",
+        "maxLength": 120
+      }
+    }
+  },
+  "prompt": "Name it plainly. Then write what would actually happen, and what you would do.",
+  "readback": "Compare the before and after weights. If the day/week/month boxes stay abstract ('everything would fall apart'), the exercise didn't land. Ask for the concrete next step instead.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "perspective-emotion/decatastrophizing",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Writing out a dreaded outcome concretely, including what would happen next and how one would cope, lowers its felt severity. People overestimate how bad and how long-lasting their reaction to negative events will be.",
+        "construct": "decatastrophising (cognitive therapy); the impact bias and immune neglect in affective forecasting",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Gilbert, Pinel, Wilson, Blumberg & Wheatley (1998)",
+            "doi": "10.1037/0022-3514.75.3.617",
+            "type": "experiment"
+          },
+          {
+            "cite": "Wilson, Wheatley, Meyers, Gilbert & Axsom (2000)",
+            "doi": "10.1037/0022-3514.78.5.821",
+            "type": "experiment"
+          },
+          {
+            "cite": "Norem & Cantor (1986)",
+            "doi": "10.1037/0022-3514.51.6.1208",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/perspective-emotion.md#decatastrophizing"
+      },
+      {
+        "id": "planning-self-regulation/prior-state-recall",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "People recall their earlier attitudes, feelings or confidence as closer to their present state than they were, or as fitting their theory of how they must have changed. A written baseline is therefore needed to see real change.",
+        "construct": "consistency and change biases in autobiographical memory (implicit theories of stability and change)",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Wolfe & Williams (2018)",
+            "doi": "10.1080/17470218.2017.1363792",
+            "type": "experiment"
+          },
+          {
+            "cite": "Ross (1989)",
+            "doi": "10.1037/0033-295X.96.2.341",
+            "type": "theory"
+          }
+        ],
+        "rationale": "research/planning-self-regulation.md#prior-state-recall"
+      }
+    ],
+    "helps": "when a dread belongs to no plan: people overestimate how long a bad outcome will hurt, and in forecasting studies thinking about everything else that will fill the following days reduced that overestimate; the before and after ratings show whether the page did the same for you",
+    "backfires": "when the next-day, week and month block only rehearses the catastrophe, without the other things that will fill those days, which may feed worry (untested), or when defusing the dread makes a real risk feel acceptable"
+  }
+}

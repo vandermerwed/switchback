@@ -1,0 +1,152 @@
+{
+  "id": "proof",
+  "kind": "page",
+  "name": "Proof",
+  "intent": "Print a document, especially AI output, so every paragraph gets an active judgement in ink.",
+  "when": "checking an AI draft, a spec or an essay point by point",
+  "tags": ["review"],
+  "phase": "converge",
+  "listed": false,
+  "physical": {
+    "requires": ["printer"],
+    "body": ["read", "mark"],
+    "surface": "desk",
+    "timebox": "2–4 min per page"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "source": {
+        "type": "string",
+        "maxLength": 120
+      },
+      "blocks": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 60,
+        "items": {
+          "type": "object",
+          "required": ["kind", "text"],
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "enum": ["p", "h", "li", "code"]
+            },
+            "text": {
+              "type": "string",
+              "maxLength": 4000
+            },
+            "n": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "cont": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  },
+  "prompt": "Mark every paragraph. Ask in your Ask pen; every other colour asks for an action (see the strip below).",
+  "readback": "Build the action queue: one row per mark, in role priority, quoting the paragraph by its number from the sidecar. Answer Ask marks first. ✕ means cut, ○ means lock: never change a locked paragraph in the next draft.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "reading-review/automation-bias",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "People reviewing automated or AI output accept its errors at elevated rates, both acting on wrong outputs (commission) and missing unflagged problems (omission). Interventions that force active evaluation reduce this overreliance.",
+        "construct": "automation bias and complacency; cognitive forcing",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Parasuraman & Manzey (2010)",
+            "doi": "10.1177/0018720810376055",
+            "type": "review"
+          },
+          {
+            "cite": "Lyell & Coiera (2016)",
+            "doi": "10.1093/jamia/ocw105",
+            "type": "review"
+          },
+          {
+            "cite": "Goddard, Roudsari & Wyatt (2012)",
+            "doi": "10.1136/amiajnl-2011-000089",
+            "type": "review"
+          },
+          {
+            "cite": "Buçinca, Malaya & Gajos (2021)",
+            "doi": "10.1145/3449287",
+            "type": "experiment"
+          },
+          {
+            "cite": "Mosier et al. (1998)",
+            "doi": "10.1207/s15327108ijap0801_3",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/reading-review.md#automation-bias"
+      },
+      {
+        "id": "reading-review/paper-vs-screen",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Reading on paper yields better comprehension than reading the same text on a screen, especially for expository text read under time limits.",
+        "construct": "the screen inferiority effect",
+        "grade": "B",
+        "effect": "small",
+        "sources": [
+          {
+            "cite": "Clinton (2019)",
+            "doi": "10.1111/1467-9817.12269",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Delgado et al. (2018)",
+            "doi": "10.1016/j.edurev.2018.09.003",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Ackerman & Goldsmith (2011)",
+            "doi": "10.1037/a0022086",
+            "type": "experiment"
+          },
+          {
+            "cite": "Calvo-Ferrer (2022)",
+            "doi": "10.7203/qf.0.24620",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/reading-review.md#paper-vs-screen"
+      },
+      {
+        "id": "reading-review/proofreading-marks",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "A fixed, shared set of marks, each mapped to one editing action, is used reliably by writers and editors to communicate corrections on paper.",
+        "construct": "proofreaders' marks as a mark → action convention",
+        "grade": "D",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Christiansen (2009), AMA Manual of Style",
+            "doi": "10.1093/jama/9780195176339.021.316",
+            "type": "practice"
+          }
+        ],
+        "rationale": "research/reading-review.md#proofreading-marks"
+      }
+    ],
+    "helps": "when an AI draft needs checking point by point: a number and a margin on every paragraph invite an active judgement on each, and paper gives slightly better comprehension of expository text",
+    "backfires": "when marking turns into rubber-stamping every paragraph, or when the job is catching surface typos, which one study found easier on screen"
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "id": "stimulus-die",
+  "kind": "piece",
+  "name": "Stimulus die",
+  "intent": "Inject a random prompt to break fixation and force a new angle.",
+  "when": "the obvious options are exhausted and thinking has gone in circles",
+  "tags": ["create"],
+  "phase": "diverge",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["cut", "fold", "roll"],
+    "surface": "desk",
+    "timebox": "3 min",
+    "returns": false
+  },
+  "variants": [
+    {
+      "id": "cube",
+      "requires": ["scissors", "tape"],
+      "label": "Cut, fold and tape a die"
+    },
+    {
+      "id": "table",
+      "requires": [],
+      "label": "Roll any die against a printed table",
+      "prompt": "No cutting: roll any six-sided die, or use the last digit of the clock's seconds, and look up the matching row on the printed table. Answer whatever it lands on.",
+      "readback": "Random outputs are prompts, not answers; read the human's response to the row, not the row itself."
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "faces": {
+        "type": "array",
+        "minItems": 0,
+        "maxItems": 6,
+        "items": {
+          "type": "string",
+          "maxLength": 60
+        }
+      }
+    }
+  },
+  "prompt": "Cut out the die, fold it, roll it when you are stuck, and answer whatever it lands on.",
+  "readback": "Random outputs are prompts, not answers; read the human's response to the face, not the face.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "creativity-fixation/random-stimuli",
+        "load_bearing": true,
+        "transfer": "analogical",
+        "claim": "Exposure to randomly selected stimuli (words or prompts unrelated to the problem) during idea generation increases the number and originality of ideas, compared with generating without stimuli.",
+        "construct": "random entry / external stimulation in idea generation",
+        "grade": "D",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Dugosh et al. (2000)",
+            "doi": "10.1037/0022-3514.79.5.722",
+            "type": "experiment"
+          },
+          {
+            "cite": "Vasconcelos & Crilly (2016)",
+            "doi": "10.1016/j.destud.2015.11.001",
+            "type": "review"
+          },
+          {
+            "cite": "Leahy et al. (2020)",
+            "doi": "10.1115/1.4046446",
+            "type": "experiment"
+          },
+          {
+            "cite": "Jansson & Smith (1991)",
+            "doi": "10.1016/0142-694x(91)90003-f",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/creativity-fixation.md#random-stimuli"
+      },
+      {
+        "id": "creativity-fixation/heuristic-prompts",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Prompting idea generation with generic transformation heuristics (\"reverse it\", \"make it 10×\", \"borrow from another field\") increases the variety and creativity of generated concepts, compared with unprompted generation.",
+        "construct": "design heuristics / transformation operators; analogical transfer",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Yilmaz et al. (2016)",
+            "doi": "10.1016/j.destud.2016.05.001",
+            "type": "review"
+          },
+          {
+            "cite": "Leahy et al. (2020)",
+            "doi": "10.1115/1.4046446",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/creativity-fixation.md#heuristic-prompts"
+      },
+      {
+        "id": "creativity-fixation/constraint-relaxation",
+        "load_bearing": false,
+        "transfer": "analogical",
+        "claim": "Impasses in problem solving are overcome when the solver relaxes a self-imposed constraint on the solution, so deliberately removing a constraint makes new solution paths available.",
+        "construct": "constraint relaxation (representational change); fixation / Einstellung",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Knoblich et al. (1999)",
+            "doi": "10.1037/0278-7393.25.6.1534",
+            "type": "experiment"
+          },
+          {
+            "cite": "Knoblich, Ohlsson & Raney (2001)",
+            "doi": "10.3758/bf03195762",
+            "type": "experiment"
+          },
+          {
+            "cite": "Moreau & Dahl (2005)",
+            "doi": "10.1086/429597",
+            "type": "experiment"
+          },
+          {
+            "cite": "Acar, Tarakci & van Knippenberg (2019)",
+            "doi": "10.1177/0149206318805832",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/creativity-fixation.md#constraint-relaxation"
+      }
+    ],
+    "helps": "when the same few ideas keep recurring during a divergent phase; heuristic prompts reduced fixation in one design study, and rolling operators at random is otherwise untested",
+    "backfires": "when the face rolled does not fit the problem, when the prompt itself becomes the fixation, and during convergence or evaluation, where random input is noise"
+  }
+}

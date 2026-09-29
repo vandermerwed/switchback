@@ -1,0 +1,17 @@
+name: Idea
+description: A page, a style, a mark or a change to the loop that would help you.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: situation
+    attributes:
+      label: The situation
+      description: What you were trying to think through or do on paper.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would help
+    validations:
+      required: true

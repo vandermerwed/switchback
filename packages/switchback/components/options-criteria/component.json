@@ -1,0 +1,126 @@
+{
+  "id": "options-criteria",
+  "kind": "page",
+  "name": "Options against criteria",
+  "intent": "Compare named options against explicit criteria.",
+  "when": "a decision with options already on the table",
+  "tags": ["decide"],
+  "phase": "converge",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write", "score"],
+    "surface": "desk",
+    "timebox": "12 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "options": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 6,
+        "items": {
+          "type": "string",
+          "maxLength": 40
+        }
+      },
+      "criteria": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 5,
+        "items": {
+          "type": "string",
+          "maxLength": 24
+        }
+      },
+      "scale": {
+        "type": "string",
+        "maxLength": 80
+      }
+    }
+  },
+  "prompt": "Score each option. Then a gut score in purple. Where they disagree is the real decision.",
+  "readback": "Compare the total column against the purple gut column. Any mismatch is the real decision and the target of question-queue.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "decision-diagnosis/decomposed-judgement",
+        "load_bearing": true,
+        "transfer": "analogical",
+        "claim": "Scoring options on explicit criteria and combining the scores mechanically gives more consistent and more accurate judgements than an unaided holistic judgement.",
+        "construct": "linear models and decomposition vs holistic (clinical) judgement",
+        "grade": "B",
+        "effect": "small",
+        "sources": [
+          {
+            "cite": "Grove, Zald, Lebow, Snitz & Nelson (2000)",
+            "doi": "10.1037/1040-3590.12.1.19",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Ægisdóttir et al. (2006)",
+            "doi": "10.1177/0011000005285875",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Dawes (1979)",
+            "doi": "10.1037/0003-066X.34.7.571",
+            "type": "theory"
+          },
+          {
+            "cite": "Wilson & Schooler (1991)",
+            "doi": "10.1037/0022-3514.60.2.181",
+            "type": "experiment"
+          },
+          {
+            "cite": "Uhlmann & Cohen (2005)",
+            "doi": "10.1111/j.0956-7976.2005.01559.x",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/decision-diagnosis.md#decomposed-judgement"
+      },
+      {
+        "id": "decision-diagnosis/anchoring",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "A number written or seen earlier pulls later numeric judgements towards it, so a gut score written *before* criteria scoring cannot be anchored by the total.",
+        "construct": "the anchoring effect (including self-generated anchors)",
+        "grade": "B",
+        "effect": "large",
+        "sources": [
+          {
+            "cite": "Klein et al. (2014)",
+            "doi": "10.1027/1864-9335/a000178",
+            "type": "rrr"
+          },
+          {
+            "cite": "Jacowitz & Kahneman (1995)",
+            "doi": "10.1177/01461672952111004",
+            "type": "experiment"
+          },
+          {
+            "cite": "Epley & Gilovich (2001)",
+            "doi": "10.1111/1467-9280.00372",
+            "type": "experiment"
+          },
+          {
+            "cite": "Tversky & Kahneman (1974)",
+            "doi": "10.1126/science.185.4157.1124",
+            "type": "theory"
+          }
+        ],
+        "rationale": "research/decision-diagnosis.md#anchoring"
+      }
+    ],
+    "helps": "when options are already on the table and a gut feel may be steering; mechanical totals beat unaided judgement in prediction studies by a small margin, and writing the gut score first keeps the total from pulling it, but on a personal decision the value is the gap between the two, which has not been tested",
+    "backfires": "when the criteria are chosen or reweighted after a favourite has formed, so the total is built to agree with the gut, when analysing reasons pushes the choice towards whatever is easy to put into words, or when the gut score written first pulls the criteria scores towards it"
+  }
+}

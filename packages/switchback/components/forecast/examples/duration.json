@@ -1,0 +1,10 @@
+{
+  "variant": "duration",
+  "data": {
+    "tasks": [
+      "Draft the quarterly update email for the board and finance",
+      "Review the two open pull requests and reply to both authors",
+      "Plan next week's workshop agenda and confirm the room booked"
+    ]
+  }
+}

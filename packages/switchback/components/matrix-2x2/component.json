@@ -1,0 +1,96 @@
+{
+  "id": "matrix-2x2",
+  "kind": "page",
+  "name": "Two by two",
+  "intent": "Trade two axes off against each other and place items.",
+  "when": "prioritising or comparing under two competing values",
+  "tags": ["decide", "plan"],
+  "phase": "converge",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write", "place"],
+    "surface": "desk",
+    "timebox": "8 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "x_axis": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2,
+        "items": {
+          "type": "string",
+          "maxLength": 24
+        }
+      },
+      "y_axis": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2,
+        "items": {
+          "type": "string",
+          "maxLength": 24
+        }
+      },
+      "quadrants": {
+        "type": "array",
+        "minItems": 0,
+        "maxItems": 4,
+        "items": {
+          "type": "string",
+          "maxLength": 40
+        }
+      }
+    }
+  },
+  "prompt": "Place each option in a quadrant. Nothing may sit on a line.",
+  "readback": "Name what landed in each quadrant and challenge the crowding — a quadrant holding everything is an axis that isn't discriminating.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "decision-diagnosis/two-axis-mapping",
+        "load_bearing": true,
+        "transfer": "analogical",
+        "claim": "Placing items on a spatial layout defined by two explicit dimensions makes their relative standing on both dimensions easier to judge and compare than a list or table does.",
+        "construct": "diagrammatic representation; graphic organisers",
+        "grade": "D",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Larkin & Simon (1987)",
+            "doi": "10.1111/j.1551-6708.1987.tb00863.x",
+            "type": "theory"
+          }
+        ],
+        "rationale": "research/decision-diagnosis.md#two-axis-mapping"
+      },
+      {
+        "id": "externalisation-embodiment/common-region",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Items placed inside the same bounded region are perceived as belonging together, even against other grouping cues, so labelled zones make category membership readable at a glance.",
+        "construct": "the Gestalt principle of common region (perceptual grouping)",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Wagemans et al. (2012)",
+            "doi": "10.1037/a0029333",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/externalisation-embodiment.md#common-region"
+      }
+    ],
+    "helps": "when items need comparing on two values at once; laying them on two axes is diagram craft with no direct test, so treat the quadrants as a prompt to argue with, not a measurement",
+    "backfires": "when an axis does not discriminate and everything crowds one quadrant, or when \"nothing on a line\" forces a false either-or; neither risk has been studied, and in classroom studies the gains from graphic organisers did not carry over to later tasks"
+  }
+}

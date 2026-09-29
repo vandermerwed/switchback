@@ -1,0 +1,46 @@
+name: research
+
+on:
+  push:
+    branches: [main]
+    paths: &research_paths
+      - "packages/switchback/research/**"
+      - "packages/switchback/components/**"
+      - "packages/switchback/presets/**"
+      - "packages/switchback/registry/**"
+      - "packages/switchback/scripts/check-dois.ts"
+      - "packages/switchback/scripts/apply-grounding.ts"
+      - "packages/switchback/scripts/research/**"
+      - ".github/workflows/research.yml"
+  pull_request:
+    paths: *research_paths
+  schedule:
+    - cron: "17 5 * * 1"
+  workflow_dispatch:
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: apply-grounding --check
+        working-directory: packages/switchback
+        run: pnpm exec tsx scripts/apply-grounding.ts --check
+      - name: check-dois
+        working-directory: packages/switchback
+        shell: bash
+        run: |
+          set +e
+          pnpm exec tsx scripts/check-dois.ts
+          code=$?
+          if [ "$code" -eq 2 ]; then
+            echo "::warning title=check-dois::Crossref was unreachable for some DOIs; none failed to match"
+            exit 0
+          fi
+          exit "$code"

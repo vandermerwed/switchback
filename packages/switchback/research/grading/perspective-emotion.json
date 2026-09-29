@@ -1,0 +1,447 @@
+{
+  "family": "perspective-emotion",
+  "claims": {
+    "perspective-emotion/perspective-taking": {
+      "claim": "Deliberately writing out a situation from another party's point of view reduces egocentric bias, and brings out considerations the writer would otherwise miss, compared with considering it only from one's own view.",
+      "construct": "perspective-taking",
+      "grade": "B",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Galinsky & Moskowitz (2000)",
+          "doi": "10.1037/0022-3514.78.4.708",
+          "type": "experiment"
+        },
+        {
+          "cite": "Galinsky, Maddux, Gilin & White (2008)",
+          "doi": "10.1111/j.1467-9280.2008.02096.x",
+          "type": "experiment"
+        },
+        {
+          "cite": "Epley, Caruso & Bazerman (2006)",
+          "doi": "10.1037/0022-3514.91.5.872",
+          "type": "experiment"
+        },
+        {
+          "cite": "Todd & Galinsky (2014)",
+          "doi": "10.1111/spc3.12116",
+          "type": "review"
+        }
+      ],
+      "rationale": "research/perspective-emotion.md#perspective-taking",
+      "suggested_rewording": null
+    },
+    "perspective-emotion/perspective-getting": {
+      "claim": "Imagining another person's perspective does not reliably make you more accurate about what they think. Asking them does.",
+      "construct": "perspective mistaking vs perspective getting",
+      "grade": "C",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Eyal, Steffel & Epley (2018)",
+          "doi": "10.1037/pspa0000115",
+          "type": "experiment"
+        }
+      ],
+      "rationale": "research/perspective-emotion.md#perspective-getting",
+      "suggested_rewording": "Imagining another person's perspective does not reliably make you more accurate about what they think, and can raise confidence without raising accuracy. (B, adjacent)"
+    },
+    "perspective-emotion/self-distancing": {
+      "claim": "Reflecting on one's own situation from a distanced perspective (third person, or \"me in a year\") reduces emotional reactivity and supports wiser reasoning, compared with a first-person immersed view.",
+      "construct": "self-distancing (spatial, temporal and linguistic)",
+      "grade": "B",
+      "transfer": "adjacent",
+      "effect": "small",
+      "tie_break": "7 (g = 0.19 < 0.2: effect small is mandatory); B rather than A is a judgement on the meta-analysts' own risk-of-bias uncertainty, not a tie-break",
+      "sources": [
+        {
+          "cite": "Murdoch, Chapman, Crane & Gucciardi (2023)",
+          "doi": "10.1002/smi.3199",
+          "type": "meta-analysis"
+        },
+        {
+          "cite": "Kross et al. (2014)",
+          "doi": "10.1037/a0035173",
+          "type": "experiment"
+        },
+        {
+          "cite": "Grossmann & Kross (2014)",
+          "doi": "10.1177/0956797614535400",
+          "type": "experiment"
+        },
+        {
+          "cite": "Bruehlman-Senecal & Ayduk (2015)",
+          "doi": "10.1037/a0038324",
+          "type": "experiment"
+        },
+        {
+          "cite": "Powers & LaBar (2019)",
+          "doi": "10.1016/j.neubiorev.2018.04.023",
+          "type": "review"
+        }
+      ],
+      "rationale": "research/perspective-emotion.md#self-distancing",
+      "suggested_rewording": null
+    },
+    "perspective-emotion/expressive-writing": {
+      "claim": "Writing about emotional experiences produces small improvements in wellbeing and health outcomes compared with neutral writing.",
+      "construct": "expressive writing",
+      "grade": "A",
+      "transfer": "analogical",
+      "effect": "small",
+      "tie_break": "7 (r = .075, about d = 0.15: effect small is mandatory); tie-break 2 untested, no bias-corrected estimate in the notes",
+      "sources": [
+        {
+          "cite": "Frattaroli (2006)",
+          "doi": "10.1037/0033-2909.132.6.823",
+          "type": "meta-analysis"
+        },
+        {
+          "cite": "Smyth (1998)",
+          "doi": "10.1037/0022-006x.66.1.174",
+          "type": "meta-analysis"
+        }
+      ],
+      "rationale": "research/perspective-emotion.md#expressive-writing",
+      "suggested_rewording": null
+    },
+    "perspective-emotion/ritual-cadence": {
+      "claim": "Monitoring and reflecting once a week is frequent enough to obtain most of the benefit of progress monitoring, without the adherence drop-off of daily monitoring.",
+      "construct": "monitoring frequency; adherence to self-monitoring",
+      "grade": "D",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Harkin et al. (2016)",
+          "doi": "10.1037/bul0000025",
+          "type": "meta-analysis"
+        },
+        {
+          "cite": "Burke, Wang & Sevick (2011)",
+          "doi": "10.1016/j.jada.2010.10.008",
+          "type": "review"
+        }
+      ],
+      "rationale": "research/perspective-emotion.md#ritual-cadence",
+      "suggested_rewording": null,
+      "parameter_recommendation": "keep as a design choice"
+    },
+    "perspective-emotion/ritual-duration": {
+      "claim": "A reflective writing session of ten minutes or less is enough to obtain the benefits of monitoring and reflective writing.",
+      "construct": "dose in expressive writing and reflection",
+      "grade": "C",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Burton & King (2008)",
+          "doi": "10.1348/135910707x250910",
+          "type": "experiment"
+        },
+        {
+          "cite": "Frattaroli (2006)",
+          "doi": "10.1037/0033-2909.132.6.823",
+          "type": "meta-analysis"
+        }
+      ],
+      "rationale": "research/perspective-emotion.md#ritual-duration",
+      "suggested_rewording": null,
+      "parameter_recommendation": "keep as a design choice"
+    },
+    "perspective-emotion/decatastrophizing": {
+      "claim": "Writing out a dreaded outcome concretely, including what would happen next and how one would cope, lowers its felt severity. People overestimate how bad and how long-lasting their reaction to negative events will be.",
+      "construct": "decatastrophising (cognitive therapy); the impact bias and immune neglect in affective forecasting",
+      "grade": "C",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Gilbert, Pinel, Wilson, Blumberg & Wheatley (1998)",
+          "doi": "10.1037/0022-3514.75.3.617",
+          "type": "experiment"
+        },
+        {
+          "cite": "Wilson, Wheatley, Meyers, Gilbert & Axsom (2000)",
+          "doi": "10.1037/0022-3514.78.5.821",
+          "type": "experiment"
+        },
+        {
+          "cite": "Norem & Cantor (1986)",
+          "doi": "10.1037/0022-3514.51.6.1208",
+          "type": "experiment"
+        }
+      ],
+      "rationale": "research/perspective-emotion.md#decatastrophizing",
+      "suggested_rewording": "People overestimate how long their distress after a bad outcome will last, and thinking through the other things that will fill the following days reduces that overestimate. (B, adjacent)"
+    },
+    "perspective-emotion/gratitude": {
+      "claim": "Regularly writing down things one is grateful for produces small improvements in well-being. Weekly writing is at least as effective as daily.",
+      "construct": "gratitude interventions; hedonic adaptation to repeated positive activities",
+      "grade": "C",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Emmons & McCullough (2003)",
+          "doi": "10.1037/0022-3514.84.2.377",
+          "type": "experiment"
+        }
+      ],
+      "rationale": "research/perspective-emotion.md#gratitude",
+      "suggested_rewording": "Regularly listing things one is grateful for raised well-being, most reliably positive mood, in controlled studies using weekly or daily lists. (C, adjacent)"
+    },
+    "perspective-emotion/intrapersonal-goal-conflict": {
+      "claim": "Conflict between a person's own goals predicts negative affect and inaction. Making both sides explicit and looking for an integrating resolution reduces that conflict more than overriding one side.",
+      "construct": "intrapersonal goal conflict; ambivalence; resolution through integration",
+      "grade": "D",
+      "transfer": "analogical",
+      "effect": "n/a",
+      "tie_break": "none (the resolution half is not directly tested)",
+      "sources": [
+        {
+          "cite": "Gray, Ozer & Rosenthal (2017)",
+          "doi": "10.1016/j.jrp.2016.12.003",
+          "type": "meta-analysis"
+        },
+        {
+          "cite": "Emmons & King (1988)",
+          "doi": "10.1037/0022-3514.54.6.1040",
+          "type": "experiment"
+        },
+        {
+          "cite": "Miller & Rose (2015)",
+          "doi": "10.1017/S1352465813000878",
+          "type": "review"
+        }
+      ],
+      "rationale": "research/perspective-emotion.md#intrapersonal-goal-conflict",
+      "suggested_rewording": "Conflict between a person's own goals is associated with lower well-being, more distress, and less action on the conflicted goals. (A as an association claim; it grounds the page's purpose, not that the page works)"
+    },
+    "perspective-emotion/domain-satisfaction": {
+      "claim": "Rating satisfaction in several named life domains gives a reliable and valid measure of subjective well-being, and it shows which domain drives a change that a single overall rating hides.",
+      "construct": "domain satisfaction; the Personal Wellbeing Index; bottom-up models of life satisfaction",
+      "grade": "C",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none (Strack et al. 1988 vs Schimmack & Oishi 2005 resolved towards the more rigorous and recent evidence; tie-breaks 1 and 3 do not strictly apply)",
+      "sources": [
+        {
+          "cite": "Schimmack & Oishi (2005)",
+          "doi": "10.1037/0022-3514.89.3.395",
+          "type": "experiment"
+        },
+        {
+          "cite": "Strack, Martin & Schwarz (1988)",
+          "doi": "10.1002/ejsp.2420180505",
+          "type": "experiment"
+        },
+        {
+          "cite": "International Wellbeing Group (2013), Personal Wellbeing Index manual",
+          "isbn": "978-1-74156-177-7",
+          "url": "deakin.edu.au/research/acqol/instruments/wellbeing-index",
+          "type": "practice"
+        }
+      ],
+      "rationale": "research/perspective-emotion.md#domain-satisfaction",
+      "suggested_rewording": "Rating satisfaction in several named life domains follows an established well-being measure with good retest reliability, and the order of the ratings has only a small effect on the answers. (B, adjacent)"
+    }
+  },
+  "items": {
+    "perspective-swap": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "perspective-emotion/perspective-taking",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "perspective-emotion/perspective-getting",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "perspective-emotion/self-distancing",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "externalisation-embodiment/embodied-perspective",
+          "load_bearing": false,
+          "transfer": "analogical"
+        }
+      ],
+      "helps": "when you are stuck in your own view of a situation that involves other people: writing it from their side reduces self-centred judgement and, in negotiation studies, surfaced deals people had missed, but it does not make you more accurate about what they think, so close by writing what you would ask them; the self-distanced role gives only a small lift",
+      "backfires": "when the other side is a competitor, since considering their view can make people act more selfishly, when you slip into a stereotype of the role, or when the imagined view is read back as their actual view, which can raise confidence without raising accuracy"
+    },
+    "perspective-swap/two-sides": {
+      "kind": "variant",
+      "claims": [
+        {
+          "id": "perspective-emotion/perspective-taking",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "perspective-emotion/intrapersonal-goal-conflict",
+          "load_bearing": true,
+          "transfer": "analogical"
+        },
+        {
+          "id": "perspective-emotion/self-distancing",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "perspective-emotion/perspective-getting",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when two of your own wants pull against each other and you keep not acting: conflict between one's own goals is reliably linked with distress and inaction, but whether writing out both sides and a crux resolves it is untested",
+      "backfires": "when the two columns settle into a neutral pros-and-cons tally, which in motivational-interviewing research tends to lower commitment to change in people who are ambivalent",
+      "cut": "Gate 2 (user, 2026-09-25): cut for v0.1; see grading-report.md §3"
+    },
+    "check-in": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "planning-self-regulation/progress-monitoring",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "planning-self-regulation/prior-state-recall",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "perspective-emotion/expressive-writing",
+          "load_bearing": false,
+          "transfer": "analogical"
+        },
+        {
+          "id": "attention-load/resumption-cues",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when you want to see change over weeks: the same rows written each week are progress monitoring, which gives a small lift to goal attainment, and they keep a baseline your memory would otherwise rewrite; the free-write adds at most a small lift",
+      "backfires": "when the rows turn into scores to hit, since rewards tied to a monitored target undermine interest, when the free-write stirs up distress (emotional writing raises it in the short term), or when the ritual becomes a chore and is dropped"
+    },
+    "check-in/gratitude": {
+      "kind": "variant",
+      "claims": [
+        {
+          "id": "planning-self-regulation/progress-monitoring",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "planning-self-regulation/prior-state-recall",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "perspective-emotion/expressive-writing",
+          "load_bearing": false,
+          "transfer": "analogical"
+        },
+        {
+          "id": "perspective-emotion/gratitude",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when you want the weekly page to note something that went well: a short gratitude list raised positive mood in controlled studies that used weekly or daily lists, and any gain is likely small",
+      "backfires": "when gratitude is forced or rote, or treated as a remedy for low mood, which is why the row is optional and off by default; its benefit over other positive writing is not established"
+    },
+    "Ritual": {
+      "kind": "style",
+      "claims": [
+        {
+          "id": "planning-self-regulation/progress-monitoring",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "planning-self-regulation/prior-state-recall",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "perspective-emotion/expressive-writing",
+          "load_bearing": false,
+          "transfer": "analogical"
+        },
+        {
+          "id": "attention-load/resumption-cues",
+          "load_bearing": false,
+          "transfer": "analogical"
+        },
+        {
+          "id": "perspective-emotion/ritual-cadence",
+          "load_bearing": false,
+          "transfer": "adjacent",
+          "role": "parameter"
+        },
+        {
+          "id": "perspective-emotion/ritual-duration",
+          "load_bearing": false,
+          "transfer": "adjacent",
+          "role": "parameter"
+        }
+      ],
+      "helps": "when the same question is worth coming back to: an identical page at each return is progress monitoring on paper, a small but real help, and keeps a written baseline memory cannot quietly revise, while the weekly cadence and the ten-minute length are design choices, not tested doses",
+      "backfires": "when the return becomes a chore and is abandoned, when the rows turn into targets, or when the Saving State line is vague, since a cue that no longer matches where you were can slow resumption more than no cue"
+    },
+    "worst-case": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "perspective-emotion/decatastrophizing",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "planning-self-regulation/prior-state-recall",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when a dread belongs to no plan: people overestimate how long a bad outcome will hurt, and in forecasting studies thinking about everything else that will fill the following days reduced that overestimate; the before and after ratings show whether the page did the same for you",
+      "backfires": "when the next-day, week and month block only rehearses the catastrophe, without the other things that will fill those days, which may feed worry (untested), or when defusing the dread makes a real risk feel acceptable"
+    },
+    "scoresheet/domains": {
+      "kind": "variant",
+      "claims": [
+        {
+          "id": "planning-self-regulation/prior-state-recall",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "planning-self-regulation/progress-monitoring",
+          "load_bearing": true,
+          "transfer": "analogical"
+        },
+        {
+          "id": "perspective-emotion/domain-satisfaction",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when you want to see which part of life moved between returns: rating named domains follows an established well-being measure whose answers are stable over weeks and change little with rating order; the page measures, it does not improve anything",
+      "backfires": "when the domains change from one return to the next, when an average is allowed to hide the one domain that matters, or when the ratings are read as a score to raise"
+    }
+  }
+}

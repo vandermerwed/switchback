@@ -1,0 +1,483 @@
+{
+  "family": "planning-self-regulation",
+  "claims": {
+    "planning-self-regulation/implementation-intentions": {
+      "claim": "Forming written if-then plans (\"When situation X arises, I will do Y\") increases goal attainment compared with forming a goal intention alone.",
+      "construct": "implementation intentions",
+      "grade": "A",
+      "transfer": "direct",
+      "effect": "moderate",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Gollwitzer & Sheeran (2006)",
+          "doi": "10.1016/S0065-2601(06)38002-1",
+          "type": "meta-analysis"
+        },
+        {
+          "cite": "Milkman et al. (2011)",
+          "doi": "10.1073/pnas.1103170108",
+          "type": "experiment"
+        },
+        {
+          "cite": "Gollwitzer (1999)",
+          "doi": "10.1037/0003-066X.54.7.493",
+          "type": "theory"
+        }
+      ],
+      "rationale": "research/planning-self-regulation.md#implementation-intentions",
+      "suggested_rewording": null
+    },
+    "planning-self-regulation/intention-announcement": {
+      "claim": "Telling others about an identity-relevant intention can substitute for acting on it, reducing the effort invested compared with keeping it private.",
+      "construct": "symbolic self-completion; public commitment",
+      "grade": "C",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Gollwitzer, Sheeran, Michalski & Seifert (2009)",
+          "doi": "10.1111/j.1467-9280.2009.02336.x",
+          "type": "experiment"
+        }
+      ],
+      "rationale": "research/planning-self-regulation.md#intention-announcement",
+      "suggested_rewording": null
+    },
+    "planning-self-regulation/mental-contrasting": {
+      "claim": "Contrasting a desired future with the inner obstacle that stands in its way, then planning how to meet that obstacle (MCII / WOOP), increases goal attainment compared with positive fantasising, dwelling on obstacles, or planning alone.",
+      "construct": "mental contrasting with implementation intentions",
+      "grade": "B",
+      "transfer": "direct",
+      "effect": "small",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Wang, Wang & Gai (2021)",
+          "doi": "10.3389/fpsyg.2021.565202",
+          "type": "meta-analysis"
+        },
+        {
+          "cite": "Oettingen, Pak & Schnetter (2001)",
+          "doi": "10.1037/0022-3514.80.5.736",
+          "type": "experiment"
+        }
+      ],
+      "rationale": "research/planning-self-regulation.md#mental-contrasting",
+      "suggested_rewording": "Contrasting a desired future with the inner obstacle, then planning how to meet it (MCII / WOOP), gives a small-to-moderate increase in goal attainment compared with control conditions, and a smaller one when delivered on paper without a guide. (A, direct, small)"
+    },
+    "planning-self-regulation/task-unpacking": {
+      "claim": "Breaking a task into its ordered component steps before predicting when it will be done reduces optimistic bias in completion-time predictions.",
+      "construct": "unpacking; the planning fallacy",
+      "grade": "D",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none (no read source tests unpacking; Kruger & Evans 2004 and Forsyth & Burt 2008 unread, no cached abstract)",
+      "sources": [
+        {
+          "cite": "Buehler, Griffin & Ross (1994)",
+          "doi": "10.1037/0022-3514.67.3.366",
+          "type": "experiment"
+        }
+      ],
+      "rationale": "research/planning-self-regulation.md#task-unpacking",
+      "suggested_rewording": null
+    },
+    "planning-self-regulation/timeboxing": {
+      "claim": "Setting a fixed time limit for a phase of work ends deliberation sooner, with no loss of decision quality for convergent tasks.",
+      "construct": "timeboxing; deadlines as goals (Parkinson's law)",
+      "grade": "D",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "1 matches first (Hyndman & Bisin 2026, failed replication of the deadline study; cap C), then 6 (practice-only admissible support) sets D",
+      "sources": [
+        {
+          "cite": "Parkinson (1955), The Economist essay",
+          "url": "https://web.archive.org/web/20180705215319/https://www.economist.com/news/1955/11/19/parkinsons-law",
+          "type": "practice"
+        },
+        {
+          "cite": "Hyndman & Bisin (2026)",
+          "doi": "10.1177/09567976261460772",
+          "type": "experiment"
+        }
+      ],
+      "rationale": "research/planning-self-regulation.md#timeboxing",
+      "suggested_rewording": "Setting a fixed stop time for a convergent phase is a craft practice for forcing a decision; whether it preserves decision quality is untested. (D, practice)"
+    },
+    "planning-self-regulation/sitting-duration": {
+      "claim": "A single focused working session of about 40 minutes can be sustained without a marked decline in attention or quality for self-directed thinking work.",
+      "construct": "sustained attention over a session; vigilance decrement; mental fatigue",
+      "grade": "D",
+      "transfer": "analogical",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Wilson & Korn (2007)",
+          "doi": "10.1080/00986280701291291",
+          "type": "review"
+        },
+        {
+          "cite": "Bradbury (2016)",
+          "doi": "10.1152/advan.00109.2016",
+          "type": "review"
+        },
+        {
+          "cite": "Warm, Parasuraman & Matthews (2008)",
+          "doi": "10.1518/001872008x312152",
+          "type": "review"
+        }
+      ],
+      "rationale": "research/planning-self-regulation.md#sitting-duration",
+      "suggested_rewording": null,
+      "parameter_recommendation": "keep as a design choice"
+    },
+    "planning-self-regulation/progress-monitoring": {
+      "claim": "Monitoring progress towards a goal increases goal attainment, and more so when the progress is physically recorded.",
+      "construct": "progress monitoring / self-monitoring",
+      "grade": "A",
+      "transfer": "adjacent",
+      "transfer_by_item": {
+        "check-in": "adjacent",
+        "Ritual": "adjacent",
+        "scoresheet": "analogical"
+      },
+      "effect": "small",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Harkin et al. (2016)",
+          "doi": "10.1037/bul0000025",
+          "type": "meta-analysis"
+        },
+        {
+          "cite": "Michie et al. (2009)",
+          "doi": "10.1037/a0016136",
+          "type": "meta-analysis"
+        },
+        {
+          "cite": "Burke, Wang & Sevick (2011)",
+          "doi": "10.1016/j.jada.2010.10.008",
+          "type": "review"
+        }
+      ],
+      "rationale": "research/planning-self-regulation.md#progress-monitoring",
+      "suggested_rewording": null
+    },
+    "planning-self-regulation/prior-state-recall": {
+      "claim": "People recall their earlier attitudes, feelings or confidence as closer to their present state than they were, or as fitting their theory of how they must have changed. A written baseline is therefore needed to see real change.",
+      "construct": "consistency and change biases in autobiographical memory (implicit theories of stability and change)",
+      "grade": "C",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Wolfe & Williams (2018)",
+          "doi": "10.1080/17470218.2017.1363792",
+          "type": "experiment"
+        },
+        {
+          "cite": "Ross (1989)",
+          "doi": "10.1037/0033-295X.96.2.341",
+          "type": "theory"
+        }
+      ],
+      "rationale": "research/planning-self-regulation.md#prior-state-recall",
+      "suggested_rewording": null
+    },
+    "planning-self-regulation/graduated-self-experiment": {
+      "claim": "Deliberately testing a feared prediction with a small, planned real-world action, and then comparing what happened with what was expected, reduces avoidance and revises the expectation. The comparison step is doing work, not just the exposure.",
+      "construct": "behavioural experiments; expectancy violation (inhibitory learning); mastery experiences (self-efficacy)",
+      "grade": "C",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Norton & Price (2007)",
+          "doi": "10.1097/01.nmd.0000253843.70149.9a",
+          "type": "meta-analysis"
+        },
+        {
+          "cite": "Haug, Nordgreen, Öst & Havik (2012)",
+          "doi": "10.1016/j.cpr.2012.04.002",
+          "type": "meta-analysis"
+        },
+        {
+          "cite": "Craske et al. (2014)",
+          "doi": "10.1016/j.brat.2014.04.006",
+          "type": "review"
+        }
+      ],
+      "rationale": "research/planning-self-regulation.md#graduated-self-experiment",
+      "suggested_rewording": "Planned, graded exposure to a feared situation reduces avoidance and anxiety, including when self-guided, though self-guided versions do somewhat less well than guided ones. (A, adjacent)"
+    },
+    "planning-self-regulation/goal-decomposition": {
+      "claim": "A persistent behaviour often serves several goals at once. Listing the goals it serves before looking for alternatives yields replacements that are more likely to be adopted than replacements aimed at its stated goal alone.",
+      "construct": "multifinality (goal systems theory); functional assessment and functionally equivalent replacement behaviour",
+      "grade": "D",
+      "transfer": "analogical",
+      "effect": "n/a",
+      "tie_break": "none (comparative half not directly tested by any read source)",
+      "sources": [
+        {
+          "cite": "Gage, Lewis & Stichter (2012)",
+          "doi": "10.1177/019874291203700201",
+          "type": "meta-analysis"
+        },
+        {
+          "cite": "Sheldon & Kasser (1995)",
+          "doi": "10.1037/0022-3514.68.3.531",
+          "type": "experiment"
+        },
+        {
+          "cite": "O'Neill et al. (1997)",
+          "isbn": "0-534-25366-9",
+          "type": "practice"
+        }
+      ],
+      "rationale": "research/planning-self-regulation.md#goal-decomposition",
+      "suggested_rewording": null
+    },
+    "planning-self-regulation/choice-bracketing": {
+      "claim": "Deciding a class of repeated choices together, as a rule or policy, produces more consistent and more farsighted choices than deciding each instance separately.",
+      "construct": "broad vs narrow choice bracketing; bundling of choices; personal rules",
+      "grade": "C",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Hofmeyr, Ainslie, Charlton & Ross (2011)",
+          "doi": "10.1111/j.1360-0443.2010.03166.x",
+          "type": "experiment"
+        },
+        {
+          "cite": "Read & Loewenstein (1995)",
+          "doi": "10.1037/1076-898x.1.1.34",
+          "type": "experiment"
+        }
+      ],
+      "rationale": "research/planning-self-regulation.md#choice-bracketing",
+      "suggested_rewording": "Deciding a series of repeated choices as one bundle can shift people towards the farsighted option, at least for those who usually choose the short-term one. (C, adjacent)"
+    },
+    "planning-self-regulation/goal-gradient": {
+      "claim": "Effort towards a goal increases as the remaining distance to it shrinks, and making the remaining distance visible strengthens the effect.",
+      "construct": "the goal-gradient effect; perceived goal distance",
+      "grade": "C",
+      "transfer": "adjacent",
+      "effect": "n/a",
+      "tie_break": "none",
+      "sources": [
+        {
+          "cite": "Kivetz, Urminsky & Zheng (2006)",
+          "doi": "10.1509/jmkr.43.1.39",
+          "type": "experiment"
+        },
+        {
+          "cite": "Bonezzi, Brendl & De Angelis (2011)",
+          "doi": "10.1177/0956797611404899",
+          "type": "experiment"
+        },
+        {
+          "cite": "Fishbach & Dhar (2005)",
+          "doi": "10.1086/497548",
+          "type": "experiment"
+        }
+      ],
+      "rationale": "research/planning-self-regulation.md#goal-gradient",
+      "suggested_rewording": "Effort towards a goal tends to rise as the end draws near, though motivation can dip about halfway, and how progress is framed (done so far vs still to go) changes the shape. (B, adjacent)"
+    }
+  },
+  "items": {
+    "commit": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "planning-self-regulation/implementation-intentions",
+          "load_bearing": true,
+          "transfer": "direct"
+        },
+        {
+          "id": "planning-self-regulation/intention-announcement",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when the goal is already decided and the gap is acting on it: one written if-then plan, tied to a cue you will actually meet and as specific as a day and time, raises follow-through for a single goal",
+      "backfires": "when one page carries plans for many goals at once, which draws attention to how hard they all are and weakens commitment, and when an identity goal is announced to people who will merely notice it, which can feel like progress already made, so the \"Who I will tell\" line stays off by default"
+    },
+    "commit/policy": {
+      "kind": "variant",
+      "claims": [
+        {
+          "id": "planning-self-regulation/implementation-intentions",
+          "load_bearing": true,
+          "transfer": "direct"
+        },
+        {
+          "id": "planning-self-regulation/choice-bracketing",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "planning-self-regulation/intention-announcement",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when the same choice keeps coming back: deciding the rule and its named exceptions once, before the next instance, may tilt the choices towards the long-term option, though the one experiment behind this found the shift only in people who usually take the short-term one",
+      "backfires": "when the rule bundles choices better made fresh each time (people choosing many at once pick more variety than they later want), and when a rigid rule, once broken, is dropped altogether, a risk that is theory rather than tested"
+    },
+    "mental-contrast": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "planning-self-regulation/mental-contrasting",
+          "load_bearing": true,
+          "transfer": "direct"
+        },
+        {
+          "id": "planning-self-regulation/implementation-intentions",
+          "load_bearing": false,
+          "transfer": "direct"
+        }
+      ],
+      "helps": "when a wish is one you can realistically reach: setting the outcome against the inner obstacle, then writing an if-then plan for that obstacle, gives a small but consistent lift to follow-through, a little smaller on paper than with a guide",
+      "backfires": "when the Obstacle box is skipped and the page becomes pure positive fantasy, which lowers effort, and when success is unlikely, where contrasting is meant to lead you to let the wish go, so ending in disengagement is the page working, not failing"
+    },
+    "timeline": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "planning-self-regulation/task-unpacking",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when a task has many parts and you are tempted to guess its end date whole: writing the steps out in order makes the work visible before you commit to a time, though no study tests ordering steps as this page does",
+      "backfires": "when the steps turn into a story of how everything will go right, since plan-focused scenarios are what make time predictions too optimistic, and when the finish date is set without comparing it with how long similar work took before"
+    },
+    "timer": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "planning-self-regulation/timeboxing",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "creativity-fixation/time-pressure-divergent",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when a convergent decision is being turned over long after new information has stopped arriving: a written stop time is a craft practice for forcing a choice, not a tested method",
+      "backfires": "when the stop is set on idea generation, where time pressure is the known risk, or on a decision that needs every option weighed; nothing read shows a timebox leaves decision quality intact"
+    },
+    "scoresheet": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "planning-self-regulation/prior-state-recall",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "planning-self-regulation/progress-monitoring",
+          "load_bearing": true,
+          "transfer": "analogical"
+        }
+      ],
+      "helps": "when a felt sense is likely to shift: writing the before rating down means the after rating is compared with what you actually said, not with a memory that drifts towards how you feel now",
+      "backfires": "when the numbers become a target, since rewards tied to a monitored target undermine interest in the activity, and when the visible before rating anchors the after one; whether hiding it helps is untested"
+    },
+    "Sitting": {
+      "kind": "style",
+      "claims": [
+        {
+          "id": "planning-self-regulation/implementation-intentions",
+          "load_bearing": true,
+          "transfer": "direct"
+        },
+        {
+          "id": "planning-self-regulation/timeboxing",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "attention-load/phone-presence",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        },
+        {
+          "id": "attention-load/stop-mid-task",
+          "load_bearing": true,
+          "transfer": "analogical"
+        },
+        {
+          "id": "attention-load/resumption-cues",
+          "load_bearing": false,
+          "transfer": "analogical"
+        },
+        {
+          "id": "attention-load/task-switching",
+          "load_bearing": false,
+          "transfer": "analogical"
+        },
+        {
+          "id": "planning-self-regulation/sitting-duration",
+          "load_bearing": false,
+          "transfer": "analogical",
+          "role": "parameter"
+        }
+      ],
+      "helps": "when one block of thinking work needs a set start and end: a written if-then plan for when you will sit has good evidence behind it, while the timebox, the 40-minute length and the ten-page limit are design choices",
+      "backfires": "when the timebox is enforced on work that is still generating ideas, when too many moves are squeezed into one block, and when moving the phone away is treated as proven: the best-known brain-drain result failed a pre-registered replication"
+    },
+    "small-experiment": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "planning-self-regulation/graduated-self-experiment",
+          "load_bearing": true,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when an aversion rests on a prediction you can test cheaply: writing the prediction down, running one small safe probe and comparing the result at the return follows how exposure work is structured, which helps when self-guided but less than with a guide; the comparison step's own contribution is untested",
+      "backfires": "when it is used on a diagnosed anxiety problem, which it does not treat, when the probe is too big to feel safe, or when the result is never set against the prediction; whether an unguided probe can make the fear worse is untested"
+    },
+    "goal-factoring": {
+      "kind": "component",
+      "claims": [
+        {
+          "id": "planning-self-regulation/goal-decomposition",
+          "load_bearing": true,
+          "transfer": "analogical"
+        }
+      ],
+      "helps": "when a habit keeps resisting replacement: listing what it does for you before looking for other means is untested craft, adapted from functional assessment, which works when a practitioner does it for someone else",
+      "backfires": "when the list of goals is a story made up after the fact rather than what the habit really serves; no study tests factoring your own behaviour"
+    },
+    "goal-factoring/aversion": {
+      "kind": "variant",
+      "claims": [
+        {
+          "id": "planning-self-regulation/goal-decomposition",
+          "load_bearing": true,
+          "transfer": "analogical"
+        },
+        {
+          "id": "planning-self-regulation/graduated-self-experiment",
+          "load_bearing": false,
+          "transfer": "adjacent"
+        }
+      ],
+      "helps": "when an activity is avoided for reasons you cannot yet name: splitting it into parts and giving each a verdict before any fix is untested craft, and the internal fixes it hands to small-experiment carry that page's cautions",
+      "backfires": "when the verdicts are rationalisations rather than what actually puts you off, or when an internal fix is tried as a probe too large to feel safe"
+    }
+  }
+}

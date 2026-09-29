@@ -1,0 +1,125 @@
+{
+  "id": "feynman",
+  "kind": "page",
+  "name": "Explain it simply",
+  "intent": "Expose the exact place understanding breaks.",
+  "when": "the human claims to understand but cannot explain, or material won't stick",
+  "tags": ["learn"],
+  "phase": "either",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write"],
+    "surface": "desk",
+    "timebox": "10 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "subject": {
+        "type": "string",
+        "maxLength": 120
+      }
+    }
+  },
+  "prompt": "Explain {subject} to a curious twelve-year-old. No jargon allowed.",
+  "readback": "The point where plain language collapses is the finding. Quote that sentence back.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "memory-retrieval/explanatory-depth",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "People overestimate how well they understand how things work. Attempting a step-by-step explanation lowers that self-rating, which exposes the gap.",
+        "construct": "the illusion of explanatory depth (IOED)",
+        "grade": "B",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Rozenblit & Keil (2002)",
+            "doi": "10.1207/s15516709cog2605_1",
+            "type": "experiment"
+          },
+          {
+            "cite": "Alter, Oppenheimer & Zemla (2010)",
+            "doi": "10.1037/a0020218",
+            "type": "experiment"
+          },
+          {
+            "cite": "Fernbach et al. (2013)",
+            "doi": "10.1177/0956797612464058",
+            "type": "experiment"
+          },
+          {
+            "cite": "Crawford & Ruscio (2021)",
+            "doi": "10.1177/0956797620972367",
+            "type": "rrr"
+          }
+        ],
+        "rationale": "research/memory-retrieval.md#explanatory-depth"
+      },
+      {
+        "id": "memory-retrieval/explaining-to-learn",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Explaining material to an imagined novice in one's own words improves understanding and retention compared with restudying it.",
+        "construct": "learning by explaining / teaching (generative learning)",
+        "grade": "B",
+        "effect": "moderate",
+        "sources": [
+          {
+            "cite": "Kobayashi (2019)",
+            "doi": "10.1111/jpr.12221",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Lachner, Ly & Nückles (2018)",
+            "doi": "10.1080/00220973.2017.1363691",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/memory-retrieval.md#explaining-to-learn"
+      },
+      {
+        "id": "memory-retrieval/generate-before-told",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Attempting an answer yourself before being given one improves later understanding and retention, compared with receiving the answer first.",
+        "construct": "the generation effect; productive failure (problem solving before instruction)",
+        "grade": "B",
+        "effect": "moderate",
+        "sources": [
+          {
+            "cite": "Sinha & Kapur (2021)",
+            "doi": "10.3102/00346543211019105",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Slamecka & Graf (1978)",
+            "doi": "10.1037/0278-7393.4.6.592",
+            "type": "experiment"
+          },
+          {
+            "cite": "Kapur (2008)",
+            "doi": "10.1080/07370000802212669",
+            "type": "experiment"
+          },
+          {
+            "cite": "Kirschner, Sweller & Clark (2006)",
+            "doi": "10.1207/s15326985ep4102_1",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/memory-retrieval.md#generate-before-told"
+      }
+    ],
+    "helps": "when you feel you understand how something works: trying to explain the mechanism step by step reliably lowers people's rating of their own understanding, which shows where the gap is",
+    "backfires": "when the page gets a list of reasons or opinions instead of a mechanism, which did not reduce the illusion, or when the exposed gap is taken for learning: in pre-registered replications, explaining changed people's ratings of their understanding but not their views"
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "creativity-fixation/random-stimuli": {
+    "result": "downgraded",
+    "from": "C",
+    "to": "D",
+    "reason": "No counted source tests random, unrelated words or prompts: Dugosh et al. used other people's ideas (with irrelevant information as a moderator) and Leahy et al. show that examples fixate. The claim as written is not directly tested, so it is D, as for bad-ideas-criterion. Dugosh et al. has no cached abstract, but its quote matches PubMed (PMID 11079237). This lowers stimulus-die from C to D; forced-connections is already D.",
+    "sources": [
+      {
+        "cite": "Dugosh et al. (2000)",
+        "doi": "10.1037/0022-3514.79.5.722"
+      },
+      {
+        "cite": "Leahy et al. (2020)",
+        "doi": "10.1115/1.4046446"
+      }
+    ],
+    "helps_overclaim": null
+  },
+  "creativity-fixation/heuristic-prompts": {
+    "result": "confirmed",
+    "from": "C",
+    "to": "C",
+    "reason": "One order-confounded experiment plus an observational catalogue is C; both quotes match the cache.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "creativity-fixation/conceptual-combination": {
+    "result": "confirmed",
+    "from": "D",
+    "to": "D",
+    "reason": "No source has a cached abstract; D is the floor.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "creativity-fixation/deferred-judgement": {
+    "result": "confirmed",
+    "from": "D",
+    "to": "D",
+    "reason": "Cache confirms both flagged mismatches; no counted source tests deferral itself.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "creativity-fixation/bad-ideas-criterion": {
+    "result": "confirmed",
+    "from": "D",
+    "to": "D",
+    "reason": "Harrington (1975) matches the cache but does not test 'be bad' instructions; tie-break 6.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "creativity-fixation/serial-order-effect": {
+    "result": "confirmed",
+    "from": "B",
+    "to": "B",
+    "reason": "Web search found further replications and no failure, so B stands. Barbot et al. (2026) find the effect 'robust at the group level (i.e., reproducible, though small), yet unreliable in terms of inter-individual stability', explaining at most 3.5% of variance. Effect should be 'small' rather than n/a; whether d falls below 0.2 is not reported, so tie-break 7 is not formally triggered.",
+    "sources": [
+      {
+        "cite": "Barbot, Van den Noortgate & Said-Metwaly (2026)",
+        "doi": "10.3390/jintelligence14060100"
+      },
+      {
+        "cite": "Bai, Leseman, Moerbeek & Kroesbergen (2021)",
+        "doi": "10.3390/jintelligence9020020"
+      },
+      {
+        "cite": "Kleinkorres, Forthmann & Holling (2021)",
+        "doi": "10.3390/jintelligence9010003"
+      }
+    ],
+    "helps_overclaim": "ten-bad-ideas: 'later ideas in a run tend to be more original ... read the later boxes first' should say the tendency is small and not dependable for any one person (Barbot et al. 2026: at most 3.5% of variance; ICCs < 0.31)."
+  },
+  "creativity-fixation/constraint-relaxation": {
+    "result": "confirmed",
+    "from": "C",
+    "to": "C",
+    "reason": "C fits the claim as written. The suggested rewording's B is doubtful, because all five experiments come from one group.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "creativity-fixation/incubation-effect": {
+    "result": "confirmed",
+    "from": "B",
+    "to": "B",
+    "reason": "Sio & Ormerod full text (read): 117 studies, N = 3,606, weighted d = 0.29 (95% CI 0.21-0.39), Q = 173.99, df = 113 (I² about 35%), funnel regression beta = -.08, p = .41. No bias-corrected estimate near zero, no I² > 75%. Murray et al. (2024) is a failed conceptual replication of Baird et al.'s mind-wandering incubation benefit, so Baird should not be leaned on. Effect can move from n/a to moderate (d = 0.29 is above the 0.2 line).",
+    "sources": [
+      {
+        "cite": "Sio & Ormerod (2009)",
+        "doi": "10.1037/a0014212"
+      },
+      {
+        "cite": "Murray, Liang, Brosowsky & Seli (2024)",
+        "doi": "10.1037/aca0000420"
+      }
+    ],
+    "helps_overclaim": null
+  },
+  "creativity-fixation/incubation-conditions": {
+    "result": "confirmed",
+    "from": "C",
+    "to": "C",
+    "reason": "Part (b) has no read support, so C. Against the rewording's B: low load vs rest was not significant overall in Sio & Ormerod's Table 4 (t(36) = 0.28), and Murray et al. (2024) failed to replicate Baird et al.'s undemanding-task benefit. The low-demand-versus-demanding part holds for creative problems in Sio & Ormerod.",
+    "sources": [
+      {
+        "cite": "Sio & Ormerod (2009)",
+        "doi": "10.1037/a0014212"
+      },
+      {
+        "cite": "Murray, Liang, Brosowsky & Seli (2024)",
+        "doi": "10.1037/aca0000420"
+      }
+    ],
+    "helps_overclaim": null
+  },
+  "creativity-fixation/sleep-insight": {
+    "result": "confirmed",
+    "from": "C",
+    "to": "C",
+    "reason": "C stands; uncached quotes checked against PubMed.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "creativity-fixation/walking-divergent": {
+    "result": "confirmed",
+    "from": "C",
+    "to": "C",
+    "reason": "C stands; both abstracts match the cache.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "creativity-fixation/time-pressure-divergent": {
+    "result": "confirmed",
+    "from": "C",
+    "to": "C",
+    "reason": "Mixed and partly contrary evidence; C.",
+    "sources": [],
+    "helps_overclaim": null
+  }
+}

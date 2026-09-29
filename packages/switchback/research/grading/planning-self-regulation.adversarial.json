@@ -1,0 +1,79 @@
+{
+  "planning-self-regulation/implementation-intentions": {
+    "result": "confirmed", "from": "A", "to": "A",
+    "reason": "No bias-corrected estimate near zero and no failed large replication found (searched). The 642-test meta-analysis reports .27 <= d <= .66 (no correction in its abstract); the pre-registered alcohol meta-analysis is smaller but positive (d+ = -0.14 weekly drinking; trim-and-fill found zero missing studies). Effect 'moderate' sits at the low edge. Carrera et al. 2018 (n = 877) is a tightly estimated null for scheduling a repeated behaviour (gym visits): a boundary condition, not a tie-break 1 replication. The 2021 gym megastudy cannot isolate planning, since 53 of 54 arms included a planning prompt.",
+    "sources": [
+      { "cite": "Sheeran, Listrom & Gollwitzer (2024), European Review of Social Psychology", "doi": "10.1080/10463283.2024.2334563" },
+      { "cite": "Cooke, McEwan & Norman (2023), Drug and Alcohol Review", "doi": "10.1111/dar.13553" },
+      { "cite": "Carrera, Royer, Stehr, Sydnor & Taubinsky (2018), Journal of Health Economics", "doi": "10.1016/j.jhealeco.2018.09.002" },
+      { "cite": "Milkman et al. (2021), Nature (megastudy)", "doi": "10.1038/s41586-021-04128-4" }
+    ],
+    "helps_overclaim": null
+  },
+  "planning-self-regulation/intention-announcement": {
+    "result": "confirmed", "from": "C", "to": "C",
+    "reason": "One read paper of four experiments from one group, no replication found: 'few studies'.",
+    "sources": [{ "cite": "Gollwitzer, Sheeran, Michalski & Seifert (2009)", "doi": "10.1111/j.1467-9280.2009.02336.x" }],
+    "helps_overclaim": null
+  },
+  "planning-self-regulation/mental-contrasting": {
+    "result": "confirmed", "from": "B", "to": "B",
+    "reason": "Wang et al. 2021's trim-and-fill estimate (g = 0.242) stays above zero; no large pre-registered failure of MCII found (searched). The comparative half rests on Oettingen et al. 2001's four experiments, so B is the ceiling for the claim as written.",
+    "sources": [{ "cite": "Wang, Wang & Gai (2021)", "doi": "10.3389/fpsyg.2021.565202" }],
+    "helps_overclaim": null
+  },
+  "planning-self-regulation/task-unpacking": {
+    "result": "confirmed", "from": "D", "to": "D",
+    "reason": "No read source tests unpacking; the two unpacking papers have no cached abstract.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "planning-self-regulation/timeboxing": {
+    "result": "confirmed", "from": "D", "to": "D",
+    "reason": "Ariely & Wertenbroch 2002 is retracted; the empirical sources are unread; the only admissible support is practice.",
+    "sources": [{ "cite": "Hyndman & Bisin (2026)", "doi": "10.1177/09567976261460772" }],
+    "helps_overclaim": null
+  },
+  "planning-self-regulation/sitting-duration": {
+    "result": "confirmed", "from": "D", "to": "D",
+    "reason": "No read source tests any session length for self-directed thinking work; a design choice.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "planning-self-regulation/progress-monitoring": {
+    "result": "downgraded", "from": "A", "to": "B",
+    "reason": "Tie-break 4. Harkin et al.'s full text (author manuscript, eprints.whiterose.ac.uk/id/eprint/87431) reports goal-attainment heterogeneity 'Q(137) = 837.77' (I-squared about 84%). The two reported moderators that match a private paper page pull apart: 'monitoring in private (d+ = 0.19)' against 'Physically recording the information ... (d+ = 0.43)'. No private-and-recorded subgroup is reported, so the heterogeneity is not resolved for our conditions. Trim-and-fill gives 'd+ = 0.19 (95% CI = 0.10 to 0.28)', which is not near zero, so tie-break 2 does not fire. Effect should become small. Displayed grades of check-in, Ritual and scoresheet are unchanged, because prior-state-recall is already C.",
+    "sources": [{ "cite": "Harkin et al. (2016), Psychological Bulletin (full-text author manuscript)", "doi": "10.1037/bul0000025" }],
+    "helps_overclaim": "check-in, Ritual, scoresheet: if the effect becomes small (the matching private-monitoring subgroup is d+ = 0.19), tie-break 7 requires the helps text to say the gain is small. Check-in's 'helps goal attainment more when physically recorded' does not."
+  },
+  "planning-self-regulation/prior-state-recall": {
+    "result": "confirmed", "from": "C", "to": "C",
+    "reason": "One read two-experiment paper plus a theory synthesis: 'few studies'.",
+    "sources": [{ "cite": "Wolfe & Williams (2018)", "doi": "10.1080/17470218.2017.1363792" }],
+    "helps_overclaim": null
+  },
+  "planning-self-regulation/graduated-self-experiment": {
+    "result": "confirmed", "from": "C", "to": "C",
+    "reason": "The exposure half has read meta-analytic support (Norton & Price 2007; Haug et al. 2012). The comparison-step half rests on one review, so C rather than D, because the page's action is tested in an adjacent population. Nothing leans on Bandura 1977, whose cached abstract is an unrelated paper; it is not counted and is not in the JSON sources.",
+    "sources": [{ "cite": "Norton & Price (2007)", "doi": "10.1097/01.nmd.0000253843.70149.9a" }],
+    "helps_overclaim": null
+  },
+  "planning-self-regulation/goal-decomposition": {
+    "result": "confirmed", "from": "D", "to": "D",
+    "reason": "No read source tests the comparative claim; the admissible support is theory, practice, and a practitioner-delivered meta-analysis whose comparison is not in its abstract.",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "planning-self-regulation/choice-bracketing": {
+    "result": "confirmed", "from": "C", "to": "C",
+    "reason": "One small read experiment (30 smokers, 30 non-smokers) that awaits replication, plus a read counter-condition (diversification bias).",
+    "sources": [{ "cite": "Hofmeyr, Ainslie, Charlton & Ross (2011)", "doi": "10.1111/j.1360-0443.2010.03166.x" }],
+    "helps_overclaim": null
+  },
+  "planning-self-regulation/goal-gradient": {
+    "result": "confirmed", "from": "C", "to": "C",
+    "reason": "The first half is mixed (Kivetz et al. 2006 against Bonezzi et al. 2011's mid-distance dip), and no read source tests the visibility half.",
+    "sources": [{ "cite": "Bonezzi, Brendl & De Angelis (2011)", "doi": "10.1177/0956797611404899" }],
+    "helps_overclaim": null
+  }
+}

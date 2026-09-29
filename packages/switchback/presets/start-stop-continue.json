@@ -1,0 +1,35 @@
+{
+  "id": "start-stop-continue",
+  "kind": "preset",
+  "extends": "zones",
+  "name": "Start / stop / continue",
+  "tags": ["review", "reflect"],
+  "data": {
+    "zones": ["Start", "Stop", "Continue"]
+  },
+  "attribution": "Traditional retrospective practice",
+  "licence": "idea; no restriction",
+  "grounding": {
+    "claims": [
+      {
+        "id": "externalisation-embodiment/common-region",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Items placed inside the same bounded region are perceived as belonging together, even against other grouping cues, so labelled zones make category membership readable at a glance.",
+        "construct": "the Gestalt principle of common region (perceptual grouping)",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Wagemans et al. (2012)",
+            "doi": "10.1037/a0029333",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/externalisation-embodiment.md#common-region"
+      }
+    ],
+    "helps": "when looking back over a stretch of work and the changes need sorting into three plain verbs; the preset adds no claim beyond the zones",
+    "backfires": "when the zones collect complaints rather than behaviours someone will actually change"
+  }
+}

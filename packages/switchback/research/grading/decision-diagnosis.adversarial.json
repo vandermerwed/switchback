@@ -1,0 +1,135 @@
+{
+  "decision-diagnosis/decomposed-judgement": {
+    "result": "downgraded", "from": "A", "to": "B",
+    "reason": "Tie-break 4: both meta-analyses have unexplained heterogeneity above I² = 75%. Grove et al. 2000 (full text) report QT = 1635.2 on 135 df (I² ≈ 92%), with no design factor producing 'a sizable influence'. Ægisdóttir et al. 2006 (Table 2) report Q = 470.71 on 91 df (I² ≈ 81%): 'the study design characteristics that we hypothesized would influence the overall effect size ... did not reduce the heterogeneity', and they removed 20% of effects as outliers to reach homogeneity. No moderator matches a personal decision without a criterion. Tie-break 7 also applies: d+ = .12–.16, 'a small effect by conventional standards (Cohen, 1988), but it is consistent and reliable', and Ægisdóttir cites Grove as d = .12. So effect must be `small`, not `moderate`.",
+    "sources": [
+      { "cite": "Grove, Zald, Lebow, Snitz & Nelson (2000), full text", "doi": "10.1037/1040-3590.12.1.19" },
+      { "cite": "Ægisdóttir, White, Spengler et al. (2006), full text, Table 2", "doi": "10.1177/0011000005285875" }
+    ],
+    "helps_overclaim": "options-criteria: 'mechanical totals beat unaided judgement in prediction studies' must say the advantage is small (d ≈ .12–.16), per tie-break 7."
+  },
+  "decision-diagnosis/anchoring": {
+    "result": "downgraded", "from": "A", "to": "B",
+    "reason": "The claim as written says a number 'written or seen earlier' pulls later judgements. Numbers that are only seen (incidental anchors) failed three high-powered replications: 'No statistically significant evidence of incidental anchoring was obtained. In contrast, robust standard anchoring effects were found. The results suggest that anchoring is limited to situations which require explicit thinking about the anchor.' Many Labs 1 supports A only for anchors that are considered through a comparison task. Pre-registration of Shanks et al. is not confirmed, so tie-break 1 is not applied, but the claim as written is not 'consistent'. Rewording it to 'a number one has written or compared against' would restore A; that is the lead's call. The page's own case (a self-written gut score) is the considered kind.",
+    "sources": [
+      { "cite": "Shanks, Barbieri-Hermitte & Vadillo (2020), Collabra: Psychology", "doi": "10.1525/collabra.310" },
+      { "cite": "Klein et al. (2014), Many Labs 1", "doi": "10.1027/1864-9335/a000178" }
+    ],
+    "helps_overclaim": null
+  },
+  "decision-diagnosis/prospective-hindsight": {
+    "result": "confirmed", "from": "C", "to": "C",
+    "reason": "The Mitchell et al. 1989 cached abstract counts against the tense framing ('temporal perspective showed little influence') and for certainty (longer, more episodic explanations). Peabody's premortem vs worst-case contrast is null in Experiment 2 and positive in Experiment 3. I count Peabody here, since the worst-case prompt is the 'might happen' framing, so D does not apply. The '30%' figure is Klein's, not the paper's, and stays excluded.",
+    "sources": [
+      { "cite": "Mitchell, Russo & Pennington (1989)", "doi": "10.1002/bdm.3960020103" },
+      { "cite": "Peabody (2017)", "doi": "10.37099/mtu.dc.etdr/374" }
+    ],
+    "helps_overclaim": null
+  },
+  "decision-diagnosis/premortem-overconfidence": {
+    "result": "confirmed", "from": "C", "to": "C",
+    "reason": "The risk-surfacing half rests on Gallop et al. 2016 and Peabody 2017 (both cached). The overconfidence half has no admissible source, since Veinott et al. 2010 is unverified.",
+    "sources": [
+      { "cite": "Gallop, Willy & Bischoff (2016)", "doi": "10.1080/19488289.2016.1240118" }
+    ],
+    "helps_overclaim": null
+  },
+  "decision-diagnosis/assumption-surfacing": {
+    "result": "confirmed", "from": "D", "to": "D",
+    "reason": "The support is practitioner-only. Coulthart 2017's cached text states no finding (tie-break 6).",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "decision-diagnosis/consider-the-opposite": {
+    "result": "downgraded", "from": "B", "to": "C",
+    "reason": "The overconfidence half is mixed, not 'mostly consistent'. Allwood & Johansson 2004 (full text) say Koriat et al.'s contradicting-reasons effect 'has not been possible to replicate in later studies (Allwood & Granhag, 1996b; Fischhoff & MacGregor, 1982)', and 'arguments provided by the researchers against the participants' chosen answers did not improve the realism'. In Walters et al. 2017 (full text), 'Confidence in the consider the alternative condition did not differ significantly from the no treatment condition', with overconfidence only marginally lower, through accuracy. The biased-assimilation half rests on Lord et al. 1984 alone; its abstract, fetched from PubMed because the cache is empty, matches the recorded quote. Larrick 2004's cached text is only a section list, so its quote cannot be checked against the cache. No failed replication is large, so C rather than below.",
+    "sources": [
+      { "cite": "Allwood & Johansson (2004), Acta Psychologica", "doi": "10.1016/j.actpsy.2004.06.006" },
+      { "cite": "Walters, Fernbach, Fox & Sloman (2017), Management Science", "doi": "10.1287/mnsc.2016.2580" },
+      { "cite": "Allwood & Granhag (1996), Acta Psychologica (DOI verified; abstract not available)", "doi": "10.1016/0001-6918(94)00057-3" },
+      { "cite": "Lord, Lepper & Preston (1984), abstract via PubMed", "doi": "10.1037/0022-3514.47.6.1231" }
+    ],
+    "helps_overclaim": "assumption-audit: 'asking for a reason each could be wrong reduced overconfidence in experiments' states as settled an effect that failed to replicate twice and was marginal in Walters et al. 2017; it should say the evidence is mixed. The displayed grade is already D, from assumption-surfacing."
+  },
+  "decision-diagnosis/confidence-resolution": {
+    "result": "confirmed", "from": "C", "to": "C",
+    "reason": "The cached abstracts support only the general confidence–accuracy link, through reviews and one 1980 experiment. Nothing read tests a three-level scale.",
+    "sources": [
+      { "cite": "Fleming & Lau (2014)", "doi": "10.3389/fnhum.2014.00443" }
+    ],
+    "helps_overclaim": null
+  },
+  "decision-diagnosis/two-axis-mapping": {
+    "result": "confirmed", "from": "D", "to": "D",
+    "reason": "The graphic-organiser meta-analyses measure reading comprehension, not judging items on two axes, so I do not count them towards C. Only theory bears on the claim (tie-break 5).",
+    "sources": [
+      { "cite": "Larkin & Simon (1987)", "doi": "10.1111/j.1551-6708.1987.tb00863.x" }
+    ],
+    "helps_overclaim": null
+  },
+  "decision-diagnosis/mere-urgency": {
+    "result": "confirmed", "from": "B", "to": "B",
+    "reason": "Zhu et al. 2018, Experiment 3 (full text, N = 402): without a payoff reminder the low-payoff choice was 33.7% vs 9.8% (urgent vs control); with payoffs made salient, 20.6% vs 15.0%, p = .359. This supports the countermeasure logic behind the claim's second sentence, though the grid itself stays untested. Mills, Cubitt & Starmer 2026 (n = 2,374) replicated the effect, attenuated. I found no failed replication. `small` is conservative: the original φ was .21–.29.",
+    "sources": [
+      { "cite": "Zhu, Yang & Hsee (2018), full text, Experiment 3", "doi": "10.1093/jcr/ucy008" },
+      { "cite": "Mills, Cubitt & Starmer (2026)", "doi": "10.1093/jcr/ucag026" }
+    ],
+    "helps_overclaim": null
+  },
+  "decision-diagnosis/root-cause-why-chain": {
+    "result": "confirmed", "from": "D", "to": "D",
+    "reason": "The support is practitioner-only. The one empirical source, Kellogg et al. 2016, found that event types recurred despite repeated RCAs (tie-break 6).",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "decision-diagnosis/tangible-allocation": {
+    "result": "confirmed", "from": "C", "to": "C",
+    "reason": "The cached abstracts support adjacent halves: Krosnick & Alwin 1988 on non-differentiation in ratings, and Maguire et al. 2023 on opportunity-cost neglect (d = 0.22). Nothing tests a fixed token budget.",
+    "sources": [
+      { "cite": "Maguire, Persson & Tinghög (2023)", "doi": "10.1007/s40881-023-00134-6" }
+    ],
+    "helps_overclaim": null
+  },
+  "decision-diagnosis/calibration-feedback": {
+    "result": "confirmed", "from": "C", "to": "C",
+    "reason": "The one read test, Mellers et al. 2014, is a package of training, teaming and tracking and does not isolate outcome feedback.",
+    "sources": [
+      { "cite": "Mellers et al. (2014)", "doi": "10.1177/0956797614524255" }
+    ],
+    "helps_overclaim": null
+  },
+  "decision-diagnosis/hindsight-record": {
+    "result": "confirmed", "from": "A", "to": "A",
+    "reason": "The memory design holds. In a memory-design lifespan study (N = 194), 'All age groups demonstrated hindsight bias on all 3 tasks', and older adults' bias came from 'forgetting their original answer and recalling an answer closer to ... the correct answer' (Bernstein et al. 2011, abstract via PubMed). Bernstein et al. 2007 cite Pohl 2004: the two designs 'yield comparable levels of hindsight bias'. Pre-registered close replications succeeded (Chen et al. 2021: N = 890, d = 0.60; N = 608, d = 0.40), though in the hypothetical design. I found no failed large replication, and Guilbault et al. 2004 (d = .39) stands. Caveats: Fischhoff 1975 is itself a hypothetical-design study, so its row supports the effect but not the memory design. Guilbault's moderator (smaller effects for real-world events than for almanac questions) puts forecast's use at the low end of `moderate`. Guilbault's heterogeneity could not be checked.",
+    "sources": [
+      { "cite": "Bernstein, Erdfelder, Meltzoff, Peria & Loftus (2011)", "doi": "10.1037/a0021971" },
+      { "cite": "Bernstein, Atance, Meltzoff & Loftus (2007), citing Pohl (2004)", "doi": "10.1111/j.1467-8624.2007.01071.x" },
+      { "cite": "Chen, Kwan, Ma, ... & Feldman (2021), JESP", "doi": "10.1016/j.jesp.2021.104154" },
+      { "cite": "Guilbault, Bryant, Brockway & Posavac (2004)", "doi": "10.1080/01973533.2004.9646399" }
+    ],
+    "helps_overclaim": null
+  },
+  "decision-diagnosis/reference-class": {
+    "result": "confirmed", "from": "C", "to": "C",
+    "reason": "The misattribution is confirmed. Buehler, Griffin & MacDonald 1997's cached abstract concerns incentives worsening optimism, and the recorded recall-condition finding matches Buehler, Griffin & Ross 1994 Study 4 ('the optimistic bias was eliminated for Ss instructed to connect relevant past experiences'). Without the 1997 paper, one experiment, one training package and one second-hand report give C. Forecast's backfire text, that the base rate gets written and then ignored, is still supported by the 1994 finding that people's attributions 'diminish the relevance of past experiences'.",
+    "sources": [
+      { "cite": "Buehler, Griffin & Ross (1994)", "doi": "10.1037/0022-3514.67.3.366" }
+    ],
+    "helps_overclaim": null
+  },
+  "decision-diagnosis/chain-analysis": {
+    "result": "confirmed", "from": "D", "to": "D",
+    "reason": "Nothing read tests the component. Kliem et al. 2010 tests the whole DBT package (tie-break 6).",
+    "sources": [],
+    "helps_overclaim": null
+  },
+  "decision-diagnosis/duration-feedback": {
+    "result": "downgraded", "from": "B", "to": "C",
+    "reason": "The results are mixed on the claim's own mechanism. In three experiments with tasks a week apart, 'duration feedback did not influence bias'; only task similarity did (Thomas & König 2018). Against this, Roy, Mitten & Christenfeld 2008 (three experiments) found that supplied durations improved predictions, and König et al. found that retrospectively estimating the first task's duration reduced underestimation of the next. Buehler, Griffin & Ross 1994 add that people attribute past overruns to external, transient factors. No failed replication is large, so C.",
+    "sources": [
+      { "cite": "Thomas & König (2018), Frontiers in Psychology", "doi": "10.3389/fpsyg.2018.00760" },
+      { "cite": "König, Wirz, Thomas & Weidmann (2014 online / 2015), Current Psychology", "doi": "10.1007/s12144-014-9236-3" }
+    ],
+    "helps_overclaim": "forecast/duration: 'being shown actual durations improved later estimates in three experiments' omits the three experiments in which duration feedback did not reduce bias (Thomas & König 2018). It should say the evidence is mixed, and the variant's displayed grade falls to C."
+  }
+}

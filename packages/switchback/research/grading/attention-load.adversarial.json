@@ -1,0 +1,62 @@
+{
+  "attention-load/cognitive-offload": {
+    "result": "confirmed", "from": "B", "to": "B",
+    "reason": "An independent lab found both halves across three experiments (N = 172 each). Offloading supports 'immediate performance', whereas 'offloading did have detrimental effects on memory without such a goal' (Grinschgl et al. 2021). I found no failed replication of the performance or recall-cost findings; the failed SSRP and Hesselmann replications concern the Google Stroop sub-finding only. There is no meta-analysis, so B. Risko & Gilbert 2016 has no cached abstract; that does not move the grade.",
+    "sources": [
+      { "cite": "Grinschgl, Papenmeier & Meyerhoff (2021), QJEP", "doi": "10.1177/17470218211008060" },
+      { "cite": "Gilbert (2015)", "doi": "10.1080/17470218.2014.972963" },
+      { "cite": "Storm & Stone (2015)", "doi": "10.1177/0956797614559285" }
+    ],
+    "helps_overclaim": null
+  },
+  "attention-load/job-aid": {
+    "result": "confirmed", "from": "C", "to": "C",
+    "reason": "Urbach et al. 2014 is a natural experiment, neither an RRR nor pre-registered, so tie-break 1 does not strictly apply, and the JSON's tie_break should read 'none'. C holds on the base definition, since the results are mixed (Haynes et al. 2009 positive, Urbach et al. 2014 null). Neither study measures omissions, and Hales & Pronovost and Degani & Wiener have no cached abstract.",
+    "sources": [
+      { "cite": "Haynes et al. (2009)", "doi": "10.1056/nejmsa0810119" },
+      { "cite": "Urbach et al. (2014)", "doi": "10.1056/nejmsa1308261" }
+    ],
+    "helps_overclaim": "player-aid: 'reference aids reduce omissions in procedural work' is stated as settled, but job-aid is C, and no read source measures omissions under a checklist experimentally (Reason 2002 is descriptive). It should be hedged, e.g. 'are used to cut omissions in procedural work, with mixed evidence'."
+  },
+  "attention-load/goal-orientation": {
+    "result": "downgraded", "from": "C", "to": "D",
+    "reason": "No counted source tests the claim. The only read evidence, Luiten et al. 1980, concerns advance organisers, which preview material; it does not test stating the question a session must answer. Locke & Latham 2002, Stone 1983, Ausubel 1960 and Rothkopf & Billington 1979 have no cached abstract. This follows the random-stimuli precedent (C → D, 'no counted source tests' the manipulation, accepted at spot-check). Label it D (unread): the goal-setting and adjunct-question literatures may support it once read. The cover's displayed grade falls to D.",
+    "sources": [
+      { "cite": "Luiten, Ames & Ackerson (1980)", "doi": "10.3102/00028312017002211" }
+    ],
+    "helps_overclaim": null
+  },
+  "attention-load/phone-presence": {
+    "result": "confirmed", "from": "C", "to": "C",
+    "reason": "The Ruiz Pardo & Minda 2022 cached abstract confirms a pre-registered direct replication of Ward et al. Experiment 2 that found no effect. C holds on the base definition ('a failed replication') even if its n is below twice the original's, so tie-break 1 is not needed.",
+    "sources": [
+      { "cite": "Ruiz Pardo & Minda (2022)", "doi": "10.1016/j.actpsy.2022.103717" }
+    ],
+    "helps_overclaim": null
+  },
+  "attention-load/stop-mid-task": {
+    "result": "confirmed", "from": "C", "to": "C",
+    "reason": "The Ghibellini & Meier 2025 cached abstract supports only a general tendency to resume. Ease of resumption, stopping mid-sentence and gaps of days are untested.",
+    "sources": [
+      { "cite": "Ghibellini & Meier (2025)", "doi": "10.1057/s41599-025-05000-w" }
+    ],
+    "helps_overclaim": null
+  },
+  "attention-load/resumption-cues": {
+    "result": "confirmed", "from": "B", "to": "B",
+    "reason": "A meta-analysis of 33 laboratory experiments found interruption interventions 'significantly increased primary task accuracy (standardized mean difference (SMD) = 1.03, P = 0.001) and reduced resumption lag (SMD = -0.51, P < 0.001)', with effects varying 'by the type of intervention' (abstract via PubMed). This covers the claim's errors half too. The abstract pools cues with other interventions and gives no cue-only estimate, so it cannot lift the grade. I found no failed replication.",
+    "sources": [
+      { "cite": "Guo, Chen, Xie & Or (2021), Applied Ergonomics", "doi": "10.1016/j.apergo.2021.103506" },
+      { "cite": "Hodgetts & Jones (2006)", "doi": "10.1037/0278-7393.32.5.1120" }
+    ],
+    "helps_overclaim": null
+  },
+  "attention-load/task-switching": {
+    "result": "confirmed", "from": "B", "to": "B",
+    "reason": "This is the lower edge of B. The Rogers & Monsell 1995 cached abstract gives a switch cost that preparation reduced but did not remove. I found no failed replication of switch costs themselves. The Wiradhany & Nieuwenstein 2017 null concerns an individual-difference claim about media multitaskers, not switch cost. Kiesel et al. 2010's abstract states the review's scope only.",
+    "sources": [
+      { "cite": "Rogers & Monsell (1995)", "doi": "10.1037/0096-3445.124.2.207" }
+    ],
+    "helps_overclaim": null
+  }
+}

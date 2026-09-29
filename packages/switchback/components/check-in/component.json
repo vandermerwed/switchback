@@ -1,0 +1,247 @@
+{
+  "id": "check-in",
+  "kind": "page",
+  "name": "Check-in",
+  "intent": "The same short page at every return, so change is visible by flipping back.",
+  "when": "a recurring return to the same question (the Ritual page)",
+  "tags": ["reflect"],
+  "phase": "either",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["rate", "write"],
+    "surface": "desk",
+    "timebox": "10 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    },
+    {
+      "id": "gratitude",
+      "requires": [],
+      "label": "Add one line of gratitude",
+      "prompt": "Rate the rows, say what changed since last time, write one line of gratitude, then write for a few minutes.",
+      "grounding": {
+        "claims": [
+          {
+            "id": "planning-self-regulation/progress-monitoring",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Monitoring progress towards a goal increases goal attainment, and more so when the progress is physically recorded.",
+            "construct": "progress monitoring / self-monitoring",
+            "grade": "B",
+            "effect": "small",
+            "sources": [
+              {
+                "cite": "Harkin et al. (2016)",
+                "doi": "10.1037/bul0000025",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Michie et al. (2009)",
+                "doi": "10.1037/a0016136",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Burke, Wang & Sevick (2011)",
+                "doi": "10.1016/j.jada.2010.10.008",
+                "type": "review"
+              }
+            ],
+            "rationale": "research/planning-self-regulation.md#progress-monitoring"
+          },
+          {
+            "id": "planning-self-regulation/prior-state-recall",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "People recall their earlier attitudes, feelings or confidence as closer to their present state than they were, or as fitting their theory of how they must have changed. A written baseline is therefore needed to see real change.",
+            "construct": "consistency and change biases in autobiographical memory (implicit theories of stability and change)",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Wolfe & Williams (2018)",
+                "doi": "10.1080/17470218.2017.1363792",
+                "type": "experiment"
+              },
+              {
+                "cite": "Ross (1989)",
+                "doi": "10.1037/0033-295X.96.2.341",
+                "type": "theory"
+              }
+            ],
+            "rationale": "research/planning-self-regulation.md#prior-state-recall"
+          },
+          {
+            "id": "perspective-emotion/expressive-writing",
+            "load_bearing": false,
+            "transfer": "analogical",
+            "claim": "Writing about emotional experiences produces small improvements in wellbeing and health outcomes compared with neutral writing.",
+            "construct": "expressive writing",
+            "grade": "B",
+            "effect": "small",
+            "sources": [
+              {
+                "cite": "Frattaroli (2006)",
+                "doi": "10.1037/0033-2909.132.6.823",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Smyth (1998)",
+                "doi": "10.1037/0022-006x.66.1.174",
+                "type": "meta-analysis"
+              }
+            ],
+            "rationale": "research/perspective-emotion.md#expressive-writing"
+          },
+          {
+            "id": "perspective-emotion/gratitude",
+            "load_bearing": false,
+            "transfer": "adjacent",
+            "claim": "Regularly writing down things one is grateful for produces small improvements in well-being. Weekly writing is at least as effective as daily.",
+            "construct": "gratitude interventions; hedonic adaptation to repeated positive activities",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Emmons & McCullough (2003)",
+                "doi": "10.1037/0022-3514.84.2.377",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/perspective-emotion.md#gratitude"
+          }
+        ],
+        "helps": "when you want the weekly page to note something that went well: a short gratitude list raised positive mood in controlled studies that used weekly or daily lists, and any gain is likely small",
+        "backfires": "when gratitude is forced or rote, or treated as a remedy for low mood, which is why the row is optional and off by default; its benefit over other positive writing is not established"
+      }
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "rows": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 5,
+        "items": {
+          "type": "string",
+          "maxLength": 40
+        }
+      },
+      "scale": {
+        "type": "integer",
+        "minimum": 3,
+        "maximum": 7
+      }
+    }
+  },
+  "prompt": "Rate the rows, say what changed since last time, then write for a few minutes.",
+  "readback": "Compare with the previous check-ins, not with an ideal. What recurs across returns matters more than any one page. A line that goes rote or empty is itself a signal.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "planning-self-regulation/progress-monitoring",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Monitoring progress towards a goal increases goal attainment, and more so when the progress is physically recorded.",
+        "construct": "progress monitoring / self-monitoring",
+        "grade": "B",
+        "effect": "small",
+        "sources": [
+          {
+            "cite": "Harkin et al. (2016)",
+            "doi": "10.1037/bul0000025",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Michie et al. (2009)",
+            "doi": "10.1037/a0016136",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Burke, Wang & Sevick (2011)",
+            "doi": "10.1016/j.jada.2010.10.008",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/planning-self-regulation.md#progress-monitoring"
+      },
+      {
+        "id": "planning-self-regulation/prior-state-recall",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "People recall their earlier attitudes, feelings or confidence as closer to their present state than they were, or as fitting their theory of how they must have changed. A written baseline is therefore needed to see real change.",
+        "construct": "consistency and change biases in autobiographical memory (implicit theories of stability and change)",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Wolfe & Williams (2018)",
+            "doi": "10.1080/17470218.2017.1363792",
+            "type": "experiment"
+          },
+          {
+            "cite": "Ross (1989)",
+            "doi": "10.1037/0033-295X.96.2.341",
+            "type": "theory"
+          }
+        ],
+        "rationale": "research/planning-self-regulation.md#prior-state-recall"
+      },
+      {
+        "id": "perspective-emotion/expressive-writing",
+        "load_bearing": false,
+        "transfer": "analogical",
+        "claim": "Writing about emotional experiences produces small improvements in wellbeing and health outcomes compared with neutral writing.",
+        "construct": "expressive writing",
+        "grade": "B",
+        "effect": "small",
+        "sources": [
+          {
+            "cite": "Frattaroli (2006)",
+            "doi": "10.1037/0033-2909.132.6.823",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Smyth (1998)",
+            "doi": "10.1037/0022-006x.66.1.174",
+            "type": "meta-analysis"
+          }
+        ],
+        "rationale": "research/perspective-emotion.md#expressive-writing"
+      },
+      {
+        "id": "attention-load/resumption-cues",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Leaving a visible cue of where you were and what comes next at the point of interruption reduces the time and errors involved in resuming a task.",
+        "construct": "memory for goals; resumption lag",
+        "grade": "B",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Hodgetts & Jones (2006)",
+            "doi": "10.1037/0278-7393.32.5.1120",
+            "type": "experiment"
+          },
+          {
+            "cite": "Monk, Trafton & Boehm-Davis (2008)",
+            "doi": "10.1037/a0014402",
+            "type": "experiment"
+          },
+          {
+            "cite": "Altmann & Trafton (2002)",
+            "doi": "10.1207/s15516709cog2601_2",
+            "type": "theory"
+          }
+        ],
+        "rationale": "research/attention-load.md#resumption-cues"
+      }
+    ],
+    "helps": "when you want to see change over weeks: the same rows written each week are progress monitoring, which gives a small lift to goal attainment, and they keep a baseline your memory would otherwise rewrite; the free-write adds at most a small lift",
+    "backfires": "when the rows turn into scores to hit, since rewards tied to a monitored target undermine interest, when the free-write stirs up distress (emotional writing raises it in the short term), or when the ritual becomes a chore and is dropped"
+  }
+}

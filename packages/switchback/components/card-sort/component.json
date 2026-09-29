@@ -1,0 +1,134 @@
+{
+  "id": "card-sort",
+  "kind": "page",
+  "name": "Card sort",
+  "intent": "Expose the taxonomy the human already holds by making them move pieces.",
+  "when": "prioritising, clustering, or when the human is arguing with themselves",
+  "tags": ["decide", "plan"],
+  "phase": "converge",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write", "cut", "sort", "re-sort"],
+    "surface": "table",
+    "timebox": "8 min"
+  },
+  "variants": [
+    {
+      "id": "cut-out",
+      "requires": ["scissors"],
+      "label": "Cut the cards apart"
+    },
+    {
+      "id": "index-cards",
+      "requires": ["index_cards"],
+      "label": "Write one per index card"
+    },
+    {
+      "id": "write-in",
+      "requires": [],
+      "label": "Write into the piles"
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "source": {
+        "type": "string",
+        "maxLength": 80
+      },
+      "items": {
+        "type": "array",
+        "minItems": 0,
+        "maxItems": 12,
+        "items": {
+          "type": "string",
+          "maxLength": 60
+        }
+      },
+      "columns": {
+        "type": "array",
+        "minItems": 0,
+        "maxItems": 5,
+        "items": {
+          "type": "string",
+          "maxLength": 24
+        }
+      }
+    }
+  },
+  "prompt": "Move the pieces into piles. The argument you have while placing one is the useful part.",
+  "readback": "The grouping is the insight. Ask which pile was hardest to place — that card names the tension.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "externalisation-embodiment/epistemic-action",
+        "load_bearing": true,
+        "transfer": "analogical",
+        "claim": "Physically rearranging external objects to think, rather than to reach a physical goal, reduces the cognitive cost of a problem and improves or speeds its solution compared with manipulating the same elements mentally.",
+        "construct": "epistemic action; interactivity in problem solving",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Kirsh & Maglio (1994)",
+            "doi": "10.1207/s15516709cog1804_1",
+            "type": "experiment"
+          },
+          {
+            "cite": "Vallée-Tourangeau et al. (2016)",
+            "doi": "10.1016/j.actpsy.2016.08.006",
+            "type": "experiment"
+          },
+          {
+            "cite": "Guthrie, Harris & Vallée-Tourangeau (2015)",
+            "doi": "10.1515/slgr-2015-0019",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/externalisation-embodiment.md#epistemic-action"
+      },
+      {
+        "id": "externalisation-embodiment/sorting-elicitation",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Having people sort items into their own groups reveals the categories and dimensions they actually use, including ones they cannot readily state.",
+        "construct": "card sorting as knowledge elicitation",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Chi, Feltovich & Glaser (1981)",
+            "doi": "10.1207/s15516709cog0502_2",
+            "type": "experiment"
+          },
+          {
+            "cite": "Rugg & McGeorge (2005)",
+            "doi": "10.1111/j.1468-0394.2005.00300.x",
+            "type": "practice"
+          }
+        ],
+        "rationale": "research/externalisation-embodiment.md#sorting-elicitation"
+      },
+      {
+        "id": "externalisation-embodiment/common-region",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Items placed inside the same bounded region are perceived as belonging together, even against other grouping cues, so labelled zones make category membership readable at a glance.",
+        "construct": "the Gestalt principle of common region (perceptual grouping)",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Wagemans et al. (2012)",
+            "doi": "10.1037/a0029333",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/externalisation-embodiment.md#common-region"
+      }
+    ],
+    "helps": "when the categories are real but unstated and placing each card forces a choice; sorting shows which categories a person uses, and moving physical pieces helped in a few small problem-solving studies",
+    "backfires": "when printed column headings impose categories that are not the person's own, or the finished piles look tidier than the thinking behind them; neither risk has been tested"
+  }
+}

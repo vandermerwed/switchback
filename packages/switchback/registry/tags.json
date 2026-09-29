@@ -1,0 +1,16 @@
+{
+  "tags": [
+    {
+      "id": "create",
+      "label": "Create",
+      "description": "Generate and diverge: ideas, options, possibilities."
+    },
+    { "id": "decide", "label": "Decide", "description": "Choose between options and commit." },
+    { "id": "learn", "label": "Learn", "description": "Understand material and make it stick." },
+    { "id": "plan", "label": "Plan", "description": "Sequence and scope the work." },
+    { "id": "diagnose", "label": "Diagnose", "description": "Find the real cause of a problem." },
+    { "id": "review", "label": "Review", "description": "Critique work, including AI output." },
+    { "id": "reflect", "label": "Reflect", "description": "Make sense of experience and change." },
+    { "id": "focus", "label": "Focus", "description": "Sustain attention through a sitting." }
+  ]
+}

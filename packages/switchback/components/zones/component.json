@@ -1,0 +1,98 @@
+{
+  "id": "zones",
+  "kind": "piece",
+  "name": "Zones",
+  "intent": "Give cards, notes, tokens, or running state a labelled place on the page.",
+  "when": "sorting pieces into stages, or keeping several live threads in view",
+  "tags": ["plan", "decide", "focus"],
+  "phase": "either",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["place"],
+    "surface": "table",
+    "timebox": "1 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "zones": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 9,
+        "items": {
+          "type": "string",
+          "maxLength": 24
+        }
+      },
+      "columns": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 4
+      },
+      "layout": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 9,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["col", "row"],
+          "properties": {
+            "col": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10
+            },
+            "row": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 4
+            },
+            "colSpan": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10
+            },
+            "rowSpan": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 4
+            }
+          }
+        }
+      }
+    }
+  },
+  "prompt": "Place or write into the zones as the session moves; update them when something changes.",
+  "readback": "Zone membership and what is written in each zone is the finding; note anything stuck between zones.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "externalisation-embodiment/common-region",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Items placed inside the same bounded region are perceived as belonging together, even against other grouping cues, so labelled zones make category membership readable at a glance.",
+        "construct": "the Gestalt principle of common region (perceptual grouping)",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Wagemans et al. (2012)",
+            "doi": "10.1037/a0029333",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/externalisation-embodiment.md#common-region"
+      }
+    ],
+    "helps": "when cards, notes or tokens need a labelled home on the page and the categories are genuinely distinct; items inside the same box tend to be seen as a group",
+    "backfires": "when the categories are not really distinct, so the zones freeze a premature taxonomy and manufacture false tidiness, and when an item sits across a border and its zone becomes ambiguous"
+  }
+}

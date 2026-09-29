@@ -1,0 +1,203 @@
+{
+  "id": "scoresheet",
+  "kind": "piece",
+  "name": "Scoresheet",
+  "intent": "Rate the same thing at the start and the end so the change is visible.",
+  "when": "confidence, mood, or commitment likely to shift across the sitting",
+  "tags": ["reflect"],
+  "phase": "either",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["rate", "write"],
+    "surface": "desk",
+    "timebox": "2 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    },
+    {
+      "id": "running",
+      "requires": [],
+      "label": "Mark a track as the session goes",
+      "prompt": "Mark the next cell on each track whenever the tracked thing moves, or mark done, partial, or missed each time if you're using three states.",
+      "readback": "Read the shape the marks make across the track, not the count of marks; a gap in the middle is more informative than the total."
+    },
+    {
+      "id": "domains",
+      "requires": [],
+      "label": "Rate each life domain; compare across returns",
+      "prompt": "Rate each life domain today, write one line on why, then copy last time's rating in from the previous page.",
+      "readback": "The domain that moved most since last time is this page's real output; a domain that never moves is worth its own line too.",
+      "grounding": {
+        "claims": [
+          {
+            "id": "planning-self-regulation/prior-state-recall",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "People recall their earlier attitudes, feelings or confidence as closer to their present state than they were, or as fitting their theory of how they must have changed. A written baseline is therefore needed to see real change.",
+            "construct": "consistency and change biases in autobiographical memory (implicit theories of stability and change)",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Wolfe & Williams (2018)",
+                "doi": "10.1080/17470218.2017.1363792",
+                "type": "experiment"
+              },
+              {
+                "cite": "Ross (1989)",
+                "doi": "10.1037/0033-295X.96.2.341",
+                "type": "theory"
+              }
+            ],
+            "rationale": "research/planning-self-regulation.md#prior-state-recall"
+          },
+          {
+            "id": "planning-self-regulation/progress-monitoring",
+            "load_bearing": true,
+            "transfer": "analogical",
+            "claim": "Monitoring progress towards a goal increases goal attainment, and more so when the progress is physically recorded.",
+            "construct": "progress monitoring / self-monitoring",
+            "grade": "B",
+            "effect": "small",
+            "sources": [
+              {
+                "cite": "Harkin et al. (2016)",
+                "doi": "10.1037/bul0000025",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Michie et al. (2009)",
+                "doi": "10.1037/a0016136",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Burke, Wang & Sevick (2011)",
+                "doi": "10.1016/j.jada.2010.10.008",
+                "type": "review"
+              }
+            ],
+            "rationale": "research/planning-self-regulation.md#progress-monitoring"
+          },
+          {
+            "id": "perspective-emotion/domain-satisfaction",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Rating satisfaction in several named life domains gives a reliable and valid measure of subjective well-being, and it shows which domain drives a change that a single overall rating hides.",
+            "construct": "domain satisfaction; the Personal Wellbeing Index; bottom-up models of life satisfaction",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Schimmack & Oishi (2005)",
+                "doi": "10.1037/0022-3514.89.3.395",
+                "type": "experiment"
+              },
+              {
+                "cite": "Strack, Martin & Schwarz (1988)",
+                "doi": "10.1002/ejsp.2420180505",
+                "type": "experiment"
+              },
+              {
+                "cite": "International Wellbeing Group (2013), Personal Wellbeing Index manual",
+                "isbn": "978-1-74156-177-7",
+                "url": "deakin.edu.au/research/acqol/instruments/wellbeing-index",
+                "type": "practice"
+              }
+            ],
+            "rationale": "research/perspective-emotion.md#domain-satisfaction"
+          }
+        ],
+        "helps": "when you want to see which part of life moved between returns: rating named domains follows an established well-being measure whose answers are stable over weeks and change little with rating order; the page measures, it does not improve anything",
+        "backfires": "when the domains change from one return to the next, when an average is allowed to hide the one domain that matters, or when the ratings are read as a score to raise"
+      }
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "rows": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 6,
+        "items": {
+          "type": "string",
+          "maxLength": 60
+        }
+      },
+      "scale": {
+        "type": "integer",
+        "minimum": 3,
+        "maximum": 7
+      },
+      "steps": {
+        "type": "integer",
+        "minimum": 2,
+        "maximum": 12
+      },
+      "three_state": {
+        "type": "boolean"
+      }
+    }
+  },
+  "prompt": "Rate each line now; rate it again at the end. The change matters more than the number.",
+  "readback": "Compare start and end ratings; a large move on one line is the session's real output.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "planning-self-regulation/prior-state-recall",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "People recall their earlier attitudes, feelings or confidence as closer to their present state than they were, or as fitting their theory of how they must have changed. A written baseline is therefore needed to see real change.",
+        "construct": "consistency and change biases in autobiographical memory (implicit theories of stability and change)",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Wolfe & Williams (2018)",
+            "doi": "10.1080/17470218.2017.1363792",
+            "type": "experiment"
+          },
+          {
+            "cite": "Ross (1989)",
+            "doi": "10.1037/0033-295X.96.2.341",
+            "type": "theory"
+          }
+        ],
+        "rationale": "research/planning-self-regulation.md#prior-state-recall"
+      },
+      {
+        "id": "planning-self-regulation/progress-monitoring",
+        "load_bearing": true,
+        "transfer": "analogical",
+        "claim": "Monitoring progress towards a goal increases goal attainment, and more so when the progress is physically recorded.",
+        "construct": "progress monitoring / self-monitoring",
+        "grade": "B",
+        "effect": "small",
+        "sources": [
+          {
+            "cite": "Harkin et al. (2016)",
+            "doi": "10.1037/bul0000025",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Michie et al. (2009)",
+            "doi": "10.1037/a0016136",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Burke, Wang & Sevick (2011)",
+            "doi": "10.1016/j.jada.2010.10.008",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/planning-self-regulation.md#progress-monitoring"
+      }
+    ],
+    "helps": "when a felt sense is likely to shift: writing the before rating down means the after rating is compared with what you actually said, not with a memory that drifts towards how you feel now",
+    "backfires": "when the numbers become a target, since rewards tied to a monitored target undermine interest in the activity, and when the visible before rating anchors the after one; whether hiding it helps is untested"
+  }
+}

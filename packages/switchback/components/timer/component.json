@@ -1,0 +1,97 @@
+{
+  "id": "timer",
+  "kind": "piece",
+  "name": "Timer dial",
+  "intent": "Bound the session and each phase in time, so deliberation ends in a decision.",
+  "when": "work that expands to fill the time available, or a decision that keeps being deferred",
+  "tags": ["focus"],
+  "phase": "converge",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["mark", "move"],
+    "surface": "desk",
+    "timebox": "1 min",
+    "returns": false
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "segments": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 8,
+        "items": {
+          "type": "string",
+          "maxLength": 24
+        }
+      },
+      "minutes": {
+        "type": ["string", "number"]
+      }
+    }
+  },
+  "prompt": "Divide the sitting into phases on the dial; move the marker as each phase ends.",
+  "readback": "Where the marker stopped tells you which phase was over-run — usually the one that was hardest to face.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "planning-self-regulation/timeboxing",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Setting a fixed time limit for a phase of work ends deliberation sooner, with no loss of decision quality for convergent tasks.",
+        "construct": "timeboxing; deadlines as goals (Parkinson's law)",
+        "grade": "D",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Parkinson (1955), The Economist essay",
+            "url": "https://web.archive.org/web/20180705215319/https://www.economist.com/news/1955/11/19/parkinsons-law",
+            "type": "practice"
+          },
+          {
+            "cite": "Hyndman & Bisin (2026)",
+            "doi": "10.1177/09567976261460772",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/planning-self-regulation.md#timeboxing"
+      },
+      {
+        "id": "creativity-fixation/time-pressure-divergent",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Time pressure during idea generation reduces creative, divergent output.",
+        "construct": "time pressure and creativity (challenge vs hindrance stressors)",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Byron, Khazanchi & Nazarian (2010)",
+            "doi": "10.1037/a0017868",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Baer & Oldham (2006)",
+            "doi": "10.1037/0021-9010.91.4.963",
+            "type": "experiment"
+          },
+          {
+            "cite": "Moreau & Dahl (2005)",
+            "doi": "10.1086/429597",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/creativity-fixation.md#time-pressure-divergent"
+      }
+    ],
+    "helps": "when a convergent decision is being turned over long after new information has stopped arriving: a written stop time is a craft practice for forcing a choice, not a tested method",
+    "backfires": "when the stop is set on idea generation, where time pressure is the known risk, or on a decision that needs every option weighed; nothing read shows a timebox leaves decision quality intact"
+  }
+}

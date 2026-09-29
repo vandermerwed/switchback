@@ -1,0 +1,80 @@
+{
+  "id": "practice-audit",
+  "kind": "page",
+  "name": "Practice audit",
+  "intent": "Check whether the way you practise actually trains the skill you want.",
+  "when": "mid-way through a Series, before spending another round on the same practice",
+  "tags": ["learn", "review"],
+  "phase": "converge",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write"],
+    "surface": "desk",
+    "timebox": "10 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "skill": {
+        "type": "string",
+        "maxLength": 100
+      },
+      "practice": {
+        "type": "string",
+        "maxLength": 100
+      }
+    }
+  },
+  "prompt": "What starts the real skill, and what you do? Now the same for your practice. Where do they differ?",
+  "readback": "A mismatch in the trigger or the action means the practice may be training a neighbouring skill. Check that the revision is concrete enough to run next round.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "memory-retrieval/practice-specificity",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Practice transfers to a target skill to the extent that the practice's cues and required actions resemble the target's. A study method that exercises a different process from the one the test or task demands transfers poorly.",
+        "construct": "transfer-appropriate processing; identical elements; near vs far transfer",
+        "grade": "B",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Sala & Gobet (2017)",
+            "doi": "10.1177/0963721417712760",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Barnett & Ceci (2002)",
+            "doi": "10.1037/0033-2909.128.4.612",
+            "type": "review"
+          },
+          {
+            "cite": "Smith & Vela (2001)",
+            "doi": "10.3758/BF03196157",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Brady (2004)",
+            "doi": "10.2466/pms.99.1.116-126",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Pan & Rickard (2018)",
+            "doi": "10.1037/bul0000151",
+            "type": "meta-analysis"
+          }
+        ],
+        "rationale": "research/memory-retrieval.md#practice-specificity"
+      }
+    ],
+    "helps": "when a study or practice method may not exercise what the real task demands: practice transfers best when it calls for the same kind of response as the target, and transfer to a different skill is rare; the four-question audit itself is untested craft",
+    "backfires": "when \"resemble the target\" is read as copying its surface conditions: varying practice conditions often improves retention, and context effects fade when practice does not rely on the surroundings"
+  }
+}

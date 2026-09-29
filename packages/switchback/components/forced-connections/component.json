@@ -1,0 +1,97 @@
+{
+  "id": "forced-connections",
+  "kind": "page",
+  "name": "Forced connections",
+  "intent": "Manufacture a creative collision.",
+  "when": "ideas have gone stale and familiar",
+  "tags": ["create"],
+  "phase": "diverge",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write"],
+    "surface": "desk",
+    "timebox": "10 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "words": {
+        "type": "array",
+        "minItems": 0,
+        "maxItems": 6,
+        "items": {
+          "type": "string",
+          "maxLength": 40
+        }
+      },
+      "subject": {
+        "type": "string",
+        "maxLength": 120
+      }
+    }
+  },
+  "prompt": "Force a collision. How could each of these apply to {subject}?",
+  "readback": "Most connections are junk; one will be alive. Quote only the alive one and say why it might work.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "creativity-fixation/random-stimuli",
+        "load_bearing": true,
+        "transfer": "analogical",
+        "claim": "Exposure to randomly selected stimuli (words or prompts unrelated to the problem) during idea generation increases the number and originality of ideas, compared with generating without stimuli.",
+        "construct": "random entry / external stimulation in idea generation",
+        "grade": "D",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Dugosh et al. (2000)",
+            "doi": "10.1037/0022-3514.79.5.722",
+            "type": "experiment"
+          },
+          {
+            "cite": "Vasconcelos & Crilly (2016)",
+            "doi": "10.1016/j.destud.2015.11.001",
+            "type": "review"
+          },
+          {
+            "cite": "Leahy et al. (2020)",
+            "doi": "10.1115/1.4046446",
+            "type": "experiment"
+          },
+          {
+            "cite": "Jansson & Smith (1991)",
+            "doi": "10.1016/0142-694x(91)90003-f",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/creativity-fixation.md#random-stimuli"
+      },
+      {
+        "id": "creativity-fixation/conceptual-combination",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Deliberately combining two distant concepts produces more original ideas than working from a single concept, with originality driven by attributes that emerge from the combination.",
+        "construct": "conceptual combination (bisociation)",
+        "grade": "D",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Koestler (1964), The Act of Creation",
+            "isbn": "9780140191912",
+            "type": "theory"
+          }
+        ],
+        "rationale": "research/creativity-fixation.md#conceptual-combination"
+      }
+    ],
+    "helps": "when ideas have gone stale and familiar; outside stimuli can lift idea output, but random words themselves are untested, so treat each connection as a prompt to test, not a finding",
+    "backfires": "when a stimulus fixes attention on itself instead of widening it, as provided examples do in design studies, and during convergence, where unrelated input is noise"
+  }
+}

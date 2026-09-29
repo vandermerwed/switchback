@@ -1,0 +1,198 @@
+[
+  {
+    "claim_id": "perspective-emotion/perspective-taking",
+    "sources": [
+      { "cite": "Galinsky & Moskowitz (2000)", "doi": "10.1037/0022-3514.78.4.708", "year": 2000, "type": "experiment", "design": "3 experiments (stereotype accessibility, minimal-group in-group favoritism)", "n": null, "effect": "not quantified in abstract", "finding_quote": "Using 3 experiments, the authors explored the role of perspective-taking in debiasing social thought... perspective-taking decreased stereotypic biases on both a conscious and a nonconscious task... perspective-taking reduced evidence of in-group bias in the minimal group paradigm by increasing the positivity of evaluations of the out-group.", "url": "" },
+      { "cite": "Galinsky, Maddux, Gilin & White (2008)", "doi": "10.1111/j.1467-9280.2008.02096.x", "year": 2008, "type": "experiment", "design": "3 negotiation studies", "n": null, "effect": "not quantified in abstract", "finding_quote": "perspective taking increased individuals' ability to discover hidden agreements and to both create and claim resources at the bargaining table. However, empathy did not prove nearly as advantageous and at times was detrimental to discovering a possible deal and achieving individual profit.", "url": "" },
+      { "cite": "Todd & Galinsky (2014)", "doi": "10.1111/spc3.12116", "year": 2014, "type": "review", "design": "narrative review", "n": null, "effect": "n/a", "finding_quote": "we review empirical research investigating the efficacy of perspective-taking... more favorable implicit and explicit intergroup evaluations, stronger approach-oriented action tendencies and positive non-verbal behaviors, increased intergroup helping, reduced reliance on stereotype-maintaining mental processes, and heightened recognition of intergroup disparities.", "url": "" },
+      { "cite": "Epley, Caruso & Bazerman (2006)", "doi": "10.1037/0022-3514.91.5.872", "year": 2006, "type": "experiment", "design": "multi-study, competitive vs. cooperative resource allocation", "n": null, "effect": "reversal in competitive contexts", "finding_quote": "Leading people to consider other members' thoughts and perspectives can reduce these egocentric (self-centered) judgments... however, the consideration of others' thoughts and perspectives actually increases egoistic (selfish) behavior... This reactive egoism is attenuated in cooperative contexts.", "url": "" },
+      { "cite": "Galinsky, Wang & Ku (2008)", "doi": "10.1037/0022-3514.95.2.404", "year": 2008, "type": "experiment", "design": "9 studies, multiple stereotype domains", "n": null, "effect": "assimilation to target stereotype", "finding_quote": "perspective-takers are particularly likely to adopt a target's positive and negative stereotypical traits and behaviors... taking the perspective of a professor led to improved performance on an analytic task, whereas taking the perspective of a cheerleader led to decreased performance.", "url": "" }
+    ],
+    "replication": [
+      { "cite": "n/a", "doi": "", "result": "mixed" }
+    ],
+    "backfire": [
+      { "cite": "Epley, Caruso & Bazerman (2006)", "doi": "10.1037/0022-3514.91.5.872", "condition": "reactive egoism increases selfish resource-taking in competitive contexts even as stated fairness judgments become less egocentric" },
+      { "cite": "Galinsky, Wang & Ku (2008)", "doi": "10.1037/0022-3514.95.2.404", "condition": "perspective-takers assimilate to the target's stereotype (positive or negative), producing stereotype-consistent behavior change rather than debiasing" }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "perspective-emotion/perspective-getting",
+    "sources": [
+      { "cite": "Eyal, Steffel & Epley (2018)", "doi": "10.1037/pspa0000115", "year": 2018, "type": "experiment", "design": "25 experiments testing accuracy about others' mental states", "n": null, "effect": "no consistent benefit; sometimes reduced accuracy", "finding_quote": "we report 25 experiments testing whether being instructed to adopt another person's perspective increases interpersonal insight... we failed to find any consistent evidence that it actua[lly increases accuracy].", "url": "" }
+    ],
+    "replication": [],
+    "backfire": [
+      { "cite": "Eyal, Steffel & Epley (2018)", "doi": "10.1037/pspa0000115", "condition": "instructed perspective-taking can increase confidence in judgments about others without a corresponding increase in accuracy" }
+    ],
+    "unverified": [
+      { "cite": "Epley (2014), Mindwise (ISBN 9780307743565)", "reason": "book; only publisher/retailer bibliographic metadata checked in this session, no verbatim text read" }
+    ]
+  },
+  {
+    "claim_id": "perspective-emotion/self-distancing",
+    "sources": [
+      { "cite": "Kross et al. (2014), self-talk", "doi": "10.1037/a0035173", "year": 2014, "type": "experiment", "design": "7 studies, N = 585", "n": 585, "effect": "moderate (objective-rater performance improved; distress reduced)", "finding_quote": "using non-first-person pronouns and one's own name (rather than first-person pronouns) during introspection enhances self-distancing... the non-first-person group performed better according to objective raters... They also displayed less distress... and engaged in less maladaptive postevent processing.", "url": "" },
+      { "cite": "Grossmann & Kross (2014)", "doi": "10.1177/0956797614535400", "year": 2014, "type": "experiment", "design": "3 experiments, N = 693", "n": 693, "effect": "asymmetry eliminated by self-distancing manipulation", "finding_quote": "participants displayed wiser reasoning... about another person's problems compared with their own. Across Studies 2 and 3, instructing individuals to self-distance (rather than self-immerse) eliminated this asymmetry.", "url": "" },
+      { "cite": "Bruehlman-Senecal & Ayduk (2015)", "doi": "10.1037/a0038324", "year": 2015, "type": "experiment", "design": "7 studies", "n": null, "effect": "reduced emotional distress", "finding_quote": "adopting a distant-future perspective on recent stressors... reduces emotional distress... temporal distancing plays an important role in emotional coping with negative events, and that it does so by directing individuals' attention to the impermanent aspects of these events.", "url": "" },
+      { "cite": "Powers & LaBar (2019)", "doi": "10.1016/j.neubiorev.2018.04.023", "year": 2019, "type": "review", "design": "narrative review with supporting neuroimaging meta-analysis", "n": null, "effect": "n/a", "finding_quote": "Distancing is a type of emotion regulation that involves simulating a new perspective to alter the psychological distance and emotional impact of a stimulus... a promising tool for clinical applications.", "url": "" },
+      { "cite": "Murdoch, Chapman, Crane & Gucciardi (2023)", "doi": "10.1002/smi.3199", "year": 2023, "type": "meta-analysis", "design": "pre-registered, 25 experiments, N = 2,397, 68 effects", "n": 2397, "effect": "small-to-moderate, g = 0.19 [0.05, 0.33]", "finding_quote": "A three-level, random effects meta-analysis of 25 experiments... revealed a small-to-moderate advantage of self-distanced reflections... Nevertheless, our assessment of the overall quality of evidence including risk of bias suggested uncertainty regarding the benefit of this pragmatic self-regulatory tactic.", "url": "" }
+    ],
+    "replication": [
+      { "cite": "Murdoch, Chapman, Crane & Gucciardi (2023)", "doi": "10.1002/smi.3199", "result": "mixed" }
+    ],
+    "backfire": [],
+    "unverified": [
+      { "cite": "Kross & Ayduk (2011), Curr Dir Psychol Sci 20(3):187-191", "reason": "DOI 10.1177/0963721411408883 verified via Crossref (title/author/year match); abstract text not available in Crossref or Europe PMC in this session, so no finding_quote is offered" }
+    ]
+  },
+  {
+    "claim_id": "perspective-emotion/expressive-writing",
+    "sources": [
+      { "cite": "Smyth (1998)", "doi": "10.1037/0022-006x.66.1.174", "year": 1998, "type": "meta-analysis", "design": "early small meta-analysis", "n": null, "effect": "positive, significant (magnitude not in abstract)", "finding_quote": "This writing task was found to lead to significantly improved health outcomes in healthy participants. Health was enhanced in 4 outcome types... but health behaviors were not influenced. Writing also increased immediate... distress, which was unrelated to health outcomes.", "url": "" },
+      { "cite": "Frattaroli (2006)", "doi": "10.1037/0033-2909.132.6.823", "year": 2006, "type": "meta-analysis", "design": "random-effects meta-analysis, 146 randomized studies", "n": null, "effect": "small, r = .075", "finding_quote": "One hundred forty-six randomized studies of experimental disclosure were collected... Results of random effects analyses indicate that experimental disclosure is effective, with a positive and significant average r-effect size of .075.", "url": "" }
+    ],
+    "replication": [
+      { "cite": "Frattaroli (2006)", "doi": "10.1037/0033-2909.132.6.823", "result": "replicated" }
+    ],
+    "backfire": [],
+    "unverified": [
+      { "cite": "Pennebaker & Beall (1986)", "reason": "DOI 10.1037/0021-843x.95.3.274 verified via Crossref (title/author/pages match, J Abnorm Psychol 95(3):274-281); abstract not available, no quote offered" },
+      { "cite": "Baikie & Wilhelm (2005)", "reason": "DOI 10.1192/apt.11.5.338 verified via Crossref (title/author/vol/page match, Advances in Psychiatric Treatment 11:338-346); abstract paywalled, no quote offered" },
+      { "cite": "Reinhold, Burkner & Holling (2018)", "reason": "DOI 10.1111/cpsp.12224 verified via Crossref (title/author/year match, Clin Psychol Sci Pract 25(1):e12224); abstract paywalled (Wiley 403), no quote offered" }
+    ]
+  },
+  {
+    "claim_id": "perspective-emotion/ritual-cadence",
+    "sources": [
+      { "cite": "Harkin, Webb, Chang, Prestwich, Conner, Kellar, Benn & Sheeran (2016)", "doi": "10.1037/bul0000025", "year": 2016, "type": "meta-analysis", "design": "138 studies, N = 19,951", "n": 19951, "effect": "moderate, d+ = 0.40 [0.32, 0.48] for goal attainment", "finding_quote": "Moderation tests revealed that progress monitoring had larger effects on goal attainment when the outcomes were reported or made public, and when the information was physically recorded.", "url": "" },
+      { "cite": "Burke, Wang & Sevick (2011)", "doi": "10.1016/j.jada.2010.10.008", "year": 2011, "type": "review", "design": "systematic review, 22 studies", "n": null, "effect": "n/a (descriptive)", "finding_quote": "This review highlights the need for studies in more diverse populations, for objective measures of adherence to self-monitoring, and for studies that establish the required dose of self-monitoring for successful outcomes.", "url": "" }
+    ],
+    "replication": [],
+    "backfire": [
+      { "cite": "Burke, Wang & Sevick (2011)", "doi": "10.1016/j.jada.2010.10.008", "condition": "no established evidence for the required cadence/dose of self-monitoring; weekly-vs-daily is not directly tested by either source in this batch" }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "perspective-emotion/ritual-duration",
+    "sources": [
+      { "cite": "Frattaroli (2006)", "doi": "10.1037/0033-2909.132.6.823", "year": 2006, "type": "meta-analysis", "design": "146 studies; duration of manipulation examined as a moderator", "n": null, "effect": "r = .075 overall; duration-specific direction not obtained", "finding_quote": "The relation between written emotional expression and health was moderated by a number of variables, including... duration of the manipulation...", "url": "" },
+      { "cite": "Burton & King (2008), \"the two-minute miracle\"", "doi": "10.1348/135910707x250910", "year": 2008, "type": "experiment", "design": "2 min/day x 2 days vs. control", "n": null, "effect": "small (fewer health complaints at follow-up)", "finding_quote": "Participants wrote about either a personal trauma, a positive life experience, or a control topic for 2 minutes each day for 2 days... Both the trauma and the positive experience conditions reported fewer health complaints at follow-up than the control condition.", "url": "" }
+    ],
+    "replication": [],
+    "backfire": [],
+    "unverified": []
+  },
+  {
+    "claim_id": "attention-load/cognitive-offload",
+    "sources": [
+      { "cite": "Risko & Gilbert (2016)", "doi": "10.1016/j.tics.2016.07.002", "year": 2016, "type": "review", "design": "narrative review (Trends in Cognitive Sciences)", "n": null, "effect": "n/a", "finding_quote": "cognitive offloading: the use of physical action to alter the information processing requirements of a task so as to reduce cognitive demand... We offer a novel metacognitive framework that integrates results from diverse domains.", "url": "" },
+      { "cite": "Gilbert (2015)", "doi": "10.1080/17470218.2014.972963", "year": 2015, "type": "experiment", "design": "4 online experiments, N = 1,196", "n": 1196, "effect": "weak effect size (author's term) for naturalistic predictive validity", "finding_quote": "Setting external reminders improved performance, and it was more prevalent in older adults. Furthermore, participants set reminders adaptively, based on (a) memory load, and (b) the likelihood of distraction.", "url": "" },
+      { "cite": "Storm & Stone (2015), saving-enhanced memory", "doi": "10.1177/0956797614559285", "year": 2015, "type": "experiment", "design": "3 experiments", "n": null, "effect": "significant improvement, magnitude not in abstract", "finding_quote": "saving one file before studying a new file significantly improved memory for the contents of the new file... saving provides a means to strategically off-load memory onto the environment in order to reduce... interference.", "url": "" },
+      { "cite": "Meyerhoff, Grinschgl, Papenmeier & Gilbert (2021)", "doi": "10.1186/s41235-021-00298-x", "year": 2021, "type": "experiment", "design": "individual-differences, two offloading paradigms, test-retest", "n": null, "effect": "offloading behavior uncorrelated across the two tasks despite high within-task reliability", "finding_quote": "individual differences in offloading behavior were uncorrelated between the two offloading tasks.", "url": "" },
+      { "cite": "Sparrow, Liu & Wegner (2011), Google effects on memory", "doi": "10.1126/science.1207745", "year": 2011, "type": "experiment", "design": "4 studies", "n": null, "effect": "not quantified in abstract", "finding_quote": "when people expect to have future access to information, they have lower rates of recall of the information itself and enhanced recall instead for where to access it. The Internet has become a primary form of external or transactive memory.", "url": "" },
+      { "cite": "Clark & Chalmers (1998), The Extended Mind", "doi": "10.1093/analys/58.1.7", "year": 1998, "type": "theory", "design": "philosophical argument", "n": null, "effect": "n/a", "finding_quote": "", "url": "" },
+      { "cite": "Sweller (1988)", "doi": "10.1207/s15516709cog1202_4", "year": 1988, "type": "theory", "design": "cognitive load theory", "n": null, "effect": "n/a", "finding_quote": "", "url": "" }
+    ],
+    "replication": [
+      { "cite": "Sparrow, Liu & Wegner (2011), Google Stroop/priming sub-finding, vs. Camerer et al. (2018) Social Sciences Replication Project (replication led by Holzmeister & Camerer)", "doi": "10.1038/s41562-018-0399-z", "result": "failed" },
+      { "cite": "Hesselmann (2020), independent second replication of the 'Google Stroop effect'", "doi": "10.7717/peerj.10325", "result": "failed" }
+    ],
+    "backfire": [
+      { "cite": "Sparrow, Liu & Wegner (2011)", "doi": "10.1126/science.1207745", "condition": "offloaded content is recalled at a lower rate than content not expected to be externally accessible" },
+      { "cite": "Meyerhoff, Grinschgl, Papenmeier & Gilbert (2021)", "doi": "10.1186/s41235-021-00298-x", "condition": "offloading tendencies do not generalize well across different tasks/individuals" },
+      { "cite": "Hesselmann (2020) / Holzmeister & Camerer (SSRP replication of Sparrow et al. 2011)", "doi": "10.7717/peerj.10325", "condition": "gap-fill 2026-09-25 (resolved): confirmed via directly-fetched PMC text (PMC7651475) that Sparrow et al.'s 'Google Stroop effect' (automatic-priming sub-finding) was targeted by the SSRP and failed to replicate ('did not show a significant effect despite adequate statistical power'); Hesselmann (2020) is an independent second failed replication of the same sub-finding. Per tie-break 1, this caps that sub-finding at C. Scope note: this does not bear on the paper's separate transactive-memory/recall-location finding, whose replication status remains an open gap." }
+    ],
+    "unverified": [
+      { "cite": "Hutchins (1995), Cognition in the Wild (MIT Press)", "reason": "book; ISBN not independently verified in this session (no primary-source check performed)" }
+    ]
+  },
+  {
+    "claim_id": "attention-load/job-aid",
+    "sources": [
+      { "cite": "Haynes et al. (2009), WHO Safe Surgery Saves Lives", "doi": "10.1056/nejmsa0810119", "year": 2009, "type": "experiment", "design": "before/after, 8 hospitals in 8 cities, N = 3733 (before) + 3955 (after)", "n": 7688, "effect": "moderate-large; death 1.5%->0.8% (P=0.003)", "finding_quote": "The rate of death was 1.5% before the checklist was introduced and declined to 0.8% afterward (P=0.003). Inpatient complications occurred in 11.0% of patients at baseline and in 7.0% after introduction of the checklist (P<0.001).", "url": "" },
+      { "cite": "Hales & Pronovost (2006)", "doi": "10.1016/j.jcrc.2006.06.002", "year": 2006, "type": "review", "design": "narrative review", "n": null, "effect": "n/a", "finding_quote": "Aviation, aeronautics, and product manufacturing have come to rely heavily on checklists to aid in reducing human error... Despite demonstrated benefits of checklists in medicine and critical care, the integration of checklists into practice has not been as rapid and widespread as with other fields.", "url": "" },
+      { "cite": "Reason (2002), Combating omission errors", "doi": "10.1136/qhc.11.1.40", "year": 2002, "type": "experiment", "design": "2 studies (photocopier omission task; memory-aid feature survey)", "n": null, "effect": "descriptive", "finding_quote": "Leaving out necessary task steps is the single most common human error type... A three stage omission management programme was outlined: task analysis..., assessing the omission likelihood..., and the choice and application of a suitable reminder.", "url": "" },
+      { "cite": "Urbach, Govindarajan, Saskin, Wilton & Baxter (2014)", "doi": "10.1056/nejmsa1308261", "year": 2014, "type": "experiment", "design": "natural experiment, 101 hospitals, 109,341 + 106,370 procedures", "n": 215711, "effect": "null; OR 0.91 [0.80,1.03] P=0.13 mortality, OR 0.97 [0.90,1.03] P=0.29 complications", "finding_quote": "Implementation of surgical safety checklists in Ontario, Canada, was not associated with significant reductions in operative mortality or complications.", "url": "" }
+    ],
+    "replication": [
+      { "cite": "Urbach, Govindarajan, Saskin, Wilton & Baxter (2014)", "doi": "10.1056/nejmsa1308261", "result": "failed" }
+    ],
+    "backfire": [],
+    "unverified": [
+      { "cite": "Degani & Wiener (1993), Cockpit Checklists: Concepts, Design, and Use", "reason": "DOI 10.1177/001872089303500209 verified via Crossref (title/author/vol/page match, Human Factors 35(2):345-359); abstract not obtained, no quote offered" },
+      { "cite": "Gawande (2009), The Checklist Manifesto", "reason": "book; not checked in this session" }
+    ]
+  },
+  {
+    "claim_id": "attention-load/goal-orientation",
+    "sources": [
+      { "cite": "Locke & Latham (2002)", "doi": "10.1037/0003-066x.57.9.705", "year": 2002, "type": "review", "design": "35-year research summary", "n": null, "effect": "n/a", "finding_quote": "The authors summarize 35 years of empirical research on goal-setting theory. They describe the core findings of the theory, the mechanisms by which goals operate, moderators of goal effects...", "url": "" },
+      { "cite": "Luiten, Ames & Ackerson (1980)", "doi": "10.3102/00028312017002211", "year": 1980, "type": "meta-analysis", "design": "135 published + unpublished studies", "n": 135, "effect": "facilitative, direction only (no pooled d in abstract)", "finding_quote": "Published and unpublished studies (N = 135) of the facilitative effect of advance organizers on learning and retention were examined... Advance organizers were shown to have a facilitative effect on both learning and retention.", "url": "" }
+    ],
+    "replication": [],
+    "backfire": [],
+    "unverified": [
+      { "cite": "Ausubel (1960)", "reason": "DOI 10.1037/h0046669 verified via Crossref (J Educ Psychol 51(5):267-272, Ausubel); abstract unavailable (pre-abstract-indexing era), no quote offered" },
+      { "cite": "Rothkopf & Billington (1979)", "reason": "DOI 10.1037/0022-0663.71.3.310 verified via Crossref (title/author/vol/page match, J Educ Psychol 71(3):310-327); abstract not available in this session, so the brief's specific backfire claim (narrower incidental learning) could not be confirmed with a quote" },
+      { "cite": "Stone (1983)", "reason": "DOI 10.1080/00220973.1983.11011862 verified via Crossref (Journal of Experimental Education 51(4):194-199, Stone); abstract not available in this session, no quote offered" }
+    ]
+  },
+  {
+    "claim_id": "attention-load/phone-presence",
+    "sources": [
+      { "cite": "Thornton, Faires, Robbins & Rollins (2014)", "doi": "10.1027/1864-9335/a000216", "year": 2014, "type": "experiment", "design": "2 studies", "n": null, "effect": "not quantified in abstract", "finding_quote": "the 'mere presence' of a cell phone may be sufficiently distracting to produce diminished attention and deficits in task-performance, especially for tasks with greater attentional and cognitive demands.", "url": "" },
+      { "cite": "Hartmann, Martarelli, Reber & Rothen (2020)", "doi": "10.1016/j.concog.2020.103033", "year": 2020, "type": "experiment", "design": "direct follow-up, short-term and prospective memory tasks", "n": null, "effect": "null overall", "finding_quote": "We found no overall effect of smartphone presence on short-term and prospective memory performance... previous findings of impairments in working memory due to smartphone presence do not generalize to other domains of memory capacity.", "url": "" },
+      { "cite": "Ruiz Pardo & Minda (2022)", "doi": "10.1016/j.actpsy.2022.103717", "year": 2022, "type": "experiment", "design": "pre-registered direct replication of Ward et al. (2017) Experiment 2", "n": null, "effect": "null", "finding_quote": "the present study found that the 'brain drain' effect did not replicate: there was no difference between smartphone location conditions on performance on either the o-span task or the go/no-go task.", "url": "" },
+      { "cite": "Bottger, Poschik & Zierer (2023)", "doi": "10.3390/bs13090751", "year": 2023, "type": "meta-analysis", "design": "22 studies, 43 effects (memory/attention/general cognitive performance)", "n": 43, "effect": "significant overall negative effect, heterogeneous across domains", "finding_quote": "we show a significant overall negative effect of smartphone use and presence... A subgroup analysis suggests that not all cognitive domains are equally affected... The heterogeneity of the effects reinforces this finding.", "url": "" },
+      { "cite": "Stothart, Mitchum & Yehnert (2015)", "doi": "10.1037/xhp0000100", "year": 2015, "type": "experiment", "design": "notification-only manipulation, no direct device interaction", "n": null, "effect": "comparable in magnitude to active use", "finding_quote": "cellular phone notifications alone significantly disrupted performance on an attention-demanding task, even when participants did not directly interact with a mobile device... comparable in magnitude to those seen when users actively used a mobile phone.", "url": "" }
+    ],
+    "replication": [
+      { "cite": "Ruiz Pardo & Minda (2022)", "doi": "10.1016/j.actpsy.2022.103717", "result": "failed" },
+      { "cite": "Hartmann, Martarelli, Reber & Rothen (2020)", "doi": "10.1016/j.concog.2020.103033", "result": "failed" }
+    ],
+    "backfire": [
+      { "cite": "Hartanto & Yang (2016)", "doi": "10.1016/j.chb.2016.07.002", "condition": "smartphone separation itself may carry a cost for high-dependency users (title/metadata only; abstract not confirmed by quote in this session)" }
+    ],
+    "unverified": [
+      { "cite": "Ward, Duke, Gneezy & Bos (2017), Brain Drain", "reason": "DOI 10.1086/691462 verified via Crossref (JACR 2(2):140-154, Ward/Duke/Gneezy/Bos); publisher elides the abstract from open metadata and the journal page returned HTTP 403, so no verbatim quote could be obtained despite this being the seminal study" },
+      { "cite": "Hartanto & Yang (2016)", "reason": "DOI 10.1016/j.chb.2016.07.002 verified via Crossref (Computers in Human Behavior 64:329-336, Hartanto & Yang); abstract not obtained in this session, no quote offered beyond the title" }
+    ]
+  },
+  {
+    "claim_id": "attention-load/stop-mid-task",
+    "sources": [
+      { "cite": "Ghibellini & Meier (2025)", "doi": "10.1057/s41599-025-05000-w", "year": 2025, "type": "meta-analysis", "design": "pooled synthesis of Zeigarnik + Ovsiankina studies", "n": null, "effect": "no memory advantage (Zeigarnik); general resumption tendency confirmed (Ovsiankina)", "finding_quote": "We found no memory advantage for unfinished tasks but found a general tendency to resume tasks... the Ovsiankina effect represents a general tendency, whereas the Zeigarnik effect lacks universal validity.", "url": "" },
+      { "cite": "Masicampo & Baumeister (2011)", "doi": "10.1037/a0024192", "year": 2011, "type": "experiment", "design": "6 studies (incl. 5A/5B)", "n": null, "effect": "intrusive thoughts eliminated by specific plan-making", "finding_quote": "Unfinished goals caused intrusive thoughts during an unrelated reading task... Allowing participants to formulate specific plans for their unfulfilled goals eliminated the various activation and interference effects... Once a plan is made, the drive to attain a goal is suspended... and is resumed at the specified later time.", "url": "" }
+    ],
+    "replication": [
+      { "cite": "Ghibellini & Meier (2025)", "doi": "10.1057/s41599-025-05000-w", "result": "mixed" }
+    ],
+    "backfire": [
+      { "cite": "Masicampo & Baumeister (2011)", "doi": "10.1037/a0024192", "condition": "leaving a task open without a specific resumption plan causes intrusive thoughts; this is resolved by plan-making, which functionally overlaps with a resumption cue" }
+    ],
+    "unverified": [
+      { "cite": "Zeigarnik (1927)", "reason": "no DOI exists for this pre-DOI-era German-language publication; not independently located or re-read in this session, described only via Butterfield (1964) and Ghibellini & Meier (2025)" },
+      { "cite": "Ovsiankina (1928)", "reason": "same as Zeigarnik (1927): pre-DOI-era German-language publication, not independently located or re-read in this session" },
+      { "cite": "Butterfield (1964)", "reason": "DOI 10.1037/h0039873 verified via Crossref (Psychol Bull 62(5):309-322, Butterfield); no abstract available for this 1964 paper, no quote offered" }
+    ]
+  },
+  {
+    "claim_id": "attention-load/resumption-cues",
+    "sources": [
+      { "cite": "Altmann & Trafton (2002), Memory for goals", "doi": "10.1207/s15516709cog2601_2", "year": 2002, "type": "theory", "design": "computational model + Tower of Hanoi simulation/latency data", "n": null, "effect": "n/a (model)", "finding_quote": "The model embodies three predictive constraints: (1) the interference level... (2) the strengthening constraint... and (3) the priming constraint, which makes predictions about the role of cues in retrieving pending goals.", "url": "" },
+      { "cite": "Monk, Trafton & Boehm-Davis (2008)", "doi": "10.1037/a0014402", "year": 2008, "type": "experiment", "design": "3 experiments, interleaved-task interruption paradigm", "n": null, "effect": "resumption time scales with interruption duration and demand", "finding_quote": "The time to resume task goals after an interruption varied depending on the duration and cognitive demand of interruptions, as predicted by the memory for goals model... longer and more demanding interruptions led to longer resumption times.", "url": "" },
+      { "cite": "Hodgetts & Jones (2006)", "doi": "10.1037/0278-7393.32.5.1120", "year": 2006, "type": "experiment", "design": "Tower of London interruption paradigm", "n": null, "effect": "facilitation when cue intact; impairment when cue altered", "finding_quote": "Retrieval of the suspended goal was facilitated when participants were given the opportunity to encode retrieval cues during an 'interruption lag'... but was impeded when these visual cues were subsequently altered following interruption.", "url": "" }
+    ],
+    "replication": [],
+    "backfire": [
+      { "cite": "Hodgetts & Jones (2006)", "doi": "10.1037/0278-7393.32.5.1120", "condition": "an altered/stale cue impedes resumption relative to having no cue at all" },
+      { "cite": "Monk, Trafton & Boehm-Davis (2008)", "doi": "10.1037/a0014402", "condition": "the underlying studies test interruptions of seconds to about one minute; Longhand's gaps between sessions run days to weeks, several orders of magnitude beyond anything tested" }
+    ],
+    "unverified": [
+      { "cite": "Trafton, Altmann, Brock & Mintz (2003)", "reason": "DOI 10.1016/s1071-5819(03)00023-5 verified via Crossref (title/author match, Int J Human-Computer Studies 58(5):583-603); abstract not available via Crossref or Europe PMC in this session, no quote offered" }
+    ]
+  }
+]

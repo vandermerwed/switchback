@@ -1,0 +1,7 @@
+{
+  "variant": "domains",
+  "data": {
+    "rows": ["Health and energy", "Work that matters", "Close relationships", "Money", "Home", "Headspace"],
+    "scale": 7
+  }
+}

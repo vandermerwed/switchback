@@ -1,0 +1,616 @@
+[
+  {
+    "claim_id": "memory-retrieval/self-explanation",
+    "sources": [
+      {
+        "cite": "Chi, Bassok, Lewis, Reimann & Glaser (1989)",
+        "doi": "10.1207/s15516709cog1302_1",
+        "year": 1989,
+        "type": "experiment",
+        "design": "talk-aloud protocol analysis of Good vs Poor students studying worked mechanics examples",
+        "n": "not extracted (protocol study)",
+        "effect": "n/a",
+        "finding_quote": "'Good' students learn with understanding: They generate many explanations which refine and expand the conditions for the action parts of the example solutions, and relate these actions to principles in the text... 'Poor' students do not generate sufficient self-explanations, monitor their learning inaccurately, and subsequently rely heavily on examples.",
+        "url": ""
+      },
+      {
+        "cite": "Bisra, Liu, Nesbit, Salimi & Winne (2018)",
+        "doi": "10.1007/s10648-018-9434-x",
+        "year": 2018,
+        "type": "meta-analysis",
+        "design": "random-effects meta-analysis, 69 effect sizes from 64 reports",
+        "n": "k=69 effect sizes",
+        "effect": "g=0.55",
+        "finding_quote": "Our systematic search of relevant bibliographic databases identified 69 effect sizes (from 64 research reports) which met certain inclusion criteria. The overall weighted mean effect size using a random effects model was g = .55... We found that self-explanation prompts are a potentially powerful intervention across a range of instructional conditions.",
+        "url": ""
+      },
+      {
+        "cite": "Rittle-Johnson, Loehr & Durkin (2017)",
+        "doi": "10.1007/s11858-017-0834-z",
+        "year": 2017,
+        "type": "meta-analysis",
+        "design": "math-domain meta-analysis",
+        "n": "",
+        "effect": "small-to-moderate",
+        "finding_quote": "Gap-fill attempt (2026-09-25): re-searched for a direct fetch (ERIC record EJ1149060, ScienceDirect, ResearchGate); all failed this session (ERIC connection refused, others paywalled/no cached abstract). Still unread in primary form -- retaining prior WebSearch synthesis, not upgraded to a verbatim quote: 'prompted self-explanation leads to a small to moderate improvement in procedural knowledge, conceptual knowledge and procedural transfer when assessed immediately after the intervention. However, evidence that self-explanation reliably promotes learning within a classroom context or retention of knowledge over a delay is much more limited.'",
+        "url": ""
+      },
+      {
+        "cite": "Schworm & Renkl (2006)",
+        "doi": "10.1016/j.compedu.2004.08.011",
+        "year": 2006,
+        "type": "experiment",
+        "design": "computer-based learning environment for student teachers, solved example problems",
+        "n": "",
+        "effect": "instructional explanations reduced self-explanation activity and outcomes vs prompts alone",
+        "finding_quote": "self-explanation prompts had favorable effects on learning outcomes, whereas instructional explanations can reduce the student teacher's self-explanation activities and thereby the learning outcomes (quoted per ERIC abstract record EJ729810; publisher's own abstract text was paywalled/blocked this session)",
+        "url": "https://eric.ed.gov/?id=EJ729810"
+      }
+    ],
+    "replication": [],
+    "backfire": [
+      {
+        "cite": "Schworm & Renkl (2006)",
+        "doi": "10.1016/j.compedu.2004.08.011",
+        "condition": "Adding instructional (given) explanations alongside self-explanation prompts crowds out the learner's own self-explanation activity and reduces the outcome self-explanation alone would produce."
+      },
+      {
+        "cite": "Rittle-Johnson, Loehr & Durkin (2017)",
+        "doi": "10.1007/s11858-017-0834-z",
+        "condition": "Classroom and delayed-retention evidence for self-explanation is much thinner than immediate-post-test evidence."
+      }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "memory-retrieval/worked-example-fading",
+    "sources": [
+      {
+        "cite": "Renkl, Atkinson, Maier & Staley (2002)",
+        "doi": "10.1080/00220970209599510",
+        "year": 2002,
+        "type": "experiment",
+        "design": "secondary-school physics (electricity), backward fading vs example-problem pairs",
+        "n": "",
+        "effect": "fading > static example-problem pairs on near transfer",
+        "finding_quote": "fading is more effective than learning with example-problem pairs. Additionally, students who learned through backward fading achieved higher near-transfer performance than those who studied example-problem pairs when learning electricity concepts in secondary school physics. (search synthesis, not independently re-fetched in full)",
+        "url": ""
+      },
+      {
+        "cite": "Barbieri, Miller-Cotto, Clerjuste & Chawla (2023)",
+        "doi": "10.1007/s10648-023-09745-1",
+        "year": 2023,
+        "type": "meta-analysis",
+        "design": "robust variance estimation, 43 articles / 55 studies / 181 effect sizes, elementary–postsecondary",
+        "n": "k=181 effect sizes",
+        "effect": "g=0.48",
+        "finding_quote": "the average effect size of worked examples on mathematics performance was medium with g = 0.48... an average of 18 percentile points (search synthesis, not independently re-fetched in full)",
+        "url": ""
+      },
+      {
+        "cite": "Kalyuga, Ayres, Chandler & Sweller (2003)",
+        "doi": "10.1207/s15326985ep3801_4",
+        "year": 2003,
+        "type": "review",
+        "design": "narrative review of cognitive-load-theory interaction studies",
+        "n": "",
+        "effect": "n/a",
+        "finding_quote": "Recently, however, strong evidence has emerged that the effectiveness of these techniques depends very much on levels of learner expertise. Instructional techniques that are highly effective with inexperienced learners can lose their effectiveness and even have negative consequences when used with more experienced learners. We call this phenomenon the expertise reversal effect.",
+        "url": "https://ro.uow.edu.au/edupapers (University of Wollongong Research Online mirror)"
+      }
+    ],
+    "replication": [],
+    "backfire": [
+      {
+        "cite": "Kalyuga, Ayres, Chandler & Sweller (2003)",
+        "doi": "10.1207/s15326985ep3801_4",
+        "condition": "The expertise-reversal effect: fading/worked examples that help novices can hurt learners who already have relevant schemas, due to redundant processing of steps the learner would otherwise generate efficiently from memory."
+      }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "memory-retrieval/elaborative-interrogation",
+    "sources": [
+      {
+        "cite": "Pressley, McDaniel, Turnure, Wood & Ahmad (1987)",
+        "doi": "10.1037/0278-7393.13.2.291",
+        "year": 1987,
+        "type": "experiment",
+        "design": "Canadian undergraduates, why-elaborated arbitrary man-sentences vs reading",
+        "n": "",
+        "effect": "self-generated why elaborations > reading alone or others' elaborations",
+        "finding_quote": "Self-generated elaborations beat both reading alone and reading someone else's elaboration (search synthesis of abstract/summary; DOI/authorship/year independently verified via Crossref)",
+        "url": ""
+      },
+      {
+        "cite": "Martin & Pressley (1991)",
+        "doi": "10.1037/0022-0663.83.1.113",
+        "year": 1991,
+        "type": "experiment",
+        "design": "fact-learning study varying question type",
+        "n": "",
+        "effect": "why-questioning benefit depends on orienting learners to relevant prior knowledge",
+        "finding_quote": "'why' questioning improved learning of facts proportional to the extent that why questions oriented learners to relevant prior knowledge. (search synthesis of abstract; title/authors/year verified via Crossref)",
+        "url": ""
+      },
+      {
+        "cite": "Dunlosky, Rawson, Marsh, Nathan & Willingham (2013)",
+        "doi": "10.1177/1529100612453266",
+        "year": 2013,
+        "type": "review",
+        "design": "utility-rating review of 10 learning techniques",
+        "n": "",
+        "effect": "elaborative interrogation rated moderate utility",
+        "finding_quote": "we discuss 10 learning techniques in detail and offer recommendations about their relative utility... The techniques include elaborative interrogation, self-explanation, summarization, highlighting (or underlining), the keyword mnemonic, imagery use for text learning, rereading, practice testing, distributed practice, and interleaved practice.",
+        "url": ""
+      }
+    ],
+    "replication": [],
+    "backfire": [
+      {
+        "cite": "Martin & Pressley (1991)",
+        "doi": "10.1037/0022-0663.83.1.113",
+        "condition": "Effect depends on the nature of the question and whether the learner has relevant prior knowledge to orient to; weak or absent on unfamiliar material with no relevant background."
+      }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "memory-retrieval/explanatory-depth",
+    "sources": [
+      {
+        "cite": "Rozenblit & Keil (2002)",
+        "doi": "10.1207/s15516709cog2605_1",
+        "year": 2002,
+        "type": "experiment",
+        "design": "12 studies: rate understanding -> explain mechanism -> re-rate, on devices, phenomena, procedures, narratives",
+        "n": "",
+        "effect": "large self-rating drop after explanation attempt; strongest for explanatory knowledge",
+        "finding_quote": "People feel they understand complex phenomena with far greater precision, coherence, and depth than they really do; they are subject to an illusion—an illusion of explanatory depth. The illusion is far stronger for explanatory knowledge than many other kinds of knowledge, such as that for facts, procedures or narratives. The illusion for explanatory knowledge is most robust where the environment supports real-time explanations with visible mechanisms.",
+        "url": ""
+      },
+      {
+        "cite": "Alter, Oppenheimer & Zemla (2010)",
+        "doi": "10.1037/a0020218",
+        "year": 2010,
+        "type": "experiment",
+        "design": "6 studies, construal-level manipulation",
+        "n": "",
+        "effect": "IOED reduced by concrete construal",
+        "finding_quote": "Gap-fill (2026-09-25): now verbatim, fetched directly via the Semantic Scholar API's full abstract field. 'An illusion of explanatory depth (IOED) occurs when people believe they understand a concept more deeply than they actually do. To date, IOEDs have been identified only in mechanical and natural domains... Six studies illustrated that IOEDs occur because people adopt an inappropriately abstract construal style when they assess how well they understand concrete concepts. As this mechanism predicts, participants who naturally adopted concrete construal styles (Study 1) or were induced to adopt a concrete construal style (Studies 2-4 and 6), experienced diminished IOEDs. Two additional studies documented a novel IOED in the social psychological domain of electoral voting (Studies 5 and 6), demonstrating the generality of the construal mechanism.'",
+        "url": ""
+      },
+      {
+        "cite": "Fernbach, Rogers, Fox & Sloman (2013)",
+        "doi": "10.1177/0956797612464058",
+        "year": 2013,
+        "type": "experiment",
+        "design": "3 experiments, political-policy explanations",
+        "n": "",
+        "effect": "mechanistic (not reasons-based) explanation reduced IOED and moderated attitudes",
+        "finding_quote": "Asking people to explain policies in detail both undermined the illusion of explanatory depth and led to attitudes that were more moderate (Experiments 1 and 2). Although these effects occurred when people were asked to generate a mechanistic explanation, they did not occur when people were instead asked to enumerate reasons for their policy preferences.",
+        "url": ""
+      },
+      {
+        "cite": "Crawford & Ruscio (2021)",
+        "doi": "10.1177/0956797620972367",
+        "year": 2021,
+        "type": "rrr",
+        "design": "3 preregistered close/conceptual replications of Fernbach et al. Experiments 2-3",
+        "n": "N=306/405/343",
+        "effect": "key policy-moderation effects not significant",
+        "finding_quote": "None of the key effects were statistically significant, and only one survived a small-telescopes analysis. Although participants reported less policy understanding after providing mechanistic policy explanations, policy-position extremity and in-group favoritism were unaffected... providing mechanistic explanations increases people's recognition of their ignorance but is unlikely to increase their political moderation.",
+        "url": ""
+      }
+    ],
+    "replication": [
+      {
+        "cite": "Crawford & Ruscio (2021)",
+        "doi": "10.1177/0956797620972367",
+        "result": "failed"
+      },
+      {
+        "cite": "Alter, Oppenheimer & Zemla (2010)",
+        "doi": "10.1037/a0020218",
+        "result": "replicated (core IOED self-rating-drop effect, different materials/theory)"
+      }
+    ],
+    "backfire": [
+      {
+        "cite": "Fernbach, Rogers, Fox & Sloman (2013)",
+        "doi": "10.1177/0956797612464058",
+        "condition": "Effect requires a mechanistic explanation attempt; merely enumerating reasons/opinions does not reduce the illusion."
+      },
+      {
+        "cite": "Crawford & Ruscio (2021)",
+        "doi": "10.1177/0956797620972367",
+        "condition": "The downstream claim that reducing IOED also moderates real-world attitudes (political extremism) failed three preregistered replications, even though people did recognize more ignorance after explaining."
+      }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "memory-retrieval/explaining-to-learn",
+    "sources": [
+      {
+        "cite": "Fiorella, L. (2023). Learning by Teaching. In Their Own Words (APA Division 2), 158-166.",
+        "doi": "",
+        "year": 2023,
+        "type": "review",
+        "design": "narrative review chapter by Fiorella (co-author of Fiorella & Mayer 2013/2014) summarising his own and others' learning-by-teaching studies",
+        "n": "",
+        "effect": "reviews Fiorella & Mayer 2013/2014, Hoogerheide et al. 2014/2016, Lachner et al. 2018, Kobayashi 2019",
+        "finding_quote": "Verbatim, fetched from the full-text open PDF, read in full this session. On Fiorella & Mayer 2013/2014: 'college students learned about the Doppler effect with the expectation of teaching or taking a test. Of those expecting to teach, some students actually taught by creating a video lecture intended to teach a fictitious student who does not know about the learning material. On immediate comprehension tests, students who prepared to teach performed similarly, regardless of whether they actually taught on video. However, students who actually taught performed best on a delayed comprehension test.' On modality: 'Hoogerheide and colleagues (2016) found that orally teaching syllogistic reasoning problems on video was more effective than restudying the learning material, but teaching via written explanations was not more effective than restudying. There was not a significant difference in performance between the oral and written explanation groups, so this study could not draw strong conclusions about the role of explanation modality. Lachner and colleagues (2018) took a closer look at differences in the quality of students written and oral explanations and their relationship with different learning outcomes. Written explanations tended to be more organized and contributed to better conceptual understanding; in contrast, oral explanations tended to be more elaborative and contributed to better transfer test performance.'",
+        "url": "https://www.unh.edu/teaching-learning-resource-hub/sites/default/files/media/2023-06/itow-learning-by-teaching-fiorella.pdf"
+      },
+      {
+        "cite": "Fiorella & Mayer (2013)",
+        "doi": "10.1016/j.cedpsych.2013.06.001",
+        "year": 2013,
+        "type": "experiment",
+        "design": "2 experiments; college students learn the Doppler effect with expectation of teaching (video lecture to a fictitious student) vs taking a test; some who expected to teach actually taught",
+        "n": "",
+        "effect": "on immediate tests, preparing-to-teach performed similarly whether or not students actually taught; on a delayed test, actually teaching performed best",
+        "finding_quote": "Design/finding now corroborated via the Fiorella 2023 review (verbatim, fetched, see above), not via the original abstract, which remains unretrieved this session (ScienceDirect 403; Semantic Scholar/Crossref carry no abstract field).",
+        "url": ""
+      },
+      {
+        "cite": "Kobayashi (2019)",
+        "doi": "10.1111/jpr.12221",
+        "year": 2019,
+        "type": "meta-analysis",
+        "design": "meta-analysis, 28 studies",
+        "n": "k=28",
+        "effect": "preparing-to-teach g=0.35; teaching-with-preparation g=0.56",
+        "finding_quote": "The synthesis of 28 studies indicated that the estimated effect sizes (Hedges' gs) were 0.35 for preparing-to-teach and 0.56 for teaching with preparing-to-teach. Both preparing-to-teach and teaching with preparing-to-teach were effective in promoting deep learning (as well as surface learning) and even after a delay. The learning benefits of teaching with preparing-to-teach were larger when students expected and engaged in an interactive teaching activity than when they expected and engaged in a non-interactive teaching activity.",
+        "url": ""
+      },
+      {
+        "cite": "Hoogerheide, Loyens & van Gog (2014)",
+        "doi": "10.1016/j.learninstruc.2014.04.005",
+        "year": 2014,
+        "type": "experiment",
+        "design": "students creating video-based modeling examples (explaining to an audience) vs studying",
+        "n": "",
+        "effect": "supports learning-by-explaining benefit",
+        "finding_quote": "Corroborated indirectly via the Fiorella 2023 review (fetched, above): 'Hoogerheide and colleagues (2014) reported a similar pattern of results in which actually teaching on video led to better understanding than only preparing to teach.' Direct abstract still not retrievable this session (Elsevier paywall; no OA abstract surfaced).",
+        "url": ""
+      }
+    ],
+    "replication": [],
+    "backfire": [
+      {
+        "cite": "Hoogerheide, Deijkers, Loyens, Heijltjes & van Gog (2016)",
+        "doi": "10.1016/j.cedpsych.2016.02.005",
+        "condition": "Gap-fill correction (2026-09-25): the study's own comparison of oral vs written explanation groups was NOT statistically significant, so it 'could not draw strong conclusions about the role of explanation modality' (per the Fiorella 2023 review, fetched directly). The title's framing ('not from writing to them') overstates the data. Direct abstract text still not retrievable this session."
+      },
+      {
+        "cite": "Lachner, Ly & Nückles (2018)",
+        "doi": "10.1080/00220973.2017.1363691",
+        "condition": "Gap-fill correction (2026-09-25), now directly fetched via ERIC: this is a bidirectional trade-off, not a simple written deficit. N=48 students explained a combustion-engine hypertext orally or in writing. Written explanations were MORE effective for organizing content and conceptual knowledge; oral explanations were MORE effective for transfer, via more elaborative processing. For feynman (a written page), this is reassuring for conceptual knowledge and a caution only for transfer specifically."
+      }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "memory-retrieval/generate-before-told",
+    "sources": [
+      {
+        "cite": "Slamecka & Graf (1978)",
+        "doi": "10.1037/0278-7393.4.6.592",
+        "year": 1978,
+        "type": "experiment",
+        "design": "multiple experiments, generating vs reading target words",
+        "n": "",
+        "effect": "generated items recalled/recognized better than read items",
+        "finding_quote": "title/authorship/year confirmed via Crossref (Journal of Experimental Psychology: Human Learning and Memory, 4(6), 592-604); no abstract field returned by Crossref for this 1978 record, so no verbatim quote obtained this session",
+        "url": ""
+      },
+      {
+        "cite": "Kapur (2008)",
+        "doi": "10.1080/07370000802212669",
+        "year": 2008,
+        "type": "experiment",
+        "design": "classroom study, problem-solving-before-instruction vs instruction-first",
+        "n": "",
+        "effect": "problem-solving-first produced better conceptual understanding despite worse initial success",
+        "finding_quote": "title/authorship/year/pages (Cognition and Instruction, 26(3), 379-424) confirmed via Crossref; no abstract field returned, so no verbatim quote obtained this session",
+        "url": ""
+      },
+      {
+        "cite": "Bertsch, Pesta, Wiscott & McDaniel (2007)",
+        "doi": "10.3758/bf03193441",
+        "year": 2007,
+        "type": "meta-analysis",
+        "design": "meta-analysis of generation-effect studies",
+        "n": "",
+        "effect": "positive, consistent generation-effect benefit",
+        "finding_quote": "title/authorship/year/pages (Memory & Cognition, 35(2), 201-210) confirmed via Crossref; no abstract field returned, so no verbatim quote obtained this session",
+        "url": ""
+      },
+      {
+        "cite": "Sinha & Kapur (2021)",
+        "doi": "10.3102/00346543211019105",
+        "year": 2021,
+        "type": "meta-analysis",
+        "design": "meta-analysis, 53 studies / 166 comparisons, PS-I vs I-PS",
+        "n": "k=53 studies / 166 comparisons",
+        "effect": "g=0.36 raw [0.20,0.51]; g up to 0.58 high-fidelity PF; bias-corrected g=0.87",
+        "finding_quote": "Our results showed a significant, moderate effect in favor of PS-I (Hedge's g 0.36 [95% confidence interval 0.20; 0.51]). The effects were even stronger (Hedge's g ranging between 0.37 and 0.58) when PS-I was implemented with high fidelity to the principles of Productive Failure (PF)... Contrasting trends were, however, observed for younger age learners (second to fifth graders) and for the learning of domain-general skills, for which effect sizes favored I-PS. Overall, an estimation of true effect sizes after accounting for publication bias suggested a strong effect size favoring PS-I (Hedge's g 0.87).",
+        "url": ""
+      },
+      {
+        "cite": "Kirschner, Sweller & Clark (2006)",
+        "doi": "10.1207/s15326985ep4102_1",
+        "year": 2006,
+        "type": "review",
+        "design": "argumentative review citing cognitive-architecture evidence",
+        "n": "",
+        "effect": "n/a",
+        "finding_quote": "title/authorship/year/pages (Educational Psychologist, 41(2), 75-86) confirmed via Crossref; argues minimally guided/discovery instruction underperforms guided instruction, especially for novices and high-element-interactivity material; no abstract field returned by Crossref, so no verbatim quote obtained this session",
+        "url": ""
+      }
+    ],
+    "replication": [
+      {
+        "cite": "Sinha & Kapur (2021)",
+        "doi": "10.3102/00346543211019105",
+        "result": "replicated (bias-corrected estimate larger than raw, not nulled or reversed)"
+      }
+    ],
+    "backfire": [
+      {
+        "cite": "Kirschner, Sweller & Clark (2006)",
+        "doi": "10.1207/s15326985ep4102_1",
+        "condition": "Minimally guided / discovery / generate-before-instruction designs can underperform guided instruction for novices and for material with high element interactivity."
+      },
+      {
+        "cite": "Sinha & Kapur (2021)",
+        "doi": "10.3102/00346543211019105",
+        "condition": "PS-I/productive-failure advantage did not hold for younger learners (2nd-5th graders) or domain-general skills, where instruction-first was favored instead."
+      }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "reading-review/paper-vs-screen",
+    "sources": [
+      {
+        "cite": "Delgado, Vargas, Ackerman & Salmerón (2018)",
+        "doi": "10.1016/j.edurev.2018.09.003",
+        "year": 2018,
+        "type": "meta-analysis",
+        "design": "meta-analysis of reading-media comparisons",
+        "n": "",
+        "effect": "paper advantage for comprehension, larger under time pressure",
+        "finding_quote": "title/authorship/year confirmed via Crossref (Educational Research Review, 25, 23-38); no abstract field returned by Crossref this session, so no verbatim quote obtained -- headline finding corroborated by Clinton (2019) below",
+        "url": ""
+      },
+      {
+        "cite": "Clinton (2019)",
+        "doi": "10.1111/1467-9817.12269",
+        "year": 2019,
+        "type": "meta-analysis",
+        "design": "systematic review + meta-analysis, 29 reports / 33 experiments, random-assignment studies 2008-2018",
+        "n": "k=33 performance; k=14 time; k=11 calibration; n=2799 performance",
+        "effect": "performance g=-0.25; expository g=-0.32; narrative g=-0.04 (n.s.); time g=0.08 (n.s.); calibration g=0.20 (paper better)",
+        "finding_quote": "Based on random effects models, reading from screens had a negative effect on reading performance relative to paper (g = -.25). Based on moderator analyses, this may have been limited to expository texts (g = -.32) as there was no difference with narrative texts (g = -.04)... No reliable differences were found for reading time (g = .08). Readers had better calibrated (more accurate) judgement of their performance from paper compared to screens (g = .20). Readers may be more efficient and aware of their performance when reading from paper compared to screens.",
+        "url": ""
+      },
+      {
+        "cite": "Kong, Seo & Zhai (2018)",
+        "doi": "10.1016/j.compedu.2018.05.005",
+        "year": 2018,
+        "type": "meta-analysis",
+        "design": "meta-analysis of screen-vs-paper reading performance studies",
+        "n": "",
+        "effect": "paper advantage, moderated by text type/task",
+        "finding_quote": "title/authorship/year confirmed via Crossref (Computers & Education, 123, 138-149); no abstract field returned by Crossref this session; a third independent meta-analysis converging on a paper advantage",
+        "url": ""
+      },
+      {
+        "cite": "Ackerman & Goldsmith (2011)",
+        "doi": "10.1037/a0022086",
+        "year": 2011,
+        "type": "experiment",
+        "design": "text-learning experiments comparing screen and paper study, with/without time pressure",
+        "n": "",
+        "effect": "screen inferiority driven by metacognitive miscalibration under self-paced conditions",
+        "finding_quote": "title/authorship/year/pages (Journal of Experimental Psychology: Applied, 17(1), 18-32) confirmed via Crossref; mechanism-level source locating the screen disadvantage in poorer self-regulation of study time, not comprehension processing itself; no abstract field returned by Crossref this session",
+        "url": ""
+      },
+      {
+        "cite": "Calvo-Ferrer (2022)",
+        "doi": "10.7203/qf.0.24620",
+        "year": 2022,
+        "type": "experiment",
+        "design": "translation students proofread for linguistic/non-linguistic errors, on screen (n=70) or paper (n=73)",
+        "n": "n=70 screen / 73 paper",
+        "effect": "screen group detected more errors of both types, especially non-linguistic ones",
+        "finding_quote": "Los análisis estadísticos señalan que revisar en pantalla resulta más efectivo para detectar ambos tipos de errores, especialmente los no lingüísticos. [Statistical analyses indicate that reviewing on screen is more effective for detecting both types of errors, especially non-linguistic ones.]",
+        "url": ""
+      }
+    ],
+    "replication": [
+      {
+        "cite": "Kong, Seo & Zhai (2018)",
+        "doi": "10.1016/j.compedu.2018.05.005",
+        "result": "replicated (independent meta-analysis converging with Delgado 2018 and Clinton 2019)"
+      }
+    ],
+    "backfire": [
+      {
+        "cite": "Calvo-Ferrer (2022)",
+        "doi": "10.7203/qf.0.24620",
+        "condition": "For a proofreading/error-detection task specifically (as opposed to comprehension-for-learning), screen review outperformed paper review -- the opposite direction from the general comprehension effect. This is the most direct evidence found for Proof's actual task."
+      }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "reading-review/automation-bias",
+    "sources": [
+      {
+        "cite": "Mosier, Skitka, Heers & Burdick (1998)",
+        "doi": "10.1207/s15327108ijap0801_3",
+        "year": 1998,
+        "type": "experiment",
+        "design": "simulated cockpit decision-making tasks with imperfect automated aids",
+        "n": "",
+        "effect": "commission and omission errors from over-trusting automated aids",
+        "finding_quote": "title/authorship/year/pages (47-63, International Journal of Aviation Psychology) confirmed via Crossref; no abstract field returned this session, so no verbatim quote obtained",
+        "url": ""
+      },
+      {
+        "cite": "Parasuraman & Manzey (2010)",
+        "doi": "10.1177/0018720810376055",
+        "year": 2010,
+        "type": "review",
+        "design": "integrative review of complacency and automation-bias literatures",
+        "n": "",
+        "effect": "n/a",
+        "finding_quote": "Automation complacency occurs under conditions of multiple-task load, when manual tasks compete with the automated task for the operator's attention. Automation complacency is found in both naive and expert participants and cannot be overcome with simple practice. Automation bias results in making both omission and commission errors when decision aids are imperfect. Automation bias occurs in both naive and expert participants, cannot be prevented by training or instructions, and can affect decision making in individuals as well as in teams.",
+        "url": ""
+      },
+      {
+        "cite": "Goddard, Roudsari & Wyatt (2012)",
+        "doi": "10.1136/amiajnl-2011-000089",
+        "year": 2012,
+        "type": "review",
+        "design": "systematic review, decision-support-system literature",
+        "n": "",
+        "effect": "n/a",
+        "finding_quote": "title/authorship/year confirmed via Crossref (JAMIA, 19(1), 121-127); no abstract field returned this session, so no verbatim quote obtained",
+        "url": ""
+      },
+      {
+        "cite": "Lyell & Coiera (2016; commonly cited 2017)",
+        "doi": "10.1093/jamia/ocw105",
+        "year": 2016,
+        "type": "review",
+        "design": "systematic review, 40/890 studies meeting inclusion criteria",
+        "n": "k=40",
+        "effect": "automation bias found in single-task settings tied to verification complexity, not only multitasking",
+        "finding_quote": "Contrary to the prevailing human factors view, AB was found in single tasks, typically involving diagnosis rather than monitoring, and with high verification complexity... AB appears to be associated with the degree of cognitive load experienced in decision tasks, and appears to not be uniquely associated with multitasking. Strategies to minimize AB might focus on cognitive load reduction.",
+        "url": ""
+      },
+      {
+        "cite": "Buçinca, Malaya & Gajos (2021)",
+        "doi": "10.1145/3449287",
+        "year": 2021,
+        "type": "experiment",
+        "design": "N=199, 3 cognitive-forcing UI designs vs 2 explainable-AI baselines vs no-AI baseline",
+        "n": "N=199",
+        "effect": "cognitive forcing reduced overreliance but was rated less favorably; benefited high-Need-for-Cognition users more",
+        "finding_quote": "People supported by AI-powered decision support tools frequently overrely on the AI: they accept an AI's suggestion even when that suggestion is wrong. Adding explanations to the AI decisions does not appear to reduce the overreliance and some studies suggest that it might even increase it... The results demonstrate that cognitive forcing significantly reduced overreliance compared to the simple explainable AI approaches. However, there was a trade-off: people assigned the least favorable subjective ratings to the designs that reduced the overreliance the most.",
+        "url": ""
+      }
+    ],
+    "replication": [
+      {
+        "cite": "Goddard, Roudsari & Wyatt (2012) and Lyell & Coiera (2016)",
+        "doi": "10.1136/amiajnl-2011-000089 ; 10.1093/jamia/ocw105",
+        "result": "replicated (two independent systematic reviews both find automation bias a robust, frequent phenomenon; Lyell & Coiera refine rather than fail to replicate the conditions)"
+      }
+    ],
+    "backfire": [
+      {
+        "cite": "Buçinca, Malaya & Gajos (2021)",
+        "doi": "10.1145/3449287",
+        "condition": "Cognitive-forcing interventions that reduce overreliance most are liked least, and their benefit is concentrated in users already disposed to effortful thinking -- risk of abandonment or rubber-stamping by other users."
+      }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "reading-review/proofreading-marks",
+    "sources": [
+      {
+        "cite": "Christiansen, \"Editing and Proofreading Marks,\" AMA Manual of Style",
+        "doi": "10.1093/jama/9780195176339.021.316",
+        "year": 2009,
+        "type": "practice",
+        "design": "reference-manual chapter",
+        "n": "",
+        "effect": "n/a",
+        "finding_quote": "title/authorship/year confirmed via Crossref; this DOI resolves to a book chapter (reference manual), consistent with D-type/practice classification -- no empirical finding to quote",
+        "url": ""
+      }
+    ],
+    "replication": [],
+    "backfire": [],
+    "unverified": [
+      {
+        "cite": "BSI, BS 5261-2 / BS 5261C: Copy preparation and proof correction (proof correction marks), current edition BS 5261C:2005",
+        "reason": "BSI's own catalogue page could not be located at a guessed URL this session (returned 'product not found'); described only via a secondary source (Wikipedia's 'Proofreader's mark' article, which itself cites a BSI-hosted PDF and a CIEP guide conforming to BS 5261C:2005). Needs a direct BSI catalogue or library-catalogue confirmation of edition/ISBN before use in grounding.json."
+      },
+      {
+        "cite": "The Chicago Manual of Style Online, \"Proofreaders' Marks\"",
+        "reason": "Not independently fetched from chicagomanualofstyle.org in this session; described only via a secondary source (Wikipedia's 'Proofreader's mark' article quoting the page). URL recorded (https://www.chicagomanualofstyle.org/help-tools/proofreading-marks.html) but content not verified first-hand."
+      },
+      {
+        "cite": "No empirical study of proofreading-mark comprehension/accuracy/reliability",
+        "reason": "Searched via Crossref bibliographic query for 'proofreading marks comprehension accuracy experiment study' and close variants; none found. Recorded per the brief's instruction to say 'none found (searched: ...)' rather than as a citation."
+      }
+    ]
+  },
+  {
+    "claim_id": "reading-review/consistent-mapping",
+    "sources": [
+      {
+        "cite": "Schneider & Shiffrin (1977)",
+        "doi": "10.1037/0033-295x.84.1.1",
+        "year": 1977,
+        "type": "experiment",
+        "design": "series of visual/memory search experiments, consistent vs varied stimulus-response mapping",
+        "n": "",
+        "effect": "consistent mapping -> automatic, fast processing; varied mapping stays effortful/error-prone",
+        "finding_quote": "title/authorship/year/pages (1-66, Psychological Review) confirmed via Crossref; companion paper Shiffrin & Schneider (1977) Part II, DOI 10.1037/0033-295x.84.2.127, independently confirmed same authors/journal/year; no abstract field returned for either this session",
+        "url": ""
+      },
+      {
+        "cite": "Norman (1981)",
+        "doi": "10.1037/0033-295x.88.1.1",
+        "year": 1981,
+        "type": "theory",
+        "design": "taxonomy built from a diary/case corpus of everyday action errors",
+        "n": "",
+        "effect": "n/a",
+        "finding_quote": "title/authorship/year/pages (1-15, Psychological Review) confirmed via Crossref; taxonomy of action slips including mode errors, where a control/mark means one thing in one context and another in a different context; no abstract field returned this session",
+        "url": ""
+      },
+      {
+        "cite": "Fitts & Seeger (1953)",
+        "doi": "10.1037/h0062827",
+        "year": 1953,
+        "type": "experiment",
+        "design": "multiple experiments varying stimulus-response spatial correspondence",
+        "n": "",
+        "effect": "compatible/consistent mappings faster and more accurate than incompatible ones",
+        "finding_quote": "title/authorship/year/pages (199-210, Journal of Experimental Psychology) confirmed via Crossref; no abstract field returned this session, so no verbatim quote obtained",
+        "url": ""
+      },
+      {
+        "cite": "Sarter & Woods (1995)",
+        "doi": "10.1518/001872095779049516",
+        "year": 1995,
+        "type": "review",
+        "design": "human-factors review/case analysis of cockpit automation mode errors",
+        "n": "",
+        "effect": "n/a",
+        "finding_quote": "title/authorship/year/pages (5-19, Human Factors) confirmed via Crossref; no abstract field returned this session, so no verbatim quote obtained -- content characterization is from the paper's well-documented human-factors literature reputation, not a direct quote",
+        "url": ""
+      }
+    ],
+    "replication": [],
+    "backfire": [
+      {
+        "cite": "Sarter & Woods (1995)",
+        "doi": "10.1518/001872095779049516",
+        "condition": "A mapping that shifts meaning by context (a 'mode') evades detection by trained, attentive users precisely because they respond automatically to its usual meaning -- not a novice error. Applied to proof-actions: letting a colour's meaning shift between artifact types would predict systematic misreadings."
+      }
+    ],
+    "unverified": []
+  }
+]

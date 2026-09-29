@@ -1,0 +1,133 @@
+{
+  "id": "goal-factoring",
+  "kind": "page",
+  "name": "Goal factoring",
+  "intent": "Take one habit apart into the goals it serves, then find other ways to meet each goal.",
+  "when": "a costly habit you keep, or an activity you keep avoiding, and you don't know why",
+  "tags": ["diagnose", "plan"],
+  "phase": "either",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write"],
+    "surface": "desk",
+    "timebox": "15 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    },
+    {
+      "id": "aversion",
+      "requires": [],
+      "label": "Take an avoided activity apart instead",
+      "prompt": "Name what you avoid, then split it into its parts — sensations, situations, people, times — and give each a verdict before you think about fixes.",
+      "readback": "'Not worth fixing' is a legitimate verdict for a part; don't force a fix onto every row. A part left with no verdict at all is usually the one doing the avoiding.",
+      "grounding": {
+        "claims": [
+          {
+            "id": "planning-self-regulation/goal-decomposition",
+            "load_bearing": true,
+            "transfer": "analogical",
+            "claim": "A persistent behaviour often serves several goals at once. Listing the goals it serves before looking for alternatives yields replacements that are more likely to be adopted than replacements aimed at its stated goal alone.",
+            "construct": "multifinality (goal systems theory); functional assessment and functionally equivalent replacement behaviour",
+            "grade": "D",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Gage, Lewis & Stichter (2012)",
+                "doi": "10.1177/019874291203700201",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Sheldon & Kasser (1995)",
+                "doi": "10.1037/0022-3514.68.3.531",
+                "type": "experiment"
+              },
+              {
+                "cite": "O'Neill et al. (1997)",
+                "isbn": "0-534-25366-9",
+                "type": "practice"
+              }
+            ],
+            "rationale": "research/planning-self-regulation.md#goal-decomposition"
+          },
+          {
+            "id": "planning-self-regulation/graduated-self-experiment",
+            "load_bearing": false,
+            "transfer": "adjacent",
+            "claim": "Deliberately testing a feared prediction with a small, planned real-world action, and then comparing what happened with what was expected, reduces avoidance and revises the expectation. The comparison step is doing work, not just the exposure.",
+            "construct": "behavioural experiments; expectancy violation (inhibitory learning); mastery experiences (self-efficacy)",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Norton & Price (2007)",
+                "doi": "10.1097/01.nmd.0000253843.70149.9a",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Haug, Nordgreen, Öst & Havik (2012)",
+                "doi": "10.1016/j.cpr.2012.04.002",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Craske et al. (2014)",
+                "doi": "10.1016/j.brat.2014.04.006",
+                "type": "review"
+              }
+            ],
+            "rationale": "research/planning-self-regulation.md#graduated-self-experiment"
+          }
+        ],
+        "helps": "when an activity is avoided for reasons you cannot yet name: splitting it into parts and giving each a verdict before any fix is untested craft, and the internal fixes it hands to small-experiment carry that page's cautions",
+        "backfires": "when the verdicts are rationalisations rather than what actually puts you off, or when an internal fix is tried as a probe too large to feel safe"
+      }
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "action": {
+        "type": "string",
+        "maxLength": 120
+      }
+    }
+  },
+  "prompt": "Every goal it serves, including the ones you'd rather not admit. Then another way to get each.",
+  "readback": "Look for the goal the person didn't expect to write (status, identity, comfort). Hesitation on a button test means the list is incomplete. Hand the chosen replacement to an if-then plan.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "planning-self-regulation/goal-decomposition",
+        "load_bearing": true,
+        "transfer": "analogical",
+        "claim": "A persistent behaviour often serves several goals at once. Listing the goals it serves before looking for alternatives yields replacements that are more likely to be adopted than replacements aimed at its stated goal alone.",
+        "construct": "multifinality (goal systems theory); functional assessment and functionally equivalent replacement behaviour",
+        "grade": "D",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Gage, Lewis & Stichter (2012)",
+            "doi": "10.1177/019874291203700201",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Sheldon & Kasser (1995)",
+            "doi": "10.1037/0022-3514.68.3.531",
+            "type": "experiment"
+          },
+          {
+            "cite": "O'Neill et al. (1997)",
+            "isbn": "0-534-25366-9",
+            "type": "practice"
+          }
+        ],
+        "rationale": "research/planning-self-regulation.md#goal-decomposition"
+      }
+    ],
+    "helps": "when a habit keeps resisting replacement: listing what it does for you before looking for other means is untested craft, adapted from functional assessment, which works when a practitioner does it for someone else",
+    "backfires": "when the list of goals is a story made up after the fact rather than what the habit really serves; no study tests factoring your own behaviour"
+  }
+}

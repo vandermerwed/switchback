@@ -1,0 +1,436 @@
+{
+  "id": "free-recall",
+  "kind": "page",
+  "name": "Free recall",
+  "intent": "Pull what you have learned out of memory with the source closed, then check it against the source.",
+  "when": "studying material that has to last; the core page of a Series round",
+  "tags": ["learn"],
+  "phase": "converge",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write"],
+    "surface": "desk",
+    "timebox": "10 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    },
+    {
+      "id": "with-confidence",
+      "requires": [],
+      "label": "Mark how sure you are of each item",
+      "prompt": "With the book closed, write one thing you remember about {topic|the topic} per row and mark how sure you are of it. Then check each row against the source in a second colour.",
+      "grounding": {
+        "claims": [
+          {
+            "id": "memory-retrieval/testing-effect",
+            "load_bearing": true,
+            "transfer": "direct",
+            "claim": "Retrieving studied material from memory (for example, writing down everything you can recall with the book closed) improves retention at a delay of days or more, compared with spending the same time restudying it.",
+            "construct": "retrieval practice (testing effect)",
+            "grade": "A",
+            "effect": "moderate",
+            "sources": [
+              {
+                "cite": "Rowland (2014)",
+                "doi": "10.1037/a0037559",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Adesope et al. (2017)",
+                "doi": "10.3102/0034654316689306",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Pan & Rickard (2018)",
+                "doi": "10.1037/bul0000151",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Roediger & Karpicke (2006)",
+                "doi": "10.1111/j.1467-9280.2006.01693.x",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/memory-retrieval.md#testing-effect"
+          },
+          {
+            "id": "memory-retrieval/retrieval-feedback",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Checking recall against the source right after retrieving it increases the retention benefit and corrects errors that would otherwise persist. Without feedback, errors produced during recall tend to be retained.",
+            "construct": "feedback in test-enhanced learning; self-scoring accuracy",
+            "grade": "B",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Pashler et al. (2005)",
+                "doi": "10.1037/0278-7393.31.1.3",
+                "type": "experiment"
+              },
+              {
+                "cite": "Butler & Roediger (2008)",
+                "doi": "10.3758/MC.36.3.604",
+                "type": "experiment"
+              },
+              {
+                "cite": "Butler, Karpicke & Roediger (2008)",
+                "doi": "10.1037/0278-7393.34.4.918",
+                "type": "experiment"
+              },
+              {
+                "cite": "Dunlosky et al. (2011)",
+                "doi": "10.1080/17470218.2010.502239",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/memory-retrieval.md#retrieval-feedback"
+          },
+          {
+            "id": "memory-retrieval/hypercorrection",
+            "load_bearing": false,
+            "transfer": "adjacent",
+            "claim": "Errors a person made with high confidence are more likely to be corrected on a later test, once feedback is seen, than errors made with low confidence.",
+            "construct": "the hypercorrection effect",
+            "grade": "B",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Metcalfe & Finn (2011)",
+                "doi": "10.1037/a0021962",
+                "type": "experiment"
+              },
+              {
+                "cite": "Butler, Fazio & Marsh (2011)",
+                "doi": "10.3758/s13423-011-0173-y",
+                "type": "experiment"
+              },
+              {
+                "cite": "Metcalfe (2017)",
+                "doi": "10.1146/annurev-psych-010416-044022",
+                "type": "review"
+              }
+            ],
+            "rationale": "research/memory-retrieval.md#hypercorrection"
+          },
+          {
+            "id": "decision-diagnosis/confidence-resolution",
+            "load_bearing": false,
+            "transfer": "adjacent",
+            "claim": "Coarse, three-level confidence ratings discriminate correct from incorrect judgements above chance (resolution), even though people are typically overconfident in absolute terms. Items marked low-confidence are therefore a useful flag for risk.",
+            "construct": "metacognitive resolution and calibration; overconfidence",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Fleming & Lau (2014)",
+                "doi": "10.3389/fnhum.2014.00443",
+                "type": "review"
+              },
+              {
+                "cite": "Moore & Healy (2008)",
+                "doi": "10.1037/0033-295X.115.2.502",
+                "type": "review"
+              },
+              {
+                "cite": "Koriat, Lichtenstein & Fischhoff (1980)",
+                "doi": "10.1037/0278-7393.6.2.107",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/decision-diagnosis.md#confidence-resolution"
+          }
+        ],
+        "helps": "when some recalled answers feel certain: errors made with high confidence are the ones most readily corrected once checked, and the dots show which corrections matter most",
+        "backfires": "when a correction is not revisited: a week later, corrected high-confidence errors were the likeliest to come back"
+      }
+    },
+    {
+      "id": "cued",
+      "requires": [],
+      "label": "Answer numbered prompts (also a pretest before first study)",
+      "prompt": "Answer each numbered prompt about {topic|the topic} with the book closed. Then open the source and check each answer in a second colour.",
+      "grounding": {
+        "claims": [
+          {
+            "id": "memory-retrieval/testing-effect",
+            "load_bearing": true,
+            "transfer": "direct",
+            "claim": "Retrieving studied material from memory (for example, writing down everything you can recall with the book closed) improves retention at a delay of days or more, compared with spending the same time restudying it.",
+            "construct": "retrieval practice (testing effect)",
+            "grade": "A",
+            "effect": "moderate",
+            "sources": [
+              {
+                "cite": "Rowland (2014)",
+                "doi": "10.1037/a0037559",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Adesope et al. (2017)",
+                "doi": "10.3102/0034654316689306",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Pan & Rickard (2018)",
+                "doi": "10.1037/bul0000151",
+                "type": "meta-analysis"
+              },
+              {
+                "cite": "Roediger & Karpicke (2006)",
+                "doi": "10.1111/j.1467-9280.2006.01693.x",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/memory-retrieval.md#testing-effect"
+          },
+          {
+            "id": "memory-retrieval/retrieval-feedback",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Checking recall against the source right after retrieving it increases the retention benefit and corrects errors that would otherwise persist. Without feedback, errors produced during recall tend to be retained.",
+            "construct": "feedback in test-enhanced learning; self-scoring accuracy",
+            "grade": "B",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Pashler et al. (2005)",
+                "doi": "10.1037/0278-7393.31.1.3",
+                "type": "experiment"
+              },
+              {
+                "cite": "Butler & Roediger (2008)",
+                "doi": "10.3758/MC.36.3.604",
+                "type": "experiment"
+              },
+              {
+                "cite": "Butler, Karpicke & Roediger (2008)",
+                "doi": "10.1037/0278-7393.34.4.918",
+                "type": "experiment"
+              },
+              {
+                "cite": "Dunlosky et al. (2011)",
+                "doi": "10.1080/17470218.2010.502239",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/memory-retrieval.md#retrieval-feedback"
+          },
+          {
+            "id": "memory-retrieval/pretesting",
+            "load_bearing": false,
+            "transfer": "adjacent",
+            "claim": "Trying to answer questions about material before studying it, even when most answers are wrong, improves later retention of that material compared with studying it without a pretest.",
+            "construct": "the pretesting / prequestion effect (errorful generation)",
+            "grade": "B",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Richland, Kornell & Kao (2009)",
+                "doi": "10.1037/a0016496",
+                "type": "experiment"
+              },
+              {
+                "cite": "Kornell, Hays & Bjork (2009)",
+                "doi": "10.1037/a0015729",
+                "type": "experiment"
+              },
+              {
+                "cite": "Pan & Carpenter (2023)",
+                "doi": "10.1007/s10648-023-09814-5",
+                "type": "review"
+              },
+              {
+                "cite": "Carpenter & Toftness (2017)",
+                "doi": "10.1016/j.jarmac.2016.07.014",
+                "type": "experiment"
+              }
+            ],
+            "rationale": "research/memory-retrieval.md#pretesting"
+          }
+        ],
+        "helps": "when used before first studying a text: attempting the prompts first, even with wrong answers, improves later memory for the prompted material, provided the answers are then studied",
+        "backfires": "when the answers are never studied afterwards, or when the prompts narrow reading to the prompted parts, which studies of reading (though not of video) have reported"
+      }
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "topic": {
+        "type": "string",
+        "maxLength": 80
+      },
+      "prompts": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 6,
+        "items": {
+          "type": "string",
+          "maxLength": 100
+        }
+      }
+    }
+  },
+  "prompt": "Close the book. Write everything you remember, then check it against the source in a second colour.",
+  "readback": "Score against the source, not against confidence. What was missed or wrong becomes next round's prompts. A confident error is the most useful thing on the page.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "memory-retrieval/testing-effect",
+        "load_bearing": true,
+        "transfer": "direct",
+        "claim": "Retrieving studied material from memory (for example, writing down everything you can recall with the book closed) improves retention at a delay of days or more, compared with spending the same time restudying it.",
+        "construct": "retrieval practice (testing effect)",
+        "grade": "A",
+        "effect": "moderate",
+        "sources": [
+          {
+            "cite": "Rowland (2014)",
+            "doi": "10.1037/a0037559",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Adesope et al. (2017)",
+            "doi": "10.3102/0034654316689306",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Pan & Rickard (2018)",
+            "doi": "10.1037/bul0000151",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Roediger & Karpicke (2006)",
+            "doi": "10.1111/j.1467-9280.2006.01693.x",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/memory-retrieval.md#testing-effect"
+      },
+      {
+        "id": "memory-retrieval/retrieval-feedback",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Checking recall against the source right after retrieving it increases the retention benefit and corrects errors that would otherwise persist. Without feedback, errors produced during recall tend to be retained.",
+        "construct": "feedback in test-enhanced learning; self-scoring accuracy",
+        "grade": "B",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Pashler et al. (2005)",
+            "doi": "10.1037/0278-7393.31.1.3",
+            "type": "experiment"
+          },
+          {
+            "cite": "Butler & Roediger (2008)",
+            "doi": "10.3758/MC.36.3.604",
+            "type": "experiment"
+          },
+          {
+            "cite": "Butler, Karpicke & Roediger (2008)",
+            "doi": "10.1037/0278-7393.34.4.918",
+            "type": "experiment"
+          },
+          {
+            "cite": "Dunlosky et al. (2011)",
+            "doi": "10.1080/17470218.2010.502239",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/memory-retrieval.md#retrieval-feedback"
+      },
+      {
+        "id": "memory-retrieval/hypercorrection",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Errors a person made with high confidence are more likely to be corrected on a later test, once feedback is seen, than errors made with low confidence.",
+        "construct": "the hypercorrection effect",
+        "grade": "B",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Metcalfe & Finn (2011)",
+            "doi": "10.1037/a0021962",
+            "type": "experiment"
+          },
+          {
+            "cite": "Butler, Fazio & Marsh (2011)",
+            "doi": "10.3758/s13423-011-0173-y",
+            "type": "experiment"
+          },
+          {
+            "cite": "Metcalfe (2017)",
+            "doi": "10.1146/annurev-psych-010416-044022",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/memory-retrieval.md#hypercorrection"
+      },
+      {
+        "id": "memory-retrieval/pretesting",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Trying to answer questions about material before studying it, even when most answers are wrong, improves later retention of that material compared with studying it without a pretest.",
+        "construct": "the pretesting / prequestion effect (errorful generation)",
+        "grade": "B",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Richland, Kornell & Kao (2009)",
+            "doi": "10.1037/a0016496",
+            "type": "experiment"
+          },
+          {
+            "cite": "Kornell, Hays & Bjork (2009)",
+            "doi": "10.1037/a0015729",
+            "type": "experiment"
+          },
+          {
+            "cite": "Pan & Carpenter (2023)",
+            "doi": "10.1007/s10648-023-09814-5",
+            "type": "review"
+          },
+          {
+            "cite": "Carpenter & Toftness (2017)",
+            "doi": "10.1016/j.jarmac.2016.07.014",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/memory-retrieval.md#pretesting"
+      },
+      {
+        "id": "decision-diagnosis/confidence-resolution",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Coarse, three-level confidence ratings discriminate correct from incorrect judgements above chance (resolution), even though people are typically overconfident in absolute terms. Items marked low-confidence are therefore a useful flag for risk.",
+        "construct": "metacognitive resolution and calibration; overconfidence",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Fleming & Lau (2014)",
+            "doi": "10.3389/fnhum.2014.00443",
+            "type": "review"
+          },
+          {
+            "cite": "Moore & Healy (2008)",
+            "doi": "10.1037/0033-295X.115.2.502",
+            "type": "review"
+          },
+          {
+            "cite": "Koriat, Lichtenstein & Fischhoff (1980)",
+            "doi": "10.1037/0278-7393.6.2.107",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/decision-diagnosis.md#confidence-resolution"
+      }
+    ],
+    "helps": "when studied material has to last days or weeks: writing out what you remember with the book closed, then checking it against the source in a second colour, beats rereading for the same time on a later test, by a small to moderate margin in this free-recall format, though not on a test minutes away",
+    "backfires": "when so little comes back that there is nothing to check, or when the check pass is skipped or scored loosely: errors recalled without correction tend to persist, and people marking their own recall credit wrong answers unless they check it idea by idea"
+  }
+}

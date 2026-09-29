@@ -1,0 +1,71 @@
+{
+  "id": "five-whys",
+  "kind": "page",
+  "name": "Five whys",
+  "intent": "Descend from symptom to cause.",
+  "when": "the stated problem is probably not the real one",
+  "tags": ["diagnose"],
+  "phase": "converge",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write"],
+    "surface": "desk",
+    "timebox": "8 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "problem": {
+        "type": "string",
+        "maxLength": 160
+      }
+    }
+  },
+  "prompt": "Descend from symptom to cause. Keep asking why.",
+  "readback": "The bottom rung is a working hypothesis, not gospel. Ask whether it is testable this week.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "decision-diagnosis/root-cause-why-chain",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Iteratively asking \"why?\" from a symptom reaches a cause which, when addressed, prevents recurrence more reliably than unstructured problem discussion.",
+        "construct": "five whys / root-cause analysis",
+        "grade": "D",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Ohno (1988)",
+            "isbn": "0-915299-14-3",
+            "type": "practice"
+          },
+          {
+            "cite": "Serrat (2017)",
+            "doi": "10.1007/978-981-10-0983-9_32",
+            "type": "practice"
+          },
+          {
+            "cite": "Peerally, Carr, Waring & Dixon-Woods (2016)",
+            "doi": "10.1136/bmjqs-2016-005511",
+            "type": "review"
+          },
+          {
+            "cite": "Kellogg et al. (2016)",
+            "doi": "10.1136/bmjqs-2016-005991",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/decision-diagnosis.md#root-cause-why-chain"
+      }
+    ],
+    "helps": "when the stated problem is probably a symptom; descending by \"why\" is manufacturing craft with no controlled test, so treat the bottom rung as a hypothesis to test this week",
+    "backfires": "when the chain stops at an arbitrary depth, settles on one cause for a problem with several, or ends by blaming a person; in hospital root-cause work, repeated analyses mostly produced weak fixes and the same events recurred"
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "id": "cover",
+  "kind": "page",
+  "name": "Cover",
+  "intent": "Orient the sitting and teach the colour language in one glance.",
+  "when": "always; every workbook opens with one",
+  "tags": ["focus"],
+  "phase": "either",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["read"],
+    "surface": "desk",
+    "timebox": "2 min"
+  },
+  "shell": {
+    "header": false,
+    "prompt": false,
+    "legend": false
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "question": {
+        "type": "string",
+        "maxLength": 200
+      },
+      "timebox": {
+        "type": "string",
+        "maxLength": 40
+      },
+      "howto": {
+        "type": "array",
+        "minItems": 0,
+        "maxItems": 7,
+        "items": {
+          "type": "string",
+          "maxLength": 120
+        }
+      },
+      "stationery_note": {
+        "type": "string",
+        "maxLength": 200
+      }
+    }
+  },
+  "readback": "The question is the contract for what a successful return should answer.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "attention-load/goal-orientation",
+        "load_bearing": true,
+        "transfer": "analogical",
+        "claim": "Stating at the outset the specific question a session must answer improves the relevance and focus of the work, compared with starting without a stated goal.",
+        "construct": "goal specificity; advance organisers; learning objectives",
+        "grade": "D",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Luiten, Ames & Ackerson (1980)",
+            "doi": "10.3102/00028312017002211",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Locke & Latham (2002)",
+            "doi": "10.1037/0003-066x.57.9.705",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/attention-load.md#goal-orientation"
+      },
+      {
+        "id": "attention-load/phone-presence",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Having one's smartphone within reach, even silent and face down, reduces available cognitive capacity, and moving it to another room restores that capacity.",
+        "construct": "the \"brain drain\" / mere-presence effect of smartphones",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Ruiz Pardo & Minda (2022)",
+            "doi": "10.1016/j.actpsy.2022.103717",
+            "type": "rrr"
+          },
+          {
+            "cite": "Hartmann, Martarelli, Reber & Rothen (2020)",
+            "doi": "10.1016/j.concog.2020.103033",
+            "type": "experiment"
+          },
+          {
+            "cite": "Thornton, Faires, Robbins & Rollins (2014)",
+            "doi": "10.1027/1864-9335/a000216",
+            "type": "experiment"
+          },
+          {
+            "cite": "Böttger, Poschik & Zierer (2023)",
+            "doi": "10.3390/bs13090751",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Hartanto & Yang (2016)",
+            "doi": "10.1016/j.chb.2016.07.002",
+            "type": "experiment"
+          },
+          {
+            "cite": "Stothart, Mitchum & Yehnert (2015)",
+            "doi": "10.1037/xhp0000100",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/attention-load.md#phone-presence"
+      },
+      {
+        "id": "attention-load/stop-mid-task",
+        "load_bearing": false,
+        "transfer": "analogical",
+        "claim": "Ending a work session in the middle of a unit of work, such as mid-sentence, rather than at a natural break, increases the likelihood and ease of resuming the work at the next session.",
+        "construct": "the resumption tendency after interruption (Ovsiankina effect); the Zeigarnik effect",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Ghibellini & Meier (2025)",
+            "doi": "10.1057/s41599-025-05000-w",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Masicampo & Baumeister (2011)",
+            "doi": "10.1037/a0024192",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/attention-load.md#stop-mid-task"
+      },
+      {
+        "id": "attention-load/resumption-cues",
+        "load_bearing": false,
+        "transfer": "analogical",
+        "claim": "Leaving a visible cue of where you were and what comes next at the point of interruption reduces the time and errors involved in resuming a task.",
+        "construct": "memory for goals; resumption lag",
+        "grade": "B",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Hodgetts & Jones (2006)",
+            "doi": "10.1037/0278-7393.32.5.1120",
+            "type": "experiment"
+          },
+          {
+            "cite": "Monk, Trafton & Boehm-Davis (2008)",
+            "doi": "10.1037/a0014402",
+            "type": "experiment"
+          },
+          {
+            "cite": "Altmann & Trafton (2002)",
+            "doi": "10.1207/s15516709cog2601_2",
+            "type": "theory"
+          }
+        ],
+        "rationale": "research/attention-load.md#resumption-cues"
+      }
+    ],
+    "helps": "when the sitting needs one question to aim at; stating the goal first is supported only by related work on advance organisers, so treat the question as the contract to check the return against, not a guarantee of focus",
+    "backfires": "when an early, narrow question locks in the wrong problem, when moving the phone away causes more anxiety than its presence did (the phone-presence effect failed a direct replication), or when stopping mid-sentence is not paired with a written note of the next step"
+  }
+}

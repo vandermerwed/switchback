@@ -1,0 +1,18 @@
+{
+  "title": "API design review",
+  "data": {
+    "blocks": [
+      { "type": "heading", "text": "Proposed endpoints" },
+      {
+        "type": "table",
+        "headings": ["Endpoint", "Verdict", "Notes"],
+        "rows": [["GET /orders", "", ""], ["POST /orders/{id}/cancel", "", ""]]
+      },
+      { "type": "para", "text": "Mark it up: keep, stop, or ask." },
+      { "type": "checklist", "items": ["Naming is consistent", "Errors are documented"] },
+      { "type": "callout", "tone": "warn", "text": "Cancel is not idempotent yet." },
+      { "type": "box", "label": "alternatives", "height": 50 },
+      { "type": "lines", "count": 4 }
+    ]
+  }
+}

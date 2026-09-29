@@ -1,0 +1,14 @@
+{
+  "variant": "faded",
+  "data": {
+    "steps": [
+      "This is the first worked step of a long derivation, close to the maximum length the schema allows, so it wraps across more than one line on the printed page at",
+      "This is the second worked step, continuing the derivation with a long sentence that pushes right up against the character limit set for this field in the",
+      "This is the third worked step, again written long enough to wrap onto more than one line when laid out on either A4 or Letter paper at the normal font size and",
+      "This is the fourth worked step, a long sentence describing what changed from the step before and why that change is a valid move given everything shown up to",
+      "This is the fifth worked step, another long sentence near the maximum length allowed, describing the next move in the derivation and what it depends on from",
+      "This is the sixth and final worked step, written out close to the maximum length allowed, describing the last move that completes the derivation shown across"
+    ],
+    "fade_from": 1
+  }
+}

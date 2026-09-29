@@ -1,0 +1,153 @@
+{
+  "id": "step-away",
+  "kind": "page",
+  "name": "Step away",
+  "intent": "Make the break between generating and judging a real, physical act.",
+  "when": "between the diverge and converge halves of an Incubation",
+  "tags": ["create"],
+  "phase": "either",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["walk", "rest"],
+    "surface": "anywhere",
+    "timebox": "20 min – overnight",
+    "returns": true
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "suggestion": {
+        "type": "string",
+        "maxLength": 120
+      }
+    }
+  },
+  "prompt": "Stop here. Take a real break, and make it something easy and different: a walk, chores, or sleep on it.",
+  "readback": "Read what surfaced while away as fresh material for the judging half. If the times show a break of only a few minutes, say so gently: longer breaks, filled with something easy, tend to help more.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "creativity-fixation/incubation-effect",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Setting a creative problem aside for a break, then returning to it, increases solutions or ideas compared with working on it continuously for the same total time.",
+        "construct": "the incubation effect",
+        "grade": "B",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Sio & Ormerod (2009)",
+            "doi": "10.1037/a0014212",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Baird et al. (2012)",
+            "doi": "10.1177/0956797612446024",
+            "type": "experiment"
+          },
+          {
+            "cite": "Cai et al. (2009)",
+            "doi": "10.1073/pnas.0900271106",
+            "type": "experiment"
+          },
+          {
+            "cite": "Nieuwenstein et al. (2015)",
+            "doi": "10.1017/s1930297500003144",
+            "type": "rrr"
+          }
+        ],
+        "rationale": "research/creativity-fixation.md#incubation-effect"
+      },
+      {
+        "id": "creativity-fixation/incubation-conditions",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Incubation benefits are larger (a) after a longer preparation period, (b) with longer breaks up to a point, and (c) when the break is filled with a low-demand activity rather than rest or a demanding task.",
+        "construct": "incubation moderators",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Sio & Ormerod (2009)",
+            "doi": "10.1037/a0014212",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Baird et al. (2012)",
+            "doi": "10.1177/0956797612446024",
+            "type": "experiment"
+          },
+          {
+            "cite": "Ellwood et al. (2009)",
+            "doi": "10.1080/10400410802633368",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/creativity-fixation.md#incubation-conditions"
+      },
+      {
+        "id": "creativity-fixation/walking-divergent",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Walking, compared with sitting, increases divergent-thinking output during the walk and shortly after it.",
+        "construct": "walking / acute physical activity and divergent thinking",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Oppezzo & Schwartz (2014)",
+            "doi": "10.1037/a0036577",
+            "type": "experiment"
+          },
+          {
+            "cite": "Frith et al. (2019)",
+            "doi": "10.5964/ejop.v15i4.1773",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/creativity-fixation.md#walking-divergent"
+      },
+      {
+        "id": "creativity-fixation/sleep-insight",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Sleeping between first exposure to a problem and a later retest increases the likelihood of discovering a hidden solution or rule, compared with an equal period awake.",
+        "construct": "sleep and insight (offline consolidation)",
+        "grade": "C",
+        "effect": "large",
+        "sources": [
+          {
+            "cite": "Wagner et al. (2004)",
+            "doi": "10.1038/nature02223",
+            "type": "experiment"
+          },
+          {
+            "cite": "Cai et al. (2009)",
+            "doi": "10.1073/pnas.0900271106",
+            "type": "experiment"
+          },
+          {
+            "cite": "Sio, Monaghan & Ormerod (2013)",
+            "doi": "10.3758/s13421-012-0256-7",
+            "type": "experiment"
+          },
+          {
+            "cite": "Lacaux et al. (2021)",
+            "doi": "10.1126/sciadv.abj5866",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/creativity-fixation.md#sleep-insight"
+      }
+    ],
+    "helps": "when an open-ended problem has had a proper first pass: setting it aside for a real break, filled with something easy and different, helps on average, more for generating ideas than for insight puzzles",
+    "backfires": "when the break is a few minutes of scrolling or other demanding work, when the first pass was too short to have anything to incubate, or when the problem is easy or well-structured"
+  }
+}

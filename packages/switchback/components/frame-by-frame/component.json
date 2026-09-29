@@ -1,0 +1,103 @@
+{
+  "id": "frame-by-frame",
+  "kind": "page",
+  "name": "Frame by frame",
+  "intent": "Replay one real instance of a recurring problem to find the exact moment it could have gone differently.",
+  "when": "your own recurring behaviour or slip; for causes in a system, use five-whys",
+  "tags": ["diagnose"],
+  "phase": "converge",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write", "circle"],
+    "surface": "desk",
+    "timebox": "15 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "bug": {
+        "type": "string",
+        "maxLength": 120
+      }
+    }
+  },
+  "prompt": "One real, recent time, step by step. Then find the frame where it turned.",
+  "readback": "The instance must be one real occasion, not a summary of many. Check the triage: if no better option occurred to the person at that moment, it's a cue problem; if one did and they didn't want it, it's a motivation problem.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "decision-diagnosis/chain-analysis",
+        "load_bearing": true,
+        "transfer": "analogical",
+        "claim": "Reconstructing one concrete recent instance of a problem behaviour link by link, and locating the specific point where a different response was possible, identifies a better intervention point than an abstract account of the problem.",
+        "construct": "behavioural chain analysis; functional analysis of a single episode",
+        "grade": "D",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Linehan (1993)",
+            "isbn": "978-0-89862-183-9",
+            "type": "practice"
+          },
+          {
+            "cite": "Kliem, Kröger & Kosfelder (2010)",
+            "doi": "10.1037/a0021015",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Watkins, Baeyens & Read (2009)",
+            "doi": "10.1037/a0013642",
+            "type": "experiment"
+          },
+          {
+            "cite": "Watkins (2008)",
+            "doi": "10.1037/0033-2909.134.2.163",
+            "type": "review"
+          },
+          {
+            "cite": "Williams et al. (2007)",
+            "doi": "10.1037/0033-2909.133.1.122",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/decision-diagnosis.md#chain-analysis"
+      },
+      {
+        "id": "planning-self-regulation/implementation-intentions",
+        "load_bearing": false,
+        "transfer": "adjacent",
+        "claim": "Forming written if-then plans (\"When situation X arises, I will do Y\") increases goal attainment compared with forming a goal intention alone.",
+        "construct": "implementation intentions",
+        "grade": "A",
+        "effect": "moderate",
+        "sources": [
+          {
+            "cite": "Gollwitzer & Sheeran (2006)",
+            "doi": "10.1016/S0065-2601(06)38002-1",
+            "type": "meta-analysis"
+          },
+          {
+            "cite": "Milkman et al. (2011)",
+            "doi": "10.1073/pnas.1103170108",
+            "type": "experiment"
+          },
+          {
+            "cite": "Gollwitzer (1999)",
+            "doi": "10.1037/0003-066X.54.7.493",
+            "type": "theory"
+          }
+        ],
+        "rationale": "research/planning-self-regulation.md#implementation-intentions"
+      }
+    ],
+    "helps": "when the same everyday slip keeps recurring and one recent instance can be recalled in detail; chain analysis is clinical craft never tested on its own, though thinking concretely about an episode is linked to less rumination than thinking about it abstractly",
+    "backfires": "when the reconstruction drifts from what happened into why this always happens to you, the abstract kind of dwelling linked to rumination and low mood"
+  }
+}

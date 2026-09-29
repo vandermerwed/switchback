@@ -1,0 +1,164 @@
+{
+  "id": "pre-mortem",
+  "kind": "page",
+  "name": "Pre-mortem",
+  "intent": "Make failure vivid before committing, so it can be prevented.",
+  "when": "a decision or plan is about to be locked in, or optimism is unexamined",
+  "tags": ["decide", "plan"],
+  "phase": "converge",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write"],
+    "surface": "desk",
+    "timebox": "10 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    },
+    {
+      "id": "iterate",
+      "requires": [],
+      "label": "Repeat until a failure would surprise you",
+      "prompt": "It is {horizon} from now and this failed badly. Write the post-mortem for {subject}, rate your surprise, then repeat until a failure would genuinely surprise you.",
+      "readback": "Stop once you're actually surprised, not once you're tired of the exercise; a low surprise rating with no change to the plan means the round didn't do its job.",
+      "grounding": {
+        "claims": [
+          {
+            "id": "decision-diagnosis/prospective-hindsight",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Imagining that an outcome has already happened (\"it failed\") leads people to generate more, and more specific, reasons for it than imagining that it might happen.",
+            "construct": "prospective hindsight",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Peabody (2017)",
+                "doi": "10.37099/mtu.dc.etdr/374",
+                "type": "experiment"
+              },
+              {
+                "cite": "Koehler (1991)",
+                "doi": "10.1037/0033-2909.110.3.499",
+                "type": "review"
+              }
+            ],
+            "rationale": "research/decision-diagnosis.md#prospective-hindsight"
+          },
+          {
+            "id": "decision-diagnosis/premortem-overconfidence",
+            "load_bearing": true,
+            "transfer": "adjacent",
+            "claim": "Running a pre-mortem on a plan reduces overconfidence in it and surfaces more risks than a standard critique or pros-and-cons review.",
+            "construct": "the pre-mortem as a debiasing technique",
+            "grade": "C",
+            "effect": "n/a",
+            "sources": [
+              {
+                "cite": "Gallop, Willy & Bischoff (2016)",
+                "doi": "10.1080/19488289.2016.1240118",
+                "type": "experiment"
+              },
+              {
+                "cite": "Peabody (2017)",
+                "doi": "10.37099/mtu.dc.etdr/374",
+                "type": "experiment"
+              },
+              {
+                "cite": "Sanna, Schwarz & Stocker (2002)",
+                "doi": "10.1037/0278-7393.28.3.497",
+                "type": "experiment"
+              },
+              {
+                "cite": "Koehler (1991)",
+                "doi": "10.1037/0033-2909.110.3.499",
+                "type": "review"
+              }
+            ],
+            "rationale": "research/decision-diagnosis.md#premortem-overconfidence"
+          }
+        ],
+        "helps": "when one round of failure reasons still leaves you unsure; each round inherits the pre-mortem's evidence, but the surprise gate that decides whether to run another is a design choice, and no study says a round lowers the odds by any amount",
+        "backfires": "when each extra round forces out more reasons, since listing many is hard and that difficulty can make failure feel less likely, or when explaining imagined failures in detail inflates how probable they seem"
+      }
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "subject": {
+        "type": "string",
+        "maxLength": 120
+      },
+      "horizon": {
+        "type": "string",
+        "maxLength": 40
+      }
+    }
+  },
+  "prompt": "It is {horizon} from now and this failed badly. Write the post-mortem for {subject}.",
+  "readback": "The most plausible failure is usually half-known; ask which part is preventable this week.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "decision-diagnosis/prospective-hindsight",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Imagining that an outcome has already happened (\"it failed\") leads people to generate more, and more specific, reasons for it than imagining that it might happen.",
+        "construct": "prospective hindsight",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Peabody (2017)",
+            "doi": "10.37099/mtu.dc.etdr/374",
+            "type": "experiment"
+          },
+          {
+            "cite": "Koehler (1991)",
+            "doi": "10.1037/0033-2909.110.3.499",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/decision-diagnosis.md#prospective-hindsight"
+      },
+      {
+        "id": "decision-diagnosis/premortem-overconfidence",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Running a pre-mortem on a plan reduces overconfidence in it and surfaces more risks than a standard critique or pros-and-cons review.",
+        "construct": "the pre-mortem as a debiasing technique",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Gallop, Willy & Bischoff (2016)",
+            "doi": "10.1080/19488289.2016.1240118",
+            "type": "experiment"
+          },
+          {
+            "cite": "Peabody (2017)",
+            "doi": "10.37099/mtu.dc.etdr/374",
+            "type": "experiment"
+          },
+          {
+            "cite": "Sanna, Schwarz & Stocker (2002)",
+            "doi": "10.1037/0278-7393.28.3.497",
+            "type": "experiment"
+          },
+          {
+            "cite": "Koehler (1991)",
+            "doi": "10.1037/0033-2909.110.3.499",
+            "type": "review"
+          }
+        ],
+        "rationale": "research/decision-diagnosis.md#premortem-overconfidence"
+      }
+    ],
+    "helps": "when a plan is about to be locked in; imagining it has already failed surfaced more and better risks than brainstorming in a few team studies, though whether it lowers overconfidence on a solo page is untested",
+    "backfires": "when the page pushes for many failure reasons, since struggling to list them can make failure feel less likely, or when explaining one imagined failure in detail makes it seem more probable than the alternatives"
+  }
+}

@@ -1,0 +1,191 @@
+[
+  {
+    "claim_id": "memory-retrieval/practice-specificity",
+    "sources": [
+      { "cite": "Morris, Bransford & Franks (1977)", "doi": "10.1016/S0022-5371(77)80016-9", "year": 1977, "type": "experiment", "design": "3 recognition-memory experiments, semantic vs rhyme acquisition crossed with standard vs rhyme test", "n": null, "effect": "n/a", "finding_quote": "still unread: paywalled; only secondary paraphrases found, no verbatim quote fetched this session", "url": "https://www.sciencedirect.com/science/article/abs/pii/S0022537177800169" },
+      { "cite": "Barnett & Ceci (2002)", "doi": "10.1037/0033-2909.128.4.612", "year": 2002, "type": "review", "design": "taxonomic review of far-transfer literature", "n": null, "effect": "n/a", "finding_quote": "Despite a century's worth of research, arguments surrounding the question of whether far transfer occurs have made little progress toward resolution. ... Estimation of a single effect size for far transfer is misguided in view of this complexity. The past 100 years of research shows that evidence for transfer under some conditions is substantial, but critical conditions for many key questions are untested.", "url": "https://rapunselshair.pbworks.com/f/barnett_2002.pdf" },
+      { "cite": "Sala & Gobet (2017)", "doi": "10.1177/0963721417712760", "year": 2017, "type": "meta-analysis", "design": "3 meta-analyses: chess, music, and working-memory training vs cognitive/academic transfer", "n": null, "effect": "small (near-null with active controls)", "finding_quote": "The results show small to moderate effects. However, the effect sizes are inversely related to the quality of the experimental design (e.g., presence of active control groups). ... far transfer of learning rarely occurs.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5724589/" },
+      { "cite": "Smith & Vela (2001)", "doi": "10.3758/BF03196157", "year": 2001, "type": "meta-analysis", "design": "review + meta-analysis of environmental context-dependent memory studies", "n": null, "effect": "moderate, reducible", "finding_quote": "The meta-analysis showed that across all studies, environmental context effects were reliable, and furthermore, that the use of noncontextual cues during learning (overshadowing) and at test (outshining), as well as mental reinstatement of appropriate context cues at test, all reduce the effect of environmental manipulations.", "url": "https://people.it.tamu.edu/~stevesmith/SmithMemory/Smith&Vela2001.pdf" },
+      { "cite": "Brady (2004)", "doi": "10.2466/pms.99.1.116-126", "year": 2004, "type": "meta-analysis", "design": "meta-analysis of contextual interference (randomized vs blocked practice), 61 studies", "n": 61, "effect": "g = .38 overall (basic .57, applied .19)", "finding_quote": "A meta-analysis of the contextual interference effect produced 139 estimates of effect sizes from 61 studies. The average overall effect size was .38. The effect size for basic research (.57) was significantly different from applied research (.19).", "url": "https://gwern.net/doc/psychology/spaced-repetition/2004-brady.pdf" }
+    ],
+    "replication": [
+      { "cite": "Sala & Gobet (2017)", "doi": "10.1177/0963721417712760", "result": "failed (for far transfer under rigorous designs)" }
+    ],
+    "backfire": [
+      { "cite": "Brady (2004)", "doi": "10.2466/pms.99.1.116-126", "condition": "high contextual interference (practice conditions varied, not matched to the target) improves retention/transfer relative to blocked matched practice — tension with 'make practice resemble the target'" },
+      { "cite": "Smith & Vela (2001)", "doi": "10.3758/BF03196157", "condition": "context-dependent effects shrink or vanish once encoding/retrieval encourage non-contextual (introspective) processing" }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "decision-diagnosis/chain-analysis",
+    "sources": [
+      { "cite": "Linehan, Cognitive-Behavioral Treatment of Borderline Personality Disorder (1993)", "doi": null, "year": 1993, "type": "practice", "design": "clinical manual; origin of chain analysis as a DBT component", "n": null, "effect": "n/a", "finding_quote": "still unread: primary text not re-read this session; cited via secondary DBT literature as chain analysis's origin", "url": null },
+      { "cite": "Kliem, Kröger & Kosfelder (2010)", "doi": "10.1037/a0021015", "year": 2010, "type": "meta-analysis", "design": "mixed-effects meta-analysis of DBT-for-BPD outcome trials, 16 studies (8 RCT, 8 non-RCT)", "n": 16, "effect": "moderate global effect", "finding_quote": "A moderate global effect and a moderate effect size for suicidal and self-injurious behaviors were found, when including a moderator for RCTs with borderline-specific treatments. ... A small impairment was shown from posttreatment to follow-up.", "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1037/a0021015" },
+      { "cite": "Williams, Barnhofer, Crane, Hermans, Raes, Watkins & Dalgleish (2007)", "doi": "10.1037/0033-2909.133.1.122", "year": 2007, "type": "review", "design": "review of autobiographical memory specificity and emotional disorder", "n": null, "effect": "n/a", "finding_quote": "The authors review research showing that when recalling autobiographical events, many emotionally disturbed patients summarize categories of events rather than retrieving a single episode. The mechanisms underlying such overgeneral memory are examined.", "url": "https://www.mrc-cbu.cam.ac.uk/personal/tim.dalgleish/williamsetalamtreview.pdf" },
+      { "cite": "Watkins, Baeyens & Read (2009)", "doi": "10.1037/a0013642", "year": 2009, "type": "experiment", "design": "RCT: dysphoric adults randomised to concreteness training vs bogus training vs waitlist", "n": 60, "effect": "significant, moderate", "finding_quote": "Concreteness training resulted in significantly greater decreases in depressive symptoms and significantly greater increases in concrete thinking than the waiting-list and the bogus training control, and significantly greater decreases in rumination than the waiting-list control.", "url": "https://www.psychiatry.wisc.edu/courses/Nitschke/seminar/Watkins%20et%20al,%20J%20Abnorm%20psych%20118,%202009.pdf" },
+      { "cite": "Watkins (2008)", "doi": "10.1037/0033-2909.134.2.163", "year": 2008, "type": "review", "design": "review of constructive vs unconstructive repetitive thought", "n": null, "effect": "n/a", "finding_quote": "The main unconstructive consequences of RT are (a) depression, (b) anxiety, and (c) difficulties in physical health. ... the level of construal (abstract vs. concrete processing) adopted during RT [is a key principle].", "url": null }
+    ],
+    "replication": [
+      { "cite": "Kliem, Kröger & Kosfelder (2010)", "doi": "10.1037/a0021015", "result": "mixed (package-level effect; no isolation of the chain-analysis component)" }
+    ],
+    "backfire": [
+      { "cite": "Watkins (2008)", "doi": "10.1037/0033-2909.134.2.163", "condition": "abstract, evaluative repetitive thought (rumination) is the unconstructive pole; concrete reconstruction must stay concrete or it risks sliding into abstract rumination" }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "decision-diagnosis/duration-feedback",
+    "sources": [
+      { "cite": "Buehler, Griffin & Ross (1994)", "doi": "10.1037/0022-3514.67.3.366", "year": 1994, "type": "experiment", "design": "students predict vs actual task-completion times across academic/nonacademic tasks", "n": null, "effect": "large, systematic underestimation", "finding_quote": "still unread verbatim abstract; recorded via secondary paraphrase: students predicted an average of 33.9 days for an honours thesis but took 55.5 days; predictions remained optimistic despite past experience", "url": "https://web.mit.edu/curhan/www/docs/Articles/biases/67_J_Personality_and_Social_Psychology_366,_1994.pdf" },
+      { "cite": "Roy, Christenfeld & McKenzie (2005)", "doi": "10.1037/0033-2909.131.5.738", "year": 2005, "type": "review", "design": "review reframing planning fallacy as memory bias for past durations", "n": null, "effect": "n/a", "finding_quote": "People appear to underestimate future event duration because they underestimate past event duration. ... these memories are systematic underestimates of past duration.", "url": null },
+      { "cite": "Roy, Mitten & Christenfeld (2008)", "doi": "10.1037/1076-898x.14.3.266", "year": 2008, "type": "experiment", "design": "3 experiments supplying feedback on actual past task duration before a new prediction", "n": null, "effect": "positive, reliable across 3 experiments", "finding_quote": "In all 3 experiments, supplying feedback increased predictive accuracy. Overall, results indicate that, when predicting duration, people do well when they rely not on memory of past task duration but instead on measures of actual duration, whether their own or that of others.", "url": null },
+      { "cite": "Buehler, Griffin & Peetz (2010)", "doi": "10.1016/S0065-2601(10)43001-4", "year": 2010, "type": "review", "design": "integrative review chapter on cognitive, motivational and social origins of the planning fallacy", "n": null, "effect": "n/a", "finding_quote": "still unread: chapter-level review, scope confirmed via Crossref metadata but not independently re-quoted this session", "url": null }
+    ],
+    "replication": [
+      { "cite": "Roy, Mitten & Christenfeld (2008)", "doi": "10.1037/1076-898x.14.3.266", "result": "replicated (feedback effect held across 3 experiments and task types)" }
+    ],
+    "backfire": [],
+    "unverified": []
+  },
+  {
+    "claim_id": "planning-self-regulation/graduated-self-experiment",
+    "sources": [
+      { "cite": "Bandura (1977)", "doi": "10.1037/0033-295X.84.2.191", "year": 1977, "type": "theory", "design": "foundational self-efficacy theory", "n": null, "effect": "n/a", "finding_quote": "still unread verbatim; theory paper cited for mastery-experience mechanism, not independently re-quoted this session", "url": null },
+      { "cite": "Craske, Treanor, Conway, Zbozinek & Vervliet (2014)", "doi": "10.1016/j.brat.2014.04.006", "year": 2014, "type": "review", "design": "clinical review translating inhibitory-learning model into exposure-therapy practice", "n": null, "effect": "n/a", "finding_quote": "Exposure optimization strategies include (1) expectancy violation, (2) deepened extinction, (3) occasional reinforced extinction, (4) removal of safety signals, (5) variability, (6) retrieval cues, (7) multiple contexts, and (8) affect labeling.", "url": null },
+      { "cite": "Norton & Price (2007)", "doi": "10.1097/01.nmd.0000253843.70149.9a", "year": 2007, "type": "meta-analysis", "design": "meta-analytic review of adult CBT outcome across anxiety disorders, 108 trials", "n": 108, "effect": "efficacious, no differential component effect", "finding_quote": "Cognitive therapy and exposure therapy alone, in combination, or combined with relaxation training, were efficacious across the anxiety disorders, with no differential efficacy for any treatment components for any specific diagnoses.", "url": null },
+      { "cite": "Haug, Nordgreen, Öst & Havik (2012)", "doi": "10.1016/j.cpr.2012.04.002", "year": 2012, "type": "meta-analysis", "design": "meta-analysis + meta-regression of self-help treatment for anxiety disorders, 56 articles/82 comparisons", "n": 56, "effect": "g=0.78 vs waitlist/placebo; g=-0.20 vs face-to-face", "finding_quote": "When self-help treatment was compared to wait-list or placebo, a meta-analysis indicated a moderate to large effect size (g=0.78). When self-help treatment was compared to face-to-face treatment, results indicated a small effect that favored the latter (g=-0.20).", "url": null }
+    ],
+    "replication": [
+      { "cite": "Haug, Nordgreen, Öst & Havik (2012)", "doi": "10.1016/j.cpr.2012.04.002", "result": "replicated (self-help effective vs control across 56 studies, smaller than face-to-face)" }
+    ],
+    "backfire": [
+      { "cite": "Haug, Nordgreen, Öst & Havik (2012)", "doi": "10.1016/j.cpr.2012.04.002", "condition": "self-guided delivery reliably underperforms therapist-guided delivery (g=-0.20), bounding the 'adjacent' transfer claim" }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "planning-self-regulation/goal-decomposition",
+    "sources": [
+      { "cite": "Kruglanski, Shah, Fishbach, Friedman, Chun & Sleeth-Keppler (2002)", "doi": "10.1016/S0065-2601(02)80008-9", "year": 2002, "type": "theory", "design": "goal-systems theory chapter (multifinality, equifinality)", "n": null, "effect": "n/a", "finding_quote": "still unread verbatim; theory chapter confirmed via Crossref metadata, cited for the multifinality construct", "url": null },
+      { "cite": "Sheldon & Kasser (1995)", "doi": "10.1037/0022-3514.68.3.531", "year": 1995, "type": "experiment", "design": "2 studies, personal-strivings functional coherence and well-being", "n": null, "effect": "positive (coherence predicts well-being)", "finding_quote": "Functional coherence was defined as occurring when participants' 'personal strivings' ... help bring about each other or help bring about higher level goals. ... Study 2 showed that these goal integration measures were also related to role system integration and were prospective predictors of daily mood, vitality, and engagement.", "url": "https://selfdeterminationtheory.org/SDT/documents/1995_SheldonKasser_JPSP.pdf" },
+      { "cite": "Gage, Lewis & Stichter (2012)", "doi": "10.1177/019874291203700201", "year": 2012, "type": "meta-analysis", "design": "hierarchical linear modeling meta-analysis of functional-behavioral-assessment-based interventions in schools, 69 studies", "n": 69, "effect": "large for FBA-based, ~null for non-FBA-based", "finding_quote": "still unread: paywalled (no open-access copy via Unpaywall); recorded via secondary paraphrase only, not independently verified beyond DOI/title/author/year", "url": null },
+      { "cite": "O'Neill, Horner, Albin, Storey & Sprague, Functional Assessment and Program Development for Problem Behavior (1997)", "doi": null, "year": 1997, "type": "practice", "design": "practitioner handbook for functional behavioral assessment", "n": null, "effect": "n/a", "finding_quote": "still unread: primary text not re-read this session; cited as the standard FBA practitioner reference", "url": null }
+    ],
+    "replication": [],
+    "backfire": [
+      { "cite": "(not independently re-sourced this session)", "doi": null, "condition": "self-generated goal lists risk being post-hoc rationalisations rather than accurate accounts (Nisbett & Wilson 1977 introspective-access critique, named in the brief but not re-verified this pass)" }
+    ],
+    "unverified": [
+      { "cite": "Nisbett & Wilson (1977)", "reason": "named in the brief as the relevant backfire citation but not independently searched/verified this session — flagged for follow-up rather than asserted" }
+    ]
+  },
+  {
+    "claim_id": "planning-self-regulation/choice-bracketing",
+    "sources": [
+      { "cite": "Read, Loewenstein & Rabin (1999)", "doi": "10.1023/A:1007879411489", "year": 1999, "type": "review", "design": "conceptual and evidence review of choice bracketing", "n": null, "effect": "n/a", "finding_quote": "When making many choices, a person can broadly bracket them by assessing the consequences of all of them taken together, or narrowly bracket them by making each choice in isolation.", "url": "https://bibbase.org/network/publication/read-loewenstein-rabin-choicebracketing-1999" },
+      { "cite": "Hofmeyr, Ainslie, Charlton & Ross (2011)", "doi": "10.1111/j.1360-0443.2010.03166.x", "year": 2011, "type": "experiment", "design": "smokers vs non-smokers, free/suggested/forced bundling of SS-vs-LL reward choices over 4 decisions/8 weeks", "n": 60, "effect": "positive for smokers only", "finding_quote": "Smokers increased their preference for LL rewards when 'bundling' of individual decisions into a sequence was either suggested or forced. This preference increased with repeated experience. Non-smokers showed neither pattern.", "url": null },
+      { "cite": "Read & Loewenstein (1995)", "doi": "10.1037/1076-898x.1.1.34", "year": 1995, "type": "experiment", "design": "combined vs separated snack-choice experiments; diversification bias", "n": null, "effect": "combined choice increases variety-seeking beyond revealed preference", "finding_quote": "There appears to be at least one situation in which combined choices actually leave consumers worse off. ... [subjects] showed much more variety seeking when making simultaneous choices (64% chose three different items) than when making sequential choices (9%).", "url": "https://www.cmu.edu/dietrich/sds/docs/loewenstein/DiversificationBias.pdf" },
+      { "cite": "Ainslie, Picoeconomics (1992)", "doi": null, "year": 1992, "type": "theory", "design": "personal-rules/bundling theory of self-control", "n": null, "effect": "n/a", "finding_quote": "still unread: primary text not re-read this session; cited as the theoretical source of the 'what-the-hell effect' collapse risk", "url": null }
+    ],
+    "replication": [
+      { "cite": "Hofmeyr, Ainslie, Charlton & Ross (2011)", "doi": "10.1111/j.1360-0443.2010.03166.x", "result": "replicated (both suggested and forced bundling conditions converge on the same effect, in smokers only)" }
+    ],
+    "backfire": [
+      { "cite": "Read & Loewenstein (1995)", "doi": "10.1037/1076-898x.1.1.34", "condition": "diversification bias: broad/combined bracketing of repeated same-kind choices produces more variety-seeking than people's own separated choices reveal they want, leaving them worse off" }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "planning-self-regulation/goal-gradient",
+    "sources": [
+      { "cite": "Hull (1932)", "doi": "10.1037/h0072640", "year": 1932, "type": "experiment", "design": "classic runway/maze experiments, rats", "n": null, "effect": "large, foundational", "finding_quote": "still unread verbatim; quoted via Kivetz et al. (2006)'s own epigraph: \"[R]ats in a maze … run faster as they near the food box than at the beginning of the path.\"", "url": null },
+      { "cite": "Kivetz, Urminsky & Zheng (2006)", "doi": "10.1509/jmkr.43.1.39", "year": 2006, "type": "experiment", "design": "café loyalty-card field study, song-rating website, Tobit/logit models", "n": null, "effect": "positive, replicated across 4 findings", "finding_quote": "Participants in a real café reward program purchase coffee more frequently the closer they are to earning a free coffee. ... the illusion of progress toward the goal induces purchase acceleration ... a stronger tendency to accelerate toward the goal predicts greater retention and faster reengagement.", "url": null },
+      { "cite": "Bonezzi, Brendl & De Angelis (2011)", "doi": "10.1177/0956797611404899", "year": 2011, "type": "theory", "design": "psychophysical model of goal pursuit ('stuck in the middle')", "n": null, "effect": "non-monotonic (U-shaped) gradient", "finding_quote": "Motivation to engage in goal-consistent behavior can be higher when people are either far from or close to the end state and lower when they are about halfway to the end state. ... Our psychophysical model of goal pursuit predicts a previously undiscovered nonmonotonic gradient.", "url": null },
+      { "cite": "Fishbach & Dhar (2005)", "doi": "10.1086/497548", "year": 2005, "type": "experiment", "design": "4 studies on perceived goal progress and licensing of inconsistent choices", "n": null, "effect": "positive (progress licenses inconsistent choice)", "finding_quote": "in the course of self-regulation progress along one goal liberates people to pursue inconsistent goals. Furthermore, merely planning to make goal progress in the future may facilitate incongruent choice of immediate action.", "url": "https://academic.oup.com/jcr/article-abstract/32/3/370/1867208" }
+    ],
+    "replication": [],
+    "backfire": [
+      { "cite": "Bonezzi, Brendl & De Angelis (2011)", "doi": "10.1177/0956797611404899", "condition": "the classic monotonic goal gradient does not always hold; motivation can dip at the midpoint of a goal" },
+      { "cite": "Fishbach & Dhar (2005)", "doi": "10.1086/497548", "condition": "visible progress can license off-goal, inconsistent behaviour once progress feels secured (goal licensing / coasting)" }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "perspective-emotion/decatastrophizing",
+    "sources": [
+      { "cite": "Beck, Cognitive Therapy of Depression (1979)", "doi": null, "year": 1979, "type": "practice", "design": "foundational cognitive-therapy text (decatastrophising as a technique)", "n": null, "effect": "n/a", "finding_quote": "still unread: primary text not re-read this session; cited as the origin of decatastrophising as a clinical technique", "url": null },
+      { "cite": "Gilbert, Pinel, Wilson, Blumberg & Wheatley (1998)", "doi": "10.1037/0022-3514.75.3.617", "year": 1998, "type": "experiment", "design": "6 studies of affective forecasting across breakup, tenure denial, electoral defeat, rejection, negative feedback, bereavement account", "n": null, "effect": "large, consistent overestimation of affective duration", "finding_quote": "People are generally unaware of the operation of the ... psychological immune system ... and thus they tend to overestimate the duration of their affective reactions to negative events. ... people neglect the psychological immune system when making affective forecasts.", "url": null },
+      { "cite": "Wilson, Wheatley, Meyers, Gilbert & Axsom (2000)", "doi": "10.1037/0022-3514.78.5.821", "year": 2000, "type": "experiment", "design": "5 studies, college football fans predicting happiness impact of game outcomes; focalism manipulation", "n": null, "effect": "reduces durability bias", "finding_quote": "college football fans were less likely to overpredict how long the outcome of a football game would influence their happiness if they first thought about how much time they would spend on other future activities.", "url": null },
+      { "cite": "Norem & Cantor (1986)", "doi": "10.1037/0022-3514.51.6.1208", "year": 1986, "type": "experiment", "design": "2 experiments on defensive pessimism vs low expectation/anxiety effects on performance", "n": null, "effect": "positive for defensive pessimism specifically", "finding_quote": "with a strategy called defensive pessimism ... individuals may sometimes use low expectations to cope with their anxiety so that it does not become debilitating. ... interference with the defensive-pessimism strategy impairs performance.", "url": null },
+      { "cite": "Mathieu & Gosling (2012)", "doi": "10.1177/0956797611427044", "year": 2012, "type": "review", "design": "2-page brief report distinguishing relative vs absolute accuracy across affective-forecast studies, k=16 findings reviewed", "n": 16, "effect": "asymmetric, direction-dependent", "finding_quote": "still unread verbatim: recorded via secondary paraphrase; confirmed via Crossref to be a 2-page brief report (pp.161-162), not a full independent meta-analysis as the brief's phrasing implied", "url": null }
+    ],
+    "replication": [],
+    "backfire": [
+      { "cite": "Wilson, Wheatley, Meyers, Gilbert & Axsom (2000)", "doi": "10.1037/0022-3514.78.5.821", "condition": "the focalism mechanism works via distraction/dilution (considering competing future events), not vivid rehearsal alone — worst-case's block may need the competing-events framing to work as this literature predicts" }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "perspective-emotion/gratitude",
+    "sources": [
+      { "cite": "Emmons & McCullough (2003)", "doi": "10.1037/0022-3514.84.2.377", "year": 2003, "type": "experiment", "design": "3 studies, gratitude-listing vs hassles/neutral/social-comparison conditions, weekly and daily records, plus a neuromuscular-disease patient sample", "n": null, "effect": "positive, most robust on positive affect", "finding_quote": "The gratitude-outlook groups exhibited heightened well-being across several, though not all, of the outcome measures across the 3 studies, relative to the comparison groups. The effect on positive affect appeared to be the most robust finding.", "url": null },
+      { "cite": "Cregg & Cheavens (2020/2021)", "doi": "10.1007/s10902-020-00236-6", "year": 2021, "type": "meta-analysis", "design": "meta-analysis of gratitude interventions' effect on depression/anxiety symptoms, k=27 studies, N=3675", "n": 3675, "effect": "small", "finding_quote": "There was a difference, but it was a small difference. It would not be something you would recommend as a treatment. [...] when it comes to one supposed benefit of these interventions -- helping with symptoms of anxiety and depression -- they really seem to have limited value.", "url": "https://www.sciencedaily.com/releases/2020/03/200309130010.htm" },
+      { "cite": "Lyubomirsky, Sheldon & Schkade (2005)", "doi": "10.1037/1089-2680.9.2.111", "year": 2005, "type": "theory", "design": "architecture-of-sustainable-change model of hedonic adaptation", "n": null, "effect": "n/a", "finding_quote": "still unread: fetch attempts returned no retrievable text this session; DOI/title/author/year confirmed via Crossref only", "url": null }
+    ],
+    "replication": [
+      { "cite": "Cregg & Cheavens (2020/2021)", "doi": "10.1007/s10902-020-00236-6", "result": "mixed (small, clinically limited effect on depression/anxiety symptoms specifically, across 27 studies)" }
+    ],
+    "backfire": [
+      { "cite": "Cregg & Cheavens (2020/2021)", "doi": "10.1007/s10902-020-00236-6", "condition": "against a stronger clinical framing, gratitude interventions show only a small effect on depression/anxiety symptoms, per the authors' own public characterization" }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "perspective-emotion/intrapersonal-goal-conflict",
+    "sources": [
+      { "cite": "Emmons & King (1988)", "doi": "10.1037/0022-3514.54.6.1040", "year": 1988, "type": "experiment", "design": "3 studies, 88 undergraduates rating conflict/ambivalence among personal strivings, diary + experience sampling, 1-year follow-up", "n": 88, "effect": "positive (conflict predicts negative affect)", "finding_quote": "Conflict and ambivalence were associated with high levels of negative affect, depression, neuroticism, and psychosomatic complaints. ... subjects were less likely to act on conflictful and ambivalent strivings but to spend more time thinking about these strivings.", "url": null },
+      { "cite": "Gray, Ozer & Rosenthal (2017)", "doi": "10.1016/j.jrp.2016.12.003", "year": 2017, "type": "meta-analysis", "design": "meta-analysis of goal conflict and psychological well-being, k=54 studies", "n": 54, "effect": "negative association, stronger for distress outcomes", "finding_quote": "Higher levels of goal conflict are related to lower levels of positive psychological outcomes and greater psychological distress, though this relationship is stronger for distress outcomes. ... This meta-analysis provides evidence that goal conflict has a negative association with psychological well-being.", "url": null },
+      { "cite": "Miller & Rose (2013/2015)", "doi": "10.1017/S1352465813000878", "year": 2015, "type": "review", "design": "review of decisional balance vs evocation for client ambivalence in motivational interviewing", "n": null, "effect": "decisional balance decreases commitment to change in ambivalent people", "finding_quote": "With ambivalent people, a DB [decisional balance] intervention tends to decrease commitment to change, whereas evocation (a key element of MI) promotes change.", "url": null }
+    ],
+    "replication": [
+      { "cite": "Gray, Ozer & Rosenthal (2017)", "doi": "10.1016/j.jrp.2016.12.003", "result": "replicated (goal conflict → poorer well-being confirmed across 54 studies); resolution-method half of the claim untested" }
+    ],
+    "backfire": [
+      { "cite": "Miller & Rose (2013/2015)", "doi": "10.1017/S1352465813000878", "condition": "a neutral, both-sides decisional-balance exercise (structurally similar to a two-column page) decreases commitment to change in ambivalent people, relative to techniques that evoke movement to one side" }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "perspective-emotion/domain-satisfaction",
+    "sources": [
+      { "cite": "International Wellbeing Group, Personal Wellbeing Index - Adult, 5th ed. (2013)", "doi": null, "year": 2013, "type": "practice", "design": "7-domain 0-10 self-report instrument manual, psychometric summary pooled across 28 Australian surveys plus international data", "n": null, "effect": "Cronbach alpha .70-.85; test-retest ICC .84; convergent r=.78", "finding_quote": "Cronbach alpha lies between .70 and .85 in Australia and overseas. ... The index has also demonstrated good test-retest reliability across 1-2 week interval with an intra-class correlation coefficient of 0.84. A correlation of .78 with the Satisfaction with life scale ... has been reported.", "url": "https://www.acc.co.nz/assets/provider/pwi-a-manual.pdf" },
+      { "cite": "Diener (1984)", "doi": "10.1037/0033-2909.95.3.542", "year": 1984, "type": "review", "design": "foundational review of subjective well-being's cognitive and affective structure", "n": null, "effect": "n/a", "finding_quote": "still unread: DOI/title/author/year confirmed via Crossref; abstract not retrievable through the indexes tried this session", "url": null },
+      { "cite": "Schimmack & Oishi (2005)", "doi": "10.1037/0022-3514.89.3.395", "year": 2005, "type": "experiment", "design": "5 studies (N=225,100,200,222,651) testing item-order vs chronic-accessibility effects on life-satisfaction judgements", "n": 1398, "effect": "weak item-order effect; strong chronic-accessibility effect", "finding_quote": "Study 1 (N=225) failed to replicate a widely cited finding of strong item-order effects. ... chronically accessible information was a strong predictor of life satisfaction judgments, whereas item order had a relatively small effect.", "url": null },
+      { "cite": "Strack, Martin & Schwarz (1988)", "doi": "10.1002/ejsp.2420180505", "year": 1988, "type": "experiment", "design": "question-order priming effect on life-satisfaction/dating-frequency correlation", "n": null, "effect": "large order effect (r=-.12 to r=.66)", "finding_quote": "still unread verbatim: primary abstract paywalled (Wiley 403); figures (r=-.12 without priming order vs r=.66 with dating-frequency question first) recorded via a secondary review's citation of the original finding, not the primary text", "url": null }
+    ],
+    "replication": [
+      { "cite": "Schimmack & Oishi (2005)", "doi": "10.1037/0022-3514.89.3.395", "result": "failed (to replicate a strong item-order effect, across 5 studies, contradicting the naive reading of Strack et al. 1988)" }
+    ],
+    "backfire": [
+      { "cite": "Strack, Martin & Schwarz (1988)", "doi": "10.1002/ejsp.2420180505", "condition": "question/domain sequence can strongly distort a satisfaction judgement (r swings from -.12 to .66 depending on order) — though Schimmack & Oishi's later, larger effort found this does not reliably replicate" }
+    ],
+    "unverified": []
+  },
+  {
+    "claim_id": "attention-load/task-switching",
+    "sources": [
+      { "cite": "Rogers & Monsell (1995)", "doi": "10.1037/0096-3445.124.2.207", "year": 1995, "type": "experiment", "design": "alternating-runs paradigm, digit/letter classification, varying response-stimulus interval, 5+1 experiments", "n": null, "effect": "large, partly reduced by preparation", "finding_quote": "still unread verbatim; recorded via secondary paraphrase: even with 1.2s available for preparation, a large asymptotic RT cost remained on the first trial of the new task, attributed to an exogenously triggered component of task-set reconfiguration", "url": null },
+      { "cite": "Monsell (2003)", "doi": "10.1016/S1364-6613(03)00028-7", "year": 2003, "type": "review", "design": "review of task-switching paradigms and switch-cost mechanisms", "n": null, "effect": "n/a", "finding_quote": "still unread verbatim; recorded via secondary paraphrase: subjects' responses are substantially slower and more error-prone immediately after a task switch, and this switch cost is reduced but not eliminated by an opportunity for preparation", "url": null },
+      { "cite": "Wiradhany & Nieuwenstein (2017)", "doi": "10.3758/s13414-017-1408-4", "year": 2017, "type": "meta-analysis", "design": "2 replication studies (14 tests, avg power .81) plus meta-analysis of 39 effect sizes, media multitasking vs distractibility", "n": 39, "effect": "weak, non-significant after correction", "finding_quote": "Of these 14 tests, only five yielded a statistically significant effect ... and only two of these effects held in a more conservative Bayesian analysis. ... our meta-analysis on a total of 39 effect sizes yielded a weak but significant association ... that turned nonsignificant after correction for small-study effects.", "url": null },
+      { "cite": "Leroy (2009)", "doi": "10.1016/j.obhdp.2009.04.002", "year": 2009, "type": "experiment", "design": "2 experiments on attention residue when switching between an unfinished and a new work task", "n": null, "effect": "negative (performance cost)", "finding_quote": "still unread verbatim; recorded via secondary paraphrase: task performance suffers when people switch to a new task before mentally disengaging from an unfinished prior one; time pressure to finish the first task improved subsequent performance", "url": null }
+    ],
+    "replication": [
+      { "cite": "Wiradhany & Nieuwenstein (2017)", "doi": "10.3758/s13414-017-1408-4", "result": "failed (for the applied 'media multitaskers' extension of switch costs; basic lab switch-cost effect itself remains textbook-robust and was not independently re-challenged this pass)" }
+    ],
+    "backfire": [
+      { "cite": "Wiradhany & Nieuwenstein (2017)", "doi": "10.3758/s13414-017-1408-4", "condition": "the applied, real-world extension of switch costs to 'heavy media multitaskers' does not survive replication/meta-analytic correction, even though the basic lab effect is robust" }
+    ],
+    "unverified": []
+  }
+]

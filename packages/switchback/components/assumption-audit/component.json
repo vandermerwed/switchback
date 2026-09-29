@@ -1,0 +1,130 @@
+{
+  "id": "assumption-audit",
+  "kind": "page",
+  "name": "Assumption audit",
+  "intent": "Surface the beliefs the plan silently rests on.",
+  "when": "before committing, or when something keeps failing for unclear reasons",
+  "tags": ["decide", "diagnose"],
+  "phase": "converge",
+  "physical": {
+    "requires": ["printer"],
+    "body": ["write", "rate"],
+    "surface": "desk",
+    "timebox": "12 min"
+  },
+  "variants": [
+    {
+      "id": "default",
+      "requires": []
+    }
+  ],
+  "data": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "assumptions": {
+        "type": "array",
+        "minItems": 0,
+        "maxItems": 6,
+        "items": {
+          "type": "string",
+          "maxLength": 120
+        }
+      }
+    }
+  },
+  "prompt": "List what has to be true for this to work. Mark confidence: ●+ high, ◐~ medium, ○! unsure.",
+  "readback": "Every assumption marked low and untested is a risk. The cheapest way to check it is the next physical action.",
+  "grounding": {
+    "claims": [
+      {
+        "id": "decision-diagnosis/assumption-surfacing",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Explicitly listing the assumptions a plan depends on, and naming a test for each, identifies more of the plan's vulnerabilities than reviewing the plan without such a list.",
+        "construct": "a key-assumptions check / assumption-based planning",
+        "grade": "D",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Mason & Mitroff (1981)",
+            "isbn": "9780471082194",
+            "type": "practice"
+          },
+          {
+            "cite": "Dewar (2002)",
+            "isbn": "9780521001267",
+            "type": "practice"
+          },
+          {
+            "cite": "McGrath & MacMillan (1995)",
+            "url": "https://hbr.org/1995/07/discovery-driven-planning",
+            "type": "practice"
+          }
+        ],
+        "rationale": "research/decision-diagnosis.md#assumption-surfacing"
+      },
+      {
+        "id": "decision-diagnosis/confidence-resolution",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Coarse, three-level confidence ratings discriminate correct from incorrect judgements above chance (resolution), even though people are typically overconfident in absolute terms. Items marked low-confidence are therefore a useful flag for risk.",
+        "construct": "metacognitive resolution and calibration; overconfidence",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Fleming & Lau (2014)",
+            "doi": "10.3389/fnhum.2014.00443",
+            "type": "review"
+          },
+          {
+            "cite": "Moore & Healy (2008)",
+            "doi": "10.1037/0033-295X.115.2.502",
+            "type": "review"
+          },
+          {
+            "cite": "Koriat, Lichtenstein & Fischhoff (1980)",
+            "doi": "10.1037/0278-7393.6.2.107",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/decision-diagnosis.md#confidence-resolution"
+      },
+      {
+        "id": "decision-diagnosis/consider-the-opposite",
+        "load_bearing": true,
+        "transfer": "adjacent",
+        "claim": "Asking people to consider reasons their judgement could be wrong reduces overconfidence and biased assimilation, compared with no instruction or an instruction to be unbiased.",
+        "construct": "the consider-the-opposite debiasing strategy",
+        "grade": "C",
+        "effect": "n/a",
+        "sources": [
+          {
+            "cite": "Koriat, Lichtenstein & Fischhoff (1980)",
+            "doi": "10.1037/0278-7393.6.2.107",
+            "type": "experiment"
+          },
+          {
+            "cite": "Lord, Lepper & Preston (1984)",
+            "doi": "10.1037/0022-3514.47.6.1231",
+            "type": "experiment"
+          },
+          {
+            "cite": "Larrick (2004)",
+            "doi": "10.1002/9780470752937.ch16",
+            "type": "review"
+          },
+          {
+            "cite": "Sanna, Schwarz & Stocker (2002)",
+            "doi": "10.1037/0278-7393.28.3.497",
+            "type": "experiment"
+          }
+        ],
+        "rationale": "research/decision-diagnosis.md#consider-the-opposite"
+      }
+    ],
+    "helps": "when a plan rests on beliefs nobody has written down; listing assumptions is practitioner craft with no direct test, and the evidence that asking for a reason each could be wrong reduces overconfidence is mixed, so treat the low-confidence dots as a guide to which to test first, not a correction",
+    "backfires": "when the falsifier column asks for many reasons against each assumption, since listing many is hard and can strengthen the original belief, or when a high-confidence dot is read as proof, because certainty runs ahead of accuracy"
+  }
+}
