@@ -1,6 +1,18 @@
-# Switchback
+<h1 align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/assets/switchback-dark.svg">
+    <img src=".github/assets/switchback-light.svg" width="510" alt="Switchback">
+  </picture>
+</h1>
 
-**Step out of the agent loop to think on paper, then come back with a clearer next step.**
+<p align="center"><strong>Step out of the agent loop to think on paper, then come back with a clearer next step.</strong></p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/@vandermerwed/switchback"><img src="https://img.shields.io/npm/v/@vandermerwed/switchback" alt="npm version"></a>
+  <a href="https://github.com/vandermerwed/switchback/actions/workflows/ci.yml"><img src="https://github.com/vandermerwed/switchback/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI on main"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/licence-Apache_2.0-blue" alt="Apache 2.0 licence"></a>
+  <a href="https://switchback.pages.dev">Website</a>
+</p>
 
 Programmable stationery for AI agents. Your agent makes a few focused pages for the problem in
 front of you, adapted to the pens and paper on your desk. You print them, put the phone in
@@ -12,14 +24,19 @@ marks on a proof into an action queue.
 > skills should work too. Expect rough edges, and please report them in
 > [issues](https://github.com/vandermerwed/switchback/issues).
 
+<p align="center"><img src=".github/assets/sitting-page.png" width="390" alt="Unmarked Sitting workbook cover W1-P1, with the sync question, colour-language table and instructions"></p>
+
+<p align="center"><em>Sitting workbook cover W1-P1, built by the Switchback CLI and ready to print.</em></p>
+
 ## The loop
 
-```
- /switchback ──▶ printer ──▶ your pen ──▶ phone camera ──▶ /switchback
- the agent        you print    you think in     you photograph     the agent reads
- makes the pages               ink, away from   the pages          the marks back
-                               the screen
-```
+<picture>
+  <source media="(max-width: 600px)" srcset=".github/assets/loop-mobile.svg">
+  <img src=".github/assets/loop.svg" alt="The agent makes the pages; you print them; you think in ink away from the screen; you photograph the pages; the agent reads the marks back." width="1000">
+</picture>
+
+The agent makes the pages; you print them, think in ink away from the screen, photograph them,
+and the agent reads the marks back.
 
 ## Install
 
