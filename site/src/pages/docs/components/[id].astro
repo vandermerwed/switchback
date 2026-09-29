@@ -1,0 +1,210 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import catalogue from "../../../generated/catalogue.json";
+
+export function getStaticPaths() {
+  return catalogue.map((item) => ({
+    params: { id: item.id },
+    props: { item },
+  }));
+}
+
+const { item } = Astro.props;
+
+function sourceHref(source) {
+  if (source.url) return source.url;
+  if (source.doi) return `https://doi.org/${source.doi}`;
+  if (source.isbn) return `https://isbnsearch.org/isbn/${source.isbn.replace(/[^0-9Xx]/g, "")}`;
+  return null;
+}
+
+const claims = item.grounding?.claims ?? [];
+---
+
+<StarlightPage
+  frontmatter={{
+    title: item.title,
+    description: item.intent,
+  }}
+>
+  <p class="component-meta">
+    <span class="component-kind">{item.kind}</span>
+    {item.tags.map((tag) => <span class="component-tag">{tag}</span>)}
+    {item.phase && <span class="component-phase">{item.phase}</span>}
+  </p>
+
+  <p>{item.intent}</p>
+
+  {
+    item.extends && (
+      <p>
+        A preset of <a href={`/docs/components/${item.extends}/`}>{item.extends}</a>.
+        {item.attribution && ` Attribution: ${item.attribution}.`}
+        {item.licence && ` Licence: ${item.licence}.`}
+      </p>
+    )
+  }
+
+  <div class="preview-frame" data-preview>
+    <iframe
+      loading="lazy"
+      title={`Preview of ${item.title}`}
+      src={`/generated/previews/${item.id}.html`}
+    />
+  </div>
+
+  {
+    item.variants.length > 0 && (
+      <>
+        <h2>Variants</h2>
+        <ul>
+          {item.variants.map((variant) => (
+            <li>
+              <strong>{variant.label ?? variant.id}</strong>
+              {variant.requires.length > 0 && ` — needs ${variant.requires.join(", ")}`}
+            </li>
+          ))}
+        </ul>
+      </>
+    )
+  }
+
+  {
+    item.dataFields.length > 0 && (
+      <>
+        <h2>Data fields</h2>
+        <p>The fields a spec's page can set for this component (see <code>switchback show {item.id} --json</code>):</p>
+        <ul>
+          {item.dataFields.map((field) => (
+            <li>
+              <code>{field}</code>
+            </li>
+          ))}
+        </ul>
+      </>
+    )
+  }
+
+  {
+    claims.length > 0 && (
+      <>
+        <h2>Grounding</h2>
+        {item.grounding.helps && (
+          <p>
+            <strong>Helps:</strong> {item.grounding.helps}
+          </p>
+        )}
+        {item.grounding.backfires && (
+          <p>
+            <strong>Backfires:</strong> {item.grounding.backfires}
+          </p>
+        )}
+        <ul class="claims">
+          {claims.map((claim) => (
+            <li>
+              <span class={`grade grade-${claim.grade}`}>{claim.grade}</span>
+              {claim.claim}
+              <span class="sources">
+                {claim.sources.map((source, i) => {
+                  const href = sourceHref(source);
+                  return (
+                    <>
+                      {i > 0 && ", "}
+                      {href ? <a href={href}>{source.cite}</a> : source.cite}
+                    </>
+                  );
+                })}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <p>
+          <a href="/docs/evidence/">What the grades mean</a>
+        </p>
+      </>
+    )
+  }
+</StarlightPage>
+
+<script>
+  function fitPreview(frame: HTMLElement) {
+    const iframe = frame.querySelector("iframe");
+    if (!iframe) return;
+    const scale = () => {
+      const doc = iframe.contentDocument;
+      const page = doc?.querySelector<HTMLElement>(".sb-page");
+      if (!page) return;
+      const rect = page.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      const factor = frame.clientWidth / rect.width;
+      iframe.style.width = `${rect.width}px`;
+      iframe.style.height = `${rect.height}px`;
+      iframe.style.transform = `scale(${factor})`;
+      frame.style.height = `${rect.height * factor}px`;
+    };
+    iframe.addEventListener("load", scale);
+    window.addEventListener("resize", scale);
+  }
+  document.querySelectorAll<HTMLElement>("[data-preview]").forEach(fitPreview);
+</script>
+
+<style>
+  .component-meta {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .component-kind,
+  .component-tag,
+  .component-phase {
+    font-size: var(--sl-text-2xs);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--sl-color-hairline);
+    color: var(--sl-color-text-accent);
+  }
+  .preview-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 210 / 297;
+    overflow: hidden;
+    border: 1px solid var(--sl-color-hairline);
+    border-radius: 0.4rem;
+    background: #fff;
+    margin: 1.5rem 0;
+  }
+  .preview-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    transform-origin: top left;
+    /* Starlight's own markdown-content CSS caps iframe (and img/svg/video) width at 100% of the
+       container; that fights the fit-to-column transform below, which needs the iframe at its
+       natural (unscaled) pixel size before it is shrunk. */
+    max-width: none !important;
+  }
+  .claims {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .grade {
+    display: inline-block;
+    width: 1.5em;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 0.25em;
+    margin-inline-end: 0.5em;
+    border: 1px solid var(--sl-color-hairline);
+  }
+  .sources {
+    display: block;
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-text-accent);
+  }
+</style>

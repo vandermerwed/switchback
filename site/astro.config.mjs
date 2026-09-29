@@ -24,7 +24,17 @@ export default defineConfig({
           label: "Modes",
           items: ["docs/modes/workbook", "docs/modes/proof", "docs/modes/read", "docs/modes/desk"],
         },
-        { label: "Reference", items: ["docs/styles", "docs/ink", "docs/evidence", "docs/troubleshooting"] },
+        {
+          label: "Reference",
+          items: [
+            "docs/styles",
+            "docs/ink",
+            { label: "Components", link: "/docs/components/" },
+            { label: "CLI", link: "/docs/cli/" },
+            "docs/evidence",
+            "docs/troubleshooting",
+          ],
+        },
       ],
     }),
     ...(feedback ? [react()] : []),
