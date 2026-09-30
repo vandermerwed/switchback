@@ -11,12 +11,19 @@ import "../styles/global.css";
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#173b39" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="description" content="Switchback is a paper-to-agent loop: print a focused page, think in ink, then return it for readback." />
-    <title>Switchback — paper for the next handoff</title>
+    <title>Switchback | Paper for the next handoff</title>
   </head>
   <body>
     <Hero />
     <main>
+      <section class="useful-pause" aria-labelledby="pause-title">
+        <div>
+          <h2 id="pause-title">A useful pause</h2>
+          <p>Working with agents all day can turn your own thinking into a string of quick replies. A printed page slows that down on purpose. It holds one question and nothing on it asks for your attention. When you come back, the agent picks up from what you wrote.</p>
+        </div>
+      </section>
       <WorkedExample />
       <Install />
     </main>

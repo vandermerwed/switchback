@@ -1,66 +1,82 @@
 ---
-const groups = [
-  {
-    title: "Claude Code: run both, in order",
-    commands: ["/plugin marketplace add vandermerwed/switchback", "/plugin install switchback@switchback"],
-  },
-  {
-    title: "Codex, opencode, Cursor and other agents",
-    commands: ["npx skills add vandermerwed/switchback"],
-  },
-  {
-    title: "Optional: install the CLI once, instead of fetching it with npx each time",
-    commands: ["npm install -g @vandermerwed/switchback"],
-  },
-];
+import installOptions from "../data/install.json";
 ---
 
 <section class="install-section" id="install" aria-labelledby="install-title">
   <div class="install-heading">
     <h2 id="install-title">Begin with a page.</h2>
-    <p>Install Switchback through whichever group matches your setup, then ask for a focused paper session on the decision in front of you.</p>
+    <p>Choose the route that fits your agent, then ask for a focused paper session on the decision in front of you.</p>
     <p class="requirements">Requirements: Node.js 20.12 or later, a printer, a pen, a phone camera.</p>
   </div>
-  <div class="install-groups">
-    {groups.map((group) => (
-      <div class="install-group">
-        <h3>{group.title}</h3>
-        {group.commands.map((command) => (
-          <div class="install-command">
-            <pre tabindex="0"><code>{command}</code></pre>
-            <button type="button" class="copy-button" data-copy={command} aria-label={`Copy: ${command}`}>Copy</button>
-          </div>
-        ))}
-      </div>
-    ))}
+  <div class="install-block">
+    <div class="install-tabs" aria-label="Installation routes">
+      {installOptions.map((option) => <button type="button" id={`tab-${option.id}`} data-install-tab={option.id}>{option.label}</button>)}
+    </div>
+    {installOptions.map((option) => <section class="install-panel" id={`panel-${option.id}`} data-install-panel={option.id} aria-label={option.label}>
+      <p>{option.description}</p>
+      {option.commands.map((command, index) => <div class="command-step">
+        {option.id === "claude" && <p class="step-label">{index === 0 ? "First, add the marketplace" : "Then install it"}</p>}
+        <div class="install-command"><pre tabindex="0"><code>{command}</code></pre><button type="button" class="copy-button" data-copy={command} aria-label={`Copy ${command}`}>Copy</button></div>
+      </div>)}
+    </section>)}
+    <div class="first-request">
+      <h3>Then ask in plain words</h3>
+      <blockquote>“I can't decide whether to kill the sync feature. Let's work it through on paper.”</blockquote>
+      <p>You get a PDF in a <code>switchback/</code> folder, ready to print.</p>
+      <p><a href="/showcase/#proof">It can also print a draft or spec as numbered pages to mark up in red.</a></p>
+    </div>
   </div>
 </section>
 <footer class="site-footer">
   <span>Switchback · paper back to the agent</span>
-  <a href="/docs/">Read the docs</a>
-  <a href="/privacy/">Privacy</a>
+  <nav aria-label="Footer links">
+    <a href="/docs/">Docs</a>
+    <a href="/showcase/">Showcase</a>
+    <a href="https://github.com/vandermerwed/switchback">GitHub</a>
+    <a href="/privacy/">Privacy</a>
+  </nav>
+  <small>Terrain: Sani Pass, Drakensberg. Elevation data courtesy of the U.S. Geological Survey.</small>
 </footer>
 
 <script>
-  function setUpCopyButtons() {
-    document.querySelectorAll<HTMLButtonElement>(".copy-button").forEach((button) => {
-      const text = button.dataset.copy ?? "";
-      const defaultLabel = button.textContent ?? "Copy";
-      let resetTimer: ReturnType<typeof setTimeout> | undefined;
-      button.addEventListener("click", async () => {
-        try {
-          await navigator.clipboard.writeText(text);
-          button.textContent = "Copied";
-          clearTimeout(resetTimer);
-          resetTimer = setTimeout(() => {
-            button.textContent = defaultLabel;
-          }, 2000);
-        } catch {
-          // The clipboard can refuse (permissions, an insecure context, an older browser); the
-          // command is already selectable text in the <pre>, so there is nothing else to do here.
-        }
+  const block = document.querySelector<HTMLElement>(".install-block");
+  const tabs = Array.from(block?.querySelectorAll<HTMLButtonElement>("[data-install-tab]") ?? []);
+  const panels = Array.from(block?.querySelectorAll<HTMLElement>("[data-install-panel]") ?? []);
+  if (block && tabs.length === panels.length) {
+    block.classList.add("is-enhanced");
+    block.querySelector(".install-tabs")?.setAttribute("role", "tablist");
+    tabs.forEach((tab) => {
+      tab.setAttribute("role", "tab");
+      tab.setAttribute("aria-controls", `panel-${tab.dataset.installTab}`);
+    });
+    panels.forEach((panel) => {
+      panel.setAttribute("role", "tabpanel");
+      panel.setAttribute("aria-labelledby", `tab-${panel.dataset.installPanel}`);
+    });
+    const activate = (index: number, focus = false) => {
+      tabs.forEach((tab, i) => {
+        tab.setAttribute("aria-selected", String(i === index));
+        tab.tabIndex = i === index ? 0 : -1;
+        panels[i]!.hidden = i !== index;
+      });
+      if (focus) tabs[index]?.focus();
+    };
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => activate(index));
+      tab.addEventListener("keydown", (event) => {
+        const next = event.key === "ArrowRight" ? (index + 1) % tabs.length : event.key === "ArrowLeft" ? (index + tabs.length - 1) % tabs.length : event.key === "Home" ? 0 : event.key === "End" ? tabs.length - 1 : -1;
+        if (next >= 0) { event.preventDefault(); activate(next, true); }
       });
     });
+    activate(0);
   }
-  setUpCopyButtons();
+  document.querySelectorAll<HTMLButtonElement>(".copy-button").forEach((button) => {
+    button.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(button.dataset.copy ?? "");
+        button.textContent = "Copied";
+        setTimeout(() => { button.textContent = "Copy"; }, 2000);
+      } catch { button.textContent = "Select and copy"; }
+    });
+  });
 </script>

@@ -5,22 +5,22 @@
 
 :root {
   /* Dark mode is Starlight's default root palette. */
-  --sl-color-bg: var(--sb-forest-deep);
-  --sl-color-bg-nav: var(--sb-forest);
-  --sl-color-bg-sidebar: var(--sb-forest);
-  --sl-color-bg-inline-code: color-mix(in srgb, var(--sb-forest) 60%, black 40%);
+  --sl-color-bg: var(--sb-paper);
+  --sl-color-bg-nav: var(--sb-paper);
+  --sl-color-bg-sidebar: var(--sb-paper);
+  --sl-color-bg-inline-code: color-mix(in srgb, var(--sb-paper) 80%, var(--sb-ink) 20%);
   --sl-color-bg-accent: var(--sb-trail);
-  --sl-color-text: var(--sb-paper);
+  --sl-color-text: var(--sb-ink);
   --sl-color-text-accent: var(--sb-trail);
   --sl-color-text-invert: var(--sb-forest-deep);
-  --sl-color-white: var(--sb-paper);
-  --sl-color-black: var(--sb-forest-deep);
+  --sl-color-white: var(--sb-ink);
+  --sl-color-black: var(--sb-paper);
   --sl-color-accent: var(--sb-trail);
   --sl-color-accent-high: var(--sb-trail);
-  --sl-color-accent-low: color-mix(in srgb, var(--sb-trail) 30%, var(--sb-forest-deep) 70%);
-  --sl-color-hairline: color-mix(in srgb, var(--sb-paper) 20%, transparent);
-  --sl-color-hairline-light: color-mix(in srgb, var(--sb-paper) 30%, transparent);
-  --sl-color-hairline-shade: var(--sb-forest-deep);
+  --sl-color-accent-low: color-mix(in srgb, var(--sb-trail) 22%, var(--sb-paper) 78%);
+  --sl-color-hairline: var(--sb-rule);
+  --sl-color-hairline-light: var(--sb-rule);
+  --sl-color-hairline-shade: var(--sb-rule);
 
   --sl-font: var(--sb-font-body);
   --sl-font-mono: var(--sb-font-mono);
@@ -45,12 +45,18 @@
   --sl-color-hairline-shade: var(--sb-rule);
 }
 
-.sl-markdown-content h1,
-.sl-markdown-content h2,
 .sl-markdown-content h3,
 .sl-markdown-content h4,
 .sl-markdown-content h5,
 .sl-markdown-content h6,
 .site-title {
   font-family: var(--sb-font-heading);
+}
+h1,
+h2,
+.sl-markdown-content h1,
+.sl-markdown-content h2 {
+  font-family: var(--sb-font-heading);
+  font-weight: 500;
+  letter-spacing: -0.025em;
 }

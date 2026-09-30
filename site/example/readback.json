@@ -2,11 +2,15 @@
   "pageId": "W1-P2",
   "printedPrompt": "What is the decision we are avoiding?",
   "marks": [
-    { "role": "ask", "label": "Ask (Q1)", "text": "What are we really optimizing for?" },
+    { "role": "ask", "label": "Ask", "mark": "Q1", "text": "What are we really optimizing for?" },
     { "role": "stop", "label": "Stop", "text": "We have not decided what to say no to" },
     { "role": "crux", "label": "Crux", "text": "Trade breadth for depth in v1" }
   ],
-  "answerFirst": "What are we really optimizing for?",
-  "unresolved": "We have not decided what to say no to",
+  "answerFirst": "You asked what you are really optimizing for. Your Crux answers it. Depth over breadth in v1.",
+  "heroAnswer": "Depth over breadth in v1.",
+  "unresolved": "What v1 leaves out is still open, so I will not treat it as settled.",
+  "heroUnresolved": "What v1 leaves out is still open.",
+  "nextMove": "Plan a smaller v1 built for depth. I can print one page to decide what it says no to.",
+  "uncertainty": "Read from 1 photo. Tell me if I misread a mark.",
   "crux": "Trade breadth for depth in v1"
 }

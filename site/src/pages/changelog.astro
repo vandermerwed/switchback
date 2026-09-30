@@ -1,27 +1,24 @@
 ---
-import "../styles/tokens.css";
+import "../styles/global.css";
 import { Content } from "../../../CHANGELOG.md";
+import SiteNav from "../components/SiteNav.astro";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>Changelog — Switchback</title>
     <meta name="description" content="Release notes for Switchback." />
   </head>
   <body>
-    <nav class="site-nav">
-      <a href="/">Switchback</a>
-      <a href="/docs/">Docs</a>
-      <a href="/showcase/">Showcase</a>
-      <a href="https://github.com/vandermerwed/switchback">GitHub</a>
-    </nav>
+    <SiteNav />
     <main class="changelog">
       <Content />
     </main>
     <footer class="site-footer">
-      <a href="/changelog/">Changelog</a>
+      <a href="/changelog/" aria-current="page">Changelog</a>
       <a href="/privacy/">Privacy</a>
       <a href="https://www.npmjs.com/package/@vandermerwed/switchback">npm</a>
     </footer>
@@ -45,7 +42,7 @@ import { Content } from "../../../CHANGELOG.md";
   }
   .site-nav a,
   .site-footer a {
-    color: var(--sb-forest);
+    color: #dce8df;
     text-decoration: none;
   }
   .site-nav a:hover,
@@ -60,13 +57,13 @@ import { Content } from "../../../CHANGELOG.md";
   .changelog :global(h1),
   .changelog :global(h2) {
     font-family: var(--sb-font-heading);
-    color: var(--sb-forest-deep);
+    color: var(--sb-ink);
   }
   .changelog :global(a) {
-    color: var(--sb-forest);
+    color: var(--sb-ink);
   }
   .site-footer {
     border-top: 1px solid var(--sb-rule);
-    color: var(--sb-ink-soft);
+    color: #dce8df;
   }
 </style>

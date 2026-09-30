@@ -16,6 +16,7 @@ const previewsDir = join(siteRoot, "public", "generated", "previews");
 const generatedDir = join(siteRoot, "src", "generated");
 const showcaseDir = join(siteRoot, "public", "generated", "showcase");
 const showcaseSrcDir = join(siteRoot, "showcase");
+const showcaseRequests = JSON.parse(readFileSync(join(showcaseSrcDir, "requests.json"), "utf8"));
 const showcaseTmpDir = join(generatedDir, "showcase");
 
 mkdirSync(previewsDir, { recursive: true });
@@ -171,6 +172,24 @@ for (const { style, label, path } of showcaseSpecs) {
     if (e.status !== 3) throw e;
   }
   writeFileSync(outHtml, built.html, "utf8");
+  // Keep the exact renderer head and page markup, but publish each page separately so the
+  // gallery can show every sheet with plain HTML and CSS, without a browser-side script.
+  const pageMarkup = [...built.html.matchAll(/<section class="sb-page"[\s\S]*?<\/section>/g)].map(
+    (match) => match[0],
+  );
+  if (pageMarkup.length !== spec.pages.length) {
+    showcaseErrors.push(`${style}: expected ${spec.pages.length} renderer pages, got ${pageMarkup.length}`);
+    continue;
+  }
+  const pagePreviews = pageMarkup.map((markup, index) => {
+    const file = `${style}-${index + 1}.html`;
+    const singlePage = built.html.replace(
+      /(<body[^>]*>)[\s\S]*?(<\/body>)/,
+      (_, open, close) => `${open}${markup}${close}`,
+    );
+    writeFileSync(join(showcaseDir, file), singlePage, "utf8");
+    return { html: `/generated/showcase/${file}`, id: spec.pages[index]?.id ?? `Page ${index + 1}` };
+  });
   // A build machine without Chrome, Edge or Chromium (Cloudflare Pages' image, for one) cannot make
   // the PDF, so it ships the committed copy in showcase/pdf/. Refresh those copies with
   // SWITCHBACK_UPDATE_SHOWCASE_PDFS=1 on a machine that has a browser, then commit them.
@@ -194,7 +213,11 @@ for (const { style, label, path } of showcaseSpecs) {
     label,
     title: spec.title,
     subtitle: spec.subtitle ?? null,
+    request: showcaseRequests[style].request,
+    why: showcaseRequests[style].why,
+    timebox: spec.timebox ?? (style === "proof" ? "Open" : null),
     pageCount: built.sidecar?.pages.length ?? spec.pages.length,
+    pagePreviews,
     html: `/generated/showcase/${style}.html`,
     pdf: `/generated/showcase/${style}.pdf`,
   });

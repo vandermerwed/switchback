@@ -1,0 +1,22 @@
+{
+  "sitting": {
+    "request": "Help me decide whether we should rewrite the sync feature. Give me one sitting to weigh the cost of keeping it.",
+    "why": "A single decision, with room to weigh options and leave a question for the agent."
+  },
+  "series": {
+    "request": "Help me prepare for a distributed systems interview over three spaced rounds. Start with what I can recall before I study.",
+    "why": "Several returns to the same topic, starting with recall before notes."
+  },
+  "incubation": {
+    "request": "Help me name a new project. Give me a generating session, a break, and a separate judging session.",
+    "why": "Idea generation and evaluation have different places on the page."
+  },
+  "ritual": {
+    "request": "Make a short weekly check-in page I can print again in the same form.",
+    "why": "One repeatable page makes it easier to compare what changed."
+  },
+  "proof": {
+    "request": "Print this draft about daily team meetings as a numbered proof with wide margins for my notes.",
+    "why": "Numbered paragraphs and open margins make a document ready for ink."
+  }
+}

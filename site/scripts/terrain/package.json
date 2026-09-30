@@ -1,0 +1,11 @@
+{
+  "name": "switchback-terrain-generator",
+  "private": true,
+  "type": "module",
+  "description": "One-off generator for the home page's terrain field. Not part of the site build.",
+  "dependencies": {
+    "d3-contour": "^4.0.2",
+    "d3-geo": "^3.1.1",
+    "pngjs": "^7.0.0"
+  }
+}
