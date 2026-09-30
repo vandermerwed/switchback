@@ -11,7 +11,7 @@
   <a href="https://www.npmjs.com/package/@vandermerwed/switchback"><img src="https://img.shields.io/npm/v/@vandermerwed/switchback" alt="npm version"></a>
   <a href="https://github.com/vandermerwed/switchback/actions/workflows/ci.yml"><img src="https://github.com/vandermerwed/switchback/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI on main"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/licence-Apache_2.0-blue" alt="Apache 2.0 licence"></a>
-  <a href="https://switchback.pages.dev">Website</a>
+  <a href="https://switchback-es4.pages.dev">Website</a>
 </p>
 
 Programmable stationery for AI agents. Your agent makes a few focused pages for the problem in
