@@ -7,10 +7,7 @@
   "style": "sitting",
   "round": 2,
   "paper": "A4",
-  "kit_source": [
-    "minimum",
-    "profile"
-  ],
+  "kit_source": ["minimum", "profile"],
   "pens": {
     "ask": {
       "pen": "blue"
@@ -48,11 +45,7 @@
       "readback": "The grouping is the insight. Ask which pile was hardest to place — that card names the tension.",
       "data": {
         "source": "the ideas you wrote on W1-P2",
-        "columns": [
-          "In v1",
-          "Later",
-          "Out"
-        ],
+        "columns": ["In v1", "Later", "Out"],
         "items": []
       },
       "returns": true

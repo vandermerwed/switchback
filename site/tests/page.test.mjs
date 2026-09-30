@@ -31,6 +31,8 @@ test("the worked round trip stays readable as HTML and names every ink role", ()
   assert.match(visibleText, /Read from 1 photo\. Tell me if I misread a mark/);
   assert.match(visibleText, /Marks your agent can read/);
   assert.match(visibleText, /One pen works too\. Write the letter in a circle/);
+  assert.equal((html.match(/<figcaption>Illustrative example/g) ?? []).length, 3);
+  assert.doesNotMatch(html, /example-note/);
   assert.doesNotMatch(visibleText, /paperclip|agent profile/i);
 });
 
@@ -55,6 +57,9 @@ test("the install section has three readable routes with commands from one data 
   for (const href of ["/docs/", "/showcase/", "/privacy/", "https://github.com/vandermerwed/switchback"]) {
     assert.ok(html.includes(`href="${href}"`), `navigation links to ${href}`);
   }
+  assert.ok(html.includes('href="/favicon.svg"'));
+  assert.ok(html.includes('href="#install"'));
+  assert.match(visibleText, /Terrain: Sani Pass, Drakensberg/);
 });
 
 test("every install command has a copy button", () => {
