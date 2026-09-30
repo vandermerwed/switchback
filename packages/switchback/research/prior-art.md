@@ -133,13 +133,13 @@ For each item: what it is, its overlap with Longhand, what to borrow, how Longha
 
 ## BestSelf (Self Journal / Self Planner) and the CFAR Participant Handbook
 
-These two sources are already mined in `packages/longhand/research/mining/BestSelf.md` and `mining/CFAR.md`; per this task's scope, they are not re-mined here — only the differentiation is summarised.
+These two sources are already mined in `research/mining/BestSelf.md` and `research/mining/CFAR.md`; per this task's scope, they are not re-mined here — only the differentiation is summarised.
 
 **BestSelf.** A commercial planner line (undated Self Planner; the 13-week Self Journal) whose stated philosophy is maximalist and totalising: "zero-based scheduling," fill every white-space minute, track everything against a hard 13-week cycle, treat an unticked box as failure. Its mining file states this is "close to the opposite of Longhand's 'an unfinished workbook is a worked workbook.'" Its individual techniques (wheel-of-life domain rating, same-day duration forecasting, countdown tokens, a gratitude row) are mostly well-evidenced and several were independently admitted into Longhand's roster (as a `scoresheet` preset, a `forecast` variant, a `tokens` preset, and a `check-in` option) — but BestSelf's differentiator from Longhand is *scale and completeness* (a whole life, indefinitely, with no page left blank), not any one page-level move, which is precisely the axis Longhand's docs should draw the contrast on.
 
 **CFAR Participant Handbook.** A workshop companion (Center for Applied Rationality, 2021 edition) documenting roughly 30 named "classes," each opening with a self-assigned epistemic status (Preliminary, Mixed, Anecdotally strong, Firm, Established) — an unusually honest graded-evidence posture the mining file notes "maps directly onto Longhand's own A–D grading." Several CFAR techniques were independently admitted or folded into the roster (Comfort Zone Expansion, Goal Factoring/Aversion Factoring, Frame-by-Frame Debugging, Mundanification, Saving State). CFAR's differentiator is that it is an in-person workshop curriculum explicitly not designed as a stand-alone guide ("this handbook is not designed to be a stand-alone guide") — it assumes a facilitator and a live cohort; Longhand is designed to work solo, cold, from a printed page with no facilitator present.
 
-**Sources (as already cited in the mining files; not re-verified this session):** `packages/longhand/research/mining/BestSelf.md`; `packages/longhand/research/mining/CFAR.md`.
+**Sources (as already cited in the mining files; not re-verified this session):** `research/mining/BestSelf.md`; `research/mining/CFAR.md`.
 
 ---
 
