@@ -336,21 +336,23 @@ a:focus-visible {
   color: var(--sb-ink-soft);
 }
 .useful-pause {
-  margin-top: clamp(3.5rem, 7vw, 7rem);
-  padding-top: 1.3rem;
+  padding: clamp(3rem, 5vw, 5rem) clamp(24px, 4vw, 70px);
   border-top: 1px solid var(--sb-rule);
+  border-bottom: 1px solid var(--sb-rule);
+  background: var(--sb-paper);
 }
-.useful-pause h3 {
+.useful-pause > div { max-width: 1460px; margin: auto; }
+.useful-pause h2 {
   font-family: var(--sb-font-heading);
   font-weight: 500;
-  font-size: clamp(1.8rem, 2.7vw, 2.6rem);
-  margin: 0 0 0.8rem;
+  font-size: clamp(2.1rem, 3.6vw, 3.8rem);
+  margin: 0 0 1rem;
 }
 .useful-pause p {
-  max-width: 33rem;
+  max-width: 68ch;
   color: var(--sb-ink-soft);
-  line-height: 1.75;
-  font-size: 1rem;
+  line-height: 1.7;
+  font-size: 1.06rem;
   margin: 0;
 }
 .example-intro .example-note {
@@ -602,9 +604,6 @@ a:focus-visible {
   }
   .example-intro h2 {
     max-width: 14ch;
-  }
-  .useful-pause {
-    margin-top: 2.5rem;
   }
   .example-evidence {
     max-width: 800px;
