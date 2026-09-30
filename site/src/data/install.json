@@ -7,7 +7,7 @@
   },
   {
     "id": "agents",
-    "label": "Other agents (skills.sh)",
+    "label": "Codex, Cursor and others",
     "description": "Add the skill to an agent that uses skills.sh.",
     "commands": ["npx skills add vandermerwed/switchback"]
   },

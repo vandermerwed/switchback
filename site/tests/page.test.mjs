@@ -46,6 +46,10 @@ test("the install section has three readable routes with commands from one data 
   }
   assert.doesNotMatch(html, /class="install-panel"[^>]*hidden/);
   assert.match(visibleText, /Then install it/);
+  assert.match(visibleText, /First, add the marketplace/);
+  assert.match(visibleText, /Then ask in plain words/);
+  assert.match(visibleText, /I can't decide whether to kill the sync feature/);
+  assert.match(visibleText, /You get a PDF in a switchback\/ folder, ready to print/);
   assert.match(visibleText, /The skill fetches the CLI itself/);
   assert.match(visibleText, /Node\.js 20\.12 or later, a printer, a pen, a phone camera/);
   for (const href of ["/docs/", "/showcase/", "/privacy/", "https://github.com/vandermerwed/switchback"]) {

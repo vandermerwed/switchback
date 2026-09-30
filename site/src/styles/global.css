@@ -483,6 +483,12 @@ a:focus-visible {
 .install-panel:last-child {
   border-bottom: 0;
 }
+.first-request { padding: 2rem 0; }
+.first-request h3 { margin: 0 0 1rem; font: 500 1.7rem var(--sb-font-heading); }
+.first-request blockquote { margin: 0 0 1rem; font: 500 1.3rem/1.4 var(--sb-font-heading); }
+.first-request p { margin: .8rem 0 0; color: var(--sb-ink-soft); font-size: .92rem; line-height: 1.6; }
+.first-request code { color: var(--sb-ink); font-family: var(--sb-font-mono); }
+.first-request a { color: var(--sb-ink); }
 .install-panel[hidden] {
   display: none;
 }

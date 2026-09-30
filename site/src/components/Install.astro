@@ -12,14 +12,19 @@ import installOptions from "../data/install.json";
     <div class="install-tabs" aria-label="Installation routes">
       {installOptions.map((option) => <button type="button" id={`tab-${option.id}`} data-install-tab={option.id}>{option.label}</button>)}
     </div>
-    {installOptions.map((option) => <section class="install-panel" id={`panel-${option.id}`} data-install-panel={option.id} aria-labelledby={`heading-${option.id}`}>
-      <h3 id={`heading-${option.id}`}>{option.label}</h3>
+    {installOptions.map((option) => <section class="install-panel" id={`panel-${option.id}`} data-install-panel={option.id} aria-label={option.label}>
       <p>{option.description}</p>
       {option.commands.map((command, index) => <div class="command-step">
-        {option.id === "claude" && <p class="step-label">{index === 0 ? "First add the marketplace" : "Then install it:"}</p>}
+        {option.id === "claude" && <p class="step-label">{index === 0 ? "First, add the marketplace" : "Then install it"}</p>}
         <div class="install-command"><pre tabindex="0"><code>{command}</code></pre><button type="button" class="copy-button" data-copy={command} aria-label={`Copy ${command}`}>Copy</button></div>
       </div>)}
     </section>)}
+    <div class="first-request">
+      <h3>Then ask in plain words</h3>
+      <blockquote>“I can't decide whether to kill the sync feature. Let's work it through on paper.”</blockquote>
+      <p>You get a PDF in a <code>switchback/</code> folder, ready to print.</p>
+      <p><a href="/showcase/#proof">It can also print a draft or spec as numbered pages to mark up in red.</a></p>
+    </div>
   </div>
 </section>
 <footer class="site-footer">
