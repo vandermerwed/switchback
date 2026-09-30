@@ -96,7 +96,7 @@ a:focus-visible {
   padding-left: clamp(24px, 3.5vw, 58px);
   padding-top: clamp(60px, 8vh, 105px);
 }
-.hero-copy h1 span {
+.hero-line {
   display: block;
 }
 .hero-copy h1 {
