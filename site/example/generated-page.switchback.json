@@ -1,13 +1,16 @@
 {
   "switchback": 1,
   "cli": "0.1.0",
-  "built_at": "2026-09-29T11:30:28.984Z",
+  "built_at": "2026-09-30T01:22:53.716Z",
   "spec": "site/example/workbook.json",
   "title": "Before the next handoff",
   "style": "sitting",
   "round": 1,
   "paper": "A4",
-  "kit_source": ["minimum", "profile"],
+  "kit_source": [
+    "minimum",
+    "profile"
+  ],
   "pens": {
     "ask": {
       "pen": "blue"

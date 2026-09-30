@@ -51,7 +51,7 @@ for (const e of elev) {
 }
 console.log(`${name}: ${W}x${H}px, elevation ${min.toFixed(0)} to ${max.toFixed(0)} m`);
 
-// Light smoothing so 20 m contours read as terrain, not pixel noise.
+// Light smoothing so 25 m contours read as terrain, not pixel noise.
 function blur(src, w, h, rad) {
   const out = new Float32Array(src.length),
     tmp = new Float32Array(src.length);
@@ -121,7 +121,7 @@ for (let y = 0; y < H; y++)
   }
 fs.writeFileSync(`${name}-shade.png`, PNG.sync.write(hs));
 
-// Contours every 20 m; every fifth (100 m) is an index line.
+// Contours every 25 m; every fifth (125 m) is an index line.
 const step = 25;
 const thresholds = [];
 for (let v = Math.ceil(min / step) * step; v <= max; v += step) thresholds.push(v);

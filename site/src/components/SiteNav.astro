@@ -6,11 +6,9 @@ const active = path.startsWith("/docs/")
   ? "docs"
   : path.startsWith("/showcase/")
     ? "showcase"
-    : path.startsWith("/changelog/")
-      ? "changelog"
-      : path.startsWith("/privacy/")
-        ? "privacy"
-        : "home";
+    : path === "/"
+      ? "home"
+      : "other";
 ---
 
 <nav class:list={["site-nav", { "on-forest": active === "home" }]} aria-label="Main navigation">

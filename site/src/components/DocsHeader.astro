@@ -10,5 +10,11 @@ import SiteNav from "./SiteNav.astro";
   .docs-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; width: 100%; }
   .docs-header :global(.site-nav) { flex: 1; max-width: none; padding-block: .75rem; }
   .docs-search { padding-right: 1rem; }
-  @media (max-width: 800px) { .docs-header { display: block; } .docs-search { display: none; } }
+  @media (max-width: 800px) {
+    .docs-header { gap: .4rem; }
+    .docs-header :global(.site-nav) { min-width: 0; gap: .65rem; padding: .5rem 0 .5rem .75rem; }
+    .docs-header :global(.nav-links) { width: auto; gap: .5rem; }
+    .docs-header :global(.nav-links a:not([aria-current="page"])) { display: none; }
+    .docs-search { flex: none; padding-right: .5rem; }
+  }
 </style>
