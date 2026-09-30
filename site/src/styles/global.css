@@ -872,6 +872,15 @@ a:focus-visible {
 .reply-row h4 { margin: 0 0 .5rem; font-size: .76rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
 .reply-row p, .readback-uncertainty { margin: 0; max-width: 60ch; font-size: 1rem; line-height: 1.6; }
 .readback-uncertainty { margin-top: 1rem; color: var(--sb-ink-soft); }
+.ink-key { margin-top: 2.5rem; padding: 1.5rem; background: color-mix(in srgb, var(--sb-paper) 92%, var(--sb-forest) 8%); }
+.ink-key h4 { margin: 0 0 1rem; font: 500 1.45rem var(--sb-font-heading); }
+.ink-key ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .7rem; }
+.ink-key li { display: flex; gap: .8rem; align-items: center; font-size: .88rem; line-height: 1.5; }
+.ink-code { flex: none; display: inline-grid; place-items: center; width: 1.9rem; height: 1.9rem; border: 2px solid currentColor; border-radius: 50%; font-size: .78rem; font-weight: 600; }
+.ink-ask { color: var(--sb-ask); }
+.ink-stop { color: var(--sb-stop); }
+.ink-crux { color: #1d291e; background: var(--sb-crux); border-color: #1d291e; }
+.ink-key > p { margin: 1.3rem 0 0; max-width: 56ch; color: var(--sb-ink-soft); font-size: .88rem; line-height: 1.65; }
 .example-next { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1fr); align-items: center; gap: clamp(3rem, 8vw, 8rem); margin-top: clamp(6rem, 11vw, 11rem); padding-top: 3rem; border-top: 1px solid var(--sb-rule); }
 .next-copy { max-width: 34rem; }
 .next-copy p { color: var(--sb-ink-soft); font-size: 1.08rem; line-height: 1.7; }

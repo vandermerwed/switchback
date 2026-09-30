@@ -29,6 +29,8 @@ test("the worked round trip stays readable as HTML and names every ink role", ()
   assert.match(visibleText, /A five-page sitting, about 30 minutes, on A4 or Letter paper/);
   assert.match(visibleText, /W2-P1/);
   assert.match(visibleText, /Read from 1 photo\. Tell me if I misread a mark/);
+  assert.match(visibleText, /Marks your agent can read/);
+  assert.match(visibleText, /One pen works too\. Write the letter in a circle/);
   assert.doesNotMatch(visibleText, /paperclip|agent profile/i);
 });
 

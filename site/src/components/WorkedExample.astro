@@ -32,6 +32,15 @@ const crux = readback.marks.find((mark) => mark.role === "crux");
       <div class="reply-row"><h4>Stop, carried forward</h4><p>{readback.unresolved}</p></div>
       <div class="reply-row"><h4>Next move</h4><p>{readback.nextMove}</p></div>
       <p class="readback-uncertainty">{readback.uncertainty}</p>
+      <aside class="ink-key" aria-labelledby="ink-key-title">
+        <h4 id="ink-key-title">Marks your agent can read</h4>
+        <ul>
+          <li><span class="ink-code ink-ask">Q</span><span>Blue, or a circled Q. <strong>Ask</strong> is answered first.</span></li>
+          <li><span class="ink-code ink-stop">R</span><span>Red, or a circled R. <strong>Stop</strong> stays open until you settle it.</span></li>
+          <li><span class="ink-code ink-crux">X</span><span>Highlighter, or a circled X. <strong>Crux</strong> is what the reply is built around.</span></li>
+        </ul>
+        <p>This is programmable stationery. Each pen has an agreed meaning, so a mark on paper carries an instruction back. One pen works too. Write the letter in a circle.</p>
+      </aside>
     </div>
   </div>
 
