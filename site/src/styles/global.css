@@ -34,7 +34,7 @@ a:focus-visible {
 
 .hero {
   position: relative;
-  min-height: 820px;
+  min-height: 750px;
   overflow: hidden;
   color: #f7f9f6;
   background:
@@ -92,10 +92,11 @@ a:focus-visible {
 .hero-copy {
   position: relative;
   z-index: 5;
-  width: min(42%, 580px);
+  width: min(50%, 650px);
   padding-left: clamp(24px, 3.5vw, 58px);
-  padding-top: clamp(80px, 10vh, 128px);
+  padding-top: clamp(60px, 8vh, 105px);
 }
+.hero-copy h1 span { display: block; }
 .hero-copy h1 {
   font-family: var(--sb-font-heading);
   font-weight: 500;
@@ -112,6 +113,9 @@ a:focus-visible {
   color: #e0eae4;
   margin: 1.9rem 0 1.7rem;
 }
+.hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 1.5rem; }
+.secondary-action { color: #f7f9f6; font-size: .92rem; font-weight: 600; text-decoration-thickness: 1px; }
+.secondary-action:hover { color: var(--sb-trail); }
 .primary-action {
   display: inline-flex;
   align-items: center;
@@ -173,7 +177,7 @@ a:focus-visible {
 .scene-label {
   display: block;
   margin-bottom: 0.45rem;
-  font-size: 0.64rem;
+  font-size: 0.72rem;
   line-height: 1.4;
   text-transform: uppercase;
   letter-spacing: 0.18em;
@@ -183,12 +187,12 @@ a:focus-visible {
   position: absolute;
   top: 9%;
   left: 35%;
-  width: 175px;
+  width: 240px;
 }
 .agent-prompt p {
   margin: 0;
   padding: 0.75rem 0.9rem;
-  font-size: 0.76rem;
+  font-size: 0.94rem;
   line-height: 1.45;
   border: 1px solid rgba(245, 249, 246, 0.5);
   border-radius: 7px;
@@ -283,14 +287,14 @@ a:focus-visible {
   position: absolute;
   right: 3.5%;
   top: 42%;
-  width: clamp(158px, 13vw, 205px);
+  width: 240px;
 }
 .agent-readback p {
   margin: 0;
   padding: 0.85rem;
   background: #f7f9f6;
   color: #1c2b22;
-  font-size: 0.76rem;
+  font-size: 0.94rem;
   line-height: 1.48;
 }
 .agent-readback p:first-of-type {
@@ -300,6 +304,7 @@ a:focus-visible {
   border-radius: 0 0 7px 7px;
   color: #9b2d26;
 }
+.photo-label { position: absolute; right: 6%; top: 36%; padding: .25rem .45rem; background: var(--sb-forest-deep); color: #f7f9f6; font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
 
 .worked-example {
   display: grid;
@@ -749,11 +754,11 @@ a:focus-visible {
 @media (max-width: 950px) {
   .hero {
     min-height: 0;
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
   }
   .hero-copy {
     width: min(100%, 720px);
-    padding: 4rem clamp(20px, 5vw, 58px) 0;
+    padding: 2.25rem clamp(20px, 5vw, 58px) 0;
   }
   .hero-scene {
     position: relative;
@@ -761,8 +766,8 @@ a:focus-visible {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 1.75rem;
-    padding: 3rem clamp(20px, 5vw, 58px) 0;
+    gap: .65rem;
+    padding: 1.25rem clamp(20px, 5vw, 58px) 0;
   }
   .hero-scene::before {
     display: none;
@@ -783,14 +788,16 @@ a:focus-visible {
     align-self: flex-start;
   }
   .hero-paper {
-    width: min(68vw, 500px);
+    width: min(68vw, 400px);
     max-width: 100%;
-    margin: 0 auto;
+    margin: -.75rem auto 0;
   }
   .agent-readback {
     width: min(70%, 280px);
     align-self: flex-end;
+    margin-top: -3rem;
   }
+  .photo-label { right: 4%; top: 58%; }
   .return-route {
     display: none;
   }
@@ -811,9 +818,24 @@ a:focus-visible {
   }
 }
 @media (max-width: 640px) {
+  .hero { padding-bottom: 1rem; }
+  .hero .site-nav { flex-wrap: nowrap; padding: 14px 20px; }
+  .hero .nav-links { width: auto; margin-left: auto; }
+  .hero .nav-links a { display: none; }
+  .hero .nav-links a[href$="#install"] { display: inline; }
+  .hero .hero-copy { padding-top: 1rem; }
+  .hero .hero-scene { padding-top: .5rem; }
   .hero-paper {
-    width: min(100%, 470px);
+    width: min(78%, 320px);
   }
+  .hero-copy h1 { font-size: clamp(2.35rem, 10vw, 3.25rem); line-height: 1.05; }
+  .hero-copy p { margin: 1rem 0 1rem; font-size: .94rem; line-height: 1.45; }
+  .primary-action { width: auto; min-height: 50px; padding: .7rem 1rem; gap: 1.4rem; }
+  .secondary-action { font-size: .82rem; }
+  .agent-prompt { width: min(70%, 240px); }
+  .agent-prompt p, .agent-readback p { font-size: .84rem; padding: .55rem .7rem; }
+  .hero-paper figcaption { font-size: .62rem; margin-top: .35rem; }
+  .photo-label { top: 60%; }
 }
 @media (max-width: 600px) {
   .hero {
