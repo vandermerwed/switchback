@@ -1,5 +1,7 @@
 # Mining: CFAR Handbook (2021-01)
 
+> **About these notes.** Research notes and commentary on the *CFAR Participant Handbook* (Center for Applied Rationality, January 2021 edition), which CFAR has made freely available. They describe and assess its techniques in our own words, with page references so each point can be checked, and quote only short phrases; the handbook itself is not reproduced and belongs to its authors. Written in September 2026, when Switchback's working title was Longhand, so "Longhand" in these notes means Switchback. The rest of `research/` keeps the old name on purpose: "longhand" is also a real construct there (handwriting versus typing).
+
 **Source:** *CFAR Participant Handbook*, January 2021 edition (Center for Applied Rationality), 249 pages. Read in full, in 20-page chunks, sampling repetitive reference/glossary material at the end.
 
 ## 1. Source summary

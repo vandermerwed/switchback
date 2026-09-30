@@ -26,15 +26,40 @@ MARK = ROOT / "site/src/assets/switchback-mark.svg"
 SVG_NS = {"svg": "http://www.w3.org/2000/svg"}
 
 
+ROUTE_ATTRS = ("d", "stroke-width", "stroke-linecap", "stroke-linejoin")
+
+
 def mark_parts():
-    """Read the mark's size, cut-out route and corner radius from the site's SVG."""
+    """Read the mark's size, cut-out route and corner radius from the site's SVG.
+
+    The lockup assumes the mark's current shape: a square viewBox at the origin, a
+    <mask> holding the route <path>, and the <rect> it masks. Anything else stops
+    with a message naming what is missing, not a traceback.
+    """
+
+    def fail(problem):
+        raise SystemExit(f"{MARK}: {problem}; update mark_parts() in {Path(__file__).name} for the new mark")
+
     root = ET.parse(MARK).getroot()
-    size = root.get("viewBox").split()[2]
-    route = root.find(".//svg:mask/svg:path", SVG_NS)
+    view_box = root.get("viewBox")
+    try:
+        x, y, width, height = (float(value) for value in (view_box or "").replace(",", " ").split())
+    except ValueError:
+        x = y = width = height = None
+    if x != 0 or y != 0 or width is None or width <= 0 or width != height:
+        fail(f'expected a positive square viewBox at the origin, like "0 0 256 256", found "{view_box}"')
+    mask = root.find(".//svg:mask", SVG_NS)
+    route = mask.find("svg:path", SVG_NS) if mask is not None else None
     body = root.find("svg:rect", SVG_NS)
     if route is None or body is None:
-        raise SystemExit(f"{MARK}: expected a <mask> with a route <path> and a masked <rect>")
-    return size, route.attrib, body.get("rx", "0")
+        fail("expected a <mask> with a route <path> and a masked <rect>")
+    if not mask.get("id") or body.get("mask") != f"url(#{mask.get('id')})":
+        fail(f'expected the <rect> to use the route mask, mask="url(#{mask.get("id")})", found "{body.get("mask")}"')
+    missing = [name for name in ROUTE_ATTRS if not route.get(name)]
+    if missing:
+        fail(f"the route <path> has no {', '.join(missing)}")
+    size = f"{width:g}"
+    return size, {name: route.get(name) for name in ROUTE_ATTRS}, body.get("rx", "0")
 
 
 def clean_path(path):

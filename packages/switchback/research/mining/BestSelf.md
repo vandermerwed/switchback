@@ -1,31 +1,33 @@
 # Mining: BestSelf (Self Planner / Self Journal)
 
-**Sources:** *Self Planner Instructions 2021* (guidebook, read in full, 11 pages); *SelfPlanner_2021* (the undated planner itself — Project Plan, 6-Month Bucket List, BestSelf Benchmark, Monthly Planner + Habit Tracker, Monthly Reflection, Weekly Planner, Weekly Canvas dot-grid pages, Quarterly Reflection & Planning — sampled by distinct page type); *SJV5.2_Goodnotes* — identified as the guidebook + templates for BestSelf's other product, the **Self Journal** (v5.2), a 13‑week daily/weekly execution journal built around an "Outcome Goal → Progress Milestones → Critical Drivers" roadmap, daily Gratitude/MIT/timeline/metrics pages, and weekly planning/review — sampled by distinct page type.
+> **About these notes.** Research notes and commentary on two commercial products from BestSelf Co.: the Self Planner (2021 edition) and the Self Journal (v5.2), each with its guidebook. They describe and assess the products' techniques in our own words, with page references so each point can be checked, and quote only short phrases. No pages, templates or guidebook text are reproduced; the products and their content belong to BestSelf Co. Written in September 2026, when Switchback's working title was Longhand, so "Longhand" in these notes means Switchback. The rest of `research/` keeps the old name on purpose: "longhand" is also a real construct there (handwriting versus typing).
+
+**Sources:** the Self Planner guidebook, 2021 edition (read in full, 11 pages); the Self Planner itself (undated — Project Plan, 6-Month Bucket List, BestSelf Benchmark, Monthly Planner + Habit Tracker, Monthly Reflection, Weekly Planner, Weekly Canvas dot-grid pages, Quarterly Reflection & Planning — sampled by distinct page type); the guidebook and templates of BestSelf's other product, the **Self Journal** (v5.2, cited below as SJ v5.2), a 13‑week daily/weekly execution journal built around an "Outcome Goal → Progress Milestones → Critical Drivers" roadmap, daily Gratitude/MIT/timeline/metrics pages, and weekly planning/review — sampled by distinct page type.
 
 ## 1. Source summary
 
-BestSelf is a commercial productivity-planner line (Self Planner, undated monthly/weekly organiser; Self Journal, a 13-week goal-execution journal) sold with a guidebook of "why" copy. Its philosophy is maximalist and totalizing: fill every white-space minute ("zero-based scheduling"), track everything, hit a 13-week cycle hard, and treat undone squares as failure ("no unaccounted time"). This is close to the opposite of Longhand's "an unfinished workbook is a worked workbook." Evidence citation in the guidebook is thin — one paragraph name-drops Locke & Latham on goal-setting and "studies indicate" gratitude effects, with no other sourcing — so almost everything here is presented as practitioner wisdom, not tested claims; a few of its moves nonetheless map onto real, well-studied constructs that Longhand doesn't yet cover. The product's real differentiator from Longhand is scale (a whole life, indefinitely) and completeness (no page left blank), not any single move; most individual techniques are either already in Longhand under other names, or are day-management mechanics that sit outside Longhand's per-problem workbook model.
+BestSelf is a commercial productivity-planner line (Self Planner, undated monthly/weekly organiser; Self Journal, a 13-week goal-execution journal) sold with a guidebook that explains the reasoning behind each page. Its approach is comprehensive: plan the whole day ("zero-based scheduling"), track habits and metrics daily, and work in 13-week cycles, aiming for no unaccounted time. That is a different model from Longhand's per-problem sitting, where an unfinished workbook still counts as a worked one. The guidebook cites research sparingly (Locke & Latham on goal-setting, and a general reference to gratitude studies), so most techniques are presented as practitioner experience rather than tested claims; a few of its moves nonetheless map onto real, well-studied constructs that Longhand doesn't yet cover. The product's real differentiator from Longhand is scale (a whole life, indefinitely) and completeness (no page left blank), not any single move; most individual techniques are either already in Longhand under other names, or are day-management mechanics that sit outside Longhand's per-problem workbook model.
 
 ## 2. Candidate table
 
 | candidate | source location | classification | closest existing item | admission verdict | mechanism | grade prior | value |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Wheel-of-life multi-domain rating (BestSelf Benchmark) | SelfPlanner p.4–5; SJV5.2 p.18–19 | new preset (of `scoresheet`) | scoresheet (`before-after`) | admit | domain-satisfaction self-assessment, averaged into a composite | B | high |
-| Same-day task-duration forecast (30-min estimate circles vs. actual) | SJV5.2 Daily Planner, p.28–29 | variant of `forecast` | forecast | admit, with a rule change | planning-fallacy calibration, high-frequency same-day resolution | B/C | high |
-| Countdown token for a fixed cycle (13-week / weeks-remaining dots) | SJV5.2 p.16–17 (streak calendar), p.21 (weeks-remaining dots) | new preset (of `tokens`) | tokens | admit | goal-gradient effect (visible proximity to a goal increases effort) | B | high |
-| Gratitude line ("3 things grateful for, or 1 with 3 reasons") | SJV5.2 Quick Start Habits p.7; Daily Planner p.28 | variant/option (of `check-in`) | check-in | admit | gratitude journaling / counting blessings | B | medium |
-| Wins-and-lessons prompts ("3 big wins," "lessons learned," "follow-up opportunities") | SJV5.2 Weekly Review p.20–21; SelfPlanner Monthly Reflection p.9 | variant/option (of `check-in`) | check-in | admit | savoring of positive events | C | medium |
-| Milestone roadmap with mountain/base-camp graphic + critical drivers | SJV5.2 p.14–17 | preset (of `timeline`) | timeline; scoresheet (`running`) | admit, minor | task-unpacking (existing claim); habit tracking (existing) | D (graphic is a design choice) | medium |
-| Three-state habit mark (missed / partial / completed) | SJV5.2 p.17 (habit tracker key) | variant (of `scoresheet` `running`) | scoresheet | admit, minor | finer-grained self-monitoring | D | medium |
-| Start/Stop/Continue/**Improve** (4-zone retro) | SelfPlanner Monthly Reflection p.9 | variant (of `start-stop-continue` preset) | start-stop-continue | admit, minor | none new (inherits zones) | n.a. | low |
-| Daily Rituals Card (portable morning/evening checklist) | SJV5.2 p.32 | overlap | player-aid | fold, no new value | job aid | n.a. | low |
-| Accountability line ("what structures will you put in place?") | SJV5.2 p.16 | overlap | commit (optional "who I will tell") | fold, no new value | intention-announcement | n.a. | low |
-| Motivation "why" field on a goal sheet | SJV5.2 p.16 | overlap | woop (Wish/Outcome) | fold, no new value | mental contrasting | n.a. | low |
+| Wheel-of-life multi-domain rating (BestSelf Benchmark) | Self Planner p.4–5; SJ v5.2 p.18–19 | new preset (of `scoresheet`) | scoresheet (`before-after`) | admit | domain-satisfaction self-assessment, averaged into a composite | B | high |
+| Same-day task-duration forecast (30-min estimate circles vs. actual) | SJ v5.2 Daily Planner, p.28–29 | variant of `forecast` | forecast | admit, with a rule change | planning-fallacy calibration, high-frequency same-day resolution | B/C | high |
+| Countdown token for a fixed cycle (13-week / weeks-remaining dots) | SJ v5.2 p.16–17 (streak calendar), p.21 (weeks-remaining dots) | new preset (of `tokens`) | tokens | admit | goal-gradient effect (visible proximity to a goal increases effort) | B | high |
+| Gratitude line ("3 things grateful for, or 1 with 3 reasons") | SJ v5.2 Quick Start Habits p.7; Daily Planner p.28 | variant/option (of `check-in`) | check-in | admit | gratitude journaling / counting blessings | B | medium |
+| Wins-and-lessons prompts ("3 big wins," "lessons learned," "follow-up opportunities") | SJ v5.2 Weekly Review p.20–21; Self Planner Monthly Reflection p.9 | variant/option (of `check-in`) | check-in | admit | savoring of positive events | C | medium |
+| Milestone roadmap with mountain/base-camp graphic + critical drivers | SJ v5.2 p.14–17 | preset (of `timeline`) | timeline; scoresheet (`running`) | admit, minor | task-unpacking (existing claim); habit tracking (existing) | D (graphic is a design choice) | medium |
+| Three-state habit mark (missed / partial / completed) | SJ v5.2 p.17 (habit tracker key) | variant (of `scoresheet` `running`) | scoresheet | admit, minor | finer-grained self-monitoring | D | medium |
+| Start/Stop/Continue/**Improve** (4-zone retro) | Self Planner Monthly Reflection p.9 | variant (of `start-stop-continue` preset) | start-stop-continue | admit, minor | none new (inherits zones) | n.a. | low |
+| Daily Rituals Card (portable morning/evening checklist) | SJ v5.2 p.32 | overlap | player-aid | fold, no new value | job aid | n.a. | low |
+| Accountability line ("what structures will you put in place?") | SJ v5.2 p.16 | overlap | commit (optional "who I will tell") | fold, no new value | intention-announcement | n.a. | low |
+| Motivation "why" field on a goal sheet | SJ v5.2 p.16 | overlap | woop (Wish/Outcome) | fold, no new value | mental contrasting | n.a. | low |
 | "Don't multitask" best-practice | Instructions, Best Practices p.4 | supporting claim only, no page | Sitting (mono-tasking); collection principle 3 | note only | task-switching cost | B (robust, contested magnitude) | low |
 | "Eat the frog" (do the hardest task first) | Instructions, Best Practices p.3 | reject as component | commit / cover ordering | reject | willpower/ego-depletion framing (contested) | D, weak | low |
-| Zero-based scheduling (fill 100% of the day) | Instructions, Best Practices p.3; SJV5.2 p.9, p.23 | reject | timer; timeboxing | reject | Parkinson's-law timeboxing, taken to an extreme | D | low |
-| Top-3 daily/weekly priorities cap ("Rule of 3") | SJV5.2 Daily/Weekly Planning p.20, 23 | reject | cover ("the question is the contract") | reject | practice heuristic | D, unclear if it is even a real finding | low |
-| 6/13-month Bucket List (aspirational wish list) | SelfPlanner p.4–5; SJV5.2 p.18 | reject | best-possible-self (already rejected) | reject | pure positive future fantasy, no obstacle | — | low |
+| Zero-based scheduling (fill 100% of the day) | Instructions, Best Practices p.3; SJ v5.2 p.9, p.23 | reject | timer; timeboxing | reject | Parkinson's-law timeboxing, taken to an extreme | D | low |
+| Top-3 daily/weekly priorities cap ("Rule of 3") | SJ v5.2 Daily/Weekly Planning p.20, 23 | reject | cover ("the question is the contract") | reject | practice heuristic | D, unclear if it is even a real finding | low |
+| 6/13-month Bucket List (aspirational wish list) | Self Planner p.4–5; SJ v5.2 p.18 | reject | best-possible-self (already rejected) | reject | pure positive future fantasy, no obstacle | — | low |
 
 ## 3. Per-candidate notes (medium and high value)
 
@@ -47,7 +49,7 @@ BestSelf is a commercial productivity-planner line (Self Planner, undated monthl
 
 ### Same-day task-duration forecast — variant of `forecast`
 
-**What it is.** SJV5.2's daily page gives each of the day's top-3 tasks a row of small circles, one per 30 minutes, that the person fills in *before* starting to estimate how long the task will take, then works the actual task against a same-day hour-by-hour timeline. By evening, the person can see estimate vs. actual for several tasks from that single day.
+**What it is.** SJ v5.2's daily page gives each of the day's top-3 tasks a row of small circles, one per 30 minutes, that the person fills in *before* starting to estimate how long the task will take, then works the actual task against a same-day hour-by-hour timeline. By evening, the person can see estimate vs. actual for several tasks from that single day.
 
 **On paper.** This slots into the existing `forecast` page's shape (a written, dated, falsifiable prior, resolved later) but shrinks the resolution horizon from weeks/months to hours, and multiplies the number of forecasts per sitting from one to several (one per task). The dated, pre-committed circle count is exactly forecast's "tamper-evident record" mechanic, just applied to duration instead of an external event.
 
@@ -63,7 +65,7 @@ BestSelf is a commercial productivity-planner line (Self Planner, undated monthl
 
 ### Countdown token — new preset of `tokens`
 
-**What it is.** SJV5.2 has two related devices: a streak calendar of X's marking consecutive days of action toward the 13-week goal, and a row of dots on the weekly review page that fill in as "weeks remaining" ticks down from 13 to 0.
+**What it is.** SJ v5.2 has two related devices: a streak calendar of X's marking consecutive days of action toward the 13-week goal, and a row of dots on the weekly review page that fill in as "weeks remaining" ticks down from 13 to 0.
 
 **On paper.** A preset of the `tokens` piece: instead of tokens representing a budget spent across competing options (the base component's use), a fixed set of tokens (one per week or per session in a Series/Ritual arc) is physically placed, coloured, or removed as the cycle progresses, so the remaining count is always visible on the desk.
 
@@ -109,7 +111,7 @@ BestSelf is a commercial productivity-planner line (Self Planner, undated monthl
 
 ### Milestone roadmap — preset of `timeline`
 
-**What it is.** SJV5.2's "13-Week Outcome Goal" page draws a mountain profile: a SMART outcome goal at the summit, 2–3 "progress milestones" as base camps along the ascent, and "critical drivers" (recurring actions) that get you from camp to camp.
+**What it is.** SJ v5.2's "13-Week Outcome Goal" page draws a mountain profile: a SMART outcome goal at the summit, 2–3 "progress milestones" as base camps along the ascent, and "critical drivers" (recurring actions) that get you from camp to camp.
 
 **On paper.** This is `timeline`'s existing move (order, "what must be true first") with a mountain graphic and a second block for recurring actions per milestone. It fails the distinct-move test against `timeline` (ordering milestones) and `scoresheet`'s `running` variant (tracking recurring critical-driver actions) — nothing here is a new move, only a new preset skin and a two-column layout combining the two.
 
@@ -134,7 +136,7 @@ BestSelf is a commercial productivity-planner line (Self Planner, undated monthl
 - **A new supporting-claim family for affect-positive content.** Longhand's `perspective-emotion` family already houses expressive-writing and self-distancing; recommend it also absorb gratitude and savoring claims (both above) rather than opening a ninth family for two related, modest-effect-size claims.
 - **Loosen `forecast`'s "styles with a return" restriction for a same-day variant.** The duration-forecast candidate resolves within one Sitting (at the evening return/commit step), so it plausibly satisfies "a style that schedules a return" without needing Ritual or Series. This is a concrete, scoped change to test against Gate 1's existing restriction, not a wholesale reversal of it.
 - **Ritual cadence could gain a longer option.** BestSelf's quarterly rhythm (13-week cycle, quarterly Benchmark re-administration) suggests `ritual-cadence` (currently a weekly-default parameter) could explicitly support an occasional longer-period return for multi-domain instruments like wheel-of-life, without inventing a whole new style.
-- **A cover/coaching contrast worth stating explicitly.** BestSelf's stated philosophy — "leave ZERO white space," schedule the entire day — is close to the opposite of Longhand's "an unfinished workbook is a worked workbook." Worth a coaching line (or an explanation-doc note) that names this on purpose: Longhand is deliberately not a day-management system and won't grow toward one, even as it borrows individual well-evidenced moves (gratitude, calibration, goal-gradient) from planners that are.
+- **A cover/coaching contrast worth stating explicitly.** BestSelf's stated approach — "leave ZERO white space," schedule the entire day — contrasts with Longhand's "an unfinished workbook is a worked workbook." Worth a coaching line (or an explanation-doc note) that names this on purpose: Longhand is deliberately not a day-management system and won't grow toward one, even as it borrows individual well-evidenced moves (gratitude, calibration, goal-gradient) from planners that are.
 - **"Don't multitask" is real, unclaimed support for an existing principle, not a new page.** Task-switching costs are a robust literature (adjacent to, but distinct from, the already-noted-and-contested ego-depletion caution in claims.md §4.6). It could be cited as supporting evidence for collection principle 3 ("one move per page") or Sitting's mono-tasking framing, but doesn't need its own component.
 
 ## 5. Recommendations for the lead
