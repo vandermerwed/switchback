@@ -853,14 +853,23 @@ a:focus-visible {
     max-width: 100%;
     margin: -0.75rem auto 0;
   }
+  .agent-prompt {
+    order: 1;
+  }
+  .hero-paper {
+    order: 2;
+  }
   .agent-readback {
+    order: 4;
     width: min(70%, 280px);
     align-self: flex-end;
-    margin-top: -3rem;
   }
-  .photo-label {
-    right: 4%;
-    top: 58%;
+  /* In the stacked scene the Photo cue sits in the flow, between the page and the reply. */
+  .hero-scene .photo-label {
+    order: 3;
+    inset: auto;
+    align-self: flex-end;
+    margin: 0.35rem 1.5rem 0 0;
   }
   .return-route {
     display: none;
@@ -903,10 +912,10 @@ a:focus-visible {
     padding-top: 1rem;
   }
   .hero .hero-scene {
-    padding-top: 0.5rem;
+    padding-top: 1.6rem;
   }
   .hero-paper {
-    width: min(78%, 320px);
+    width: min(72%, 300px);
   }
   .hero-copy h1 {
     font-size: clamp(2.35rem, 10vw, 3.25rem);
@@ -937,9 +946,6 @@ a:focus-visible {
   .hero-paper figcaption {
     font-size: 0.62rem;
     margin-top: 0.35rem;
-  }
-  .photo-label {
-    top: 60%;
   }
 }
 @media (max-width: 600px) {
