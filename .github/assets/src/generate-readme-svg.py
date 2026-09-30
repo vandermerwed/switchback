@@ -41,17 +41,25 @@ def mark_parts():
         raise SystemExit(f"{MARK}: {problem}; update mark_parts() in {Path(__file__).name} for the new mark")
 
     root = ET.parse(MARK).getroot()
-    box = (root.get("viewBox") or "").split()
-    if len(box) != 4 or box[0] != "0" or box[1] != "0" or box[2] != box[3]:
-        fail(f'expected a square viewBox at the origin, like "0 0 256 256", found "{root.get("viewBox")}"')
-    route = root.find(".//svg:mask/svg:path", SVG_NS)
+    view_box = root.get("viewBox")
+    try:
+        x, y, width, height = (float(value) for value in (view_box or "").replace(",", " ").split())
+    except ValueError:
+        x = y = width = height = None
+    if x != 0 or y != 0 or width is None or width <= 0 or width != height:
+        fail(f'expected a positive square viewBox at the origin, like "0 0 256 256", found "{view_box}"')
+    mask = root.find(".//svg:mask", SVG_NS)
+    route = mask.find("svg:path", SVG_NS) if mask is not None else None
     body = root.find("svg:rect", SVG_NS)
     if route is None or body is None:
         fail("expected a <mask> with a route <path> and a masked <rect>")
+    if not mask.get("id") or body.get("mask") != f"url(#{mask.get('id')})":
+        fail(f'expected the <rect> to use the route mask, mask="url(#{mask.get("id")})", found "{body.get("mask")}"')
     missing = [name for name in ROUTE_ATTRS if not route.get(name)]
     if missing:
         fail(f"the route <path> has no {', '.join(missing)}")
-    return box[2], {name: route.get(name) for name in ROUTE_ATTRS}, body.get("rx", "0")
+    size = f"{width:g}"
+    return size, {name: route.get(name) for name in ROUTE_ATTRS}, body.get("rx", "0")
 
 
 def clean_path(path):
