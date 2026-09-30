@@ -45,8 +45,8 @@ const crux = readback.marks.find((mark) => mark.role === "crux");
     </figure>
     <div class="agent-readback">
       <span class="scene-label">Agent reads it back</span>
-      <p><strong>Ask Q1:</strong> We are choosing depth for a smaller v1.</p>
-      <p><strong>Stop:</strong> What to say no to remains unresolved.</p>
+      <p><strong>Ask Q1:</strong> {readback.heroAnswer}</p>
+      <p><strong>Stop:</strong> {readback.heroUnresolved}</p>
     </div>
     <span class="photo-label">Photo</span>
   </div>

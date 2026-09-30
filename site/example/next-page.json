@@ -1,0 +1,22 @@
+{
+  "switchback": 1,
+  "style": "sitting",
+  "title": "A smaller v1",
+  "paper": "A4",
+  "round": 2,
+  "timebox": "10 min",
+  "pages": [
+    {
+      "id": "W2-P1",
+      "component": "card-sort",
+      "variant": "write-in",
+      "title": "What v1 says no to",
+      "prompt": "Which ideas from W1-P2 belong in a smaller v1 built for depth?",
+      "data": {
+        "source": "the ideas you wrote on W1-P2",
+        "columns": ["In v1", "Later", "Out"],
+        "items": []
+      }
+    }
+  ]
+}

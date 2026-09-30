@@ -1,0 +1,80 @@
+{
+  "switchback": 1,
+  "cli": "0.1.0",
+  "built_at": "2026-09-30T01:31:30.128Z",
+  "spec": "site/example/next-page.json",
+  "title": "A smaller v1",
+  "style": "sitting",
+  "round": 2,
+  "paper": "A4",
+  "kit_source": [
+    "minimum",
+    "profile"
+  ],
+  "pens": {
+    "ask": {
+      "pen": "blue"
+    },
+    "stop": {
+      "pen": "red"
+    },
+    "crux": {
+      "pen": "highlighter"
+    },
+    "keep": {
+      "letter": "G"
+    },
+    "maybe": {
+      "letter": "O"
+    },
+    "sense": {
+      "letter": "P"
+    },
+    "draft": {
+      "letter": "D"
+    },
+    "reason": {
+      "pen": "black"
+    }
+  },
+  "pages": [
+    {
+      "id": "W2-P1",
+      "component": "card-sort",
+      "preset": null,
+      "variant": "write-in",
+      "title": "What v1 says no to",
+      "prompt": "Which ideas from W1-P2 belong in a smaller v1 built for depth?",
+      "readback": "The grouping is the insight. Ask which pile was hardest to place — that card names the tension.",
+      "data": {
+        "source": "the ideas you wrote on W1-P2",
+        "columns": [
+          "In v1",
+          "Later",
+          "Out"
+        ],
+        "items": []
+      },
+      "returns": true
+    }
+  ],
+  "substitutions": [],
+  "warnings": [
+    {
+      "level": "warning",
+      "code": "W_OPENING",
+      "page": null,
+      "path": "/pages",
+      "message": "a Sitting opens with cover",
+      "fix": "start with those pages unless the situation makes that wrong"
+    },
+    {
+      "level": "warning",
+      "code": "W_CLOSING",
+      "page": null,
+      "path": "/pages",
+      "message": "a Sitting usually ends with commit → question-queue → return-checklist",
+      "fix": "end with those pages unless the situation makes that wrong"
+    }
+  ]
+}

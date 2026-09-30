@@ -848,3 +848,48 @@ a:focus-visible {
     scroll-behavior: auto;
   }
 }
+
+/* The returned photo and the next print make one continuous example. */
+.worked-example {
+  display: block;
+  max-width: 1460px;
+  padding: clamp(5rem, 7vw, 7rem) clamp(24px, 4vw, 70px);
+}
+.example-intro { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1fr); gap: 1rem 4rem; align-items: end; padding: 0; margin-bottom: 4rem; }
+.example-intro h2 { grid-row: span 2; margin: 0; }
+.example-intro > p { margin: 0; }
+.example-intro .sitting-detail { font-size: .9rem; font-weight: 600; color: var(--sb-ink); }
+.example-return { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: clamp(3rem, 7vw, 7rem); align-items: center; }
+.example-photo, .next-paper { margin: 0; }
+.example-photo { max-width: 500px; transform: rotate(-2deg); }
+.photo-frame { padding: 1.2rem; background: #e9ece8; box-shadow: 12px 20px 32px rgba(30, 45, 36, .2); }
+.photo-frame .marked-paper { outline: 1px solid #d7ded6; }
+.example-photo .paper-mark { font-size: clamp(.8rem, 1.22vw, 1.12rem); }
+.example-photo figcaption, .next-paper figcaption { margin: 1.2rem .2rem 0; color: var(--sb-ink-soft); font-size: .78rem; line-height: 1.5; }
+.example-readback { margin: 0; padding: 1.5rem 0 0; border-top: 2px solid var(--sb-forest); }
+.example-readback h3, .next-copy h3 { font: 500 clamp(2rem, 3.5vw, 3.5rem)/1.12 var(--sb-font-heading); letter-spacing: -.025em; margin: 0 0 1.6rem; }
+.reply-row { padding: 1.15rem 0; border-top: 1px solid var(--sb-rule); }
+.reply-row h4 { margin: 0 0 .5rem; font-size: .76rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
+.reply-row p, .readback-uncertainty { margin: 0; max-width: 60ch; font-size: 1rem; line-height: 1.6; }
+.readback-uncertainty { margin-top: 1rem; color: var(--sb-ink-soft); }
+.example-next { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1fr); align-items: center; gap: clamp(3rem, 8vw, 8rem); margin-top: clamp(6rem, 11vw, 11rem); padding-top: 3rem; border-top: 1px solid var(--sb-rule); }
+.next-copy { max-width: 34rem; }
+.next-copy p { color: var(--sb-ink-soft); font-size: 1.08rem; line-height: 1.7; }
+.next-paper { max-width: 500px; }
+.next-paper img { display: block; width: 100%; height: auto; box-shadow: 12px 19px 34px rgba(30, 45, 36, .18); }
+@media (max-width: 950px) {
+  .example-intro, .example-return, .example-next { grid-template-columns: 1fr; }
+  .example-intro { gap: 1rem; }
+  .example-intro h2 { grid-row: auto; }
+  .example-photo, .next-paper { width: min(100%, 500px); margin-inline: auto; }
+  .example-readback { max-width: 650px; }
+}
+@media (max-width: 640px) {
+  .worked-example { padding: 4rem 20px; }
+  .example-intro { margin-bottom: 2.5rem; }
+  .example-photo { width: min(88%, 390px); }
+  .photo-frame { padding: .65rem; }
+  .example-photo .paper-mark { font-size: clamp(.65rem, 2.6vw, .85rem); }
+  .example-return { gap: 3rem; }
+  .example-next { gap: 2rem; margin-top: 5rem; }
+}

@@ -19,12 +19,16 @@ test("the home page has one clear hero and an install action", () => {
 test("the worked round trip stays readable as HTML and names every ink role", () => {
   assert.match(visibleText, /Same terrain\. A clearer next step\./);
   assert.match(visibleText, /Illustrative example/);
-  assert.match(visibleText, /Ask \(Q1\)/);
+  assert.match(visibleText, /Q1, answered first/);
   assert.match(visibleText, /Stop/);
   assert.match(visibleText, /Crux/);
   assert.match(visibleText, /What are we really optimizing for\?/);
   assert.match(visibleText, /We have not decided what to say no to/);
   assert.match(visibleText, /Trade breadth for depth in v1/);
+  assert.match(visibleText, /A useful pause/);
+  assert.match(visibleText, /A five-page sitting, about 30 minutes, on A4 or Letter paper/);
+  assert.match(visibleText, /W2-P1/);
+  assert.match(visibleText, /Read from 1 photo\. Tell me if I misread a mark/);
   assert.doesNotMatch(visibleText, /paperclip|agent profile/i);
 });
 
