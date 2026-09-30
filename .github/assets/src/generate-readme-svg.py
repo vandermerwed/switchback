@@ -26,15 +26,32 @@ MARK = ROOT / "site/src/assets/switchback-mark.svg"
 SVG_NS = {"svg": "http://www.w3.org/2000/svg"}
 
 
+ROUTE_ATTRS = ("d", "stroke-width", "stroke-linecap", "stroke-linejoin")
+
+
 def mark_parts():
-    """Read the mark's size, cut-out route and corner radius from the site's SVG."""
+    """Read the mark's size, cut-out route and corner radius from the site's SVG.
+
+    The lockup assumes the mark's current shape: a square viewBox at the origin, a
+    <mask> holding the route <path>, and the <rect> it masks. Anything else stops
+    with a message naming what is missing, not a traceback.
+    """
+
+    def fail(problem):
+        raise SystemExit(f"{MARK}: {problem}; update mark_parts() in {Path(__file__).name} for the new mark")
+
     root = ET.parse(MARK).getroot()
-    size = root.get("viewBox").split()[2]
+    box = (root.get("viewBox") or "").split()
+    if len(box) != 4 or box[0] != "0" or box[1] != "0" or box[2] != box[3]:
+        fail(f'expected a square viewBox at the origin, like "0 0 256 256", found "{root.get("viewBox")}"')
     route = root.find(".//svg:mask/svg:path", SVG_NS)
     body = root.find("svg:rect", SVG_NS)
     if route is None or body is None:
-        raise SystemExit(f"{MARK}: expected a <mask> with a route <path> and a masked <rect>")
-    return size, route.attrib, body.get("rx", "0")
+        fail("expected a <mask> with a route <path> and a masked <rect>")
+    missing = [name for name in ROUTE_ATTRS if not route.get(name)]
+    if missing:
+        fail(f"the route <path> has no {', '.join(missing)}")
+    return box[2], {name: route.get(name) for name in ROUTE_ATTRS}, body.get("rx", "0")
 
 
 def clean_path(path):
