@@ -1,9 +1,9 @@
 {
   "switchback": 1,
   "cli": "0.1.0",
-  "built_at": "2026-09-30T01:22:53.716Z",
+  "built_at": "2026-10-05T13:30:04.079Z",
   "spec": "site/example/workbook.json",
-  "title": "Before the next handoff",
+  "title": "The team-day talk",
   "style": "sitting",
   "round": 1,
   "paper": "A4",
@@ -44,12 +44,12 @@
       "prompt": "",
       "readback": "The question is the contract for what a successful return should answer.",
       "data": {
-        "question": "What is the decision we are avoiding?",
+        "question": "What should my 20-minute talk leave the team with?",
         "timebox": "30 min",
         "howto": [
-          "Work through one question at a time, in ink.",
-          "Use Ask for a question, Stop for an unresolved concern, and Crux for the central trade-off.",
-          "Photograph the pages and return them to the agent."
+          "Write freely in black. Use a colour only for what you want the agent to act on.",
+          "Blue for a question, red for a doubt, the highlighter for the one thing that matters.",
+          "Photograph the pages and send them back."
         ]
       },
       "returns": true
@@ -59,8 +59,8 @@
       "component": "sheet",
       "preset": null,
       "variant": "default",
-      "title": "Before the next handoff",
-      "prompt": "What is the decision we are avoiding?",
+      "title": "What should stick",
+      "prompt": "What should they remember a week later?",
       "readback": "Depends on the content; the legend strip still tells you what the human's ink means.",
       "data": {
         "blocks": [
@@ -78,7 +78,7 @@
       "preset": null,
       "variant": "default",
       "title": "Choose the next move",
-      "prompt": "What will we try, and what remains undecided?",
+      "prompt": "What will you try first, and what is still open?",
       "readback": "A hold is a legitimate outcome — do not push for a decision that isn't there. A commit with no 5-minute action is a wish; say so.",
       "data": {},
       "returns": true
@@ -89,7 +89,7 @@
       "preset": null,
       "variant": "default",
       "title": "Questions for the agent",
-      "prompt": "Write what you want answered when the pages return.",
+      "prompt": "Write what you want answered when the pages come back.",
       "readback": "Answer in number order, first, before anything unasked. Blanks are not omissions.",
       "data": {},
       "returns": true
@@ -99,7 +99,7 @@
       "component": "return-checklist",
       "preset": null,
       "variant": "default",
-      "title": "Return the pages",
+      "title": "Send the pages back",
       "prompt": "Photograph each page flat and send them back together.",
       "readback": "If a page is missing or the ID unreadable, ask for a re-shoot rather than guessing.",
       "data": {},

@@ -11,6 +11,11 @@
   --sb-ask: #1f4fbf;
   --sb-stop: #c0332b;
   --sb-crux: #f2d13a;
+  /* Ink as it looks on the printed page: a fineliner black and slightly deeper pen colours. */
+  --sb-pen-black: #23262b;
+  --sb-pen-blue: #2546b0;
+  --sb-pen-red: #c42e26;
+  --sb-font-hand: "Kalam", "Segoe Print", "Bradley Hand", cursive;
   --sb-font-body: "Inter", system-ui, sans-serif;
   --sb-font-heading: "Besley", Georgia, serif;
   --sb-font-mono: ui-monospace, "SFMono-Regular", Consolas, monospace;
@@ -27,6 +32,18 @@
   src: url("/fonts/besley-latin-wght-italic.woff2") format("woff2");
   font-style: italic;
   font-weight: 400 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: Kalam;
+  src: url("/fonts/kalam-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: Kalam;
+  src: url("/fonts/kalam-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
   font-display: swap;
 }
 @font-face {

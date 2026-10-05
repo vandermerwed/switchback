@@ -1,0 +1,177 @@
+---
+// What it is for: the five shapes of work, each with the real request from the showcase.
+import requests from "../../showcase/requests.json";
+
+const firstSentence = (text: string) => text.match(/^.*?[.?!](?=\s|$)/)?.[0] ?? text;
+const uses = [
+  {
+    style: "sitting",
+    label: "Sitting",
+    job: "Make a decision or a plan",
+    shape: "One session, about 30 minutes.",
+  },
+  {
+    style: "series",
+    label: "Series",
+    job: "Learn something over a few weeks",
+    shape: "Three rounds, spaced out, starting from what you remember.",
+  },
+  {
+    style: "incubation",
+    label: "Incubation",
+    job: "Come up with something new",
+    shape: "Ideas first, a real break, then judging them.",
+  },
+  {
+    style: "ritual",
+    label: "Ritual",
+    job: "Look back on your week",
+    shape: "The same single page, printed again each time.",
+  },
+  {
+    style: "proof",
+    label: "Proof",
+    job: "Mark up a draft",
+    shape: "Your document as numbered pages with wide margins.",
+  },
+] as const;
+---
+
+<section class="uses" aria-labelledby="uses-title">
+  <div class="uses-inner">
+    <div class="uses-head">
+      <h2 id="uses-title">For the thinking you'd rather do yourself.</h2>
+      <p>
+        Working with agents all day can turn your own thinking into a string of quick replies. A printed page slows that down on purpose. It
+        holds one question at a time, and nothing on it asks for your attention.
+      </p>
+      <p>Your agent picks the pages to fit the job, so one skill covers very different work.</p>
+    </div>
+    <div class="uses-body">
+    <ul class="uses-list">
+      {uses.map((use) => (
+        <li>
+          <a href={`/showcase/#${use.style}`}>
+            <span class="use-job">{use.job}</span>
+            <span class="use-request">“{firstSentence(requests[use.style].request)}”</span>
+            <span class="use-shape"><b>{use.label}.</b> {use.shape}</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" /></svg>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <p class="uses-not">Not for quick questions. When you only need an answer, your agent just answers.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .uses {
+    --gutter: clamp(20px, 3.5vw, 58px);
+    position: relative;
+    isolation: isolate;
+    color: #eef4f0;
+    background:
+      radial-gradient(120% 90% at 85% 0%, rgb(36 82 76 / 0.55), transparent 60%),
+      var(--sb-forest-deep);
+  }
+  /* The terrain carries on below the fold: contours only, from the plateau north of the hero. */
+  .uses::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: url("/images/terrain-sani-band.webp") center / cover no-repeat;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  .uses-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(2.5rem, 6vw, 6rem);
+    max-width: 1460px;
+    margin: 0 auto;
+    padding: clamp(5rem, 8vw, 8rem) var(--gutter);
+  }
+  .uses-head h2 {
+    margin: 0;
+    font: 500 clamp(2.5rem, 4.4vw, 4rem) / 1.06 var(--sb-font-heading);
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+  .uses-head p {
+    max-width: 32rem;
+    margin: 1.3rem 0 0;
+    color: #c4d6cc;
+    font-size: 1.06rem;
+    line-height: 1.7;
+  }
+  .uses-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid rgb(238 244 240 / 0.18);
+  }
+  .uses-list a {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 24px;
+    gap: 0.35rem 1.5rem;
+    padding: 1.35rem 0.25rem;
+    border-bottom: 1px solid rgb(238 244 240 / 0.18);
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 160ms ease-out;
+  }
+  .uses-list a:hover {
+    background: rgb(238 244 240 / 0.05);
+  }
+  .uses-list a:focus-visible {
+    outline: 3px solid var(--sb-trail);
+    outline-offset: 2px;
+  }
+  .use-job {
+    font: 500 clamp(1.35rem, 2vw, 1.75rem) / 1.2 var(--sb-font-heading);
+    letter-spacing: -0.015em;
+  }
+  .use-request {
+    grid-column: 1;
+    color: #d7e4dd;
+    font: italic 400 1.06rem / 1.45 var(--sb-font-heading);
+  }
+  .use-shape {
+    grid-column: 1;
+    color: #a9c2b7;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .use-shape b {
+    color: var(--sb-trail);
+    font-weight: 600;
+  }
+  .uses-list svg {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    align-self: center;
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: var(--sb-trail);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .uses-list a:hover svg {
+    transform: translateX(4px);
+  }
+  .uses-not {
+    margin: 1.6rem 0 0;
+    color: #a9c2b7;
+    font-size: 0.9rem;
+  }
+  @media (max-width: 900px) {
+    .uses-inner {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style>

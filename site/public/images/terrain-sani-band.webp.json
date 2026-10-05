@@ -1,0 +1,4 @@
+{
+  "prompt": "Origin, not generated: contours only, on a transparent ground, from the same real Sani Pass elevation (SRTM and GMTED2010 via AWS Open Data Terrain Tiles, courtesy of the U.S. Geological Survey), the northern edge of the field, rendered by site/scripts/terrain/compose.mjs. No image-generation model was used.",
+  "createdAt": "2026-10-05T14:26:19.680Z"
+}

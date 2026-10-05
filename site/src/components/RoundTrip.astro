@@ -1,0 +1,422 @@
+---
+// How it works: one everyday example followed from the request to the next page.
+import readback from "../../example/readback.json";
+import AgentReply from "./AgentReply.astro";
+import MarkedPage from "./MarkedPage.astro";
+
+const ask = readback.marks.find((mark) => mark.role === "ask")!;
+const turn = `M28 0C28 14 10 12 10 26S28 38 28 52`;
+---
+
+<section class="round-trip" id="how-it-works" aria-labelledby="how-title">
+  <header class="rt-head">
+    <h2 id="how-title">One round trip, start to finish.</h2>
+    <p>Here is the whole loop with an everyday example: planning a 20-minute talk for your team.</p>
+  </header>
+
+  <ol class="rt-steps">
+    <li class="rt-step">
+      <div class="rt-trail" aria-hidden="true"><span class="rt-num">1</span></div>
+      <div class="rt-text">
+        <h3>Ask your agent, in plain words</h3>
+        <p>Say what you're working on and that you'd like to think it through on paper. You don't need to know any page names or commands.</p>
+        <p>Your agent replies with the plan before it prints anything, so you can change the pages or the pens first.</p>
+      </div>
+      <div class="rt-art">
+        <div class="chat" role="group" aria-label="The request in your agent's chat">
+          <div class="msg msg-you">
+            <p class="who">You</p>
+            <p class="say">{readback.request}</p>
+          </div>
+          <div class="msg msg-agent">
+            <p class="who">Your agent</p>
+            <p class="say">{readback.confirmation}</p>
+          </div>
+          <div class="msg msg-you">
+            <p class="who">You</p>
+            <p class="say">Yes, print it.</p>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="rt-step">
+      <div class="rt-trail" aria-hidden="true">
+        <svg class="rt-turn" viewBox="0 0 38 52" focusable="false"><path d={turn} /></svg>
+        <span class="rt-num">2</span>
+      </div>
+      <div class="rt-text">
+        <h3>Your agent makes the pages. You print them.</h3>
+        <p>Switchback builds a PDF from ready-made page templates, fitted to the job and to the pens on your desk. It prints in black and white, so any printer will do.</p>
+        <p>The cover sets out what each colour means for this sitting. Page 2 asks one question and leaves the rest of the page to you.</p>
+      </div>
+      <figure class="rt-art page-stack">
+        <div class="stack">
+          <img class="stack-back" src="/example/cover-page.png" width="1588" height="2246" loading="lazy" decoding="async" alt="Cover page of the printed workbook The team-day talk, with a table of pen colours to fill in." />
+          <img class="stack-front" src="/example/generated-page.png" width="1588" height="2248" loading="lazy" decoding="async" alt={`Page ${readback.pageId}, What should stick, printed with the prompt ${readback.printedPrompt} above ruled lines.`} />
+        </div>
+        <figcaption>Real output from the Switchback renderer: the cover and page 2 of five, on A4.</figcaption>
+      </figure>
+    </li>
+
+    <li class="rt-step">
+      <div class="rt-trail" aria-hidden="true">
+        <svg class="rt-turn" viewBox="0 0 38 52" focusable="false"><path d={turn} /></svg>
+        <span class="rt-num">3</span>
+      </div>
+      <div class="rt-text">
+        <h3>Work it with a pen, away from the screen</h3>
+        <p>Put your phone in another room. Write freely in black. When you want your agent to do something with a line, mark it in colour:</p>
+        <ul class="pen-key">
+          <li>
+            <svg class="stroke stroke-blue" viewBox="0 0 64 14" aria-hidden="true" focusable="false"><path d="M3 9c12-5 22 2 33-1s17-5 25-3" /></svg>
+            <span><strong>Blue</strong> is a question for your agent. It's answered first.</span>
+          </li>
+          <li>
+            <svg class="stroke stroke-red" viewBox="0 0 64 14" aria-hidden="true" focusable="false"><path d="M3 8c10-3 24 3 34 0s16-4 24-2" /></svg>
+            <span><strong>Red</strong> is something you're unsure of. It stays open until you settle it.</span>
+          </li>
+          <li>
+            <svg class="stroke stroke-highlight" viewBox="0 0 64 14" aria-hidden="true" focusable="false"><path d="M4 7c18-1 38 1 56-1" /></svg>
+            <span><strong>Highlighter</strong> marks the one thing that matters most. The reply is built around it.</span>
+          </li>
+        </ul>
+        <p class="one-pen">
+          Only have a black pen? Circle a letter instead: <span class="circled">Q</span> for a question, <span class="circled">R</span> for a doubt, and{" "}
+          <span class="circled">X</span> for the one thing. <a href="/docs/ink/">See every mark</a>
+        </p>
+      </div>
+      <figure class="rt-art ink-closeup">
+        <div class="closeup-frame"><MarkedPage /></div>
+        <figcaption>Illustrative example: page 2 with sample handwriting. {ask.mark} is the first blue question.</figcaption>
+      </figure>
+    </li>
+
+    <li class="rt-step">
+      <div class="rt-trail" aria-hidden="true">
+        <svg class="rt-turn" viewBox="0 0 38 52" focusable="false"><path d={turn} /></svg>
+        <span class="rt-num">4</span>
+      </div>
+      <div class="rt-text">
+        <h3>Send a photo. Your agent carries on.</h3>
+        <p>Photograph the pages and send them in the same chat. Your agent reads what you wrote, answers your blue question first, keeps the red one open, and builds the reply around what you highlighted.</p>
+        <p>Then it offers the next page, if one would help.</p>
+      </div>
+      <div class="rt-art reply-art">
+        <AgentReply />
+        <figure class="next-page">
+          <img src="/example/next-page.png" width="1588" height="2246" loading="lazy" decoding="async" alt="The next page, W2-P1, Which stories make the talk: three empty piles headed In the talk, If there is time, and Cut." />
+          <figcaption>The next page, if you say yes. Real renderer output.</figcaption>
+        </figure>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<style>
+  .round-trip {
+    --gutter: clamp(20px, 3.5vw, 58px);
+    max-width: 1460px;
+    margin: 0 auto;
+    padding: clamp(3rem, 3.4vw, 4rem) var(--gutter) clamp(4rem, 6vw, 6rem);
+  }
+  .rt-head {
+    max-width: 46rem;
+    margin: 0 0 clamp(3.5rem, 6vw, 6rem) calc(56px + clamp(1.5rem, 4vw, 4rem));
+  }
+  .rt-head h2 {
+    margin: 0;
+    font: 500 clamp(2.6rem, 5vw, 4.6rem) / 1.04 var(--sb-font-heading);
+    letter-spacing: -0.032em;
+    text-wrap: balance;
+  }
+  .rt-head p {
+    max-width: 40rem;
+    margin: 1.3rem 0 0;
+    color: var(--sb-ink-soft);
+    font-size: 1.12rem;
+    line-height: 1.65;
+  }
+  .rt-steps {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .rt-step {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 0.82fr) minmax(0, 1.18fr);
+    column-gap: clamp(1.5rem, 4vw, 4rem);
+    align-items: start;
+  }
+  .rt-step + .rt-step {
+    margin-top: 0;
+  }
+
+  /* The trail: a dashed path down the left edge that doubles back at every step. */
+  .rt-trail {
+    position: relative;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
+  }
+  .rt-trail::after {
+    content: "";
+    flex: 1;
+    min-height: 3rem;
+    margin-top: 0.5rem;
+    border-left: 3px dashed var(--sb-trail);
+  }
+  .rt-step:last-child .rt-trail::after {
+    border-left-color: transparent;
+  }
+  .rt-turn {
+    display: block;
+    width: 38px;
+    height: 52px;
+    margin: -0.5rem 0 0.4rem;
+    transform: translateX(-9px);
+    overflow: visible;
+  }
+  .rt-turn path {
+    fill: none;
+    stroke: var(--sb-trail);
+    stroke-width: 3;
+    stroke-dasharray: 7.6 7;
+    stroke-linecap: round;
+  }
+  .rt-num {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border: 3px solid var(--sb-trail);
+    border-radius: 50%;
+    background: var(--sb-paper);
+    color: var(--sb-ink);
+    font: 500 1.45rem / 1 var(--sb-font-heading);
+  }
+  .rt-text {
+    padding: 0.55rem 0 clamp(4rem, 8vw, 7.5rem);
+  }
+  .rt-text h3 {
+    margin: 0;
+    font: 500 clamp(1.7rem, 2.6vw, 2.35rem) / 1.12 var(--sb-font-heading);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  .rt-text p {
+    max-width: 34rem;
+    margin: 1rem 0 0;
+    color: var(--sb-ink-soft);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  .rt-art {
+    margin: 0;
+    padding-bottom: clamp(4rem, 8vw, 7.5rem);
+  }
+  .rt-art figcaption {
+    margin-top: 1rem;
+    color: var(--sb-ink-soft);
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  /* Step 2: two real pages, the cover under page 2. */
+  /* Fanned like two sheets set down on a desk: the cover on the left, page 2 over its edge. */
+  .stack {
+    position: relative;
+    width: min(100%, 600px);
+    aspect-ratio: 600 / 530;
+  }
+  .stack img {
+    position: absolute;
+    top: 0;
+    width: 56%;
+    height: auto;
+    box-shadow:
+      0 1px 2px rgb(20 40 34 / 0.12),
+      10px 18px 30px rgb(20 40 34 / 0.16);
+  }
+  .stack-back {
+    left: 0;
+    top: 5%;
+    transform: rotate(-4deg);
+  }
+  .stack-front {
+    right: 0;
+    transform: rotate(2.5deg);
+  }
+  .page-stack figcaption {
+    margin-top: 2rem;
+  }
+
+  /* Step 3: the pen key and a close look at the ink. */
+  .pen-key {
+    display: grid;
+    gap: 0.85rem;
+    margin: 1.4rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .pen-key li {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 1rem;
+    align-items: center;
+    max-width: 34rem;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+  /* Each swatch is ink on a scrap of paper, so the colour reads the same in either theme. */
+  .stroke {
+    width: 64px;
+    height: 30px;
+    padding: 8px 6px;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: 0 1px 2px rgb(20 40 34 / 0.18);
+    overflow: visible;
+  }
+  .stroke path {
+    fill: none;
+    stroke-linecap: round;
+  }
+  .stroke-blue path {
+    stroke: var(--sb-pen-blue);
+    stroke-width: 3;
+  }
+  .stroke-red path {
+    stroke: var(--sb-pen-red);
+    stroke-width: 3;
+  }
+  .stroke-highlight path {
+    stroke: var(--sb-crux);
+    stroke-width: 11;
+    stroke-linecap: butt;
+    opacity: 0.9;
+  }
+  .rt-text .one-pen {
+    margin-top: 1.4rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--sb-rule);
+    font-size: 0.9rem;
+  }
+  .circled {
+    display: inline-grid;
+    place-items: center;
+    width: 1.7em;
+    height: 1.7em;
+    margin: 0 0.1em;
+    border: 1.5px solid currentColor;
+    border-radius: 50%;
+    color: var(--sb-ink);
+    font: 700 0.85em / 1 var(--sb-font-hand);
+    vertical-align: 0.05em;
+  }
+  .one-pen a {
+    color: var(--sb-ink);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .closeup-frame {
+    width: min(100%, 640px);
+    aspect-ratio: 1 / 0.8;
+    overflow: hidden;
+    transform: rotate(-1deg);
+    box-shadow:
+      0 1px 2px rgb(20 40 34 / 0.12),
+      14px 22px 36px rgb(20 40 34 / 0.17);
+    /* A torn bottom edge: the page continues below the close-up. */
+    clip-path: polygon(0 0, 100% 0, 100% 97.6%, 94% 98.8%, 88% 97.4%, 81% 99%, 74% 97.8%, 67% 99.2%, 60% 97.6%, 52% 98.9%, 45% 97.5%, 38% 99.1%, 31% 97.7%, 24% 98.8%, 17% 97.4%, 10% 99%, 4% 97.9%, 0 98.8%);
+  }
+
+  /* Step 4: the reply, and the page it offers next. */
+  .reply-art {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(150px, 0.42fr);
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+    align-items: end;
+  }
+  .next-page {
+    margin: 0;
+  }
+  .next-page img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: rotate(2deg);
+    box-shadow:
+      0 1px 2px rgb(20 40 34 / 0.12),
+      10px 16px 26px rgb(20 40 34 / 0.16);
+  }
+  .next-page figcaption {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 1023px) {
+    .rt-head {
+      margin-left: calc(44px + 1.25rem);
+    }
+    .rt-step {
+      grid-template-columns: 44px minmax(0, 1fr);
+      column-gap: 1.25rem;
+    }
+    .rt-trail {
+      grid-row: span 2;
+    }
+    .rt-num {
+      width: 44px;
+      height: 44px;
+      font-size: 1.25rem;
+    }
+    .rt-turn {
+      transform: translateX(-9px) scale(0.85);
+    }
+    .rt-text {
+      padding-bottom: 2rem;
+    }
+    .rt-art {
+      grid-column: 2;
+    }
+    .stack {
+      width: min(100%, 520px);
+    }
+  }
+  @media (max-width: 640px) {
+    .rt-head {
+      margin-left: 0;
+    }
+    .rt-step {
+      grid-template-columns: 36px minmax(0, 1fr);
+      column-gap: 0.9rem;
+    }
+    .rt-num {
+      width: 36px;
+      height: 36px;
+      border-width: 2px;
+      font-size: 1.05rem;
+    }
+    .rt-trail::after,
+    .rt-turn path {
+      border-left-width: 2px;
+      stroke-width: 2.5;
+    }
+    .rt-turn {
+      transform: translateX(-10px) scale(0.7);
+      margin: -0.9rem 0 0;
+    }
+    .rt-text h3 {
+      font-size: 1.55rem;
+    }
+    .reply-art {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .next-page {
+      width: min(62%, 240px);
+      justify-self: end;
+    }
+  }
+</style>

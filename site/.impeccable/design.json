@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-05T00:00:00Z",
+  "title": "Design System: Switchback",
+  "extensions": {
+    "colorMeta": {
+      "trail": {
+        "role": "primary",
+        "displayName": "Trail Ochre",
+        "canonical": "#d1a34b",
+        "tonalRamp": ["#2e2210", "#4a3818", "#6b5120", "#8c6b28", "#ae8536", "#d1a34b", "#e2b65f", "#f2d9ab"]
+      },
+      "forest": {
+        "role": "secondary",
+        "displayName": "Forest",
+        "canonical": "#173b39",
+        "tonalRamp": ["#040d0c", "#0a1c1b", "#0f2826", "#173b39", "#235550", "#347670", "#5a9d95", "#9ccac3"]
+      },
+      "forest-deep": {
+        "role": "secondary",
+        "displayName": "Forest Deep",
+        "canonical": "#0f2826",
+        "tonalRamp": ["#020807", "#071513", "#0f2826", "#173b39", "#1f4f4a", "#2c6e66", "#4f9289", "#86bcb2"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#f7f9f6",
+        "tonalRamp": ["#142723", "#1c3531", "#2a4a44", "#44655e", "#7d948d", "#bdc9c3", "#e3e9e3", "#f7f9f6"],
+        "note": "Dark theme does not literally invert this value; it swaps to #142723, a tinted step toward forest rather than true black."
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#111411",
+        "tonalRamp": ["#111411", "#242821", "#3b4036", "#555c4f", "#72796c", "#9aa092", "#c6cbbf", "#f4f5ef"],
+        "note": "Dark theme swaps to #f4f5ef."
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Ink Soft",
+        "canonical": "#4a524d",
+        "tonalRamp": ["#1d211e", "#2f3531", "#4a524d", "#656d66", "#818980", "#a0a89f", "#c3d0c7"],
+        "note": "Dark theme swaps to #c3d0c7."
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "#d9ded8",
+        "tonalRamp": ["#3c5550", "#55706a", "#7f928c", "#aab6b1", "#d9ded8"],
+        "note": "Dark theme swaps to #3c5550."
+      },
+      "pen-black": { "role": "tertiary", "displayName": "Pen Black (fineliner)", "canonical": "#23262b" },
+      "pen-blue": { "role": "tertiary", "displayName": "Pen Blue (Ask)", "canonical": "#2546b0" },
+      "pen-red": { "role": "tertiary", "displayName": "Pen Red (Stop)", "canonical": "#c42e26" },
+      "crux": { "role": "tertiary", "displayName": "Crux Yellow (highlighter)", "canonical": "#f2d13a" }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The hero <h1> only; the single heaviest line on the site (weight 540)."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Every other section heading and page <h1>; weight 500, size varies 2.5rem–6rem by section."
+      },
+      "title": { "displayName": "Title", "purpose": "Step headings, row labels, the step-number numeral." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy, usually in ink-soft." },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Spaced-caps map labels and captions (e.g. \"You ask\", the terrain credit line). A world-native device, not a banned eyebrow — never sits directly above a heading."
+      },
+      "hand": {
+        "displayName": "Hand",
+        "purpose": "Illustrative handwriting ink layer and the circled one-pen fallback glyph only. Never used as UI type."
+      }
+    },
+    "shadows": [
+      {
+        "name": "paper-cast",
+        "value": "0 1-2px 2-4px rgba(near-black contact), 10-18px 16-26px 30-38px rgb(20 40 34 / 0.16) or rgb(1 14 13 / 0.5) cast",
+        "purpose": "Every tilted paper/photo object: the hero's marked page, the cover/page-2 stack, the ink close-up, the next-page preview, the Showcase feature pane. Tight contact shadow + larger green-tinted cast shadow, never pure black."
+      },
+      {
+        "name": "chat-lift",
+        "value": "0 18px 40px rgb(15 40 38 / 0.22)",
+        "purpose": "The chat transcript panel."
+      },
+      {
+        "name": "cta-lift",
+        "value": "0 10px 28px rgb(1 16 15 / 0.32)",
+        "purpose": "The primary Install CTA only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "arrive",
+        "value": "opacity 0->1, translateY(8px)->0, 0.5-0.6s cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Hero scene elements (ask bubble, reply card, photo label) arriving in sequence on load."
+      },
+      {
+        "name": "reveal-trail",
+        "value": "stroke-dashoffset 1->0 via clip mask, 0.6-0.8s cubic-bezier(0.33, 0, 0.2, 1)",
+        "purpose": "The dashed ochre route drawing itself from request to page, then page to reply."
+      },
+      {
+        "name": "write-in",
+        "value": "clip-path inset reveal, 0.5s cubic-bezier(0.45, 0, 0.55, 1), staggered per line via --i",
+        "purpose": "The hero's marked-page ink appearing to write itself in, line by line, once on load."
+      },
+      {
+        "name": "reduced-motion-policy",
+        "value": "all three disabled under @media (prefers-reduced-motion: reduce/no-preference)",
+        "purpose": "Hero.astro gates its sequence on no-preference; MarkedPage.astro explicitly zeroes the write-in animation under reduce. No shipped animation plays for a reduced-motion visitor."
+      }
+    ],
+    "breakpoints": [
+      { "name": "hero-narrow", "value": "1279px" },
+      { "name": "tablet", "value": "1023px" },
+      { "name": "section-mid", "value": "900-950px" },
+      { "name": "phone-wide", "value": "700px" },
+      { "name": "phone", "value": "640px" },
+      { "name": "phone-narrow", "value": "600px" },
+      { "name": "phone-min", "value": "480px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one filled CTA on the site: Install Switchback.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#install\">Install Switchback<svg class=\"ds-btn-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\" /></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: space-between; gap: 2.2rem; min-height: 58px; padding: 0.85rem 1.3rem 0.85rem 1.4rem; color: #17221b; background: #d1a34b; border-radius: 3px; font: 600 1rem Inter, system-ui, sans-serif; text-decoration: none; box-shadow: 0 10px 28px rgba(1,16,15,0.32); transition: background-color 160ms ease-out, transform 160ms ease-out; } .ds-btn-primary .ds-btn-arrow { width: 1.25em; height: 1.25em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform 200ms cubic-bezier(0.22,1,0.36,1); } .ds-btn-primary:hover { background: #e2b65f; } .ds-btn-primary:hover .ds-btn-arrow { transform: translateX(3px); } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:focus-visible { outline: 3px solid #d1a34b; outline-offset: 4px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Underlined text action, used for every non-primary CTA (e.g. See how it works).",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#how-it-works\">See how it works<svg class=\"ds-btn-arrow\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 4v15m-6-6 6 6 6-6\" /></svg></a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0; color: #f4f8f5; font: 600 1rem Inter, system-ui, sans-serif; text-decoration: underline; text-decoration-thickness: 1px; text-decoration-color: rgba(244,248,245,0.5); } .ds-btn-secondary .ds-btn-arrow { width: 1.05em; height: 1.05em; fill: none; stroke: currentColor; stroke-width: 2; } .ds-btn-secondary:hover { color: #d1a34b; text-decoration-color: currentColor; } .ds-btn-secondary:focus-visible { outline: 3px solid #d1a34b; outline-offset: 4px; }"
+    },
+    {
+      "name": "Step Number",
+      "kind": "chip",
+      "refersTo": "step-number",
+      "description": "The circular numeral marking each round-trip step, strung on the dashed ochre trail.",
+      "html": "<span class=\"ds-step-number\">1</span>",
+      "css": ".ds-step-number { display: grid; place-items: center; width: 52px; height: 52px; border: 3px solid #d1a34b; border-radius: 50%; background: #f7f9f6; color: #111411; font: 500 1.45rem/1 Besley, Georgia, serif; }"
+    },
+    {
+      "name": "Reply Card",
+      "kind": "card",
+      "refersTo": "reply-card",
+      "description": "The agent's paper-coloured reply card in the hero scene, with a red-tinted still-open row.",
+      "html": "<div class=\"ds-reply-card\"><p><strong>Your blue question:</strong> answered first.</p><p class=\"ds-reply-open\"><strong>Still open:</strong> what's unresolved.</p></div>",
+      "css": ".ds-reply-card { border-radius: 8px 2px 8px 8px; background: #f7f9f6; color: #1d2a22; box-shadow: 0 16px 34px rgba(1,14,13,0.38); } .ds-reply-card p { margin: 0; padding: 0.8rem 0.9rem; font-size: 0.9rem; line-height: 1.48; } .ds-reply-card .ds-reply-open { border-top: 1px solid #dfe5de; color: #9a2c25; }"
+    },
+    {
+      "name": "Chat Bubble (you)",
+      "kind": "custom",
+      "refersTo": "speech-bubble-you",
+      "description": "A right-aligned sent-message bubble in the chat transcript, pulled-corner radius.",
+      "html": "<div class=\"ds-chat-you\"><p class=\"ds-chat-who\">You</p><p class=\"ds-chat-say\">Help me plan my talk, on paper.</p></div>",
+      "css": ".ds-chat-you { justify-self: end; max-width: 86%; } .ds-chat-who { margin: 0 0 0.45rem; color: #9fbab0; font: 600 0.7rem/1 Inter, system-ui, sans-serif; letter-spacing: 0.16em; text-transform: uppercase; text-align: right; } .ds-chat-say { margin: 0; padding: 0.7rem 0.9rem; border-radius: 9px 9px 2px 9px; background: #1c4440; color: #e6efe9; font-size: 1rem; line-height: 1.55; }"
+    },
+    {
+      "name": "Pen Swatch",
+      "kind": "chip",
+      "refersTo": "pen-swatch",
+      "description": "A hand-drawn ink stroke on a scrap of white paper, standing in for a flat colour swatch so it reads the same in both themes.",
+      "html": "<span class=\"ds-pen-swatch\"><svg viewBox=\"0 0 64 14\" aria-hidden=\"true\"><path d=\"M3 9c12-5 22 2 33-1s17-5 25-3\" /></svg></span>",
+      "css": ".ds-pen-swatch { display: inline-block; width: 64px; height: 30px; padding: 8px 6px; border-radius: 3px; background: #fff; box-shadow: 0 1px 2px rgba(20,40,34,0.18); overflow: visible; } .ds-pen-swatch path { fill: none; stroke: #2546b0; stroke-width: 3; stroke-linecap: round; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Contour Return",
+    "overview": "The site is a topographic map of one real place — Sani Pass, Drakensberg — with the product's own loop (ask, print, mark, photograph, reply) drawn on top as a dashed ochre trail. The dark forest plateau is the screen you step away from; the white printed page, tilted and shadowed like paper actually left on a desk, is the object the whole page revolves around; the trail runs into it and back out to a reply card, so the visitor reads the loop rather than being told about it. Nothing on the page claims to be a tool landing page: there is no feature grid, no glyph-icon row, no eyebrow sitting above a heading. Headings carry the whole announcement themselves. Two materials never mix: the map (real terrain, trail-ochre, spaced-caps labels, Besley/Inter) and the page (white paper, black fineliner, pen-blue/pen-red/crux-yellow handwriting in Kalam). The map explains; the page is evidence. Everything photographic on the page is real; nothing is model-generated imagery.",
+    "keyCharacteristics": [
+      "A dark, real-terrain plateau carries the pitch; a tilted white page is the hero's focal object, not an illustration beside it.",
+      "One accent (trail-ochre) marks the route and the one thing to click; everything else is forest-dark or paper-neutral.",
+      "Handwriting (Kalam) is scoped to exactly two places: the illustrative ink overlay and the one-pen circled-letter fallback. It never appears as UI type.",
+      "A single reveal-once sequence (ink writes itself in, then the reply arrives) plays on load and is fully suppressed under prefers-reduced-motion.",
+      "No eyebrows above headings, no icon-font or glyph icons anywhere — every icon on the page is a hand-specified inline SVG path."
+    ],
+    "rules": [
+      {
+        "name": "The One Trail Rule",
+        "body": "Trail-ochre is the only saturated accent anywhere in the UI chrome. It marks a route or a single next action; it is never used for a large fill or a second competing accent.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink-Stays-On-Paper Rule",
+        "body": "Pen black/blue/red and crux yellow are drawn only inside the handwriting layer or its circled-letter fallback. They do not leak into buttons, links, or badges.",
+        "section": "colors"
+      },
+      {
+        "name": "The Variable-Weight Rule",
+        "body": "Besley is loaded as a variable font specifically so headings can sit at in-between weights (540 for the hero, 500 elsewhere) instead of snapping to 400/700.",
+        "section": "typography"
+      },
+      {
+        "name": "The Paper-Only Shadow Rule",
+        "body": "A cast shadow appears only under an object standing in for a physical sheet of paper or a chat panel. Flat UI stays shadowless; its depth comes from a background-colour step instead.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep trail-ochre rare: one route, one CTA, one highlight colour, never a secondary UI palette.",
+      "Do give every tilted paper object the two-layer paper-cast shadow (tight contact + soft green-tinted cast); don't substitute a generic drop shadow.",
+      "Do caption any handwriting or reply content that is authored rather than a real returned photo as \"Illustrative example.\"",
+      "Do keep Kalam confined to the ink layer and its circled-letter fallback; it is a handwriting prop, not a UI typeface.",
+      "Do suppress every entrance/write-in animation under prefers-reduced-motion: reduce.",
+      "Do draw icons as hand-specified inline SVG paths; never pull in an icon font or a Lucide/Heroicons-style glyph set."
+    ],
+    "donts": [
+      "Don't put an eyebrow or kicker above a heading.",
+      "Don't reuse pen-blue, pen-red, or crux-yellow for ordinary UI state (links, errors, badges); those colours are reserved for handwritten meaning.",
+      "Don't add a new near-white text colour for a dark surface — the build already has an untokenized family of one-off light literals on dark backgrounds instead of one shared token; treat this as debt to consolidate, not a menu to add to.",
+      "Don't assume privacy.astro and changelog.astro's footer matches the home page's — their own styles leave footer text pale over plain paper background with no dark panel underneath, a shipped contrast inconsistency, not an intended two-tone footer."
+    ]
+  }
+}

@@ -1,53 +1,544 @@
 ---
 import readback from "../../example/readback.json";
+import MarkedPage from "./MarkedPage.astro";
 import SiteNav from "./SiteNav.astro";
 
-const ask = readback.marks.find((mark) => mark.role === "ask");
-const stop = readback.marks.find((mark) => mark.role === "stop");
-const crux = readback.marks.find((mark) => mark.role === "crux");
+// The round trip on the map, as shares of the scene: from the request (above the page, left) down
+// into the page, then out of its right edge and down to the reply.
+const routeIn = "M44.2 11.6C45.7 13.8 45.3 15.6 44.4 17C43.6 18.4 44.6 20.1 47 21.6";
+const routeOut =
+  "M80.3 40.2C83.6 40.4 86.6 38.8 89.6 39.8C93 41 92.2 44.8 94.6 47.6C96.4 49.8 98.2 51.4 99.2 54.6";
 ---
 
 <section class="hero" aria-labelledby="home-title">
-  <div class="hero-glow" aria-hidden="true"></div>
   <SiteNav />
-  <svg class="return-route" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-    <path class="route route-out" d="M43.5 21 C47 24.5 47.2 28.5 44 31.5 C41.8 33.7 43 38 46.3 40.5 C48.6 42.3 47.6 46.5 44.8 49 C43 50.6 44 55.5 49.5 58" />
-    <path class="route" d="M72 31 C76 30.5 79 30 80.5 29.5 C83 27 85.5 21 88.5 22.5 C91.5 24 90 30 92.5 33 C94.5 35.5 95.5 39 95 43.2" />
-    <path class="route-ring route-out" d="M43.5 21 h0" />
-    <path class="route-dot route-out" d="M43.5 21 h0" />
-    <path class="route-ring" d="M95 43.2 h0" />
-    <path class="route-dot" d="M95 43.2 h0" />
-  </svg>
-
-  <div class="hero-copy">
-    <h1 id="home-title"><span class="hero-line">Step away from the agents.</span><span class="hero-line">Come back with a clearer thought.</span></h1>
-    <p>Your agent prints a page for the problem you are stuck on. You work it in ink away from the screen, photograph it, and the agent picks up from what you wrote.</p>
-    <div class="hero-actions">
-      <a class="primary-action" href="#install">Install Switchback <span aria-hidden="true">→</span></a>
-      <a class="secondary-action" href="#how-it-works">See a round trip ↓</a>
-    </div>
-  </div>
-
-  <div class="hero-scene" aria-label="Illustrative example of a Switchback round trip">
-    <svg class="mobile-route" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M16 7 C7 21 20 27 48 33 C85 42 89 55 52 64 C22 72 35 83 78 91" /></svg>
-    <div class="agent-prompt">
-      <span class="scene-label">You ask</span>
-      <p>“Help me decide what goes in v1. Let's do it on paper.”</p>
-    </div>
-    <figure class="hero-paper">
-      <div class="marked-paper">
-        <img src="/example/generated-page.png" width="1588" height="2246" alt="Unmarked Switchback page W1-P2, Before the next handoff, printed with the prompt What is the decision we are avoiding?" />
-        <div class="paper-mark paper-ask"><b>{ask?.mark}</b><span>{ask?.text}</span><small>{ask?.label}</small></div>
-        <div class="paper-mark paper-stop"><span>{stop?.text}</span><small>{stop?.label}</small></div>
-        <div class="paper-mark paper-crux"><span>{crux?.text}</span><small>{crux?.label}</small></div>
+  <div class="hero-stage">
+    <div class="hero-copy">
+      <h1 id="home-title"><span>Step away from the agents.</span> <span>Think it through on paper.</span></h1>
+      <p class="hero-lede">
+        Switchback is a skill for your AI agent. Ask it for a page about what you're working on, print it, and work it with a pen, away from
+        the screen. Then send back a photo, and your agent carries on from what you wrote.
+      </p>
+      <div class="hero-actions">
+        <a class="primary-action" href="#install">
+          Install Switchback
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6" /></svg>
+        </a>
+        <a class="secondary-action" href="#how-it-works">
+          See how it works
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v15m-6-6 6 6 6-6" /></svg>
+        </a>
       </div>
-      <figcaption>Illustrative example · W1-P2 · marks authored for this demonstration</figcaption>
-    </figure>
-    <div class="agent-readback">
-      <span class="scene-label">Agent reads it back</span>
-      <p><strong>Ask Q1:</strong> {readback.heroAnswer}</p>
-      <p><strong>Stop:</strong> {readback.heroUnresolved}</p>
+      <p class="works-with">Works with Claude Code, Codex, Cursor and other agents that use skills.</p>
     </div>
-    <span class="photo-label">Photo</span>
+
+    <div class="hero-scene" role="group" aria-label="Example round trip">
+      <svg class="route" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <defs>
+          <mask id="route-in-reveal" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+            <path class="reveal reveal-in" pathLength="1" d={routeIn} />
+          </mask>
+          <mask id="route-out-reveal" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+            <path class="reveal reveal-out" pathLength="1" d={routeOut} />
+          </mask>
+        </defs>
+        <path class="trail" mask="url(#route-in-reveal)" d={routeIn} />
+        <path class="trail" mask="url(#route-out-reveal)" d={routeOut} />
+        <path class="trail-ring" d="M44.2 11.6h0" /><path class="trail-dot" d="M44.2 11.6h0" />
+        <path class="trail-ring at-end" d="M99.2 54.6h0" /><path class="trail-dot at-end" d="M99.2 54.6h0" />
+      </svg>
+
+      <div class="scene-ask">
+        <p class="map-label">You ask</p>
+        <p class="bubble">“{readback.heroRequest}”</p>
+      </div>
+
+      <figure class="hero-paper" aria-label={`Page ${readback.pageId}, marked by hand`}>
+        <MarkedPage writing loading="eager" />
+      </figure>
+
+      <p class="map-label photo-label">You send a photo</p>
+
+      <div class="scene-reply">
+        <p class="map-label">Your agent replies</p>
+        <div class="reply-card">
+          <p><strong>Your blue question:</strong> {readback.heroAnswer}</p>
+          <p class="reply-open"><strong>Still open:</strong> {readback.heroUnresolved}</p>
+        </div>
+        <p class="scene-note">Illustrative example: a real Switchback page, with sample handwriting and reply.</p>
+      </div>
+
+      <svg class="north" viewBox="0 0 24 64" role="img" aria-label="North" focusable="false">
+        <text x="12" y="13" text-anchor="middle">N</text>
+        <path class="north-shaft" d="M12 62V22" /><path class="north-head" d="M5 30 12 18l7 12-7-3.5z" />
+      </svg>
+    </div>
   </div>
+  <p class="terrain-note">Sani Pass, Drakensberg · contours every 40&nbsp;m</p>
 </section>
+
+<style>
+  .hero {
+    --gutter: clamp(20px, 3.5vw, 58px);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    color: #f4f8f5;
+    background-color: var(--sb-forest-deep);
+    background-image:
+      radial-gradient(48% 42% at 96% 0%, rgb(196 226 210 / 0.16), rgb(196 226 210 / 0) 70%),
+      linear-gradient(90deg, rgb(6 24 23 / 0.58) 0%, rgb(6 24 23 / 0.3) 34%, rgb(6 24 23 / 0) 52%),
+      linear-gradient(180deg, rgb(6 24 23 / 0.42) 0%, rgb(6 24 23 / 0) 16%, rgb(6 24 23 / 0) 80%, rgb(6 24 23 / 0.4) 100%),
+      image-set(url("/images/terrain-sani-1440.webp") 1x, url("/images/terrain-sani-2880.webp") 2x);
+    background-size: cover;
+    background-position: center 46%;
+  }
+  .hero-stage {
+    position: relative;
+    max-width: 1600px;
+    min-height: clamp(660px, 50vw, 820px);
+    margin: 0 auto;
+    padding: 0 var(--gutter) 4.5rem;
+  }
+
+  /* Copy, set straight on the landscape. */
+  .hero-copy {
+    position: relative;
+    z-index: 3;
+    width: min(36.5%, 600px);
+    padding-top: clamp(40px, 5.6vw, 92px);
+  }
+  h1 {
+    margin: 0;
+    font: 540 clamp(2.9rem, 4vw, 4.5rem) / 1.03 var(--sb-font-heading);
+    letter-spacing: -0.032em;
+    text-wrap: balance;
+    text-shadow: 0 2px 30px rgb(4 18 17 / 0.35);
+  }
+  h1 span {
+    display: block;
+  }
+  .hero-lede {
+    max-width: 34rem;
+    margin: 1.6rem 0 0;
+    color: #d9e7df;
+    font-size: clamp(1rem, 1.18vw, 1.16rem);
+    line-height: 1.62;
+    text-shadow: 0 1px 14px rgb(4 18 17 / 0.5);
+  }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.6rem;
+    margin-top: 2rem;
+  }
+  .primary-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.2rem;
+    min-height: 58px;
+    padding: 0.85rem 1.3rem 0.85rem 1.4rem;
+    color: #17221b;
+    background: var(--sb-trail);
+    border-radius: 3px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 10px 28px rgb(1 16 15 / 0.32);
+    transition: background-color 160ms ease-out, transform 160ms ease-out;
+  }
+  .primary-action:hover {
+    background: #e2b65f;
+  }
+  .primary-action:active {
+    transform: translateY(1px);
+  }
+  .primary-action svg,
+  .secondary-action svg {
+    flex: none;
+    width: 1.25em;
+    height: 1.25em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .primary-action svg {
+    transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .primary-action:hover svg {
+    transform: translateX(3px);
+  }
+  .secondary-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0;
+    color: #f4f8f5;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: rgb(244 248 245 / 0.5);
+  }
+  .secondary-action:hover {
+    color: var(--sb-trail);
+    text-decoration-color: currentColor;
+  }
+  .secondary-action svg {
+    width: 1.05em;
+    height: 1.05em;
+  }
+  .hero a:focus-visible {
+    outline: 3px solid var(--sb-trail);
+    outline-offset: 4px;
+  }
+  .works-with {
+    margin: 1.35rem 0 0;
+    color: #b8cdc3;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  /* The round trip, laid on the map. Positions are shares of the scene. */
+  .hero-scene {
+    position: absolute;
+    inset: 0 var(--gutter);
+    z-index: 2;
+    pointer-events: none;
+  }
+  .map-label {
+    margin: 0 0 0.5rem;
+    color: #e9f1ec;
+    font-size: 0.7rem;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-shadow:
+      0 0 2px rgb(4 18 17 / 0.9),
+      0 1px 10px rgb(4 18 17 / 0.85);
+  }
+  .scene-ask {
+    position: absolute;
+    left: 35.6%;
+    top: 1%;
+  }
+  .bubble {
+    margin: 0;
+    padding: 0.7rem 0.85rem;
+    border: 1px solid rgb(233 241 236 / 0.42);
+    border-radius: 8px 8px 8px 2px;
+    background: rgb(10 33 31 / 0.88);
+    white-space: nowrap;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    box-shadow: 0 10px 26px rgb(1 14 13 / 0.3);
+  }
+  /* The page is the focal object: large, tilted, and running off the bottom of the map. */
+  .hero-paper {
+    position: absolute;
+    left: 39.5%;
+    top: 22.5%;
+    width: 41.5%;
+    margin: 0;
+    transform: rotate(1.6deg);
+    transform-origin: 50% 0;
+  }
+  .hero-paper :global(.marked-page) {
+    box-shadow:
+      0 2px 4px rgb(0 0 0 / 0.18),
+      18px 26px 38px rgb(1 14 13 / 0.5);
+  }
+  .photo-label {
+    position: absolute;
+    right: 0;
+    top: 33%;
+    white-space: nowrap;
+  }
+  .scene-reply {
+    position: absolute;
+    right: 0;
+    top: 54%;
+    width: 17.5%;
+  }
+  .scene-reply .map-label {
+    padding-right: 2.2rem;
+    text-align: right;
+  }
+  .reply-card {
+    border-radius: 8px 2px 8px 8px;
+    background: #f7f9f6;
+    color: #1d2a22;
+    box-shadow: 0 16px 34px rgb(1 14 13 / 0.38);
+  }
+  .reply-card p {
+    margin: 0;
+    padding: 0.8rem 0.9rem;
+    font-size: 0.9rem;
+    line-height: 1.48;
+  }
+  .reply-card .reply-open {
+    border-top: 1px solid #dfe5de;
+    color: #9a2c25;
+  }
+  .scene-note {
+    margin: 0.8rem 0 0;
+    color: #cfded6;
+    font-size: 0.7rem;
+    line-height: 1.45;
+    text-shadow: 0 1px 8px rgb(4 18 17 / 0.9);
+  }
+  .north {
+    position: absolute;
+    right: 0.4%;
+    bottom: 3%;
+    width: 16px;
+    height: 44px;
+    overflow: visible;
+  }
+  .north text {
+    fill: rgb(233 241 236 / 0.8);
+    font: 600 11px var(--sb-font-body);
+    letter-spacing: 0.04em;
+  }
+  .north-shaft {
+    fill: none;
+    stroke: rgb(233 241 236 / 0.72);
+    stroke-width: 1.4;
+  }
+  .north-head {
+    fill: rgb(233 241 236 / 0.72);
+    stroke: rgb(233 241 236 / 0.72);
+    stroke-width: 1;
+    stroke-linejoin: round;
+  }
+  .terrain-note {
+    position: absolute;
+    left: var(--gutter);
+    right: var(--gutter);
+    bottom: 1.2rem;
+    z-index: 3;
+    margin: 0;
+    color: rgb(214 230 222 / 0.72);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  /* The trail: dashes revealed along their length, from the request into the page, then back. */
+  .route {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+  .route path {
+    fill: none;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+  }
+  .trail {
+    stroke: var(--sb-trail);
+    stroke-width: 3.5;
+    stroke-dasharray: 10 9;
+  }
+  .reveal {
+    stroke: #fff;
+    stroke-width: 16;
+    stroke-dasharray: 1 1;
+    stroke-dashoffset: 0;
+  }
+  .trail-ring {
+    stroke: #f7f9f6;
+    stroke-width: 22;
+  }
+  .trail-dot {
+    stroke: var(--sb-trail);
+    stroke-width: 14;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .scene-ask {
+      animation: arrive 0.6s 0.05s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    .reveal-in {
+      animation: reveal 0.6s 0.35s cubic-bezier(0.33, 0, 0.2, 1) both;
+    }
+    .reveal-out {
+      animation: reveal 0.8s 2.55s cubic-bezier(0.33, 0, 0.2, 1) both;
+    }
+    .photo-label {
+      animation: arrive 0.5s 2.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    .scene-reply,
+    .at-end {
+      animation: arrive 0.6s 3.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+  }
+  @keyframes reveal {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes arrive {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Narrower desktops: smaller type keeps the headline on four clean lines. */
+  @media (max-width: 1279px) {
+    .hero-copy {
+      width: 37%;
+    }
+    h1 {
+      font-size: clamp(2.6rem, 3.75vw, 4.5rem);
+    }
+    .hero-paper {
+      left: 40%;
+      width: 40%;
+    }
+    .scene-ask {
+      left: 37.5%;
+    }
+    .scene-reply {
+      width: 18.5%;
+    }
+  }
+
+  /* Tablet and phone: one column, the round trip read top to bottom along a dashed trail. */
+  @media (max-width: 1023px) {
+    .hero {
+      background-position: 30% top;
+    }
+    .hero-stage {
+      min-height: 0;
+      padding-bottom: 4.5rem;
+    }
+    h1 {
+      font-size: clamp(2.6rem, 6.2vw, 4rem);
+    }
+    .hero-copy {
+      width: min(100%, 700px);
+      padding-top: clamp(28px, 6vw, 56px);
+    }
+    .hero-scene {
+      position: relative;
+      inset: auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.1rem;
+      max-width: 620px;
+      margin-top: 2.6rem;
+      padding-left: 2.1rem;
+    }
+    .hero-scene::before {
+      content: "";
+      position: absolute;
+      left: 0.55rem;
+      top: 0.6rem;
+      bottom: 4.5rem;
+      border-left: 3px dashed var(--sb-trail);
+    }
+    .route,
+    .north {
+      display: none;
+    }
+    .scene-ask,
+    .hero-paper,
+    .photo-label,
+    .scene-reply {
+      position: relative;
+      inset: auto;
+      width: auto;
+      animation: none;
+    }
+    .scene-ask {
+      max-width: 330px;
+    }
+    .bubble {
+      white-space: normal;
+    }
+    .hero-paper {
+      width: min(100%, 440px);
+      margin: 0.6rem 0 0 0.4rem;
+      transform: rotate(1.2deg);
+    }
+    .photo-label {
+      justify-self: start;
+      margin: 0.7rem 0 0;
+    }
+    .scene-reply {
+      max-width: 340px;
+    }
+    .scene-reply .map-label {
+      padding-right: 0;
+      text-align: left;
+    }
+    .terrain-note {
+      bottom: 1.5rem;
+    }
+  }
+  @media (max-width: 1023px) and (min-width: 700px) {
+    .hero-scene {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+      max-width: none;
+      column-gap: 2.5rem;
+    }
+    .hero-paper {
+      grid-column: 2;
+      grid-row: 1 / span 3;
+      margin-top: 0;
+    }
+    .scene-ask,
+    .photo-label,
+    .scene-reply {
+      grid-column: 1;
+    }
+    .photo-label {
+      align-self: end;
+    }
+  }
+  @media (max-width: 600px) {
+    .hero {
+      background-image:
+        linear-gradient(180deg, rgb(6 24 23 / 0.62) 0%, rgb(6 24 23 / 0.45) 32%, rgb(6 24 23 / 0.2) 48%, rgb(6 24 23 / 0.45) 100%),
+        url("/images/terrain-sani-mobile-780.webp");
+      background-position: center top;
+    }
+    h1 {
+      font-size: clamp(2.3rem, 10.1vw, 3.4rem);
+      line-height: 1.07;
+    }
+    .hero-lede {
+      margin-top: 1.1rem;
+      font-size: 1rem;
+    }
+    .hero-actions {
+      margin-top: 1.5rem;
+    }
+    .primary-action {
+      flex: 1 1 100%;
+      min-height: 54px;
+    }
+    .works-with {
+      margin-top: 1rem;
+    }
+    .hero-scene {
+      margin-top: 2rem;
+    }
+  }
+</style>

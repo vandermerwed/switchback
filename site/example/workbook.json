@@ -1,7 +1,7 @@
 {
   "switchback": 1,
   "style": "sitting",
-  "title": "Before the next handoff",
+  "title": "The team-day talk",
   "paper": "A4",
   "round": 1,
   "timebox": "30 min",
@@ -11,40 +11,40 @@
       "component": "cover",
       "title": "Begin here",
       "data": {
-        "question": "What is the decision we are avoiding?",
+        "question": "What should my 20-minute talk leave the team with?",
         "timebox": "30 min",
         "howto": [
-          "Work through one question at a time, in ink.",
-          "Use Ask for a question, Stop for an unresolved concern, and Crux for the central trade-off.",
-          "Photograph the pages and return them to the agent."
+          "Write freely in black. Use a colour only for what you want the agent to act on.",
+          "Blue for a question, red for a doubt, the highlighter for the one thing that matters.",
+          "Photograph the pages and send them back."
         ]
       }
     },
     {
       "id": "W1-P2",
       "component": "sheet",
-      "title": "Before the next handoff",
-      "prompt": "What is the decision we are avoiding?",
+      "title": "What should stick",
+      "prompt": "What should they remember a week later?",
       "data": { "blocks": [{ "type": "lines", "count": 18 }] }
     },
     {
       "id": "W1-P3",
       "component": "commit",
       "title": "Choose the next move",
-      "prompt": "What will we try, and what remains undecided?",
+      "prompt": "What will you try first, and what is still open?",
       "data": {}
     },
     {
       "id": "W1-P4",
       "component": "question-queue",
       "title": "Questions for the agent",
-      "prompt": "Write what you want answered when the pages return.",
+      "prompt": "Write what you want answered when the pages come back.",
       "data": {}
     },
     {
       "id": "W1-P5",
       "component": "return-checklist",
-      "title": "Return the pages",
+      "title": "Send the pages back",
       "data": {}
     }
   ]
