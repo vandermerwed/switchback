@@ -1,7 +1,8 @@
 ---
 import Hero from "../components/Hero.astro";
 import Install from "../components/Install.astro";
-import WorkedExample from "../components/WorkedExample.astro";
+import RoundTrip from "../components/RoundTrip.astro";
+import Uses from "../components/Uses.astro";
 import "../styles/global.css";
 ---
 
@@ -12,19 +13,23 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#173b39" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta name="description" content="Switchback is a paper-to-agent loop: print a focused page, think in ink, then return it for readback." />
-    <title>Switchback | Paper for the next handoff</title>
+    <link rel="preload" href="/fonts/kalam-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <meta name="description" content="Switchback is a skill for your AI agent. It prints a page for what you're working on; you work it with a pen, send a photo, and your agent carries on from what you wrote." />
+    <title>Switchback | Step away from the agents. Think it through on paper.</title>
   </head>
   <body>
+    <Fragment set:html={`<!--
+THESIS: Show the loop instead of naming it: one everyday request, a talk, followed from chat to paper to reply. Refuses the feature-grid tool landing page.
+OWN-WORLD: Contour Return. Real Sani Pass relief in forest green #173b39 / #0f2826, trail-ochre #d1a34b dashed routes, white printed pages carrying Kalam handwriting in pen blue, red and highlighter; Besley headings, Inter text, spaced-caps map labels.
+STORY: The visitor learns it is an agent skill that prints a page, sees the marks and the reply, learns what each pen means in plain words, sees what it is for, installs.
+FIRST VIEWPORT: Headline and lede on the dark plateau at left; the marked page centre-right, tilted; the request bubble above-left with a trail into the page; a return trail to the reply card at right; ochre Install button under the lede.
+FORM: Pinned by the user: the approved Contour Return comp, .impeccable/mocks/decision/contour-return.png. No seed roll (pinned).
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+-->`} />
     <Hero />
     <main>
-      <section class="useful-pause" aria-labelledby="pause-title">
-        <div>
-          <h2 id="pause-title">A useful pause</h2>
-          <p>Working with agents all day can turn your own thinking into a string of quick replies. A printed page slows that down on purpose. It holds one question and nothing on it asks for your attention. When you come back, the agent picks up from what you wrote.</p>
-        </div>
-      </section>
-      <WorkedExample />
+      <RoundTrip />
+      <Uses />
       <Install />
     </main>
   </body>

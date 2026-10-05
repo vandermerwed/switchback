@@ -1,0 +1,9 @@
+node_modules/
+tiles/
+out/
+package-lock.json
+*-shade.png
+*-contours.svg
+*-spots.json
+*-compose.html
+

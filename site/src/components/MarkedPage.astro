@@ -1,0 +1,203 @@
+---
+// The worked example's page W1-P2: the renderer's own unmarked print, with the person's ink
+// laid over it as live text, so it stays readable, selectable and translatable.
+import readback from "../../example/readback.json";
+
+interface Props {
+  /** Play the ink in once, line by line, as if it were being written. */
+  writing?: boolean;
+  loading?: "eager" | "lazy";
+  class?: string;
+}
+const { writing = false, loading = "lazy", class: className } = Astro.props;
+
+// Where the sheet's ruled lines sit, measured from the renderer's A4 layout: the first rule's
+// bottom edge is 15.20% down the page, and the rules repeat every 3.3647% of the page height.
+const rule = (line: number) => `${(15.2 + (line - 1) * 3.3647).toFixed(2)}%`;
+const ask = readback.marks.find((mark) => mark.role === "ask")!;
+const stop = readback.marks.find((mark) => mark.role === "stop")!;
+const crux = readback.marks.find((mark) => mark.role === "crux")!;
+const lines = [
+  ...readback.notes.map((note) => ({ ...note, kind: note.struck ? "struck" : "note" })),
+  { ...ask, kind: "ask" },
+  { ...stop, kind: "stop" },
+  { ...crux, kind: "crux" },
+].sort((a, b) => a.line - b.line);
+---
+
+<div class:list={["marked-page", { "is-writing": writing }, className]}>
+  <img
+    src="/example/generated-page.png"
+    width="1588"
+    height="2248"
+    loading={loading}
+    decoding="async"
+    alt={`Printed Switchback page ${readback.pageId}, “What should stick”, with the prompt “${readback.printedPrompt}” and ruled lines, written on by hand.`}
+  />
+  <div class="ink-layer">
+    {lines.map((line, index) => (
+      <p
+        class:list={["ink", `ink-${line.kind}`, { "is-indented": "indent" in line && line.indent }]}
+        style={`--rule:${rule(line.line)};--i:${index}`}
+      >
+        {line.kind === "ask" && (
+          <span class="ask-code">
+            {ask.mark}
+            <svg viewBox="0 0 120 70" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M96 14C78 3 34 2 15 16C-1 28 6 52 34 61c26 8 67 1 78-19c8-15-6-32-32-34" />
+            </svg>
+          </span>
+        )}
+        <span class="ink-text">
+          {line.text}
+          {line.kind === "stop" && (
+            <svg class="ink-underline" viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M3 8c37-4 87 1 127-2s55-1 67-3" />
+            </svg>
+          )}
+          {line.kind === "struck" && (
+            <svg class="ink-strike" viewBox="0 0 200 10" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M2 6c58-3 138 1 196-2" />
+            </svg>
+          )}
+        </span>
+      </p>
+    ))}
+  </div>
+</div>
+
+<style>
+  .marked-page {
+    position: relative;
+    container-type: inline-size;
+    aspect-ratio: 1588 / 2248;
+    background: #fff;
+    color: var(--sb-pen-black);
+  }
+  .marked-page > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .ink-layer {
+    position: absolute;
+    inset: 0;
+    isolation: isolate;
+  }
+  .ink {
+    position: absolute;
+    left: 8.4%;
+    right: 7%;
+    bottom: calc(100% - var(--rule) - 0.25cqi);
+    margin: 0;
+    font: 400 3.35cqi / 1 var(--sb-font-hand);
+    letter-spacing: 0.005em;
+    transform: rotate(-0.6deg);
+    transform-origin: left bottom;
+  }
+  .ink:nth-child(odd) {
+    transform: rotate(-1.1deg) translateX(0.4cqi);
+  }
+  .ink.is-indented {
+    left: 13.5%;
+  }
+  .ink-text {
+    position: relative;
+  }
+  /* The coloured marks are written a little larger than the notes, as people tend to. */
+  .ink-ask,
+  .ink-stop,
+  .ink-crux {
+    font-size: 3.7cqi;
+  }
+  .ink-ask {
+    display: flex;
+    align-items: baseline;
+    gap: 2.4cqi;
+    color: var(--sb-pen-blue);
+    left: 9.5%;
+  }
+  .ask-code {
+    position: relative;
+    flex: none;
+    font-weight: 700;
+    padding: 0 0.3em;
+  }
+  .ask-code svg {
+    position: absolute;
+    max-width: none;
+    inset: -0.32em -0.42em -0.22em -0.34em;
+    width: calc(100% + 0.76em);
+    height: calc(100% + 0.54em);
+    overflow: visible;
+  }
+  .ask-code path,
+  .ink-underline path,
+  .ink-strike path {
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+  }
+  .ask-code path {
+    stroke-width: max(1.2px, 0.36cqi);
+  }
+  .ink-stop {
+    color: var(--sb-pen-red);
+  }
+  .ink-underline,
+  .ink-strike {
+    position: absolute;
+    max-width: none;
+    left: -0.1em;
+    width: calc(100% + 0.25em);
+    overflow: visible;
+  }
+  .ink-underline {
+    bottom: -0.22em;
+    height: 0.3em;
+  }
+  .ink-underline path {
+    stroke-width: max(1.1px, 0.32cqi);
+  }
+  .ink-strike {
+    top: 0.42em;
+    height: 0.18em;
+  }
+  .ink-strike path {
+    stroke: var(--sb-pen-black);
+    stroke-width: max(1px, 0.28cqi);
+  }
+  .ink-struck .ink-text {
+    color: color-mix(in srgb, var(--sb-pen-black) 82%, white);
+  }
+  /* A highlighter pass: translucent, wider than the words, a little crooked. */
+  .ink-crux .ink-text::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0.02em -0.32em -0.12em -0.24em;
+    background: var(--sb-crux);
+    opacity: 0.86;
+    mix-blend-mode: multiply;
+    border-radius: 0.12em 0.42em 0.2em 0.34em / 0.4em 0.16em 0.36em 0.2em;
+    transform: rotate(-1.4deg) skewX(-6deg);
+  }
+
+  .is-writing .ink {
+    animation: write 0.5s calc(0.95s + var(--i) * 0.2s) cubic-bezier(0.45, 0, 0.55, 1) both;
+  }
+  @keyframes write {
+    from {
+      clip-path: inset(-60% 100% -60% -12%);
+    }
+    to {
+      clip-path: inset(-60% -12% -60% -12%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .is-writing .ink {
+      animation: none;
+    }
+  }
+</style>

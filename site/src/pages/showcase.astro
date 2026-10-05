@@ -1,7 +1,8 @@
 ---
 import "../styles/global.css";
+import AgentReply from "../components/AgentReply.astro";
+import MarkedPage from "../components/MarkedPage.astro";
 import SiteNav from "../components/SiteNav.astro";
-import WorkedExample from "../components/WorkedExample.astro";
 import workbooks from "../generated/showcase.json";
 
 const STYLE_INTENT = {
@@ -54,8 +55,13 @@ const STYLE_INTENT = {
           })}
         </div>
       </div>
-      <div class="marked-intro"><h2>When the page returns.</h2><p>This illustrative marked sheet and its readback are one matched example. The marks are authored; the unmarked sheet is renderer output.</p></div>
-      <WorkedExample />
+      <section class="returned" aria-labelledby="returned-title">
+        <div class="marked-intro"><h2 id="returned-title">When the page returns.</h2><p>One matched, illustrative example: the page is renderer output, and the handwriting and the reply were written for it. <a href="/#how-it-works">See the whole round trip</a></p></div>
+        <div class="returned-pair">
+          <figure class="returned-page"><MarkedPage /><figcaption>Illustrative example: page 2 of a sitting to plan a talk, with sample handwriting.</figcaption></figure>
+          <AgentReply />
+        </div>
+      </section>
     </main>
     <footer class="site-footer"><span>Switchback · paper back to the agent</span><a href="/changelog/">Changelog</a><a href="/privacy/">Privacy</a></footer>
   </body>
@@ -94,7 +100,11 @@ const STYLE_INTENT = {
   .feature-caption p { color: var(--sb-ink-soft); line-height: 1.5; }
   .feature-caption a { color: var(--sb-ink); font-weight: 600; text-underline-offset: .25em; }
   .marked-intro { padding: 6rem clamp(24px, 4vw, 70px) 0; }
-  .gallery :global(.worked-example) { padding-top: 2rem; }
-  @media (max-width: 900px) { .gallery-grid { grid-template-columns: minmax(0, 1fr); } .gallery-index { position: static; display: flex; overflow-x: auto; gap: 1.5rem; padding: 1.5rem 0 0; min-width: 0; max-width: 100%; } .gallery-index a { flex: 0 0 140px; } .workbook { padding-top: 3rem; } }
+  .marked-intro a { color: var(--sb-ink); font-weight: 600; }
+  .returned-pair { display: grid; grid-template-columns: minmax(0, 460px) minmax(0, 520px); gap: clamp(2rem, 5vw, 5rem); align-items: center; padding: 3rem clamp(24px, 4vw, 70px) 7rem; }
+  .returned-page { margin: 0; transform: rotate(-1.2deg); }
+  .returned-page :global(.marked-page) { box-shadow: 10px 18px 32px rgba(20, 40, 34, .18); }
+  .returned-page figcaption { margin-top: 1rem; color: var(--sb-ink-soft); font-size: .8rem; line-height: 1.5; }
+  @media (max-width: 900px) { .returned-pair { grid-template-columns: minmax(0, 1fr); } .returned-page { width: min(100%, 440px); } .gallery-grid { grid-template-columns: minmax(0, 1fr); } .gallery-index { position: static; display: flex; overflow-x: auto; gap: 1.5rem; padding: 1.5rem 0 0; min-width: 0; max-width: 100%; } .gallery-index a { flex: 0 0 140px; } .workbook { padding-top: 3rem; } }
   @media (max-width: 640px) { .gallery-intro, .marked-intro { padding-inline: 20px; } .gallery-grid { padding-inline: 20px; } .gallery-intro h1, .marked-intro h2 { font-size: 3.4rem; } .feature-layout { display: block; } .feature-paper { width: min(100%, 350px); } .feature-paper iframe { transform: scale(.44); } .feature-caption { padding-top: 1rem; } .workbook-heading { display: block; } .workbook-heading h2 { margin-bottom: .2rem; } .workbook-heading p { margin-bottom: 2rem; } }
 </style>

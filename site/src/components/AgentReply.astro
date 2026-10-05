@@ -1,0 +1,70 @@
+---
+// The agent's reply after the photo comes back, written to match the example's marks.
+import readback from "../../example/readback.json";
+import MarkedPage from "./MarkedPage.astro";
+---
+
+<div class="chat" role="group" aria-label="The reply in your agent's chat">
+  <div class="msg msg-you">
+    <p class="who">You</p>
+    <div class="photo-msg">
+      <span class="photo-thumb" aria-hidden="true"><MarkedPage /></span>
+      <p>One photo of page {readback.pageId}</p>
+    </div>
+  </div>
+  <div class="msg msg-agent">
+    <p class="who">Your agent</p>
+    <dl>
+      <div><dt>Your question first</dt><dd>{readback.answerFirst}</dd></div>
+      <div><dt>Still open</dt><dd>{readback.unresolved}</dd></div>
+      <div><dt>Crossed out</dt><dd>{readback.struck}</dd></div>
+      <div><dt>Next</dt><dd>{readback.nextMove}</dd></div>
+    </dl>
+    <p class="uncertainty">{readback.uncertainty}</p>
+  </div>
+</div>
+
+<style>
+  .photo-msg {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.6rem 0.9rem 0.6rem 0.6rem;
+    border-radius: 9px 9px 2px 9px;
+    background: #1c4440;
+  }
+  .photo-msg p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  .photo-thumb {
+    flex: none;
+    width: 46px;
+    transform: rotate(-3deg);
+    box-shadow: 0 3px 8px rgb(0 0 0 / 0.35);
+  }
+  dl {
+    margin: 0;
+    display: grid;
+    gap: 0.85rem;
+  }
+  dt {
+    margin: 0 0 0.2rem;
+    color: #f4f8f5;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  dd {
+    margin: 0;
+    color: #cfdcd5;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+  .uncertainty {
+    margin: 1rem 0 0;
+    padding-top: 0.85rem;
+    border-top: 1px solid rgb(230 239 233 / 0.14);
+    color: #9fbab0;
+    font-size: 0.8rem;
+  }
+</style>

@@ -1,0 +1,4 @@
+{
+  "prompt": "Origin, not generated: real elevation at Sani Pass, Drakensberg (SRTM and GMTED2010 via AWS Open Data Terrain Tiles, courtesy of the U.S. Geological Survey), rendered by site/scripts/terrain/topo.mjs and compose.mjs: zoom 13 around -29.595, 29.31, an 896-pixel window resampled to 2304, north-west hillshade, valley mist derived from elevation, 40 m contours, spot heights. No image-generation model was used.",
+  "createdAt": "2026-10-05T14:08:21.582Z"
+}

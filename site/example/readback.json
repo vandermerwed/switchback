@@ -1,16 +1,26 @@
 {
   "pageId": "W1-P2",
-  "printedPrompt": "What is the decision we are avoiding?",
-  "marks": [
-    { "role": "ask", "label": "Ask", "mark": "Q1", "text": "What are we really optimizing for?" },
-    { "role": "stop", "label": "Stop", "text": "We have not decided what to say no to" },
-    { "role": "crux", "label": "Crux", "text": "Trade breadth for depth in v1" }
+  "printedPrompt": "What should they remember a week later?",
+  "request": "I'm giving a 20-minute talk at our team day next week. Help me plan it on paper.",
+  "heroRequest": "Help me plan my talk, on paper.",
+  "confirmation": "Here's the plan: one sitting, five pages, about 30 minutes. Page 2 asks what they should remember a week later. Your blue pen, red pen and highlighter carry the meanings. Shall I make the PDF?",
+  "notes": [
+    { "line": 1, "text": "The March outage, fixed in an hour" },
+    { "line": 2, "text": "because someone asked for help at once", "indent": true },
+    { "line": 3, "text": "Pairing on the big release" },
+    { "line": 4, "text": "The new dashboard", "struck": true }
   ],
-  "answerFirst": "You asked what you are really optimizing for. Your Crux answers it. Depth over breadth in v1.",
-  "heroAnswer": "Depth over breadth in v1.",
-  "unresolved": "What v1 leaves out is still open, so I will not treat it as settled.",
-  "heroUnresolved": "What v1 leaves out is still open.",
-  "nextMove": "Plan a smaller v1 built for depth. I can print one page to decide what it says no to.",
+  "marks": [
+    { "role": "ask", "label": "Ask", "mark": "Q1", "text": "How much fits in 20 minutes?", "line": 6 },
+    { "role": "stop", "label": "Stop", "text": "The live demo might fail", "line": 8 },
+    { "role": "crux", "label": "Crux", "text": "Ask for help earlier.", "line": 10 }
+  ],
+  "answerFirst": "You asked how much fits in 20 minutes. About three ideas, each with one story. Open with the line you highlighted, ask for help earlier, and let the March outage carry it.",
+  "heroAnswer": "About three ideas, each with one story. Open with your highlighted line.",
+  "unresolved": "The live demo might fail, so I won't build the talk around it until you decide.",
+  "heroUnresolved": "the live demo. I won't plan around it yet.",
+  "struck": "You crossed out the new dashboard, so it stays out.",
+  "nextMove": "Pick the three stories. I can print one page to sort them.",
   "uncertainty": "Read from 1 photo. Tell me if I misread a mark.",
-  "crux": "Trade breadth for depth in v1"
+  "crux": "Ask for help earlier."
 }
