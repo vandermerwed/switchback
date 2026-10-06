@@ -6,6 +6,7 @@ import { legendStrip, renderDocument, renderPage } from "../shell/page";
 import { VERSION } from "../version";
 import { article, error, hasErrors, warning } from "./diagnostics";
 import { resolveKit } from "./kit";
+import { resolveOrientation } from "./orientation";
 import { assignPens } from "./pens";
 import { alternativesFor, chooseVariant, RENAMED, resolveComponent } from "./resolve";
 import { parseSpec } from "./spec";
@@ -179,10 +180,18 @@ export function buildDocument(raw: unknown, opts: BuildOptions = {}): BuildResul
       );
     }
 
+    const orientation = resolveOrientation({
+      page: page.orientation,
+      preset: preset?.orientation,
+      variant: choice.variant.orientation,
+      rule: base.orientation?.(data, choice.variant.id),
+      component: meta.orientation,
+    });
+
     for (const d of base.checks?.(data, {
       variant: choice.variant.id,
       paper,
-      orientation: "portrait",
+      orientation,
       pageId: page.id,
     }) ?? [])
       diagnostics.push({ ...d, page: d.page ?? page.id, path: d.path ?? `/pages/${i}` });
@@ -196,7 +205,7 @@ export function buildDocument(raw: unknown, opts: BuildOptions = {}): BuildResul
     };
     const ctx: RenderContext = {
       paper,
-      orientation: "portrait",
+      orientation,
       variant: choice.variant.id,
       kit,
       pens: mapping,
@@ -223,6 +232,7 @@ export function buildDocument(raw: unknown, opts: BuildOptions = {}): BuildResul
           styleId === "proof" ? "proof" : "roles",
         ),
         attribution: preset?.footer,
+        orientation,
         tag: style?.split_on && afterSplit ? `${preset?.id ?? meta.id} · after the break` : undefined,
       }),
     );
@@ -231,7 +241,7 @@ export function buildDocument(raw: unknown, opts: BuildOptions = {}): BuildResul
       component: meta.id,
       preset: preset?.id ?? null,
       variant: choice.variant.id,
-      orientation: "portrait",
+      orientation,
       title,
       prompt,
       readback: choice.variant.readback ?? meta.readback ?? "",
