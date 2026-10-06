@@ -7,7 +7,7 @@ const cat = loadCatalogue();
 const OFF_SHELF = ["cover", "return-checklist", "step-away", "player-aid", "tokens", "zones", "playmat"];
 
 describe("the first shelf", () => {
-  it("has the eight sorted collections and Game dev", () => {
+  it("has the eight sorted collections and Game Development", () => {
     expect([...cat.collections.keys()]).toEqual([
       "business",
       "design",
@@ -30,7 +30,7 @@ describe("the first shelf", () => {
     expect(ids.filter((id) => collectionsOf(cat, id).length === 0)).toEqual([]);
   });
 
-  it("gives Game dev four practical presets of existing components", () => {
+  it("gives Game Development four practical presets of existing components", () => {
     const own = cat.collections.get("game-dev")!.presets;
     expect(own.map((p) => [p.id, p.extends, p.basis])).toEqual([
       ["core-loop", "node-map", "practice"],
@@ -44,7 +44,7 @@ describe("the first shelf", () => {
     }
   });
 
-  it("prints each Game dev template whole, in its orientation", () => {
+  it("prints each Game Development template whole, in its orientation", () => {
     const expected = {
       "game-one-pager": "landscape",
       "feature-cut": "landscape",

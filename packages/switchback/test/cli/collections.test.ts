@@ -16,7 +16,9 @@ describe("switchback collections", () => {
     const io = captureIo();
     expect(await collectionsCommand([], io, env)).toBe(0);
     const text = io.stdout.join("\n");
-    expect(text).toMatch(/^game-dev\s+11\s+Game dev: For designing, scoping and playtesting a game\.$/m);
+    expect(text).toMatch(
+      /^game-dev\s+11\s+Game Development: For designing, scoping and playtesting a game\.$/m,
+    );
     expect(text).toMatch(/\n9 collections$/);
   });
 
@@ -70,7 +72,7 @@ describe("show <collection>", () => {
     const io = captureIo();
     expect(await showCommand(["game-dev"], io, env)).toBe(0);
     const text = io.stdout.join("\n");
-    expect(text).toMatch(/^Game dev \(game-dev\) · collection · 11 templates$/m);
+    expect(text).toMatch(/^Game Development \(game-dev\) · collection · 11 templates$/m);
     expect(text).toMatch(/^its own:\n {2}core-loop/m);
     expect(text).toMatch(/^ {2}feature-cut\s+Feature cut\s+practical$/m);
     expect(text).toMatch(/^includes:\n {2}ten-bad-ideas/m);

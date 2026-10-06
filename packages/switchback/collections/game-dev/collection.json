@@ -1,6 +1,6 @@
 {
   "id": "game-dev",
-  "name": "Game dev",
+  "name": "Game Development",
   "description": "For designing, scoping and playtesting a game.",
   "includes": [
     "ten-bad-ideas",
