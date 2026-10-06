@@ -12,13 +12,13 @@ describe("switchback validate", () => {
   it("validates the registry when run without a spec", async () => {
     const io = captureIo();
     expect(await validateCommand([], io, env)).toBe(0);
-    expect(io.stdout.join("\n")).toMatch(/^ok: 37 components, 11 presets/);
+    expect(io.stdout.join("\n")).toMatch(/^ok: 37 components, 15 presets, 9 collections/);
   });
 
   it("passes the registry in --strict mode now that every item is graded", async () => {
     const io = captureIo();
     expect(await validateCommand(["--strict"], io, env)).toBe(0);
-    expect(io.stdout.join("\n")).toMatch(/^ok: 37 components, 11 presets \(strict\)/);
+    expect(io.stdout.join("\n")).toMatch(/^ok: 37 components, 15 presets, 9 collections \(strict\)/);
   });
 
   it("validates a spec without writing anything", async () => {

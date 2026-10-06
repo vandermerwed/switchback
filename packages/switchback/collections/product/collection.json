@@ -1,0 +1,16 @@
+{
+  "id": "product",
+  "name": "Product",
+  "description": "For choosing what to build, testing assumptions and scoping.",
+  "includes": [
+    "lean-canvas",
+    "assumption-audit",
+    "impact-effort",
+    "options-criteria",
+    "small-experiment",
+    "pre-mortem",
+    "card-sort",
+    "perspective-swap",
+    "now-next-later"
+  ]
+}

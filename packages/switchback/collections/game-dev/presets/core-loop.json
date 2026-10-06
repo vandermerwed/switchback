@@ -1,0 +1,14 @@
+{
+  "id": "core-loop",
+  "kind": "preset",
+  "extends": "node-map",
+  "name": "Core loop",
+  "tags": ["create", "diagnose"],
+  "basis": "practice",
+  "data": {
+    "center": "Core loop",
+    "hint": "One step of the loop per circle: what the player does, gets, grows and comes back for. Label every arrow with a verb."
+  },
+  "attribution": "The core loop diagram, common across game design",
+  "licence": "idea; no restriction"
+}

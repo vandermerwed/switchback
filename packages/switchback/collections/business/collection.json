@@ -1,0 +1,15 @@
+{
+  "id": "business",
+  "name": "Business",
+  "description": "For business models, stakeholders and the bets a business makes.",
+  "includes": [
+    "business-model-canvas",
+    "lean-canvas",
+    "swot",
+    "power-interest",
+    "options-criteria",
+    "assumption-audit",
+    "pre-mortem",
+    "forecast"
+  ]
+}

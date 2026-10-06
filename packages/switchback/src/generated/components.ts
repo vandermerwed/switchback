@@ -149,6 +149,19 @@ import preset_playmat from "../../presets/playmat.json";
 import preset_power_interest from "../../presets/power-interest.json";
 import preset_start_stop_continue from "../../presets/start-stop-continue.json";
 import preset_swot from "../../presets/swot.json";
+import collection_business from "../../collections/business/collection.json";
+import collection_design from "../../collections/design/collection.json";
+import collection_engineering from "../../collections/engineering/collection.json";
+import collection_game_dev from "../../collections/game-dev/collection.json";
+import collection_game_dev_preset_core_loop from "../../collections/game-dev/presets/core-loop.json";
+import collection_game_dev_preset_feature_cut from "../../collections/game-dev/presets/feature-cut.json";
+import collection_game_dev_preset_game_one_pager from "../../collections/game-dev/presets/game-one-pager.json";
+import collection_game_dev_preset_playtest_notes from "../../collections/game-dev/presets/playtest-notes.json";
+import collection_learning from "../../collections/learning/collection.json";
+import collection_planning from "../../collections/planning/collection.json";
+import collection_product from "../../collections/product/collection.json";
+import collection_productivity from "../../collections/productivity/collection.json";
+import collection_systems_thinking from "../../collections/systems-thinking/collection.json";
 
 export const components: ComponentModule[] = [
   { meta: meta_assumption_audit as unknown as ComponentModule["meta"], render: render_assumption_audit, css: css_assumption_audit, examples: { "default": ex_assumption_audit_default } as ComponentModule["examples"] },
@@ -193,6 +206,15 @@ export const components: ComponentModule[] = [
 export const presets: PresetMeta[] = [preset_business_model_canvas as unknown as PresetMeta, preset_dashboard as unknown as PresetMeta, preset_eisenhower as unknown as PresetMeta, preset_impact_effort as unknown as PresetMeta, preset_kanban as unknown as PresetMeta, preset_lean_canvas as unknown as PresetMeta, preset_now_next_later as unknown as PresetMeta, preset_playmat as unknown as PresetMeta, preset_power_interest as unknown as PresetMeta, preset_start_stop_continue as unknown as PresetMeta, preset_swot as unknown as PresetMeta];
 
 export const collections: CollectionModule[] = [
+  { dir: "business", meta: collection_business as unknown as CollectionModule["meta"], presets: [] },
+  { dir: "design", meta: collection_design as unknown as CollectionModule["meta"], presets: [] },
+  { dir: "engineering", meta: collection_engineering as unknown as CollectionModule["meta"], presets: [] },
+  { dir: "game-dev", meta: collection_game_dev as unknown as CollectionModule["meta"], presets: [collection_game_dev_preset_core_loop as unknown as PresetMeta, collection_game_dev_preset_feature_cut as unknown as PresetMeta, collection_game_dev_preset_game_one_pager as unknown as PresetMeta, collection_game_dev_preset_playtest_notes as unknown as PresetMeta] },
+  { dir: "learning", meta: collection_learning as unknown as CollectionModule["meta"], presets: [] },
+  { dir: "planning", meta: collection_planning as unknown as CollectionModule["meta"], presets: [] },
+  { dir: "product", meta: collection_product as unknown as CollectionModule["meta"], presets: [] },
+  { dir: "productivity", meta: collection_productivity as unknown as CollectionModule["meta"], presets: [] },
+  { dir: "systems-thinking", meta: collection_systems_thinking as unknown as CollectionModule["meta"], presets: [] },
 ];
 
 export const skipped: string[] = [];

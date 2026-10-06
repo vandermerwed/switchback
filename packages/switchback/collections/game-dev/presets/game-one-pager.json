@@ -1,0 +1,66 @@
+{
+  "id": "game-one-pager",
+  "kind": "preset",
+  "extends": "zones",
+  "name": "Game one-pager",
+  "tags": ["plan", "create"],
+  "basis": "practice",
+  "data": {
+    "zones": [
+      "Pitch",
+      "Biggest risk",
+      "Core fantasy",
+      "Core loop",
+      "Win and lose",
+      "Art and sound",
+      "Player verbs",
+      "Scope: in and out"
+    ],
+    "layout": [
+      {
+        "col": 1,
+        "row": 1,
+        "colSpan": 7
+      },
+      {
+        "col": 8,
+        "row": 1,
+        "colSpan": 3
+      },
+      {
+        "col": 1,
+        "row": 2,
+        "colSpan": 2
+      },
+      {
+        "col": 3,
+        "row": 2,
+        "colSpan": 4,
+        "rowSpan": 2
+      },
+      {
+        "col": 7,
+        "row": 2,
+        "colSpan": 2
+      },
+      {
+        "col": 9,
+        "row": 2,
+        "colSpan": 2,
+        "rowSpan": 2
+      },
+      {
+        "col": 1,
+        "row": 3,
+        "colSpan": 2
+      },
+      {
+        "col": 7,
+        "row": 3,
+        "colSpan": 2
+      }
+    ]
+  },
+  "attribution": "The one-page game design document, a common studio format",
+  "licence": "idea; no restriction"
+}

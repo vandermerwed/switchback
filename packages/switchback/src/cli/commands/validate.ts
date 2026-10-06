@@ -23,11 +23,14 @@ export async function validateCommand(argv: string[], io: Io, env: NodeJS.Proces
   if (!specPath) {
     const parts = catalogueParts();
     const diagnostics = validateRegistry(parts, { strict: values.strict === true });
+    // Every preset counts, core and collections' own: ok: 37 components, 15 presets, 9 collections (strict)
+    const presetCount = parts.presets.length + parts.collections.reduce((n, c) => n + c.presets.length, 0);
+    const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? "" : "s"}`;
     if (json) report(diagnostics, io, true);
     else if (diagnostics.length) report(diagnostics, io, false);
     else
       io.out(
-        `ok: ${parts.components.length} components, ${parts.presets.length} preset${parts.presets.length === 1 ? "" : "s"}${values.strict ? " (strict)" : ""}`,
+        `ok: ${plural(parts.components.length, "component")}, ${plural(presetCount, "preset")}, ${plural(parts.collections.length, "collection")}${values.strict ? " (strict)" : ""}`,
       );
     return hasErrors(diagnostics) ? 1 : 0;
   }

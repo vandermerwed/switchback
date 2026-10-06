@@ -1,0 +1,21 @@
+{
+  "id": "playtest-notes",
+  "kind": "preset",
+  "extends": "zones",
+  "name": "Playtest notes",
+  "tags": ["review", "reflect"],
+  "basis": "practice",
+  "data": {
+    "zones": [
+      "What players did",
+      "Where they got stuck",
+      "What they said",
+      "Moments of fun",
+      "Bugs and rough edges",
+      "Change before next test"
+    ],
+    "columns": 2
+  },
+  "attribution": "Playtest observation sheets, common practice in game design",
+  "licence": "idea; no restriction"
+}
