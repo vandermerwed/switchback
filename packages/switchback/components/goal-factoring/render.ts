@@ -4,7 +4,7 @@ interface Data {
   action?: string;
 }
 
-export const css = `.sb-c-gf th:nth-child(2) { width: 30mm; }`;
+export const css = `.sb-c-gf th:nth-child(2) { width: 30mm; } .sb-landscape .sb-c-gf th:nth-child(2) { width: 62mm; }`;
 
 export const render: Render<Data> = (data, { h, variant }) => {
   if (variant === "aversion") {

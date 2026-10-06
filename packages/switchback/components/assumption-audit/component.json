@@ -6,6 +6,7 @@
   "when": "before committing, or when something keeps failing for unclear reasons",
   "tags": ["decide", "diagnose"],
   "phase": "converge",
+  "orientation": "landscape",
   "physical": {
     "requires": ["printer"],
     "body": ["write", "rate"],

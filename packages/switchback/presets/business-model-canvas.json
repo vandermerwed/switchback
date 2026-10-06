@@ -4,6 +4,7 @@
   "extends": "zones",
   "name": "Business Model Canvas",
   "tags": ["plan", "create"],
+  "orientation": "landscape",
   "data": {
     "zones": [
       "Key Partners",
