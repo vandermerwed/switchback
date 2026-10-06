@@ -45,3 +45,16 @@ test("each catalogue entry records its page orientation, and the wide ones are l
     assert.ok(landscape.has(id), `${id} is landscape`);
   assert.ok(!landscape.has("pre-mortem"), "pre-mortem stays portrait");
 });
+
+test("each catalogue entry records its basis, and research ones carry their claims", () => {
+  const entries = JSON.parse(readFileSync(new URL("catalogue.json", generated), "utf8"));
+  for (const e of entries) {
+    assert.ok(["research", "practice"].includes(e.basis), `${e.id} has a basis`);
+    if (e.basis === "research") assert.ok(e.grounding?.claims?.length, `${e.id} carries claims`);
+    else assert.ok(!e.grounding && e.origin, `${e.id} carries an origin and no claims`);
+  }
+  const kanban = entries.find((e) => e.id === "kanban");
+  assert.match(kanban.grounding.helps, /zones/); // the preset's own grounding, not the base's
+  const html = readFileSync(new URL("docs/components/kanban/index.html", dist), "utf8");
+  assert.match(html, /Research-backed/);
+});

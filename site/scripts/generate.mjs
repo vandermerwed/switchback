@@ -6,7 +6,14 @@ import { execFileSync } from "node:child_process";
 import { copyFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { buildDocument, loadCatalogue, renderComponent } from "@vandermerwed/switchback";
+import {
+  basisOf,
+  buildDocument,
+  groundingOf,
+  loadCatalogue,
+  originOf,
+  renderComponent,
+} from "@vandermerwed/switchback";
 
 const siteRoot = fileURLToPath(new URL("..", import.meta.url));
 const repoRoot = join(siteRoot, "..");
@@ -47,7 +54,9 @@ for (const [id, component] of catalogue.components) {
     phase: meta.phase,
     variants: meta.variants,
     dataFields: dataFieldsOf(meta.data),
-    grounding: meta.grounding,
+    basis: basisOf(meta),
+    origin: originOf(meta) ?? null,
+    grounding: groundingOf(meta),
   });
 }
 
@@ -65,7 +74,10 @@ for (const [id, preset] of catalogue.presets) {
     phase: base?.meta.phase ?? "either",
     variants: base?.meta.variants ?? [],
     dataFields: dataFieldsOf({ properties: preset.data }),
-    grounding: preset.grounding ?? base?.meta.grounding,
+    basis: base ? basisOf(base.meta, preset) : (preset.basis ?? "research"),
+    origin: base ? (originOf(base.meta, preset) ?? null) : null,
+    // A preset's own claims first; a practical preset never inherits its base's.
+    grounding: base ? groundingOf(base.meta, preset) : undefined,
   });
 }
 
