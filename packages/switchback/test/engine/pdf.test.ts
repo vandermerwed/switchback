@@ -2,7 +2,7 @@ import { existsSync, mkdtempSync, readFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { renderComponent } from "../../src/engine/build";
+import { buildDocument, renderComponent } from "../../src/engine/build";
 import { browserCandidates, findBrowser, toPdf } from "../../src/engine/pdf";
 
 describe("browserCandidates", () => {
@@ -42,5 +42,26 @@ describe.skipIf(!browser)("toPdf (needs a local Chrome/Edge)", () => {
     await toPdf(renderComponent("pre-mortem").html!, out, browser!);
     expect(existsSync(out)).toBe(true);
     expect(readFileSync(out).subarray(0, 5).toString()).toBe("%PDF-");
+  });
+
+  it("mixes landscape and portrait pages in one PDF, starting landscape", async () => {
+    const { html } = buildDocument(
+      {
+        switchback: 1,
+        pages: [
+          { id: "W1-P1", component: "sheet", orientation: "landscape" },
+          { id: "W1-P2", component: "sheet" },
+          { id: "W1-P3", component: "sheet", orientation: "landscape" },
+        ],
+      },
+      { skipStyleChecks: true, embedFonts: false },
+    );
+    const out = join(mkdtempSync(join(tmpdir(), "switchback-pdf-")), "mixed.pdf");
+    await toPdf(html!, out, browser!);
+    // Each page dictionary carries a MediaBox [0 0 width height] in points. A4 is 595.92 x 842.88.
+    const boxes = [
+      ...readFileSync(out, "latin1").matchAll(/\/MediaBox\s*\[\s*0\s+0\s+([\d.]+)\s+([\d.]+)\s*\]/g),
+    ].map(([, w, h]) => (Number(w) > Number(h) ? "landscape" : "portrait"));
+    expect(boxes).toEqual(["landscape", "portrait", "landscape"]);
   });
 });
