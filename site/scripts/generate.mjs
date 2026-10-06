@@ -79,6 +79,7 @@ for (const entry of catalogueEntries) {
     renderErrors.push(`${entry.id}: ${JSON.stringify(errors.length ? errors : result.diagnostics)}`);
     continue;
   }
+  entry.orientation = result.sidecar?.pages[0]?.orientation ?? "portrait";
   writeFileSync(join(previewsDir, `${entry.id}.html`), result.html, "utf8");
 }
 if (renderErrors.length) {
@@ -174,7 +175,8 @@ for (const { style, label, path } of showcaseSpecs) {
   writeFileSync(outHtml, built.html, "utf8");
   // Keep the exact renderer head and page markup, but publish each page separately so the
   // gallery can show every sheet with plain HTML and CSS, without a browser-side script.
-  const pageMarkup = [...built.html.matchAll(/<section class="sb-page"[\s\S]*?<\/section>/g)].map(
+  // A page's class can carry more than one name (`sb-page sb-landscape`, `sb-page sb-has-attrib`).
+  const pageMarkup = [...built.html.matchAll(/<section class="sb-page[^"]*"[\s\S]*?<\/section>/g)].map(
     (match) => match[0],
   );
   if (pageMarkup.length !== spec.pages.length) {
@@ -188,7 +190,11 @@ for (const { style, label, path } of showcaseSpecs) {
       (_, open, close) => `${open}${markup}${close}`,
     );
     writeFileSync(join(showcaseDir, file), singlePage, "utf8");
-    return { html: `/generated/showcase/${file}`, id: spec.pages[index]?.id ?? `Page ${index + 1}` };
+    return {
+      html: `/generated/showcase/${file}`,
+      id: spec.pages[index]?.id ?? `Page ${index + 1}`,
+      orientation: built.sidecar.pages[index]?.orientation ?? "portrait",
+    };
   });
   // A build machine without Chrome, Edge or Chromium (Cloudflare Pages' image, for one) cannot make
   // the PDF, so it ships the committed copy in showcase/pdf/. Refresh those copies with

@@ -1,13 +1,16 @@
 {
   "switchback": 1,
   "cli": "0.1.0",
-  "built_at": "2026-10-05T13:30:04.834Z",
+  "built_at": "2026-10-06T11:04:43.615Z",
   "spec": "site/example/next-page.json",
   "title": "Three stories",
   "style": "sitting",
   "round": 2,
   "paper": "A4",
-  "kit_source": ["minimum", "profile"],
+  "kit_source": [
+    "minimum",
+    "profile"
+  ],
   "pens": {
     "ask": {
       "pen": "blue"
@@ -40,12 +43,17 @@
       "component": "card-sort",
       "preset": null,
       "variant": "write-in",
+      "orientation": "landscape",
       "title": "Which stories make the talk",
       "prompt": "Sort the stories from W1-P2. Keep three for the talk.",
       "readback": "The grouping is the insight. Ask which pile was hardest to place — that card names the tension.",
       "data": {
         "source": "the stories you listed on W1-P2",
-        "columns": ["In the talk", "If there is time", "Cut"],
+        "columns": [
+          "In the talk",
+          "If there is time",
+          "Cut"
+        ],
         "items": []
       },
       "returns": true

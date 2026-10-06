@@ -43,12 +43,12 @@ const STYLE_INTENT = {
               <p class="style-reason"><strong>Why {workbook.label}</strong> {workbook.why}</p>
               <div class="page-strip" aria-label={`All ${workbook.pageCount} ${workbook.label} pages`}>
                 {workbook.pagePreviews.map((page, index) => <a class="page-thumb" href={page.html} aria-label={`Open ${workbook.label} page ${index + 1} at full size`}>
-                  <span class="thumb-paper"><iframe src={page.html} title={`${workbook.label} ${page.id} thumbnail`} loading="lazy" tabindex="-1"></iframe></span>
+                  <span class:list={["thumb-paper", { "is-landscape": page.orientation === "landscape" }]}><iframe src={page.html} title={`${workbook.label} ${page.id} thumbnail`} loading="lazy" tabindex="-1"></iframe></span>
                   <span>{page.id}</span>
                 </a>)}
               </div>
               <div class="feature-layout">
-                <div class="feature-paper"><iframe src={feature.html} title={`${workbook.label} ${feature.id} printed page`} loading="lazy"></iframe></div>
+                <div class:list={["feature-paper", { "is-landscape": feature.orientation === "landscape" }]}><iframe src={feature.html} title={`${workbook.label} ${feature.id} printed page`} loading="lazy"></iframe></div>
                 <div class="feature-caption"><p>One page from the {workbook.label.toLowerCase()} example, shown as printed.</p><a href={feature.html}>Open this page full size</a><a href={workbook.pdf} download>Download the PDF</a></div>
               </div>
             </section>;
@@ -96,6 +96,10 @@ const STYLE_INTENT = {
   .feature-layout { display: grid; grid-template-columns: minmax(0, 560px) minmax(150px, 1fr); align-items: end; gap: 2rem; }
   .feature-paper { width: 560px; max-width: 100%; aspect-ratio: 210 / 297; overflow: hidden; background: white; box-shadow: 8px 14px 30px rgba(0,0,0,.14); }
   .feature-paper iframe { width: 794px; height: 1123px; border: 0; transform: scale(.705); transform-origin: 0 0; }
+  .thumb-paper.is-landscape { width: 150px; height: 106px; }
+  .thumb-paper.is-landscape iframe { width: 1123px; height: 794px; }
+  .feature-paper.is-landscape { aspect-ratio: 297 / 210; }
+  .feature-paper.is-landscape iframe { width: 1123px; height: 794px; transform: scale(.4987); }
   .feature-caption { display: grid; gap: .8rem; align-content: end; padding-bottom: 1rem; }
   .feature-caption p { color: var(--sb-ink-soft); line-height: 1.5; }
   .feature-caption a { color: var(--sb-ink); font-weight: 600; text-underline-offset: .25em; }
@@ -106,5 +110,5 @@ const STYLE_INTENT = {
   .returned-page :global(.marked-page) { box-shadow: 10px 18px 32px rgba(20, 40, 34, .18); }
   .returned-page figcaption { margin-top: 1rem; color: var(--sb-ink-soft); font-size: .8rem; line-height: 1.5; }
   @media (max-width: 900px) { .returned-pair { grid-template-columns: minmax(0, 1fr); } .returned-page { width: min(100%, 440px); } .gallery-grid { grid-template-columns: minmax(0, 1fr); } .gallery-index { position: static; display: flex; overflow-x: auto; gap: 1.5rem; padding: 1.5rem 0 0; min-width: 0; max-width: 100%; } .gallery-index a { flex: 0 0 140px; } .workbook { padding-top: 3rem; } }
-  @media (max-width: 640px) { .gallery-intro, .marked-intro { padding-inline: 20px; } .gallery-grid { padding-inline: 20px; } .gallery-intro h1, .marked-intro h2 { font-size: 3.4rem; } .feature-layout { display: block; } .feature-paper { width: min(100%, 350px); } .feature-paper iframe { transform: scale(.44); } .feature-caption { padding-top: 1rem; } .workbook-heading { display: block; } .workbook-heading h2 { margin-bottom: .2rem; } .workbook-heading p { margin-bottom: 2rem; } }
+  @media (max-width: 640px) { .gallery-intro, .marked-intro { padding-inline: 20px; } .gallery-grid { padding-inline: 20px; } .gallery-intro h1, .marked-intro h2 { font-size: 3.4rem; } .feature-layout { display: block; } .feature-paper { width: min(100%, 350px); } .feature-paper iframe { transform: scale(.44); } .feature-paper.is-landscape iframe { transform: scale(.311); } .feature-caption { padding-top: 1rem; } .workbook-heading { display: block; } .workbook-heading h2 { margin-bottom: .2rem; } .workbook-heading p { margin-bottom: 2rem; } }
 </style>

@@ -46,3 +46,15 @@ test("the gallery presents the request and every renderer page without JavaScrip
     }
   }
 });
+
+test("every showcase page preview records its orientation, and landscape pages are split out whole", () => {
+  const entries = JSON.parse(
+    readFileSync(new URL("../src/generated/showcase.json", import.meta.url), "utf8"),
+  );
+  for (const entry of entries)
+    for (const page of entry.pagePreviews) {
+      assert.ok(["portrait", "landscape"].includes(page.orientation), `${page.html} has an orientation`);
+      const html = readFileSync(new URL(page.html.slice(1), dist), "utf8");
+      if (page.orientation === "landscape") assert.match(html, /<section class="sb-page[^"]*sb-landscape/);
+    }
+});
