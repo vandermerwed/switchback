@@ -1,0 +1,15 @@
+{
+  "id": "engineering",
+  "name": "Engineering",
+  "description": "For technical decisions, root causes and reviewing work.",
+  "includes": [
+    "sheet",
+    "proof",
+    "five-whys",
+    "pre-mortem",
+    "assumption-audit",
+    "frame-by-frame",
+    "options-criteria",
+    "question-queue"
+  ]
+}

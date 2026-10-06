@@ -6,6 +6,7 @@ export type * from "./engine/types";
 export { basisOf, groundingOf, originOf, variantsOf } from "./registry/basis";
 export type { Catalogue } from "./registry/catalogue";
 export { createCatalogue, loadCatalogue } from "./registry/catalogue";
+export { collectionsOf, membersOf } from "./registry/collections";
 export { fontFaceCss } from "./shell/fonts";
 export { TOKENS_CSS as tokensCss } from "./shell/tokens";
 export { VERSION } from "./version";

@@ -11,7 +11,7 @@ Every problem `switchback build` and `switchback validate` report has this shape
 | `E_SPEC_JSON` | The spec file is not valid JSON (the parser message is included). | Fix the JSON syntax, or start from an example. |
 | `E_SPEC_SCHEMA` | The spec does not match the v1 format (the `path` points at the field). | Correct the field. |
 | `E_LEGACY_KEY` | A pre-v1 key (`archetype`, `stationery`, `kind`, `meta`) or a missing `"switchback": 1`. A spec from before the rename carries `"longhand": 1`; rename the key to `"switchback"`. | Follow the `fix`: `archetype` → `component`, `stationery` → `kit`… |
-| `E_DUPLICATE_ID` | Two pages (or two registry entries) share an id. | Make ids unique, e.g. `W1-P3`. |
+| `E_DUPLICATE_ID` | Two pages share an id, or two registry entries do (components, presets and every collection's own presets share one namespace). | Make ids unique, e.g. `W1-P3`. |
 | `E_UNKNOWN_STYLE` | `style` is not in `registry/styles.json`. | Use `sitting`. |
 | `E_UNKNOWN_COMPONENT` | The page names a component or preset that does not exist. | `switchback list`. |
 | `E_RENAMED` | The page names a component merged into another (`tracker` → `scoresheet` `running`; `meeple` → `perspective-swap` `tent`). `switchback show tracker`/`show meeple` report the same rename. | Follow the `fix`: use the new component and variant; it also names what changed in the data fields. |
@@ -68,7 +68,10 @@ Every problem `switchback build` and `switchback validate` report has this shape
 | --- | --- |
 | `E_NO_RENDERER` | A component folder has no `render.ts`. |
 | `E_COMPONENT_SCHEMA` | A `component.json` does not match the component schema. |
-| `E_PRESET_SCHEMA` | A preset file does not match the preset schema. |
+| `E_PRESET_SCHEMA` | A preset file does not match the preset schema. A collection's own preset must also declare its `basis`. |
+| `E_COLLECTION_SCHEMA` | A `collections/<id>/collection.json` does not match the collection schema (`id`, `name`, `description` of at most 160 characters, `includes`, optional `grounding`), or its id is not its folder's name, or a folder under `collections/` has no `collection.json` at all. |
+| `E_COLLECTION_INCLUDE` | A collection's `includes` names a template that does not exist. Use a component or preset id from `switchback list --all`. |
+| `E_COLLECTION_ID` | A collection's id is already a template's, or another collection's. |
 | `E_GROUNDING_SCHEMA` | A style, protocol or the catalogue-wide claim (`registry/catalogue.json`) carries a grounding block that doesn't match the grounding schema. Fix the grounding block in `research/grounding.json` and re-run `pnpm apply-grounding` — but a style or component with no entry there is left as is, so fix that one in place instead. |
 | `E_UNKNOWN_TAG` | A tag is not in `registry/tags.json`. |
 | `E_UNKNOWN_TOKEN` | A `requires` entry names unknown stationery. |

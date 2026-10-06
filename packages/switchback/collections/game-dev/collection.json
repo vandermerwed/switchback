@@ -1,0 +1,14 @@
+{
+  "id": "game-dev",
+  "name": "Game dev",
+  "description": "For designing, scoping and playtesting a game.",
+  "includes": [
+    "ten-bad-ideas",
+    "forced-connections",
+    "stimulus-die",
+    "pre-mortem",
+    "impact-effort",
+    "small-experiment",
+    "timeline"
+  ]
+}

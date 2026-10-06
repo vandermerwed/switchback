@@ -135,8 +135,8 @@ has no server and collects nothing.
 
 ## The CLI
 
-`@vandermerwed/switchback` holds the catalogue (37 components and 11 presets), the styles, the
-renderer and the PDF output, plus `proof`, `media` and `legend`. See
+`@vandermerwed/switchback` holds the catalogue (37 components, 15 presets and 9 collections), the
+styles, the renderer and the PDF output, plus `proof`, `media` and `legend`. See
 [`packages/switchback/README.md`](packages/switchback/README.md).
 
 ## Contributing

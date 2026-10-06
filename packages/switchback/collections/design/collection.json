@@ -1,0 +1,15 @@
+{
+  "id": "design",
+  "name": "Design",
+  "description": "For generating ideas, reframing problems and sorting what you have.",
+  "includes": [
+    "ten-bad-ideas",
+    "forced-connections",
+    "stimulus-die",
+    "constraint-removal",
+    "perspective-swap",
+    "brain-dump",
+    "card-sort",
+    "matrix-2x2"
+  ]
+}

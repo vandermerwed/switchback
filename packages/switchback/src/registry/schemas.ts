@@ -219,6 +219,20 @@ export const presetSchema = {
   },
 } as const;
 
+export const collectionSchema = {
+  type: "object",
+  additionalProperties: false,
+  required: ["id", "name", "description", "includes"],
+  properties: {
+    id: { type: "string", pattern: "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    name: { type: "string", minLength: 1 },
+    description: { type: "string", minLength: 1, maxLength: 160 },
+    includes: { type: "array", items: { type: "string", minLength: 1 }, uniqueItems: true },
+    // Its shape is checked on its own (E_GROUNDING_SCHEMA), as a style's is.
+    grounding: { type: "object" },
+  },
+} as const;
+
 const slot = {
   anyOf: [
     { type: "string", minLength: 1 },

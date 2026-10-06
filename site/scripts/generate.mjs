@@ -9,8 +9,10 @@ import { fileURLToPath } from "node:url";
 import {
   basisOf,
   buildDocument,
+  collectionsOf,
   groundingOf,
   loadCatalogue,
+  membersOf,
   originOf,
   renderComponent,
   variantsOf,
@@ -58,6 +60,7 @@ for (const [id, component] of catalogue.components) {
     basis: basisOf(meta),
     origin: originOf(meta) ?? null,
     grounding: groundingOf(meta),
+    collections: collectionsOf(catalogue, id),
   });
 }
 
@@ -80,6 +83,7 @@ for (const [id, preset] of catalogue.presets) {
     origin: base ? (originOf(base.meta, preset) ?? null) : null,
     // A preset's own claims first; a practical preset never inherits its base's.
     grounding: base ? groundingOf(base.meta, preset) : undefined,
+    collections: collectionsOf(catalogue, id),
   });
 }
 
@@ -102,8 +106,29 @@ if (renderErrors.length) {
 
 writeJson(join(generatedDir, "catalogue.json"), catalogueEntries);
 
+// --- The collections: themed shelves, membership by reference ----------------------------
+const collectionEntries = [...catalogue.collections.values()].map((c) => ({
+  id: c.meta.id,
+  name: c.meta.name,
+  description: c.meta.description,
+  own: c.presets.map((p) => p.id),
+  members: membersOf(catalogue, c.meta.id),
+}));
+writeJson(join(generatedDir, "collections.json"), collectionEntries);
+
 // --- The CLI reference, generated from the CLI's own --help text ------------------------
-const commands = ["init", "profile", "list", "show", "build", "proof", "media", "legend", "validate"];
+const commands = [
+  "init",
+  "profile",
+  "list",
+  "collections",
+  "show",
+  "build",
+  "proof",
+  "media",
+  "legend",
+  "validate",
+];
 const cliEntries = commands.map((command) => ({
   command,
   help: execFileSync(process.execPath, [cliPath, command, "--help"], { encoding: "utf8" }).trim(),
@@ -111,7 +136,7 @@ const cliEntries = commands.map((command) => ({
 writeJson(join(generatedDir, "cli.json"), cliEntries);
 
 console.log(
-  `generate.mjs: wrote ${catalogueEntries.length} previews, catalogue.json and cli.json (${cliEntries.length} commands).`,
+  `generate.mjs: wrote ${catalogueEntries.length} previews, catalogue.json, collections.json and cli.json (${cliEntries.length} commands).`,
 );
 
 // --- The showcase: one real workbook per style, built and PDF'd by the CLI itself -------

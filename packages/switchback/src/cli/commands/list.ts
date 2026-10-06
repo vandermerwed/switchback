@@ -3,11 +3,12 @@ import { chooseVariant } from "../../engine/resolve";
 import type { Basis, ComponentMeta } from "../../engine/types";
 import { basisOf } from "../../registry/basis";
 import { type Catalogue, loadCatalogue } from "../../registry/catalogue";
+import { membersOf } from "../../registry/collections";
 import { parseCommand, readProfileOrReport, UsageError } from "../args";
 import type { Io } from "../io";
 
 const USAGE =
-  "usage: switchback list [--kind page|piece|preset] [--tag T] [--phase diverge|converge|either] [--basis research|practice] [--fits-kit] [--all] [--json]";
+  "usage: switchback list [--kind page|piece|preset] [--tag T] [--phase diverge|converge|either] [--basis research|practice] [--collection ID] [--fits-kit] [--all] [--json]";
 const KINDS = ["page", "piece", "preset"];
 const PHASES = ["diverge", "converge", "either"];
 const BASES = ["research", "practice"];
@@ -65,6 +66,7 @@ export async function listCommand(argv: string[], io: Io, env: NodeJS.ProcessEnv
       tag: { type: "string" },
       phase: { type: "string" },
       basis: { type: "string" },
+      collection: { type: "string" },
       "fits-kit": { type: "boolean" },
       all: { type: "boolean" },
       json: { type: "boolean" },
@@ -81,17 +83,24 @@ export async function listCommand(argv: string[], io: Io, env: NodeJS.ProcessEnv
     throw new UsageError(`--phase must be one of ${PHASES.join(", ")}`);
   if (values.basis !== undefined && !BASES.includes(values.basis as string))
     throw new UsageError(`--basis must be one of ${BASES.join(", ")}`);
+  const cat = loadCatalogue();
+  if (values.collection !== undefined && !cat.collections.has(values.collection as string))
+    throw new UsageError(
+      `unknown collection "${values.collection}"; see \`switchback collections\` for the shelves`,
+    );
+  const onShelf = values.collection ? new Set(membersOf(cat, values.collection as string)) : null;
   const profile = readProfileOrReport(env, io, values.json === true);
   if (!profile.ok) return 1;
   const kit = resolveKit({ profile: profile.profile?.kit }).kit;
-  const cat = loadCatalogue();
   const fits = (meta: ComponentMeta) => chooseVariant(meta, kit).ok;
 
-  const selected = listRows(cat, { all: values.all === true })
+  // A shelf names its templates explicitly, so --collection shows every one, listed or not.
+  const selected = listRows(cat, { all: values.all === true || onShelf !== null })
     .filter((r) => !values.kind || r.kind === values.kind)
     .filter((r) => !values.tag || r.tags.includes(values.tag as string))
     .filter((r) => !values.phase || r.phase === values.phase)
     .filter((r) => !values.basis || r.basis === values.basis)
+    .filter((r) => !onShelf || onShelf.has(r.id))
     .filter((r) => !values["fits-kit"] || fits(r.meta))
     .map(({ meta: _meta, ...row }) => row);
 

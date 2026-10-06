@@ -1,0 +1,14 @@
+{
+  "id": "feature-cut",
+  "kind": "preset",
+  "extends": "card-sort",
+  "name": "Feature cut",
+  "tags": ["decide", "plan"],
+  "basis": "practice",
+  "data": {
+    "source": "your feature list",
+    "columns": ["Must have", "Nice to have", "Cut"]
+  },
+  "attribution": "Scope cutting by priority piles, common practice",
+  "licence": "idea; no restriction"
+}

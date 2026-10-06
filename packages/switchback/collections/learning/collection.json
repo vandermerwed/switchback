@@ -1,0 +1,6 @@
+{
+  "id": "learning",
+  "name": "Learning",
+  "description": "For studying, recalling and checking what you understand.",
+  "includes": ["free-recall", "feynman", "self-explain", "practice-audit", "question-queue", "node-map"]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "productivity",
+  "name": "Productivity",
+  "description": "For focus, priorities and keeping work moving.",
+  "includes": [
+    "eisenhower",
+    "kanban",
+    "dashboard",
+    "check-in",
+    "brain-dump",
+    "timer",
+    "scoresheet",
+    "start-stop-continue",
+    "goal-factoring",
+    "worst-case"
+  ]
+}

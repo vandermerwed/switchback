@@ -1,0 +1,18 @@
+{
+  "id": "planning",
+  "name": "Planning",
+  "description": "For deciding what to do, in what order, and what could go wrong.",
+  "includes": [
+    "now-next-later",
+    "kanban",
+    "timeline",
+    "card-sort",
+    "impact-effort",
+    "eisenhower",
+    "pre-mortem",
+    "forecast",
+    "small-experiment",
+    "mental-contrast",
+    "commit"
+  ]
+}

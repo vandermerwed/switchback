@@ -41,8 +41,9 @@ If both fail, show the user the error the command printed, say the Switchback CL
 ## 3. Rules every mode keeps
 
 - **The CLI is the source of truth** for components, styles and the colour language:
-  `switchback list`, `switchback show`, `switchback legend`, and the `fix` line of every
-  diagnostic. Learn the format from those, never from the package's files on disk.
+  `switchback list`, `switchback collections`, `switchback show`, `switchback legend`, and the
+  `fix` line of every diagnostic. Learn the format from those, never from the package's files on
+  disk.
 - **One folder per piece of work:** `switchback/<yyyy-mm-dd>-<slug>/` in the user's working
   directory, with today's date and a short slug from the title. Its first round is `W1.json`; a
   later round in that folder is `W<n+1>.json` with page ids `W<n+1>-P<k>`. Never overwrite an

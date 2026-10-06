@@ -29,6 +29,10 @@ describe("switchback list", () => {
       "power-interest",
       "start-stop-continue",
       "swot",
+      "core-loop",
+      "feature-cut",
+      "game-one-pager",
+      "playtest-notes",
     ]);
     const create = captureIo();
     await listCommand(["--tag", "create", "--json"], create, env);
@@ -158,7 +162,12 @@ describe("basis in show and list", () => {
     expect(rows.every((r) => r.basis === "research")).toBe(true);
     const practice = captureIo();
     await listCommand(["--basis", "practice", "--json"], practice, env);
-    expect(json(practice)).toEqual([]);
+    expect(json(practice).map((r: { id: string }) => r.id)).toEqual([
+      "core-loop",
+      "feature-cut",
+      "game-one-pager",
+      "playtest-notes",
+    ]);
     await expect(listCommand(["--basis", "vibes"], captureIo(), env)).rejects.toThrow(/--basis/);
   });
 

@@ -42,8 +42,9 @@ was printed, which the skill's read mode uses to read your photos.
 | --- | --- |
 | `init [--defaults] [--force]` | set up your desk |
 | `profile [--json] [--path] [--set key=value ...] [--import file\|-]` | show or edit it (`--set pens=blue,red --set role.stop=pink`), or import a whole profile JSON in one validated step |
-| `list [--kind] [--tag] [--phase] [--fits-kit] [--json]` | browse components and presets |
-| `show <id> [--json]` | contract, variants, data, grounding |
+| `list [--kind] [--tag] [--phase] [--basis] [--collection] [--fits-kit] [--json]` | browse templates (components and presets) |
+| `collections [--json]` | the themed shelves of templates, with counts |
+| `show <id> [--json]` | a template's contract, variants, data and what it rests on; or a collection's templates |
 | `build <spec> [-o] [--paper] [--pdf] [--open] [--json]` | render (paper: A4 and Letter) |
 | `validate [spec] [--strict] [--json]` | check a spec, or the registry |
 | `proof <doc.md\|-> [-o spec.json] [--title T] [--paper A4\|Letter] [--max-pages N] [--json]` | turn a Markdown or plain-text document into a numbered, markable Proof-style spec, splitting into several proofs if it runs long |

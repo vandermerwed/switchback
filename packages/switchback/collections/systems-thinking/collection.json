@@ -1,0 +1,13 @@
+{
+  "id": "systems-thinking",
+  "name": "Systems Thinking",
+  "description": "For seeing causes, connections and constraints.",
+  "includes": [
+    "node-map",
+    "five-whys",
+    "frame-by-frame",
+    "goal-factoring",
+    "constraint-removal",
+    "assumption-audit"
+  ]
+}
