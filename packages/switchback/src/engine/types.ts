@@ -191,6 +191,24 @@ export interface PresetMeta {
   grounding?: Grounding;
 }
 
+/** A themed shelf of templates. Membership is by reference: `includes` names templates that live elsewhere. */
+export interface CollectionMeta {
+  id: string;
+  name: string;
+  description: string;
+  includes: string[];
+  /** Collection-level claims, strict-checked when present and never inherited by its members. */
+  grounding?: Grounding;
+}
+
+export interface CollectionModule {
+  /** The folder under collections/, which the id must match. */
+  dir: string;
+  meta: CollectionMeta;
+  /** The collection's own templates: presets that live in its folder. */
+  presets: PresetMeta[];
+}
+
 /** The catalogue-wide claims that underpin every writing page (claims.md §10 ruling 1). */
 export interface CatalogueClaims {
   grounding?: Grounding;
