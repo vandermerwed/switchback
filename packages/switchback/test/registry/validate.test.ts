@@ -205,3 +205,80 @@ describe("basis", () => {
     ).toContain("E_STRICT_NO_CLAIMS");
   });
 });
+
+describe("collections", () => {
+  const preset = (id: string, extra: Record<string, unknown> = {}) => ({
+    id,
+    kind: "preset" as const,
+    extends: "zones",
+    name: id,
+    tags: ["plan"],
+    data: { zones: ["A", "B"] },
+    attribution: "A common board",
+    licence: "idea; no restriction",
+    basis: "practice" as const,
+    ...extra,
+  });
+  const shelf = (id: string, includes: string[], presets: ReturnType<typeof preset>[] = [], dir = id) => ({
+    dir,
+    meta: { id, name: id, description: `The ${id} shelf.`, includes },
+    presets,
+  });
+  const run = (collections: ReturnType<typeof shelf>[], strict = false) =>
+    validateRegistry({ ...parts, collections }, { strict });
+
+  it("passes a shelf of core templates and its own practical preset, in strict mode too", () => {
+    const ok = [shelf("alpha", ["kanban", "timeline"], [preset("board-one")])];
+    expect(run(ok)).toEqual([]);
+    expect(run(ok, true)).toEqual([]);
+  });
+
+  it("rejects an include that names no template", () => {
+    const found = run([shelf("alpha", ["kanban", "kanbna"])]).filter(
+      (d) => d.code === "E_COLLECTION_INCLUDE",
+    );
+    expect(found.map((d) => [d.path, d.message])).toEqual([
+      ["collections/alpha/collection.json", 'collection alpha includes unknown template "kanbna"'],
+    ]);
+  });
+
+  it("rejects a collection id that is a template's or another collection's", () => {
+    const found = run([shelf("kanban", []), shelf("alpha", []), shelf("alpha", [], [], "alpha-2")]);
+    expect(found.filter((d) => d.code === "E_COLLECTION_ID").map((d) => d.path)).toEqual([
+      "collections/kanban/collection.json",
+      "collections/alpha-2/collection.json",
+    ]);
+  });
+
+  it("rejects a collection preset whose id is already taken", () => {
+    const found = run([shelf("alpha", [], [preset("kanban")])]);
+    expect(found.filter((d) => d.code === "E_DUPLICATE_ID").map((d) => d.path)).toEqual([
+      "collections/alpha/presets/kanban.json",
+    ]);
+  });
+
+  it("requires a basis on a collection's own preset", () => {
+    const { basis: _basis, ...bare } = preset("board-one");
+    const found = run([shelf("alpha", [], [bare as ReturnType<typeof preset>])]);
+    expect(found.filter((d) => d.code === "E_PRESET_SCHEMA").map((d) => d.path)).toEqual([
+      "collections/alpha/presets/board-one.json",
+    ]);
+  });
+
+  it("rejects a malformed collection.json, or one whose id is not its folder's", () => {
+    const bad = shelf("alpha", []);
+    (bad.meta as Record<string, unknown>).colour = "red";
+    const moved = shelf("beta", [], [], "gamma");
+    const found = run([bad, moved]).filter((d) => d.code === "E_COLLECTION_SCHEMA");
+    expect(found.map((d) => d.path)).toEqual([
+      "collections/alpha/collection.json",
+      "collections/gamma/collection.json",
+    ]);
+  });
+
+  it("checks a collection's own grounding when it has one", () => {
+    const claimed = shelf("alpha", []);
+    (claimed.meta as Record<string, unknown>).grounding = { claims: "none" };
+    expect(codes(run([claimed]))).toContain("E_GROUNDING_SCHEMA");
+  });
+});

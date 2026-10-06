@@ -1,14 +1,15 @@
 import { renderComponent } from "../engine/build";
 import { error } from "../engine/diagnostics";
 import { isKnownToken } from "../engine/kit";
-import type { Claim, Diagnostic, Grounding } from "../engine/types";
+import type { Claim, Diagnostic, Grounding, PresetMeta } from "../engine/types";
 import { ajv } from "./ajv";
 import { basisOf } from "./basis";
 import { type CatalogueParts, createCatalogue } from "./catalogue";
-import { componentSchema, groundingSchema, presetSchema, styleSchema } from "./schemas";
+import { collectionSchema, componentSchema, groundingSchema, presetSchema, styleSchema } from "./schemas";
 
 const validateComponent = ajv.compile(componentSchema);
 const validatePreset = ajv.compile(presetSchema);
+const validateCollection = ajv.compile(collectionSchema);
 const validateGrounding = ajv.compile(groundingSchema);
 const validateStyle = ajv.compile(styleSchema);
 
@@ -246,9 +247,19 @@ export function validateRegistry(parts: CatalogueParts, opts: { strict?: boolean
     }
   }
 
-  for (const p of parts.presets) {
-    const path = `presets/${p.id}.json`;
+  // A collection's own preset (ownedBy is its collection) passes the same checks as a core one, and
+  // must also say what it rests on.
+  const checkPreset = (p: PresetMeta, path: string, ownedBy: string | null) => {
     unique(p.id, path);
+    if (ownedBy && p.basis === undefined)
+      out.push(
+        error(
+          "E_PRESET_SCHEMA",
+          `${p.id} is collection ${ownedBy}'s own template and must declare its basis`,
+          'add "basis": "research" or "basis": "practice"',
+          { path },
+        ),
+      );
     if (!validatePreset(p as unknown)) {
       for (const e of validatePreset.errors ?? []) {
         out.push(
@@ -271,7 +282,7 @@ export function validateRegistry(parts: CatalogueParts, opts: { strict?: boolean
           { path },
         ),
       );
-      continue;
+      return;
     }
     const r = renderComponent(p.id, { embedFonts: false, catalogue: cat });
     for (const d of r.diagnostics.filter((x) => x.level === "error")) {
@@ -288,6 +299,63 @@ export function validateRegistry(parts: CatalogueParts, opts: { strict?: boolean
         ),
       );
     if (opts.strict && presetBasis === "research") out.push(...strictGrounding(p.id, p.grounding, path));
+  };
+  const shelves = parts.collections ?? [];
+  for (const p of parts.presets) checkPreset(p, `presets/${p.id}.json`, null);
+  for (const c of shelves)
+    for (const p of c.presets) checkPreset(p, `collections/${c.dir}/presets/${p.id}.json`, c.dir);
+
+  // Collections: a shelf of templates that live elsewhere, so every include must resolve.
+  const templateIds = new Set([...cat.components.keys(), ...cat.presets.keys()]);
+  const collectionIds = new Set<string>();
+  for (const c of shelves) {
+    const path = `collections/${c.dir}/collection.json`;
+    const m = c.meta;
+    if (!validateCollection(m as unknown)) {
+      for (const e of validateCollection.errors ?? []) {
+        const extra = e.keyword === "additionalProperties" ? ` (${e.params.additionalProperty})` : "";
+        out.push(
+          error(
+            "E_COLLECTION_SCHEMA",
+            `collection ${c.dir}${e.instancePath} ${e.message ?? "is invalid"}${extra}`,
+            "fix collection.json to match the collection schema (see docs/errors.md)",
+            { path },
+          ),
+        );
+      }
+      continue;
+    }
+    if (m.id !== c.dir)
+      out.push(
+        error(
+          "E_COLLECTION_SCHEMA",
+          `collection folder ${c.dir} holds id "${m.id}"`,
+          "rename the folder or the id, so they match",
+          { path },
+        ),
+      );
+    if (templateIds.has(m.id) || collectionIds.has(m.id))
+      out.push(
+        error(
+          "E_COLLECTION_ID",
+          `collection ${m.id} has the same id as ${templateIds.has(m.id) ? "a template" : "another collection"}`,
+          "give the collection an id no template or other collection uses",
+          { path },
+        ),
+      );
+    collectionIds.add(m.id);
+    for (const id of m.includes)
+      if (!templateIds.has(id))
+        out.push(
+          error(
+            "E_COLLECTION_INCLUDE",
+            `collection ${m.id} includes unknown template "${id}"`,
+            "name a component or preset id (`switchback list --all`)",
+            { path },
+          ),
+        );
+    out.push(...checkGroundingShape(`collection ${m.id}`, m.grounding, path));
+    if (opts.strict && m.grounding) out.push(...strictGrounding(`collection ${m.id}`, m.grounding, path));
   }
 
   for (const s of parts.registries.styles) {

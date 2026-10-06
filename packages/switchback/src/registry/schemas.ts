@@ -228,7 +228,8 @@ export const collectionSchema = {
     name: { type: "string", minLength: 1 },
     description: { type: "string", minLength: 1, maxLength: 160 },
     includes: { type: "array", items: { type: "string", minLength: 1 }, uniqueItems: true },
-    grounding: groundingSchema,
+    // Its shape is checked on its own (E_GROUNDING_SCHEMA), as a style's is.
+    grounding: { type: "object" },
   },
 } as const;
 
