@@ -13,6 +13,7 @@ import {
   loadCatalogue,
   originOf,
   renderComponent,
+  variantsOf,
 } from "@vandermerwed/switchback";
 
 const siteRoot = fileURLToPath(new URL("..", import.meta.url));
@@ -52,7 +53,7 @@ for (const [id, component] of catalogue.components) {
     intent: meta.intent,
     tags: meta.tags,
     phase: meta.phase,
-    variants: meta.variants,
+    variants: variantsOf(meta),
     dataFields: dataFieldsOf(meta.data),
     basis: basisOf(meta),
     origin: originOf(meta) ?? null,
@@ -72,7 +73,8 @@ for (const [id, preset] of catalogue.presets) {
     licence: preset.licence,
     tags: preset.tags,
     phase: base?.meta.phase ?? "either",
-    variants: base?.meta.variants ?? [],
+    // A practical preset never shows its base's claims, not even a variant's.
+    variants: base ? variantsOf(base.meta, preset) : [],
     dataFields: dataFieldsOf({ properties: preset.data }),
     basis: base ? basisOf(base.meta, preset) : (preset.basis ?? "research"),
     origin: base ? (originOf(base.meta, preset) ?? null) : null,

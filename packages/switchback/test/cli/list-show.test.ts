@@ -3,8 +3,10 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { listCommand, listRows } from "../../src/cli/commands/list";
-import { basisLines, showCommand } from "../../src/cli/commands/show";
+import { basisLines, showCommand, showJson } from "../../src/cli/commands/show";
 import { captureIo } from "../../src/cli/io";
+import { MINIMUM_KIT } from "../../src/engine/kit";
+import { resolveComponent } from "../../src/engine/resolve";
 import { catalogueParts, createCatalogue, loadCatalogue } from "../../src/registry/catalogue";
 
 const dir = mkdtempSync(join(tmpdir(), "switchback-list-"));
@@ -166,5 +168,29 @@ describe("basis in show and list", () => {
     const out = json(io);
     expect(out.basis).toBe("research");
     expect(out.origin).toBeNull();
+    const cat = loadCatalogue();
+    expect(out.grounding).toEqual(cat.presets.get("kanban")!.grounding);
+    expect(out.grounding).not.toEqual(cat.components.get("zones")!.meta.grounding);
+  });
+
+  it("never shows a base's claims on a practical preset in show --json, not even a variant's", () => {
+    const parts = catalogueParts();
+    const practical = {
+      id: "plain-commit",
+      kind: "preset" as const,
+      extends: "commit",
+      name: "Plain commit",
+      tags: ["decide"],
+      data: {},
+      attribution: "A common format",
+      licence: "idea; no restriction",
+      basis: "practice" as const,
+    };
+    const cat = createCatalogue({ ...parts, presets: [...parts.presets, practical] });
+    expect(cat.components.get("commit")!.meta.variants.some((v) => v.grounding)).toBe(true);
+    const out = showJson(cat, resolveComponent(cat, "plain-commit")!, MINIMUM_KIT);
+    expect(JSON.stringify(out)).not.toContain('"claims"');
+    expect(out.grounding).toBeNull();
+    expect(out.origin).toBe("A common format");
   });
 });
