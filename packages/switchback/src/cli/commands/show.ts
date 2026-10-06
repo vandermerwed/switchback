@@ -3,10 +3,11 @@ import { chooseVariant, RENAMED, type ResolvedComponent, resolveComponent } from
 import type { ComponentMeta, JsonSchema, Kit, PresetMeta } from "../../engine/types";
 import { basisOf, groundingOf, originOf, variantsOf } from "../../registry/basis";
 import { type Catalogue, loadCatalogue } from "../../registry/catalogue";
+import { collectionsOf, membersOf } from "../../registry/collections";
 import { parseCommand, readProfileOrReport } from "../args";
 import type { Io } from "../io";
 
-const USAGE = "usage: switchback show <component-or-preset-id> [--json]";
+const USAGE = "usage: switchback show <template-or-collection-id> [--json]";
 
 /** What a template rests on: its research claims, or, for a practical template, its origin alone. */
 export function basisLines(meta: ComponentMeta, preset?: PresetMeta | null): string[] {
@@ -46,10 +47,50 @@ export function showJson(cat: Catalogue, resolved: ResolvedComponent, kit: Kit) 
     basis,
     origin: originOf(meta, preset) ?? null,
     grounding: groundingOf(meta, preset) ?? null,
+    collections: collectionsOf(cat, preset?.id ?? meta.id),
     variants: fittedVariants(meta, preset, kit),
     presets: [...cat.presets.values()].filter((p) => p.extends === meta.id).map((p) => p.id),
     examples: Object.keys(base.examples),
   };
+}
+
+/** What `show <collection-id> --json` prints: the shelf, and each template on it with its basis. */
+export function showCollectionJson(cat: Catalogue, id: string) {
+  const c = cat.collections.get(id);
+  if (!c) return null;
+  const own = new Set(c.presets.map((p) => p.id));
+  const templates = membersOf(cat, id).flatMap((tid) => {
+    const r = resolveComponent(cat, tid);
+    if (!r) return [];
+    return [
+      {
+        id: tid,
+        name: r.preset?.name ?? r.base.meta.name,
+        kind: r.preset ? "preset" : r.base.meta.kind,
+        basis: basisOf(r.base.meta, r.preset),
+        own: own.has(tid),
+      },
+    ];
+  });
+  return { collection: c.meta, templates };
+}
+
+/** `show <collection-id>` as text: the shelf, its own templates, then what it includes. */
+function collectionLines(shelf: NonNullable<ReturnType<typeof showCollectionJson>>): string[] {
+  const { collection, templates } = shelf;
+  const idWidth = Math.max(...templates.map((t) => t.id.length), 1);
+  const nameWidth = Math.max(...templates.map((t) => t.name.length), 1);
+  const row = (t: (typeof templates)[number]) =>
+    `  ${t.id.padEnd(idWidth)}  ${t.name.padEnd(nameWidth)}  ${t.basis === "practice" ? "practical" : "research-backed"}`;
+  const lines = [
+    `${collection.name} (${collection.id}) · collection · ${templates.length} templates`,
+    collection.description,
+  ];
+  const own = templates.filter((t) => t.own);
+  if (own.length) lines.push("its own:", ...own.map(row));
+  const included = templates.filter((t) => !t.own);
+  if (included.length) lines.push("includes:", ...included.map(row));
+  return lines;
 }
 
 function describeType(schema: Record<string, unknown>): string {
@@ -89,6 +130,12 @@ export async function showCommand(argv: string[], io: Io, env: NodeJS.ProcessEnv
     return 2;
   }
   const cat = loadCatalogue();
+  const shelf = showCollectionJson(cat, id);
+  if (shelf) {
+    if (values.json) io.out(JSON.stringify(shelf, null, 2));
+    else for (const line of collectionLines(shelf)) io.out(line);
+    return 0;
+  }
   const resolved = resolveComponent(cat, id);
   if (!resolved) {
     const renamed = RENAMED[id];
@@ -98,7 +145,9 @@ export async function showCommand(argv: string[], io: Io, env: NodeJS.ProcessEnv
       );
       return 1;
     }
-    io.err(`unknown component or preset: ${id}. Try \`switchback list\`.`);
+    io.err(
+      `unknown component, preset or collection: ${id}. Try \`switchback list\` or \`switchback collections\`.`,
+    );
     return 1;
   }
   const profile = readProfileOrReport(env, io, values.json === true);
@@ -112,11 +161,13 @@ export async function showCommand(argv: string[], io: Io, env: NodeJS.ProcessEnv
   const meta = base.meta;
   const variants = fittedVariants(meta, preset, kit);
   const presets = [...cat.presets.values()].filter((p) => p.extends === meta.id).map((p) => p.id);
+  const shelves = collectionsOf(cat, preset?.id ?? meta.id);
   const lines = [
     `${preset ? `${preset.name} (${preset.id}, a preset of ${meta.id})` : `${meta.name} (${meta.id})`} · ${meta.kind} · ${meta.phase}`,
     meta.intent,
     `when:    ${meta.when}`,
     `tags:    ${(preset?.tags ?? meta.tags).join(", ")}`,
+    ...(shelves.length ? [`collections: ${shelves.join(", ")}`] : []),
     `desk:    ${meta.physical.requires.join(", ")} · hands: ${meta.physical.body.join(", ")} · ${meta.physical.timebox}`,
     "variants:",
     ...variants.flatMap((v) => {
@@ -130,10 +181,13 @@ export async function showCommand(argv: string[], io: Io, env: NodeJS.ProcessEnv
     "data:",
     ...describeData(meta.data),
   ];
+  // A practical preset's attribution is its origin, which the basis line already prints.
   if (preset)
     lines.push(
       `preset data: ${JSON.stringify(preset.data)}`,
-      `attribution: ${preset.attribution} · licence: ${preset.licence}`,
+      basisOf(meta, preset) === "practice"
+        ? `licence: ${preset.licence}`
+        : `attribution: ${preset.attribution} · licence: ${preset.licence}`,
     );
   if (meta.prompt) lines.push(`prompt:  ${meta.prompt}`);
   if (meta.readback) lines.push(`read-back: ${meta.readback}`);

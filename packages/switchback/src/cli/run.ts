@@ -1,6 +1,7 @@
 import { VERSION } from "../version";
 import { type Command, UsageError } from "./args";
 import { buildCommand } from "./commands/build";
+import { collectionsCommand } from "./commands/collections";
 import { initCommand } from "./commands/init";
 import { legendCommand } from "./commands/legend";
 import { listCommand } from "./commands/list";
@@ -16,8 +17,9 @@ export const USAGE = `switchback <command> [options]
 Commands:
   init        set up your desk (paper, pens, stationery)
   profile     show or edit your saved profile
-  list        browse components and presets
-  show <id>   one component: contract, data, grounding
+  list        browse templates (components and presets)
+  collections the themed shelves of templates
+  show <id>   a template's contract, or a collection's templates
   build       render a spec to print-ready HTML (+ sidecar, --pdf)
   proof       turn a document into numbered proof pages to mark up
   media       make phone photos readable: HEIC, rotation, size, tiles
@@ -28,6 +30,7 @@ Run \`switchback <command> --help\` for command options.`;
 
 const COMMANDS: Record<string, Command> = {
   build: (argv, io, env) => buildCommand(argv, io, env),
+  collections: collectionsCommand,
   init: (argv, io, env) => initCommand(argv, io, env),
   legend: (argv, io, env) => legendCommand(argv, io, env),
   list: listCommand,
