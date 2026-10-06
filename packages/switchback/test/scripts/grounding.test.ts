@@ -90,6 +90,21 @@ describe("applyGrounding", () => {
     );
   });
 
+  it("does not warn about practical templates, which have no entry by design", () => {
+    const f = files();
+    f.components.beta = {
+      id: "beta",
+      basis: "practice",
+      origin: "o",
+      variants: [{ id: "default", requires: [] }],
+    };
+    f.presets.delta = { id: "delta", extends: "beta" };
+    f.presets.epsilon = { id: "epsilon", extends: "alpha", basis: "practice" };
+    const g = { ...full, components: { alpha: entry() } };
+    const { warnings } = applyGrounding(g, f);
+    expect(warnings.filter((w) => /beta|delta|epsilon/.test(w))).toEqual([]);
+  });
+
   it("rejects unknown ids in every section, and unknown top-level keys", () => {
     const g = {
       ...full,

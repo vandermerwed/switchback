@@ -197,6 +197,16 @@ export function validateRegistry(parts: CatalogueParts, opts: { strict?: boolean
         );
       }
     }
+    // A research template carries its claims, as it always has, in strict mode or not.
+    if (m.basis === "research" && !m.grounding)
+      out.push(
+        error(
+          "E_COMPONENT_SCHEMA",
+          `${m.id} is research-backed but has no grounding`,
+          'grade it through research/grading (see docs/errors.md, Grounding a new item), or set "basis": "practice" with an "origin"',
+          { path },
+        ),
+      );
     // A practical template makes no research claim and says where it comes from instead.
     if (m.basis === "practice") {
       if (m.grounding)

@@ -89,6 +89,14 @@ export function applyGrounding(
     return undefined;
   };
 
+  // A practical template makes no claim, so it has no entry by design and its absence is not drift.
+  // A preset that declares no basis inherits its component's.
+  const isPractice = (file: Json | undefined): boolean => {
+    const f = (file ?? {}) as { basis?: string; extends?: string };
+    const base = f.extends ? (files.components[f.extends] as { basis?: string } | undefined) : undefined;
+    return (f.basis ?? base?.basis) === "practice";
+  };
+
   // Components and presets: every entry must name a file; a file with no entry is left as is.
   const applyToMap = (
     kind: "component" | "preset",
@@ -105,7 +113,7 @@ export function applyGrounding(
       if (grounding) file.grounding = grounding;
     }
     for (const id of Object.keys(map))
-      if (!Object.hasOwn(entries, id))
+      if (!Object.hasOwn(entries, id) && !isPractice(map[id]))
         warnings.push(`${kind} ${id} has no entry in grounding.json; its grounding is left as is`);
   };
   applyToMap("component", files.components, g.components ?? {});

@@ -187,6 +187,15 @@ describe("basis", () => {
     );
   });
 
+  it("fails a research component with no grounding even outside strict mode", () => {
+    const bare = clone("timeline");
+    bare.meta.id = "bare-research";
+    delete bare.meta.grounding;
+    expect(codes(validateRegistry({ ...parts, components: [...parts.components, bare] }))).toContain(
+      "E_COMPONENT_SCHEMA",
+    );
+  });
+
   it("still fails a research component with no grounding in strict mode", () => {
     const bare = clone("timeline");
     bare.meta.id = "bare-research";
