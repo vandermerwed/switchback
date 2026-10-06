@@ -13,7 +13,8 @@ Chromium installed to render a PDF. When none is found, the build still writes t
 nothing fails silently — and warns that you should print the HTML directly from any browser
 instead: Print, margins None, background graphics on, scale 100%. The same happens if a browser is
 found but rendering fails for some other reason: the HTML is kept, and no half-written PDF is left
-behind to be printed by mistake.
+behind to be printed by mistake. If the workbook has landscape pages, the warning names them; see
+[Some pages print sideways](#some-pages-print-sideways).
 
 If your browser is installed somewhere unusual and the CLI cannot find it, set the
 `SWITCHBACK_CHROME` environment variable to its path.
@@ -22,8 +23,11 @@ If your browser is installed somewhere unusual and the CLI cannot find it, set t
 
 Wide pages, such as the business model canvas, kanban, a card sort with three or more piles, or a
 comparison of options, print on landscape pages inside an otherwise portrait PDF. Print the PDF as
-it is and keep the printer's auto-rotate on. If you print the HTML page instead, use Chrome or
-Edge, which honour each page's orientation.
+it is and keep the printer's auto-rotate on.
+
+If you print the HTML page instead, Chrome and Edge turn the landscape pages on their own. Other
+browsers may print every page portrait and cut the wide ones off. The build's warning names the
+landscape pages: print those separately and choose Landscape in the print dialog.
 
 ## A photo will not read
 

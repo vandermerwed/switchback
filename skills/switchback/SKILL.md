@@ -54,7 +54,9 @@ If both fail, show the user the error the command printed, say the Switchback CL
   the profile. Then run `switchback build <spec> --pdf --json`, once. It writes the HTML, the PDF
   and the `.switchback.json` sidecar next to the spec.
 - **No PDF:** on `W_NO_BROWSER` or `W_PDF_FAILED` the HTML is still there. Give the print steps:
-  open the HTML, Print, margins None, background graphics on, scale 100%. For PDFs next time,
-  the user installs Chrome, Edge or Chromium, or sets `SWITCHBACK_CHROME` to a browser's path.
+  open the HTML, Print, margins None, background graphics on, scale 100%. If the warning's `fix`
+  names landscape pages, pass that on: in a browser other than Chrome or Edge, those pages print
+  separately with Landscape chosen in the print dialog. For PDFs next time, the user installs
+  Chrome, Edge or Chromium, or sets `SWITCHBACK_CHROME` to a browser's path.
 - **Your view waits for the photos.** Until the marked pages come back, no page, confirmation or
   done message carries your recommendation.
