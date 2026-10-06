@@ -18,5 +18,9 @@
   "proof": {
     "request": "Print this draft about daily team meetings as a numbered proof with wide margins for my notes.",
     "why": "Numbered paragraphs and open margins make a document ready for ink."
+  },
+  "game-dev": {
+    "request": "Help me scope my game for a two-week jam: what it is, what the loop is, and what to cut.",
+    "why": "One scoping decision in one sitting, drawn from the Game Development collection: practical formats game designers already use, beside a research-backed pre-mortem."
   }
 }

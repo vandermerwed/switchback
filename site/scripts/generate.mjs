@@ -139,7 +139,8 @@ console.log(
   `generate.mjs: wrote ${catalogueEntries.length} previews, catalogue.json, collections.json and cli.json (${cliEntries.length} commands).`,
 );
 
-// --- The showcase: one real workbook per style, built and PDF'd by the CLI itself -------
+// --- The showcase: one real workbook per style, plus one drawn from a collection --------
+// Each example has its own id (its anchor, file names and request key); several can share a style.
 // `switchback proof` turns showcase/proof.md into a real spec first, exactly as a user's agent
 // would; the other four styles are hand-authored specs already in the style's own shape.
 const proofSpecPath = join(showcaseTmpDir, "proof.json");
@@ -166,17 +167,36 @@ if (!proofResult.ok || proofResult.specs.length !== 1) {
 }
 
 const showcaseSpecs = [
-  { style: "sitting", label: "Sitting", path: join(showcaseSrcDir, "sitting.json") },
-  { style: "series", label: "Series", path: join(showcaseSrcDir, "series.json") },
-  { style: "incubation", label: "Incubation", path: join(showcaseSrcDir, "incubation.json") },
-  { style: "ritual", label: "Ritual", path: join(showcaseSrcDir, "ritual.json") },
-  { style: "proof", label: "Proof", path: proofResult.specs[0] },
+  { id: "sitting", style: "sitting", label: "Sitting", path: join(showcaseSrcDir, "sitting.json") },
+  { id: "series", style: "series", label: "Series", path: join(showcaseSrcDir, "series.json") },
+  {
+    id: "incubation",
+    style: "incubation",
+    label: "Incubation",
+    path: join(showcaseSrcDir, "incubation.json"),
+  },
+  { id: "ritual", style: "ritual", label: "Ritual", path: join(showcaseSrcDir, "ritual.json") },
+  { id: "proof", style: "proof", label: "Proof", path: proofResult.specs[0] },
+  {
+    id: "game-dev",
+    style: "sitting",
+    label: "Game Development",
+    collection: "game-dev",
+    path: join(showcaseSrcDir, "game-dev.json"),
+  },
 ];
+const STYLE_LABELS = {
+  sitting: "Sitting",
+  series: "Series",
+  incubation: "Incubation",
+  ritual: "Ritual",
+  proof: "Proof",
+};
 
 const showcaseErrors = [];
 const committedPdfsUsed = [];
 const showcaseEntries = [];
-for (const { style, label, path } of showcaseSpecs) {
+for (const { id, style, label, collection, path } of showcaseSpecs) {
   const spec = JSON.parse(readFileSync(path, "utf8"));
 
   // Validate the way a user's agent would before building, so a broken example fails loudly here
@@ -186,20 +206,20 @@ for (const { style, label, path } of showcaseSpecs) {
   );
   const validationErrors = (validation.diagnostics ?? []).filter((d) => d.level === "error");
   if (validationErrors.length) {
-    showcaseErrors.push(`${style}: ${JSON.stringify(validationErrors)}`);
+    showcaseErrors.push(`${id}: ${JSON.stringify(validationErrors)}`);
     continue;
   }
 
   const built = buildDocument(spec, { embedFonts: true });
   const buildErrors = built.diagnostics.filter((d) => d.level === "error");
   if (buildErrors.length || !built.html) {
-    showcaseErrors.push(`${style}: ${JSON.stringify(buildErrors.length ? buildErrors : built.diagnostics)}`);
+    showcaseErrors.push(`${id}: ${JSON.stringify(buildErrors.length ? buildErrors : built.diagnostics)}`);
     continue;
   }
 
-  const outHtml = join(showcaseDir, `${style}.html`);
-  const freshPdf = join(showcaseDir, `${style}.pdf`);
-  const committedPdf = join(showcaseSrcDir, "pdf", `${style}.pdf`);
+  const outHtml = join(showcaseDir, `${id}.html`);
+  const freshPdf = join(showcaseDir, `${id}.pdf`);
+  const committedPdf = join(showcaseSrcDir, "pdf", `${id}.pdf`);
   rmSync(freshPdf, { force: true });
   // The CLI's own `build --pdf` writes the PDF beside its own (non-embedded-fonts) HTML; that
   // HTML is then overwritten below with the embedFonts version this page actually serves.
@@ -219,11 +239,11 @@ for (const { style, label, path } of showcaseSpecs) {
     (match) => match[0],
   );
   if (pageMarkup.length !== spec.pages.length) {
-    showcaseErrors.push(`${style}: expected ${spec.pages.length} renderer pages, got ${pageMarkup.length}`);
+    showcaseErrors.push(`${id}: expected ${spec.pages.length} renderer pages, got ${pageMarkup.length}`);
     continue;
   }
   const pagePreviews = pageMarkup.map((markup, index) => {
-    const file = `${style}-${index + 1}.html`;
+    const file = `${id}-${index + 1}.html`;
     const singlePage = built.html.replace(
       /(<body[^>]*>)[\s\S]*?(<\/body>)/,
       (_, open, close) => `${open}${markup}${close}`,
@@ -245,26 +265,27 @@ for (const { style, label, path } of showcaseSpecs) {
     }
   } else if (existsSync(committedPdf)) {
     copyFileSync(committedPdf, freshPdf);
-    committedPdfsUsed.push(style);
+    committedPdfsUsed.push(id);
   } else {
-    showcaseErrors.push(
-      `${style}: no browser to make its PDF, and no committed copy at showcase/pdf/${style}.pdf`,
-    );
+    showcaseErrors.push(`${id}: no browser to make its PDF, and no committed copy at showcase/pdf/${id}.pdf`);
     continue;
   }
 
   showcaseEntries.push({
+    id,
     style,
+    styleLabel: STYLE_LABELS[style],
     label,
+    collection: collection ?? null,
     title: spec.title,
     subtitle: spec.subtitle ?? null,
-    request: showcaseRequests[style].request,
-    why: showcaseRequests[style].why,
+    request: showcaseRequests[id].request,
+    why: showcaseRequests[id].why,
     timebox: spec.timebox ?? (style === "proof" ? "Open" : null),
     pageCount: built.sidecar?.pages.length ?? spec.pages.length,
     pagePreviews,
-    html: `/generated/showcase/${style}.html`,
-    pdf: `/generated/showcase/${style}.pdf`,
+    html: `/generated/showcase/${id}.html`,
+    pdf: `/generated/showcase/${id}.pdf`,
   });
 }
 if (showcaseErrors.length) {

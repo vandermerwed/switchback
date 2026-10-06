@@ -23,7 +23,7 @@ test("the showcase names all five styles and links a PDF for each", () => {
 });
 
 test("every showcase style has a committed PDF for builds without a browser", () => {
-  for (const style of ["sitting", "series", "incubation", "ritual", "proof"]) {
+  for (const style of ["sitting", "series", "incubation", "ritual", "proof", "game-dev"]) {
     const pdf = new URL(`../showcase/pdf/${style}.pdf`, import.meta.url);
     assert.ok(existsSync(pdf), `site/showcase/pdf/${style}.pdf`);
     assert.equal(readFileSync(pdf).subarray(0, 5).toString("latin1"), "%PDF-", `${style}.pdf is a PDF`);
@@ -35,7 +35,7 @@ test("the gallery presents the request and every renderer page without JavaScrip
   const entries = JSON.parse(
     readFileSync(new URL("../src/generated/showcase.json", import.meta.url), "utf8"),
   );
-  assert.equal(entries.length, 5);
+  assert.equal(entries.length, 6);
   for (const entry of entries) {
     assert.ok(html.includes(entry.request), `${entry.style} request is visible`);
     assert.ok(html.includes(entry.why), `${entry.style} reason is visible`);
@@ -57,4 +57,37 @@ test("every showcase page preview records its orientation, and landscape pages a
       const html = readFileSync(new URL(page.html.slice(1), dist), "utf8");
       if (page.orientation === "landscape") assert.match(html, /<section class="sb-page[^"]*sb-landscape/);
     }
+});
+
+test("the showcase has a workbook drawn from the Game Development collection", () => {
+  const entries = JSON.parse(
+    readFileSync(new URL("../src/generated/showcase.json", import.meta.url), "utf8"),
+  );
+  const gameDev = entries.find((e) => e.id === "game-dev");
+  assert.ok(gameDev, "a game-dev example");
+  assert.equal(gameDev.style, "sitting");
+  assert.equal(gameDev.collection, "game-dev");
+  assert.ok(
+    entries.find((e) => e.id === "sitting"),
+    "the original sitting keeps its own id",
+  );
+  const spec = JSON.parse(readFileSync(new URL("../showcase/game-dev.json", import.meta.url), "utf8"));
+  for (const id of ["game-one-pager", "core-loop", "feature-cut"])
+    assert.ok(
+      spec.pages.some((p) => p.component === id),
+      `uses ${id}`,
+    );
+  const html = readFileSync(new URL("showcase/index.html", dist), "utf8");
+  assert.ok(html.includes('id="game-dev"'), "has its own anchor");
+  assert.ok(html.includes('href="/docs/collections/game-dev/"'), "links its collection");
+  assert.ok(html.includes("Game Development"), "names its collection");
+  assert.match(html, /Six examples/);
+});
+
+test("the gallery's 9mm frame offset matches the renderer's on-screen page margin", () => {
+  const entries = JSON.parse(
+    readFileSync(new URL("../src/generated/showcase.json", import.meta.url), "utf8"),
+  );
+  const page = readFileSync(new URL(entries[0].pagePreviews[0].html.slice(1), dist), "utf8");
+  assert.match(page, /\.sb-page \{[^}]*margin: 9mm auto/, "showcase.astro offsets each frame by 9mm");
 });

@@ -40,6 +40,18 @@ test("the getting-started page shows the four install commands verbatim", () => 
   }
 });
 
+// The sidebar links the collections on every docs page, so look only at the page's own content.
+const mainOf = (route) => {
+  const html = readFileSync(new URL(`${route}index.html`, dist), "utf8");
+  return html.slice(html.indexOf("<main"), html.indexOf("</main>"));
+};
+
+test("the guides point at the collections, not just the sidebar", () => {
+  for (const route of ["docs/", "docs/modes/workbook/", "docs/components/"])
+    assert.ok(mainOf(route).includes('href="/docs/collections/"'), `${route} links the collections`);
+  assert.match(mainOf("docs/modes/workbook/"), /<h2[^>]*>Collections<\/h2>/);
+});
+
 test("the changelog page names the current version", () => {
   const html = readFileSync(new URL("changelog/index.html", dist), "utf8");
   assert.ok(html.includes("0.1.0"), "changelog should mention 0.1.0");

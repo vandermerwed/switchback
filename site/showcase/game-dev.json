@@ -1,0 +1,64 @@
+{
+  "switchback": 1,
+  "style": "sitting",
+  "title": "What can I build in a two-week jam?",
+  "subtitle": "One question: what is this game, and what has to go for it to ship in two weeks?",
+  "paper": "A4",
+  "round": 1,
+  "timebox": "45 min",
+  "pages": [
+    {
+      "id": "W1-P1",
+      "component": "cover",
+      "data": {
+        "question": "What is this game, and what has to go for it to ship in two weeks?",
+        "timebox": "45 min",
+        "howto": [
+          "Phone in another room.",
+          "Work in ink, in the colours on this page.",
+          "When the time is up, stop mid-sentence.",
+          "Photograph every page and send them back."
+        ]
+      }
+    },
+    {
+      "id": "W1-P2",
+      "component": "game-one-pager",
+      "title": "The game on one page",
+      "prompt": "A word or two in every box before you make any of them good. An empty box is an answer too."
+    },
+    {
+      "id": "W1-P3",
+      "component": "core-loop",
+      "title": "What the player keeps doing",
+      "prompt": "Draw the loop as it is in your head today. Circle any step that needs a whole sentence to explain."
+    },
+    {
+      "id": "W1-P4",
+      "component": "feature-cut",
+      "variant": "write-in",
+      "title": "What ships, what waits, what goes",
+      "prompt": "Every feature goes in one pile. A feature you can't place is a question, not a must-have.",
+      "data": { "source": "the features on your one-pager, W1-P2" }
+    },
+    {
+      "id": "W1-P5",
+      "component": "pre-mortem",
+      "title": "The jam ended and it didn't ship",
+      "prompt": "It is the last hour of the jam and the build won't run. Write down what happened.",
+      "data": { "subject": "the jam game", "horizon": "two weeks" }
+    },
+    {
+      "id": "W1-P6",
+      "component": "commit"
+    },
+    {
+      "id": "W1-P7",
+      "component": "question-queue"
+    },
+    {
+      "id": "W1-P8",
+      "component": "return-checklist"
+    }
+  ]
+}

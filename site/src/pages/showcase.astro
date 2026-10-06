@@ -12,6 +12,13 @@ const STYLE_INTENT = {
   ritual: "The same short page each time.",
   proof: "A document made ready for margin notes.",
 };
+const COUNT_WORDS = ["No", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"];
+const count = COUNT_WORDS[workbooks.length] ?? String(workbooks.length);
+// An example drawn from a collection says so in the index; the others say what their style is for.
+const intentOf = (workbook) =>
+  workbook.collection
+    ? `A sitting drawn from the ${workbook.label} collection.`
+    : STYLE_INTENT[workbook.style];
 ---
 
 <html lang="en">
@@ -20,27 +27,28 @@ const STYLE_INTENT = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>Showcase — Switchback</title>
-    <meta name="description" content="Five real Switchback print examples with every page and a PDF for each." />
+    <meta name="description" content={`${count} real Switchback print examples with every page and a PDF for each.`} />
   </head>
   <body>
     <SiteNav />
     <main class="gallery">
       <header class="gallery-intro">
         <h1>Pages to work on.</h1>
-        <p>Five examples printed by the current Switchback renderer. Each page below is the renderer's own output, shown at A4 proportions. Open a page at full size to inspect the print.</p>
+        <p>{count} examples printed by the current Switchback renderer: one for each style, and one drawn from a collection of templates. Each page below is the renderer's own output, shown at A4 proportions. Open a page at full size to inspect the print.</p>
       </header>
       <div class="gallery-grid">
         <nav class="gallery-index" aria-label="Showcase examples">
-          {workbooks.map((workbook) => <a href={`#${workbook.style}`}><span>{workbook.label}</span><small>{STYLE_INTENT[workbook.style]}</small></a>)}
+          {workbooks.map((workbook) => <a href={`#${workbook.id}`}><span>{workbook.label}</span><small>{intentOf(workbook)}</small></a>)}
         </nav>
         <div class="gallery-examples">
           {workbooks.map((workbook) => {
             const feature = workbook.pagePreviews[Math.min(1, workbook.pagePreviews.length - 1)];
-            return <section class="workbook" id={workbook.style} aria-labelledby={`${workbook.style}-title`}>
-              <div class="workbook-heading"><h2 id={`${workbook.style}-title`}>{workbook.label}</h2><p>{workbook.pageCount} {workbook.pageCount === 1 ? "page" : "pages"} · {workbook.timebox}</p></div>
+            return <section class="workbook" id={workbook.id} aria-labelledby={`${workbook.id}-title`}>
+              <div class="workbook-heading"><h2 id={`${workbook.id}-title`}>{workbook.label}</h2><p>{workbook.pageCount} {workbook.pageCount === 1 ? "page" : "pages"} · {workbook.timebox}</p></div>
+              {workbook.collection && <p class="from-collection">A {workbook.styleLabel} from the <a href={`/docs/collections/${workbook.collection}/`}>{workbook.label} collection</a></p>}
               <p class="request-label">Request</p>
               <blockquote>“{workbook.request}”</blockquote>
-              <p class="style-reason"><strong>Why {workbook.label}</strong> {workbook.why}</p>
+              <p class="style-reason"><strong>Why {workbook.styleLabel}</strong> {workbook.why}</p>
               <div class="page-strip" aria-label={`All ${workbook.pageCount} ${workbook.label} pages`}>
                 {workbook.pagePreviews.map((page, index) => <a class="page-thumb" href={page.html} aria-label={`Open ${workbook.label} page ${index + 1} at full size`}>
                   <span class:list={["thumb-paper", { "is-landscape": page.orientation === "landscape" }]}><iframe src={page.html} title={`${workbook.label} ${page.id} thumbnail`} loading="lazy" tabindex="-1"></iframe></span>
@@ -85,6 +93,8 @@ const STYLE_INTENT = {
   .workbook-heading h2 { font: 500 clamp(3rem, 5vw, 5rem)/1.1 var(--sb-font-heading); letter-spacing: -.03em; margin: 0 0 2rem; }
   .workbook-heading p, .request-label { font-size: .8rem; color: var(--sb-ink-soft); }
   .request-label { text-transform: uppercase; letter-spacing: .12em; margin-bottom: .5rem; }
+  .from-collection { margin: -1.25rem 0 2rem; color: var(--sb-ink-soft); }
+  .from-collection a { color: var(--sb-ink); font-weight: 600; text-underline-offset: .25em; }
   blockquote { max-width: 29ch; font: 500 clamp(1.5rem, 2.3vw, 2.2rem)/1.3 var(--sb-font-heading); letter-spacing: -.02em; margin: 0 0 1.5rem; }
   .style-reason { max-width: 60ch; color: var(--sb-ink-soft); line-height: 1.65; margin: 0 0 2.5rem; }
   .style-reason strong { color: var(--sb-ink); }
@@ -92,14 +102,17 @@ const STYLE_INTENT = {
   .page-thumb { flex: 0 0 106px; text-decoration: none; font-size: .75rem; color: var(--sb-ink-soft); }
   .page-thumb:hover { color: var(--sb-ink); }
   .thumb-paper { display: block; width: 106px; height: 150px; overflow: hidden; background: white; border: 1px solid var(--sb-rule); margin-bottom: .5rem; }
-  .thumb-paper iframe { width: 794px; height: 1123px; border: 0; pointer-events: none; transform: scale(.133); transform-origin: 0 0; }
+  /* A page file keeps the renderer's on-screen margin (9mm above and below each sheet), so each frame
+     is 18mm taller than the sheet and shifted up 9mm: the sheet itself fills the frame, with no grey
+     band above it, its foot strip intact, and no scrollbars. tests/showcase.test.mjs pins the 9mm. */
+  .thumb-paper iframe { width: 794px; height: calc(1123px + 18mm); border: 0; pointer-events: none; transform: scale(.133) translateY(-9mm); transform-origin: 0 0; }
   .feature-layout { display: grid; grid-template-columns: minmax(0, 560px) minmax(150px, 1fr); align-items: end; gap: 2rem; }
   .feature-paper { width: 560px; max-width: 100%; aspect-ratio: 210 / 297; overflow: hidden; background: white; box-shadow: 8px 14px 30px rgba(0,0,0,.14); }
-  .feature-paper iframe { width: 794px; height: 1123px; border: 0; transform: scale(.705); transform-origin: 0 0; }
+  .feature-paper iframe { width: 794px; height: calc(1123px + 18mm); border: 0; transform: scale(.705) translateY(-9mm); transform-origin: 0 0; }
   .thumb-paper.is-landscape { width: 150px; height: 106px; }
-  .thumb-paper.is-landscape iframe { width: 1123px; height: 794px; }
+  .thumb-paper.is-landscape iframe { width: 1123px; height: calc(794px + 18mm); }
   .feature-paper.is-landscape { aspect-ratio: 297 / 210; }
-  .feature-paper.is-landscape iframe { width: 1123px; height: 794px; transform: scale(.4987); }
+  .feature-paper.is-landscape iframe { width: 1123px; height: calc(794px + 18mm); transform: scale(.4987) translateY(-9mm); }
   .feature-caption { display: grid; gap: .8rem; align-content: end; padding-bottom: 1rem; }
   .feature-caption p { color: var(--sb-ink-soft); line-height: 1.5; }
   .feature-caption a { color: var(--sb-ink); font-weight: 600; text-underline-offset: .25em; }
@@ -110,5 +123,5 @@ const STYLE_INTENT = {
   .returned-page :global(.marked-page) { box-shadow: 10px 18px 32px rgba(20, 40, 34, .18); }
   .returned-page figcaption { margin-top: 1rem; color: var(--sb-ink-soft); font-size: .8rem; line-height: 1.5; }
   @media (max-width: 900px) { .returned-pair { grid-template-columns: minmax(0, 1fr); } .returned-page { width: min(100%, 440px); } .gallery-grid { grid-template-columns: minmax(0, 1fr); } .gallery-index { position: static; display: flex; overflow-x: auto; gap: 1.5rem; padding: 1.5rem 0 0; min-width: 0; max-width: 100%; } .gallery-index a { flex: 0 0 140px; } .workbook { padding-top: 3rem; } }
-  @media (max-width: 640px) { .gallery-intro, .marked-intro { padding-inline: 20px; } .gallery-grid { padding-inline: 20px; } .gallery-intro h1, .marked-intro h2 { font-size: 3.4rem; } .feature-layout { display: block; } .feature-paper { width: min(100%, 350px); } .feature-paper iframe { transform: scale(.44); } .feature-paper.is-landscape iframe { transform: scale(.311); } .feature-caption { padding-top: 1rem; } .workbook-heading { display: block; } .workbook-heading h2 { margin-bottom: .2rem; } .workbook-heading p { margin-bottom: 2rem; } }
+  @media (max-width: 640px) { .gallery-intro, .marked-intro { padding-inline: 20px; } .gallery-grid { padding-inline: 20px; } .gallery-intro h1, .marked-intro h2 { font-size: 3.4rem; } .feature-layout { display: block; } .feature-paper { width: min(100%, 350px); } .feature-paper iframe { transform: scale(.44) translateY(-9mm); } .feature-paper.is-landscape iframe { transform: scale(.311) translateY(-9mm); } .feature-caption { padding-top: 1rem; } .workbook-heading { display: block; } .workbook-heading h2 { margin-bottom: .2rem; } .workbook-heading p { margin-bottom: 2rem; } }
 </style>
