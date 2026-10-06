@@ -45,6 +45,16 @@ describe("renderPage", () => {
     expect(html).toMatch(/<section class="sb-page"/);
     expect(html).not.toContain("sb-has-attrib");
   });
+
+  it("marks a landscape page with sb-landscape and leaves a portrait page alone", () => {
+    expect(renderPage({ ...parts, orientation: "landscape" })).toMatch(
+      /<section class="sb-page sb-landscape" id="W1-P3"/,
+    );
+    expect(renderPage({ ...parts, orientation: "portrait" })).toMatch(/<section class="sb-page" id="W1-P3"/);
+    expect(renderPage({ ...parts, orientation: "landscape", attribution: "Credit." })).toMatch(
+      /<section class="sb-page sb-has-attrib sb-landscape" id="W1-P3"/,
+    );
+  });
 });
 
 describe("legendStrip", () => {
@@ -57,7 +67,7 @@ describe("legendStrip", () => {
 });
 
 describe("renderDocument", () => {
-  it("sizes the page and de-duplicates component CSS", () => {
+  it("names a portrait and a landscape page for the paper, and de-duplicates component CSS", () => {
     const html = renderDocument({
       title: "T",
       paper: "Letter",
@@ -66,8 +76,15 @@ describe("renderDocument", () => {
       embedFonts: false,
     });
     expect(html).toContain("@page{size:letter;margin:0}");
+    expect(html).toContain("@page sb-portrait{size:letter;margin:0}");
+    expect(html).toContain("@page sb-landscape{size:letter landscape;margin:0}");
     expect(html).toContain("--sb-w:215.9mm");
     expect(html.match(/\.a\{\}/g)).toHaveLength(1);
     expect(html).not.toContain("@font-face");
+  });
+
+  it("uses A4 for the named pages on A4 paper", () => {
+    const html = renderDocument({ title: "T", paper: "A4", pages: [], componentCss: [], embedFonts: false });
+    expect(html).toContain("@page sb-landscape{size:A4 landscape;margin:0}");
   });
 });

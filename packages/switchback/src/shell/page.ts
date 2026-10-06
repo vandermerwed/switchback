@@ -1,5 +1,5 @@
 import { orderByPriority } from "../engine/pens";
-import type { Mark, Paper, PenMapping, Role, ShellOptions } from "../engine/types";
+import type { Mark, Orientation, Paper, PenMapping, Role, ShellOptions } from "../engine/types";
 import { fontFaceCss } from "./fonts";
 import { esc, helpers } from "./helpers";
 import { TOKENS_CSS } from "./tokens";
@@ -20,6 +20,7 @@ export interface PageParts {
   legend: string;
   attribution?: string;
   tag?: string;
+  orientation?: Orientation;
 }
 
 export function renderPage(p: PageParts): string {
@@ -38,7 +39,14 @@ export function renderPage(p: PageParts): string {
   // credit line). `.sb-pfoot` is absolutely positioned and outside the flex flow, so `.sb-pbody`
   // doesn't know to leave it room: the `sb-has-attrib` class (tokens.ts) gives the page extra
   // bottom padding, scoped so pages without an attribution keep their existing padding.
-  const pageClass = p.attribution ? "sb-page sb-has-attrib" : "sb-page";
+  // A landscape page (sb-landscape) prints on the named landscape page and swaps its box (tokens.ts).
+  const pageClass = [
+    "sb-page",
+    p.attribution ? "sb-has-attrib" : "",
+    p.orientation === "landscape" ? "sb-landscape" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
   return `<section class="${pageClass}" id="${esc(p.id)}" data-component="${esc(p.component)}">${marks}${header}${prompt}${notes}<div class="sb-pbody">${p.body}</div>${foot}</section>`;
 }
 
@@ -86,6 +94,8 @@ export function renderDocument(o: {
 ${fonts}
 :root{--sb-w:${w}mm;--sb-h:${h}mm}
 @page{size:${size};margin:0}
+@page sb-portrait{size:${size};margin:0}
+@page sb-landscape{size:${size} landscape;margin:0}
 ${TOKENS_CSS}
 ${css}
 </style>
