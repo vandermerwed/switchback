@@ -6,6 +6,7 @@
   "when": "always; every workbook opens with one",
   "tags": ["focus"],
   "phase": "either",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["read"],

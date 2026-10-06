@@ -6,6 +6,7 @@
   "when": "stuck on a person, a negotiation, a user, or a collaborator",
   "tags": ["reflect", "decide"],
   "phase": "either",
+  "basis": "research",
   "orientation": "landscape",
   "physical": {
     "requires": ["printer"],

@@ -6,6 +6,7 @@
   "when": "mid-way through a Series, before spending another round on the same practice",
   "tags": ["learn", "review"],
   "phase": "converge",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["write"],

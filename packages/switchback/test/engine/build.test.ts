@@ -172,6 +172,7 @@ const wide = (
     physical: { requires: [], body: [], surface: "desk", timebox: "1 min" },
     variants: [{ id: "default", requires: [] }],
     data: { type: "object" },
+    basis: "research",
     grounding: { claims: [], helps: "", backfires: "" },
     ...(orientation ? { orientation } : {}),
   },

@@ -6,6 +6,7 @@
   "when": "the problem is foggy, or there are too many threads",
   "tags": ["create", "diagnose", "reflect"],
   "phase": "diverge",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["write"],

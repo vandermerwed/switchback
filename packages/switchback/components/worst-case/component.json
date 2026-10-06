@@ -6,6 +6,7 @@
   "when": "a fear too large to think about clearly, not tied to one plan (for a plan's failure, use pre-mortem)",
   "tags": ["reflect", "decide"],
   "phase": "either",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["write", "rate"],

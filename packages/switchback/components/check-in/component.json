@@ -6,6 +6,7 @@
   "when": "a recurring return to the same question (the Ritual page)",
   "tags": ["reflect"],
   "phase": "either",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["rate", "write"],

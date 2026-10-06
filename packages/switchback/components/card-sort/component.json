@@ -6,6 +6,7 @@
   "when": "prioritising, clustering, or when the human is arguing with themselves",
   "tags": ["decide", "plan"],
   "phase": "converge",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["write", "cut", "sort", "re-sort"],

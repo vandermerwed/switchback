@@ -21,3 +21,13 @@ describe("orientation in the schemas", () => {
     expect(presetSchema.properties.orientation).toEqual({ enum: ["portrait", "landscape"] });
   });
 });
+
+describe("basis in the schemas", () => {
+  it("requires basis on a component, allows origin, and allows basis on a preset", () => {
+    expect(componentSchema.required).toContain("basis");
+    expect(componentSchema.required).not.toContain("grounding");
+    expect(componentSchema.properties.basis).toEqual({ enum: ["research", "practice"] });
+    expect(componentSchema.properties.origin).toEqual({ type: "string", minLength: 1, maxLength: 160 });
+    expect(presetSchema.properties.basis).toEqual({ enum: ["research", "practice"] });
+  });
+});

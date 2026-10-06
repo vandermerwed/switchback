@@ -6,6 +6,7 @@
   "when": "studying material that has to last; the core page of a Series round",
   "tags": ["learn"],
   "phase": "converge",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["write"],

@@ -6,6 +6,7 @@
   "when": "sorting pieces into stages, or keeping several live threads in view",
   "tags": ["plan", "decide", "focus"],
   "phase": "either",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["place"],

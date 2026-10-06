@@ -6,6 +6,7 @@
   "when": "stuck, over-optimising, or when we can't because dominates",
   "tags": ["create"],
   "phase": "diverge",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["write"],

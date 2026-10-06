@@ -6,6 +6,7 @@
   "when": "a costly habit you keep, or an activity you keep avoiding, and you don't know why",
   "tags": ["diagnose", "plan"],
   "phase": "either",
+  "basis": "research",
   "orientation": "landscape",
   "physical": {
     "requires": ["printer"],

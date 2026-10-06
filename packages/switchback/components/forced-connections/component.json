@@ -6,6 +6,7 @@
   "when": "ideas have gone stale and familiar",
   "tags": ["create"],
   "phase": "diverge",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["write"],

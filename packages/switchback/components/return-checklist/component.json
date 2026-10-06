@@ -6,6 +6,7 @@
   "when": "always, as the final page",
   "tags": ["focus"],
   "phase": "either",
+  "basis": "research",
   "physical": {
     "requires": ["camera"],
     "body": ["photograph"],

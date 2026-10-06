@@ -6,6 +6,7 @@
   "when": "a decision or plan is about to be locked in, or optimism is unexamined",
   "tags": ["decide", "plan"],
   "phase": "converge",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["write"],

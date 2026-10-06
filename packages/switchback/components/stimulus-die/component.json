@@ -6,6 +6,7 @@
   "when": "the obvious options are exhausted and thinking has gone in circles",
   "tags": ["create"],
   "phase": "diverge",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["cut", "fold", "roll"],

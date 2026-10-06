@@ -102,12 +102,13 @@ export async function showCommand(argv: string[], io: Io, env: NodeJS.ProcessEnv
     );
   if (meta.prompt) lines.push(`prompt:  ${meta.prompt}`);
   if (meta.readback) lines.push(`read-back: ${meta.readback}`);
+  const grounding = meta.grounding ?? { claims: [], helps: "", backfires: "" };
   lines.push("grounding:");
-  if (!meta.grounding.claims.length) lines.push("  (not yet researched)");
-  for (const c of meta.grounding.claims)
+  if (!grounding.claims.length) lines.push("  (not yet researched)");
+  for (const c of grounding.claims)
     lines.push(`  - ${c.claim} [${c.grade}] ${c.sources.map((s) => s.cite).join("; ")}`);
-  if (meta.grounding.helps) lines.push(`  helps: ${meta.grounding.helps}`);
-  if (meta.grounding.backfires) lines.push(`  backfires: ${meta.grounding.backfires}`);
+  if (grounding.helps) lines.push(`  helps: ${grounding.helps}`);
+  if (grounding.backfires) lines.push(`  backfires: ${grounding.backfires}`);
   if (presets.length) lines.push(`presets: ${presets.join(", ")}`);
   for (const line of lines) io.out(line);
   return 0;

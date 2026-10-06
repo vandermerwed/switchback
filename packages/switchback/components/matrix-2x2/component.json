@@ -6,6 +6,7 @@
   "when": "prioritising or comparing under two competing values",
   "tags": ["decide", "plan"],
   "phase": "converge",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["write", "place"],

@@ -6,6 +6,7 @@
   "when": "work that expands to fill the time available, or a decision that keeps being deferred",
   "tags": ["focus"],
   "phase": "converge",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["mark", "move"],

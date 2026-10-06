@@ -1,5 +1,6 @@
 const bool = { type: "boolean" } as const;
 const orientation = { enum: ["portrait", "landscape"] } as const;
+const basis = { enum: ["research", "practice"] } as const;
 
 export const kitSchema = {
   type: "object",
@@ -142,7 +143,7 @@ export const componentSchema = {
     "physical",
     "variants",
     "data",
-    "grounding",
+    "basis",
   ],
   properties: {
     id: { type: "string", pattern: "^[a-z0-9]+(-[a-z0-9]+)*$" },
@@ -192,6 +193,8 @@ export const componentSchema = {
     data: { type: "object" },
     prompt: { type: "string" },
     readback: { type: "string" },
+    basis,
+    origin: { type: "string", minLength: 1, maxLength: 160 },
     grounding: groundingSchema,
   },
 } as const;
@@ -211,6 +214,7 @@ export const presetSchema = {
     licence: { type: "string", minLength: 1 },
     footer: { type: "string", minLength: 1, maxLength: 240 },
     orientation,
+    basis,
     grounding: groundingSchema,
   },
 } as const;

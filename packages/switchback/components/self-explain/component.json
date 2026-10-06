@@ -6,6 +6,7 @@
   "when": "working through a worked example, a proof, a procedure or a set of facts",
   "tags": ["learn"],
   "phase": "converge",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["write"],

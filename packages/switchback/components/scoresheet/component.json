@@ -6,6 +6,7 @@
   "when": "confidence, mood, or commitment likely to shift across the sitting",
   "tags": ["reflect"],
   "phase": "either",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["rate", "write"],

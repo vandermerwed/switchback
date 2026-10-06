@@ -6,6 +6,7 @@
   "when": "something you avoid but plausibly want; only in styles with a return, because the digest happens after the action",
   "tags": ["plan", "reflect"],
   "phase": "converge",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["write", "circle"],

@@ -6,6 +6,7 @@
   "when": "always; it is the page the workbook exists to reach",
   "tags": ["decide", "plan"],
   "phase": "converge",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["write", "circle"],

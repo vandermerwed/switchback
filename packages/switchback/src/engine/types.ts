@@ -1,5 +1,7 @@
 export type Paper = "A4" | "Letter";
 export type Orientation = "portrait" | "landscape";
+/** What a template rests on: graded research claims, or common practice with a stated origin. */
+export type Basis = "research" | "practice";
 export type RoleId = "ask" | "stop" | "keep" | "crux" | "maybe" | "sense" | "draft" | "reason";
 export type Phase = "diverge" | "converge" | "either";
 export type Grade = "A" | "B" | "C" | "D" | "unrated";
@@ -167,7 +169,10 @@ export interface ComponentMeta {
   data: JsonSchema;
   prompt?: string;
   readback?: string;
-  grounding: Grounding;
+  basis: Basis;
+  /** Where a practical template comes from; required when basis is "practice". */
+  origin?: string;
+  grounding?: Grounding;
 }
 
 export interface PresetMeta {
@@ -181,6 +186,8 @@ export interface PresetMeta {
   licence: string;
   footer?: string;
   orientation?: Orientation;
+  /** Overrides the base component's basis; a practical preset's attribution is its origin. */
+  basis?: Basis;
   grounding?: Grounding;
 }
 
