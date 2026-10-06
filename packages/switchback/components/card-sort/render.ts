@@ -1,5 +1,6 @@
 import { warning } from "../../src/engine/diagnostics";
-import type { Checks, Render } from "../../src/engine/types";
+import type { Checks, OrientationRule, Render } from "../../src/engine/types";
+import { PAPER_MM } from "../../src/shell/page";
 
 interface Data {
   source?: string;
@@ -46,14 +47,25 @@ export const render: Render<Data> = (data, { h, variant }) => {
   );
 };
 
-export const checks: Checks<Data> = (data, { variant }) => {
-  const columns = data.columns?.length ? data.columns.length : 3;
-  if (variant !== "index-cards" || columns < 3) return [];
+/** How many piles the page prints: the named columns, or three unnamed ones. */
+const piles = (data: Data) => (data.columns?.length ? data.columns.length : 3);
+
+export const orientation: OrientationRule<Data> = (data) => (piles(data) >= 3 ? "landscape" : undefined);
+
+const INDEX_CARD_MM = 76;
+const SIDE_MARGINS_MM = 30;
+
+export const checks: Checks<Data> = (data, { variant, paper, orientation }) => {
+  if (variant !== "index-cards") return [];
+  const columns = piles(data);
+  const [short, long] = PAPER_MM[paper];
+  const each = Math.floor(((orientation === "landscape" ? long : short) - SIDE_MARGINS_MM) / columns);
+  if (each >= INDEX_CARD_MM) return [];
   return [
     warning(
       "W_NARROW",
-      `index cards are about 76 mm wide; ${columns} columns on portrait paper leave about ${Math.floor(180 / columns)} mm each`,
-      "use the write-in variant, 2 columns, or wait for landscape pages",
+      `index cards are about ${INDEX_CARD_MM} mm wide; ${columns} piles leave about ${each} mm each`,
+      "use the write-in variant, or fewer piles",
     ),
   ];
 };

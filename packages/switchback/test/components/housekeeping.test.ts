@@ -46,7 +46,7 @@ describe("housekeeping", () => {
 
   it("attribution pages use a class, not an inline style", () => {
     const html = renderComponent("business-model-canvas", { embedFonts: false }).html ?? "";
-    expect(html).toContain('class="sb-page sb-has-attrib"');
+    expect(html).toMatch(/class="sb-page sb-has-attrib[^"]*"/);
     expect(html).not.toContain('style="padding-bottom:20mm"');
     expect(html).toContain(".sb-page.sb-has-attrib");
   });

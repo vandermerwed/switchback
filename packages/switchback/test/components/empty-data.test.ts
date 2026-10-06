@@ -25,6 +25,6 @@ describe.each(cases)("$id ($variant) with empty data", ({ id, variant }) => {
       { embedFonts: false },
     );
     expect(r.diagnostics.filter((d) => d.level === "error")).toEqual([]);
-    expect(r.html?.match(/<section class="sb-page"/g)).toHaveLength(1);
+    expect(r.html?.match(/<section class="sb-page[ "]/g)).toHaveLength(1);
   });
 });

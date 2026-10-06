@@ -41,7 +41,7 @@ describe.each(cases)("$id ($example)", ({ id, example }) => {
 
   it("renders exactly one page without errors", () => {
     expect(result.diagnostics.filter((d) => d.level === "error")).toEqual([]);
-    expect(result.html?.match(/<section class="sb-page"/g)).toHaveLength(1);
+    expect(result.html?.match(/<section class="sb-page[ "]/g)).toHaveLength(1);
   });
 
   it("shows every string it was given", () => {

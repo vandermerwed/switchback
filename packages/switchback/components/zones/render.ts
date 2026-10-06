@@ -1,5 +1,5 @@
 import { error, warning } from "../../src/engine/diagnostics";
-import type { Checks, Render } from "../../src/engine/types";
+import type { Checks, OrientationRule, Render } from "../../src/engine/types";
 
 interface Data {
   zones?: string[];
@@ -12,6 +12,36 @@ const DEFAULT_ZONES = ["Now", "Next", "Later"];
 /** A layout is used only when it gives exactly one cell per zone; otherwise render ignores it. */
 const usableLayout = (data: Data, labels: string[]) =>
   !!data.layout?.length && data.layout.length === labels.length;
+
+/**
+ * The column count render uses when there is no usable layout; undefined means one stacked column.
+ * Above 5 zones the column stack (40mm minimum per zone) overflows the page, so it falls back to
+ * the columns grid instead, unless the spec already asked for a specific column count.
+ */
+const columnsFor = (data: Data, labels: string[]): number | undefined =>
+  data.columns !== undefined
+    ? data.columns >= 2
+      ? data.columns
+      : labels.length > 5
+        ? 2
+        : undefined
+    : labels.length > 5
+      ? 3
+      : undefined;
+
+/** Rows a usable layout spans, clamped to the grid's four, as render draws it. */
+const layoutRows = (layout: NonNullable<Data["layout"]>): number =>
+  Math.min(
+    4,
+    Math.max(...layout.map((c) => c.row + Math.max(1, Math.min(c.rowSpan ?? 1, 4 - c.row + 1)) - 1)),
+  );
+
+export const orientation: OrientationRule<Data> = (data) => {
+  const labels = data.zones?.length ? data.zones : DEFAULT_ZONES;
+  // A landscape body holds three 38mm canvas rows, not four.
+  if (usableLayout(data, labels)) return layoutRows(data.layout!) <= 3 ? "landscape" : undefined;
+  return (columnsFor(data, labels) ?? 1) >= 3 ? "landscape" : undefined;
+};
 
 export const css = `.sb-c-zones-grid { display: grid; grid-auto-rows: 1fr; gap: 4mm; }
 .sb-c-zones-canvas { display: grid; grid-template-columns: repeat(10, 1fr); gap: 2.5mm; } .sb-c-zones-canvas .sb-label { position: static; display: block; margin-bottom: 1mm; }`;
@@ -35,19 +65,8 @@ export const render: Render<Data> = (data, { h }) => {
       .join("");
     return `<div class="sb-c-zones-canvas sb-fill" style="grid-template-rows:repeat(${rows},minmax(38mm,1fr))">${cells}</div>`;
   }
-  // No usable layout (none given, or a length mismatch against `labels`). Above 5 zones the
-  // column stack (40mm minimum per zone, stacked in one column) overflows the page, so fall
-  // back to the columns grid instead, unless the spec already asked for a specific column count.
-  const columns =
-    data.columns !== undefined
-      ? data.columns >= 2
-        ? data.columns
-        : labels.length > 5
-          ? 2
-          : undefined
-      : labels.length > 5
-        ? 3
-        : undefined;
+  // No usable layout (none given, or a length mismatch against `labels`).
+  const columns = columnsFor(data, labels);
   if (columns) {
     return `<div class="sb-c-zones-grid sb-fill" style="grid-template-columns:repeat(${columns},1fr)">${labels
       .map((l) => h.box({ label: l }))

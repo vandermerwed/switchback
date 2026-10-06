@@ -21,17 +21,31 @@ describe("card-sort", () => {
     expect(writeIn).toContain("write each candidate from the survivors from W1-P2 straight into the pile");
   });
 
-  it("warns when index-card columns are too narrow on portrait paper", () => {
-    const three = one({ columns: ["Now", "Later", "Never"] }, "index-cards");
-    const w = three.diagnostics.find((d) => d.code === "W_NARROW")!;
+  it("prints three or more piles on a landscape page", () => {
+    expect(one({ columns: ["Now", "Later", "Never"] }, "write-in").sidecar?.pages[0]?.orientation).toBe(
+      "landscape",
+    );
+    expect(one({}, "write-in").sidecar?.pages[0]?.orientation).toBe("landscape"); // 3 unnamed piles
+    expect(one({ columns: ["Now", "Later"] }, "write-in").sidecar?.pages[0]?.orientation).toBe("portrait");
+  });
+
+  it("fits three index-card piles on a landscape page and warns from four", () => {
+    expect(
+      one({ columns: ["Now", "Later", "Never"] }, "index-cards").diagnostics.map((d) => d.code),
+    ).not.toContain("W_NARROW");
+    expect(one({}, "index-cards").diagnostics.map((d) => d.code)).not.toContain("W_NARROW");
+    const four = one({ columns: ["A", "B", "C", "D"] }, "index-cards");
+    const w = four.diagnostics.find((d) => d.code === "W_NARROW")!;
     expect(w).toMatchObject({ level: "warning", page: "W1-P4" });
     expect(w.message).toContain("76 mm");
-    expect(one({ columns: ["Now", "Later"] }, "index-cards").diagnostics.map((d) => d.code)).not.toContain(
+    expect(w.message).toContain("66 mm");
+    expect(one({ columns: ["A", "B", "C", "D"] }, "write-in").diagnostics.map((d) => d.code)).not.toContain(
       "W_NARROW",
     );
-    expect(
-      one({ columns: ["Now", "Later", "Never"] }, "write-in").diagnostics.map((d) => d.code),
-    ).not.toContain("W_NARROW");
-    expect(one({}, "index-cards").diagnostics.map((d) => d.code)).toContain("W_NARROW"); // 3 unnamed piles
+  });
+
+  it("measures index-card piles on Letter landscape from Letter's long side", () => {
+    const four = one({ columns: ["A", "B", "C", "D"] }, "index-cards", "Letter");
+    expect(four.diagnostics.find((d) => d.code === "W_NARROW")!.message).toContain("62 mm");
   });
 });

@@ -50,7 +50,7 @@ Every problem `switchback build` and `switchback validate` report has this shape
 | `W_STYLE_EMPTY_SECTION` | A half of a split style has no page of its own: before an Incubation's `step-away` there is only the opening `cover` ("nothing to generate before the break"), or after it only the closing pages ("nothing to judge after the break"). Add a generating page before the break, or a judging page after it. |
 | `W_SUBSTITUTION` | A fallback variant was used because stationery was missing. |
 | `W_UNASSIGNED_PEN` | A pen in the kit has no colour role. |
-| `W_NARROW` | card-sort's index-cards variant with 3 or more columns on portrait paper: the columns are narrower than an index card. |
+| `W_NARROW` | card-sort's index-cards variant whose piles are narrower than an index card (about 76mm). Card sorts with 3 or more piles print on a landscape page, which fits 3 piles of index cards; with 4 or 5, use the write-in variant. |
 | `W_NO_BROWSER` | `--pdf` found no Chrome, Edge, or Chromium; the HTML was still written (exit 3). |
 | `W_PDF_FAILED` | `--pdf` found a browser, but launching or rendering it failed; the HTML was still written and no stale PDF is left behind (exit 3). |
 | `W_ZONES_COLUMNS` | zones with `columns: 1` and more than 5 zones; printed in 2 columns instead. |
