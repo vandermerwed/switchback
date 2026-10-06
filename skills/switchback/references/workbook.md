@@ -44,19 +44,25 @@ Run `switchback profile --json`.
 
 ## 4. Compose with the CLI
 
-1. `switchback list --json --fits-kit` lists every component and preset the kit can use, with
+1. **A shelf first, when one fits.** If the request is about an area a collection covers (game
+   design, product, learning…), run `switchback collections`, then
+   `switchback list --collection <id> --json --fits-kit`. Prefer that collection's templates
+   where they fit the job, and name the collection in the confirmation message. A collection
+   never fences anything off: any template stays usable in any workbook. If `collections` is an
+   unknown command, the CLI predates collections, so skip this step.
+2. `switchback list --json --fits-kit` lists every component and preset the kit can use, with
    `kind`, `tags` and `phase`. Pick by the style's tags (decide, diagnose, plan, learn, create,
    reflect) and, for an Incubation, by `phase`.
-2. `switchback show <id> --json` gives a component's `data` fields with their limits, its default
+3. `switchback show <id> --json` gives a component's `data` fields with their limits, its default
    `prompt`, its `physical.timebox` and its variants. Read it for every page you use; never guess a
    field.
-3. **One move per page.** Prefer pages that move the body (sort, cut, place, walk) when the kit
+4. **One move per page.** Prefer pages that move the body (sort, cut, place, walk) when the kit
    allows. Within the style's budget: the opening, three to six content pages, the closing.
-4. **One sitting.** Add up the pages' `physical.timebox`. The total fits the profile's default
+5. **One sitting.** Add up the pages' `physical.timebox`. The total fits the profile's default
    sitting (40 minutes unless changed); more than ten minutes over means a page comes out. Cut pages that
    produce material before those that force a decision. An Incubation's halves each
    fit a sitting, with the break uncounted. A Series round is 20 to 40 minutes.
-5. Pieces (`kind: piece`, such as `timer`, `tokens`, `zones`) sit on the table through the sitting;
+6. Pieces (`kind: piece`, such as `timer`, `tokens`, `zones`) sit on the table through the sitting;
    add one only when it does a job a page cannot.
 
 The spec skeleton, with the keys a workbook uses. The `data` fields come from `show`; with no
@@ -130,7 +136,7 @@ In short:
 
 One message, then wait for yes. It carries, in this order, and nothing else:
 
-1. **Style:** the style and why, one line.
+1. **Style:** the style and why, one line, naming the collection when the pages come from one.
 2. **Pages:** one line each, `W1-P2 Empty the tank: <the prompt>`, pieces included. A line
    that quotes a component's default prompt is a page you have not written yet; the cover and
    the closing pages are the only ones without a prompt of yours.
