@@ -94,7 +94,8 @@ export async function listCommand(argv: string[], io: Io, env: NodeJS.ProcessEnv
   const kit = resolveKit({ profile: profile.profile?.kit }).kit;
   const fits = (meta: ComponentMeta) => chooseVariant(meta, kit).ok;
 
-  const selected = listRows(cat, { all: values.all === true })
+  // A shelf names its templates explicitly, so --collection shows every one, listed or not.
+  const selected = listRows(cat, { all: values.all === true || onShelf !== null })
     .filter((r) => !values.kind || r.kind === values.kind)
     .filter((r) => !values.tag || r.tags.includes(values.tag as string))
     .filter((r) => !values.phase || r.phase === values.phase)

@@ -48,6 +48,16 @@ describe("list --collection", () => {
     ]);
   });
 
+  it("lists every template a shelf holds, the count `collections` gives", async () => {
+    const shelves = captureIo();
+    await collectionsCommand(["--json"], shelves, env);
+    for (const shelf of json(shelves) as Array<{ id: string; count: number }>) {
+      const io = captureIo();
+      await listCommand(["--collection", shelf.id, "--json"], io, env);
+      expect(json(io).length, shelf.id).toBe(shelf.count);
+    }
+  });
+
   it("refuses an unknown collection and points at the list", async () => {
     await expect(listCommand(["--collection", "gamedev"], captureIo(), env)).rejects.toThrow(
       /unknown collection "gamedev".*switchback collections/,
