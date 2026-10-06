@@ -37,10 +37,11 @@ function displayedGrade(grounding) {
 >
   <p>
     Every page and piece Switchback can print, generated straight from
-    <code>@vandermerwed/switchback</code>. Each carries a grade for the evidence behind it, from A
-    (robust) to D (an established practice with no direct study behind this exact use); see the
-    <a href="/docs/evidence/">evidence page</a> for what the grades mean. Open any one of them for
-    a preview of the renderer's own output, not a mockup.
+    <code>@vandermerwed/switchback</code>. A research-backed template carries a grade for the
+    evidence behind it, from A (robust) to D (an established practice with no direct study behind
+    this exact use). A practical template is a common format that makes no research claim and says
+    where it comes from. The <a href="/docs/evidence/">evidence page</a> explains both. Open any
+    one of them for a preview of the renderer's own output, not a mockup.
   </p>
 
   {
@@ -57,8 +58,12 @@ function displayedGrade(grounding) {
               <li>
                 <a href={`/docs/components/${item.id}/`}>{item.title}</a>
                 <span class="component-kind">{item.kind}</span>
-                {displayedGrade(item.grounding) && (
-                  <span class="component-grade">grade {displayedGrade(item.grounding)}</span>
+                {item.basis === "practice" ? (
+                  <span class="component-grade">practical</span>
+                ) : (
+                  displayedGrade(item.grounding) && (
+                    <span class="component-grade">grade {displayedGrade(item.grounding)}</span>
+                  )
                 )}
                 <p>{item.intent}</p>
               </li>
@@ -73,8 +78,8 @@ function displayedGrade(grounding) {
     <h2 id="presets">Presets</h2>
     <p>
       A preset is a named starting configuration of a component — a SWOT is a preset of the
-      two-by-two, for instance. Each inherits its base component's shape and evidence, plus its
-      own attribution.
+      two-by-two, for instance. Each takes its base component's shape and adds its own attribution.
+      A research-backed preset carries its own graded claims; a practical one carries none.
     </p>
     <ul class="component-list">
       {
@@ -82,8 +87,12 @@ function displayedGrade(grounding) {
           <li>
             <a href={`/docs/components/${item.id}/`}>{item.title}</a>
             <span class="component-kind">preset of {item.extends}</span>
-            {displayedGrade(item.grounding) && (
-              <span class="component-grade">grade {displayedGrade(item.grounding)}</span>
+            {item.basis === "practice" ? (
+              <span class="component-grade">practical</span>
+            ) : (
+              displayedGrade(item.grounding) && (
+                <span class="component-grade">grade {displayedGrade(item.grounding)}</span>
+              )
             )}
             <p>{item.attribution}</p>
           </li>

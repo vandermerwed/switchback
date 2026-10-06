@@ -6,6 +6,7 @@
   "when": "a decision with options already on the table",
   "tags": ["decide"],
   "phase": "converge",
+  "basis": "research",
   "orientation": "landscape",
   "physical": {
     "requires": ["printer"],

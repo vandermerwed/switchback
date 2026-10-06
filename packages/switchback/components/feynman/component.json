@@ -6,6 +6,7 @@
   "when": "the human claims to understand but cannot explain, or material won't stick",
   "tags": ["learn"],
   "phase": "either",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["write"],

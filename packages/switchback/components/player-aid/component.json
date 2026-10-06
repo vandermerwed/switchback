@@ -6,6 +6,7 @@
   "when": "whenever the session uses the colour language or structural marks",
   "tags": ["focus"],
   "phase": "either",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["read", "mark"],

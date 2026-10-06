@@ -15,7 +15,7 @@ so crop or blur anything private before you attach one, or describe the marks in
 | --- | --- |
 | `skills/switchback/` | The agent skill: `SKILL.md` routes to a mode, `references/` holds each mode's procedure |
 | `packages/switchback/` | The `@vandermerwed/switchback` CLI: components, presets, styles, renderer, PDF, `proof`, `media`, `legend` |
-| `packages/switchback/research/` | The graded evidence behind every component and style |
+| `packages/switchback/research/` | The graded evidence behind every research-backed template and style |
 | `.claude-plugin/` | The Claude Code plugin and marketplace manifests |
 | `scripts/check-skills.mjs` | Checks the skill's frontmatter, links, CLI fallback and version pin |
 | `docs/superpowers/specs/` | Design history. It predates the rename, so it says Longhand |
@@ -28,7 +28,7 @@ You need Node.js 20.12 or later and pnpm 10.
 pnpm install
 pnpm build
 pnpm test        # unit tests, plus the skill checker's tests
-pnpm validate    # the registry, strict: every component and style carries graded grounding
+pnpm validate    # the registry, strict: every research-backed template and style carries graded grounding
 pnpm lint        # biome, then the skill checker
 ```
 

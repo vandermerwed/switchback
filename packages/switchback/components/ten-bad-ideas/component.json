@@ -6,6 +6,7 @@
   "when": "creating, or when the human is blocked by wanting to be good",
   "tags": ["create"],
   "phase": "diverge",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["write"],

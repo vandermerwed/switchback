@@ -1,10 +1,19 @@
-import collection from "../../registry/collection.json";
+import catalogueClaims from "../../registry/catalogue.json";
 import legend from "../../registry/legend.json";
 import practices from "../../registry/practices.json";
 import protocols from "../../registry/protocols.json";
 import styles from "../../registry/styles.json";
 import tags from "../../registry/tags.json";
-import type { Collection, Confidence, Mark, Practice, Protocol, Role, Style, Tag } from "../engine/types";
+import type {
+  CatalogueClaims,
+  Confidence,
+  Mark,
+  Practice,
+  Protocol,
+  Role,
+  Style,
+  Tag,
+} from "../engine/types";
 
 export interface Registries {
   roles: Role[];
@@ -14,7 +23,7 @@ export interface Registries {
   styles: Style[];
   protocols: Protocol[];
   practices: Practice[];
-  collection: Collection;
+  catalogueClaims: CatalogueClaims;
 }
 
 export function loadRegistries(): Registries {
@@ -26,6 +35,6 @@ export function loadRegistries(): Registries {
     styles: styles.styles as Style[],
     protocols: protocols.protocols as Protocol[],
     practices: practices.practices as Practice[],
-    collection: collection as Collection,
+    catalogueClaims: catalogueClaims as CatalogueClaims,
   };
 }

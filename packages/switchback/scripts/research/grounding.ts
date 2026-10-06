@@ -89,6 +89,14 @@ export function applyGrounding(
     return undefined;
   };
 
+  // A practical template makes no claim, so it has no entry by design and its absence is not drift.
+  // A preset that declares no basis inherits its component's.
+  const isPractice = (file: Json | undefined): boolean => {
+    const f = (file ?? {}) as { basis?: string; extends?: string };
+    const base = f.extends ? (files.components[f.extends] as { basis?: string } | undefined) : undefined;
+    return (f.basis ?? base?.basis) === "practice";
+  };
+
   // Components and presets: every entry must name a file; a file with no entry is left as is.
   const applyToMap = (
     kind: "component" | "preset",
@@ -105,7 +113,7 @@ export function applyGrounding(
       if (grounding) file.grounding = grounding;
     }
     for (const id of Object.keys(map))
-      if (!Object.hasOwn(entries, id))
+      if (!Object.hasOwn(entries, id) && !isPractice(map[id]))
         warnings.push(`${kind} ${id} has no entry in grounding.json; its grounding is left as is`);
   };
   applyToMap("component", files.components, g.components ?? {});
@@ -163,7 +171,8 @@ export function applyGrounding(
     if (!files.protocols.protocols.some((p) => p.id === id))
       errors.push(`grounding.json protocols: unknown protocol "${id}"`);
 
-  // The collection-level claims (claims.md §10 ruling 1) live in registry/collection.json.
+  // The collection-level claims (claims.md §10 ruling 1; the research files' `collection` section)
+  // live in registry/catalogue.json.
   for (const [key, entry] of Object.entries(g.collection ?? {})) {
     if (key !== "collection") {
       errors.push(`grounding.json collection: unknown key "${key}" (the only key is "collection")`);
@@ -187,7 +196,7 @@ export function changedFiles(before: ItemFiles, after: ItemFiles): Array<{ path:
   if (!sameJson(before.protocols, after.protocols))
     out.push({ path: "registry/protocols.json", value: after.protocols });
   if (!sameJson(before.collection, after.collection))
-    out.push({ path: "registry/collection.json", value: after.collection });
+    out.push({ path: "registry/catalogue.json", value: after.collection });
   return out;
 }
 
@@ -209,7 +218,7 @@ export function loadItemFiles(root: string): ItemFiles {
     presets,
     styles: readJson(root, "registry/styles.json"),
     protocols: readJson(root, "registry/protocols.json"),
-    collection: readJson(root, "registry/collection.json"),
+    collection: readJson(root, "registry/catalogue.json"),
   };
 }
 

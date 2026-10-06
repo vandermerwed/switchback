@@ -6,6 +6,7 @@
   "when": "the sitting is ending and there is more to ask; effectively mandatory",
   "tags": ["learn", "review"],
   "phase": "either",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["write"],

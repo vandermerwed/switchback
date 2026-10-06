@@ -2,9 +2,12 @@ import { mkdirSync, mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { listCommand } from "../../src/cli/commands/list";
-import { showCommand } from "../../src/cli/commands/show";
+import { listCommand, listRows } from "../../src/cli/commands/list";
+import { basisLines, showCommand, showJson } from "../../src/cli/commands/show";
 import { captureIo } from "../../src/cli/io";
+import { MINIMUM_KIT } from "../../src/engine/kit";
+import { resolveComponent } from "../../src/engine/resolve";
+import { catalogueParts, createCatalogue, loadCatalogue } from "../../src/registry/catalogue";
 
 const dir = mkdtempSync(join(tmpdir(), "switchback-list-"));
 const env = { SWITCHBACK_CONFIG_DIR: dir };
@@ -103,5 +106,91 @@ describe("switchback show", () => {
     expect(meepleErr).toContain('"component": "perspective-swap", "variant": "tent"');
     expect(meepleErr).toContain("tent needs scissors in the kit; `labels` is now `roles` (max 3)");
     expect(meepleErr).not.toContain("unknown component or preset");
+  });
+});
+
+describe("basis in show and list", () => {
+  const cat = loadCatalogue();
+  const zones = cat.components.get("zones")!.meta;
+  const kanban = cat.presets.get("kanban")!;
+
+  it("prints research-backed claims, using a preset's own grounding", () => {
+    const lines = basisLines(zones, kanban);
+    expect(lines[0]).toBe("basis:   research-backed");
+    expect(lines.join("\n")).toContain(kanban.grounding!.helps);
+    expect(lines.join("\n")).not.toContain(zones.grounding!.helps);
+  });
+
+  it("prints a practical template's origin and none of its base's claims", () => {
+    const practical = { ...kanban, basis: "practice" as const, attribution: "A common board" };
+    expect(basisLines(zones, practical)).toEqual(["basis:   practical template · A common board"]);
+  });
+
+  it("carries each row's basis, with a practice preset marked practice", () => {
+    const parts = catalogueParts();
+    const withPractical = createCatalogue({
+      ...parts,
+      presets: [
+        ...parts.presets,
+        {
+          id: "plain-board",
+          kind: "preset",
+          extends: "zones",
+          name: "Plain board",
+          tags: ["plan"],
+          data: {},
+          attribution: "A common board",
+          licence: "x",
+          basis: "practice",
+        },
+      ],
+    });
+    const rows = listRows(withPractical, {});
+    expect(rows.find((r) => r.id === "plain-board")?.basis).toBe("practice");
+    expect(rows.find((r) => r.id === "kanban")?.basis).toBe("research");
+  });
+
+  it("filters list by basis and rejects an unknown one", async () => {
+    const research = captureIo();
+    await listCommand(["--basis", "research", "--json"], research, env);
+    const rows = json(research) as Array<{ basis: string }>;
+    expect(rows.length).toBeGreaterThan(40);
+    expect(rows.every((r) => r.basis === "research")).toBe(true);
+    const practice = captureIo();
+    await listCommand(["--basis", "practice", "--json"], practice, env);
+    expect(json(practice)).toEqual([]);
+    await expect(listCommand(["--basis", "vibes"], captureIo(), env)).rejects.toThrow(/--basis/);
+  });
+
+  it("puts the basis in show --json and keeps a research preset's grounding", async () => {
+    const io = captureIo();
+    await showCommand(["kanban", "--json"], io, env);
+    const out = json(io);
+    expect(out.basis).toBe("research");
+    expect(out.origin).toBeNull();
+    const cat = loadCatalogue();
+    expect(out.grounding).toEqual(cat.presets.get("kanban")!.grounding);
+    expect(out.grounding).not.toEqual(cat.components.get("zones")!.meta.grounding);
+  });
+
+  it("never shows a base's claims on a practical preset in show --json, not even a variant's", () => {
+    const parts = catalogueParts();
+    const practical = {
+      id: "plain-commit",
+      kind: "preset" as const,
+      extends: "commit",
+      name: "Plain commit",
+      tags: ["decide"],
+      data: {},
+      attribution: "A common format",
+      licence: "idea; no restriction",
+      basis: "practice" as const,
+    };
+    const cat = createCatalogue({ ...parts, presets: [...parts.presets, practical] });
+    expect(cat.components.get("commit")!.meta.variants.some((v) => v.grounding)).toBe(true);
+    const out = showJson(cat, resolveComponent(cat, "plain-commit")!, MINIMUM_KIT);
+    expect(JSON.stringify(out)).not.toContain('"claims"');
+    expect(out.grounding).toBeNull();
+    expect(out.origin).toBe("A common format");
   });
 });

@@ -6,6 +6,7 @@
   "when": "the stated problem is probably not the real one",
   "tags": ["diagnose"],
   "phase": "converge",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["write"],

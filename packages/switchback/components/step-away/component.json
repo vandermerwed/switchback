@@ -6,6 +6,7 @@
   "when": "between the diverge and converge halves of an Incubation",
   "tags": ["create"],
   "phase": "either",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["walk", "rest"],

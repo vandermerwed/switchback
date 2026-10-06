@@ -45,3 +45,27 @@ test("each catalogue entry records its page orientation, and the wide ones are l
     assert.ok(landscape.has(id), `${id} is landscape`);
   assert.ok(!landscape.has("pre-mortem"), "pre-mortem stays portrait");
 });
+
+test("each catalogue entry records its basis, and research ones carry their claims", () => {
+  const entries = JSON.parse(readFileSync(new URL("catalogue.json", generated), "utf8"));
+  for (const e of entries) {
+    assert.ok(["research", "practice"].includes(e.basis), `${e.id} has a basis`);
+    if (e.basis === "research") assert.ok(e.grounding?.claims?.length, `${e.id} carries claims`);
+    else
+      assert.ok(
+        !e.grounding && e.origin && e.variants.every((v) => !v.grounding),
+        `${e.id} carries an origin and no claims, not even on a variant`,
+      );
+  }
+  const kanban = entries.find((e) => e.id === "kanban");
+  assert.match(kanban.grounding.helps, /zones/); // the preset's own grounding, not the base's
+  const html = readFileSync(new URL("docs/components/kanban/index.html", dist), "utf8");
+  assert.match(html, /Research-backed/);
+});
+
+test("the components index tells research-backed and practical templates apart", () => {
+  const html = readFileSync(new URL("docs/components/index.html", dist), "utf8");
+  assert.doesNotMatch(html, /Each carries a grade/);
+  assert.doesNotMatch(html, /shape and evidence/);
+  assert.match(html, /practical template/i);
+});

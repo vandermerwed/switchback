@@ -6,6 +6,7 @@
   "when": "checking an AI draft, a spec or an essay point by point",
   "tags": ["review"],
   "phase": "converge",
+  "basis": "research",
   "listed": false,
   "physical": {
     "requires": ["printer"],

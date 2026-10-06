@@ -6,6 +6,7 @@
   "when": "many parts, causes, or players, and the shape is unclear",
   "tags": ["plan", "diagnose", "learn"],
   "phase": "diverge",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["draw"],

@@ -76,7 +76,7 @@ describe("validateRegistry", () => {
     );
   });
 
-  it("checks the shape of grounding on styles, protocols and the collection", () => {
+  it("checks the shape of grounding on styles, protocols and the catalogue", () => {
     const registries = structuredClone(parts.registries);
     (registries.styles[0] as { grounding?: unknown }).grounding = {
       claims: "none",
@@ -84,7 +84,7 @@ describe("validateRegistry", () => {
       backfires: "",
     };
     (registries.protocols[0] as { grounding?: unknown }).grounding = { claims: [] };
-    (registries.collection as { grounding?: unknown }).grounding = {
+    (registries.catalogueClaims as { grounding?: unknown }).grounding = {
       claims: [],
       helps: "",
       backfires: "",
@@ -94,7 +94,7 @@ describe("validateRegistry", () => {
     expect(found.map((d) => d.path)).toEqual([
       "registry/styles.json",
       "registry/protocols.json",
-      "registry/collection.json",
+      "registry/catalogue.json",
     ]);
   });
 
@@ -123,5 +123,85 @@ describe("validateRegistry", () => {
     expect(at("presets/swot.json")).toContain("E_STRICT_NO_CLAIMS");
     expect(at("registry/styles.json")).toContain("E_STRICT_NO_CLAIMS");
     expect(at("components/commit#variants/policy")).toContain("E_STRICT_UNRATED");
+  });
+});
+
+describe("basis", () => {
+  const practical = () => {
+    const c = clone("timeline");
+    c.meta.id = "practical";
+    c.meta.basis = "practice";
+    c.meta.origin = "A common planning format";
+    delete c.meta.grounding;
+    return c;
+  };
+
+  it("accepts a practice component with an origin and no claims, in strict mode too", () => {
+    const withPractical = { ...parts, components: [...parts.components, practical()] };
+    expect(validateRegistry(withPractical)).toEqual([]);
+    expect(validateRegistry(withPractical, { strict: true })).toEqual([]);
+  });
+
+  it("rejects a practice component that carries claims, on itself or a variant", () => {
+    const withClaims = practical();
+    withClaims.meta.grounding = { claims: [], helps: "h", backfires: "b" };
+    const withVariantClaims = practical();
+    withVariantClaims.meta.id = "practical-variant";
+    withVariantClaims.meta.variants = [
+      { id: "default", requires: [], grounding: { claims: [], helps: "h", backfires: "b" } },
+    ];
+    const found = validateRegistry({
+      ...parts,
+      components: [...parts.components, withClaims, withVariantClaims],
+    });
+    expect(found.filter((d) => d.code === "E_BASIS_CLAIMS").map((d) => d.path)).toEqual([
+      "components/practical",
+      "components/practical-variant#variants/default",
+    ]);
+  });
+
+  it("rejects a practice component with no origin", () => {
+    const noOrigin = practical();
+    delete noOrigin.meta.origin;
+    expect(codes(validateRegistry({ ...parts, components: [...parts.components, noOrigin] }))).toContain(
+      "E_BASIS_ORIGIN",
+    );
+  });
+
+  it("rejects a practice preset that carries claims, and passes one that doesn't, in strict mode", () => {
+    const preset = {
+      id: "plain-board",
+      kind: "preset" as const,
+      extends: "zones",
+      name: "Plain board",
+      tags: ["plan"],
+      data: { zones: ["A", "B"] },
+      attribution: "A common board",
+      licence: "idea; no restriction",
+      basis: "practice" as const,
+    };
+    expect(validateRegistry({ ...parts, presets: [...parts.presets, preset] }, { strict: true })).toEqual([]);
+    const claimed = { ...preset, id: "claimed-board", grounding: { claims: [], helps: "h", backfires: "b" } };
+    expect(codes(validateRegistry({ ...parts, presets: [...parts.presets, claimed] }))).toContain(
+      "E_BASIS_CLAIMS",
+    );
+  });
+
+  it("fails a research component with no grounding even outside strict mode", () => {
+    const bare = clone("timeline");
+    bare.meta.id = "bare-research";
+    delete bare.meta.grounding;
+    expect(codes(validateRegistry({ ...parts, components: [...parts.components, bare] }))).toContain(
+      "E_COMPONENT_SCHEMA",
+    );
+  });
+
+  it("still fails a research component with no grounding in strict mode", () => {
+    const bare = clone("timeline");
+    bare.meta.id = "bare-research";
+    delete bare.meta.grounding;
+    expect(
+      codes(validateRegistry({ ...parts, components: [...parts.components, bare] }, { strict: true })),
+    ).toContain("E_STRICT_NO_CLAIMS");
   });
 });

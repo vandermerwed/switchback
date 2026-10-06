@@ -117,12 +117,13 @@ only where the thinking happens: the sitting, the pen, the walk away from the sc
 you have to take to get an answer. That is the motivation. It is not a measured claim that
 Switchback makes anyone more productive.
 
-What the pages do rest on is graded. Each claim behind a component or style carries a grade,
-from A (robust) to D (practice: a technique people use, with no study behind it), with its
-sources and DOIs. `switchback show <id>` prints them. A commit page rests on implementation
-intentions (A); a card sort rests on epistemic action (C); a timer rests on timeboxing (D). Weak
-evidence is labelled, not hidden. The grading lives in
-[`packages/switchback/research/`](packages/switchback/research/).
+Where a page makes a claim, the claim is graded. Each claim behind a research-backed template or
+style carries a grade, from A (robust) to D (practice: a technique people use, with no study
+behind it), with its sources and DOIs. `switchback show <id>` prints them. A commit page rests on
+implementation intentions (A); a card sort rests on epistemic action (C); a timer rests on
+timeboxing (D). Weak evidence is labelled, not hidden. The grading lives in
+[`packages/switchback/research/`](packages/switchback/research/). A practical template makes no
+claim at all, and says where its format comes from instead.
 
 ## Your pages and your privacy
 

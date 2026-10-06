@@ -6,7 +6,15 @@ import { execFileSync } from "node:child_process";
 import { copyFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { buildDocument, loadCatalogue, renderComponent } from "@vandermerwed/switchback";
+import {
+  basisOf,
+  buildDocument,
+  groundingOf,
+  loadCatalogue,
+  originOf,
+  renderComponent,
+  variantsOf,
+} from "@vandermerwed/switchback";
 
 const siteRoot = fileURLToPath(new URL("..", import.meta.url));
 const repoRoot = join(siteRoot, "..");
@@ -45,9 +53,11 @@ for (const [id, component] of catalogue.components) {
     intent: meta.intent,
     tags: meta.tags,
     phase: meta.phase,
-    variants: meta.variants,
+    variants: variantsOf(meta),
     dataFields: dataFieldsOf(meta.data),
-    grounding: meta.grounding,
+    basis: basisOf(meta),
+    origin: originOf(meta) ?? null,
+    grounding: groundingOf(meta),
   });
 }
 
@@ -63,9 +73,13 @@ for (const [id, preset] of catalogue.presets) {
     licence: preset.licence,
     tags: preset.tags,
     phase: base?.meta.phase ?? "either",
-    variants: base?.meta.variants ?? [],
+    // A practical preset never shows its base's claims, not even a variant's.
+    variants: base ? variantsOf(base.meta, preset) : [],
     dataFields: dataFieldsOf({ properties: preset.data }),
-    grounding: preset.grounding ?? base?.meta.grounding,
+    basis: base ? basisOf(base.meta, preset) : (preset.basis ?? "research"),
+    origin: base ? (originOf(base.meta, preset) ?? null) : null,
+    // A preset's own claims first; a practical preset never inherits its base's.
+    grounding: base ? groundingOf(base.meta, preset) : undefined,
   });
 }
 

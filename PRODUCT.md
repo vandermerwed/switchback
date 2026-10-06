@@ -12,7 +12,7 @@ Switchback makes room for deliberate, absorbing work within an AI-assisted workf
 
 ## Positioning
 
-The product is the complete paper-to-agent loop, rather than a collection of printable worksheets. It chooses and composes pages for the task and the stationery available, gives the human space to think in ink, and uses the marked pages to guide what the agent does next. Claims behind its components and workbook styles carry explicit evidence grades and sources.
+The product is the complete paper-to-agent loop, rather than a collection of printable worksheets. It chooses and composes pages for the task and the stationery available, gives the human space to think in ink, and uses the marked pages to guide what the agent does next. Where a component or style makes a claim, it carries an explicit grade and sources. Practical templates make no claim and say where they come from.
 
 ## Operating Context
 
@@ -42,7 +42,7 @@ Switchback is the product name; Longhand was its working title. The established 
 1. Reserve the sustained thinking for the person; let the agent prepare the paper and resume from what the person actually wrote.
 2. Fit the method to the problem and the real desk, including a usable path with a single pen.
 3. Preserve questions, objections, decisions, and uncertainty across the paper-to-agent handoff.
-4. Grade supporting claims honestly and keep unproven benefits distinct from user motivation.
+4. Grade claims honestly where a template makes them; let practical templates make none, and keep unproven benefits distinct from user motivation.
 
 ## Accessibility & Inclusion
 

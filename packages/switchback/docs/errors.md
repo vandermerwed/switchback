@@ -69,7 +69,7 @@ Every problem `switchback build` and `switchback validate` report has this shape
 | `E_NO_RENDERER` | A component folder has no `render.ts`. |
 | `E_COMPONENT_SCHEMA` | A `component.json` does not match the component schema. |
 | `E_PRESET_SCHEMA` | A preset file does not match the preset schema. |
-| `E_GROUNDING_SCHEMA` | A style, protocol or the collection carries a grounding block that doesn't match the grounding schema. Fix the grounding block in `research/grounding.json` and re-run `pnpm apply-grounding` — but a style or component with no entry there is left as is, so fix that one in place instead. |
+| `E_GROUNDING_SCHEMA` | A style, protocol or the catalogue-wide claim (`registry/catalogue.json`) carries a grounding block that doesn't match the grounding schema. Fix the grounding block in `research/grounding.json` and re-run `pnpm apply-grounding` — but a style or component with no entry there is left as is, so fix that one in place instead. |
 | `E_UNKNOWN_TAG` | A tag is not in `registry/tags.json`. |
 | `E_UNKNOWN_TOKEN` | A `requires` entry names unknown stationery. |
 | `E_DATA_SCHEMA_INVALID` | A component's `data` JSON Schema does not compile. |
@@ -78,6 +78,8 @@ Every problem `switchback build` and `switchback validate` report has this shape
 | `E_UNKNOWN_BASE` | A preset `extends` a component that does not exist. |
 | `E_STYLE_SCHEMA` | A style in `registry/styles.json` does not match the style schema (unknown field, wrong type). |
 | `E_STYLE_CLAIM` | A style rule or note cites a claim id that is not one of the style's grounding claims. |
+| `E_BASIS_CLAIMS` | A practical template (`"basis": "practice"`), or one of its variants, carries a grounding block. Practical templates make no research claim: remove the grounding, or make the template research-backed and grade it. |
+| `E_BASIS_ORIGIN` | A practical component has no `origin`. Add one line on where the format comes from. A practical preset uses its `attribution` instead. |
 
 ## Strict grounding errors (`switchback validate --strict`)
 
@@ -90,7 +92,9 @@ Every problem `switchback build` and `switchback validate` report has this shape
 
 ## Grounding a new item
 
-A new component, preset or style needs a graded entry before `validate --strict` will pass. Variants, protocols and the collection may carry one too, but strict mode doesn't require it. Run every step from `packages/switchback`:
+Only research-backed templates (`"basis": "research"`) need this. A practical template (`"basis": "practice"`) carries no grounding and states its `origin` (a preset's `attribution`), and strict mode does not check it.
+
+A new research-backed component, preset or style needs a graded entry before `validate --strict` will pass. Variants, protocols and the catalogue-wide claim may carry one too, but strict mode doesn't require it. Run every step from `packages/switchback`:
 
 1. Add the claims and the item entry to `research/grading/<family>.json` (creating the family if it's new), with a note in `research/<family>.md`.
 2. Run `node research/tools/build-grounding.mjs` to merge the grading files into `research/grounding.json` and compute the displayed grade.

@@ -6,6 +6,7 @@
   "when": "styles with a return (Ritual, Series, or a Sitting that schedules one); the duration variant also resolves within a single Sitting",
   "tags": ["decide", "plan"],
   "phase": "converge",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["write"],

@@ -6,6 +6,7 @@
   "when": "a goal you want but keep not starting; after a decision, before the plan",
   "tags": ["plan", "reflect"],
   "phase": "converge",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["write"],

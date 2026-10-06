@@ -6,6 +6,7 @@
   "when": "marking up a spec, essay, diagram, or checklist that isn't a workbook page",
   "tags": ["review"],
   "phase": "either",
+  "basis": "research",
   "listed": false,
   "physical": {
     "requires": ["printer"],

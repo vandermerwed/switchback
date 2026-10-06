@@ -28,7 +28,7 @@ jobs:
       - run: pnpm test
         env:
           CI: "true"
-      # strict since 2026-09-26 (research spec §9.3): every item must carry graded grounding
+      # strict since 2026-09-26 (research spec §9.3): every research-backed item must carry graded grounding
       - run: pnpm validate
       - run: pnpm build
       - run: node packages/switchback/dist/cli.js --version

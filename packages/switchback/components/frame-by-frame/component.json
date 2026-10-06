@@ -6,6 +6,7 @@
   "when": "your own recurring behaviour or slip; for causes in a system, use five-whys",
   "tags": ["diagnose"],
   "phase": "converge",
+  "basis": "research",
   "physical": {
     "requires": ["printer"],
     "body": ["write", "circle"],

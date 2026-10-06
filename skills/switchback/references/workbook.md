@@ -121,6 +121,10 @@ In short:
   whose prompt you write yourself.
 - **Diverge before converge.** In an Incubation, nothing that judges, ranks or scores before
   `step-away`, and no `timer` before it. The CLI refuses both.
+- **Evidence only where it exists.** `switchback show` says whether a template is research-backed
+  or practical. Cite grounding only for research-backed templates; a practical template makes no
+  claim, so never imply one. If the user wants evidence-backed pages only, pick from
+  `switchback list --basis research`.
 
 ## 6. Confirm once
 

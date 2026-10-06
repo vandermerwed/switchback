@@ -1,14 +1,16 @@
 import { resolveKit } from "../../engine/kit";
 import { chooseVariant } from "../../engine/resolve";
-import type { ComponentMeta } from "../../engine/types";
-import { loadCatalogue } from "../../registry/catalogue";
+import type { Basis, ComponentMeta } from "../../engine/types";
+import { basisOf } from "../../registry/basis";
+import { type Catalogue, loadCatalogue } from "../../registry/catalogue";
 import { parseCommand, readProfileOrReport, UsageError } from "../args";
 import type { Io } from "../io";
 
 const USAGE =
-  "usage: switchback list [--kind page|piece|preset] [--tag T] [--phase diverge|converge|either] [--fits-kit] [--all] [--json]";
+  "usage: switchback list [--kind page|piece|preset] [--tag T] [--phase diverge|converge|either] [--basis research|practice] [--fits-kit] [--all] [--json]";
 const KINDS = ["page", "piece", "preset"];
 const PHASES = ["diverge", "converge", "either"];
+const BASES = ["research", "practice"];
 
 interface Row {
   id: string;
@@ -17,6 +19,42 @@ interface Row {
   tags: string[];
   name: string;
   intent: string;
+  basis: Basis;
+}
+
+export type ListRow = Row & { meta: ComponentMeta };
+
+/** One row per listed component and preset, with the basis each one rests on. */
+export function listRows(cat: Catalogue, opts: { all?: boolean }): ListRow[] {
+  const rows: ListRow[] = [];
+  for (const c of cat.components.values()) {
+    if (c.meta.listed === false && !opts.all) continue;
+    rows.push({
+      id: c.meta.id,
+      kind: c.meta.kind,
+      phase: c.meta.phase,
+      tags: c.meta.tags,
+      name: c.meta.name,
+      intent: c.meta.intent,
+      basis: basisOf(c.meta),
+      meta: c.meta,
+    });
+  }
+  for (const p of cat.presets.values()) {
+    const base = cat.components.get(p.extends);
+    if (base)
+      rows.push({
+        id: p.id,
+        kind: "preset",
+        phase: base.meta.phase,
+        tags: p.tags,
+        name: p.name,
+        intent: `${base.meta.name} preset`,
+        basis: basisOf(base.meta, p),
+        meta: base.meta,
+      });
+  }
+  return rows;
 }
 
 export async function listCommand(argv: string[], io: Io, env: NodeJS.ProcessEnv): Promise<number> {
@@ -26,6 +64,7 @@ export async function listCommand(argv: string[], io: Io, env: NodeJS.ProcessEnv
       kind: { type: "string" },
       tag: { type: "string" },
       phase: { type: "string" },
+      basis: { type: "string" },
       "fits-kit": { type: "boolean" },
       all: { type: "boolean" },
       json: { type: "boolean" },
@@ -40,42 +79,19 @@ export async function listCommand(argv: string[], io: Io, env: NodeJS.ProcessEnv
     throw new UsageError(`--kind must be one of ${KINDS.join(", ")}`);
   if (values.phase !== undefined && !PHASES.includes(values.phase as string))
     throw new UsageError(`--phase must be one of ${PHASES.join(", ")}`);
+  if (values.basis !== undefined && !BASES.includes(values.basis as string))
+    throw new UsageError(`--basis must be one of ${BASES.join(", ")}`);
   const profile = readProfileOrReport(env, io, values.json === true);
   if (!profile.ok) return 1;
   const kit = resolveKit({ profile: profile.profile?.kit }).kit;
   const cat = loadCatalogue();
   const fits = (meta: ComponentMeta) => chooseVariant(meta, kit).ok;
 
-  const rows: Array<Row & { meta: ComponentMeta }> = [];
-  for (const c of cat.components.values()) {
-    if (c.meta.listed === false && !values.all) continue;
-    rows.push({
-      id: c.meta.id,
-      kind: c.meta.kind,
-      phase: c.meta.phase,
-      tags: c.meta.tags,
-      name: c.meta.name,
-      intent: c.meta.intent,
-      meta: c.meta,
-    });
-  }
-  for (const p of cat.presets.values()) {
-    const base = cat.components.get(p.extends);
-    if (base)
-      rows.push({
-        id: p.id,
-        kind: "preset",
-        phase: base.meta.phase,
-        tags: p.tags,
-        name: p.name,
-        intent: `${base.meta.name} preset`,
-        meta: base.meta,
-      });
-  }
-  const selected = rows
+  const selected = listRows(cat, { all: values.all === true })
     .filter((r) => !values.kind || r.kind === values.kind)
     .filter((r) => !values.tag || r.tags.includes(values.tag as string))
     .filter((r) => !values.phase || r.phase === values.phase)
+    .filter((r) => !values.basis || r.basis === values.basis)
     .filter((r) => !values["fits-kit"] || fits(r.meta))
     .map(({ meta: _meta, ...row }) => row);
 
@@ -93,7 +109,7 @@ export async function listCommand(argv: string[], io: Io, env: NodeJS.ProcessEnv
   };
   for (const r of selected)
     io.out(
-      `${r.id.padEnd(w.id)}  ${r.kind.padEnd(w.kind)}  ${r.phase.padEnd(w.phase)}  ${tagsText(r).padEnd(w.tags)}  ${r.name}`,
+      `${r.id.padEnd(w.id)}  ${r.kind.padEnd(w.kind)}  ${r.phase.padEnd(w.phase)}  ${tagsText(r).padEnd(w.tags)}  ${r.name}${r.basis === "practice" ? "  (practical)" : ""}`,
     );
   io.out(`\n${selected.length} item${selected.length === 1 ? "" : "s"}`);
   return 0;

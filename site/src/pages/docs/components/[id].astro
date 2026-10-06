@@ -19,6 +19,14 @@ function sourceHref(source) {
 }
 
 const claims = item.grounding?.claims ?? [];
+
+// A practical template's origin reads as a sentence, whatever case or stop it was written with.
+function sentence(text) {
+  const s = (text ?? "").trim();
+  if (!s) return "";
+  const capped = s[0].toUpperCase() + s.slice(1);
+  return /[.!?]$/.test(capped) ? capped : `${capped}.`;
+}
 ---
 
 <StarlightPage
@@ -82,6 +90,16 @@ const claims = item.grounding?.claims ?? [];
           ))}
         </ul>
       </>
+    )
+  }
+
+  {
+    item.basis === "research" ? (
+      <p class="basis basis-research">Research-backed</p>
+    ) : (
+      <p class="basis basis-practice">
+        <strong>Practical template.</strong> {sentence(item.origin)} It makes no research claim.
+      </p>
     )
   }
 
@@ -195,6 +213,18 @@ const claims = item.grounding?.claims ?? [];
        container; that fights the fit-to-column transform below, which needs the iframe at its
        natural (unscaled) pixel size before it is shrunk. */
     max-width: none !important;
+  }
+  .basis {
+    margin-top: 2rem;
+  }
+  .basis-research {
+    font-size: var(--sl-text-2xs);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--sl-color-text-accent);
+  }
+  .basis-practice {
+    color: var(--sl-color-gray-2);
   }
   .claims {
     list-style: none;

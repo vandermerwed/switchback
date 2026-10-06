@@ -16,6 +16,7 @@ const fake = (id: string, variants: Variant[], requires: string[] = ["printer"])
     physical: { requires, body: [], surface: "desk", timebox: "1 min" },
     variants,
     data: { type: "object" },
+    basis: "research",
     grounding: { claims: [], helps: "", backfires: "" },
   },
   render: () => "",

@@ -1,11 +1,56 @@
 import { resolveKit } from "../../engine/kit";
-import { chooseVariant, RENAMED, resolveComponent } from "../../engine/resolve";
-import type { JsonSchema } from "../../engine/types";
-import { loadCatalogue } from "../../registry/catalogue";
+import { chooseVariant, RENAMED, type ResolvedComponent, resolveComponent } from "../../engine/resolve";
+import type { ComponentMeta, JsonSchema, Kit, PresetMeta } from "../../engine/types";
+import { basisOf, groundingOf, originOf, variantsOf } from "../../registry/basis";
+import { type Catalogue, loadCatalogue } from "../../registry/catalogue";
 import { parseCommand, readProfileOrReport } from "../args";
 import type { Io } from "../io";
 
 const USAGE = "usage: switchback show <component-or-preset-id> [--json]";
+
+/** What a template rests on: its research claims, or, for a practical template, its origin alone. */
+export function basisLines(meta: ComponentMeta, preset?: PresetMeta | null): string[] {
+  if (basisOf(meta, preset) === "practice")
+    return [`basis:   practical template · ${originOf(meta, preset) ?? ""}`];
+  const g = groundingOf(meta, preset);
+  const lines = ["basis:   research-backed", "grounding:"];
+  if (!g?.claims.length) lines.push("  (not yet researched)");
+  for (const c of g?.claims ?? [])
+    lines.push(`  - ${c.claim} [${c.grade}] ${c.sources.map((s) => s.cite).join("; ")}`);
+  if (g?.helps) lines.push(`  helps: ${g.helps}`);
+  if (g?.backfires) lines.push(`  backfires: ${g.backfires}`);
+  return lines;
+}
+
+/** Each variant, and whether the kit can print it. */
+function fittedVariants(meta: ComponentMeta, preset: PresetMeta | null, kit: Kit) {
+  return variantsOf(meta, preset).map((v) => {
+    const choice = chooseVariant(meta, kit, v.id);
+    return { ...v, fits: choice.ok, missing: choice.ok ? [] : choice.missing };
+  });
+}
+
+/**
+ * What `show --json` prints for a template. `grounding` is the claims that apply to it: a research
+ * preset's own before its base's, and none at all for a practical template, not even a variant's.
+ */
+export function showJson(cat: Catalogue, resolved: ResolvedComponent, kit: Kit) {
+  const { base, preset } = resolved;
+  const meta = base.meta;
+  const basis = basisOf(meta, preset);
+  const component =
+    basis === "practice" ? { ...meta, grounding: undefined, variants: variantsOf(meta, preset) } : meta;
+  return {
+    component,
+    preset,
+    basis,
+    origin: originOf(meta, preset) ?? null,
+    grounding: groundingOf(meta, preset) ?? null,
+    variants: fittedVariants(meta, preset, kit),
+    presets: [...cat.presets.values()].filter((p) => p.extends === meta.id).map((p) => p.id),
+    examples: Object.keys(base.examples),
+  };
+}
 
 function describeType(schema: Record<string, unknown>): string {
   if (Array.isArray(schema.enum)) return schema.enum.join(" | ");
@@ -59,24 +104,14 @@ export async function showCommand(argv: string[], io: Io, env: NodeJS.ProcessEnv
   const profile = readProfileOrReport(env, io, values.json === true);
   if (!profile.ok) return 1;
   const kit = resolveKit({ profile: profile.profile?.kit }).kit;
-  const { base, preset } = resolved;
-  const meta = base.meta;
-  const variants = meta.variants.map((v) => {
-    const choice = chooseVariant(meta, kit, v.id);
-    return { ...v, fits: choice.ok, missing: choice.ok ? [] : choice.missing };
-  });
-  const presets = [...cat.presets.values()].filter((p) => p.extends === meta.id).map((p) => p.id);
-
   if (values.json) {
-    io.out(
-      JSON.stringify(
-        { component: meta, preset, variants, presets, examples: Object.keys(base.examples) },
-        null,
-        2,
-      ),
-    );
+    io.out(JSON.stringify(showJson(cat, resolved, kit), null, 2));
     return 0;
   }
+  const { base, preset } = resolved;
+  const meta = base.meta;
+  const variants = fittedVariants(meta, preset, kit);
+  const presets = [...cat.presets.values()].filter((p) => p.extends === meta.id).map((p) => p.id);
   const lines = [
     `${preset ? `${preset.name} (${preset.id}, a preset of ${meta.id})` : `${meta.name} (${meta.id})`} · ${meta.kind} · ${meta.phase}`,
     meta.intent,
@@ -102,12 +137,7 @@ export async function showCommand(argv: string[], io: Io, env: NodeJS.ProcessEnv
     );
   if (meta.prompt) lines.push(`prompt:  ${meta.prompt}`);
   if (meta.readback) lines.push(`read-back: ${meta.readback}`);
-  lines.push("grounding:");
-  if (!meta.grounding.claims.length) lines.push("  (not yet researched)");
-  for (const c of meta.grounding.claims)
-    lines.push(`  - ${c.claim} [${c.grade}] ${c.sources.map((s) => s.cite).join("; ")}`);
-  if (meta.grounding.helps) lines.push(`  helps: ${meta.grounding.helps}`);
-  if (meta.grounding.backfires) lines.push(`  backfires: ${meta.grounding.backfires}`);
+  lines.push(...basisLines(meta, preset));
   if (presets.length) lines.push(`presets: ${presets.join(", ")}`);
   for (const line of lines) io.out(line);
   return 0;
