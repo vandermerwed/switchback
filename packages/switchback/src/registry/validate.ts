@@ -3,6 +3,7 @@ import { error } from "../engine/diagnostics";
 import { isKnownToken } from "../engine/kit";
 import type { Claim, Diagnostic, Grounding } from "../engine/types";
 import { ajv } from "./ajv";
+import { basisOf } from "./basis";
 import { type CatalogueParts, createCatalogue } from "./catalogue";
 import { componentSchema, groundingSchema, presetSchema, styleSchema } from "./schemas";
 
@@ -196,7 +197,38 @@ export function validateRegistry(parts: CatalogueParts, opts: { strict?: boolean
         );
       }
     }
-    if (opts.strict) {
+    // A practical template makes no research claim and says where it comes from instead.
+    if (m.basis === "practice") {
+      if (m.grounding)
+        out.push(
+          error(
+            "E_BASIS_CLAIMS",
+            `${m.id} is a practical template but carries research claims`,
+            'remove grounding, or set "basis": "research" and grade it through research/grading',
+            { path },
+          ),
+        );
+      for (const v of m.variants ?? [])
+        if (v.grounding)
+          out.push(
+            error(
+              "E_BASIS_CLAIMS",
+              `${m.id}/${v.id} carries research claims on a practical template`,
+              'remove the variant\'s grounding, or set "basis": "research"',
+              { path: `${path}#variants/${v.id}` },
+            ),
+          );
+      if (!m.origin)
+        out.push(
+          error(
+            "E_BASIS_ORIGIN",
+            `${m.id} is a practical template with no origin`,
+            'add "origin": one line on where the format comes from',
+            { path },
+          ),
+        );
+    }
+    if (opts.strict && m.basis === "research") {
       out.push(...strictGrounding(m.id, m.grounding, path));
       for (const v of m.variants ?? [])
         if (v.grounding)
@@ -235,7 +267,17 @@ export function validateRegistry(parts: CatalogueParts, opts: { strict?: boolean
     for (const d of r.diagnostics.filter((x) => x.level === "error")) {
       out.push(error("E_EXAMPLE", `preset ${p.id}: ${d.message}`, d.fix, { path }));
     }
-    if (opts.strict) out.push(...strictGrounding(p.id, p.grounding, path));
+    const presetBasis = basisOf(cat.components.get(p.extends)!.meta, p);
+    if (presetBasis === "practice" && p.grounding)
+      out.push(
+        error(
+          "E_BASIS_CLAIMS",
+          `${p.id} is a practical template but carries research claims`,
+          'remove grounding, or drop "basis": "practice"',
+          { path },
+        ),
+      );
+    if (opts.strict && presetBasis === "research") out.push(...strictGrounding(p.id, p.grounding, path));
   }
 
   for (const s of parts.registries.styles) {
