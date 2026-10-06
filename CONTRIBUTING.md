@@ -14,7 +14,7 @@ so crop or blur anything private before you attach one, or describe the marks in
 | Path | What it holds |
 | --- | --- |
 | `skills/switchback/` | The agent skill: `SKILL.md` routes to a mode, `references/` holds each mode's procedure |
-| `packages/switchback/` | The `@vandermerwed/switchback` CLI: components, presets, styles, renderer, PDF, `proof`, `media`, `legend` |
+| `packages/switchback/` | The `@vandermerwed/switchback` CLI: components, presets, collections, styles, renderer, PDF, `proof`, `media`, `legend` |
 | `packages/switchback/research/` | The graded evidence behind every research-backed template and style |
 | `.claude-plugin/` | The Claude Code plugin and marketplace manifests |
 | `scripts/check-skills.mjs` | Checks the skill's frontmatter, links, CLI fallback and version pin |

@@ -1,7 +1,18 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { loadCatalogue } from "../../src/registry/catalogue";
 import { packageRoot } from "../../src/shell/fonts";
+
+describe("the repository README", () => {
+  it("gives the catalogue's real size", () => {
+    const readme = readFileSync(join(packageRoot(), "..", "..", "README.md"), "utf8");
+    const cat = loadCatalogue();
+    expect(readme).toContain(
+      `${cat.components.size} components, ${cat.presets.size} presets and ${cat.collections.size} collections`,
+    );
+  });
+});
 
 describe("README.md", () => {
   const readme = readFileSync(join(packageRoot(), "README.md"), "utf8");
