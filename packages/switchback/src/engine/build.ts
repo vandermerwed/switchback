@@ -179,7 +179,12 @@ export function buildDocument(raw: unknown, opts: BuildOptions = {}): BuildResul
       );
     }
 
-    for (const d of base.checks?.(data, { variant: choice.variant.id, paper, pageId: page.id }) ?? [])
+    for (const d of base.checks?.(data, {
+      variant: choice.variant.id,
+      paper,
+      orientation: "portrait",
+      pageId: page.id,
+    }) ?? [])
       diagnostics.push({ ...d, page: d.page ?? page.id, path: d.path ?? `/pages/${i}` });
 
     const title = page.title ?? preset?.name ?? meta.name;
@@ -191,6 +196,7 @@ export function buildDocument(raw: unknown, opts: BuildOptions = {}): BuildResul
     };
     const ctx: RenderContext = {
       paper,
+      orientation: "portrait",
       variant: choice.variant.id,
       kit,
       pens: mapping,
@@ -225,6 +231,7 @@ export function buildDocument(raw: unknown, opts: BuildOptions = {}): BuildResul
       component: meta.id,
       preset: preset?.id ?? null,
       variant: choice.variant.id,
+      orientation: "portrait",
       title,
       prompt,
       readback: choice.variant.readback ?? meta.readback ?? "",
