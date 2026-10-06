@@ -68,9 +68,9 @@ the design prefers pieces the user can rearrange before committing in ink.
 
 ### Index cards (`index_cards`)
 
-A card sort uses the cards directly, with no cutting: one idea per card, sorted on the desk. On
-portrait paper, index-card columns are narrow, so the CLI warns and the design uses two columns at
-most or the write-in variant.
+A card sort uses the cards directly, with no cutting: one idea per card, sorted on the desk. A card
+sort with 3 or more piles prints on a landscape page, which fits 3 piles of index cards; with 4 or
+5 piles the CLI warns and the design uses the write-in variant.
 
 ### Coins (`coins`)
 
@@ -103,7 +103,7 @@ has one, and without it the pages never come back. The return checklist page nee
 | No scissors | Cut-out pages use their write-in variants. |
 | No tape or glue | No die, no paste-based pages. |
 | Sticky notes | Zones sized to the note; movable pieces before ink. |
-| Index cards | Card sorts use the cards, no cutting; two columns at most on portrait. |
+| Index cards | Card sorts use the cards, no cutting; up to 3 piles, on a landscape page from 3. |
 | Coins | Token budgets use coins instead of tally marks. |
 | Fewer coloured pens | The legend collapses to what they have; missing roles are circled letters. |
 | Wall space | Wall maps and boards, with "step back" instructions. |
