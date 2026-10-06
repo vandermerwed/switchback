@@ -1,0 +1,92 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import PagePreview from "../../../components/PagePreview.astro";
+import catalogue from "../../../generated/catalogue.json";
+import collections from "../../../generated/collections.json";
+
+export function getStaticPaths() {
+  return collections.map((shelf) => ({ params: { id: shelf.id }, props: { shelf } }));
+}
+
+const { shelf } = Astro.props;
+const entry = new Map(catalogue.map((e) => [e.id, e]));
+const members = shelf.members.map((id) => entry.get(id)).filter(Boolean);
+const own = members.filter((e) => shelf.own.includes(e.id));
+const included = members.filter((e) => !shelf.own.includes(e.id));
+const groups = own.length
+  ? [
+      { heading: "Made for this shelf", items: own },
+      { heading: "From the catalogue", items: included },
+    ]
+  : [{ heading: null, items: included }];
+---
+
+<StarlightPage frontmatter={{ title: shelf.name, description: shelf.description }}>
+  <p>{shelf.description}</p>
+  <p class="shelf-cli">
+    <code>switchback list --collection {shelf.id}</code> lists the same templates in the CLI.
+  </p>
+
+  {
+    groups.map(({ heading, items }) => (
+      <section>
+        {heading && <h2>{heading}</h2>}
+        <ul class="shelf-grid">
+          {items.map((e) => (
+            <li>
+              <PagePreview id={e.id} title={e.title} orientation={e.orientation} compact />
+              <a href={`/docs/components/${e.id}/`}>{e.title}</a>
+              {e.basis === "practice" ? (
+                <span class="basis-badge basis-practice">Practical</span>
+              ) : (
+                <span class="basis-badge">Research-backed</span>
+              )}
+              {/* A practical template says where it comes from; a research one says what it does. */}
+              <p>{e.basis === "practice" ? e.origin : e.intent}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+</StarlightPage>
+
+<style>
+  .shelf-cli {
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-2);
+  }
+  .shelf-grid {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    align-items: start;
+  }
+  .shelf-grid li {
+    border: 1px solid var(--sl-color-hairline);
+    border-radius: 0.4rem;
+    padding: 0.75rem;
+    margin: 0;
+  }
+  .shelf-grid a {
+    font-weight: 600;
+  }
+  .basis-badge {
+    display: inline-block;
+    font-size: var(--sl-text-2xs);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--sl-color-text-accent);
+    margin-inline-start: 0.5rem;
+  }
+  .basis-badge.basis-practice {
+    color: var(--sl-color-gray-2);
+  }
+  .shelf-grid p {
+    margin: 0.4rem 0 0;
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-text);
+  }
+</style>

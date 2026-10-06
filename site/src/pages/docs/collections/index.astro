@@ -1,0 +1,67 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import catalogue from "../../../generated/catalogue.json";
+import collections from "../../../generated/collections.json";
+
+const basisOf = new Map(catalogue.map((e) => [e.id, e.basis]));
+const practicalCount = (members) => members.filter((id) => basisOf.get(id) === "practice").length;
+---
+
+<StarlightPage
+  frontmatter={{
+    title: "Collections",
+    description: "Themed shelves of templates: what each one holds, and what it rests on.",
+  }}
+>
+  <p>
+    A collection is a shelf of templates around one area. A template can sit on several shelves,
+    and every template stays usable in any workbook. <code>switchback collections</code> lists the
+    same shelves, and <code>switchback list --collection &lt;id&gt;</code> lists what is on one.
+  </p>
+
+  <ul class="collection-list">
+    {
+      collections.map((shelf) => (
+        <li>
+          <a href={`/docs/collections/${shelf.id}/`}>{shelf.name}</a>
+          <span class="collection-count">{shelf.members.length} templates</span>
+          {practicalCount(shelf.members) > 0 && (
+            <span class="collection-count">{practicalCount(shelf.members)} practical</span>
+          )}
+          <p>{shelf.description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</StarlightPage>
+
+<style>
+  .collection-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  }
+  .collection-list li {
+    border: 1px solid var(--sl-color-hairline);
+    border-radius: 0.4rem;
+    padding: 0.75rem 1rem;
+  }
+  .collection-list a {
+    font-weight: 600;
+  }
+  .collection-count {
+    display: inline-block;
+    font-size: var(--sl-text-2xs);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--sl-color-text-accent);
+    margin-inline-start: 0.5rem;
+  }
+  .collection-list p {
+    margin: 0.4rem 0 0;
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-text);
+  }
+</style>

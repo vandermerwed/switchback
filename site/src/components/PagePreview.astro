@@ -1,0 +1,78 @@
+---
+// One printed page, rendered by the CLI itself and scaled to fit its column. A page can show many;
+// Astro bundles the fitting script once.
+interface Props {
+  id: string;
+  title: string;
+  orientation?: string;
+  /** A smaller frame for a grid of templates, with no space above it. */
+  compact?: boolean;
+}
+const { id, title, orientation, compact = false } = Astro.props;
+---
+
+<div
+  class:list={["preview-frame", { "is-landscape": orientation === "landscape", compact }]}
+  data-preview
+>
+  <iframe loading="lazy" title={`Preview of ${title}`} src={`/generated/previews/${id}.html`}></iframe>
+</div>
+
+<style>
+  .preview-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 210 / 297;
+    overflow: hidden;
+    border: 1px solid var(--sl-color-hairline);
+    border-radius: 0.4rem;
+    background: #fff;
+    margin: 1.5rem 0;
+  }
+  .preview-frame.is-landscape {
+    aspect-ratio: 297 / 210;
+  }
+  .preview-frame.compact {
+    margin: 0 0 0.75rem;
+  }
+  .preview-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    transform-origin: top left;
+    /* Starlight's own markdown-content CSS caps iframe (and img/svg/video) width at 100% of the
+       container; that fights the fit-to-column transform below, which needs the iframe at its
+       natural (unscaled) pixel size before it is shrunk. */
+    max-width: none !important;
+  }
+</style>
+
+<script>
+  function fitPreview(frame: HTMLElement) {
+    const iframe = frame.querySelector("iframe");
+    if (!iframe) return;
+    const scale = () => {
+      const doc = iframe.contentDocument;
+      const page = doc?.querySelector<HTMLElement>(".sb-page");
+      if (!doc || !page) return;
+      // The frame shows the page alone; the printed document's own margins would otherwise give the
+      // iframe scrollbars (both of them, once a landscape page is wider than the frame's start size).
+      doc.documentElement.style.overflow = "hidden";
+      const rect = page.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      const factor = frame.clientWidth / rect.width;
+      // The page sits inside the printed document with its own top/left margin (getBoundingClientRect
+      // reports the box after that margin). Size the iframe to cover the margin too, then translate
+      // it back by that offset so the page's own top-left corner — not the document's — lands at the
+      // frame's origin; otherwise a grey band shows above the page and its foot strip is cut off below.
+      iframe.style.width = `${rect.left + rect.width}px`;
+      iframe.style.height = `${rect.top + rect.height}px`;
+      iframe.style.transform = `scale(${factor}) translate(${-rect.left}px, ${-rect.top}px)`;
+      frame.style.height = `${rect.height * factor}px`;
+    };
+    iframe.addEventListener("load", scale);
+    window.addEventListener("resize", scale);
+  }
+  document.querySelectorAll<HTMLElement>("[data-preview]").forEach(fitPreview);
+</script>

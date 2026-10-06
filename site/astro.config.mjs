@@ -33,6 +33,7 @@ export default defineConfig({
             "docs/styles",
             "docs/ink",
             { label: "Components", link: "/docs/components/" },
+            { label: "Collections", link: "/docs/collections/" },
             { label: "CLI", link: "/docs/cli/" },
             "docs/evidence",
             "docs/troubleshooting",

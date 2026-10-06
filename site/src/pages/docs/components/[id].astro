@@ -1,6 +1,8 @@
 ---
 import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import PagePreview from "../../../components/PagePreview.astro";
 import catalogue from "../../../generated/catalogue.json";
+import collections from "../../../generated/collections.json";
 
 export function getStaticPaths() {
   return catalogue.map((item) => ({
@@ -19,6 +21,7 @@ function sourceHref(source) {
 }
 
 const claims = item.grounding?.claims ?? [];
+const shelfName = new Map(collections.map((c) => [c.id, c.name]));
 
 // A practical template's origin reads as a sentence, whatever case or stop it was written with.
 function sentence(text) {
@@ -41,25 +44,33 @@ function sentence(text) {
     {item.phase && <span class="component-phase">{item.phase}</span>}
   </p>
 
+  {
+    item.collections.length > 0 && (
+      <p class="in-collections">
+        In collections:{" "}
+        {item.collections.map((id, i) => (
+          <>
+            {i > 0 && ", "}
+            <a href={`/docs/collections/${id}/`}>{shelfName.get(id) ?? id}</a>
+          </>
+        ))}
+      </p>
+    )
+  }
+
   <p>{item.intent}</p>
 
   {
     item.extends && (
       <p>
         A preset of <a href={`/docs/components/${item.extends}/`}>{item.extends}</a>.
-        {item.attribution && ` Attribution: ${item.attribution}.`}
+        {item.attribution && item.basis !== "practice" && ` Attribution: ${item.attribution}.`}
         {item.licence && ` Licence: ${item.licence}.`}
       </p>
     )
   }
 
-  <div class:list={["preview-frame", { "is-landscape": item.orientation === "landscape" }]} data-preview>
-    <iframe
-      loading="lazy"
-      title={`Preview of ${item.title}`}
-      src={`/generated/previews/${item.id}.html`}
-    />
-  </div>
+  <PagePreview id={item.id} title={item.title} orientation={item.orientation} />
 
   {
     item.variants.length > 0 && (
@@ -144,35 +155,6 @@ function sentence(text) {
   }
 </StarlightPage>
 
-<script>
-  function fitPreview(frame: HTMLElement) {
-    const iframe = frame.querySelector("iframe");
-    if (!iframe) return;
-    const scale = () => {
-      const doc = iframe.contentDocument;
-      const page = doc?.querySelector<HTMLElement>(".sb-page");
-      if (!doc || !page) return;
-      // The frame shows the page alone; the printed document's own margins would otherwise give the
-      // iframe scrollbars (both of them, once a landscape page is wider than the frame's start size).
-      doc.documentElement.style.overflow = "hidden";
-      const rect = page.getBoundingClientRect();
-      if (!rect.width || !rect.height) return;
-      const factor = frame.clientWidth / rect.width;
-      // The page sits inside the printed document with its own top/left margin (getBoundingClientRect
-      // reports the box after that margin). Size the iframe to cover the margin too, then translate
-      // it back by that offset so the page's own top-left corner — not the document's — lands at the
-      // frame's origin; otherwise a grey band shows above the page and its foot strip is cut off below.
-      iframe.style.width = `${rect.left + rect.width}px`;
-      iframe.style.height = `${rect.top + rect.height}px`;
-      iframe.style.transform = `scale(${factor}) translate(${-rect.left}px, ${-rect.top}px)`;
-      frame.style.height = `${rect.height * factor}px`;
-    };
-    iframe.addEventListener("load", scale);
-    window.addEventListener("resize", scale);
-  }
-  document.querySelectorAll<HTMLElement>("[data-preview]").forEach(fitPreview);
-</script>
-
 <style>
   .component-meta {
     display: flex;
@@ -190,29 +172,9 @@ function sentence(text) {
     border: 1px solid var(--sl-color-hairline);
     color: var(--sl-color-text-accent);
   }
-  .preview-frame {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 210 / 297;
-    overflow: hidden;
-    border: 1px solid var(--sl-color-hairline);
-    border-radius: 0.4rem;
-    background: #fff;
-    margin: 1.5rem 0;
-  }
-  .preview-frame.is-landscape {
-    aspect-ratio: 297 / 210;
-  }
-  .preview-frame iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: none;
-    transform-origin: top left;
-    /* Starlight's own markdown-content CSS caps iframe (and img/svg/video) width at 100% of the
-       container; that fights the fit-to-column transform below, which needs the iframe at its
-       natural (unscaled) pixel size before it is shrunk. */
-    max-width: none !important;
+  .in-collections {
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-2);
   }
   .basis {
     margin-top: 2rem;

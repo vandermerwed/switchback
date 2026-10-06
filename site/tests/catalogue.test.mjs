@@ -30,7 +30,18 @@ for (const id of expectedIds) {
 
 test("the CLI reference names every command", () => {
   const html = readFileSync(new URL("docs/cli/index.html", dist), "utf8");
-  const commands = ["build", "validate", "list", "show", "init", "profile", "proof", "media", "legend"];
+  const commands = [
+    "build",
+    "validate",
+    "list",
+    "collections",
+    "show",
+    "init",
+    "profile",
+    "proof",
+    "media",
+    "legend",
+  ];
   for (const command of commands) {
     assert.ok(html.includes(command), `missing command in CLI reference: ${command}`);
   }
@@ -68,4 +79,38 @@ test("the components index tells research-backed and practical templates apart",
   assert.doesNotMatch(html, /Each carries a grade/);
   assert.doesNotMatch(html, /shape and evidence/);
   assert.match(html, /practical template/i);
+});
+
+test("every collection has a page, and the index lists them all", () => {
+  const shelves = [...catalogue.collections.keys()];
+  assert.equal(shelves.length, 9);
+  const index = readFileSync(new URL("docs/collections/index.html", dist), "utf8");
+  for (const id of shelves) {
+    assert.ok(existsSync(new URL(`docs/collections/${id}/index.html`, dist)), `docs/collections/${id}/`);
+    assert.ok(index.includes(`href="/docs/collections/${id}/"`), `index links ${id}`);
+  }
+});
+
+test("every link on a collection page resolves to a built page", () => {
+  for (const id of catalogue.collections.keys()) {
+    const html = readFileSync(new URL(`docs/collections/${id}/index.html`, dist), "utf8");
+    const links = [...html.matchAll(/href="\/docs\/(components|collections)\/([a-z0-9-]+)\/"/g)];
+    assert.ok(links.length > 0, `${id} links its templates`);
+    for (const [, kind, target] of links)
+      assert.ok(existsSync(new URL(`docs/${kind}/${target}/index.html`, dist)), `${id} → ${kind}/${target}`);
+  }
+});
+
+test("a collection page shows each template's basis, and a component page its collections", () => {
+  const gameDev = readFileSync(new URL("docs/collections/game-dev/index.html", dist), "utf8");
+  assert.match(gameDev, /Practical/);
+  assert.match(gameDev, /Research-backed/);
+  const kanban = readFileSync(new URL("docs/components/kanban/index.html", dist), "utf8");
+  assert.match(kanban, /In collections/);
+  assert.ok(kanban.includes('href="/docs/collections/planning/"'));
+});
+
+test("a practical preset's page gives its attribution once", () => {
+  const html = readFileSync(new URL("docs/components/feature-cut/index.html", dist), "utf8");
+  assert.equal(html.split("Scope cutting by priority piles").length - 1, 1);
 });
