@@ -1,11 +1,26 @@
 import { resolveKit } from "../../engine/kit";
 import { chooseVariant, RENAMED, resolveComponent } from "../../engine/resolve";
-import type { JsonSchema } from "../../engine/types";
+import type { ComponentMeta, JsonSchema, PresetMeta } from "../../engine/types";
+import { basisOf, groundingOf, originOf } from "../../registry/basis";
 import { loadCatalogue } from "../../registry/catalogue";
 import { parseCommand, readProfileOrReport } from "../args";
 import type { Io } from "../io";
 
 const USAGE = "usage: switchback show <component-or-preset-id> [--json]";
+
+/** What a template rests on: its research claims, or, for a practical template, its origin alone. */
+export function basisLines(meta: ComponentMeta, preset?: PresetMeta | null): string[] {
+  if (basisOf(meta, preset) === "practice")
+    return [`basis:   practical template · ${originOf(meta, preset) ?? ""}`];
+  const g = groundingOf(meta, preset);
+  const lines = ["basis:   research-backed", "grounding:"];
+  if (!g?.claims.length) lines.push("  (not yet researched)");
+  for (const c of g?.claims ?? [])
+    lines.push(`  - ${c.claim} [${c.grade}] ${c.sources.map((s) => s.cite).join("; ")}`);
+  if (g?.helps) lines.push(`  helps: ${g.helps}`);
+  if (g?.backfires) lines.push(`  backfires: ${g.backfires}`);
+  return lines;
+}
 
 function describeType(schema: Record<string, unknown>): string {
   if (Array.isArray(schema.enum)) return schema.enum.join(" | ");
@@ -68,9 +83,20 @@ export async function showCommand(argv: string[], io: Io, env: NodeJS.ProcessEnv
   const presets = [...cat.presets.values()].filter((p) => p.extends === meta.id).map((p) => p.id);
 
   if (values.json) {
+    const basis = basisOf(meta, preset);
+    // A practical template never carries its base component's claims, not even in JSON.
+    const component = basis === "practice" ? { ...meta, grounding: undefined } : meta;
     io.out(
       JSON.stringify(
-        { component: meta, preset, variants, presets, examples: Object.keys(base.examples) },
+        {
+          component,
+          preset,
+          basis,
+          origin: originOf(meta, preset) ?? null,
+          variants,
+          presets,
+          examples: Object.keys(base.examples),
+        },
         null,
         2,
       ),
@@ -102,13 +128,7 @@ export async function showCommand(argv: string[], io: Io, env: NodeJS.ProcessEnv
     );
   if (meta.prompt) lines.push(`prompt:  ${meta.prompt}`);
   if (meta.readback) lines.push(`read-back: ${meta.readback}`);
-  const grounding = meta.grounding ?? { claims: [], helps: "", backfires: "" };
-  lines.push("grounding:");
-  if (!grounding.claims.length) lines.push("  (not yet researched)");
-  for (const c of grounding.claims)
-    lines.push(`  - ${c.claim} [${c.grade}] ${c.sources.map((s) => s.cite).join("; ")}`);
-  if (grounding.helps) lines.push(`  helps: ${grounding.helps}`);
-  if (grounding.backfires) lines.push(`  backfires: ${grounding.backfires}`);
+  lines.push(...basisLines(meta, preset));
   if (presets.length) lines.push(`presets: ${presets.join(", ")}`);
   for (const line of lines) io.out(line);
   return 0;
