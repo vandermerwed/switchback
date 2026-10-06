@@ -299,9 +299,9 @@ export function validateRegistry(parts: CatalogueParts, opts: { strict?: boolean
     if (opts.strict && p.grounding)
       out.push(...strictGrounding(`protocol ${p.id}`, p.grounding, "registry/protocols.json"));
   }
-  const coll = parts.registries.collection;
-  out.push(...checkGroundingShape("the collection", coll.grounding, "registry/collection.json"));
-  if (opts.strict && coll.grounding)
-    out.push(...strictGrounding("the collection", coll.grounding, "registry/collection.json"));
+  const claims = parts.registries.catalogueClaims;
+  out.push(...checkGroundingShape("the catalogue", claims.grounding, "registry/catalogue.json"));
+  if (opts.strict && claims.grounding)
+    out.push(...strictGrounding("the catalogue", claims.grounding, "registry/catalogue.json"));
   return out;
 }

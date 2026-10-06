@@ -163,7 +163,8 @@ export function applyGrounding(
     if (!files.protocols.protocols.some((p) => p.id === id))
       errors.push(`grounding.json protocols: unknown protocol "${id}"`);
 
-  // The collection-level claims (claims.md §10 ruling 1) live in registry/collection.json.
+  // The collection-level claims (claims.md §10 ruling 1; the research files' `collection` section)
+  // live in registry/catalogue.json.
   for (const [key, entry] of Object.entries(g.collection ?? {})) {
     if (key !== "collection") {
       errors.push(`grounding.json collection: unknown key "${key}" (the only key is "collection")`);
@@ -187,7 +188,7 @@ export function changedFiles(before: ItemFiles, after: ItemFiles): Array<{ path:
   if (!sameJson(before.protocols, after.protocols))
     out.push({ path: "registry/protocols.json", value: after.protocols });
   if (!sameJson(before.collection, after.collection))
-    out.push({ path: "registry/collection.json", value: after.collection });
+    out.push({ path: "registry/catalogue.json", value: after.collection });
   return out;
 }
 
@@ -209,7 +210,7 @@ export function loadItemFiles(root: string): ItemFiles {
     presets,
     styles: readJson(root, "registry/styles.json"),
     protocols: readJson(root, "registry/protocols.json"),
-    collection: readJson(root, "registry/collection.json"),
+    collection: readJson(root, "registry/catalogue.json"),
   };
 }
 

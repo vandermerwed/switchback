@@ -1,4 +1,4 @@
-// Merge research/grounding.json into component, preset, style, protocol and collection files (research spec §9.2).
+// Merge research/grounding.json into component, preset, style, protocol and catalogue files (research spec §9.2).
 //
 //   pnpm apply-grounding           write the merge; then run the printed biome command yourself
 //   pnpm apply-grounding --check   exit 1 if any file differs from what a merge would produce (CI)

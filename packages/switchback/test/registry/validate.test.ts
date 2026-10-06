@@ -76,7 +76,7 @@ describe("validateRegistry", () => {
     );
   });
 
-  it("checks the shape of grounding on styles, protocols and the collection", () => {
+  it("checks the shape of grounding on styles, protocols and the catalogue", () => {
     const registries = structuredClone(parts.registries);
     (registries.styles[0] as { grounding?: unknown }).grounding = {
       claims: "none",
@@ -84,7 +84,7 @@ describe("validateRegistry", () => {
       backfires: "",
     };
     (registries.protocols[0] as { grounding?: unknown }).grounding = { claims: [] };
-    (registries.collection as { grounding?: unknown }).grounding = {
+    (registries.catalogueClaims as { grounding?: unknown }).grounding = {
       claims: [],
       helps: "",
       backfires: "",
@@ -94,7 +94,7 @@ describe("validateRegistry", () => {
     expect(found.map((d) => d.path)).toEqual([
       "registry/styles.json",
       "registry/protocols.json",
-      "registry/collection.json",
+      "registry/catalogue.json",
     ]);
   });
 

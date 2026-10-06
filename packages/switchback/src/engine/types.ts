@@ -184,7 +184,8 @@ export interface PresetMeta {
   grounding?: Grounding;
 }
 
-export interface Collection {
+/** The catalogue-wide claims that underpin every writing page (claims.md §10 ruling 1). */
+export interface CatalogueClaims {
   grounding?: Grounding;
 }
 

@@ -157,7 +157,7 @@ describe("applyGrounding", () => {
       "presets/gamma.json",
       "registry/styles.json",
       "registry/protocols.json",
-      "registry/collection.json",
+      "registry/catalogue.json",
     ]);
     const drifted = structuredClone(after);
     (drifted.components.beta!.grounding as { helps: string }).helps = "hand-edited";
