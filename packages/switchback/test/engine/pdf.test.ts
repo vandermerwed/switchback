@@ -36,7 +36,9 @@ describe("findBrowser", () => {
 });
 
 const browser = findBrowser();
-describe.skipIf(!browser)("toPdf (needs a local Chrome/Edge)", () => {
+// Each test launches a real browser; under the full suite's parallel load a launch can take well
+// over the default 30s, so the block gets more room.
+describe.skipIf(!browser)("toPdf (needs a local Chrome/Edge)", { timeout: 120_000 }, () => {
   it("writes a PDF", async () => {
     const out = join(mkdtempSync(join(tmpdir(), "switchback-pdf-")), "page.pdf");
     await toPdf(renderComponent("pre-mortem").html!, out, browser!);
