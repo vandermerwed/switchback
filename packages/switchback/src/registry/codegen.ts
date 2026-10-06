@@ -59,14 +59,18 @@ export function generateIndex(root: string): string {
     return `${pv} as unknown as PresetMeta`;
   });
 
-  // Collections: a folder each, holding collection.json and, optionally, its own presets.
+  // Collections: a folder each, holding collection.json and, optionally, its own presets. A folder
+  // without collection.json is listed as skipped, so validation reports it rather than losing it.
   const collectionsDir = join(root, "collections");
-  const collectionIds = existsSync(collectionsDir)
+  const collectionDirs = existsSync(collectionsDir)
     ? readdirSync(collectionsDir, { withFileTypes: true })
-        .filter((d) => d.isDirectory() && existsSync(join(collectionsDir, d.name, "collection.json")))
+        .filter((d) => d.isDirectory())
         .map((d) => d.name)
         .sort()
     : [];
+  const hasFile = (id: string) => existsSync(join(collectionsDir, id, "collection.json"));
+  const collectionIds = collectionDirs.filter(hasFile);
+  const skippedCollections = collectionDirs.filter((id) => !hasFile(id));
   const collections = collectionIds.map((id) => {
     const v = ident(id);
     imports.push(`import collection_${v} from "../../collections/${id}/collection.json";`);
@@ -100,6 +104,8 @@ export function generateIndex(root: string): string {
     "];",
     "",
     `export const skipped: string[] = ${JSON.stringify(skipped)};`,
+    "",
+    `export const skippedCollections: string[] = ${JSON.stringify(skippedCollections)};`,
     "",
   ].join("\n");
 }

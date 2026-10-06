@@ -218,3 +218,5 @@ export const collections: CollectionModule[] = [
 ];
 
 export const skipped: string[] = [];
+
+export const skippedCollections: string[] = [];

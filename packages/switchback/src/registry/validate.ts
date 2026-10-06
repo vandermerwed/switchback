@@ -131,6 +131,16 @@ export function validateRegistry(parts: CatalogueParts, opts: { strict?: boolean
     }
   };
 
+  for (const dir of parts.skippedCollections ?? [])
+    out.push(
+      error(
+        "E_COLLECTION_SCHEMA",
+        `collections/${dir} has no collection.json, so the collection and its own presets are left out`,
+        `add collections/${dir}/collection.json, or remove the folder`,
+        { path: `collections/${dir}` },
+      ),
+    );
+
   for (const id of parts.skipped) {
     out.push(
       error(

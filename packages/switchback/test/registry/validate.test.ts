@@ -281,4 +281,11 @@ describe("collections", () => {
     (claimed.meta as Record<string, unknown>).grounding = { claims: "none" };
     expect(codes(run([claimed]))).toContain("E_GROUNDING_SCHEMA");
   });
+
+  it("reports a collection folder with no collection.json, rather than dropping it", () => {
+    const found = validateRegistry({ ...parts, skippedCollections: ["half-done"] }).filter(
+      (d) => d.code === "E_COLLECTION_SCHEMA",
+    );
+    expect(found.map((d) => d.path)).toEqual(["collections/half-done"]);
+  });
 });

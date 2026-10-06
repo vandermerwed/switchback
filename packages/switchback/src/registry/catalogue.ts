@@ -1,5 +1,5 @@
 import type { CollectionModule, ComponentModule, PresetMeta } from "../engine/types";
-import { collections, components, presets, skipped } from "../generated/components";
+import { collections, components, presets, skipped, skippedCollections } from "../generated/components";
 import { loadRegistries, type Registries } from "./registries";
 
 export interface CatalogueParts {
@@ -8,6 +8,8 @@ export interface CatalogueParts {
   collections: CollectionModule[];
   registries: Registries;
   skipped: string[];
+  /** Folders under collections/ with no collection.json. */
+  skippedCollections: string[];
 }
 
 export interface Catalogue {
@@ -20,7 +22,7 @@ export interface Catalogue {
 }
 
 export function catalogueParts(): CatalogueParts {
-  return { components, presets, collections, registries: loadRegistries(), skipped };
+  return { components, presets, collections, registries: loadRegistries(), skipped, skippedCollections };
 }
 
 export function createCatalogue(

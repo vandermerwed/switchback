@@ -37,7 +37,8 @@ describe("generateIndex", () => {
     expect(code).toContain(
       '  { dir: "shelf", meta: collection_shelf as unknown as CollectionModule["meta"], presets: [collection_shelf_preset_one_off as unknown as PresetMeta] },',
     );
-    expect(code).not.toContain("no-file");
+    expect(code).not.toContain("collection_no_file");
+    expect(code).toContain('export const skippedCollections: string[] = ["no-file"];');
   });
 
   it("emits an empty collection list when there is no collections folder", () => {
