@@ -94,6 +94,9 @@ profile, add the desk as `kit` (section 3).
 - `prompt` is the sentence printed under the page's title; you write it. `data` holds the
   component's own slots (`items`, `criteria`, `subject`), and `variant` is one of the ids `show`
   lists, or omitted to let the kit choose.
+- `orientation` (`"portrait"` or `"landscape"`) is optional. Wide pages already print landscape
+  (canvases, kanban, card sorts with 3 or more piles, options against criteria, timelines), so set
+  it only to override the template.
 - Material the sitting itself produces (the names from the first half, the survivors of a sort)
   is not in `data`: leave `items` or `options` out and name the `source`.
 - `return-checklist` needs no `data`: the CLI lists the pages that come back.
@@ -108,8 +111,8 @@ In short:
   says what you think.
 - **Name the source.** A page that works on material from another page names it: "the survivors
   from W1-P2", and card-sort's `data.source`.
-- **Card sort on portrait paper:** the `index-cards` variant with at most 2 columns, otherwise
-  the `write-in` variant. The CLI warns with `W_NARROW` if you get this wrong.
+- **Card sort:** 3 or more piles print on a landscape page. Index cards fit 3 piles; with 4 or 5,
+  use the `write-in` variant. The CLI warns with `W_NARROW` if you get this wrong.
 - **question-queue stays blank.** No `data.questions` unless the user gave you questions to print.
 - **Plain words.** No term of art on a page unless the page explains it: not "diverge",
   "pre-mortem", "retrieval", "incubation".

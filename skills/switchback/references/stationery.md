@@ -25,8 +25,9 @@ When the user is impatient or says "whatever", the minimum kit is the right answ
 - `printer`: `mono` or `colour`. Every page prints black-on-white either way. The cover's legend
   swatches print empty for the user to colour with their own pens, which is also how read mode
   learns what each ink looks like. A colour printer is recorded but changes nothing on the page.
-- `paper`: `A4` or `Letter`. It sets the page size of every build; index cards on portrait paper
-  are cramped, so a card sort on either size prefers landscape or a write-in variant.
+- `paper`: `A4` or `Letter`. It sets the page size of every build; wide pages print on landscape
+  sheets of the same paper. Index cards on portrait paper are cramped, so a card sort prints
+  landscape from 3 piles, and uses the write-in variant past 3.
 - No printer at all: print at a library, a shop or work, or hand-copy the page from the HTML.
   A workbook with no printer is slower but still works. Reading it on screen is not a fallback;
   that removes the point.
