@@ -45,7 +45,7 @@ const claims = item.grounding?.claims ?? [];
     )
   }
 
-  <div class="preview-frame" data-preview>
+  <div class:list={["preview-frame", { "is-landscape": item.orientation === "landscape" }]} data-preview>
     <iframe
       loading="lazy"
       title={`Preview of ${item.title}`}
@@ -133,7 +133,10 @@ const claims = item.grounding?.claims ?? [];
     const scale = () => {
       const doc = iframe.contentDocument;
       const page = doc?.querySelector<HTMLElement>(".sb-page");
-      if (!page) return;
+      if (!doc || !page) return;
+      // The frame shows the page alone; the printed document's own margins would otherwise give the
+      // iframe scrollbars (both of them, once a landscape page is wider than the frame's start size).
+      doc.documentElement.style.overflow = "hidden";
       const rect = page.getBoundingClientRect();
       if (!rect.width || !rect.height) return;
       const factor = frame.clientWidth / rect.width;
@@ -178,6 +181,9 @@ const claims = item.grounding?.claims ?? [];
     border-radius: 0.4rem;
     background: #fff;
     margin: 1.5rem 0;
+  }
+  .preview-frame.is-landscape {
+    aspect-ratio: 297 / 210;
   }
   .preview-frame iframe {
     position: absolute;

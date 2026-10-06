@@ -2,7 +2,7 @@ import { mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { buildDocument } from "../../engine/build";
 import { formatDiagnostic, warning } from "../../engine/diagnostics";
-import { findBrowser, MANUAL_PRINT, toPdf } from "../../engine/pdf";
+import { findBrowser, manualPrintFix, toPdf } from "../../engine/pdf";
 import { formatPens } from "../../engine/pens";
 import { loadCatalogue } from "../../registry/catalogue";
 import { parseCommand, readProfileOrReport, readSpecOrReport, report } from "../args";
@@ -81,6 +81,9 @@ export async function buildCommand(
 
   let exit = 0;
   let pdfPath: string | null = null;
+  const printFix = manualPrintFix(
+    result.sidecar.pages.filter((p) => p.orientation === "landscape").map((p) => p.id),
+  );
   if (values.pdf) {
     const browser = deps.findBrowser();
     if (!browser) {
@@ -88,7 +91,7 @@ export async function buildCommand(
         warning(
           "W_NO_BROWSER",
           "no Chrome, Edge, or Chromium was found for PDF output",
-          `${MANUAL_PRINT} Or set SWITCHBACK_CHROME to a browser.`,
+          `${printFix} Or set SWITCHBACK_CHROME to a browser.`,
         ),
       );
       exit = 3;
@@ -102,7 +105,7 @@ export async function buildCommand(
           warning(
             "W_PDF_FAILED",
             `PDF output failed: ${(e as Error).message}`,
-            `${MANUAL_PRINT} Or set SWITCHBACK_CHROME to a working browser.`,
+            `${printFix} Or set SWITCHBACK_CHROME to a working browser.`,
           ),
         );
         exit = 3;

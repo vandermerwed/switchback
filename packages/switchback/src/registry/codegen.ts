@@ -26,9 +26,10 @@ export function generateIndex(root: string): string {
     const renderSrc = readFileSync(join(dir, "render.ts"), "utf8");
     const hasCss = /export const css\b/.test(renderSrc);
     const hasChecks = /export const checks\b/.test(renderSrc);
+    const hasOrientation = /export const orientation\b/.test(renderSrc);
     imports.push(`import meta_${v} from "../../components/${id}/component.json";`);
     imports.push(
-      `import { render as render_${v}${hasCss ? `, css as css_${v}` : ""}${hasChecks ? `, checks as checks_${v}` : ""} } from "../../components/${id}/render";`,
+      `import { render as render_${v}${hasCss ? `, css as css_${v}` : ""}${hasChecks ? `, checks as checks_${v}` : ""}${hasOrientation ? `, orientation as orientation_${v}` : ""} } from "../../components/${id}/render";`,
     );
     const exDir = join(dir, "examples");
     const files = existsSync(exDir)
@@ -43,7 +44,7 @@ export function generateIndex(root: string): string {
       return `${JSON.stringify(name)}: ${ev}`;
     });
     entries.push(
-      `  { meta: meta_${v} as unknown as ComponentModule["meta"], render: render_${v}, ${hasCss ? `css: css_${v}, ` : ""}${hasChecks ? `checks: checks_${v}, ` : ""}examples: { ${examples.join(", ")} } as ComponentModule["examples"] },`,
+      `  { meta: meta_${v} as unknown as ComponentModule["meta"], render: render_${v}, ${hasCss ? `css: css_${v}, ` : ""}${hasChecks ? `checks: checks_${v}, ` : ""}${hasOrientation ? `orientation: orientation_${v}, ` : ""}examples: { ${examples.join(", ")} } as ComponentModule["examples"] },`,
     );
   }
 

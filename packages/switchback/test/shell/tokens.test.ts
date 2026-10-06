@@ -15,6 +15,13 @@ describe("Field Manual print tokens", () => {
     expect(TOKENS_CSS).toContain("--sb-pitch: 10mm");
   });
 
+  it("put each page on its named print page and swap the box for landscape", () => {
+    expect(TOKENS_CSS).toMatch(/\.sb-page \{[^}]*page: sb-portrait/);
+    expect(TOKENS_CSS).toContain(
+      ".sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }",
+    );
+  });
+
   it("let long words wrap inside table cells and cut cells", () => {
     expect(TOKENS_CSS).toMatch(/\.sb-table td[^}]*overflow-wrap: anywhere/);
     expect(TOKENS_CSS).toMatch(/\.sb-cut-cell \{[^}]*overflow-wrap: anywhere/);

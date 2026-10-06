@@ -11,8 +11,9 @@ export const TOKENS_CSS = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom

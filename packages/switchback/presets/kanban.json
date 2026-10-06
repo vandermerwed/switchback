@@ -4,6 +4,7 @@
   "extends": "zones",
   "name": "Kanban",
   "tags": ["plan", "focus"],
+  "orientation": "landscape",
   "data": {
     "zones": ["To do", "Doing (limit 3)", "Done"],
     "columns": 3

@@ -3,6 +3,17 @@ import { posix, win32 } from "node:path";
 
 export const MANUAL_PRINT = "Open the HTML in a browser → Print → Margins: None → Background graphics: on.";
 
+/**
+ * The manual print steps, plus which pages are landscape. Chrome and Edge print those sideways on
+ * their own; a browser that ignores named CSS pages needs them printed separately in landscape.
+ */
+export function manualPrintFix(landscapePages: string[]): string {
+  if (!landscapePages.length) return MANUAL_PRINT;
+  const pages = landscapePages.join(", ");
+  const verb = landscapePages.length === 1 ? "prints" : "print";
+  return `${MANUAL_PRINT} ${pages} ${verb} landscape: Chrome and Edge turn ${landscapePages.length === 1 ? "it" : "them"} on their own; in another browser, print ${landscapePages.length === 1 ? "it" : "them"} separately and choose Landscape in the print dialog.`;
+}
+
 export function browserCandidates(
   platform: NodeJS.Platform = process.platform,
   env: NodeJS.ProcessEnv = process.env,

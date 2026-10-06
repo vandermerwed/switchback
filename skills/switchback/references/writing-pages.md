@@ -30,18 +30,19 @@ these cards come from?" and nothing on the page said.
 Material the user gave you in the conversation is your source too: "the 12 ideas you listed"
 is fine in `source`.
 
-## Card sort on portrait paper
+## Card sort and its page width
 
-Index cards are about 76 mm wide; three columns on portrait A4 or Letter leave about 60 mm each,
-and the reader wrote "columns are too small for index cards" on the page.
+Index cards are about 76 mm wide. A card sort with 3 or more piles prints on a landscape page,
+which fits 3 piles of index cards (about 89 mm each on A4); 4 or 5 piles leave about 66 and 53 mm,
+too narrow for a card. Two piles print portrait, at about 90 mm each.
 
 - With scissors and the `items` known when you compose: `"variant": "cut-out"`, any number of
   piles; the cards print on the page and the user cuts them apart.
-- With index cards and two piles: `"variant": "index-cards"`, two `columns`.
-- With three or more piles and no scissors, or when the items are produced during the sitting:
+- With index cards and up to 3 piles: `"variant": "index-cards"`, with up to 3 `columns`.
+- With 4 or 5 piles and no scissors, or when the items are produced during the sitting:
   `"variant": "write-in"`, and the piles are columns to write into.
-- Or omit `variant` and let the CLI pick from the kit. It warns with `W_NARROW` for three or
-  more index-card columns on portrait paper. Do what its `fix` says.
+- Or omit `variant` and let the CLI pick from the kit. It warns with `W_NARROW` when index-card
+  piles come out narrower than a card. Do what its `fix` says.
 
 ## The question queue stays blank
 

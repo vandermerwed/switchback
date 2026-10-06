@@ -6,6 +6,7 @@
   "when": "planning, or when the human is secretly trying to do everything at once",
   "tags": ["plan"],
   "phase": "converge",
+  "orientation": "landscape",
   "physical": {
     "requires": ["printer"],
     "body": ["write"],

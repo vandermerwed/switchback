@@ -4,6 +4,7 @@
   "extends": "zones",
   "name": "Lean Canvas",
   "tags": ["plan", "create"],
+  "orientation": "landscape",
   "data": {
     "zones": [
       "Problem",

@@ -75,6 +75,29 @@ describe("switchback build", () => {
     expect(io.stderr.join("\n")).toContain("W_NO_BROWSER");
   });
 
+  it("names the landscape pages and how to print them when there is no browser for --pdf", async () => {
+    const mixed = {
+      switchback: 1,
+      title: "T",
+      pages: [
+        { id: "W1-P1", component: "pre-mortem" },
+        { id: "W1-P2", component: "options-criteria" },
+      ],
+    };
+    const io = captureIo();
+    expect(await buildCommand([write("mixed.json", JSON.stringify(mixed)), "--pdf"], io, env, noPdf)).toBe(3);
+    const err = io.stderr.join("\n");
+    expect(err).toContain("W1-P2 prints landscape");
+    expect(err).toContain("choose Landscape in the print dialog");
+    expect(err).not.toContain("W1-P1 prints landscape");
+  });
+
+  it("leaves the manual print fix plain when every page is portrait", async () => {
+    const io = captureIo();
+    await buildCommand([write("spec.json", JSON.stringify(spec)), "--pdf"], io, env, noPdf);
+    expect(io.stderr.join("\n")).not.toContain("landscape");
+  });
+
   it("exits 3, keeps the HTML, and leaves no stale PDF when the PDF launch fails", async () => {
     const specPath = write("spec.json", JSON.stringify(spec));
     const pdfPath = join(dir, "spec.pdf");

@@ -89,3 +89,42 @@ describe("zones layout", () => {
     for (const z of zones) expect(html).toContain(z);
   });
 });
+
+describe("zones orientation", () => {
+  const sidecarOrientation = (data: Record<string, unknown>) =>
+    buildDocument(
+      { switchback: 1, pages: [{ id: "W1-P1", component: "zones", data }] },
+      { skipStyleChecks: true, embedFonts: false },
+    ).sidecar?.pages[0]?.orientation;
+
+  it("goes landscape at three or more columns", () => {
+    expect(sidecarOrientation({ zones: ["A", "B", "C"], columns: 3 })).toBe("landscape");
+    expect(sidecarOrientation({ zones: ["A", "B"], columns: 2 })).toBe("portrait");
+  });
+
+  it("goes landscape when more than five zones fall back to three columns", () => {
+    expect(sidecarOrientation({ zones: ["1", "2", "3", "4", "5", "6"] })).toBe("landscape");
+  });
+
+  it("goes landscape for a canvas of at most three rows, and stays portrait for four", () => {
+    expect(
+      renderComponent("zones", { example: "grid", embedFonts: false }).sidecar?.pages[0]?.orientation,
+    ).toBe("landscape");
+    const fourRows = {
+      zones: ["A", "B", "C", "D"],
+      layout: [
+        { col: 1, row: 1, colSpan: 10 },
+        { col: 1, row: 2, colSpan: 10 },
+        { col: 1, row: 3, colSpan: 10 },
+        { col: 1, row: 4, colSpan: 10 },
+      ],
+    };
+    expect(sidecarOrientation(fourRows)).toBe("portrait");
+  });
+
+  it("prints the business model canvas preset on a landscape page", () => {
+    expect(
+      renderComponent("business-model-canvas", { embedFonts: false }).sidecar?.pages[0]?.orientation,
+    ).toBe("landscape");
+  });
+});

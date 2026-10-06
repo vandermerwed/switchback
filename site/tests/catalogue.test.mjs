@@ -35,3 +35,13 @@ test("the CLI reference names every command", () => {
     assert.ok(html.includes(command), `missing command in CLI reference: ${command}`);
   }
 });
+
+test("each catalogue entry records its page orientation, and the wide ones are landscape", () => {
+  const entries = JSON.parse(readFileSync(new URL("catalogue.json", generated), "utf8"));
+  for (const e of entries)
+    assert.ok(["portrait", "landscape"].includes(e.orientation), `${e.id} has an orientation`);
+  const landscape = new Set(entries.filter((e) => e.orientation === "landscape").map((e) => e.id));
+  for (const id of ["business-model-canvas", "lean-canvas", "kanban", "options-criteria", "timeline"])
+    assert.ok(landscape.has(id), `${id} is landscape`);
+  assert.ok(!landscape.has("pre-mortem"), "pre-mortem stays portrait");
+});

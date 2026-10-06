@@ -11,6 +11,8 @@ exports[`'assumption-audit' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -24,8 +26,9 @@ exports[`'assumption-audit' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -100,7 +103,7 @@ body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 v
 </style>
 </head>
 <body>
-<section class="sb-page" id="W1-P1" data-component="assumption-audit"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Assumption audit</span><span class="sb-ptag">assumption-audit</span></header><p class="sb-prompt">List what has to be true for this to work. Mark confidence: ●+ high, ◐~ medium, ○! unsure.</p><div class="sb-pbody"><div class="sb-table-wrap sb-fill"><table class="sb-table sb-c-audit"><tr><th>Assumption</th><th>Conf.</th><th>What you&#39;d see if it&#39;s false</th><th>Cheapest way to check</th></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></table></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
+<section class="sb-page sb-landscape" id="W1-P1" data-component="assumption-audit"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Assumption audit</span><span class="sb-ptag">assumption-audit</span></header><p class="sb-prompt">List what has to be true for this to work. Mark confidence: ●+ high, ◐~ medium, ○! unsure.</p><div class="sb-pbody"><div class="sb-table-wrap sb-fill"><table class="sb-table sb-c-audit"><tr><th>Assumption</th><th>Conf.</th><th>What you&#39;d see if it&#39;s false</th><th>Cheapest way to check</th></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></table></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
 </body>
 </html>
 "
@@ -117,6 +120,8 @@ exports[`'brain-dump' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -130,8 +135,9 @@ exports[`'brain-dump' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -223,6 +229,8 @@ exports[`'card-sort' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -236,8 +244,9 @@ exports[`'card-sort' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -312,7 +321,7 @@ body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 v
 </style>
 </head>
 <body>
-<section class="sb-page" id="W1-P1" data-component="card-sort"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Card sort</span><span class="sb-ptag">card-sort</span></header><p class="sb-prompt">Move the pieces into piles. The argument you have while placing one is the useful part.</p><div class="sb-pbody"><div class="sb-cut" style="grid-template-columns:repeat(3,1fr)"><span class="sb-scissors" aria-hidden="true">✂︎</span><div class="sb-cut-cell" style="min-height:18mm">Offline mode</div><div class="sb-cut-cell" style="min-height:18mm">Conflict resolution</div><div class="sb-cut-cell" style="min-height:18mm">Sync status UI</div><div class="sb-cut-cell" style="min-height:18mm">Selective sync</div><div class="sb-cut-cell" style="min-height:18mm">Web sync</div><div class="sb-cut-cell" style="min-height:18mm">Retry queue</div><div class="sb-cut-cell" style="min-height:18mm">Audit log</div><div class="sb-cut-cell" style="min-height:18mm">Bandwidth cap</div><div class="sb-cut-cell" style="min-height:18mm">Sync on metered</div></div><h2 class="sb-h">Sort into these piles</h2><div class="sb-zones sb-zones-row sb-fill"><div class="sb-zone" style="min-height:50mm"><span class="sb-label">now</span></div><div class="sb-zone" style="min-height:50mm"><span class="sb-label">later</span></div><div class="sb-zone" style="min-height:50mm"><span class="sb-label">cut</span></div></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
+<section class="sb-page sb-landscape" id="W1-P1" data-component="card-sort"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Card sort</span><span class="sb-ptag">card-sort</span></header><p class="sb-prompt">Move the pieces into piles. The argument you have while placing one is the useful part.</p><div class="sb-pbody"><div class="sb-cut" style="grid-template-columns:repeat(3,1fr)"><span class="sb-scissors" aria-hidden="true">✂︎</span><div class="sb-cut-cell" style="min-height:18mm">Offline mode</div><div class="sb-cut-cell" style="min-height:18mm">Conflict resolution</div><div class="sb-cut-cell" style="min-height:18mm">Sync status UI</div><div class="sb-cut-cell" style="min-height:18mm">Selective sync</div><div class="sb-cut-cell" style="min-height:18mm">Web sync</div><div class="sb-cut-cell" style="min-height:18mm">Retry queue</div><div class="sb-cut-cell" style="min-height:18mm">Audit log</div><div class="sb-cut-cell" style="min-height:18mm">Bandwidth cap</div><div class="sb-cut-cell" style="min-height:18mm">Sync on metered</div></div><h2 class="sb-h">Sort into these piles</h2><div class="sb-zones sb-zones-row sb-fill"><div class="sb-zone" style="min-height:50mm"><span class="sb-label">now</span></div><div class="sb-zone" style="min-height:50mm"><span class="sb-label">later</span></div><div class="sb-zone" style="min-height:50mm"><span class="sb-label">cut</span></div></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
 </body>
 </html>
 "
@@ -329,6 +338,8 @@ exports[`'card-sort' ('from-page') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -342,8 +353,9 @@ exports[`'card-sort' ('from-page') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -418,7 +430,7 @@ body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 v
 </style>
 </head>
 <body>
-<section class="sb-page" id="W1-P1" data-component="card-sort"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Card sort</span><span class="sb-ptag">card-sort</span></header><p class="sb-prompt">Move the pieces into piles. The argument you have while placing one is the useful part.</p><div class="sb-pbody"><p class="sb-note">No cutting: write each candidate from the survivors from W1-P2 straight into the pile it belongs to.</p><h2 class="sb-h">Sort into these piles</h2><div class="sb-zones sb-zones-row sb-fill"><div class="sb-zone" style="min-height:50mm"><span class="sb-label">Build now</span></div><div class="sb-zone" style="min-height:50mm"><span class="sb-label">Build later</span></div><div class="sb-zone" style="min-height:50mm"><span class="sb-label">Cut</span></div></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
+<section class="sb-page sb-landscape" id="W1-P1" data-component="card-sort"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Card sort</span><span class="sb-ptag">card-sort</span></header><p class="sb-prompt">Move the pieces into piles. The argument you have while placing one is the useful part.</p><div class="sb-pbody"><p class="sb-note">No cutting: write each candidate from the survivors from W1-P2 straight into the pile it belongs to.</p><h2 class="sb-h">Sort into these piles</h2><div class="sb-zones sb-zones-row sb-fill"><div class="sb-zone" style="min-height:50mm"><span class="sb-label">Build now</span></div><div class="sb-zone" style="min-height:50mm"><span class="sb-label">Build later</span></div><div class="sb-zone" style="min-height:50mm"><span class="sb-label">Cut</span></div></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
 </body>
 </html>
 "
@@ -435,6 +447,8 @@ exports[`'card-sort' ('index-cards') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -448,8 +462,9 @@ exports[`'card-sort' ('index-cards') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -524,7 +539,7 @@ body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 v
 </style>
 </head>
 <body>
-<section class="sb-page" id="W1-P1" data-component="card-sort"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Card sort</span><span class="sb-ptag">card-sort</span></header><p class="sb-prompt">Move the pieces into piles. The argument you have while placing one is the useful part.</p><div class="sb-pbody"><p class="sb-note">Write each candidate on its own index card, then sort the cards on the table.</p><ol class="sb-c-cardlist"><li>Offline mode</li><li>Retry queue</li></ol><h2 class="sb-h">Sort into these piles</h2><div class="sb-zones sb-zones-row sb-fill"><div class="sb-zone" style="min-height:50mm"><span class="sb-label">now</span></div><div class="sb-zone" style="min-height:50mm"><span class="sb-label">later</span></div><div class="sb-zone" style="min-height:50mm"><span class="sb-label">cut</span></div></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
+<section class="sb-page sb-landscape" id="W1-P1" data-component="card-sort"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Card sort</span><span class="sb-ptag">card-sort</span></header><p class="sb-prompt">Move the pieces into piles. The argument you have while placing one is the useful part.</p><div class="sb-pbody"><p class="sb-note">Write each candidate on its own index card, then sort the cards on the table.</p><ol class="sb-c-cardlist"><li>Offline mode</li><li>Retry queue</li></ol><h2 class="sb-h">Sort into these piles</h2><div class="sb-zones sb-zones-row sb-fill"><div class="sb-zone" style="min-height:50mm"><span class="sb-label">now</span></div><div class="sb-zone" style="min-height:50mm"><span class="sb-label">later</span></div><div class="sb-zone" style="min-height:50mm"><span class="sb-label">cut</span></div></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
 </body>
 </html>
 "
@@ -541,6 +556,8 @@ exports[`'card-sort' ('write-in') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -554,8 +571,9 @@ exports[`'card-sort' ('write-in') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -630,7 +648,7 @@ body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 v
 </style>
 </head>
 <body>
-<section class="sb-page" id="W1-P1" data-component="card-sort"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Card sort</span><span class="sb-ptag">card-sort</span></header><p class="sb-prompt">Move the pieces into piles. The argument you have while placing one is the useful part.</p><div class="sb-pbody"><p class="sb-note">No cutting: write each candidate straight into the pile it belongs to.</p><ol class="sb-c-cardlist"><li>Offline mode</li><li>Retry queue</li></ol><h2 class="sb-h">Sort into these piles</h2><div class="sb-zones sb-zones-row sb-fill"><div class="sb-zone" style="min-height:50mm"><span class="sb-label">now</span></div><div class="sb-zone" style="min-height:50mm"><span class="sb-label">later</span></div><div class="sb-zone" style="min-height:50mm"><span class="sb-label">cut</span></div></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
+<section class="sb-page sb-landscape" id="W1-P1" data-component="card-sort"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Card sort</span><span class="sb-ptag">card-sort</span></header><p class="sb-prompt">Move the pieces into piles. The argument you have while placing one is the useful part.</p><div class="sb-pbody"><p class="sb-note">No cutting: write each candidate straight into the pile it belongs to.</p><ol class="sb-c-cardlist"><li>Offline mode</li><li>Retry queue</li></ol><h2 class="sb-h">Sort into these piles</h2><div class="sb-zones sb-zones-row sb-fill"><div class="sb-zone" style="min-height:50mm"><span class="sb-label">now</span></div><div class="sb-zone" style="min-height:50mm"><span class="sb-label">later</span></div><div class="sb-zone" style="min-height:50mm"><span class="sb-label">cut</span></div></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
 </body>
 </html>
 "
@@ -647,6 +665,8 @@ exports[`'check-in' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -660,8 +680,9 @@ exports[`'check-in' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -757,6 +778,8 @@ exports[`'check-in' ('gratitude') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -770,8 +793,9 @@ exports[`'check-in' ('gratitude') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -867,6 +891,8 @@ exports[`'check-in' ('gratitude-max') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -880,8 +906,9 @@ exports[`'check-in' ('gratitude-max') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -977,6 +1004,8 @@ exports[`'commit' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -990,8 +1019,9 @@ exports[`'commit' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -1086,6 +1116,8 @@ exports[`'commit' ('policy') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -1099,8 +1131,9 @@ exports[`'commit' ('policy') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -1195,6 +1228,8 @@ exports[`'commit' ('tell') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -1208,8 +1243,9 @@ exports[`'commit' ('tell') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -1304,6 +1340,8 @@ exports[`'constraint-removal' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -1317,8 +1355,9 @@ exports[`'constraint-removal' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -1410,6 +1449,8 @@ exports[`'cover' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -1423,8 +1464,9 @@ exports[`'cover' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -1524,6 +1566,8 @@ exports[`'feynman' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -1537,8 +1581,9 @@ exports[`'feynman' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -1630,6 +1675,8 @@ exports[`'five-whys' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -1643,8 +1690,9 @@ exports[`'five-whys' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -1740,6 +1788,8 @@ exports[`'forced-connections' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -1753,8 +1803,9 @@ exports[`'forced-connections' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -1846,6 +1897,8 @@ exports[`'forecast' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -1859,8 +1912,9 @@ exports[`'forecast' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -1957,6 +2011,8 @@ exports[`'forecast' ('duration') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -1970,8 +2026,9 @@ exports[`'forecast' ('duration') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -2068,6 +2125,8 @@ exports[`'frame-by-frame' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -2081,8 +2140,9 @@ exports[`'frame-by-frame' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -2174,6 +2234,8 @@ exports[`'free-recall' ('cued') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -2187,8 +2249,9 @@ exports[`'free-recall' ('cued') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -2282,6 +2345,8 @@ exports[`'free-recall' ('cued-max') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -2295,8 +2360,9 @@ exports[`'free-recall' ('cued-max') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -2390,6 +2456,8 @@ exports[`'free-recall' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -2403,8 +2471,9 @@ exports[`'free-recall' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -2498,6 +2567,8 @@ exports[`'free-recall' ('with-confidence') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -2511,8 +2582,9 @@ exports[`'free-recall' ('with-confidence') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -2606,6 +2678,8 @@ exports[`'goal-factoring' ('aversion') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -2619,8 +2693,9 @@ exports[`'goal-factoring' ('aversion') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -2691,11 +2766,11 @@ body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 v
 .sb-ifthen-w { flex: 0 0 auto; font: italic 400 11pt var(--sb-serif); padding-bottom: 0.6mm; }
 .sb-ifthen-blank { flex: 1 1 0; min-width: 0; border-bottom: 0.4pt solid var(--sb-rule); padding: 0 1mm 0.6mm; font-size: 10pt; }
 
-.sb-c-gf th:nth-child(2) { width: 30mm; }
+.sb-c-gf th:nth-child(2) { width: 30mm; } .sb-landscape .sb-c-gf th:nth-child(2) { width: 62mm; }
 </style>
 </head>
 <body>
-<section class="sb-page" id="W1-P1" data-component="goal-factoring"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Goal factoring</span><span class="sb-ptag">goal-factoring</span></header><p class="sb-prompt">Name what you avoid, then split it into its parts — sensations, situations, people, times — and give each a verdict before you think about fixes.</p><div class="sb-pbody"><div class="sb-callout"><span class="sb-glyph">▭</span><span>What I avoid: Going for a run outdoors in the morning before work, even though I always like how I feel afterward and rarely regret it</span></div><p class="sb-note">Split it into its parts: sensations, situations, people, times. Give each a verdict before you think about fixes. Some aversions are right, and &#39;not worth fixing&#39; is a valid verdict.</p><div class="sb-table-wrap sb-fill"><table class="sb-table sb-c-gf"><tr><th>Part of it</th><th>Verdict: fine · not worth fixing · fix</th><th>Fix: change the situation, or try it small</th></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></table></div><h2 class="sb-h">The one fix I will pilot</h2><div class="sb-ifthen"><div class="sb-ifthen-row"><span class="sb-ifthen-w">When</span><span class="sb-ifthen-blank"></span><span class="sb-ifthen-w">, I will</span><span class="sb-ifthen-blank"></span></div></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
+<section class="sb-page sb-landscape" id="W1-P1" data-component="goal-factoring"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Goal factoring</span><span class="sb-ptag">goal-factoring</span></header><p class="sb-prompt">Name what you avoid, then split it into its parts — sensations, situations, people, times — and give each a verdict before you think about fixes.</p><div class="sb-pbody"><div class="sb-callout"><span class="sb-glyph">▭</span><span>What I avoid: Going for a run outdoors in the morning before work, even though I always like how I feel afterward and rarely regret it</span></div><p class="sb-note">Split it into its parts: sensations, situations, people, times. Give each a verdict before you think about fixes. Some aversions are right, and &#39;not worth fixing&#39; is a valid verdict.</p><div class="sb-table-wrap sb-fill"><table class="sb-table sb-c-gf"><tr><th>Part of it</th><th>Verdict: fine · not worth fixing · fix</th><th>Fix: change the situation, or try it small</th></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></table></div><h2 class="sb-h">The one fix I will pilot</h2><div class="sb-ifthen"><div class="sb-ifthen-row"><span class="sb-ifthen-w">When</span><span class="sb-ifthen-blank"></span><span class="sb-ifthen-w">, I will</span><span class="sb-ifthen-blank"></span></div></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
 </body>
 </html>
 "
@@ -2712,6 +2787,8 @@ exports[`'goal-factoring' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -2725,8 +2802,9 @@ exports[`'goal-factoring' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -2797,11 +2875,11 @@ body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 v
 .sb-ifthen-w { flex: 0 0 auto; font: italic 400 11pt var(--sb-serif); padding-bottom: 0.6mm; }
 .sb-ifthen-blank { flex: 1 1 0; min-width: 0; border-bottom: 0.4pt solid var(--sb-rule); padding: 0 1mm 0.6mm; font-size: 10pt; }
 
-.sb-c-gf th:nth-child(2) { width: 30mm; }
+.sb-c-gf th:nth-child(2) { width: 30mm; } .sb-landscape .sb-c-gf th:nth-child(2) { width: 62mm; }
 </style>
 </head>
 <body>
-<section class="sb-page" id="W1-P1" data-component="goal-factoring"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Goal factoring</span><span class="sb-ptag">goal-factoring</span></header><p class="sb-prompt">Every goal it serves, including the ones you&#39;d rather not admit. Then another way to get each.</p><div class="sb-pbody"><div class="sb-callout"><span class="sb-glyph">▭</span><span>The action: Checking work email on my phone in bed every single night before sleep, including weekends, holidays, and even sick days</span></div><ul class="sb-check"><li><span class="sb-cbox"></span><span>I am equally willing to find that I should keep doing this, or stop.</span></li></ul><div class="sb-table-wrap sb-fill"><table class="sb-table sb-c-gf"><tr><th>Every goal it serves</th><th>Button test: would getting only this, with none of the cost, be enough?</th><th>Another way to get it</th></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></table></div><h2 class="sb-h">Reality check: the replacement I will actually try</h2><div class="sb-ifthen"><div class="sb-ifthen-row"><span class="sb-ifthen-w">When</span><span class="sb-ifthen-blank"></span><span class="sb-ifthen-w">, I will</span><span class="sb-ifthen-blank"></span></div></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
+<section class="sb-page sb-landscape" id="W1-P1" data-component="goal-factoring"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Goal factoring</span><span class="sb-ptag">goal-factoring</span></header><p class="sb-prompt">Every goal it serves, including the ones you&#39;d rather not admit. Then another way to get each.</p><div class="sb-pbody"><div class="sb-callout"><span class="sb-glyph">▭</span><span>The action: Checking work email on my phone in bed every single night before sleep, including weekends, holidays, and even sick days</span></div><ul class="sb-check"><li><span class="sb-cbox"></span><span>I am equally willing to find that I should keep doing this, or stop.</span></li></ul><div class="sb-table-wrap sb-fill"><table class="sb-table sb-c-gf"><tr><th>Every goal it serves</th><th>Button test: would getting only this, with none of the cost, be enough?</th><th>Another way to get it</th></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></table></div><h2 class="sb-h">Reality check: the replacement I will actually try</h2><div class="sb-ifthen"><div class="sb-ifthen-row"><span class="sb-ifthen-w">When</span><span class="sb-ifthen-blank"></span><span class="sb-ifthen-w">, I will</span><span class="sb-ifthen-blank"></span></div></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
 </body>
 </html>
 "
@@ -2818,6 +2896,8 @@ exports[`'matrix-2x2' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -2831,8 +2911,9 @@ exports[`'matrix-2x2' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -2929,6 +3010,8 @@ exports[`'mental-contrast' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -2942,8 +3025,9 @@ exports[`'mental-contrast' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -3035,6 +3119,8 @@ exports[`'node-map' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -3048,8 +3134,9 @@ exports[`'node-map' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -3145,6 +3232,8 @@ exports[`'options-criteria' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -3158,8 +3247,9 @@ exports[`'options-criteria' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -3234,7 +3324,7 @@ body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 v
 </style>
 </head>
 <body>
-<section class="sb-page" id="W1-P1" data-component="options-criteria"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Options against criteria</span><span class="sb-ptag">options-criteria</span></header><p class="sb-prompt">Score each option. Then a gut score in purple. Where they disagree is the real decision.</p><div class="sb-pbody"><p class="sb-note">Score your gut first, before any criteria. Then score each criterion (0–3) and total them. The gap between gut and total is the point.</p><div class="sb-table-wrap sb-fill"><table class="sb-table sb-c-opts"><tr><th>Option</th><th>Gut (first)</th><th>Criterion 1</th><th>Criterion 2</th><th>Criterion 3</th><th>Total</th></tr><tr><td>Option A</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Option B</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Option C</td><td></td><td></td><td></td><td></td><td></td></tr></table></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
+<section class="sb-page sb-landscape" id="W1-P1" data-component="options-criteria"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Options against criteria</span><span class="sb-ptag">options-criteria</span></header><p class="sb-prompt">Score each option. Then a gut score in purple. Where they disagree is the real decision.</p><div class="sb-pbody"><p class="sb-note">Score your gut first, before any criteria. Then score each criterion (0–3) and total them. The gap between gut and total is the point.</p><div class="sb-table-wrap sb-fill"><table class="sb-table sb-c-opts"><tr><th>Option</th><th>Gut (first)</th><th>Criterion 1</th><th>Criterion 2</th><th>Criterion 3</th><th>Total</th></tr><tr><td>Option A</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Option B</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Option C</td><td></td><td></td><td></td><td></td><td></td></tr></table></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
 </body>
 </html>
 "
@@ -3251,6 +3341,8 @@ exports[`'perspective-swap' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -3264,8 +3356,9 @@ exports[`'perspective-swap' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -3347,7 +3440,7 @@ body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 v
 </style>
 </head>
 <body>
-<section class="sb-page" id="W1-P1" data-component="perspective-swap"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Perspective swap</span><span class="sb-ptag">perspective-swap</span></header><p class="sb-prompt">Fill a column for each perspective. Be unfair to yourself in their column.</p><div class="sb-pbody"><div class="sb-cols sb-fill"><div class="sb-col"><h2 class="sb-h">Me</h2><p class="sb-note">sees</p><div class="sb-lines"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div><p class="sb-note">needs</p><div class="sb-lines"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div><p class="sb-note">fears</p><div class="sb-lines sb-fill"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div></div><div class="sb-col"><h2 class="sb-h">Them</h2><p class="sb-note">sees</p><div class="sb-lines"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div><p class="sb-note">needs</p><div class="sb-lines"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div><p class="sb-note">fears</p><div class="sb-lines sb-fill"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div></div><div class="sb-col"><h2 class="sb-h">Someone not in the room</h2><p class="sb-note">sees</p><div class="sb-lines"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div><p class="sb-note">needs</p><div class="sb-lines"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div><p class="sb-note">fears</p><div class="sb-lines sb-fill"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div></div></div><h2 class="sb-h">What would you ask them? Write one question to put to the real person.</h2><div class="sb-lines"><div class="sb-rule"></div><div class="sb-rule"></div></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
+<section class="sb-page sb-landscape" id="W1-P1" data-component="perspective-swap"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Perspective swap</span><span class="sb-ptag">perspective-swap</span></header><p class="sb-prompt">Fill a column for each perspective. Be unfair to yourself in their column.</p><div class="sb-pbody"><div class="sb-cols sb-fill"><div class="sb-col"><h2 class="sb-h">Me</h2><p class="sb-note">sees</p><div class="sb-lines"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div><p class="sb-note">needs</p><div class="sb-lines"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div><p class="sb-note">fears</p><div class="sb-lines sb-fill"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div></div><div class="sb-col"><h2 class="sb-h">Them</h2><p class="sb-note">sees</p><div class="sb-lines"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div><p class="sb-note">needs</p><div class="sb-lines"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div><p class="sb-note">fears</p><div class="sb-lines sb-fill"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div></div><div class="sb-col"><h2 class="sb-h">Someone not in the room</h2><p class="sb-note">sees</p><div class="sb-lines"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div><p class="sb-note">needs</p><div class="sb-lines"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div><p class="sb-note">fears</p><div class="sb-lines sb-fill"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div></div></div><h2 class="sb-h">What would you ask them? Write one question to put to the real person.</h2><div class="sb-lines"><div class="sb-rule"></div><div class="sb-rule"></div></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
 </body>
 </html>
 "
@@ -3364,6 +3457,8 @@ exports[`'perspective-swap' ('tent') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -3377,8 +3472,9 @@ exports[`'perspective-swap' ('tent') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -3460,7 +3556,7 @@ body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 v
 </style>
 </head>
 <body>
-<section class="sb-page" id="W1-P1" data-component="perspective-swap"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Perspective swap</span><span class="sb-ptag">perspective-swap</span></header><p class="sb-prompt">Cut out each figure, fold it on the dotted line and stand it up. Move a coin to whichever one you are speaking as, and write what it says in its column.</p><div class="sb-pbody"><p class="sb-note">Cut out each figure, fold on the dotted line and stand it up. Move a coin to the one you are speaking as, and write what it says in its column.</p><div class="sb-cut" style="grid-template-columns:repeat(3,1fr)"><span class="sb-scissors" aria-hidden="true">✂︎</span><div class="sb-cut-cell" style="min-height:54mm"><div class="sb-c-tent"><div class="sb-c-tent-half"><svg class="sb-svg sb-c-figure" viewBox="0 0 40 46" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="9" r="6" fill="none" stroke="#555555" stroke-width="1.2"/><path d="M8 18 L14 14 L20 18 L26 14 L32 18 L28 25 L28 40 L12 40 L12 25 Z" fill="none" stroke="#555555" stroke-width="1.2"/></svg><span class="sb-c-tent-label">The customer</span></div><div class="sb-fold-line"></div><div class="sb-c-tent-half sb-c-tent-back"><span class="sb-c-tent-label">The customer</span></div></div></div><div class="sb-cut-cell" style="min-height:54mm"><div class="sb-c-tent"><div class="sb-c-tent-half"><svg class="sb-svg sb-c-figure" viewBox="0 0 40 46" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="9" r="6" fill="none" stroke="#555555" stroke-width="1.2"/><path d="M8 18 L14 14 L20 18 L26 14 L32 18 L28 25 L28 40 L12 40 L12 25 Z" fill="none" stroke="#555555" stroke-width="1.2"/></svg><span class="sb-c-tent-label">Our support lead</span></div><div class="sb-fold-line"></div><div class="sb-c-tent-half sb-c-tent-back"><span class="sb-c-tent-label">Our support lead</span></div></div></div><div class="sb-cut-cell" style="min-height:54mm"><div class="sb-c-tent"><div class="sb-c-tent-half"><svg class="sb-svg sb-c-figure" viewBox="0 0 40 46" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="9" r="6" fill="none" stroke="#555555" stroke-width="1.2"/><path d="M8 18 L14 14 L20 18 L26 14 L32 18 L28 25 L28 40 L12 40 L12 25 Z" fill="none" stroke="#555555" stroke-width="1.2"/></svg><span class="sb-c-tent-label">Me in a year</span></div><div class="sb-fold-line"></div><div class="sb-c-tent-half sb-c-tent-back"><span class="sb-c-tent-label">Me in a year</span></div></div></div></div><div class="sb-cols sb-fill"><div class="sb-col"><div class="sb-c-said"><h2 class="sb-h">The customer says</h2><div class="sb-lines sb-fill"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div></div></div><div class="sb-col"><div class="sb-c-said"><h2 class="sb-h">Our support lead says</h2><div class="sb-lines sb-fill"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div></div></div><div class="sb-col"><div class="sb-c-said"><h2 class="sb-h">Me in a year says</h2><div class="sb-lines sb-fill"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div></div></div></div><h2 class="sb-h">What would you ask them? Write one question to put to the real person.</h2><div class="sb-lines"><div class="sb-rule"></div><div class="sb-rule"></div></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
+<section class="sb-page sb-landscape" id="W1-P1" data-component="perspective-swap"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Perspective swap</span><span class="sb-ptag">perspective-swap</span></header><p class="sb-prompt">Cut out each figure, fold it on the dotted line and stand it up. Move a coin to whichever one you are speaking as, and write what it says in its column.</p><div class="sb-pbody"><p class="sb-note">Cut out each figure, fold on the dotted line and stand it up. Move a coin to the one you are speaking as, and write what it says in its column.</p><div class="sb-cut" style="grid-template-columns:repeat(3,1fr)"><span class="sb-scissors" aria-hidden="true">✂︎</span><div class="sb-cut-cell" style="min-height:54mm"><div class="sb-c-tent"><div class="sb-c-tent-half"><svg class="sb-svg sb-c-figure" viewBox="0 0 40 46" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="9" r="6" fill="none" stroke="#555555" stroke-width="1.2"/><path d="M8 18 L14 14 L20 18 L26 14 L32 18 L28 25 L28 40 L12 40 L12 25 Z" fill="none" stroke="#555555" stroke-width="1.2"/></svg><span class="sb-c-tent-label">The customer</span></div><div class="sb-fold-line"></div><div class="sb-c-tent-half sb-c-tent-back"><span class="sb-c-tent-label">The customer</span></div></div></div><div class="sb-cut-cell" style="min-height:54mm"><div class="sb-c-tent"><div class="sb-c-tent-half"><svg class="sb-svg sb-c-figure" viewBox="0 0 40 46" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="9" r="6" fill="none" stroke="#555555" stroke-width="1.2"/><path d="M8 18 L14 14 L20 18 L26 14 L32 18 L28 25 L28 40 L12 40 L12 25 Z" fill="none" stroke="#555555" stroke-width="1.2"/></svg><span class="sb-c-tent-label">Our support lead</span></div><div class="sb-fold-line"></div><div class="sb-c-tent-half sb-c-tent-back"><span class="sb-c-tent-label">Our support lead</span></div></div></div><div class="sb-cut-cell" style="min-height:54mm"><div class="sb-c-tent"><div class="sb-c-tent-half"><svg class="sb-svg sb-c-figure" viewBox="0 0 40 46" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="9" r="6" fill="none" stroke="#555555" stroke-width="1.2"/><path d="M8 18 L14 14 L20 18 L26 14 L32 18 L28 25 L28 40 L12 40 L12 25 Z" fill="none" stroke="#555555" stroke-width="1.2"/></svg><span class="sb-c-tent-label">Me in a year</span></div><div class="sb-fold-line"></div><div class="sb-c-tent-half sb-c-tent-back"><span class="sb-c-tent-label">Me in a year</span></div></div></div></div><div class="sb-cols sb-fill"><div class="sb-col"><div class="sb-c-said"><h2 class="sb-h">The customer says</h2><div class="sb-lines sb-fill"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div></div></div><div class="sb-col"><div class="sb-c-said"><h2 class="sb-h">Our support lead says</h2><div class="sb-lines sb-fill"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div></div></div><div class="sb-col"><div class="sb-c-said"><h2 class="sb-h">Me in a year says</h2><div class="sb-lines sb-fill"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div></div></div></div><h2 class="sb-h">What would you ask them? Write one question to put to the real person.</h2><div class="sb-lines"><div class="sb-rule"></div><div class="sb-rule"></div></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
 </body>
 </html>
 "
@@ -3477,6 +3573,8 @@ exports[`'player-aid' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -3490,8 +3588,9 @@ exports[`'player-aid' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -3587,6 +3686,8 @@ exports[`'practice-audit' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -3600,8 +3701,9 @@ exports[`'practice-audit' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -3693,6 +3795,8 @@ exports[`'pre-mortem' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -3706,8 +3810,9 @@ exports[`'pre-mortem' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -3799,6 +3904,8 @@ exports[`'pre-mortem' ('iterate') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -3812,8 +3919,9 @@ exports[`'pre-mortem' ('iterate') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -3905,6 +4013,8 @@ exports[`'proof' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -3918,8 +4028,9 @@ exports[`'proof' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -4021,6 +4132,8 @@ exports[`'proof' ('mixed') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -4034,8 +4147,9 @@ exports[`'proof' ('mixed') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -4137,6 +4251,8 @@ exports[`'question-queue' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -4150,8 +4266,9 @@ exports[`'question-queue' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -4247,6 +4364,8 @@ exports[`'return-checklist' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -4260,8 +4379,9 @@ exports[`'return-checklist' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -4353,6 +4473,8 @@ exports[`'scoresheet' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -4366,8 +4488,9 @@ exports[`'scoresheet' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -4467,6 +4590,8 @@ exports[`'scoresheet' ('domains') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -4480,8 +4605,9 @@ exports[`'scoresheet' ('domains') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -4581,6 +4707,8 @@ exports[`'scoresheet' ('running') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -4594,8 +4722,9 @@ exports[`'scoresheet' ('running') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -4695,6 +4824,8 @@ exports[`'self-explain' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -4708,8 +4839,9 @@ exports[`'self-explain' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -4802,6 +4934,8 @@ exports[`'self-explain' ('faded') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -4815,8 +4949,9 @@ exports[`'self-explain' ('faded') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -4909,6 +5044,8 @@ exports[`'self-explain' ('faded-max') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -4922,8 +5059,9 @@ exports[`'self-explain' ('faded-max') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -5016,6 +5154,8 @@ exports[`'self-explain' ('why') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -5029,8 +5169,9 @@ exports[`'self-explain' ('why') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -5123,6 +5264,8 @@ exports[`'sheet' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -5136,8 +5279,9 @@ exports[`'sheet' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -5229,6 +5373,8 @@ exports[`'small-experiment' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -5242,8 +5388,9 @@ exports[`'small-experiment' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -5335,6 +5482,8 @@ exports[`'step-away' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -5348,8 +5497,9 @@ exports[`'step-away' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -5441,6 +5591,8 @@ exports[`'stimulus-die' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -5454,8 +5606,9 @@ exports[`'stimulus-die' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -5550,6 +5703,8 @@ exports[`'stimulus-die' ('table') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -5563,8 +5718,9 @@ exports[`'stimulus-die' ('table') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -5659,6 +5815,8 @@ exports[`'ten-bad-ideas' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -5672,8 +5830,9 @@ exports[`'ten-bad-ideas' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -5769,6 +5928,8 @@ exports[`'timeline' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -5782,8 +5943,9 @@ exports[`'timeline' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -5857,11 +6019,13 @@ body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 v
 
 .sb-c-timeline { display: flex; gap: 2mm; margin-bottom: 2mm; }
 .sb-c-slot { flex: 1 1 0; min-height: 48mm; border-top: 0.9pt solid var(--sb-ink); padding-top: 1.5mm; font: 400 7.5pt var(--sb-mono); text-transform: uppercase; letter-spacing: 0.4pt; color: var(--sb-faint); overflow-wrap: anywhere; }
+.sb-landscape .sb-c-slot { min-height: 70mm; padding-left: 1.5mm; }
+.sb-landscape .sb-c-slot + .sb-c-slot { border-left: 0.5pt solid var(--sb-rule); }
 
 </style>
 </head>
 <body>
-<section class="sb-page" id="W1-P1" data-component="timeline"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Timeline</span><span class="sb-ptag">timeline</span></header><p class="sb-prompt">Put things in order. What must be true before what?</p><div class="sb-pbody"><div class="sb-c-timeline"><div class="sb-c-slot"></div><div class="sb-c-slot"></div><div class="sb-c-slot"></div><div class="sb-c-slot"></div><div class="sb-c-slot"></div><div class="sb-c-slot"></div></div><h2 class="sb-h">What must be true first?</h2><div class="sb-lines sb-fill"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
+<section class="sb-page sb-landscape" id="W1-P1" data-component="timeline"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Timeline</span><span class="sb-ptag">timeline</span></header><p class="sb-prompt">Put things in order. What must be true before what?</p><div class="sb-pbody"><div class="sb-c-timeline"><div class="sb-c-slot"></div><div class="sb-c-slot"></div><div class="sb-c-slot"></div><div class="sb-c-slot"></div><div class="sb-c-slot"></div><div class="sb-c-slot"></div></div><h2 class="sb-h">What must be true first?</h2><div class="sb-lines sb-fill"><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div><div class="sb-rule"></div></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
 </body>
 </html>
 "
@@ -5878,6 +6042,8 @@ exports[`'timer' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -5891,8 +6057,9 @@ exports[`'timer' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -5984,6 +6151,8 @@ exports[`'tokens' ('coins') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -5997,8 +6166,9 @@ exports[`'tokens' ('coins') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -6092,6 +6262,8 @@ exports[`'tokens' ('countdown') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -6105,8 +6277,9 @@ exports[`'tokens' ('countdown') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -6200,6 +6373,8 @@ exports[`'tokens' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -6213,8 +6388,9 @@ exports[`'tokens' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -6308,6 +6484,8 @@ exports[`'tokens' ('tally') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -6321,8 +6499,9 @@ exports[`'tokens' ('tally') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -6416,6 +6595,8 @@ exports[`'worst-case' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -6429,8 +6610,9 @@ exports[`'worst-case' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -6525,6 +6707,8 @@ exports[`'zones' ('columns') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -6538,8 +6722,9 @@ exports[`'zones' ('columns') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -6632,6 +6817,8 @@ exports[`'zones' ('default') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -6645,8 +6832,9 @@ exports[`'zones' ('default') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -6739,6 +6927,8 @@ exports[`'zones' ('grid') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -6752,8 +6942,9 @@ exports[`'zones' ('grid') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -6829,7 +7020,7 @@ body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 v
 </style>
 </head>
 <body>
-<section class="sb-page" id="W1-P1" data-component="zones"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Zones</span><span class="sb-ptag">zones</span></header><p class="sb-prompt">Place or write into the zones as the session moves; update them when something changes.</p><div class="sb-pbody"><div class="sb-c-zones-canvas sb-fill" style="grid-template-rows:repeat(3,minmax(38mm,1fr))"><div class="sb-zone" style="grid-column:1 / span 2;grid-row:1 / span 2"><span class="sb-label">A</span></div><div class="sb-zone" style="grid-column:3 / span 2;grid-row:1 / span 1"><span class="sb-label">B</span></div><div class="sb-zone" style="grid-column:3 / span 2;grid-row:2 / span 1"><span class="sb-label">C</span></div><div class="sb-zone" style="grid-column:5 / span 2;grid-row:1 / span 2"><span class="sb-label">D</span></div><div class="sb-zone" style="grid-column:7 / span 2;grid-row:1 / span 1"><span class="sb-label">E</span></div><div class="sb-zone" style="grid-column:7 / span 2;grid-row:2 / span 1"><span class="sb-label">F</span></div><div class="sb-zone" style="grid-column:9 / span 2;grid-row:1 / span 2"><span class="sb-label">G</span></div><div class="sb-zone" style="grid-column:1 / span 5;grid-row:3 / span 1"><span class="sb-label">H</span></div><div class="sb-zone" style="grid-column:6 / span 5;grid-row:3 / span 1"><span class="sb-label">I</span></div></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
+<section class="sb-page sb-landscape" id="W1-P1" data-component="zones"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Zones</span><span class="sb-ptag">zones</span></header><p class="sb-prompt">Place or write into the zones as the session moves; update them when something changes.</p><div class="sb-pbody"><div class="sb-c-zones-canvas sb-fill" style="grid-template-rows:repeat(3,minmax(38mm,1fr))"><div class="sb-zone" style="grid-column:1 / span 2;grid-row:1 / span 2"><span class="sb-label">A</span></div><div class="sb-zone" style="grid-column:3 / span 2;grid-row:1 / span 1"><span class="sb-label">B</span></div><div class="sb-zone" style="grid-column:3 / span 2;grid-row:2 / span 1"><span class="sb-label">C</span></div><div class="sb-zone" style="grid-column:5 / span 2;grid-row:1 / span 2"><span class="sb-label">D</span></div><div class="sb-zone" style="grid-column:7 / span 2;grid-row:1 / span 1"><span class="sb-label">E</span></div><div class="sb-zone" style="grid-column:7 / span 2;grid-row:2 / span 1"><span class="sb-label">F</span></div><div class="sb-zone" style="grid-column:9 / span 2;grid-row:1 / span 2"><span class="sb-label">G</span></div><div class="sb-zone" style="grid-column:1 / span 5;grid-row:3 / span 1"><span class="sb-label">H</span></div><div class="sb-zone" style="grid-column:6 / span 5;grid-row:3 / span 1"><span class="sb-label">I</span></div></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
 </body>
 </html>
 "
@@ -6846,6 +7037,8 @@ exports[`'zones' ('nine') > matches its snapshot 1`] = `
 
 :root{--sb-w:210mm;--sb-h:297mm}
 @page{size:A4;margin:0}
+@page sb-portrait{size:A4;margin:0}
+@page sb-landscape{size:A4 landscape;margin:0}
 
 :root {
   --sb-ink: #111111; --sb-text: #1a1a1a; --sb-muted: #555555; --sb-faint: #777777;
@@ -6859,8 +7052,9 @@ exports[`'zones' ('nine') > matches its snapshot 1`] = `
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 var(--sb-sans), var(--sb-symbol); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
+.sb-page { position: relative; width: var(--sb-w); height: var(--sb-h); page: sb-portrait; margin: 9mm auto; padding: 14mm 15mm 16mm 15mm; background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16); display: flex; flex-direction: column; overflow: hidden; overflow-wrap: anywhere; break-after: page; }
 .sb-page:last-child { break-after: auto; }
+.sb-page.sb-landscape { page: sb-landscape; width: var(--sb-h); height: var(--sb-w); }
 /* A page with an attribution gets a two-line footer credit (the licence line plus the upstream
    credit line). \`.sb-pfoot\` is absolutely positioned and outside the flex flow, so \`.sb-pbody\`
    doesn't know to leave it room: give the page extra bottom padding. \`.sb-page\`'s base bottom
@@ -6936,7 +7130,7 @@ body { background: var(--sb-screen); color: var(--sb-text); font: 400 10pt/1.4 v
 </style>
 </head>
 <body>
-<section class="sb-page" id="W1-P1" data-component="zones"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Zones</span><span class="sb-ptag">zones</span></header><p class="sb-prompt">Place or write into the zones as the session moves; update them when something changes.</p><div class="sb-pbody"><div class="sb-c-zones-grid sb-fill" style="grid-template-columns:repeat(3,1fr)"><div class="sb-box"><span class="sb-label">Alpha</span></div><div class="sb-box"><span class="sb-label">Beta</span></div><div class="sb-box"><span class="sb-label">Gamma</span></div><div class="sb-box"><span class="sb-label">Delta</span></div><div class="sb-box"><span class="sb-label">Epsilon</span></div><div class="sb-box"><span class="sb-label">Zeta</span></div><div class="sb-box"><span class="sb-label">Eta</span></div><div class="sb-box"><span class="sb-label">Theta</span></div><div class="sb-box"><span class="sb-label">Iota</span></div></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
+<section class="sb-page sb-landscape" id="W1-P1" data-component="zones"><i class="sb-reg sb-tl"></i><i class="sb-reg sb-tr"></i><i class="sb-reg sb-bl"></i><i class="sb-reg sb-br"></i><header class="sb-ph"><span class="sb-pid">W1-P1</span><span class="sb-ptitle">Zones</span><span class="sb-ptag">zones</span></header><p class="sb-prompt">Place or write into the zones as the session moves; update them when something changes.</p><div class="sb-pbody"><div class="sb-c-zones-grid sb-fill" style="grid-template-columns:repeat(3,1fr)"><div class="sb-box"><span class="sb-label">Alpha</span></div><div class="sb-box"><span class="sb-label">Beta</span></div><div class="sb-box"><span class="sb-label">Gamma</span></div><div class="sb-box"><span class="sb-label">Delta</span></div><div class="sb-box"><span class="sb-label">Epsilon</span></div><div class="sb-box"><span class="sb-label">Zeta</span></div><div class="sb-box"><span class="sb-label">Eta</span></div><div class="sb-box"><span class="sb-label">Theta</span></div><div class="sb-box"><span class="sb-label">Iota</span></div></div></div><footer class="sb-pfoot"><div class="sb-legend"><span><span class="sb-letter">Q</span> ask</span><span><span class="sb-letter">R</span> stop</span><span><span class="sb-letter">G</span> keep</span><span>X crux = highlighter</span><span><span class="sb-letter">O</span> maybe</span><span><span class="sb-letter">P</span> sense</span><span><span class="sb-letter">D</span> draft</span><span>B reason = black</span><span class="sb-legend-id">W1-P1</span></div></footer></section>
 </body>
 </html>
 "

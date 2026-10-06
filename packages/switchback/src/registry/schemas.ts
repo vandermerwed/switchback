@@ -1,4 +1,5 @@
 const bool = { type: "boolean" } as const;
+const orientation = { enum: ["portrait", "landscape"] } as const;
 
 export const kitSchema = {
   type: "object",
@@ -77,6 +78,7 @@ export const specSchema = {
           prompt: { type: "string" },
           notes: { type: "string" },
           data: { type: "object" },
+          orientation,
         },
       },
     },
@@ -151,6 +153,7 @@ export const componentSchema = {
     tags: { ...stringList, minItems: 1 },
     phase: { enum: ["diverge", "converge", "either"] },
     listed: { type: "boolean" },
+    orientation,
     physical: {
       type: "object",
       required: ["requires", "body", "surface", "timebox"],
@@ -182,6 +185,7 @@ export const componentSchema = {
           prompt: { type: "string" },
           readback: { type: "string" },
           grounding: groundingSchema,
+          orientation,
         },
       },
     },
@@ -206,6 +210,7 @@ export const presetSchema = {
     attribution: { type: "string", minLength: 1 },
     licence: { type: "string", minLength: 1 },
     footer: { type: "string", minLength: 1, maxLength: 240 },
+    orientation,
     grounding: groundingSchema,
   },
 } as const;

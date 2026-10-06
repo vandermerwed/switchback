@@ -75,7 +75,7 @@ eight phone photos (HEIC under `.png` names), the cover and pages 2 and 4 to 9.
 ## Page feedback
 | Page | Note (quoted) | Still true in 0.1.0? | Where it gets fixed |
 | --- | --- | --- | --- |
-| P4 card-sort | "Columns are too small for index cards. Landscape?" | yes | the print-design pass (landscape); `W_NARROW` warns meanwhile |
+| P4 card-sort | "Columns are too small for index cards. Landscape?" | yes | landscape pages from 3 piles; `W_NARROW` warns past 3 |
 | P4 card-sort | "Where do these cards come from?" | yes | `source` on the page, named by workbook mode |
 | P5 assumption-audit | "This is not a good question" | no: the columns were renamed | done |
 | P7 commit | "This can be phrased better" | no: replaced by the if-then plan | done |

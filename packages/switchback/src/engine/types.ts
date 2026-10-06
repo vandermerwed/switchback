@@ -1,4 +1,5 @@
 export type Paper = "A4" | "Letter";
+export type Orientation = "portrait" | "landscape";
 export type RoleId = "ask" | "stop" | "keep" | "crux" | "maybe" | "sense" | "draft" | "reason";
 export type Phase = "diverge" | "converge" | "either";
 export type Grade = "A" | "B" | "C" | "D" | "unrated";
@@ -141,6 +142,7 @@ export interface Variant {
   label?: string;
   prompt?: string;
   readback?: string;
+  orientation?: Orientation;
   grounding?: Grounding;
 }
 export interface ShellOptions {
@@ -158,6 +160,7 @@ export interface ComponentMeta {
   tags: string[];
   phase: Phase;
   listed?: boolean;
+  orientation?: Orientation;
   physical: { requires: string[]; body: string[]; surface: string; timebox: string; returns?: boolean };
   shell?: Partial<ShellOptions>;
   variants: Variant[];
@@ -177,6 +180,7 @@ export interface PresetMeta {
   attribution: string;
   licence: string;
   footer?: string;
+  orientation?: Orientation;
   grounding?: Grounding;
 }
 
@@ -192,6 +196,7 @@ export interface SpecPage {
   prompt?: string;
   notes?: string;
   data?: Record<string, unknown>;
+  orientation?: Orientation;
 }
 export interface Spec {
   switchback: 1;
@@ -234,6 +239,7 @@ export interface Helpers {
 
 export interface RenderContext {
   paper: Paper;
+  orientation: Orientation;
   variant: string;
   kit: Kit;
   pens: PenMapping;
@@ -257,14 +263,19 @@ export type Render<D = any> = (data: D, ctx: RenderContext) => string;
 // biome-ignore lint/suspicious/noExplicitAny: each component narrows its own data type
 export type Checks<D = any> = (
   data: D,
-  ctx: { variant: string; paper: Paper; pageId: string },
+  ctx: { variant: string; paper: Paper; orientation: Orientation; pageId: string },
 ) => Diagnostic[];
+
+// biome-ignore lint/suspicious/noExplicitAny: each component narrows its own data type
+export type OrientationRule<D = any> = (data: D, variant: string) => Orientation | undefined;
 
 export interface ComponentModule {
   meta: ComponentMeta;
   render: Render;
   css?: string;
   checks?: Checks;
+  /** Decide the page orientation from the page's data and variant; undefined means "no opinion". */
+  orientation?: OrientationRule;
   examples: Record<string, Example>;
 }
 
@@ -290,6 +301,7 @@ export interface SidecarPage {
   component: string;
   preset: string | null;
   variant: string;
+  orientation: Orientation;
   title: string;
   prompt: string;
   readback: string;

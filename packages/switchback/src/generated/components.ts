@@ -7,7 +7,7 @@ import meta_brain_dump from "../../components/brain-dump/component.json";
 import { render as render_brain_dump } from "../../components/brain-dump/render";
 import ex_brain_dump_default from "../../components/brain-dump/examples/default.json";
 import meta_card_sort from "../../components/card-sort/component.json";
-import { render as render_card_sort, css as css_card_sort, checks as checks_card_sort } from "../../components/card-sort/render";
+import { render as render_card_sort, css as css_card_sort, checks as checks_card_sort, orientation as orientation_card_sort } from "../../components/card-sort/render";
 import ex_card_sort_default from "../../components/card-sort/examples/default.json";
 import ex_card_sort_from_page from "../../components/card-sort/examples/from-page.json";
 import ex_card_sort_index_cards from "../../components/card-sort/examples/index-cards.json";
@@ -133,7 +133,7 @@ import meta_worst_case from "../../components/worst-case/component.json";
 import { render as render_worst_case, css as css_worst_case } from "../../components/worst-case/render";
 import ex_worst_case_default from "../../components/worst-case/examples/default.json";
 import meta_zones from "../../components/zones/component.json";
-import { render as render_zones, css as css_zones, checks as checks_zones } from "../../components/zones/render";
+import { render as render_zones, css as css_zones, checks as checks_zones, orientation as orientation_zones } from "../../components/zones/render";
 import ex_zones_columns from "../../components/zones/examples/columns.json";
 import ex_zones_default from "../../components/zones/examples/default.json";
 import ex_zones_grid from "../../components/zones/examples/grid.json";
@@ -153,7 +153,7 @@ import preset_swot from "../../presets/swot.json";
 export const components: ComponentModule[] = [
   { meta: meta_assumption_audit as unknown as ComponentModule["meta"], render: render_assumption_audit, css: css_assumption_audit, examples: { "default": ex_assumption_audit_default } as ComponentModule["examples"] },
   { meta: meta_brain_dump as unknown as ComponentModule["meta"], render: render_brain_dump, examples: { "default": ex_brain_dump_default } as ComponentModule["examples"] },
-  { meta: meta_card_sort as unknown as ComponentModule["meta"], render: render_card_sort, css: css_card_sort, checks: checks_card_sort, examples: { "default": ex_card_sort_default, "from-page": ex_card_sort_from_page, "index-cards": ex_card_sort_index_cards, "write-in": ex_card_sort_write_in } as ComponentModule["examples"] },
+  { meta: meta_card_sort as unknown as ComponentModule["meta"], render: render_card_sort, css: css_card_sort, checks: checks_card_sort, orientation: orientation_card_sort, examples: { "default": ex_card_sort_default, "from-page": ex_card_sort_from_page, "index-cards": ex_card_sort_index_cards, "write-in": ex_card_sort_write_in } as ComponentModule["examples"] },
   { meta: meta_check_in as unknown as ComponentModule["meta"], render: render_check_in, css: css_check_in, examples: { "default": ex_check_in_default, "gratitude-max": ex_check_in_gratitude_max, "gratitude": ex_check_in_gratitude } as ComponentModule["examples"] },
   { meta: meta_commit as unknown as ComponentModule["meta"], render: render_commit, css: css_commit, examples: { "default": ex_commit_default, "policy": ex_commit_policy, "tell": ex_commit_tell } as ComponentModule["examples"] },
   { meta: meta_constraint_removal as unknown as ComponentModule["meta"], render: render_constraint_removal, examples: { "default": ex_constraint_removal_default } as ComponentModule["examples"] },
@@ -187,7 +187,7 @@ export const components: ComponentModule[] = [
   { meta: meta_timer as unknown as ComponentModule["meta"], render: render_timer, css: css_timer, examples: { "default": ex_timer_default } as ComponentModule["examples"] },
   { meta: meta_tokens as unknown as ComponentModule["meta"], render: render_tokens, css: css_tokens, examples: { "coins": ex_tokens_coins, "countdown": ex_tokens_countdown, "default": ex_tokens_default, "tally": ex_tokens_tally } as ComponentModule["examples"] },
   { meta: meta_worst_case as unknown as ComponentModule["meta"], render: render_worst_case, css: css_worst_case, examples: { "default": ex_worst_case_default } as ComponentModule["examples"] },
-  { meta: meta_zones as unknown as ComponentModule["meta"], render: render_zones, css: css_zones, checks: checks_zones, examples: { "columns": ex_zones_columns, "default": ex_zones_default, "grid": ex_zones_grid, "nine": ex_zones_nine } as ComponentModule["examples"] },
+  { meta: meta_zones as unknown as ComponentModule["meta"], render: render_zones, css: css_zones, checks: checks_zones, orientation: orientation_zones, examples: { "columns": ex_zones_columns, "default": ex_zones_default, "grid": ex_zones_grid, "nine": ex_zones_nine } as ComponentModule["examples"] },
 ];
 
 export const presets: PresetMeta[] = [preset_business_model_canvas as unknown as PresetMeta, preset_dashboard as unknown as PresetMeta, preset_eisenhower as unknown as PresetMeta, preset_impact_effort as unknown as PresetMeta, preset_kanban as unknown as PresetMeta, preset_lean_canvas as unknown as PresetMeta, preset_now_next_later as unknown as PresetMeta, preset_playmat as unknown as PresetMeta, preset_power_interest as unknown as PresetMeta, preset_start_stop_continue as unknown as PresetMeta, preset_swot as unknown as PresetMeta];

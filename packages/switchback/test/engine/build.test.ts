@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { buildDocument, compileData, renderComponent } from "../../src/engine/build";
-import type { ComponentMeta } from "../../src/engine/types";
+import type { ComponentMeta, ComponentModule } from "../../src/engine/types";
+import { createCatalogue } from "../../src/registry/catalogue";
 
 const clock = () => new Date("2026-09-23T12:00:00.000Z");
 const page = (n: number, extra: Record<string, unknown> = {}) => ({
@@ -153,5 +154,96 @@ describe("compileData", () => {
     expect(validateA({ a: "x" })).toBe(true);
     expect(validateB({ b: "y" })).toBe(true);
     expect(validateB({ a: "x" })).toBe(false);
+  });
+});
+
+const wide = (
+  orientation?: "portrait" | "landscape",
+  rule?: ComponentModule["orientation"],
+): ComponentModule => ({
+  meta: {
+    id: "wide",
+    kind: "page",
+    name: "Wide",
+    intent: "x",
+    when: "",
+    tags: ["decide"],
+    phase: "converge",
+    physical: { requires: [], body: [], surface: "desk", timebox: "1 min" },
+    variants: [{ id: "default", requires: [] }],
+    data: { type: "object" },
+    grounding: { claims: [], helps: "", backfires: "" },
+    ...(orientation ? { orientation } : {}),
+  },
+  render: (_d, ctx) => `<p>${ctx.orientation}</p>`,
+  ...(rule ? { orientation: rule } : {}),
+  examples: {},
+});
+const wideCat = (mod: ComponentModule) =>
+  createCatalogue({
+    components: [mod],
+    presets: [
+      {
+        id: "wide-portrait",
+        kind: "preset",
+        extends: "wide",
+        name: "Wide, portrait",
+        tags: ["decide"],
+        data: {},
+        attribution: "x",
+        licence: "x",
+        orientation: "portrait",
+      },
+    ],
+  });
+const onWide = (cat: ReturnType<typeof wideCat>, pageExtra: Record<string, unknown>) =>
+  buildDocument(spec([{ id: "W1-P1", component: "wide", ...pageExtra }]), {
+    ...opts,
+    catalogue: cat,
+    skipStyleChecks: true,
+  });
+
+describe("page orientation", () => {
+  it("prints a landscape component on a landscape page and records it", () => {
+    const r = onWide(wideCat(wide("landscape")), {});
+    expect(r.html).toContain('<section class="sb-page sb-landscape" id="W1-P1"');
+    expect(r.html).toContain("<p>landscape</p>");
+    expect(r.sidecar?.pages[0]?.orientation).toBe("landscape");
+  });
+
+  it("uses the component's data rule", () => {
+    const rule = (data: { n?: number }) => ((data.n ?? 0) >= 3 ? "landscape" : undefined);
+    expect(onWide(wideCat(wide(undefined, rule)), { data: { n: 3 } }).sidecar?.pages[0]?.orientation).toBe(
+      "landscape",
+    );
+    expect(onWide(wideCat(wide(undefined, rule)), { data: { n: 1 } }).sidecar?.pages[0]?.orientation).toBe(
+      "portrait",
+    );
+  });
+
+  it("lets a preset and then a spec page override the component", () => {
+    const cat = wideCat(wide("landscape"));
+    const viaPreset = buildDocument(spec([{ id: "W1-P1", component: "wide-portrait" }]), {
+      ...opts,
+      catalogue: cat,
+      skipStyleChecks: true,
+    });
+    expect(viaPreset.sidecar?.pages[0]?.orientation).toBe("portrait");
+    const forced = onWide(cat, { orientation: "portrait" });
+    expect(forced.diagnostics.filter((d) => d.level === "error")).toEqual([]);
+    expect(forced.html).toContain('<section class="sb-page" id="W1-P1"');
+  });
+
+  it("passes the resolved orientation to checks", () => {
+    let seen = "";
+    const mod: ComponentModule = {
+      ...wide("landscape"),
+      checks: (_d, c) => {
+        seen = c.orientation;
+        return [];
+      },
+    };
+    onWide(wideCat(mod), {});
+    expect(seen).toBe("landscape");
   });
 });
