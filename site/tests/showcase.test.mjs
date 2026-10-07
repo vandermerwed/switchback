@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import { test } from "node:test";
+import { loadCatalogue, membersOf } from "@vandermerwed/switchback";
 
 const dist = new URL("../dist/", import.meta.url);
 
@@ -81,7 +82,44 @@ test("the showcase has a workbook drawn from the Game Development collection", (
   assert.ok(html.includes('id="game-dev"'), "has its own anchor");
   assert.ok(html.includes('href="/docs/collections/game-dev/"'), "links its collection");
   assert.ok(html.includes("Game Development"), "names its collection");
-  assert.match(html, /Six examples/);
+});
+
+test("every example names its style and the collection it draws on, and really draws on it", () => {
+  const entries = JSON.parse(
+    readFileSync(new URL("../src/generated/showcase.json", import.meta.url), "utf8"),
+  );
+  const catalogue = loadCatalogue();
+  const html = readFileSync(new URL("showcase/index.html", dist), "utf8");
+  const navStart = html.indexOf('class="gallery-index');
+  const nav = html.slice(navStart, html.indexOf("</nav>", navStart));
+  const expected = {
+    sitting: "engineering",
+    series: "learning",
+    incubation: "design",
+    ritual: "productivity",
+    proof: null,
+    "game-dev": "game-dev",
+  };
+  // The cover, the break and the closing pages frame a workbook; the pages between them are its own.
+  const FRAME = new Set(["cover", "step-away", "commit", "question-queue", "return-checklist"]);
+  for (const entry of entries) {
+    assert.equal(entry.collection, expected[entry.id], `${entry.id} is tagged ${expected[entry.id]}`);
+    assert.ok(nav.includes(entry.title), `the index names ${entry.id} by its problem`);
+    assert.ok(nav.includes(entry.styleLabel), `the index gives ${entry.id}'s style`);
+    if (!entry.collection) continue;
+    assert.ok(
+      html.includes(`href="/docs/collections/${entry.collection}/"`),
+      `${entry.id} links its collection`,
+    );
+    const spec = JSON.parse(readFileSync(new URL(`../showcase/${entry.id}.json`, import.meta.url), "utf8"));
+    const own = spec.pages.map((p) => p.component).filter((c) => !FRAME.has(c));
+    const shelf = new Set(membersOf(catalogue, entry.collection));
+    const onShelf = own.filter((c) => shelf.has(c)).length;
+    assert.ok(
+      onShelf * 2 > own.length,
+      `${entry.id}: ${onShelf} of ${own.length} pages are on ${entry.collection}`,
+    );
+  }
 });
 
 test("the gallery's 9mm frame offset matches the renderer's on-screen page margin", () => {

@@ -5,20 +5,11 @@ import MarkedPage from "../components/MarkedPage.astro";
 import SiteNav from "../components/SiteNav.astro";
 import workbooks from "../generated/showcase.json";
 
-const STYLE_INTENT = {
-  sitting: "One session to make a first move.",
-  series: "Several rounds around one subject.",
-  incubation: "Generate, step away, then judge.",
-  ritual: "The same short page each time.",
-  proof: "A document made ready for margin notes.",
-};
 const COUNT_WORDS = ["No", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"];
 const count = COUNT_WORDS[workbooks.length] ?? String(workbooks.length);
-// An example drawn from a collection says so in the index; the others say what their style is for.
-const intentOf = (workbook) =>
-  workbook.collection
-    ? `A sitting drawn from the ${workbook.label} collection.`
-    : STYLE_INTENT[workbook.style];
+// Every example says what it is: its style, and the shelf its pages come from. A proof prints
+// your own document, so it comes from no shelf.
+const sourceOf = (workbook) => (workbook.collection ? workbook.collectionName : "your own document");
 ---
 
 <html lang="en">
@@ -27,37 +18,37 @@ const intentOf = (workbook) =>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>Showcase — Switchback</title>
-    <meta name="description" content={`${count} real Switchback print examples with every page and a PDF for each.`} />
+    <meta name="description" content={`${count} real Switchback workbooks, each labelled with its style and the collection its pages come from, with every page and a PDF.`} />
   </head>
   <body>
     <SiteNav />
     <main class="gallery">
       <header class="gallery-intro">
         <h1>Pages to work on.</h1>
-        <p>{count} examples printed by the current Switchback renderer: one for each style, and one drawn from a collection of templates. Each page below is the renderer's own output, shown at A4 proportions. Open a page at full size to inspect the print.</p>
+        <p>{count} examples printed by the current Switchback renderer. Each one names its style, the shape of the session, and the collection its pages come from. Each page below is the renderer's own output, shown at A4 proportions. Open a page at full size to inspect the print.</p>
       </header>
       <div class="gallery-grid">
         <nav class="gallery-index" aria-label="Showcase examples">
-          {workbooks.map((workbook) => <a href={`#${workbook.id}`}><span>{workbook.label}</span><small>{intentOf(workbook)}</small></a>)}
+          {workbooks.map((workbook) => <a href={`#${workbook.id}`}><span>{workbook.title}</span><small>{workbook.styleLabel} · {sourceOf(workbook)}</small></a>)}
         </nav>
         <div class="gallery-examples">
           {workbooks.map((workbook) => {
             const feature = workbook.pagePreviews[Math.min(1, workbook.pagePreviews.length - 1)];
             return <section class="workbook" id={workbook.id} aria-labelledby={`${workbook.id}-title`}>
-              <div class="workbook-heading"><h2 id={`${workbook.id}-title`}>{workbook.label}</h2><p>{workbook.pageCount} {workbook.pageCount === 1 ? "page" : "pages"} · {workbook.timebox}</p></div>
-              {workbook.collection && <p class="from-collection">A {workbook.styleLabel} from the <a href={`/docs/collections/${workbook.collection}/`}>{workbook.label} collection</a></p>}
+              <div class="workbook-heading"><h2 id={`${workbook.id}-title`}>{workbook.title}</h2><p>{workbook.pageCount} {workbook.pageCount === 1 ? "page" : "pages"} · {workbook.timebox}</p></div>
+              <p class="workbook-tags"><a href="/docs/styles/">{workbook.styleLabel}</a> · {workbook.collection ? <a href={`/docs/collections/${workbook.collection}/`}>{workbook.collectionName} collection</a> : "your own document"}</p>
               <p class="request-label">Request</p>
               <blockquote>“{workbook.request}”</blockquote>
               <p class="style-reason"><strong>Why {workbook.styleLabel}</strong> {workbook.why}</p>
-              <div class="page-strip" aria-label={`All ${workbook.pageCount} ${workbook.label} pages`}>
-                {workbook.pagePreviews.map((page, index) => <a class="page-thumb" href={page.html} aria-label={`Open ${workbook.label} page ${index + 1} at full size`}>
-                  <span class:list={["thumb-paper", { "is-landscape": page.orientation === "landscape" }]}><iframe src={page.html} title={`${workbook.label} ${page.id} thumbnail`} loading="lazy" tabindex="-1"></iframe></span>
+              <div class="page-strip" aria-label={`All ${workbook.pageCount} pages of ${workbook.title}`}>
+                {workbook.pagePreviews.map((page, index) => <a class="page-thumb" href={page.html} aria-label={`Open page ${index + 1} of ${workbook.title} at full size`}>
+                  <span class:list={["thumb-paper", { "is-landscape": page.orientation === "landscape" }]}><iframe src={page.html} title={`${workbook.title}, ${page.id}, thumbnail`} loading="lazy" tabindex="-1"></iframe></span>
                   <span>{page.id}</span>
                 </a>)}
               </div>
               <div class="feature-layout">
-                <div class:list={["feature-paper", { "is-landscape": feature.orientation === "landscape" }]}><iframe src={feature.html} title={`${workbook.label} ${feature.id} printed page`} loading="lazy"></iframe></div>
-                <div class="feature-caption"><p>One page from the {workbook.label.toLowerCase()} example, shown as printed.</p><a href={feature.html}>Open this page full size</a><a href={workbook.pdf} download>Download the PDF</a></div>
+                <div class:list={["feature-paper", { "is-landscape": feature.orientation === "landscape" }]}><iframe src={feature.html} title={`${workbook.title}, ${feature.id}, printed page`} loading="lazy"></iframe></div>
+                <div class="feature-caption"><p>One page from this example, shown as printed.</p><a href={feature.html}>Open this page full size</a><a href={workbook.pdf} download>Download the PDF</a></div>
               </div>
             </section>;
           })}
@@ -85,16 +76,16 @@ const intentOf = (workbook) =>
   .gallery-index { position: sticky; top: 1rem; align-self: start; padding-top: 3rem; display: grid; }
   .gallery-index a { display: grid; gap: .2rem; padding: 1rem 0; border-top: 1px solid var(--sb-rule); text-decoration: none; }
   .gallery-index a:hover span { text-decoration: underline; }
-  .gallery-index span { font-family: var(--sb-font-heading); font-size: 1.3rem; }
+  .gallery-index span { font-family: var(--sb-font-heading); font-size: 1.15rem; line-height: 1.3; }
   .gallery-index small { color: var(--sb-ink-soft); line-height: 1.45; }
   .workbook { padding: 5rem 0 7rem; border-bottom: 1px solid var(--sb-rule); scroll-margin-top: 1rem; }
   .workbook:first-child { padding-top: 2.75rem; }
   .workbook-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
-  .workbook-heading h2 { font: 500 clamp(3rem, 5vw, 5rem)/1.1 var(--sb-font-heading); letter-spacing: -.03em; margin: 0 0 2rem; }
+  .workbook-heading h2 { font: 500 clamp(2.4rem, 3.8vw, 3.8rem)/1.1 var(--sb-font-heading); letter-spacing: -.03em; max-width: 20ch; margin: 0 0 1rem; }
   .workbook-heading p, .request-label { font-size: .8rem; color: var(--sb-ink-soft); }
   .request-label { text-transform: uppercase; letter-spacing: .12em; margin-bottom: .5rem; }
-  .from-collection { margin: -1.25rem 0 2rem; color: var(--sb-ink-soft); }
-  .from-collection a { color: var(--sb-ink); font-weight: 600; text-underline-offset: .25em; }
+  .workbook-tags { margin: 0 0 2.25rem; color: var(--sb-ink-soft); }
+  .workbook-tags a { color: var(--sb-ink); font-weight: 600; text-underline-offset: .25em; }
   blockquote { max-width: 29ch; font: 500 clamp(1.5rem, 2.3vw, 2.2rem)/1.3 var(--sb-font-heading); letter-spacing: -.02em; margin: 0 0 1.5rem; }
   .style-reason { max-width: 60ch; color: var(--sb-ink-soft); line-height: 1.65; margin: 0 0 2.5rem; }
   .style-reason strong { color: var(--sb-ink); }
@@ -122,6 +113,6 @@ const intentOf = (workbook) =>
   .returned-page { margin: 0; transform: rotate(-1.2deg); }
   .returned-page :global(.marked-page) { box-shadow: 10px 18px 32px rgba(20, 40, 34, .18); }
   .returned-page figcaption { margin-top: 1rem; color: var(--sb-ink-soft); font-size: .8rem; line-height: 1.5; }
-  @media (max-width: 900px) { .returned-pair { grid-template-columns: minmax(0, 1fr); } .returned-page { width: min(100%, 440px); } .gallery-grid { grid-template-columns: minmax(0, 1fr); } .gallery-index { position: static; display: flex; overflow-x: auto; gap: 1.5rem; padding: 1.5rem 0 0; min-width: 0; max-width: 100%; } .gallery-index a { flex: 0 0 140px; } .workbook { padding-top: 3rem; } }
+  @media (max-width: 900px) { .returned-pair { grid-template-columns: minmax(0, 1fr); } .returned-page { width: min(100%, 440px); } .gallery-grid { grid-template-columns: minmax(0, 1fr); } .gallery-index { position: static; display: flex; overflow-x: auto; gap: 1.5rem; padding: 1.5rem 0 0; min-width: 0; max-width: 100%; } .gallery-index a { flex: 0 0 180px; } .workbook { padding-top: 3rem; } }
   @media (max-width: 640px) { .gallery-intro, .marked-intro { padding-inline: 20px; } .gallery-grid { padding-inline: 20px; } .gallery-intro h1, .marked-intro h2 { font-size: 3.4rem; } .feature-layout { display: block; } .feature-paper { width: min(100%, 350px); } .feature-paper iframe { transform: scale(.44) translateY(-9mm); } .feature-paper.is-landscape iframe { transform: scale(.311) translateY(-9mm); } .feature-caption { padding-top: 1rem; } .workbook-heading { display: block; } .workbook-heading h2 { margin-bottom: .2rem; } .workbook-heading p { margin-bottom: 2rem; } }
 </style>
