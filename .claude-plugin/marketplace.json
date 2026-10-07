@@ -1,13 +1,15 @@
 {
   "name": "switchback",
-  "owner": { "name": "vandermerwed" },
+  "owner": {
+    "name": "vandermerwed"
+  },
   "description": "Programmable stationery: AI-made pages you work by hand, then photograph back.",
   "plugins": [
     {
       "name": "switchback",
       "source": ".",
       "description": "Workbooks, proofs and the read-back loop: AI-made pages you work by hand in ink, then photograph back.",
-      "version": "0.1.0"
+      "version": "0.2.0"
     }
   ]
 }

@@ -30,9 +30,9 @@ message first, then read the next mode's reference.
 ## 2. Find the CLI
 
 <!-- x-release-please-start-version -->
-Run `switchback --version`. If it prints `0.1.0`, use `switchback`. If the command is not found, or
-prints another version, run `npx -y @vandermerwed/switchback@0.1.0 --version` and prefix every
-command in every reference with `npx -y @vandermerwed/switchback@0.1.0` instead of `switchback`.
+Run `switchback --version`. If it prints `0.2.0`, use `switchback`. If the command is not found, or
+prints another version, run `npx -y @vandermerwed/switchback@0.2.0 --version` and prefix every
+command in every reference with `npx -y @vandermerwed/switchback@0.2.0` instead of `switchback`.
 <!-- x-release-please-end -->
 
 If both fail, show the user the error the command printed, say the Switchback CLI needs Node.js
