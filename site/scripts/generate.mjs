@@ -139,7 +139,7 @@ console.log(
   `generate.mjs: wrote ${catalogueEntries.length} previews, catalogue.json, collections.json and cli.json (${cliEntries.length} commands).`,
 );
 
-// --- The showcase: one real workbook per style, plus one drawn from a collection --------
+// --- The showcase: real workbooks, each with its style and the collection it draws on ---
 // Each example has its own id (its anchor, file names and request key); several can share a style.
 // `switchback proof` turns showcase/proof.md into a real spec first, exactly as a user's agent
 // would; the other four styles are hand-authored specs already in the style's own shape.
@@ -166,25 +166,23 @@ if (!proofResult.ok || proofResult.specs.length !== 1) {
   );
 }
 
+// `collection` is the shelf an example's own pages come from; a proof prints your document, so none.
 const showcaseSpecs = [
-  { id: "sitting", style: "sitting", label: "Sitting", path: join(showcaseSrcDir, "sitting.json") },
-  { id: "series", style: "series", label: "Series", path: join(showcaseSrcDir, "series.json") },
+  { id: "sitting", style: "sitting", collection: "engineering", path: join(showcaseSrcDir, "sitting.json") },
+  { id: "series", style: "series", collection: "learning", path: join(showcaseSrcDir, "series.json") },
   {
     id: "incubation",
     style: "incubation",
-    label: "Incubation",
+    collection: "design",
     path: join(showcaseSrcDir, "incubation.json"),
   },
-  { id: "ritual", style: "ritual", label: "Ritual", path: join(showcaseSrcDir, "ritual.json") },
-  { id: "proof", style: "proof", label: "Proof", path: proofResult.specs[0] },
-  {
-    id: "game-dev",
-    style: "sitting",
-    label: "Game Development",
-    collection: "game-dev",
-    path: join(showcaseSrcDir, "game-dev.json"),
-  },
+  { id: "ritual", style: "ritual", collection: "productivity", path: join(showcaseSrcDir, "ritual.json") },
+  { id: "proof", style: "proof", collection: null, path: proofResult.specs[0] },
+  { id: "game-dev", style: "sitting", collection: "game-dev", path: join(showcaseSrcDir, "game-dev.json") },
 ];
+for (const { id, collection } of showcaseSpecs)
+  if (collection && !catalogue.collections.has(collection))
+    throw new Error(`generate.mjs: showcase example ${id} names unknown collection "${collection}"`);
 const STYLE_LABELS = {
   sitting: "Sitting",
   series: "Series",
@@ -196,7 +194,7 @@ const STYLE_LABELS = {
 const showcaseErrors = [];
 const committedPdfsUsed = [];
 const showcaseEntries = [];
-for (const { id, style, label, collection, path } of showcaseSpecs) {
+for (const { id, style, collection, path } of showcaseSpecs) {
   const spec = JSON.parse(readFileSync(path, "utf8"));
 
   // Validate the way a user's agent would before building, so a broken example fails loudly here
@@ -275,8 +273,8 @@ for (const { id, style, label, collection, path } of showcaseSpecs) {
     id,
     style,
     styleLabel: STYLE_LABELS[style],
-    label,
-    collection: collection ?? null,
+    collection,
+    collectionName: collection ? catalogue.collections.get(collection).meta.name : null,
     title: spec.title,
     subtitle: spec.subtitle ?? null,
     request: showcaseRequests[id].request,

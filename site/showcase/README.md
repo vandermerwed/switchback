@@ -1,18 +1,18 @@
 # Showcase source specs
 
-Everything the `/showcase/` page renders (one workbook per style, plus one drawn from a collection) is generated at build time from the files here, by
+Everything the `/showcase/` page renders (each workbook labelled with its style and the collection its pages come from) is generated at build time from the files here, by
 `site/scripts/generate.mjs`, using the workspace's own `@vandermerwed/switchback` package — never
 from copies or screenshots. Each spec was authored by hand for this page and validates cleanly
 under `switchback validate` (`node packages/switchback/dist/cli.js validate <file> --json`).
 
-| File | Style | Problem | Notes |
-| --- | --- | --- | --- |
-| `sitting.json` | Sitting | Whether to rewrite a feature | Cover, brain-dump, options-criteria, pre-mortem, commit, question queue, return checklist |
-| `series.json` | Series | Learning a subject for an interview | Round 1 of 3: cover, cued free-recall, node-map, Feynman explanation, question queue, return checklist |
-| `incubation.json` | Incubation | Naming a new project | A generating half (brain-dump, ten bad ideas, forced connections), a real break (`step-away`), then a judging half (card sort, options-criteria, commit) |
-| `ritual.json` | Ritual | A weekly check-in | The style's one allowed page, a check-in, unchanged across rounds so change is visible |
-| `proof.md` | Proof | A short internal draft ("should the team meet daily?") | Authored prose; `generate.mjs` runs `switchback proof` on it to produce the numbered-paragraph spec, exactly as a user would |
-| `game-dev.json` | Sitting | Scoping a game for a two-week jam | Drawn from the Game Development collection: cover, game one-pager, core loop, feature cut (write-in), pre-mortem, commit, question queue, return checklist |
+| File | Style | Collection | Problem | Notes |
+| --- | --- | --- | --- | --- |
+| `sitting.json` | Sitting | Engineering | Whether to rewrite a feature | Cover, brain-dump, options-criteria, pre-mortem, commit, question queue, return checklist |
+| `series.json` | Series | Learning | Learning a subject for an interview | Round 1 of 3: cover, cued free-recall, node-map, Feynman explanation, question queue, return checklist |
+| `incubation.json` | Incubation | Design | Naming a new project | A generating half (brain-dump, ten bad ideas, forced connections), a real break (`step-away`), then a judging half (card sort, options-criteria, commit) |
+| `ritual.json` | Ritual | Productivity | A weekly check-in | The style's one allowed page, a check-in, unchanged across rounds so change is visible |
+| `proof.md` | Proof | none (your own document) | A short internal draft ("should the team meet daily?") | Authored prose; `generate.mjs` runs `switchback proof` on it to produce the numbered-paragraph spec, exactly as a user would |
+| `game-dev.json` | Sitting | Game Development | Scoping a game for a two-week jam | Cover, game one-pager, core loop, feature cut (write-in), pre-mortem, commit, question queue, return checklist |
 
 Each spec's `pages` follow the shape [`workbook.md`](../../skills/switchback/references/workbook.md)
 and [`styles.md`](../../skills/switchback/references/styles.md) describe: an opening, a budget the
