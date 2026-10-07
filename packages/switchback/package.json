@@ -1,6 +1,6 @@
 {
   "name": "@vandermerwed/switchback",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Programmable stationery for AI agents: print-ready workbooks and proofs, adapted to the pens on your desk, read back from photos.",
   "type": "module",
   "license": "(Apache-2.0 AND CC-BY-SA-3.0)",
